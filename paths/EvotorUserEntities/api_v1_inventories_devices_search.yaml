@@ -1,0 +1,18 @@
+x-summary: Получить список смарт-терминалов
+get:
+  tags:
+    - Сущности пользователя Эвотор
+  summary: Получить список смарт-терминалов
+  description: |
+    Возвращает массив с информацией о всех смарт-терминалах пользователя.
+  parameters:
+    - $ref: '#/parameters/auth'
+    - $ref: '#/parameters/contentType'
+  responses:
+    '200':
+      description: OK
+      schema:
+        title: Список смарт-терминалов
+        type: array
+        items:
+          $ref: '#/definitions/device'

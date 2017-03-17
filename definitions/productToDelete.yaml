@@ -1,0 +1,5 @@
+type: object
+properties:
+  uuid:
+    type: string
+    description: Уникальный UUID товара в облаке Эвотор.

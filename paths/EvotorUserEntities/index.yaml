@@ -1,0 +1,6 @@
+/api/v1/inventories/stores/search:
+  $ref: ./api_v1_inventories_stores_search.yaml
+/api/v1/inventories/employees/search:
+  $ref: ./api_v1_inventories_employees_search.yaml
+/api/v1/inventories/devices/search:
+  $ref: ./api_v1_inventories_devices_search.yaml

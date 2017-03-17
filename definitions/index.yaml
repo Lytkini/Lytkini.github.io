@@ -1,0 +1,14 @@
+productToDelete:
+  $ref: ./productToDelete.yaml
+product:
+$ref: ./product.yaml
+employee:
+  $ref: ./employee.yaml
+store:
+  $ref: ./store.yaml
+device:
+  $ref: ./device.yaml
+document:
+  $ref: ./document.yaml
+transaction:
+  $ref: ./transaction.yaml

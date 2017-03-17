@@ -1,0 +1,6 @@
+/api/v1/inventories/stores/{storeUuid}/products:
+  $ref: ./api_v1_inventories_stores_storeUuid_products.yaml
+/api/v1/inventories/stores/{storeUuid}/products/delete:
+  $ref: ./api_v1_inventories_stores_storeUuid_products_delete.yaml
+/api/v1/inventories/stores/{storeUuid}/documents:
+  $ref: ./api_v1_inventories_stores_storeUuid_documents.yaml

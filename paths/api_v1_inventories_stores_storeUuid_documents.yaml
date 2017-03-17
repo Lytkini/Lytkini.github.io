@@ -1,0 +1,57 @@
+x-summary: Документы
+get:
+  tags:
+    - Товары и документы
+  summary: Получить список документов
+  description: |
+    Возвращает массив документов. Существуют следующие типы документов:
+    * Кассовые документы - [SELL,
+    PAYBACK,CASH_INCOME,CASH_OUTCOME,OPEN_SESSION,FPRINT_OPERATION,CLOSE_SESSION]
+    * Инвентаризация - INVENTORY
+    * Приёмка - ACCEPT
+    * Возврат поставщику - RETURN
+    * Списание - WRITE_OFF
+    * Акт переоценки - REVALUATION
+    * Вскрытие тары - OPEN_TARE
+  parameters:
+    - $ref: '#/parameters/auth'
+    - $ref: '#/parameters/contentType'
+    - name: storeUuid
+      in: path
+      required: true
+      type: string
+    - name: deviceUuid
+      in: query
+      type: string
+    - name: ltCloseDate
+      in: query
+      format: date-time
+      type: string
+      description: |
+        Ответ будет содержать документы, созданные до указанной даты. Формат времени - 2017-01-10T09:33:19.757Z
+    - name: gtCloseDate
+      in: query
+      format: date-time
+      type: string
+      description: |
+        Ответ будет содержать документы, созданные после указанной даты. Формат времени - 2017-01-10T09:33:19.757Z
+    - name: type
+      description: |
+        Ответ будет содержать документы определенных типов. Можно указать несколько типов через запятую. Возможные значения:
+        * кассовые документы - SELL,PAYBACK,CASH_INCOME,CASH_OUTCOME,OPEN_SESSION,FPRINT_OPERATION,CLOSE_SESSION.
+        * инвентаризация - INVENTORY;
+        * приемка - ACCEPT;
+        * возврат поставщику - RETURN;
+        * списание - WRITE_OFF;
+        * акт переоценки - REVALUATION;
+        * вскрытие тары - OPEN_TARE.
+      in: query
+      type: string
+  responses:
+    '200':
+      description: OK
+      schema:
+        title: Массив документов
+        type: array
+        items:
+          $ref: '#/definitions/document'

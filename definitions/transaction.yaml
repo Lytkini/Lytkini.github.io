@@ -1,0 +1,24 @@
+type: object
+properties:
+  type:
+    type: string
+    enum:
+      - DISCOUNT_DOCUMENT
+      - DISCOUNT_POSITION
+      - DISCOUNT_DOCUMENT_POSITION
+      - DOCUMENT_OPEN
+      - DOCUMENT_CLOSE
+      - DOCUMENT_CLOSE_FPRINT
+      - REGISTER_POSITION
+      - REGISTER_BILLS
+      - CASH_INCOME
+      - CASH_OUTCOME
+      - INVENTORY
+      - PAYMENT
+      - OPEN_SESSION
+      - CLOSE_SESSION
+      - FPRINT_OPEN_SESSION
+      - FPRINT_X_REPORT
+      - FPRINT_Z_REPORT
+      - POSITION_TAX
+      - REVALUATION

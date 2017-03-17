@@ -1,0 +1,18 @@
+x-summary: Получить список сотрудников
+get:
+  tags:
+    - Сущности пользователя Эвотор
+  summary: Получить список сотрудников
+  description: |
+    Возвращает массив с информацией о всех сотрудниках пользователя. Под сотрудниками понимаются пользователи смарт-терминалов, например, кассиры.
+  parameters:
+    - $ref: '#/parameters/auth'
+    - $ref: '#/parameters/contentType'
+  responses:
+    '200':
+      description: OK
+      schema:
+        title: Cписок сотрудников
+        type: array
+        items:
+          $ref: '#/definitions/employee'
