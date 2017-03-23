@@ -14,7 +14,7 @@
           Поля, необходимые для авторизации существующего пользователя в стороннем сервисе.
         required: true
         schema:
-          $ref: '#/definitions/authorizeFormData'
+          $ref: ./definitions.yaml#/authorizeFormData
     responses:
       '200':
         description: OK
@@ -58,7 +58,7 @@
           Поля необходимые для регистрации нового пользователя в стороннем сервисе.
         required: true
         schema:
-          $ref: '#/definitions/registerFormData'
+          $ref: ./definitions.yaml#/registerFormData
     responses:
       '200':
         description: OK
@@ -140,7 +140,7 @@
         schema:
           type: array
           items:
-            $ref: '#/definitions/device'
+            $ref: ./definitions.yaml#/device
     responses:
       '200':
         description: OK
@@ -175,7 +175,7 @@
         schema:
           type: array
           items:
-            $ref: '#/definitions/employee'
+            $ref: ./definitions.yaml#/employee
     responses:
       '200':
         description: OK
@@ -210,7 +210,7 @@
         schema:
           type: array
           items:
-            $ref: '#/definitions/store'
+            $ref: ./definitions.yaml#/store
     responses:
       '200':
         description: OK
@@ -262,7 +262,7 @@
         schema:
           type: array
           items:
-            $ref: '#/definitions/product'
+            $ref: ./definitions.yaml#/product
         headers:
           X-Total-Items-Count:
             description: |
@@ -306,7 +306,7 @@
         schema:
           type: array
           items:
-            $ref: '#/definitions/product'
+            $ref: ./definitions.yaml#/product
     responses:
       '200':
         description: OK
@@ -344,7 +344,7 @@
         schema:
           type: array
           items:
-            $ref: '#/definitions/document'
+            $ref: ./definitions.yaml#/document
     responses:
       '200':
         description: OK
@@ -368,7 +368,7 @@
     responses:
       '200':
         schema:
-          $ref: '#/definitions/commodity'
+          $ref: ./definitions.yaml#/commodity
         description: OK
 /api/v1/receipt:
   post:
@@ -386,7 +386,7 @@
         schema:
           type: array
           items:
-            $ref: '#/definitions/receipt'
+            $ref: ./definitions.yaml#/receipt
     responses:
       '200':
         description: OK
