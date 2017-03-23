@@ -923,7 +923,7 @@ definitions:
       transactions:
         type: array
         items:
-          $ref: '#/transaction'
+          $ref: '#/definitions/transaction'
   transaction:
     type: object
     properties:
