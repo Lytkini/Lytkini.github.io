@@ -1,7 +1,47 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+  <head>
+    <title>API Эвотор</title>
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+    <link rel="stylesheet" href="main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+  </head>
+  <body>
+	<nav>
+	  <header> <a href="/docs"><img alt="API Эвотор" width="152" height="45" src="images/logo.svg"></a> </header>
+      <ul id="links_container">
+      </ul>
+    </nav>
+    <redoc scroll-y-offset="body > nav"></redoc>
+    <script src="https://rebilly.github.io/ReDoc/releases/latest/redoc.min.js"> </script>
+	<script>
+      var apis = [
+        {
+          name: 'REST API облака Эвотор',
+          url: 'https://api.evotor.ru/docs/evotor-rest-api.yaml'
+        },
+        {
+          name: 'Протокол исходящих запросов',
+          url: 'https://api.evotor.ru/docs/evotor-callbacks.yaml'
+        }
+      ];
+
+      Redoc.init(apis[0].url);
+
+      function onClick() {
+        var url = this.getAttribute('data-link');
+        Redoc.init(url);
+      }
+
+      var $list = document.getElementById('links_container');
+      apis.forEach(function(api) {
+        var $listitem = document.createElement('li');
+        $listitem.setAttribute('data-link', api.url);
+        $listitem.innerText = api.name;
+        $listitem.addEventListener('click', onClick);
+        $list.appendChild($listitem);
+      });
+    </script>
+  </body>
 </html>
