@@ -27,7 +27,7 @@ consumes:
 paths:
   $ref: ./evotorCallbacks/paths.yaml
 parameters:
-  $ref: ./evotorCallbacks/paths.yaml
+  $ref: ./evotorCallbacks/parameters.yaml
 definitions:
   registerFormData:
     type: object
