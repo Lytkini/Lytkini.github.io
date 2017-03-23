@@ -1,6 +1,6 @@
 swagger: '2.0'
 info:
-  $ref: ./evotorRestAoi/info.yaml
+  $ref: ./evotorRestApi/info.yaml
 tags:
   - name: Сущности пользователя Эвотор
     description:
