@@ -179,5 +179,4 @@
        schema:
          title: Массив документов
          type: array
-         items:
-           $ref: ./definitions.yaml#/document'
+         
