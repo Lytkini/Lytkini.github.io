@@ -9,13 +9,15 @@
    parameters:
      - $ref: ./parameters.yaml#/auth
    responses:
-     '404':
-       $ref: ./responses.yaml#/404
-       schema:
-         title: Список магазинов
-         type: array
-         items:
-           $ref: ./definitions.yaml#/store
+     -'200':
+        description: OK
+        schema:
+          title: Список магазинов
+          type: array
+          items:
+            $ref: ./definitions.yaml#/store
+     -'404':
+        $ref: ./responses.yaml#/404
 /api/v1/inventories/employees/search:
  x-summary: Получить список сотрудников
  get:
