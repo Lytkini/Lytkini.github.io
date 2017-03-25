@@ -8,12 +8,11 @@
          description: Массив объектов с информацией об ошибке.
          type: array
          items:
-           type: object
-           required:
-             - code
-           properties:
+            type: object
+            properties:
               code:
                 description: Код ошибки в облаке Эвотор.
+                required: true
                 type: integer
                 default: 2006
               reason:
