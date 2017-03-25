@@ -1,17 +1,15 @@
 4002006:
   description: |
     Нельзя принять документы для смарт-терминала. Смарт-терминал не активен в стороннем сервисе. Идентификатор deviceUuid смарт-терминала можно найти в теле документов в рамках магазина (storeUuid).
-  type: object
-  required:
-    - code
-  properties:
-    errors:
-      type: array
+  schema:
+    type: object
+    items:
+      title: "errors"
       description: |
         Массив объектов с информацией об ошибке.
-      pattern: >-
-        ^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$
-      items:
+      required:
+        - code
+      properties:
         code:
           required: true
           type: number
