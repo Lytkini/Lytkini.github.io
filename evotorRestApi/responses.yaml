@@ -13,6 +13,7 @@
               code:
                 description: Код ошибки в облаке Эвотор.
                 type: integer
+                required: true
                 default: 2006
               reason:
                 description: Причина возникновения ошибки.
