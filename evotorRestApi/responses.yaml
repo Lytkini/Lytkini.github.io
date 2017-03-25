@@ -30,60 +30,267 @@
 4002001:
   description: |
     Синтаксическая ошибка в запросе.
-400_2002:
+  schema:
+    type: object
+    properties:
+      errors:
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         items:
+            type: object
+            properties:
+              code:
+                description: Код ошибки в облаке Эвотор.
+                required: true
+                type: integer
+                default: 2001
+4002002:
   description: |
     В запросе отсутствует обязательное поле или присутствуют неизвестные поля.
-400_2003:
+  schema:
+    type: object
+    properties:
+      errors:
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         items:
+            type: object
+            properties:
+              code:
+                description: Код ошибки в облаке Эвотор.
+                required: true
+                type: integer
+                default: 2006
+              reason:
+                description: Причина возникновения ошибки.
+                type: string
+                default: "disabled"
+              subject:
+                description: Идентификатор устройства в облаке Эвотор.
+                type: string
+                default: "deviceUuid"
+              value:
+                description: Числовой идентификатор устройства в облаке Эвотор.
+                type: string
+                default: "{deviceUuid_value}"
+4002003:
   description: |
     Параметры запроса содержат недопустимые значения.
-401_1001:
+  schema:
+    type: object
+    properties:
+      errors:
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         items:
+            type: object
+            properties:
+              code:
+                description: Код ошибки в облаке Эвотор.
+                required: true
+                type: integer
+                default: 2003
+              reason:
+                description: Причина возникновения ошибки.
+                type: string
+                default: "incorrect"
+              subject:
+                description: Идентификатор устройства в облаке Эвотор.
+                type: string
+                default: "deviceUuid"
+              value:
+                description: Числовой идентификатор устройства в облаке Эвотор.
+                type: string
+                default: "null"
+4011001:
   description: |
     Неверный токен облака Эвотор.
-401_1002:
+  schema:
+    type: object
+    properties:
+      errors:
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         items:
+            type: object
+            properties:
+              code:
+                description: Код ошибки в облаке Эвотор.
+                required: true
+                type: integer
+                default: 1001
+4011002:
   description: |
     Неверный токен пользователя.
-401_1003:
+  schema:
+    type: object
+    properties:
+      errors:
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         items:
+            type: object
+            properties:
+              code:
+                description: Код ошибки в облаке Эвотор.
+                required: true
+                type: integer
+                default: 1002
+4011003:
   description: |
     Истёк срок действия токена пользователя.
-401_1006:
+  schema:
+    type: object
+    properties:
+      errors:
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         items:
+            type: object
+            properties:
+              code:
+                description: Код ошибки в облаке Эвотор.
+                required: true
+                type: integer
+                default: 1003
+4011006:
   description: |
     При авторизации в стороннем сервисе, пользователь указал неверные данные.
-402_1004:
+  schema:
+    type: object
+    properties:
+      errors:
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         items:
+            type: object
+            properties:
+              code:
+                description: Код ошибки в облаке Эвотор.
+                required: true
+                type: integer
+                default: 1006
+4021004:
   description: |
     Подписка для пользователя не активна. Требуется оплата.
+  schema:
+    type: object
+    properties:
+      errors:
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         items:
+            type: object
+            properties:
+              code:
+                description: Код ошибки в облаке Эвотор.
+                required: true
+                type: integer
+                default: 1004
+              reason:
+                description: Причина возникновения ошибки.
+                type: string
+                default: "payment required"
+              subject:
+                description: Идентификатор устройства в облаке Эвотор.
+                type: string
+                default: "uesrUid"
+              value:
+                description: Числовой идентификатор устройства в облаке Эвотор.
+                type: string
+                default: "01-000000000015463"
 404:
   description: |
     Отсутствует указанный ресурс
-  schema:
-    title: Список магазинов
-    type: array
-    items:
-      type: object
-      required:
-        - uuid
-        - name
-      properties:
-        uuid:
-          type: string
-          description: >-
-            Уникальный идентификатор магазина в платформе Эвотор, в формате uuid4. Не может содержать пустую строку или принимать значение `null`.
-          pattern: >-
-            ^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$
-        name:
-          type: string
-          description: Имя магазина в платформе Эвотор. Не может содержать пустую строку или принимать значение `null`.
-        address:
-          type: string
-          description: Адрес магазина в платформе Эвотор.
-token:
+4051005:
   description: |
     Терминал не активен в рамках текущей подписки. Активируйте терминал и попробуйте ещё раз.
-405_1007:
+  schema:
+    type: object
+    properties:
+      errors:
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         items:
+            type: object
+            properties:
+              code:
+                description: Код ошибки в облаке Эвотор.
+                required: true
+                type: integer
+                default: 1005
+              reason:
+                description: Причина возникновения ошибки.
+                type: string
+                default: "not allowed"
+              subject:
+                description: Идентификатор устройства в облаке Эвотор.
+                type: string
+                default: "deviceUuid"
+              value:
+                description: Числовой идентификатор устройства в облаке Эвотор.
+                type: string
+                default: "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f"
+4051007:
   description: |
     Лицензированных терминалов недостаточно для активации в рамках тарифа.
-409_2004:
+  schema:
+    type: object
+    properties:
+      errors:
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         items:
+            type: object
+            properties:
+              code:
+                description: Код ошибки в облаке Эвотор.
+                required: true
+                type: integer
+                default: 1007
+              reason:
+                description: Причина возникновения ошибки.
+                type: string
+                default: "license overhead"
+              subject:
+                description: Идентификатор устройства в облаке Эвотор.
+                type: string
+                default: "deviceUuid"
+              value:
+                description: Числовой идентификатор устройства в облаке Эвотор.
+                type: string
+                default: "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f"
+4092004:
   description: |
     Ассоциация невозможна. В сотороннем сервсие userUuid ассоциирован с другой учётной записью пользователя платформы Эвотор на стороне партнера.
-409_2005:
+  schema:
+    type: object
+    properties:
+      errors:
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         items:
+            type: object
+            properties:
+              code:
+                description: Код ошибки в облаке Эвотор.
+                required: true
+                type: integer
+                default: 2004
+4092005:
   description: |
     Регистрация невозможна. В стороннем сервисе уже зарегистрирована учётная запись с указанными данными.
+  schema:
+    type: object
+    properties:
+      errors:
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         items:
+            type: object
+            properties:
+              code:
+                description: Код ошибки в облаке Эвотор.
+                required: true
+                type: integer
+                default: 2005
