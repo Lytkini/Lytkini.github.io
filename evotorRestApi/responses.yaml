@@ -6,9 +6,9 @@
     properties:
       errors:
         type: array
-      description: |
+        description: |
         Массив объектов с информацией об ошибке.
-      items:
+        items:
           code:
             required: true
             type: number
