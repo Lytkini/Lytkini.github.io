@@ -6,8 +6,7 @@
     properties:
       errors:
         type: array
-        description: |
-        Массив объектов с информацией об ошибке.
+        description: Массив объектов с информацией об ошибке.
         items:
           code:
             required: true
