@@ -5,27 +5,27 @@
     type: object
     properties:
       errors:
-        type: array
-        description: Массив объектов с информацией об ошибке.
-        items:
-          type: object
-        properties:
-          code:
-            type: number
-            default: 2006
-            description: Код ошибки в облаке Эвотор.
-          reason:
-            type: string
-            default: "disabled"
-            description: Причина возникновения ошибки.
-          subject:
-            type: string
-            default: "deviceUuid"
-            description: Идентификатор устройства в облаке Эвотор.
-          value:
-            type: string
-            default: "{deviceUuid_value}"
-            description: Числовой идентификатор устройства в облаке Эвотор.
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         items:
+           type: object
+           properties:
+              code:
+                description: Код ошибки в облаке Эвотор.
+                type: integer
+                default: 2006
+              reason:
+                description: Причина возникновения ошибки.
+                type: string
+                default: "disabled"
+              subject:
+                description: Идентификатор устройства в облаке Эвотор.
+                type: string
+                default: "deviceUuid"
+              value:
+                description: Числовой идентификатор устройства в облаке Эвотор.
+                type: string
+                default: "{deviceUuid_value}"
 4002001:
   description: |
     Синтаксическая ошибка в запросе.
