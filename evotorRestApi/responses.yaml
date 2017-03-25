@@ -1,6 +1,34 @@
-400_2006:
+4002006:
   description: |
     Нельзя принять документы для смарт-терминала. Смарт-терминал не активен в стороннем сервисе. Идентификатор deviceUuid смарт-терминала можно найти в теле документов в рамках магазина (storeUuid).
+  type: object
+  required:
+    - code
+  properties:
+    errors:
+      type: array
+      description: |
+        Массив объектов с информацией об ошибке.
+      pattern: >-
+        ^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$
+      items:
+        code:
+          required: true
+          type: number
+          default: 2006
+          description: Код ошибки в облаке Эвотор.
+        reason:
+          type: string
+          default: "disabled"
+          description: Причина возникновения ошибки.
+        subject:
+          type: string
+          default: "deviceUuid"
+          description: Идентификатор устройства в облаке Эвотор.
+        value:
+          type: string
+          default: "{deviceUuid_value}"
+          description: Числовой идентификатор устройства в облаке Эвотор.
 4002001:
   description: |
     Синтаксическая ошибка в запросе.
@@ -27,7 +55,7 @@
     Подписка для пользователя не активна. Требуется оплата.
 404:
   description: |
-    Отсутствует указанный ресурс.|
+    Отсутствует указанный ресурс
   schema:
     title: Список магазинов
     type: array
