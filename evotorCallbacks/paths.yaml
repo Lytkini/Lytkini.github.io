@@ -53,7 +53,7 @@
       '404':
         $ref: ../responses.yaml#/4011001
       '405':
-        $ref: ../responses.yaml#/4001004
+        $ref: ../responses.yaml#/4021004
       '406':
         $ref: ../responses.yaml#/404
       '407':
@@ -107,7 +107,7 @@
       '404':
         $ref: ../responses.yaml#/4011006
       '405':
-        $ref: ../responses.yaml#/4001004
+        $ref: ../responses.yaml#/4021004
       '406':
         $ref: ../responses.yaml#/404
       '407':
