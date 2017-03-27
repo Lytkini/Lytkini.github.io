@@ -50,7 +50,7 @@
         $ref: ../responses.yaml#/4002002
       '403':
         $ref: ../responses.yaml#/4011006
-      '404':
+      '410':
         $ref: ../responses.yaml#/4011001
       '405':
         $ref: ../responses.yaml#/4021004
