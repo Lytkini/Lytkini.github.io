@@ -44,7 +44,7 @@
               default: toaWaep4chou7ahkoogiu9Iusaht9ima
       '999':
         $ref: ../responses.yaml#/2004
-      '1000':
+      '404':
         $ref: ../responses.yaml#/4002001
       '402':
         $ref: ../responses.yaml#/4002002
