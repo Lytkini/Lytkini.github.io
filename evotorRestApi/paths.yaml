@@ -19,9 +19,9 @@
      '404':
         $ref: ../responses.yaml#/404
      '405':
-        $ref: ../responses.yaml#/4051007
+        $ref: ../responses.yaml#/405
      '400':
-        $ref: ../responses.yaml#/4002006
+        $ref: ../responses.yaml#/400
 /api/v1/inventories/employees/search:
  x-summary: Получить список сотрудников
  get:
