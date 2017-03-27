@@ -44,8 +44,8 @@
               default: toaWaep4chou7ahkoogiu9Iusaht9ima
       '409':
         $ref: ../responses.yaml#/409
-      '400':
-        $ref: ../responses.yaml#/400
+      '403':
+        $ref: ../responses.yaml#/402
       '401':
         $ref: ../responses.yaml#/401
       '402':
@@ -94,8 +94,8 @@
               default: toaWaep4chou7ahkoogiu9Iusaht9ima
       '409':
         $ref: ../responses.yaml#/409
-      '400':
-        $ref: ../responses.yaml#/400
+      '403':
+        $ref: ../responses.yaml#/402
       '401':
         $ref: ../responses.yaml#/401
       '402':
