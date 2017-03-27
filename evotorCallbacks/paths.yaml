@@ -44,6 +44,20 @@
               default: toaWaep4chou7ahkoogiu9Iusaht9ima
       '409':
         $ref: ../responses.yaml#/4092004
+      '400':
+        $ref: ../responses.yaml#/4002001
+      '400':
+        $ref: ../responses.yaml#/4002002
+      '401':
+        $ref: ../responses.yaml#/4011001
+      '400':
+        $ref: ../responses.yaml#/4001006
+      '402':
+        $ref: ../responses.yaml#/4001004
+      '404':
+        $ref: ../responses.yaml#/404
+      '405':
+        $ref: ../responses.yaml#/4051005
 /api/v1/user/create:
   post:
     tags:
@@ -82,6 +96,22 @@
               type: string
               maxLength: 128
               default: toaWaep4chou7ahkoogiu9Iusaht9ima
+      '409':
+        $ref: ../responses.yaml#/4092005
+      '400':
+        $ref: ../responses.yaml#/4002001
+      '400':
+        $ref: ../responses.yaml#/4002002
+      '401':
+        $ref: ../responses.yaml#/4011001
+      '400':
+        $ref: ../responses.yaml#/4001006
+      '402':
+        $ref: ../responses.yaml#/4001004
+      '404':
+        $ref: ../responses.yaml#/404
+      '405':
+        $ref: ../responses.yaml#/4051005
 /api/v1/user/tariff:
   post:
     tags:
