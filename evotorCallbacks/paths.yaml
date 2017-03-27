@@ -42,8 +42,8 @@
               type: string
               maxLength: 128
               default: toaWaep4chou7ahkoogiu9Iusaht9ima
-        '409':
-          $ref: ../responses.yaml#/4092004
+      '409':
+        $ref: ../responses.yaml#/4092004
 /api/v1/user/create:
   post:
     tags:
