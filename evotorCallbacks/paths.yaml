@@ -42,22 +42,18 @@
               type: string
               maxLength: 128
               default: toaWaep4chou7ahkoogiu9Iusaht9ima
-      '511':
-        $ref: ../responses.yaml#/2004
-      '404':
-        $ref: ../responses.yaml#/4002001
+      '409':
+        $ref: ../responses.yaml#/409
+      '400':
+        $ref: ../responses.yaml#/400
+      '401':
+        $ref: ../responses.yaml#/401
       '402':
-        $ref: ../responses.yaml#/4002002
-      '403':
-        $ref: ../responses.yaml#/4011006
-      '410':
-        $ref: ../responses.yaml#/4011001
-      '405':
-        $ref: ../responses.yaml#/4021004
-      '406':
+        $ref: ../responses.yaml#/402
+      '404':
         $ref: ../responses.yaml#/404
-      '407':
-        $ref: ../responses.yaml#/4051005
+      '405':
+        $ref: ../responses.yaml#/405
 /api/v1/user/create:
   post:
     tags:
@@ -97,21 +93,17 @@
               maxLength: 128
               default: toaWaep4chou7ahkoogiu9Iusaht9ima
       '409':
-        $ref: ../responses.yaml#/4092005
+        $ref: ../responses.yaml#/409
+      '400':
+        $ref: ../responses.yaml#/400
       '401':
-        $ref: ../responses.yaml#/4002001
+        $ref: ../responses.yaml#/401
       '402':
-        $ref: ../responses.yaml#/4002002
-      '403':
-        $ref: ../responses.yaml#/4011001
+        $ref: ../responses.yaml#/402
       '404':
-        $ref: ../responses.yaml#/4011006
-      '405':
-        $ref: ../responses.yaml#/4021004
-      '406':
         $ref: ../responses.yaml#/404
-      '407':
-        $ref: ../responses.yaml#/4051005
+      '405':
+        $ref: ../responses.yaml#/405
 /api/v1/user/tariff:
   post:
     tags:
