@@ -44,19 +44,19 @@
               default: toaWaep4chou7ahkoogiu9Iusaht9ima
       '409':
         $ref: ../responses.yaml#/4092004
-      '400':
-        $ref: ../responses.yaml#/4002001
-      '400':
-        $ref: ../responses.yaml#/4002002
       '401':
-        $ref: ../responses.yaml#/4011001
-      '400':
-        $ref: ../responses.yaml#/4001006
+        $ref: ../responses.yaml#/4002001
       '402':
-        $ref: ../responses.yaml#/4001004
+        $ref: ../responses.yaml#/4002002
+      '403':
+        $ref: ../responses.yaml#/4001006
       '404':
-        $ref: ../responses.yaml#/404
+        $ref: ../responses.yaml#/4011001
       '405':
+        $ref: ../responses.yaml#/4001004
+      '406':
+        $ref: ../responses.yaml#/404
+      '407':
         $ref: ../responses.yaml#/4051005
 /api/v1/user/create:
   post:
@@ -98,19 +98,19 @@
               default: toaWaep4chou7ahkoogiu9Iusaht9ima
       '409':
         $ref: ../responses.yaml#/4092005
-      '400':
-        $ref: ../responses.yaml#/4002001
-      '400':
-        $ref: ../responses.yaml#/4002002
       '401':
-        $ref: ../responses.yaml#/4011001
-      '400':
-        $ref: ../responses.yaml#/4001006
+        $ref: ../responses.yaml#/4002001
       '402':
-        $ref: ../responses.yaml#/4001004
+        $ref: ../responses.yaml#/4002002
+      '403':
+        $ref: ../responses.yaml#/4011001
       '404':
-        $ref: ../responses.yaml#/404
+        $ref: ../responses.yaml#/4001006
       '405':
+        $ref: ../responses.yaml#/4001004
+      '406':
+        $ref: ../responses.yaml#/404
+      '407':
         $ref: ../responses.yaml#/4051005
 /api/v1/user/tariff:
   post:
