@@ -47,7 +47,9 @@
       '400':
         $ref: ../responses.yaml#/4002001
       '400':
-       $ref: ../responses.yaml#/4002002
+        $ref: ../responses.yaml#/4002002
+      '401':
+        $ref: ../responses.yaml#/4011001
       '400':
         $ref: ../responses.yaml#/4001006
       '402':
