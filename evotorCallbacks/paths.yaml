@@ -42,9 +42,9 @@
               type: string
               maxLength: 128
               default: toaWaep4chou7ahkoogiu9Iusaht9ima
-      '404':
+      '999':
         $ref: ../responses.yaml#/2004
-      '401':
+      '1000':
         $ref: ../responses.yaml#/4002001
       '402':
         $ref: ../responses.yaml#/4002002
