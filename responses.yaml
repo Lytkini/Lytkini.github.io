@@ -24,37 +24,34 @@
     type: object
     properties:
       errors:
-         description: Массив объектов с информацией об ошибке.
-         type: array
-         items:
-            type: object
-            required:
-              - code
-            properties:
-              code:
-                description: |
-                  Код ошибки в облаке Эвотор. Возможные значения:
-                    * 2001 - cинтаксическая ошибка в запросе.
-                    * 2002 - в запросе отсутствует обязательное поле и / или присутствуют неизвестные поля.
-                type: integer
-                example: 2002
-              reason:
-                description: Причина возникновения ошибки.
-                type: string
-                example: "missing"
-              subject:
-                description: Название неизвестного или отсутствующего поля.
-                type: string
-                example: "deviceUuid"
-            examples:
-              application/json:
-                errors:
-                  - code: 2002
-                    reason: missing
-                    subject: deviceUuid
-                  - code: 2002
-                    reason: unexpected
-                    subject: deviceUuid
+        description: Массив объектов с информацией об ошибке.
+        type: array
+        items:
+          type: object
+          required:
+            - code
+          properties:
+            code:
+              description: |
+                Код ошибки в облаке Эвотор. Возможные значения:
+                  * 2001 - cинтаксическая ошибка в запросе.
+                  * 2002 - в запросе отсутствует обязательное поле и / или присутствуют неизвестные поля.
+              type: integer
+            reason:
+              description: Причина возникновения ошибки.
+              type: string
+            subject:
+              description: Название неизвестного или отсутствующего поля.
+              type: string
+        examples:
+          application/json:
+            errors:
+              - code: 2002
+                reason: missing
+                subject: deviceUuid
+              - code: 2002
+                reason: unexpected
+                subject: deviceUuid
 40020012003:
   description: |
     Ошибка в запросе
