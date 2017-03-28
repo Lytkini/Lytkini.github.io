@@ -75,7 +75,7 @@
                 type: string
                 example: "deviceUuid"
               value: Значение.
-               example: null
+                example: null
 4011001:
   description: |
     Неверный токен облака Эвотор
