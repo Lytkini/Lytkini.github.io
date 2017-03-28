@@ -72,8 +72,7 @@
                 type: string
                 example: "incorrect"
               subject: Наименование поля.
-                 type: string
-                 example: "deviceUuid"
+                example: "deviceUuid"
               value: Значение.
                 example: null
 4011001:
