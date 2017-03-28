@@ -71,9 +71,12 @@
                 description: Причина возникновения ошибки.
                 type: string
                 example: "incorrect"
-              subject: Наименование поля.
+              subject:
+                description: Наименование поля
+                type: string
                 example: "deviceUuid"
-              value: Значение.
+              value:
+                description: Значение.
                 example: null
 4011001:
   description: |
