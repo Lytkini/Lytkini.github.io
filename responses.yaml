@@ -1,6 +1,6 @@
 4002001:
   description: |
-    Синтаксическая ошибка в запросе.
+    Ошибка в запросе.
   schema:
     type: object
     properties:
@@ -14,7 +14,7 @@
             properties:
               code:
                 description: |
-                  Код ошибки в облаке Эвотор - 2001.
+                  Синтаксическая ошибка в запросе. Код ошибки в облаке Эвотор - 2001.
                 type: integer
                 default: 2001
 40020012002:
@@ -46,6 +46,14 @@
                 description: Название неизвестного или отсутствующего поля.
                 type: string
                 example: "deviceUuid"
+  examples:
+    errors:
+      - code: 2002
+        reason: missing
+        subject: deviceUuid
+      - code: 2002
+        reason: unexpected
+        subject: deviceUuid
 40020012003:
   description: |
     Ошибка в запросе
