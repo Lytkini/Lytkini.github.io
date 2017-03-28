@@ -1,7 +1,4 @@
-4002006:
-  description: |
-    Нельзя принять документы для смарт-терминала. Смарт-терминал не активен в стороннем сервисе. Идентификатор deviceUuid смарт-терминала можно найти в теле документов в рамках магазина (storeUuid).
-400:
+4002001:
   description: |
     Синтаксическая ошибка в запросе.
   schema:
@@ -12,27 +9,54 @@
          type: array
          items:
             type: object
+            required:
+              - code
             properties:
               code:
                 description: |
                   Код ошибки в облаке Эвотор. Возможны следующие значения
-                required: true
+                  * 2001 - cинтаксическая ошибка в запросе.
                 type: integer
-                properties:
-                  2001: Синтаксическая ошибка в запросе. Может вернуться при запросе любого ресурса. Может вернуться при запросе любого ресурса.
-                  2002: В запросе отсутствует обязательное поле и / или присутствуют неизвестные поля. Может вернуться при запросе ресурсов /create, /verify, /tariff и /token.
-                  2003:
-                  reason:
-                    description: Причина возникновения ошибки. Возможные значения "disabled" (код ошибки 2002) или "incorrect" (код ошибки 2003). Возвращается если код ошибки 2002.
-                    type: string
-                    default: "disabled"
-                  subject:
-                    description: Идентификатор устройства в облаке Эвотор. Возвращается если код ошибки 2002.
-                    type: string
-                  value:
-                    description: Числовой идентификатор устройства в облаке Эвотор. Возможные значения "{deviceUuid_value}" (код ошибки 2002) или "null" (код ошибки 2003) Возвращается если код ошибки 2002.
-                    type: string
-401:
+40020012002:
+  description: |
+    Синтаксическая ошибка в запросе.
+  schema:
+    type: object
+    properties:
+      errors:
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         items:
+            type: object
+            required:
+              - code
+            properties:
+              code:
+                description: |
+                  Код ошибки в облаке Эвотор. Возможны следующие значения:
+                    * 2001 - cинтаксическая ошибка в запросе.
+                    * 2002 - В запросе отсутствует обязательное поле и / или присутствуют неизвестные поля.
+40020012003:
+  description: |
+    Синтаксическая ошибка в запросе.
+  schema:
+    type: object
+    properties:
+      errors:
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         items:
+            type: object
+            required:
+              - code
+            properties:
+              code:
+                description: |
+                  Код ошибки в облаке Эвотор. Возможны следующие значения:
+                  * 2001 - cинтаксическая ошибка в запросе.
+                  * 2003 - параметры запроса содержат недопустимые значения.
+                type: integer
+4011001:
   description: |
     Неверный токен облака Эвотор.
   schema:
@@ -49,10 +73,48 @@
               code:
                 description: |
                   Код ошибки в облаке Эвотор. Возможные значения:
-                  * 1001 - возникает при запросе ресурсов /create, /verify, /tariff и /token.
-                  * 1002 - возникает при запросе любых ресурсов кроме /create, /verify, /tariff и /token.
-                  * 1003 - возникает при запросе любых ресурсов кроме /create, /verify, /tariff и /token.
-                  * 1006 - возникает при запросе ресурса /verify.
+                  * 1001 - неверный токен облака Эвотор.
+                type: integer
+40110011006:
+  description: |
+    Неверный токен облака Эвотор.
+  schema:
+    type: object
+    properties:
+      errors:
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         items:
+            type: object
+            required:
+              - code
+            properties:
+              code:
+                description: |
+                  Код ошибки в облаке Эвотор. Возможные значения:
+                  * 1001 - неверный токен облака Эвотор.
+                  * 1006 - При авторизации в стороннем сервисе, пользователь указал неверные данные.
+                required: true
+                type: integer
+40110021003:
+  description: |
+    Неверный токен облака Эвотор.
+  schema:
+    type: object
+    properties:
+      errors:
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         items:
+            type: object
+            required:
+              - code
+            properties:
+              code:
+                description: |
+                  Код ошибки в облаке Эвотор. Возможные значения:
+                  * 1002 - неверный токен пользователя.
+                  * 1003 - истёк срок действия токена пользователя.
                 required: true
                 type: integer
 402:
@@ -66,9 +128,11 @@
          type: array
          items:
             type: object
+            required:
+              - code
             properties:
               code:
-                description: Код ошибки в облаке Эвотор. Ошибка возникает при запросе любого ресурса.
+                description: Код ошибки в облаке Эвотор. Подписка неактивна, требуется оплата.
                 required: true
                 type: integer
                 default: 1004
@@ -87,7 +151,7 @@
 404:
   description: |
     Отсутствует указанный ресурс
-405:
+40510051007:
   description: |
     Терминал не активен в рамках текущей подписки. Активируйте терминал и попробуйте ещё раз.
   schema:
@@ -98,13 +162,46 @@
          type: array
          items:
             type: object
+            required:
+              - code
             properties:
               code:
                 description: |
                   Код ошибки в облаке Эвотор. Возможны следующие коды ошибок:
-                  * 1005 - возникает при запросе любого ресурса. На устройство не распространяется лицензия.
-                  * 1007 - возникает при запросе ресурса /tariff. Лицензированных терминалов недостаточно для активации в рамках тарифа.
-                required: true
+                  * 1005 - на устройство не распространяется лицензия.
+                  * 1007 - лицензированных терминалов недостаточно для активации в рамках тарифа.
+                type: integer
+                default: 1007
+              reason:
+                description: Причина возникновения ошибки. Возможны значения "not allowed" (код ошибки 1005) и "license overhead" (код ошибки 1007).
+                type: string
+                default: "license overhead"
+              subject:
+                description: Идентификатор устройства в облаке Эвотор.
+                type: string
+                default: "deviceUuid"
+              value:
+                description: Числовой идентификатор устройства в облаке Эвотор.
+                type: string
+                default: "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f"
+4051005:
+  description: |
+    Терминал не активен в рамках текущей подписки. Активируйте терминал и попробуйте ещё раз.
+  schema:
+    type: object
+    properties:
+      errors:
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         items:
+            type: object
+            required:
+              - code
+            properties:
+              code:
+                description: |
+                  Код ошибки в облаке Эвотор. Возможны следующие коды ошибок:
+                  * 1005 - на устройство не распространяется лицензия.
                 type: integer
                 default: 1005
               reason:
@@ -119,7 +216,7 @@
                 description: Числовой идентификатор устройства в облаке Эвотор.
                 type: string
                 default: "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f"
-409:
+4092004:
   description: |
     Ассоциация невозможна. В сотороннем сервсие userUuid ассоциирован с другой учётной записью пользователя платформы Эвотор на стороне партнера.
   schema:
@@ -128,14 +225,32 @@
       errors:
          description: Массив объектов с информацией об ошибке.
          type: array
+         required:
+           -code
          items:
             type: object
             properties:
               code:
-                description: |
-                  Код ошибки в облаке Эвотор. Возможны следующие значения:
-                  * 2004 - Ассоциация невозможна. В сотороннем сервсие userUuid ассоциирован с другой учётной записью пользователя платформы Эвотор на стороне партнера.
-                  * 2005 - Регистрация невозможна. В стороннем сервисе уже зарегистрирована учётная запись с указанными данными.
+                description: Код ошибки в облаке Эвотор.
                 required: true
                 type: integer
                 default: 2004
+4092005:
+  description: |
+    Регистрация невозможна. В стороннем сервисе уже зарегистрирована учётная запись с указанными данными.
+  schema:
+    type: object
+    properties:
+      errors:
+         description: Массив объектов с информацией об ошибке.
+         type: array
+         required:
+           - code
+         items:
+            type: object
+            properties:
+              code:
+                description: Код ошибки в облаке Эвотор.
+                required: true
+                type: integer
+                default: 2005
