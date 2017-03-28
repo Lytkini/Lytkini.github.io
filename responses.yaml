@@ -234,7 +234,7 @@
                 type: string
                 default: "deviceUuid"
               value:
-                description: Значение идентификатор устройства в облаке Эвотор.
+                description: Значение идентификатора устройства в облаке Эвотор.
                 type: string
                 example: "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f"
 4092004:
