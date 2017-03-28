@@ -36,6 +36,7 @@
                   Код ошибки в облаке Эвотор. Возможны следующие значения:
                     * 2001 - cинтаксическая ошибка в запросе.
                     * 2002 - В запросе отсутствует обязательное поле и / или присутствуют неизвестные поля.
+                type: integer
 40020012003:
   description: |
     Синтаксическая ошибка в запросе.
@@ -94,7 +95,6 @@
                   Код ошибки в облаке Эвотор. Возможные значения:
                   * 1001 - неверный токен облака Эвотор.
                   * 1006 - При авторизации в стороннем сервисе, пользователь указал неверные данные.
-                required: true
                 type: integer
 40110021003:
   description: |
@@ -115,7 +115,6 @@
                   Код ошибки в облаке Эвотор. Возможные значения:
                   * 1002 - неверный токен пользователя.
                   * 1003 - истёк срок действия токена пользователя.
-                required: true
                 type: integer
 402:
   description: |
@@ -132,22 +131,22 @@
               - code
             properties:
               code:
-                description: Код ошибки в облаке Эвотор. Подписка неактивна, требуется оплата.
-                required: true
+                description: |
+                  Код ошибки в облаке Эвотор. Подписка неактивна, требуется оплата.
                 type: integer
-                default: 1004
+                example: 1004
               reason:
                 description: Причина возникновения ошибки.
                 type: string
-                default: "payment required"
+                example: "payment required"
               subject:
                 description: Идентификатор устройства в облаке Эвотор.
                 type: string
-                default: "userUid"
+                example: "userUid"
               value:
                 description: Числовой идентификатор устройства в облаке Эвотор.
                 type: string
-                default: "01-000000000015463"
+                example: "01-000000000015463"
 404:
   description: |
     Отсутствует указанный ресурс
@@ -171,19 +170,19 @@
                   * 1005 - на устройство не распространяется лицензия.
                   * 1007 - лицензированных терминалов недостаточно для активации в рамках тарифа.
                 type: integer
-                default: 1007
+                example: 1007
               reason:
                 description: Причина возникновения ошибки. Возможны значения "not allowed" (код ошибки 1005) и "license overhead" (код ошибки 1007).
                 type: string
-                default: "license overhead"
+                example: "license overhead"
               subject:
                 description: Идентификатор устройства в облаке Эвотор.
                 type: string
-                default: "deviceUuid"
+                example: "deviceUuid"
               value:
                 description: Числовой идентификатор устройства в облаке Эвотор.
                 type: string
-                default: "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f"
+                example: "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f"
 4051005:
   description: |
     Терминал не активен в рамках текущей подписки. Активируйте терминал и попробуйте ещё раз.
@@ -203,19 +202,19 @@
                   Код ошибки в облаке Эвотор. Возможны следующие коды ошибок:
                   * 1005 - на устройство не распространяется лицензия.
                 type: integer
-                default: 1005
+                example: 1005
               reason:
                 description: Причина возникновения ошибки. Возможны значения "not allowed" (код ошибки 1005) и "license overhead" (код ошибки 1007).
                 type: string
-                default: "not allowed"
+                example: "not allowed"
               subject:
                 description: Идентификатор устройства в облаке Эвотор.
                 type: string
-                default: "deviceUuid"
+                example: "deviceUuid"
               value:
                 description: Числовой идентификатор устройства в облаке Эвотор.
                 type: string
-                default: "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f"
+                example: "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f"
 4092004:
   description: |
     Ассоциация невозможна. В сотороннем сервсие userUuid ассоциирован с другой учётной записью пользователя платформы Эвотор на стороне партнера.
@@ -234,7 +233,7 @@
                 description: Код ошибки в облаке Эвотор.
                 required: true
                 type: integer
-                default: 2004
+                example: 2004
 4092005:
   description: |
     Регистрация невозможна. В стороннем сервисе уже зарегистрирована учётная запись с указанными данными.
@@ -253,4 +252,4 @@
                 description: Код ошибки в облаке Эвотор.
                 required: true
                 type: integer
-                default: 2005
+                example: 2005
