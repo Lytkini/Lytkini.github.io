@@ -47,13 +47,14 @@
                 type: string
                 example: "deviceUuid"
   examples:
-    errors:
-      - code: 2002
-        reason: missing
-        subject: deviceUuid
-      - code: 2002
-        reason: unexpected
-        subject: deviceUuid
+    application/json:
+      errors:
+        - code: 2002
+          reason: missing
+          subject: deviceUuid
+        - code: 2002
+          reason: unexpected
+          subject: deviceUuid
 40020012003:
   description: |
     Ошибка в запросе
