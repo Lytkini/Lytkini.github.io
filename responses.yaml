@@ -43,6 +43,8 @@
          type: array
          items:
             type: object
+            required:
+              - code
             properties:
               code:
                 description: |
