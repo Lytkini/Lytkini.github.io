@@ -46,15 +46,15 @@
                 description: Название неизвестного или отсутствующего поля.
                 type: string
                 example: "deviceUuid"
-  examples:
-    application/json:
-      errors:
-        - code: 2002
-          reason: missing
-          subject: deviceUuid
-        - code: 2002
-          reason: unexpected
-          subject: deviceUuid
+            examples:
+              application/json:
+                errors:
+                  - code: 2002
+                    reason: missing
+                    subject: deviceUuid
+                  - code: 2002
+                    reason: unexpected
+                    subject: deviceUuid
 40020012003:
   description: |
     Ошибка в запросе
