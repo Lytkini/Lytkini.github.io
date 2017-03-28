@@ -224,7 +224,7 @@
                 description: |
                   Код ошибки в облаке Эвотор - 1005. На устройство не распространяется лицензия (reason: "not allowed").
                 type: integer
-                example: 1005
+                default: 1005
               reason:
                 description: Причина возникновения ошибки.
                 type: string
