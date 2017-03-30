@@ -5,33 +5,36 @@ registerFormData:
   properties:
     userUuid:
       type: string
-      description: |
-        Уникальный идентификатор пользователя платформы Эвотор.
+      description: Уникальный идентификатор пользователя в облаке Эвотор.
       pattern: '^[0-9]{2}-[0-9]{15}$'
       example: 01-000000000000001
     username:
       type: string
-      description: Имя пользователя
+      description: Имя пользователя.
       example: v.pupkin
     password:
       type: string
-      description: Пароль
+      description: Пароль учётной записи.
       example: superpassword
     email:
-      description: E-mail адрес
+      description: Адрес электронной почты (e-mail).
       type: string
       pattern: >-
         ^[а-яА-Яa-zA-Z0-9\_\-\.]+\@[а-яА-Яa-zA-Z0-9\_\-\.]+\.[а-яА-Яa-zA-Z0-9\_\-\.]+$
       example: v.pupkin@pupk.in
     phone:
       type: string
-      description: Номер телефона
+      description: Номер телефона пользователя.
       pattern: '^\+7[0-9]{10}$'
       example: '+79876543210'
     customField:
       type: string
       description: |
-        Дополнительное поле для данных пользователя, которые облако передаёт в сторонний сервис во время авторизации или регистрации пользователя. Название поля характеризует его содержимое. Поле отображается в форме регистрации / авторизации на странице приложения в Магазине приложений. Форма может содержать не более шести полей. Запрещается добавлять поля для данных, которые пользователь может указать в Личном кабинете, после установки приложения.
+        Дополнительное поле для данных пользователя. Название поля характеризует его содержимое. Поле отображается в форме регистрации / авторизации на странице приложения в Магазине приложений. Форма может содержать не более шести полей.
+
+        Облако Эвотор передаёт дополнительные поля в сторонний сервис во время авторизации (`/verify`) или регистрации (`/create`) пользователя.
+
+        > Не добавляйте поля для данных, которые пользователь может указать в Личном кабинете, после установки приложения.
       example: Пример значения
 authorizeFormData:
   type: object
@@ -39,10 +42,7 @@ authorizeFormData:
     - userUuid
   properties:
     userUuid:
-      type: string
-      description: Уникальный идентификатор пользователя платформы Эвотор
-      pattern: '^[0-9]{2}-[0-9]{15}$'
-      example: 01-000000000000001
+      $ref: '#/registerFormData/properties/userUuid'
     username:
       type: string
       description: Имя пользователя
@@ -52,10 +52,7 @@ authorizeFormData:
       description: Пароль
       example: superpassword
     customField:
-      type: string
-      description: |
-        Дополнительное поле для данных пользователя, которые облако передаёт в сторонний сервис во время авторизации или регистрации пользователя. Название поля характеризует его содержимое. Поле отображается в форме регистрации / авторизации на странице приложения в Магазине приложений. Форма может содержать не более шести полей. Запрещается добавлять поля для данных, которые пользователь может указать в Личном кабинете, после установки приложения.
-      example: Пример значения
+      $ref: '#/registerFormData/properties/customField'
 trialStarted:
   type: object
   properties:
@@ -84,121 +81,127 @@ trialStarted:
             - year
           default: day
         userUuid:
-          type: string
-          description: Уникальный идентификатор пользователя платформы Эвотор.
-          pattern: '^[0-9]{2}-[0-9]{15}$'
-          example: 01-000000000000001
+          $ref: '#/registerFormData/properties/userUuid'
         tariffId:
           type: string
           description: Код тарифа, для которого активирован пробный период.
           pattern: '^[a-zA-Z0-9\_\-]+$'
           example: starter
-paymentSuccessed:
-  type: object
-  properties:
-    type:
-      type: string
-      description: |
-        Тип события: `paymentSuccessed`.
-      default: paymentSuccessed
-    date:
-      type: string
-      format: date-time
-      description: Дата и время платежа.
-    data:
-      type: object
+subscriptionCreated:
+  description: Подписка создана.
+  allOf:
+    - $ref: '#/events'
+    - type: object
       properties:
-        amount:
-          type: number
-          format: float
-          description: Размер платежа.
-          example: 999.99
-        currency:
+        subscriptionId:
+          - $ref: '#/subscriptionDefinitions/properties/subscriptionId'
+        userId:
+          - $ref: '#/registerFormData/properties/userUuid'
+        productId:
+          - $ref: ''#/subscriptionDefinitions/properties/productId'
+        planId:
+          - $ref: '#/subscriptionDefinitions/properties/planId'
+        trialPeriodDuration:
           type: string
-          description: Валюта платежа.
-          enum:
-            - RUB
-          default: RUB
-        userUuid:
-          type: string
-          description: Уникальный идентификатор пользователя платформы Эвотор
-          pattern: '^[0-9]{2}-[0-9]{15}$'
-          example: 01-000000000000001
-        tariffId:
-          type: string
-          description: Код оплаченного тарифа.
-          pattern: '^[a-zA-Z0-9\_\-]+$'
-          example: starter
+          description: Срок бесплатного периода.
+        deviceNumber:
+          - $ref: '#/subscriptionDefinitions/properties/deviceNumber'
+        timestamp:
+          - $ref: '#/subscriptionDefinitions/properties/timestamp'
 subscriptionActivated:
-  type: object
-  properties:
-    type:
-      type: string
-      description: |
-        Тип события: `subscriptionActivated`.
-      default: subscriptionActivated
-    date:
-      type: string
-      format: date-time
-      description: Дата и время активации платного периода.
-    data:
-      type: object
+  description: Подписка активирована.
+  allOf:
+    - $ref: '#/events'
+    - type: object
       properties:
-        userUuid:
-          type: string
-          description: Уникальный идентификатор пользователя платформы Эвотор.
-          pattern: '^[0-9]{2}-[0-9]{15}$'
-          example: 01-000000000000001
-        tariffId:
-          type: string
-          description: Код тарифа, для которого активирован платный период.
-          pattern: '^[a-zA-Z0-9\_\-]+$'
-          example: starter
-paymentFailed:
-  type: object
-  properties:
-    type:
-      type: string
-      description: |
-        Тип события: `paymentFailed`.
-      default: paymentFailed
-    date:
-      type: string
-      format: date-time
-      description: Дата и время неудачного платежа.
-    data:
-      type: object
+        subscriptionId:
+          - $ref: '#/subscriptionDefinitions/properties/subscriptionId'
+        nextBillingDate:
+            - $ref: '#/subscriptionDefinitions/properties/nextBillingDate'
+        timestamp:
+          - $ref: '#/subscriptionDefinitions/properties/timestamp'
+subscriptionInvoiced:
+  description: Подписка создана.
+  allOf:
+    - $ref: '#/events'
+    - type: object
       properties:
-        amount:
-          type: number
-          format: float
-          description: Размер платежа.
-          example: 999.99
-        currency:
+        subscriptionId:
+          - $ref: '#/subscriptionDefinitions/properties/subscriptionId'
+        fromDate:
+            type: instant
+            description: Дата начала подписки.
+        tillDate:
+          type: instant
+          description: Дата окончания подписки.
+        sum:
+          type: money
+          description: Сумма платежа.
+        invoiceId:
           type: string
-          description: Валюта платежа.
-          enum:
-            - RUB
-          default: RUB
-        nextPaymentAtemptInDays:
-          type: integer
-          description: Через сколько дней будет повторная попытка платежа.
-          default: 1
-        error:
-          type: string
-          description: Описание ошибки.
-          default: Недостаточно средств
-        userUuid:
-          type: string
-          description: Уникальный идентификатор пользователя платформы Эвотор.
-          pattern: '^[0-9]{2}-[0-9]{15}$'
-          example: 01-000000000000001
-        tariffId:
-          type: string
-          description: |
-            Код тарифа, который оплачивал пользователь.
-          pattern: '^[a-zA-Z0-9\_\-]+$'
-          example: starter
+          description: Идентификатор инвойса.
+        dunningEnabled:
+          type: boolean
+          description: Флажок, который показывает включён даннинг или нет.
+          example: true
+        timestamp:
+          - $ref: '#/subscriptionDefinitions/properties/timestamp'
+subscriptionRenewed:
+  description: Подписка создана.
+  allOf:
+    - $ref: '#/events'
+    - type: object
+      properties:
+        subscriptionId:
+          - $ref: '#/subscriptionDefinitions/properties/subscriptionId'
+        nextBillingDate:
+          - $ref: '#/subscriptionDefinitions/properties/nextBillingDate'
+        timestamp:
+          - $ref: '#/subscriptionDefinitions/properties/timestamp'
+subscriptionCanceled:
+  description: Подписка создана.
+  allOf:
+    - $ref: '#/events'
+    - type: object
+      properties:
+        subscriptionId:
+          - $ref: '#/subscriptionDefinitions/properties/subscriptionId'
+        timestamp:
+          - $ref: '#/subscriptionDefinitions/properties/timestamp'
+subscriptionPlanChanged:
+  description: Подписка создана.
+  allOf:
+    - $ref: '#/events'
+    - type: object
+      properties:
+        subscriptionId:
+          - $ref: '#/subscriptionDefinitions/properties/subscriptionId'
+        planId:
+          - $ref: '#/subscriptionDefinitions/properties/planId'
+        billedTill:
+            type: instant
+            description: Дата смены платежа.
+        chargedSum:
+            - $ref: '#/subscriptionDefinitions/properties/chargedSum'
+        timestamp:
+            - $ref: '#/subscriptionDefinitions/properties/timestamp'
+subscriptionDeviceNumberChanged:
+  description: Подписка создана.
+  allOf:
+    - $ref: '#/events'
+    - type: object
+      properties:
+          subscriptionId:
+            - $ref: '#/subscriptionDefinitions/properties/subscriptionId'
+          deviceNumber:
+            - $ref: '#/subscriptionDefinitions/properties/deviceNumber'
+          billedTill:
+              type: instant
+              description: Дата смены платежа.
+          chargedSum:
+              - $ref: '#/subscriptionDefinitions/properties/chargedSum'
+          timestamp:
+            - $ref: '#/subscriptionDefinitions/properties/timestamp'
 product:
   type: object
   required:
@@ -225,31 +228,27 @@ product:
   properties:
     uuid:
       type: string
-      description: >-
-        Уникальный идентификатор товара/группы в формате uuid4; уникален в
-        рамках магазина; не может быть пустой строкой
+      description: |
+        Уникальный идентификатор товара/группы в формате uuid4; уникален в рамках магазина; не может быть пустой строкой.
       pattern: >-
         ^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$
     code:
       type: string
-      description: Код товара либо группы; не может быть null
+      description: Код товара либо группы; не может быть `null`.
       minLength: 0
       maxLength: 10
     barCodes:
       type: array
-      description: >-
-        Массив штрихкодов товара; для групп товаров - пустой массив; не может
-        быть null
+      description: |
+        Массив штрихкодов товара; для групп товаров - пустой массив; не может быть `null`.
       items:
         type: string
         pattern: '^[0-9]$'
         minLength: 1
     alcoCodes:
       type: array
-      description: >-
-        Массив строк алкокодов (кодов алкогольной продукции ЕГАИС); для групп
-        товаров - пустой массив; не может быть null; алкокод не может быть
-        пустой строкой и null
+      description: |
+        Массив строк алкокодов (кодов алкогольной продукции ЕГАИС); для групп товаров - пустой массив; не может быть null; алкокод не может быть пустой строкой и 'null'.
       items:
         type: string
         pattern: '^[0-9]{19}$'
@@ -659,3 +658,45 @@ receipt:
       type: object
       description: |
         Дополнительные поля. Нпример, поля пользователей программ лояльности. Поля передаются только в те сторонние сервисы, где они были созданы.
+productToDelete:
+  type: object
+  properties:
+    uuid:
+      type: string
+      description: Уникальный UUID товара в платформе Эвотор.
+events:
+  type: object
+  discriminator: type
+  properties:
+    type:
+      description: Тип события
+      type: object
+subscriptionDefinitions:
+  type: object
+  description: Определения для событий биллинга.
+  properties:
+    subscriptionId:
+      type: string
+      description: Идентификатор подписки.
+      example: lsdkjfvnkldsfvn
+    productId:
+      type: string
+      description: Идентификатор приложения.
+      example: dlsvnfjn
+    planId:
+      type: string
+      description: Идентификатор тарифа.
+      example: lskvnfldnjs
+    deviceNumber:
+      type: integer
+      description: Идентификатор устройства.
+    timestamp:
+      type: string
+      format: date-time
+      description: Дата и время активации платного периода.
+    nextBillingDate:
+      type: instant
+      description: Дата следующего платежа.
+    chargedSum:
+      type: money
+      description: Удержанная сумма.
