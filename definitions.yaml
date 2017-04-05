@@ -4,6 +4,7 @@ registerFormData:
     - userUuid
   properties:
     userUuid:
+      -$ref: '#/userId'
       type: string
       description: Уникальный идентификатор пользователя в облаке Эвотор.
       pattern: '^[0-9]{2}-[0-9]{15}$'
@@ -42,7 +43,7 @@ authorizeFormData:
     - userUuid
   properties:
     userUuid:
-      $ref: '#/registerFormData/properties/userUuid'
+      $ref: '#/userId'
     username:
       type: string
       description: Имя пользователя
@@ -81,7 +82,7 @@ trialStarted:
             - year
           default: day
         userUuid:
-          $ref: '#/registerFormData/properties/userUuid'
+          $ref: '#/userId'
         tariffId:
           type: string
           description: Код тарифа, для которого активирован пробный период.
@@ -89,119 +90,62 @@ trialStarted:
           example: starter
 subscriptionCreated:
   description: Подписка создана.
+  properties:
+    subscriptionId:
+      allOf:
+      - $ref: '#/subscriptionId'
+    userId:
+      allOf:
+        - $ref: '#/userId'
+    productId:
+      type: string
+      description: Идентификатор приложения в формате uuid4.
+      example: c0d01x35-5193-4cc2-9bfb-be20e0679498
+    planId:
+      allOf:
+        - $ref: '#/planId'
+    trialPeriodDuration:
+      type: string
+      description: Срок бесплатного периода, выраженный в днях.
+      example: 14
+    deviceNumber:
+      allOf:
+      - $ref: '#/deviceNumber'
+    timestamp:
+      allOf:
+      - $ref: '#/timestamp'
   allOf:
     - $ref: '#/events'
-    - type: object
-      properties:
-        subscriptionId:
-          - $ref: '#/subscriptionDefinitions/properties/subscriptionId'
-        userId:
-          - $ref: '#/registerFormData/properties/userUuid'
-        productId:
-          - $ref: ''#/subscriptionDefinitions/properties/productId'
-        planId:
-          - $ref: '#/subscriptionDefinitions/properties/planId'
-        trialPeriodDuration:
-          type: string
-          description: Срок бесплатного периода.
-        deviceNumber:
-          - $ref: '#/subscriptionDefinitions/properties/deviceNumber'
-        timestamp:
-          - $ref: '#/subscriptionDefinitions/properties/timestamp'
 subscriptionActivated:
   description: Подписка активирована.
   allOf:
     - $ref: '#/events'
-    - type: object
-      properties:
-        subscriptionId:
-          - $ref: '#/subscriptionDefinitions/properties/subscriptionId'
-        nextBillingDate:
-            - $ref: '#/subscriptionDefinitions/properties/nextBillingDate'
-        timestamp:
-          - $ref: '#/subscriptionDefinitions/properties/timestamp'
+    - $ref: ./evotorCallbacks/subscriptionEventsDefinitions.yaml#/subscriptionActivated
 subscriptionInvoiced:
   description: Подписка создана.
   allOf:
     - $ref: '#/events'
-    - type: object
-      properties:
-        subscriptionId:
-          - $ref: '#/subscriptionDefinitions/properties/subscriptionId'
-        fromDate:
-            type: instant
-            description: Дата начала подписки.
-        tillDate:
-          type: instant
-          description: Дата окончания подписки.
-        sum:
-          type: money
-          description: Сумма платежа.
-        invoiceId:
-          type: string
-          description: Идентификатор инвойса.
-        dunningEnabled:
-          type: boolean
-          description: Флажок, который показывает включён даннинг или нет.
-          example: true
-        timestamp:
-          - $ref: '#/subscriptionDefinitions/properties/timestamp'
+    - $ref: ./evotorCallbacks/subscriptionEventsDefinitions.yaml#/subscriptionInvoiced
 subscriptionRenewed:
   description: Подписка создана.
   allOf:
     - $ref: '#/events'
-    - type: object
-      properties:
-        subscriptionId:
-          - $ref: '#/subscriptionDefinitions/properties/subscriptionId'
-        nextBillingDate:
-          - $ref: '#/subscriptionDefinitions/properties/nextBillingDate'
-        timestamp:
-          - $ref: '#/subscriptionDefinitions/properties/timestamp'
+    - $ref: ./evotorCallbacks/subscriptionEventsDefinitions.yaml#/subscriptionRenewed
 subscriptionCanceled:
   description: Подписка создана.
   allOf:
     - $ref: '#/events'
-    - type: object
-      properties:
-        subscriptionId:
-          - $ref: '#/subscriptionDefinitions/properties/subscriptionId'
-        timestamp:
-          - $ref: '#/subscriptionDefinitions/properties/timestamp'
+    - $ref: ./evotorCallbacks/subscriptionEventsDefinitions.yaml#/subscriptionCanceled
 subscriptionPlanChanged:
   description: Подписка создана.
   allOf:
     - $ref: '#/events'
-    - type: object
-      properties:
-        subscriptionId:
-          - $ref: '#/subscriptionDefinitions/properties/subscriptionId'
-        planId:
-          - $ref: '#/subscriptionDefinitions/properties/planId'
-        billedTill:
-            type: instant
-            description: Дата смены платежа.
-        chargedSum:
-            - $ref: '#/subscriptionDefinitions/properties/chargedSum'
-        timestamp:
-            - $ref: '#/subscriptionDefinitions/properties/timestamp'
+    - $ref: ./evotorCallbacks/subscriptionEventsDefinitions.yaml#/subscriptionPlanChanged
 subscriptionDeviceNumberChanged:
   description: Подписка создана.
   allOf:
     - $ref: '#/events'
-    - type: object
-      properties:
-          subscriptionId:
-            - $ref: '#/subscriptionDefinitions/properties/subscriptionId'
-          deviceNumber:
-            - $ref: '#/subscriptionDefinitions/properties/deviceNumber'
-          billedTill:
-              type: instant
-              description: Дата смены платежа.
-          chargedSum:
-              - $ref: '#/subscriptionDefinitions/properties/chargedSum'
-          timestamp:
-            - $ref: '#/subscriptionDefinitions/properties/timestamp'
+    - $ref: ./evotorCallbacks/subscriptionEventsDefinitions.yaml#/subscriptionDeviceNumberChanged
 product:
   type: object
   required:
@@ -669,34 +613,40 @@ events:
   discriminator: type
   properties:
     type:
-      description: Тип события
+      description: |
+        Типы событий:
+          * SubscriptionCreated - Новая подписка.
+          * SubscriptionInvoiced - Выставлен рекуррентный счет.
+          * SubscriptionActivated - Подписка активирована.
+          * SubscriptionRenewed - Подписка продлена на следующий период.
+          * SubscriptionCancelled - Подписка отменена.
+          * SubscriptionPlanChanged - Тариф изменён.
+          * SubscriptionDeviceNumberChanged - Измененно количествой устройств, на которые распространяется тариф.
       type: object
-subscriptionDefinitions:
-  type: object
-  description: Определения для событий биллинга.
-  properties:
-    subscriptionId:
-      type: string
-      description: Идентификатор подписки.
-      example: lsdkjfvnkldsfvn
-    productId:
-      type: string
-      description: Идентификатор приложения.
-      example: dlsvnfjn
-    planId:
-      type: string
-      description: Идентификатор тарифа.
-      example: lskvnfldnjs
-    deviceNumber:
-      type: integer
-      description: Идентификатор устройства.
-    timestamp:
-      type: string
-      format: date-time
-      description: Дата и время активации платного периода.
-    nextBillingDate:
-      type: instant
-      description: Дата следующего платежа.
-    chargedSum:
-      type: money
-      description: Удержанная сумма.
+userId:
+  type: string
+  description: Уникальный идентификатор пользователя в облаке Эвотор.
+  pattern: '^[0-9]{2}-[0-9]{15}$'
+  example: 01-000000000000001
+timestamp:
+  type: string
+  format: date-time
+  description: Дата и время отправки события.
+subscriptionId:
+  type: string
+  description: Уникальный идентификатор подписки.
+  example: lsdkjfvnkldsfvn
+planId:
+  type: string
+  description: Идентификатор тарифа, который .
+  example: 'exampleTarrif01'
+deviceNumber:
+  type: integer
+  description:  Идентификатор устройства.
+  example: 352398080215959
+nextBillingDate:
+  type: instant
+  description: Дата следующего платежа.
+chargedSum:
+  type: money
+  description: Удержанная сумма. До трёх знаков после запятой
