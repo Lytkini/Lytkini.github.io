@@ -18,12 +18,9 @@ produces:
     - application/json
 consumes:
     - application/json
-host: api.evotor.ru
 x-servers:
-  - url: //api.evotor.ru
-    description: REST API Эвотор
   - url: //
-    description: Веб-адрес для подиски на вебхук
+    description: 'Веб-адрес запроса:'
 schemes:
     - https
 paths:

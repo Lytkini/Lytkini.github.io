@@ -1,4 +1,4 @@
-/api/v1/inventories/stores/search:
+api.evotor.ru/api/v1/inventories/stores/search:
  x-summary: Получить список магазинов
  get:
    tags:
@@ -16,7 +16,7 @@
          type: array
          items:
            $ref: ../definitions.yaml#/store
-/api/v1/inventories/employees/search:
+api.evotor.ru/api/v1/inventories/employees/search:
  x-summary: Получить список сотрудников
  get:
    tags:
@@ -34,7 +34,7 @@
          type: array
          items:
            $ref: ../definitions.yaml#/employee
-/api/v1/inventories/devices/search:
+api.evotor.ru/api/v1/inventories/devices/search:
  x-summary: Получить список смарт-терминалов
  get:
    tags:
@@ -52,7 +52,7 @@
          type: array
          items:
            $ref: ../definitions.yaml#/device
-/api/v1/inventories/stores/{storeUuid}/products:
+api.evotor.ru/api/v1/inventories/stores/{storeUuid}/products:
  x-summary: Обмен товарами
  get:
    tags:
@@ -97,7 +97,7 @@
    responses:
      '200':
        description: OK
-<веб-адрес стороннего сервиса>/api/v1/inventories/stores/{storeUuid}/products:
+partner.ru/api/v1/inventories/stores/{storeUuid}/products:
  post:
    tags:
      - Вебхуки-уведомления
@@ -143,7 +143,7 @@
        $ref: ../responses.yaml#/404
      '405':
        $ref: ../responses.yaml#/4051005
-/api/v1/inventories/stores/{storeUuid}/products/delete:
+api.evotor.ru/api/v1/inventories/stores/{storeUuid}/products/delete:
  x-summary: Удаление товаров
  post:
    tags:
@@ -170,7 +170,7 @@
    responses:
      '200':
        description: OK
-/api/v1/inventories/stores/{storeUuid}/documents:
+api.evotor.ru/api/v1/inventories/stores/{storeUuid}/documents:
  x-summary: Документы
  get:
    tags:
@@ -227,7 +227,7 @@
          type: array
          items:
            $ref: ../definitions.yaml#/document
-<веб-адрес стороннего сервиса>/api/v1/inventories/stores/{storeUuid}/documents:
+partner.ru/api/v1/inventories/stores/{storeUuid}/documents:
  put:
    tags:
      - Вебхуки-уведомления
@@ -263,7 +263,7 @@
        $ref: ../responses.yaml#/404
      '405':
        $ref: ../responses.yaml#/4051005
-<веб-адрес стороннего сервиса>/api/v1/user/verify:
+partner.ru/api/v1/user/verify:
   post:
     tags:
       - Вебхуки-запросы
@@ -317,7 +317,7 @@
         $ref: ../responses.yaml#/4051005
       '409':
         $ref: ../responses.yaml#/4092004
-<веб-адрес стороннего сервиса>/api/v1/user/create:
+partner.ru/api/v1/user/create:
   post:
     tags:
       - Вебхуки-запросы
@@ -365,7 +365,7 @@
         $ref: ../responses.yaml#/4051005
       '409':
         $ref: ../responses.yaml#/4092005
-<веб-адрес стороннего сервиса>/api/v1/user/tariff:
+partner.ru/api/v1/user/tariff:
   post:
     tags:
       - Вебхуки-запросы
@@ -416,7 +416,7 @@
         $ref: ../responses.yaml#/404
       '405':
         $ref: ../responses.yaml#/40510051007
-<веб-адрес стороннего сервиса>/api/v1/inventories/devices:
+partner.ru/api/v1/inventories/devices:
   put:
     tags:
       - Вебхуки-уведомления
@@ -461,7 +461,7 @@
         $ref: ../responses.yaml#/404
       '405':
         $ref: ../responses.yaml#/4051005
-<веб-адрес стороннего сервиса>/api/v1/inventories/employees:
+partner.ru/api/v1/inventories/employees:
   put:
     tags:
       - Вебхуки-уведомления
@@ -506,7 +506,7 @@
         $ref: ../responses.yaml#/404
       '405':
         $ref: ../responses.yaml#/4051005
-<веб-адрес стороннего сервиса>/api/v1/inventories/stores:
+partner.ru/api/v1/inventories/stores:
   put:
     tags:
       - Вебхуки-уведомления
@@ -551,7 +551,7 @@
         $ref: ../responses.yaml#/404
       '405':
         $ref: ../responses.yaml#/4051005
-<веб-адрес стороннего сервиса>/api/v1/receipt:
+partner.ru/api/v1/receipt:
   post:
     tags:
       - Вебхуки-уведомления
@@ -581,7 +581,7 @@
         $ref: ../responses.yaml#/404
       '405':
         $ref: ../responses.yaml#/4051005
-<веб-адрес стороннего сервиса>/api/v1/user/token:
+partner.ru/api/v1/user/token:
   post:
     tags:
       - Вебхуки-запросы
@@ -623,7 +623,7 @@
         $ref: ../responses.yaml#/404
       '405':
         $ref: ../responses.yaml#/4051005
-<веб-адрес стороннего сервиса>/api/v1/user/event:
+partner.ru/api/v1/user/event:
   post:
     tags:
       - Вебхуки-уведомления
