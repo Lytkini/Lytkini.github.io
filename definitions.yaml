@@ -90,32 +90,9 @@ trialStarted:
           example: starter
 subscriptionCreated:
   description: Подписка создана.
-  properties:
-    subscriptionId:
-      allOf:
-      - $ref: '#/subscriptionId'
-    userId:
-      allOf:
-        - $ref: '#/userId'
-    productId:
-      type: string
-      description: Идентификатор приложения в формате uuid4.
-      example: c0d01x35-5193-4cc2-9bfb-be20e0679498
-    planId:
-      allOf:
-        - $ref: '#/planId'
-    trialPeriodDuration:
-      type: string
-      description: Срок бесплатного периода, выраженный в днях.
-      example: 14
-    deviceNumber:
-      allOf:
-      - $ref: '#/deviceNumber'
-    timestamp:
-      allOf:
-      - $ref: '#/timestamp'
   allOf:
     - $ref: '#/events'
+    - $ref: ./evotorCallbacks/subscriptionEventsDefinitions.yaml#/subscriptionCreated
 subscriptionActivated:
   description: Подписка активирована.
   allOf:
@@ -615,13 +592,13 @@ events:
     type:
       description: |
         Типы событий:
-          * SubscriptionCreated - Новая подписка.
-          * SubscriptionInvoiced - Выставлен рекуррентный счет.
-          * SubscriptionActivated - Подписка активирована.
-          * SubscriptionRenewed - Подписка продлена на следующий период.
-          * SubscriptionCancelled - Подписка отменена.
-          * SubscriptionPlanChanged - Тариф изменён.
-          * SubscriptionDeviceNumberChanged - Измененно количествой устройств, на которые распространяется тариф.
+          * SubscriptionCreated - новая подписка.
+          * SubscriptionInvoiced - выставлен рекуррентный счет.
+          * SubscriptionActivated - подписка активирована.
+          * SubscriptionRenewed - подписка продлена на следующий период.
+          * SubscriptionCancelled - подписка отменена.
+          * SubscriptionPlanChanged - тариф изменён.
+          * SubscriptionDeviceNumberChanged - измененно количествой устройств, на которые распространяется тариф.
       type: object
 userId:
   type: string
