@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Этот раздел содержит вводную информацию для работы с нашей документацией.">
-<meta name="keywords" content=" sample homepage">
-<title>Введение | Документация Эвотор</title>
+<meta name="description" content="Краткая инструкция по добавлению фрейма в настройки приложения">
+<meta name="keywords" content=" IFrame">
+<title>IFrame на странице приложения | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Введение">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="IFrame на странице приложения">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -255,7 +255,7 @@
             
             
             
-            <li><a href="doc_iframe_within_application_page.html">IFrame на странице приложения</a></li>
+            <li class="active"><a href="doc_iframe_within_application_page.html">IFrame на странице приложения</a></li>
             
             
             
@@ -344,7 +344,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Введение</h1>
+   <h1 class="post-title-main">IFrame на странице приложения</h1>
 </div>
 
 
@@ -352,7 +352,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Этот раздел содержит вводную информацию для работы с нашей документацией.</div>
+    <div class="summary">Краткая инструкция по добавлению фрейма в настройки приложения</div>
    
 
     
@@ -383,37 +383,32 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p><a href="https://evotor.ru/buy?order">Приобретая смарт-терминал</a> пользователи платформы Эвотор получают доступ к базовой функциональности:</p>
+  <h2 id="Добавление-iframe">Добавление IFrame</h2>
 
-<ul>
-  <li>Редактирование списка магазинов, сотрудников и смарт-терминалов.</li>
-  <li>Редактирование номенклатуры.</li>
-  <li>Просмотр базовых отчётов.</li>
-  <li>Установка приложений для интеграции со сторонними сервисами.</li>
-</ul>
+<p>С помощью IFrame ваше приложение может отображать информацию, переданную сторонним сервисом.
+Вы можете добавить IFrame на закладку <strong>Настройки</strong> вашего приложения.</p>
 
-<p>С помощью интеграции сторонних сервисов и платформы Эвотор, вы можете помочь пользователям:</p>
+<p>Чтобы добавить IFrame на закладку <strong>Настройки</strong> приложения, выполните следующие действия:</p>
+<ol>
+  <li>Войдите в личный кабинет разработчика на сайте https://developer.evotor.ru/.</li>
+  <li>Выберите приложение, для которого требуется добавить фрейм.</li>
+  <li>На закладке <strong>Интеграция</strong> установите флажок <strong>создать закладку “Настройки” на странице приложения</strong>.</li>
+  <li>В Форме кастомизации нажмите на кнопку <strong>iframe</strong>.</li>
+  <li>
+    <p>В поле <strong>Значение поля</strong> укажите веб-адрес страницы-источника фрейма в формате:
+<code class="highlighter-rouge">https://&lt;веб-адрес страницы-источника&gt;.com?token=${token}&amp;user_id=${uid}</code></p>
 
-<ul>
-  <li>взаимодействовать со сторонними товароучётными системами, как установленными на компьютере пользователя, так и доступными в облаке;</li>
-  <li>автоматически обновлять информацию о магазинах в картографических сервисах;</li>
-  <li>использовать различные системы лояльности для клиентов пользователей платформы;</li>
-  <li>и многое другое.</li>
-</ul>
+    <p>Где:</p>
 
-<p>Все данные пользователей платформы (например, информация о магазинах, сотрудниках и смарт-терминалах пользователя) хранятся в <em>облаке Эвотор</em>.</p>
+    <p><code class="highlighter-rouge">${token}</code> – облако Эвотор передаёт токен приложения.</p>
 
-<h3 id="С-чего-начать">С чего начать</h3>
+    <p><code class="highlighter-rouge">${uid}</code> – облако Эвотор передаёт идентификатор пользователя в облаке.</p>
+  </li>
+  <li>Нажмите на кнопку <strong>Сохранить</strong>.</li>
+  <li>В разделе <strong>Версии</strong> <a href="ссылка на страницу с информацией о том, как выложить приложение на тест">нажмите на кнопку <strong>Выложить на тест</strong></a>.</li>
+</ol>
 
-<p><a href="https://developer.evotor.ru/evotor-cloud-rest-api/">Ознакомьтесь со способами интеграции с платформой Эвотор</a>.</p>
-
-<h3 id="Полезные-ресурсы">Полезные ресурсы</h3>
-
-<p>Изучите запросы к облаку Эвотор и к стороннему веб-сервису на сайте <a href="https://api.evotor.ru/docs/">api.evotor.ru/docs</a>. Посмотрите пример приложения для смарт-терминалов <a href="https://github.com/evotor/whale-example">в нашем репозитории</a>. Ознакомьтесь с <a href="https://developer.evotor.ru/documents/">документами</a>, которые создают смарт-терминалы. Узнайте <a href="https://developer.evotor.ru/protocol_of_errors/">какие ошибки</a> могут возникнуть при интеграции стороннего сервиса и платформы Эвотор.</p>
-
-<h3 id="Инструменты">Инструменты</h3>
-
-<p>Ознакомьтесь с <a href="https://github.com/evotor/device-app">API смарт-терминала</a>, чтобы приступить к разработке webview-приложений. Используйте <a href="https://github.com/evotor/device-drivers">SDK смарт-терминала</a>, чтобы создать драйверы для подключаемых устройств.</p>
+<p>Фрейм будет добавлен на закладку <strong>Настройки</strong> приложения.</p>
 
 
     <div class="tags">

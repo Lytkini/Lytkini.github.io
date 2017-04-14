@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Этот раздел содержит вводную информацию для работы с нашей документацией.">
-<meta name="keywords" content=" sample homepage">
-<title>Введение | Документация Эвотор</title>
+<meta name="description" content="Version 6.0 of the Documentation theme for Jekyll, released July 4, 2016, implements relative links so you can view the files offline or on any server withou...">
+<meta name="keywords" content="getting_started,  release notes, announcements, what's new, new features">
+<title>Release notes 6.0 | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Введение">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Release notes 6.0">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -344,7 +344,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Введение</h1>
+   <h1 class="post-title-main">Release notes 6.0</h1>
 </div>
 
 
@@ -352,7 +352,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Этот раздел содержит вводную информацию для работы с нашей документацией.</div>
+    <div class="summary">Version 6.0 of the Documentation theme for Jekyll, released July 4, 2016, implements relative links so you can view the files offline or on any server without configuring urls and baseurls. Additionally, you can store pages in subdirectories. Templates for alerts and images are available.</div>
    
 
     
@@ -383,40 +383,45 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p><a href="https://evotor.ru/buy?order">Приобретая смарт-терминал</a> пользователи платформы Эвотор получают доступ к базовой функциональности:</p>
+  <h2 id="relative-links">Relative links</h2>
 
-<ul>
-  <li>Редактирование списка магазинов, сотрудников и смарт-терминалов.</li>
-  <li>Редактирование номенклатуры.</li>
-  <li>Просмотр базовых отчётов.</li>
-  <li>Установка приложений для интеграции со сторонними сервисами.</li>
-</ul>
+<p>You can now view the site offline rather than solely through the Jekyll preview server or deployed on a web server. The linking approach in both the sidebar and with inline links uses relative linking throughout.</p>
 
-<p>С помощью интеграции сторонних сервисов и платформы Эвотор, вы можете помочь пользователям:</p>
+<h2 id="subfolders-for-pages">Subfolders for pages</h2>
 
-<ul>
-  <li>взаимодействовать со сторонними товароучётными системами, как установленными на компьютере пользователя, так и доступными в облаке;</li>
-  <li>автоматически обновлять информацию о магазинах в картографических сервисах;</li>
-  <li>использовать различные системы лояльности для клиентов пользователей платформы;</li>
-  <li>и многое другое.</li>
-</ul>
+<p>You can creates folders and subfolders for your pages, similar to how you can store posts in folders and subfolders. When Jekyll builds the site, all pages get pushed into the root directory as single html files (rather than being pushed inside folders, or remaining in subfolders). See [Pages][mydoc_pages] for more details.</p>
 
-<p>Все данные пользователей платформы (например, информация о магазинах, сотрудниках и смарт-терминалах пользователя) хранятся в <em>облаке Эвотор</em>.</p>
+<h2 id="alerts-templates">Alerts templates</h2>
 
-<h3 id="С-чего-начать">С чего начать</h3>
+<p>You can use include templates for notes, tips, and warnings. These include templates make it easier to insert notes. If you make an error, you’re immediately made aware since the site won’t build. See [Alerts][mydoc_alerts] for more details.</p>
 
-<p><a href="https://developer.evotor.ru/evotor-cloud-rest-api/">Ознакомьтесь со способами интеграции с платформой Эвотор</a>.</p>
+<h2 id="image-templates">Image templates</h2>
 
-<h3 id="Полезные-ресурсы">Полезные ресурсы</h3>
+<p>Similar to alerts, images also have include templates. You can insert both regular images and inline images, such as images that are a button or icon. See [Images][mydoc_images] for more details.</p>
 
-<p>Изучите запросы к облаку Эвотор и к стороннему веб-сервису на сайте <a href="https://api.evotor.ru/docs/">api.evotor.ru/docs</a>. Посмотрите пример приложения для смарт-терминалов <a href="https://github.com/evotor/whale-example">в нашем репозитории</a>. Ознакомьтесь с <a href="https://developer.evotor.ru/documents/">документами</a>, которые создают смарт-терминалы. Узнайте <a href="https://developer.evotor.ru/protocol_of_errors/">какие ошибки</a> могут возникнуть при интеграции стороннего сервиса и платформы Эвотор.</p>
+<h2 id="automated-links-using-markdown-formatting">Automated links using Markdown formatting</h2>
 
-<h3 id="Инструменты">Инструменты</h3>
+<p>Instead of using YAML references to handle links, I’ve switched to a Markdown reference style approach. A links.html file iterates through the sidebar files and formats the content in the Markdown reference. You then just use Markdown syntax for the links. See [Links][mydoc_hyperlinks] for more details.</p>
 
-<p>Ознакомьтесь с <a href="https://github.com/evotor/device-app">API смарт-терминала</a>, чтобы приступить к разработке webview-приложений. Используйте <a href="https://github.com/evotor/device-drivers">SDK смарт-терминала</a>, чтобы создать драйверы для подключаемых устройств.</p>
+<h2 id="workflow-maps">Workflow maps</h2>
+
+<p>If you want to display a workflow map for a process, you can do so by adding some properties in your frontmatter. The workflow map helps guide users through a process. Both simple and complex workflow maps are available. For more details, see [Workflow maps][mydoc_workflow_maps].</p>
+
+<h2 id="upgrading">Upgrading</h2>
+
+<p>If you want to upgrade from an earlier version of the theme, I recommend that you download the new theme and copy of your Markdown files into the new theme. You’ll then need to make adjustments to your page frontmatter, to the sidebar table of contents, links, image references, and alert references. In short, there’s no easy upgrade path. But all of this won’t take too long if you don’t have mountains of content.</p>
+
 
 
     <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_getting_started.html" class="btn btn-default navbar-btn cursorNorm" role="button">getting_started</a>
+        
+        
         
     </div>
 
@@ -430,7 +435,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2017 Эвотор. All rights reserved. <br />
- Site last generated: Apr 14, 2017 <br />
+<span>Page last updated:</span> July 16, 2016<br/> Site last generated: Apr 14, 2017 <br />
 <p><img src="images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

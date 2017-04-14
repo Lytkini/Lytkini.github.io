@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Этот раздел содержит вводную информацию для работы с нашей документацией.">
-<meta name="keywords" content=" sample homepage">
-<title>Введение | Документация Эвотор</title>
+<meta name="description" content="You can use posts when you want to create blogs or news type of content.">
+<meta name="keywords" content="getting_startedformattingcontent_types,  posts, blog, news, authoring, exclusion, frontmatter">
+<title>Posts | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Введение">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Posts">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -344,7 +344,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Введение</h1>
+   <h1 class="post-title-main">Posts</h1>
 </div>
 
 
@@ -352,7 +352,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Этот раздел содержит вводную информацию для работы с нашей документацией.</div>
+    <div class="summary">You can use posts when you want to create blogs or news type of content.</div>
    
 
     
@@ -383,40 +383,87 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p><a href="https://evotor.ru/buy?order">Приобретая смарт-терминал</a> пользователи платформы Эвотор получают доступ к базовой функциональности:</p>
+  <p>hello there.</p>
 
-<ul>
-  <li>Редактирование списка магазинов, сотрудников и смарт-терминалов.</li>
-  <li>Редактирование номенклатуры.</li>
-  <li>Просмотр базовых отчётов.</li>
-  <li>Установка приложений для интеграции со сторонними сервисами.</li>
-</ul>
+<h2 id="about-posts">About posts</h2>
 
-<p>С помощью интеграции сторонних сервисов и платформы Эвотор, вы можете помочь пользователям:</p>
+<p>Posts are typically used for blogs or other news information because they contain a date and are sorted in reverse chronological order.</p>
 
-<ul>
-  <li>взаимодействовать со сторонними товароучётными системами, как установленными на компьютере пользователя, так и доступными в облаке;</li>
-  <li>автоматически обновлять информацию о магазинах в картографических сервисах;</li>
-  <li>использовать различные системы лояльности для клиентов пользователей платформы;</li>
-  <li>и многое другое.</li>
-</ul>
+<p>You create a post by adding a file in the _posts folder that is named yyyy-mm-dddd-permalink.md, which might be 2016-02-25-my-latest-updates.md. You can use any number of subfolders here that you want.</p>
 
-<p>Все данные пользователей платформы (например, информация о магазинах, сотрудниках и смарт-терминалах пользователя) хранятся в <em>облаке Эвотор</em>.</p>
+<p>Posts use the post.html layout in the _layouts folder when you are viewing the post.</p>
 
-<h3 id="С-чего-начать">С чего начать</h3>
+<p>The news.html file in the root directory shows a reverse chronological listing of the 10 latest posts</p>
 
-<p><a href="https://developer.evotor.ru/evotor-cloud-rest-api/">Ознакомьтесь со способами интеграции с платформой Эвотор</a>.</p>
+<h2 id="allowed-frontmatter">Allowed frontmatter</h2>
 
-<h3 id="Полезные-ресурсы">Полезные ресурсы</h3>
+<p>The frontmatter you can use with posts is as follows:</p>
 
-<p>Изучите запросы к облаку Эвотор и к стороннему веб-сервису на сайте <a href="https://api.evotor.ru/docs/">api.evotor.ru/docs</a>. Посмотрите пример приложения для смарт-терминалов <a href="https://github.com/evotor/whale-example">в нашем репозитории</a>. Ознакомьтесь с <a href="https://developer.evotor.ru/documents/">документами</a>, которые создают смарт-терминалы. Узнайте <a href="https://developer.evotor.ru/protocol_of_errors/">какие ошибки</a> могут возникнуть при интеграции стороннего сервиса и платформы Эвотор.</p>
+<hr />
+<p>title: My sample post
+keywords: pages, authoring, exclusion, frontmatter
+summary: “This is some summary frontmatter for my sample post.”
+sidebar: evotordoc_sidebar
+permalink: mydoc_pages.html
+tags: content_types
+—</p>
 
-<h3 id="Инструменты">Инструменты</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Frontmatter</th>
+      <th>Required?</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>title</strong></td>
+      <td>Required</td>
+      <td>The title for the page</td>
+    </tr>
+    <tr>
+      <td><strong>tags</strong></td>
+      <td>Optional</td>
+      <td>Tags for the page. Make all tags single words, with underscores if needed. Separate them with commas. Enclose the whole list within brackets. Also, note that tags must be added to _data/tags_doc.yml to be allowed entrance into the page. This prevents tags from becoming somewhat random and unstructured. You must create a tag page for each one of your tags following the sample pattern in the tabs folder. (Tag pages aren’t automatically created.)</td>
+    </tr>
+    <tr>
+      <td><strong>keywords</strong></td>
+      <td>Optional</td>
+      <td>Synonyms and other keywords for the page. This information gets stuffed into the page’s metadata to increase SEO. The user won’t see the keywords, but if you search for one of the keywords, it will be picked up by the search engine.</td>
+    </tr>
+    <tr>
+      <td><strong>summary</strong></td>
+      <td>Optional</td>
+      <td>A 1-2 word sentence summarizing the content on the page. This gets formatted into the summary section in the page layout. Adding summaries is a key way to make your content more scannable by users (check out <a href="http://www.nngroup.com/articles/corporate-blogs-front-page-structure/">Jakob Nielsen’s site</a> for a great example of page summaries.) The only drawback with summaries is that you can’t use variables in them.</td>
+    </tr>
+    <tr>
+      <td><strong>permalink</strong></td>
+      <td>Required</td>
+      <td>This theme uses permalinks to facilitate the linking. You specify the permalink want for the page, and the _site output will put the page into the root directory when you publish. Follow the same convention here as you do with page permalinks – list the file name followed by the .html extension.</td>
+    </tr>
+  </tbody>
+</table>
 
-<p>Ознакомьтесь с <a href="https://github.com/evotor/device-app">API смарт-терминала</a>, чтобы приступить к разработке webview-приложений. Используйте <a href="https://github.com/evotor/device-drivers">SDK смарт-терминала</a>, чтобы создать драйверы для подключаемых устройств.</p>
 
 
     <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_getting_started.html" class="btn btn-default navbar-btn cursorNorm" role="button">getting_started</a>
+        
+        
+        
+        <a href="tag_formatting.html" class="btn btn-default navbar-btn cursorNorm" role="button">formatting</a>
+        
+        
+        
+        <a href="tag_content_types.html" class="btn btn-default navbar-btn cursorNorm" role="button">content_types</a>
+        
+        
         
     </div>
 
@@ -430,7 +477,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2017 Эвотор. All rights reserved. <br />
- Site last generated: Apr 14, 2017 <br />
+<span>Page last updated:</span> Feb 25, 2016<br/> Site last generated: Apr 14, 2017 <br />
 <p><img src="images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

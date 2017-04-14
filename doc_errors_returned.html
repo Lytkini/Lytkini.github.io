@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Этот раздел содержит вводную информацию для работы с нашей документацией.">
-<meta name="keywords" content=" sample homepage">
-<title>Введение | Документация Эвотор</title>
+<meta name="description" content="Раздел содержит информацию о возвращаемых ошибках">
+<meta name="keywords" content=" sample">
+<title>Возвращаемые ошибки | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Введение">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Возвращаемые ошибки">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -233,7 +233,7 @@
             
             
             
-            <li><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
+            <li class="active"><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
             
             
             
@@ -344,7 +344,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Введение</h1>
+   <h1 class="post-title-main">Возвращаемые ошибки</h1>
 </div>
 
 
@@ -352,7 +352,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Этот раздел содержит вводную информацию для работы с нашей документацией.</div>
+    <div class="summary">Раздел содержит информацию о возвращаемых ошибках</div>
    
 
     
@@ -383,37 +383,187 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p><a href="https://evotor.ru/buy?order">Приобретая смарт-терминал</a> пользователи платформы Эвотор получают доступ к базовой функциональности:</p>
+  <p>В ответ на каждый запрос, который принимает или отправляет облако Эвотор, приходит HTTP-код состояния. В теле ответа обязательно только поле <code class="highlighter-rouge">code</code>. Таблица ниже содержит коды возвращаемых ошибок, их описания и содержимое ответов.</p>
 
-<ul>
-  <li>Редактирование списка магазинов, сотрудников и смарт-терминалов.</li>
-  <li>Редактирование номенклатуры.</li>
-  <li>Просмотр базовых отчётов.</li>
-  <li>Установка приложений для интеграции со сторонними сервисами.</li>
-</ul>
+<table dir="ltr" border="1" cellspacing="0" cellpadding="10"><colgroup><col width="152" /> <col width="285" /> <col width="35" /> <col width="297" /></colgroup>
 
-<p>С помощью интеграции сторонних сервисов и платформы Эвотор, вы можете помочь пользователям:</p>
+<tbody>
 
-<ul>
-  <li>взаимодействовать со сторонними товароучётными системами, как установленными на компьютере пользователя, так и доступными в облаке;</li>
-  <li>автоматически обновлять информацию о магазинах в картографических сервисах;</li>
-  <li>использовать различные системы лояльности для клиентов пользователей платформы;</li>
-  <li>и многое другое.</li>
-</ul>
+<tr>
 
-<p>Все данные пользователей платформы (например, информация о магазинах, сотрудниках и смарт-терминалах пользователя) хранятся в <em>облаке Эвотор</em>.</p>
+<td style="text-align: left;">HTTP-код состояния</td>
 
-<h3 id="С-чего-начать">С чего начать</h3>
+<td style="text-align: left;">Описание</td>
 
-<p><a href="https://developer.evotor.ru/evotor-cloud-rest-api/">Ознакомьтесь со способами интеграции с платформой Эвотор</a>.</p>
+<td style="text-align: left;">Код</td>
 
-<h3 id="Полезные-ресурсы">Полезные ресурсы</h3>
+<td style="text-align: left;">Тело ответа</td>
 
-<p>Изучите запросы к облаку Эвотор и к стороннему веб-сервису на сайте <a href="https://api.evotor.ru/docs/">api.evotor.ru/docs</a>. Посмотрите пример приложения для смарт-терминалов <a href="https://github.com/evotor/whale-example">в нашем репозитории</a>. Ознакомьтесь с <a href="https://developer.evotor.ru/documents/">документами</a>, которые создают смарт-терминалы. Узнайте <a href="https://developer.evotor.ru/protocol_of_errors/">какие ошибки</a> могут возникнуть при интеграции стороннего сервиса и платформы Эвотор.</p>
+</tr>
 
-<h3 id="Инструменты">Инструменты</h3>
+<tr>
 
-<p>Ознакомьтесь с <a href="https://github.com/evotor/device-app">API смарт-терминала</a>, чтобы приступить к разработке webview-приложений. Используйте <a href="https://github.com/evotor/device-drivers">SDK смарт-терминала</a>, чтобы создать драйверы для подключаемых устройств.</p>
+<td colspan="1" rowspan="4">
+
+<div>400 Неверный запрос</div>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>Синтаксическая ошибка в запросе.</td>
+
+<td>2001</td>
+
+<td>`{ "errors": [ { "code": 2001 } ] }`</td>
+
+</tr>
+
+<tr>
+
+<td>В запросе отсутствует обязательное поле или присутствуют неизвестные поля.</td>
+
+<td>2002</td>
+
+<td>`{ "errors": [ { "code": 2002, "reason": "missing", "subject": "deviceUuid" }, { "code": 2002, "reason": "unexpected", "subject": "deviceUuid" } ] }`</td>
+
+</tr>
+
+<tr>
+
+<td>Параметры запроса содержат недопустимые значения.</td>
+
+<td>2003</td>
+
+<td>`{ "errors": [ { "code": 2003, "reason": "incorrect", "subject": "deviceUuid", "value": "null" } ] }`</td>
+
+</tr>
+
+<tr>
+
+<td colspan="1" rowspan="4">
+
+<div>401 Не авторизован</div>
+
+</td>
+
+<td>Неверный токен облака Эвотор.</td>
+
+<td>1001</td>
+
+<td>`{ "errors": [ { "code": 1001 } ] }`</td>
+
+</tr>
+
+<tr>
+
+<td>Неверный токен пользователя.</td>
+
+<td>1002</td>
+
+<td>`{ "errors": [ { "code": 1002 } ] }`</td>
+
+</tr>
+
+<tr>
+
+<td>Истёк срок действия токена пользователя.</td>
+
+<td>1003</td>
+
+<td>`{ "errors": [ { "code": 1003 } ] }`</td>
+
+</tr>
+
+<tr>
+
+<td>При авторизации в стороннем сервисе, пользователь указал неверные данные.</td>
+
+<td>1006</td>
+
+<td>`{ "errors": [ { "code": 1006 } ] }`</td>
+
+</tr>
+
+<tr>
+
+<td>402 Необходима оплата</td>
+
+<td>Подписка для пользователя не активна. Требуется оплата.</td>
+
+<td>1004</td>
+
+<td>`{ "errors": [{ "code": 1004 "reason": "payment required" "subject": "userUuid" "value": "01-000000000015463" } ] }`</td>
+
+</tr>
+
+<tr>
+
+<td>404 Не найдено</td>
+
+<td>Отсутствует указанный ресурс.</td>
+
+<td>–</td>
+
+</tr>
+
+<tr>
+
+<td colspan="1" rowspan="2">
+
+<div>405 Не поддерживается</div>
+
+</td>
+
+<td>Терминал не активен в рамках текущей подписки. Активируйте терминал и попробуйте ещё раз.</td>
+
+<td>1005</td>
+
+<td>`{ "errors": [{ "code": 1005 "reason": "not allowed" "subject": "deviceUuid" "value": "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f" } ] }`</td>
+
+</tr>
+
+<tr>
+
+<td>Лицензированных терминалов недостаточно для активации в рамках тарифа.</td>
+
+<td>1007</td>
+
+<td>`{ "errors": [{ "code": 1007 "reason": "license overhead" "subject": "deviceUuid" "value": "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f" } ] }`</td>
+
+</tr>
+
+<tr>
+
+<td colspan="1" rowspan="2">
+
+<div>409 Конфликт</div>
+
+</td>
+
+<td>Ассоциация записей невозможна. В стороннем сервисе userUuid ассоциирован с другой учётной записью пользователя Эвотора.</td>
+
+<td>2004</td>
+
+<td>`{ "errors": [ { "code": 2004 } ] }`</td>
+
+</tr>
+
+<tr>
+
+<td style="text-align: left;">Регистрация невозможна. В стороннем сервисе уже зарегистрирована учётная запись с указанными данными.</td>
+
+<td style="text-align: left;">2005</td>
+
+<td style="text-align: left;">`{ "errors": [ { "code": 2005 } ] }`</td>
+
+</tr>
+
+</tbody>
+
+</table>
 
 
     <div class="tags">

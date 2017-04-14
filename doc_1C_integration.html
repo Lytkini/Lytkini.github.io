@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Этот раздел содержит вводную информацию для работы с нашей документацией.">
-<meta name="keywords" content=" sample homepage">
-<title>Введение | Документация Эвотор</title>
+<meta name="description" content="Раздел содержит информацию об интеграции с 1С">
+<meta name="keywords" content=" sample">
+<title>Интеграция с 1С | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Введение">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Интеграция с 1С">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -269,7 +269,7 @@
             
             
             
-            <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
+            <li class="active"><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
             
             
             
@@ -344,7 +344,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Введение</h1>
+   <h1 class="post-title-main">Интеграция с 1С</h1>
 </div>
 
 
@@ -352,7 +352,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Этот раздел содержит вводную информацию для работы с нашей документацией.</div>
+    <div class="summary">Раздел содержит информацию об интеграции с 1С</div>
    
 
     
@@ -383,37 +383,58 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p><a href="https://evotor.ru/buy?order">Приобретая смарт-терминал</a> пользователи платформы Эвотор получают доступ к базовой функциональности:</p>
+  <p>Конфигурация 1С, установленная на компьютере пользователя, и обменивается данными с Эвотором с помощью <a href="https://api.evotor.ru/docs/">REST API</a>. Эвотор авторизует запросы от 1С с помощью <strong>токена приложения</strong>, который пользователь может получить на странице <strong>Настройки</strong> приложения в Личном кабинете.</p>
+
+<p><img src="https://developer.evotor.ru/app/uploads/2017/04/1c_integration_API_key-300x122.png" alt="" /></p>
+
+<p>Чтобы приложение работало корректно, убедитесь, что вы установили необходимые флажки на вкладке <strong>Интеграция</strong> приложения, на сайте разработчика:</p>
 
 <ul>
-  <li>Редактирование списка магазинов, сотрудников и смарт-терминалов.</li>
-  <li>Редактирование номенклатуры.</li>
-  <li>Просмотр базовых отчётов.</li>
-  <li>Установка приложений для интеграции со сторонними сервисами.</li>
+  <li>
+    <p><strong>Callback: Указать веб-адрес, на который облако Эвотор будет отправлять номенклатуру</strong>. Поля заполнять не требуется.</p>
+
+    <p><img src="https://developer.evotor.ru/app/uploads/2017/04/flag1-300x127.jpg" alt="" /></p>
+  </li>
+  <li>
+    <p><strong>REST: Получать документы из облака Эвотор</strong>.</p>
+
+    <p><img src="https://developer.evotor.ru/app/uploads/2017/04/flag2-1-300x25.jpg" alt="" /></p>
+  </li>
+  <li>
+    <p><strong>Создать закладку “Настройки” на странице приложения</strong>. В поле <strong>Значение поля</strong> укажите <code class="highlighter-rouge">${token}</code>, токен приложения отображался в соответствующем поле, в закладке <strong>Настройки</strong> приложения.</p>
+
+    <p><img src="https://developer.evotor.ru/app/uploads/2017/04/flag3-1-300x131.jpg" alt="" /></p>
+  </li>
 </ul>
 
-<p>С помощью интеграции сторонних сервисов и платформы Эвотор, вы можете помочь пользователям:</p>
+<p>При оформлении приложения следуйте ограничениям, описанным на <a href="https://dev.evotor.ru/">сайте разработчиков</a>. Когда вы оформите и протестируете приложение, и будете готовы выложить его в открытый доступ, нам потребуется провести приёмочное тестирование. О готовности приложения сообщите по адресу <a href="mailto:developer@evotor.ru">developer@evotor.ru</a>. Приёмочное тестирование включает следующие проверки:</p>
 
-<ul>
-  <li>взаимодействовать со сторонними товароучётными системами, как установленными на компьютере пользователя, так и доступными в облаке;</li>
-  <li>автоматически обновлять информацию о магазинах в картографических сервисах;</li>
-  <li>использовать различные системы лояльности для клиентов пользователей платформы;</li>
-  <li>и многое другое.</li>
-</ul>
+<ol>
+  <li>Эвотор авторизует запросы приложения с помощью токена, указанного на странице <strong>Настройки</strong>.</li>
+  <li>
+    <p>Приложение сопоставляет сущности Эвотора (смарт-терминалы, сотрудников и магазины) и 1С.</p>
 
-<p>Все данные пользователей платформы (например, информация о магазинах, сотрудниках и смарт-терминалах пользователя) хранятся в <em>облаке Эвотор</em>.</p>
+    <p><img src="https://developer.evotor.ru/app/uploads/2017/04/1c_entities_association-300x162.png" alt="" /></p>
+  </li>
+  <li>Приложение передаёт товары из 1С в Эвотор. Проверяется:
+    <ul>
+      <li>Корректность данных: данные соответствуют описанию в <a href="https://api.evotor.ru/docs/">Справочнике REST API</a>.</li>
+      <li>Сжатие запросов в gzip.</li>
+      <li>Передача товаров пачками (актуально для большой базы товаров)</li>
+    </ul>
+  </li>
+  <li>Приложение удаляет товары в Эвоторе как поштучно, так и все товары одновременно.</li>
+  <li>Приложение загружает документы из Эвотора. Проверяется:
+    <ul>
+      <li>Загрузка документов как по всему магазину, так и по конкретному смарт-терминалу (deviceUuid).</li>
+      <li>Загрузка определённого типа документов (см. запрос <strong>[GET] Получить список документов</strong> в <a href="https://api.evotor.ru/docs/">Справочнике REST API</a>).</li>
+      <li>Корректность дат в GET-параметрах.</li>
+      <li>Обработка <a href="https://developer.evotor.ru/protocol_of_errors/">возвращаемых ошибок</a>.</li>
+    </ul>
+  </li>
+</ol>
 
-<h3 id="С-чего-начать">С чего начать</h3>
-
-<p><a href="https://developer.evotor.ru/evotor-cloud-rest-api/">Ознакомьтесь со способами интеграции с платформой Эвотор</a>.</p>
-
-<h3 id="Полезные-ресурсы">Полезные ресурсы</h3>
-
-<p>Изучите запросы к облаку Эвотор и к стороннему веб-сервису на сайте <a href="https://api.evotor.ru/docs/">api.evotor.ru/docs</a>. Посмотрите пример приложения для смарт-терминалов <a href="https://github.com/evotor/whale-example">в нашем репозитории</a>. Ознакомьтесь с <a href="https://developer.evotor.ru/documents/">документами</a>, которые создают смарт-терминалы. Узнайте <a href="https://developer.evotor.ru/protocol_of_errors/">какие ошибки</a> могут возникнуть при интеграции стороннего сервиса и платформы Эвотор.</p>
-
-<h3 id="Инструменты">Инструменты</h3>
-
-<p>Ознакомьтесь с <a href="https://github.com/evotor/device-app">API смарт-терминала</a>, чтобы приступить к разработке webview-приложений. Используйте <a href="https://github.com/evotor/device-drivers">SDK смарт-терминала</a>, чтобы создать драйверы для подключаемых устройств.</p>
+<p>После того как приложение пройдёт приёмочное тестирование, мы выложим его в открытый доступ.</p>
 
 
     <div class="tags">

@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Этот раздел содержит вводную информацию для работы с нашей документацией.">
-<meta name="keywords" content=" sample homepage">
-<title>Введение | Документация Эвотор</title>
+<meta name="description" content="When creating links, you can use standard HTML or Markdown formatting. However, you can also implement an automated approach to linking that makes linking mu...">
+<meta name="keywords" content="formattingnavigation,  links, hyperlinks, cross references, related links, relationship tables">
+<title>Links | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Введение">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Links">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -344,7 +344,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Введение</h1>
+   <h1 class="post-title-main">Links</h1>
 </div>
 
 
@@ -352,7 +352,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Этот раздел содержит вводную информацию для работы с нашей документацией.</div>
+    <div class="summary">When creating links, you can use standard HTML or Markdown formatting. However, you can also implement an automated approach to linking that makes linking much less error-prone (meaning less chances of broken links in your output) and requiring less effort.</div>
    
 
     
@@ -383,40 +383,105 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p><a href="https://evotor.ru/buy?order">Приобретая смарт-терминал</a> пользователи платформы Эвотор получают доступ к базовой функциональности:</p>
+  <h2 id="create-an-external-link">Create an external link</h2>
 
-<ul>
-  <li>Редактирование списка магазинов, сотрудников и смарт-терминалов.</li>
-  <li>Редактирование номенклатуры.</li>
-  <li>Просмотр базовых отчётов.</li>
-  <li>Установка приложений для интеграции со сторонними сервисами.</li>
-</ul>
+<p>When linking to an external site, use Markdown formatting because it’s simplest:</p>
 
-<p>С помощью интеграции сторонних сервисов и платформы Эвотор, вы можете помочь пользователям:</p>
+<div class="highlighter-rouge">[Google](http://google.com)
+</div>
 
-<ul>
-  <li>взаимодействовать со сторонними товароучётными системами, как установленными на компьютере пользователя, так и доступными в облаке;</li>
-  <li>автоматически обновлять информацию о магазинах в картографических сервисах;</li>
-  <li>использовать различные системы лояльности для клиентов пользователей платформы;</li>
-  <li>и многое другое.</li>
-</ul>
+<h2 id="linking-to-internal-pages">Linking to internal pages</h2>
 
-<p>Все данные пользователей платформы (например, информация о магазинах, сотрудниках и смарт-терминалах пользователя) хранятся в <em>облаке Эвотор</em>.</p>
+<p>When linking to internal pages, you can manually link to the pages like this:</p>
 
-<h3 id="С-чего-начать">С чего начать</h3>
+<div class="highlighter-rouge">[Icons](mydoc_icons.html)
+</div>
 
-<p><a href="https://developer.evotor.ru/evotor-cloud-rest-api/">Ознакомьтесь со способами интеграции с платформой Эвотор</a>.</p>
+<p>However, if you change the file name, you’ll have to update all of your links. It’s much easier to use Automated links, as described in the next section.</p>
 
-<h3 id="Полезные-ресурсы">Полезные ресурсы</h3>
+<h2 id="automatedlinks">Automated links</h2>
 
-<p>Изучите запросы к облаку Эвотор и к стороннему веб-сервису на сайте <a href="https://api.evotor.ru/docs/">api.evotor.ru/docs</a>. Посмотрите пример приложения для смарт-терминалов <a href="https://github.com/evotor/whale-example">в нашем репозитории</a>. Ознакомьтесь с <a href="https://developer.evotor.ru/documents/">документами</a>, которые создают смарт-терминалы. Узнайте <a href="https://developer.evotor.ru/protocol_of_errors/">какие ошибки</a> могут возникнуть при интеграции стороннего сервиса и платформы Эвотор.</p>
+<p>This method for automated links creates a master list of all links in a Markdown reference format based on entries in your sidebar table of contents.</p>
 
-<h3 id="Инструменты">Инструменты</h3>
+<p>With this Automated links method, make sure all your pages are referenced in a sidebar or topnav data file (inside _data &gt; sidebars). If they’re not in a sidebar or top nav (such as links to headings on a page), list them in the <code class="highlighter-rouge">other.yml</code> file (which is in the _data/sidebars folder).</p>
 
-<p>Ознакомьтесь с <a href="https://github.com/evotor/device-app">API смарт-терминала</a>, чтобы приступить к разработке webview-приложений. Используйте <a href="https://github.com/evotor/device-drivers">SDK смарт-терминала</a>, чтобы создать драйверы для подключаемых устройств.</p>
+<p>The links.html file (in _includes) will iterate through all your sidebars and create a list of reference-style markdown links based on the <code class="highlighter-rouge">url</code> properties in the sidebar items.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> For the automated links method to work, each of your pages must have a <code class="highlighter-rouge">permalink</code> property in the frontmatter. The <code class="highlighter-rouge">permalink</code> property must match the file name. For example, if the file name is <code class="highlighter-rouge">somefile.html</code>, your permalink property would be <code class="highlighter-rouge">somefile.html</code>. See [Pages][mydoc_pages] for more details.</div>
+
+<p>To implement managed links:</p>
+
+<ol>
+  <li>
+    <p>In your _config.yml file, list each sidebar in the <code class="highlighter-rouge">sidebars</code> property — including the other.yml file too:</p>
+
+    <div class="language-yaml highlighter-rouge"><span class="na">sidebars</span><span class="pi">:</span>
+<span class="pi">-</span> <span class="s">home_sidebar</span>
+<span class="pi">-</span> <span class="s">evotordoc_sidebar</span>
+<span class="pi">-</span> <span class="s">product1_sidebar</span>
+<span class="pi">-</span> <span class="s">product2_sidebar</span>
+<span class="pi">-</span> <span class="s">other</span>
+    </div>
+  </li>
+  <li>
+    <p>At the bottom of each topic where you plan to include links, include the links.html file:</p>
+
+    <div class="highlighter-rouge">{% include links.html %}
+    </div>
+  </li>
+  <li>
+    <p>To link to a topic, use reference-style Markdown links, with the referent using the file name (without the file extension). For example:</p>
+
+    <div class="highlighter-rouge">See the [Icon][mydoc_icons] file.
+    </div>
+
+    <p>Here’s the result:</p>
+
+    <p>See the [Icon][mydoc_icons] file.</p>
+
+    <p>If the link doesn’t render, check to make sure the page is correctly listed in the sidebar.</p>
+  </li>
+</ol>
+
+<h2 id="bookmarklinks">Automated links to headings on pages</h2>
+
+<p>If you’re linking to the specific heading from another page, first give the heading an ID:</p>
+
+<div class="highlighter-rouge">## Some heading {#someheading}
+</div>
+
+<p>Then add a property into the other.yml file in your _data/sidebars folder:</p>
+
+<div class="language-yaml highlighter-rouge">    <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Some link bookmark</span>
+      <span class="na">url</span><span class="pi">:</span> <span class="s">/mydoc_pages.html#someIdTag</span>
+</div>
+
+<p>And reference it like this:</p>
+
+<div class="highlighter-rouge">This is [Some link][mydoc_pages.html#someIdTag].
+</div>
+
+<p><strong>Result:</strong></p>
+
+<p>This is [Some link][mydoc_pages.html#someIdTag].</p>
+
+<p>It’s a little strange having the <code class="highlighter-rouge">.html#</code> in a reference like this, but it works.</p>
+
 
 
     <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_formatting.html" class="btn btn-default navbar-btn cursorNorm" role="button">formatting</a>
+        
+        
+        
+        <a href="tag_navigation.html" class="btn btn-default navbar-btn cursorNorm" role="button">navigation</a>
+        
+        
         
     </div>
 
@@ -430,7 +495,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2017 Эвотор. All rights reserved. <br />
- Site last generated: Apr 14, 2017 <br />
+<span>Page last updated:</span> July 3, 2016<br/> Site last generated: Apr 14, 2017 <br />
 <p><img src="images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

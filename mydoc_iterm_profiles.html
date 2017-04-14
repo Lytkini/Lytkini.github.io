@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Этот раздел содержит вводную информацию для работы с нашей документацией.">
-<meta name="keywords" content=" sample homepage">
-<title>Введение | Документация Эвотор</title>
+<meta name="description" content="You can set up profiles in iTerm to facilitate the build process with just a few clicks. This can make it a lot easier to quickly build multiple outputs.">
+<meta name="keywords" content="publishing,  iterm, terminal, build shortcuts, mac">
+<title>iTerm profiles | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Введение">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="iTerm profiles">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -344,7 +344,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Введение</h1>
+   <h1 class="post-title-main">iTerm profiles</h1>
 </div>
 
 
@@ -352,7 +352,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Этот раздел содержит вводную информацию для работы с нашей документацией.</div>
+    <div class="summary">You can set up profiles in iTerm to facilitate the build process with just a few clicks. This can make it a lot easier to quickly build multiple outputs.</div>
    
 
     
@@ -383,40 +383,52 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p><a href="https://evotor.ru/buy?order">Приобретая смарт-терминал</a> пользователи платформы Эвотор получают доступ к базовой функциональности:</p>
+  <h2 id="about-iterm-profiles">About iTerm profiles</h2>
 
-<ul>
-  <li>Редактирование списка магазинов, сотрудников и смарт-терминалов.</li>
-  <li>Редактирование номенклатуры.</li>
-  <li>Просмотр базовых отчётов.</li>
-  <li>Установка приложений для интеграции со сторонними сервисами.</li>
-</ul>
+<p>When you’re working with tech docs, a lot of times you have builds that push files onto different servers, or that build the content for different environments. It can be a hassle to type out these commands each time. Instead, it’s easier to configure iTerm with profiles that initiate the scripts.</p>
 
-<p>С помощью интеграции сторонних сервисов и платформы Эвотор, вы можете помочь пользователям:</p>
+<h2 id="set-up-profiles">Set up profiles</h2>
 
-<ul>
-  <li>взаимодействовать со сторонними товароучётными системами, как установленными на компьютере пользователя, так и доступными в облаке;</li>
-  <li>автоматически обновлять информацию о магазинах в картографических сервисах;</li>
-  <li>использовать различные системы лояльности для клиентов пользователей платформы;</li>
-  <li>и многое другое.</li>
-</ul>
+<ol>
+  <li>Open iTerm and go to <strong>Profiles &gt; Open Profiles.</strong></li>
+  <li>Click <strong>Edit Profiles</strong>.</li>
+  <li>Click the + button in the lower-left corner to create a new profile.</li>
+  <li>In the <strong>Name</strong> field, type a name describing the output, such as <code class="highlighter-rouge">Doc theme -- designers</code>.</li>
+  <li>
+    <p>In the <strong>Send text at start</strong> field, type the command for the build script, such as this:</p>
 
-<p>Все данные пользователей платформы (например, информация о магазинах, сотрудниках и смарт-терминалах пользователя) хранятся в <em>облаке Эвотор</em>.</p>
+    <div class="highlighter-rouge">JEKYLL_ENV=production jekyll serve
+    </div>
+    <p>Leave the Login shell option selected.</p>
+  </li>
+  <li>In the Working Directory section, select <strong>Directory</strong> and enter the directory for your project, such as <strong>/Users/tjohnson/projects/documentation-theme-jekyll</strong>.</li>
+  <li>Close the profiles panel.</li>
+</ol>
 
-<h3 id="С-чего-начать">С чего начать</h3>
+<p>Here’s an example:</p>
 
-<p><a href="https://developer.evotor.ru/evotor-cloud-rest-api/">Ознакомьтесь со способами интеграции с платформой Эвотор</a>.</p>
+<figure><img class="docimage" src="images/itermexample.png" alt="" /><figcaption>iTerm profile example</figcaption></figure>
 
-<h3 id="Полезные-ресурсы">Полезные ресурсы</h3>
+<h2 id="launching-a-profile">Launching a profile</h2>
 
-<p>Изучите запросы к облаку Эвотор и к стороннему веб-сервису на сайте <a href="https://api.evotor.ru/docs/">api.evotor.ru/docs</a>. Посмотрите пример приложения для смарт-терминалов <a href="https://github.com/evotor/whale-example">в нашем репозитории</a>. Ознакомьтесь с <a href="https://developer.evotor.ru/documents/">документами</a>, которые создают смарт-терминалы. Узнайте <a href="https://developer.evotor.ru/protocol_of_errors/">какие ошибки</a> могут возникнуть при интеграции стороннего сервиса и платформы Эвотор.</p>
+<ol>
+  <li>In iTerm, make sure the Toolbar is shown. Go to <strong>View &gt; Toggle Toolbar</strong>.</li>
+  <li>Click the <strong>New</strong> button and select your profile.</li>
+</ol>
 
-<h3 id="Инструменты">Инструменты</h3>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> When you’re done with the session, make sure to click <b>Ctrl+C</b>.</div>
 
-<p>Ознакомьтесь с <a href="https://github.com/evotor/device-app">API смарт-терминала</a>, чтобы приступить к разработке webview-приложений. Используйте <a href="https://github.com/evotor/device-drivers">SDK смарт-терминала</a>, чтобы создать драйверы для подключаемых устройств.</p>
 
 
     <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_publishing.html" class="btn btn-default navbar-btn cursorNorm" role="button">publishing</a>
+        
+        
         
     </div>
 
@@ -430,7 +442,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2017 Эвотор. All rights reserved. <br />
- Site last generated: Apr 14, 2017 <br />
+<span>Page last updated:</span> July 3, 2016<br/> Site last generated: Apr 14, 2017 <br />
 <p><img src="images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

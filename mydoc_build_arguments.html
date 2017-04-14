@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Этот раздел содержит вводную информацию для работы с нашей документацией.">
-<meta name="keywords" content=" sample homepage">
-<title>Введение | Документация Эвотор</title>
+<meta name="description" content="You use various build arguments with your Jekyll project. You can also create shell scripts to act as shortcuts for long build commands. You can store the co...">
+<meta name="keywords" content="publishing,  building, serving, serve, build">
+<title>Build arguments | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Введение">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Build arguments">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -344,7 +344,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Введение</h1>
+   <h1 class="post-title-main">Build arguments</h1>
 </div>
 
 
@@ -352,7 +352,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Этот раздел содержит вводную информацию для работы с нашей документацией.</div>
+    <div class="summary">You use various build arguments with your Jekyll project. You can also create shell scripts to act as shortcuts for long build commands. You can store the commands in iTerm as profiles as well.</div>
    
 
     
@@ -383,40 +383,67 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p><a href="https://evotor.ru/buy?order">Приобретая смарт-терминал</a> пользователи платформы Эвотор получают доступ к базовой функциональности:</p>
+  <h2 id="how-to-build-jekyll-sites">How to build Jekyll sites</h2>
 
-<ul>
-  <li>Редактирование списка магазинов, сотрудников и смарт-терминалов.</li>
-  <li>Редактирование номенклатуры.</li>
-  <li>Просмотр базовых отчётов.</li>
-  <li>Установка приложений для интеграции со сторонними сервисами.</li>
-</ul>
+<p>The normal way to build the Jekyll site is through the build command:</p>
 
-<p>С помощью интеграции сторонних сервисов и платформы Эвотор, вы можете помочь пользователям:</p>
+<div class="highlighter-rouge">jekyll build
+</div>
 
-<ul>
-  <li>взаимодействовать со сторонними товароучётными системами, как установленными на компьютере пользователя, так и доступными в облаке;</li>
-  <li>автоматически обновлять информацию о магазинах в картографических сервисах;</li>
-  <li>использовать различные системы лояльности для клиентов пользователей платформы;</li>
-  <li>и многое другое.</li>
-</ul>
+<p>To build the site and view it in a live server so that Jekyll rebuilds that site each time you make a change, use the <code class="highlighter-rouge">serve</code> command:</p>
 
-<p>Все данные пользователей платформы (например, информация о магазинах, сотрудниках и смарт-терминалах пользователя) хранятся в <em>облаке Эвотор</em>.</p>
+<div class="highlighter-rouge">jekyll serve
+</div>
 
-<h3 id="С-чего-начать">С чего начать</h3>
+<p>By default, the _config.yml in the root directory will be used, Jekyll will scan the current directory for files, and the folder <code class="highlighter-rouge">_site</code> will be used as the output. You can customize these build commands like this:</p>
 
-<p><a href="https://developer.evotor.ru/evotor-cloud-rest-api/">Ознакомьтесь со способами интеграции с платформой Эвотор</a>.</p>
+<div class="highlighter-rouge">jekyll serve --config configs/myspecialconfig.yml --destination ../doc_outputs
+</div>
 
-<h3 id="Полезные-ресурсы">Полезные ресурсы</h3>
+<p>Here the <code class="highlighter-rouge">configs/myspecialconfig.yml</code> file is used instead of <code class="highlighter-rouge">_config.yml</code>. The destination directory is <code class="highlighter-rouge">../doc_outputs</code>, which would be one level up from your current directory.</p>
 
-<p>Изучите запросы к облаку Эвотор и к стороннему веб-сервису на сайте <a href="https://api.evotor.ru/docs/">api.evotor.ru/docs</a>. Посмотрите пример приложения для смарт-терминалов <a href="https://github.com/evotor/whale-example">в нашем репозитории</a>. Ознакомьтесь с <a href="https://developer.evotor.ru/documents/">документами</a>, которые создают смарт-терминалы. Узнайте <a href="https://developer.evotor.ru/protocol_of_errors/">какие ошибки</a> могут возникнуть при интеграции стороннего сервиса и платформы Эвотор.</p>
+<h2 id="shortcuts-for-the-build-arguments">Shortcuts for the build arguments</h2>
 
-<h3 id="Инструменты">Инструменты</h3>
+<p>If you have a long build argument and don’t want to enter it every time in Jekyll, noting all your configuration details, you can create a shell script and then just run the script. Simply put the build argument into a text file and save it with the .sh extension (for Mac) or .bat extension (for Windows). Then run it like this:</p>
 
-<p>Ознакомьтесь с <a href="https://github.com/evotor/device-app">API смарт-терминала</a>, чтобы приступить к разработке webview-приложений. Используйте <a href="https://github.com/evotor/device-drivers">SDK смарт-терминала</a>, чтобы создать драйверы для подключаемых устройств.</p>
+<div class="highlighter-rouge">. myscript.sh
+</div>
+
+<p>My preference is to add the scripts to profiles in iTerm. See [iTerm Profiles][mydoc_iterm_profiles] for more details.</p>
+
+<h2 id="stop-a-server">Stop a server</h2>
+
+<p>When you’re done with the preview server, press <strong>Ctrl+C</strong> to exit out of it. If you exit iTerm or Terminal without shutting down the server, the next time you build your site, or if you build multiple sites with the same port, you may get a server-already-in-use message.</p>
+
+<p>You can kill the server process using these commands:</p>
+
+<div class="highlighter-rouge">ps aux | grep jekyll
+</div>
+
+<p>Find the PID (for example, it  looks like “22298”).</p>
+
+<p>Then type <code class="highlighter-rouge">kill -9 22298</code> where “22298” is the PID.</p>
+
+<p>To kill all Jekyll instances, use this:</p>
+
+<div class="highlighter-rouge">kill -9 $(ps aux | grep '[j]ekyll' | awk '{print $2}')
+</div>
+
+<p>I recommend creating a profile in iTerm that stores this command. Here’s what the iTerm settings look like:</p>
+
+<figure><img class="docimage" src="images/killalljekyll.png" alt="" /><figcaption>iTerm profile settings to kill all Jekyll</figcaption></figure>
+
 
 
     <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_publishing.html" class="btn btn-default navbar-btn cursorNorm" role="button">publishing</a>
+        
+        
         
     </div>
 
@@ -430,7 +457,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2017 Эвотор. All rights reserved. <br />
- Site last generated: Apr 14, 2017 <br />
+<span>Page last updated:</span> July 3, 2016<br/> Site last generated: Apr 14, 2017 <br />
 <p><img src="images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>

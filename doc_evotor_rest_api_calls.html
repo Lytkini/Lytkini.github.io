@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Этот раздел содержит вводную информацию для работы с нашей документацией.">
-<meta name="keywords" content=" sample homepage">
-<title>Введение | Документация Эвотор</title>
+<meta name="description" content="Раздел содержит информацию о запросах, которые вы можете отправлять в REST API Эвотор">
+<meta name="keywords" content=" sample">
+<title>Запросы REST API Эвотор | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Введение">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Запросы REST API Эвотор">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -205,7 +205,7 @@
             
             
             
-            <li><a href="doc_evotor_rest_api_calls.html">Запросы к облаку Эвотор</a></li>
+            <li class="active"><a href="doc_evotor_rest_api_calls.html">Запросы к облаку Эвотор</a></li>
             
             
             
@@ -344,7 +344,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Введение</h1>
+   <h1 class="post-title-main">Запросы REST API Эвотор</h1>
 </div>
 
 
@@ -352,7 +352,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Этот раздел содержит вводную информацию для работы с нашей документацией.</div>
+    <div class="summary">Раздел содержит информацию о запросах, которые вы можете отправлять в REST API Эвотор</div>
    
 
     
@@ -383,37 +383,67 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p><a href="https://evotor.ru/buy?order">Приобретая смарт-терминал</a> пользователи платформы Эвотор получают доступ к базовой функциональности:</p>
-
+  <p>Для доступа к данным пользователей платформы, вы можете обращаться к REST API облака Эвотор. Интеграция с REST API облака позволяет:</p>
 <ul>
-  <li>Редактирование списка магазинов, сотрудников и смарт-терминалов.</li>
-  <li>Редактирование номенклатуры.</li>
-  <li>Просмотр базовых отчётов.</li>
-  <li>Установка приложений для интеграции со сторонними сервисами.</li>
+  <li>искать магазины, сотрудников и смарт терминалы пользователя платформы (владельца бизнеса);</li>
+  <li>получать и передавать информацию о продуктах в рамках выбранного магазина (<em>отдельного магазина пользователя</em>);</li>
+  <li>удалять продукты в рамках выбранного магазина (<em>отдельного магазина пользователя</em>);</li>
+  <li>получать документы в рамках выбранного магазина (<em>отдельного магазина пользователя</em>).</li>
 </ul>
 
-<p>С помощью интеграции сторонних сервисов и платформы Эвотор, вы можете помочь пользователям:</p>
+<p>Схема взаимодействия приложений и облака Эвотор выглядит следующим образом:</p>
 
+<p><img src="ссылка на схему" alt="схема взаимодействия" /></p>
+
+<p>Актуальный список запросов, которые поддерживает облако Эвотор, вы найдёте на странице https://api.evotor.ru/docs.</p>
+
+<h3 id="Авторизация">Авторизация</h3>
+<p>Все запросы к REST API облака Эвотор, должны содержать HTTP-заголовок <code class="highlighter-rouge">x-Authorization</code>, в котором требуется указать <em>ключ авторизации</em>. Ключ авторизации можно получить одним из следующих способов:</p>
 <ul>
-  <li>взаимодействовать со сторонними товароучётными системами, как установленными на компьютере пользователя, так и доступными в облаке;</li>
-  <li>автоматически обновлять информацию о магазинах в картографических сервисах;</li>
-  <li>использовать различные системы лояльности для клиентов пользователей платформы;</li>
-  <li>и многое другое.</li>
+  <li>В GET-параметре <code class="highlighter-rouge">token</code> веб-адреса iframe-приложения:
+    <pre><code class="language-curl">https://partner.org/#/?uid=01-000000000011111&amp;token=string
+</code></pre>
+  </li>
+  <li>В Личном кабинете пользователя Эвотор, в разделе <strong>Настройки</strong> приложения.</li>
 </ul>
 
-<p>Все данные пользователей платформы (например, информация о магазинах, сотрудниках и смарт-терминалах пользователя) хранятся в <em>облаке Эвотор</em>.</p>
+<p><img src="https://github.com/Lytkini/Drafts/blob/Content-modification/pictures/1c_integration_API_key.png" alt="Токен для интеграции с 1с" /></p>
 
-<h3 id="С-чего-начать">С чего начать</h3>
+<ul>
+  <li>В POST-запросе от облака Эвотор. Для этого сторонний сервис должен поддерживать адрес <code class="highlighter-rouge">http://&lt;веб-адрес стороннего сервиса&gt;/api/v1/user/token</code>.</li>
+</ul>
 
-<p><a href="https://developer.evotor.ru/evotor-cloud-rest-api/">Ознакомьтесь со способами интеграции с платформой Эвотор</a>.</p>
+<h3 id="Пример-get-запроса-к-облаку-Эвотор">Пример GET-запроса к облаку Эвотор</h3>
+<p>Получить список всех магазинов пользователя:</p>
+<pre><code class="language-curl">curl -X GET --header 'Accept: application/json' --header 'X-Authorization: &lt;ключ авторизации&gt;' --header 'Content-Type: application/json' 'https://api.evotor.ru/api/v1/inventories/stores/search'
+</code></pre>
+<p>Ответ:</p>
+<pre><code class="language-[">  {
+    "uuid": "string",
+    "address": null,
+    "name": "Мой магазин1",
+    "code": null
+  },
+  {
+    "uuid": "string",
+    "address": null,
+    "name": "Мой магазин3",
+    "code": null
+  }
+]
+</code></pre>
+<h3 id="Пример-post-запроса">Пример POST-запроса</h3>
+<p>Создать новый товар в определённом магазине:</p>
+<pre><code class="language-curl">curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Authorization: &lt;токен&gt;' -d '[{"uuid":"n1e2w3-t4ov5qr6","code":"","barCodes":[],"alcoCodes":[],"name":"Новый товар","price":0,"quantity":0,"costPrice":0,"measureName":"","tax":"NO_VAT","allowToSell":false,"description":"","articleNumber":"","parentUuid":"","group":false,"type":"NORMAL","alcoholByVolume":0,"alcoholProductKindCode":0,"tareVolume":0}]' 'https://api.evotor.ru/api/v1/inventories/stores/storeUuid-123456/products'
+</code></pre>
 
-<h3 id="Полезные-ресурсы">Полезные ресурсы</h3>
+<pre><code class="language-curl">no cotent
+</code></pre>
 
-<p>Изучите запросы к облаку Эвотор и к стороннему веб-сервису на сайте <a href="https://api.evotor.ru/docs/">api.evotor.ru/docs</a>. Посмотрите пример приложения для смарт-терминалов <a href="https://github.com/evotor/whale-example">в нашем репозитории</a>. Ознакомьтесь с <a href="https://developer.evotor.ru/documents/">документами</a>, которые создают смарт-терминалы. Узнайте <a href="https://developer.evotor.ru/protocol_of_errors/">какие ошибки</a> могут возникнуть при интеграции стороннего сервиса и платформы Эвотор.</p>
+<p>При создании товаров в ответ приходит пустое сообщение. Код ответа в случае удачного добавления – 200.</p>
 
-<h3 id="Инструменты">Инструменты</h3>
-
-<p>Ознакомьтесь с <a href="https://github.com/evotor/device-app">API смарт-терминала</a>, чтобы приступить к разработке webview-приложений. Используйте <a href="https://github.com/evotor/device-drivers">SDK смарт-терминала</a>, чтобы создать драйверы для подключаемых устройств.</p>
+<h3 id="Справочник-api">Справочник API</h3>
+<p>Ознакомиться и попробовать запросы к REST API облака Эвотор вы можете на сайте https://api.evotor.ru/docs в разделе <strong>REST API облака Эвотор</strong>.</p>
 
 
     <div class="tags">

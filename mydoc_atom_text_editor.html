@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Этот раздел содержит вводную информацию для работы с нашей документацией.">
-<meta name="keywords" content=" sample homepage">
-<title>Введение | Документация Эвотор</title>
+<meta name="description" content="Atom is a free text editor that is a favorite tool of many writers because it is free. This page provides some tips for using Atom.">
+<meta name="keywords" content=" atom, text editor,">
+<title>Atom Text Editor | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Введение">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Atom Text Editor">{title}</a></li>',
                     noResultsText: 'No results found.',
                             limit: 10,
                             fuzzy: true,
@@ -344,7 +344,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Введение</h1>
+   <h1 class="post-title-main">Atom Text Editor</h1>
 </div>
 
 
@@ -352,7 +352,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Этот раздел содержит вводную информацию для работы с нашей документацией.</div>
+    <div class="summary">Atom is a free text editor that is a favorite tool of many writers because it is free. This page provides some tips for using Atom.</div>
    
 
     
@@ -383,37 +383,40 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p><a href="https://evotor.ru/buy?order">Приобретая смарт-терминал</a> пользователи платформы Эвотор получают доступ к базовой функциональности:</p>
+  <p>If you haven’t downloaded <a href="https://atom.io/">Atom</a>, download and install it. Use this as your editor when working with Jekyll. The syntax highlighting is probably the best among the available editors, as it was designed with Jekyll-authoring in mind. However, if you prefer Sublime Text, WebStorm, or some other editor, you can also use that.</p>
+
+<p>Customize the invisibles and tab spacing in Atom:</p>
+
+<ol>
+  <li>Go to <strong>Atom &gt; Preferences</strong>.</li>
+  <li>On the <strong>Settings</strong> tab, keep the default options but also select the following:
+    <ul>
+      <li><strong>Show Invisibles</strong></li>
+      <li><strong>Soft Wrap</strong></li>
+      <li>For the <strong>Tab Length</strong>, type <strong>4</strong>.</li>
+      <li>For the <strong>Tab Type</strong>, select <strong>soft</strong>.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Turn off auto-complete:</p>
+
+<ol>
+  <li>Go to <strong>Atom &gt; Preferences</strong>.</li>
+  <li>Click the <strong>Packages</strong> tab.</li>
+  <li>Search for <strong>autocomplete-plus</strong>.</li>
+  <li>Disable the autocomplete package.</li>
+</ol>
+
+<h3 id="atom-shortcuts">Atom Shortcuts</h3>
 
 <ul>
-  <li>Редактирование списка магазинов, сотрудников и смарт-терминалов.</li>
-  <li>Редактирование номенклатуры.</li>
-  <li>Просмотр базовых отчётов.</li>
-  <li>Установка приложений для интеграции со сторонними сервисами.</li>
+  <li><strong>Cmd + T</strong>: Find file</li>
+  <li><strong>Cmd + Shift + F</strong>: Find across project</li>
+  <li><strong>Cmd + Alt + S</strong>: Save all</li>
 </ul>
 
-<p>С помощью интеграции сторонних сервисов и платформы Эвотор, вы можете помочь пользователям:</p>
-
-<ul>
-  <li>взаимодействовать со сторонними товароучётными системами, как установленными на компьютере пользователя, так и доступными в облаке;</li>
-  <li>автоматически обновлять информацию о магазинах в картографических сервисах;</li>
-  <li>использовать различные системы лояльности для клиентов пользователей платформы;</li>
-  <li>и многое другое.</li>
-</ul>
-
-<p>Все данные пользователей платформы (например, информация о магазинах, сотрудниках и смарт-терминалах пользователя) хранятся в <em>облаке Эвотор</em>.</p>
-
-<h3 id="С-чего-начать">С чего начать</h3>
-
-<p><a href="https://developer.evotor.ru/evotor-cloud-rest-api/">Ознакомьтесь со способами интеграции с платформой Эвотор</a>.</p>
-
-<h3 id="Полезные-ресурсы">Полезные ресурсы</h3>
-
-<p>Изучите запросы к облаку Эвотор и к стороннему веб-сервису на сайте <a href="https://api.evotor.ru/docs/">api.evotor.ru/docs</a>. Посмотрите пример приложения для смарт-терминалов <a href="https://github.com/evotor/whale-example">в нашем репозитории</a>. Ознакомьтесь с <a href="https://developer.evotor.ru/documents/">документами</a>, которые создают смарт-терминалы. Узнайте <a href="https://developer.evotor.ru/protocol_of_errors/">какие ошибки</a> могут возникнуть при интеграции стороннего сервиса и платформы Эвотор.</p>
-
-<h3 id="Инструменты">Инструменты</h3>
-
-<p>Ознакомьтесь с <a href="https://github.com/evotor/device-app">API смарт-терминала</a>, чтобы приступить к разработке webview-приложений. Используйте <a href="https://github.com/evotor/device-drivers">SDK смарт-терминала</a>, чтобы создать драйверы для подключаемых устройств.</p>
+<p>(For Windows, replace “Cmd” with “Ctrl”.)</p>
 
 
     <div class="tags">
@@ -430,7 +433,7 @@ $('#toc').on('click', 'a', function() {
             <div class="row">
                 <div class="col-lg-12 footer">
                &copy;2017 Эвотор. All rights reserved. <br />
- Site last generated: Apr 14, 2017 <br />
+<span>Page last updated:</span> March 20, 2016<br/> Site last generated: Apr 14, 2017 <br />
 <p><img src="images/company_logo.png" alt="Company logo"/></p>
                 </div>
             </div>
