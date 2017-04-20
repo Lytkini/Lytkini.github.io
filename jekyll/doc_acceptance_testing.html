@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит информацию об условиях работы с Эвотором">
+<meta name="description" content="Раздел содержит информацию о проверках, которые мы выполняем перед размещением приложения в Магазине приложений.">
 <meta name="keywords" content=" sample">
-<title>Условия | Документация Эвотор</title>
+<title>Приёмочное тестирование приложения | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -117,7 +117,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Условия">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Приёмочное тестирование приложения">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -309,7 +309,7 @@
             
             
             
-            <li><a href="doc_acceptance_testing.html">Приёмочное тестирование</a></li>
+            <li class="active"><a href="doc_acceptance_testing.html">Приёмочное тестирование</a></li>
             
             
             
@@ -338,7 +338,7 @@
             
             
             
-            <li class="active"><a href="doc_conditions.html">Условия</a></li>
+            <li><a href="doc_conditions.html">Условия</a></li>
             
             
             
@@ -384,7 +384,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Условия</h1>
+   <h1 class="post-title-main">Приёмочное тестирование приложения</h1>
 </div>
 
 
@@ -392,7 +392,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Раздел содержит информацию об условиях работы с Эвотором</div>
+    <div class="summary">Раздел содержит информацию о проверках, которые мы выполняем перед размещением приложения в Магазине приложений.</div>
    
 
     
@@ -423,7 +423,36 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>[piechart] Возможны исключения, для обсуждения пишите на <a href="mailto:developer@evotor.ru">developer@evotor.ru</a>.</p>
+  <p>При оформлении страницы приложения следуйте ограничениям, указанным на <a href="https://dev.evotor.ru/">портале разработчиков</a>. Когда вы оформите страницу, протестируете приложение и будете готовы выложить его в открытый доступ, нам потребуется провести приёмочное тестирование. О готовности приложения сообщите по адресу <a href="mailto:developer@evotor.ru">developer@evotor.ru</a>.</p>
+
+<p>Приёмочное тестирование включает следующие проверки:</p>
+
+<ol>
+  <li>Эвотор авторизует запросы приложения с помощью токена, указанного на странице <strong>Настройки</strong>.</li>
+  <li>
+    <p>Приложение сопоставляет сущности Эвотора (смарт-терминалы, сотрудников и магазины) и 1С.</p>
+
+    <p><img src="https://developer.evotor.ru/app/uploads/2017/04/1c_entities_association-300x162.png" alt="" /></p>
+  </li>
+  <li>Приложение передаёт товары из 1С в Эвотор. Проверяется:
+    <ul>
+      <li>Корректность данных: данные соответствуют описанию в <a href="https://api.evotor.ru/docs/">Справочнике REST API</a>.</li>
+      <li>Сжатие запросов в gzip.</li>
+      <li>Передача товаров пачками (актуально для большой базы товаров)</li>
+    </ul>
+  </li>
+  <li>Приложение удаляет товары в Эвоторе как поштучно, так и все товары одновременно.</li>
+  <li>Приложение загружает документы из Эвотора. Проверяется:
+    <ul>
+      <li>Загрузка документов как по всему магазину, так и по конкретному смарт-терминалу (deviceUuid).</li>
+      <li>Загрузка определённого типа документов (см. запрос <a href="https://api.evotor.ru/docs/#tag/Tovary-i-dokumenty%2Fpaths%2Fapi.evotor.ru~1api~1v1~1inventories~1stores~1%7BstoreUuid%7D~1documents%2Fget"><strong>[GET] Получить список документов</strong></a>).</li>
+      <li>Корректность дат в GET-параметрах.</li>
+      <li>Обработка <a href="https://developer.evotor.ru/protocol_of_errors/">возвращаемых ошибок</a>.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>После того как приложение пройдёт приёмочное тестирование, мы выложим его в открытый доступ.</p>
 
 
     <div class="tags">
