@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="This is some summary frontmatter for my sample post.">
-<meta name="keywords" content="newsgetting_started,  ">
-<title>Sample post | Документация Эвотор</title>
+<meta name="description" content="Раздел содержит требования к плитке приложения, а также информацию о том как добвить плитку на главный экран смарт-терминала.">
+<meta name="keywords" content=" sample">
+<title>Плитка приложения на главном экране смарт-терминала | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -117,7 +117,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Sample post">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Плитка приложения на главном экране смарт-терминала">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -280,7 +280,7 @@
             
             
             
-            <li><a href="doc_smart_terminal_app_tile.html">Главный экран смарт-терминала</a></li>
+            <li class="active"><a href="doc_smart_terminal_app_tile.html">Главный экран смарт-терминала</a></li>
             
             
             
@@ -383,63 +383,143 @@
 
     <!-- Content Column -->
     <div class="col-md-9">
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
-    <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Sample post</h1>
-        <p class="post-meta"><time datetime="2016-02-26T00:00:00+03:00" itemprop="datePublished">Feb 26, 2016</time> /
-            
-            
-            
-            <a href="tag_news.html">news</a>, 
-            
-            
-            
-            <a href="tag_getting_started.html">getting_started</a>
-            
-            
-            
-
-        </p>
+        <div class="post-header">
+   <h1 class="post-title-main">Плитка приложения на главном экране смарт-терминала</h1>
+</div>
 
 
-    </header>
 
-    <div class="post-content" itemprop="articleBody">
+<div class="post-content">
 
+   
+    <div class="summary">Раздел содержит требования к плитке приложения, а также информацию о том как добвить плитку на главный экран смарт-терминала.</div>
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+
+    
+
+  <p>Вы можете интегрировать своё приложение в существующий процесс смарт-терминала, например, продажу или работу с оборудованием, или добавить плитку приложения на главный экран. Плиток может быть несколько, если приложение реализует независимые действия, например, плитки “Продать товар” и “Вернуть товар”.</p>
+
+<p><img src=".\images\Tile_example.png" alt="Пример плитки" /></p>
+
+<h3 id="Требования">Требования</h3>
+
+<p>Добавляйте плитку если:</p>
+<ul>
+  <li>у приложения есть свой интерфейс;</li>
+  <li>приложение реализует полезное действие и / или предоставляет сотруднику магазина доступ к аналитической информации.</li>
+</ul>
+
+<p>Вы можете изменять следующие параметры плитки:</p>
+<ul>
+  <li>
+    <p><strong>Цвет</strong>. Может быть любым, пока на его фоне отчётливо отображаются символы и иконка.</p>
+
+    <blockquote>
+      <p>Как правило цвет плитки делают таким же как и цвет основных кнопок в интерфейсе приложения.</p>
+    </blockquote>
+  </li>
+  <li><strong>Название</strong>. Может быть названием приложения или полезного действия, например, “Продажи за неделю”. Плитка отображает до 20 символов. Остальные символы скрываются под многоточием.</li>
+  <li><strong>Иконка</strong>. Иконка должна быть квадратной – 64 dpi. Требуется обеспечить набор иконок в трёх разрешениях: 96, 192, 256px.</li>
+</ul>
+
+<h3 id="Нативное-приложение">Нативное приложение</h3>
+
+<p>Чтобы добавить плитку нативного приложения на главный экран смарт-терминала, в манифесте приложения, измените соответствующий элемент <code class="highlighter-rouge">&lt;Activity&gt;</code> следующим образом:</p>
+<pre><code class="language-1xml">&lt;activity
+    android:name=".someActivity"
+    android:icon="@drawable/icon"
+    android:label="Example tile"
+    &gt;
+    &lt;meta-data
+        android:name="ru.evotor.launcher.BACKGROUND_COLOR"
+        android:value="#133788" /&gt;
+    &lt;intent-filter&gt;
+        &lt;action android:name="android.intent.action.MAIN" /&gt;
+        &lt;category android:name="android.intent.category.EVOTOR" /&gt;
+    &lt;/intent-filter&gt;
+&lt;/activity&gt;
+</code></pre>
+<p>где:</p>
+<ul>
+  <li>Атрибут <code class="highlighter-rouge">android:name</code> задаёт название соответствующего элемента <code class="highlighter-rouge">Activity</code>.</li>
+  <li>Атрибут <code class="highlighter-rouge">android:icon</code> задаёт расположение иконки, которая отображается на плитке.</li>
+  <li>Атрибут <code class="highlighter-rouge">android:label</code> название плитки.</li>
+  <li>Необязательный тег <code class="highlighter-rouge">&lt;meta-data&gt;</code>, содержит атрибуты:
+    <ul>
+      <li><code class="highlighter-rouge">android:name</code> – задаёт цвет иконки.</li>
+      <li><code class="highlighter-rouge">android:value</code> – содержит цвет иконки в шестнадцатиричной кодировке.</li>
+    </ul>
+  </li>
+  <li>Интент фильтр содержит соответствующие элементы action (<code class="highlighter-rouge">android:name="android.intent.action.MAIN"</code>) и category (<code class="highlighter-rouge">android:name="android.intent.category.EVOTOR"</code>).</li>
+</ul>
+
+<h3 id="Вебвью-приложение">Вебвью приложение</h3>
+
+<p>Чтобы добавить плитку вебвью приложения на главный экран смарт-терминала, в файле <em>client.yaml</em>, модифицируйте список <code class="highlighter-rouge">views</code> следующим образом:</p>
+<pre><code class="language-yaml1">views:
+  - name: Example
+    header: "Заголовок окна"
+    launcher_label: "Название приложения для плитки"
+    launcher_icon_96: client/views/example/icon-96.png
+    launcher_icon_192: client/views/example/icon-192.png
+    launcher_icon_256: client/views/example/icon-256.png
+    launcher_color: #133788
+    source: client/views/example/view.html
+    scripts:
+      - no-script
+    styles:
+      - "*.css"
+</code></pre>
+<p>где:</p>
+<ul>
+  <li><code class="highlighter-rouge">name</code> – задаёт название элемента списка <code class="highlighter-rouge">views</code>.</li>
+  <li><code class="highlighter-rouge">header</code> – задаёт заголовок окна, которое открывается по нажатию на плитку.</li>
+  <li><code class="highlighter-rouge">launcher_label</code> – задаёт название плитки.</li>
+  <li><code class="highlighter-rouge">launcher_icon_96</code> – задаёт путь к иконке в разрешении 96 х 96 пикселей. Иконка копируется в папку drawable-hdpi, файл переименовывается в <code class="highlighter-rouge">&lt;Значение параметра name&gt;-icon.png</code>.</li>
+  <li><code class="highlighter-rouge">launcher_icon_192</code> – задаёт путь к иконке в разрешении 192 х 192 пикселя. Иконка копируется в папку xxdrawable-hdpi, файл переименовывается в <code class="highlighter-rouge">&lt;Значение параметра name&gt;-icon.png</code>.</li>
+  <li><code class="highlighter-rouge">launcher_icon_256</code> – задаёт путь к иконке в разрешении 256 х 256 пикселей. Иконка копируется в папку xxxdrawable-hdpi, файл переименовывается в <code class="highlighter-rouge">&lt;Значение параметра name&gt;-icon.png</code>.</li>
+  <li><code class="highlighter-rouge">launcher_color</code> – задаёт цвет плитки в шестнадцатиричной кодировке.</li>
+  <li><code class="highlighter-rouge">source</code> – задаёт полный путь к html-файлу, который открывается по нажатию на плитку.</li>
+  <li><code class="highlighter-rouge">scripts</code> – задаёт список подключаемых скриптов.</li>
+  <li><code class="highlighter-rouge">styles</code> – задаёт список подключаемых стилей.</li>
+</ul>
+
+
+    <div class="tags">
         
-        <div class="summary">This is some summary frontmatter for my sample post.</div>
-        
-
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
-
-<h2 id="heading">Heading</h2>
-
-<p>but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</p>
-
-
     </div>
 
+    
 
-
-</article>
-
-
+</div>
 
 <hr class="shaded"/>
-
-<footer>
-            <div class="row">
-                <div class="col-lg-12 footer">
-               &copy;2017 Эвотор. All rights reserved. <br />
- Site last generated: Apr 25, 2017 <br />
-<p><img src="images/company_logo.png" alt="Company logo"/></p>
-                </div>
-            </div>
-</footer>
-
 
     </div>
     <!-- /.row -->

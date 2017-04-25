@@ -128,6 +128,18 @@
   
   
   <url>
+    <loc>http://localhost:4000/doc_smart_terminal_app_grants.html</loc>
+  </url>
+  
+  
+  
+  <url>
+    <loc>http://localhost:4000/doc_smart_terminal_app_tile.html</loc>
+  </url>
+  
+  
+  
+  <url>
     <loc>http://localhost:4000/doc_smart_terminal_application.html</loc>
   </url>
   
@@ -141,18 +153,6 @@
   
   <url>
     <loc>http://localhost:4000/doc_smart_terminal_documents.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://localhost:4000/doc_smart_terminal_native.html</loc>
-  </url>
-  
-  
-  
-  <url>
-    <loc>http://localhost:4000/doc_smart_terminal_webview.html</loc>
   </url>
   
   
