@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит ответы на часто задаваемые вопросы.">
-<meta name="keywords" content=" frequently asked questions, FAQ, question and answer, collapsible sections, expand, collapse">
-<title>Часто задаваемые вопросы | Документация Эвотор</title>
+<meta name="description" content="">
+<meta name="keywords" content=" news, blog, updates, release notes, announcements">
+<title>Что нового | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -96,7 +96,7 @@
                 
                 
                 
-                <li><a href="whats_new">Что нового</a></li>
+                <li class="active"><a href="whats_new">Что нового</a></li>
                 
                 
                 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Часто задаваемые вопросы">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Что нового">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -371,7 +371,7 @@
             
             
             
-            <li class="active"><a href="doc_faq.html">Часто задаваемые вопросы</a></li>
+            <li><a href="doc_faq.html">Часто задаваемые вопросы</a></li>
             
             
             
@@ -395,7 +395,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Часто задаваемые вопросы</h1>
+   <h1 class="post-title-main">Что нового</h1>
 </div>
 
 
@@ -403,73 +403,74 @@
 <div class="post-content">
 
    
-    <div class="summary">Раздел содержит ответы на часто задаваемые вопросы.</div>
-   
 
     
 
 
     
 
-  <p></p>
+  <div class="home">
 
-<div class="panel-group" id="accordion">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Что я могу сделать на портале разработчиков?</a>
-                            </h4>
-                        </div>
-                        <div id="collapseOne" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-                            <p>Вы можете сделать оформление страницы вашего приложения.</p>
-                            <p>Если вы разрабатываете обработку для 1С, то вы можете подготовить все необходимое для публикации.</p>
-                            <p>Все другие интеграции (терминальное приложение, облачная интеграция) пока требуют действий со стороны Эвотор, поэтому после оформления страницы напишите на почту: <a href="mailto:developer@evotor.ru">developer@evotor.ru</a>.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Нужно ли мне иметь юридическое лицо для разработки приложений?</a>
-                            </h4>
-                        </div>
-                        <div id="collapseTwo" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-                                Да, пока нужно иметь юридическое лицо. Но мы уже работаем над тем, чтобы дать возможность частным лицам тоже публиковали свои приложения.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Что если я придумаю идею, а вы возьмете ее и сами реализуете?</a>
-                            </h4>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-                                Мы не занимаемся разработкой приложений и также мы не занимаемся поддержкой. Наша основная задача предоставить стабильную и функциональную платформу для разработчиков.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Как получить token для авторизации запросов к API (на примере 1C)?</a>
-                            </h4>
-                        </div>
-                        <div id="collapseFour" class="panel-collapse collapse">
-                            <div class="panel-body">
-                            <p>Пока тестовый токен не выводится на портале для разработчиков, установите любое приложение 1С. После установки в разделе “Настройки” будет ключ доступа.</p>
-                            <p>Поскольку приложения с пробным периодом, вам не нужно ничего платить первые 30 дней.</p>
-                            </div>
-                        </div>
-                    </div>
+    <div class="post-list">
+        
+
+
+    <h2><a class="post-link" href="2017-03-22-release-notes-1.html">06.04.2017</a></h2>
+        <span class="post-meta">Apr 20, 2017 /
+            </span>
+        <p> 
+  В справочник API добавлен раздел “Схемы и дополнительные поля товаров”.
+  В справочник API, в раздел “Вебхуки-уведомления”, добавлено описание событий, связанных с биллингом пользователей Эвотор.
+  В документацию, в раздел SDK смарт-терминала, добавлена страница ”Плитка приложения на главном экране смарт-терминала”.
+  Исправлены ошибки.
+
+ </p>
+
+        
+
+
+    <h2><a class="post-link" href="2017-03-22-release-notes-1.html">06.04.2017</a></h2>
+        <span class="post-meta">Apr 6, 2017 /
+            </span>
+        <p> 
+  Реорганизована структура справочника API: “Запросы к стороннему сервису” перенесены в разделы “вебхуки-запросы” и “вебхуки-уведомления”, добавлены ссылки на документацию и SDK смарт-терминала.
+  Исправлены ошибки.
+
+ </p>
+
+        
+
+
+    <h2><a class="post-link" href="2017-03-22-release-notes-1.html">31.03.2017</a></h2>
+        <span class="post-meta">Mar 31, 2017 /
+            </span>
+        <p> 
+  “Запросы к стороннему сервису”: в раздел Учётные записи в стороннем сервисе добавлено описание запроса Получить токен приложения.
+  “Запросы к стороннему сервису”: в запросы добавлено описание возвращаемых ошибок.
+  “Запросы к облаку Эвотор”: исправлен формат часового пояса в запросе Получить список документов.
+  Исправлены ошибки.
+
+ </p>
+
+        
+
+
+    <h2><a class="post-link" href="2017-03-22-release-notes-1.html">22.03.2017</a></h2>
+        <span class="post-meta">Mar 22, 2017 /
+            </span>
+        <p> 
+  Добавлены новые разделы документации “О платформе Эвотор” и “Интеграция с платформой”.
+  Версия 1.0.3: Изменена и доработана спецификация API.
+
+ </p>
+
+        
+
+
+<hr />
+
+
 </div>
-<!-- /.panel-group -->
 
 
     <div class="tags">
