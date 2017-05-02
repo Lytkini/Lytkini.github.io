@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит информацию о процессе разработки вебвью приложения для смарт-терминала.">
 <meta name="keywords" content=" sample">
-<title>Разработка вебвью приложения для смарт-терминала | Документация Эвотор</title>
+<title>Права приложения | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -96,6 +96,10 @@
                 
                 
                 
+                <li><a href="whats_new">Что нового</a></li>
+                
+                
+                
                 <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
                 
                 
@@ -117,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Разработка вебвью приложения для смарт-терминала">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Права приложения">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -287,7 +291,7 @@
             
             
             
-            <li class="active"><a href="doc_smart_terminal_app_grants.html">Права доступа</a></li>
+            <li class="active"><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
             
             
             
@@ -304,8 +308,37 @@
         
     
     <li>
+        <a href="#">Биллинг</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_about_billing.html">О биллинге</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_tariffs.html">Тарифы</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
         <a href="#">Публикация приложения</a>
         <ul>
+            
+            
+            
+            <li><a href="doc_billing_models.html">Модели биллинга</a></li>
+            
+            
+            
             
             
             
@@ -384,7 +417,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Разработка вебвью приложения для смарт-терминала</h1>
+   <h1 class="post-title-main">Права приложения</h1>
 </div>
 
 
@@ -423,14 +456,24 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Вы можете наделить приложение различными правами (grants), в зависимости от роли пользователя смарт-терминала. Таким образом, кассиру или администратору будут доступны разные функции приложения.</p>
+  <h3 id="О-правах-приложения">О правах приложения</h3>
+
+<p>С помощью списка прав (grants), вы можете ограничить доступ к приложению пользователям с определёнными ролями. Пользователи не могут работать с недоступными приложениями.</p>
+
+<blockquote>
+  <p>Чтобы приложение было доступно пользователю, список заданных прав приложения должен точно соответствовать списку прав роли пользователя. Пользователи создают и редактируют роли в <a href="https://lk.evotor.ru/web/login">Личном  кабинете</a>. Права предустановленных ролей “Кассир” и “Администратор” изменять нельзя.</p>
+</blockquote>
+
+<p><img src="images/Add_role.gif" alt="Добавление роли" title="Добавление роли" /></p>
+
+<p>Если оставить список прав пустым, приложение будет доступно любому пользоваетлю, независимо от роли.</p>
 
 <h3 id="Нативное-приложение">Нативное приложение</h3>
 
-<p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) необходимыми правами, выполните следующие действия:</p>
+<p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) нативного приложения необходимыми правами, выполните следующие действия:</p>
 
 <ol>
-  <li>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, где <Название> – имя требуемого плагина, демона или экрана.</Название></li>
+  <li>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, где <code class="highlighter-rouge">&lt;Название&gt;</code> – имя требуемого плагина, демона или экрана.</li>
   <li>
     <p>В файле <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code> укажите массив строк с правами следующим образом:</p>
 
@@ -450,7 +493,7 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="Вебвью-приложение">Вебвью приложение</h3>
 
-<p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) необходимыми правами, выполните следующие действия:</p>
+<p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) вебвью приложения необходимыми правами, выполните следующие действия:</p>
 <ol>
   <li>
     <p>В файле <code class="highlighter-rouge">client.yaml</code> добавьте список <code class="highlighter-rouge">grants</code> требуемых прав для соответствующего элемента (демона, плагина или экрана):</p>
@@ -471,7 +514,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
   </li>
   <li>
-    <p>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, где <Название> – значение параметра `name` в файле `client.yaml`, который содержит массив строк с правами, перечисленными в списке `grants`:</Название></p>
+    <p>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, где <code class="highlighter-rouge">&lt;Название&gt;</code> – значение параметра <code class="highlighter-rouge">name</code> в файле <code class="highlighter-rouge">client.yaml</code>, который содержит массив строк с правами, перечисленными в списке <code class="highlighter-rouge">grants</code>:</p>
 
     <pre><code class="language-1xml"> &lt;resources&gt;
  &lt;string-array name="&lt;Название&gt;_grants"&gt;
@@ -488,136 +531,148 @@ $('#toc').on('click', 'a', function() {
   </li>
 </ol>
 
+<h3 id="Примеры">Примеры</h3>
+<p>Манифест приложения:</p>
+
+<pre><code class="language-1">&lt;activity android:name=".app.SomeJSWrappedActivity" android:theme="@style/JSWrappedTheme" android:icon="@drawable/icon" android:label="&lt;Название плитки&gt;"&gt;
+    &lt;intent-filter&gt;
+        &lt;action android:name="android.intent.action.MAIN" /&gt;
+        &lt;category android:name="android.intent.category.EVOTOR" /&gt;
+    &lt;/intent-filter&gt;
+    &lt;meta-data android:name="ru.evotor.launcher.BACKGROUND_COLOR" android:value="#133788" /&gt;
+    &lt;meta-data android:name="ru.evotor.launcher.GRANTS" android:resource="@array/&lt;Название&gt;_grants" /&gt;
+&lt;/activity&gt;
+</code></pre>
+
+<p>Список прав в файле ‘res/values/<Название>\_grants.xml':</Название></p>
+
+<pre><code class="language-1xml">&lt;resources&gt;
+&lt;string-array name="&lt;Название&gt;_grants"&gt;
+    &lt;item&gt;CASH_OPERATIONS_SELL&lt;/item&gt;
+    &lt;item&gt;CASH_OPERATIONS_PAYBACK &lt;/item&gt;
+&lt;/string-array&gt;
+&lt;/resources&gt;
+</code></pre>
+
 <h3 id="Список-прав">Список прав</h3>
 
-<p>В таблице ниже представлены права, которыми вы можете наделить компоненты приложения. Права требуется указывать в списке в виде <Значение><Постфикс></Постфикс></Значение></p>
+<p>В таблице ниже представлены права, которыми вы можете наделить компоненты приложения.</p>
 
 <table>
   <tr>
-    <th>Значение </th>
-    <th>Постфикс</th>
+    <th colspan="2">Значение </th>
     <th>Описание</th>
   </tr>
   <tr>
-    <td rowspan="5">CASH_OPERATIONS_SELL</td>
-    <td></td>
-    <td>Все действия продажи, кроме дополнительных (_ADDITIONAL_*).<br /></td>
+    <td colspan="2">CASH_OPERATIONS_SELL</td>
+    <td>Все действия продажи, кроме дополнительных (<code>_ADDITIONAL_*</code>).<br /></td>
   </tr>
   <tr>
-    <td>_ADDITIONAL_CHANGE_ZERO_PRICE</td>
+    <td colspan="2">CASH_OPERATIONS_SELL_ADDITIONAL_CHANGE_ZERO_PRICE</td>
     <td>Редактирование цены товаров, в карточке которых нулевая цена продажи.</td>
   </tr>
   <tr>
-    <td>_ADDITIONAL_POSITION_DISCOUNT</td>
+    <td colspan="2">CASH_OPERATIONS_SELL_ADDITIONAL_POSITION_DISCOUNT</td>
     <td>Начисление скидки на позицию в соответствии с настройками приложения.</td>
   </tr>
   <tr>
-    <td>_ADDITIONAL_DOCUMENT_DISCOUNT</td>
+    <td colspan="2">CASH_OPERATIONS_SELL_ADDITIONAL_DOCUMENT_DISCOUNT</td>
     <td>Начисление скидки на документ в соответствии с настройками приложения.</td>
   </tr>
   <tr>
-    <td>_ADDITIONAL_REGISTER_POSITION_FREE</td>
+    <td colspan="2">CASH_OPERATIONS_SELL_ADDITIONAL_REGISTER_POSITION_FREE</td>
     <td>Кнопка добавления по свободной цене.</td>
   </tr>
   <tr>
-    <td rowspan="7">CASH_OPERATIONS_SELL_PAYBACK</td>
-    <td></td>
+    <td colspan="2">CASH_OPERATIONS_PAYBACK</td>
     <td>Создание документов возврата от покупателя покупателя, на основании документа продажи.</td>
   </tr>
   <tr>
-    <td>_BY_SUM</td>
+    <td colspan="2">CASH_OPERATIONS_PAYBACK_BY_SUM</td>
     <td>Создание документов возврата от покупателя, без документа основания.</td>
   </tr>
   <tr>
-    <td>_BY_SUM_ADDITIONAL_CHANGE_PRICE</td>
+    <td colspan="2">CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_CHANGE_PRICE</td>
     <td>Редактирование цены товаров, возвращаемых без основания. Цена продажи товара в карточке отлична от нуля.</td>
   </tr>
   <tr>
-    <td>_BY_SUM_ADDITIONAL_CHANGE_ZERO_PRICE</td>
+    <td colspan="2">CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_CHANGE_ZERO_PRICE</td>
     <td>Редактирование цены товаров, возвращаемых без основания. Цена продажи товара в карточке равна нулю.</td>
   </tr>
   <tr>
-    <td>_BY_SUM_ADDITIONAL_POSITION_DISCOUNT</td>
+    <td colspan="2">CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_POSITION_DISCOUNT</td>
     <td>Начисление скидки на позицию в возврате без основания. Ограничения по скидкам, указанные в настройках приложения, не действуют.</td>
   </tr>
   <tr>
-    <td>_BY_SUM_ADDITIONAL_DOCUMENT_DISCOUNT</td>
+    <td colspan="2">CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_DOCUMENT_DISCOUNT</td>
     <td>Начисление скидки на документ возврата без основания. Ограничения по скидкам, указанные в настройках приложения, не действуют.</td>
   </tr>
   <tr>
-    <td>_BY_SUM_ADDITIONAL_REGISTER_POSITION_FREE</td>
+    <td colspan="2">CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_REGISTER_POSITION_FREE</td>
     <td>Кнопка добавления по свободной цене.</td>
   </tr>
   <tr>
-    <td rowspan="2">CASH_OPERATIONS_CASH_DRAWER</td>
-    <td>_CASH_INCOME</td>
-    <td>Соответствующая кнопка в активности (Activity) «Денежный ящик».</td>
+    <td colspan="2">CASH_OPERATIONS_CASH_DRAWER_CASH_INCOME</td>
+    <td>Соответствующая кнопка в активности (<code>Activity</code>) «Денежный ящик».</td>
   </tr>
   <tr>
-    <td>_CASH_OUTCOME</td>
-    <td>Соответствующая кнопка в активности (Activity) «Денежный ящик».</td>
+    <td colspan="2">CASH_OPERATIONS_CASH_DRAWER_CASH_OUTCOME</td>
+    <td>Соответствующая кнопка в активности (<code>Activity</code>) «Денежный ящик».</td>
   </tr>
   <tr>
-    <td rowspan="2">CASH_REPORTS</td>
-    <td>_X_REPORT</td>
-    <td>Соответствующая кнопка в активности (Activity) «Кассовые отчёты».</td>
+    <td colspan="2">CASH_REPORTS_X_REPORT</td>
+    <td>Соответствующая кнопка в активности (<code>Activity</code>) «Кассовые отчёты».</td>
   </tr>
   <tr>
-    <td>_Z_REPORT</td>
-    <td>Соответствующая кнопка в активности (Activity) «Кассовые отчёты».</td>
+    <td colspan="2">CASH_REPORTS_Z_REPORT</td>
+    <td>Соответствующая кнопка в активности (<code>Activity</code>) «Кассовые отчёты».</td>
   </tr>
   <tr>
-    <td rowspan="7">MANAGEMENT_REPORTS</td>
-    <td>_STOCK_REPORT</td>
+    <td colspan="2">MANAGEMENT_REPORTS_STOCK_REPORT</td>
     <td>Управленческий отчёт "Товарные остатки в ценах реализации".</td>
   </tr>
   <tr>
-    <td>_PROCUREMENT_REPORT</td>
+    <td colspan="2">MANAGEMENT_REPORTS_PROCUREMENT_REPORT</td>
     <td>Управленческие отчёт "Отчёт по закупкам".</td>
   </tr>
   <tr>
-    <td>_SALES_REPORT</td>
+    <td colspan="2">MANAGEMENT_REPORTS_SALES_REPORT</td>
     <td>Управленческие отчёт "Отчёт по продажам".</td>
   </tr>
   <tr>
-    <td>_CONSOLIDATED_SALES_REPORT</td>
+    <td colspan="2">MANAGEMENT_REPORTS_CONSOLIDATED_SALES_REPORT</td>
     <td>Управленческие отчёт "Сводный отчёт по продажам".</td>
   </tr>
   <tr>
-    <td>_GROSS_PROFIT_REPORT</td>
+    <td colspan="2">MANAGEMENT_REPORTS_GROSS_PROFIT_REPORT</td>
     <td>Управленческие отчёт "Отчёт по валовой прибыли".</td>
   </tr>
   <tr>
-    <td>_COMMODITIES_MOVEMENTS_REPORT</td>
+    <td colspan="2">MANAGEMENT_REPORTS_COMMODITIES_MOVEMENTS_REPORT</td>
     <td>Управленческие отчёт "Движения товаров".</td>
   </tr>
   <tr>
-    <td>_ALCOHOL_REPORT</td>
+    <td colspan="2">MANAGEMENT_REPORTS_ALCOHOL_REPORT</td>
     <td>Управленческие отчёт "Алкогольный отчёт".</td>
   </tr>
   <tr>
-    <td>DOCUMENTS_JOURNAL</td>
-    <td></td>
+    <td colspan="2">DOCUMENTS_JOURNAL</td>
     <td>Журнал документов.</td>
   </tr>
   <tr>
-    <td>OPERATIONS_JOURNAL</td>
-    <td></td>
+    <td colspan="2">OPERATIONS_JOURNAL</td>
     <td>Журнал операций.</td>
   </tr>
   <tr>
-    <td>SERVICE_EXCHANGE</td>
-    <td></td>
+    <td colspan="2">SERVICE_EXCHANGE</td>
     <td>Доступ к сервису обмена.</td>
   </tr>
   <tr>
-    <td>SETTINGS_MENU</td>
-    <td></td>
+    <td colspan="2">SETTINGS_MENU</td>
     <td>Доступ к настройкам.</td>
   </tr>
   <tr>
-    <td>APPLICATIONS_MERCHANDISER</td>
-    <td></td>
+    <td colspan="2">APPLICATIONS_MERCHANDISER</td>
     <td>Приложение товароведа.</td>
   </tr>
 </table>

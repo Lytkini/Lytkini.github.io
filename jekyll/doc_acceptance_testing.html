@@ -96,6 +96,10 @@
                 
                 
                 
+                <li><a href="whats_new">Что нового</a></li>
+                
+                
+                
                 <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
                 
                 
@@ -287,7 +291,7 @@
             
             
             
-            <li><a href="doc_smart_terminal_app_grants.html">Права доступа</a></li>
+            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
             
             
             
@@ -304,8 +308,37 @@
         
     
     <li>
+        <a href="#">Биллинг</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_about_billing.html">О биллинге</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_tariffs.html">Тарифы</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
         <a href="#">Публикация приложения</a>
         <ul>
+            
+            
+            
+            <li><a href="doc_billing_models.html">Модели биллинга</a></li>
+            
+            
+            
             
             
             
@@ -432,7 +465,7 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Приложение сопоставляет сущности Эвотора (смарт-терминалы, сотрудников и магазины) и 1С.</p>
 
-    <p><img src="https://developer.evotor.ru/app/uploads/2017/04/1c_entities_association-300x162.png" alt="" /></p>
+    <p><img src="images/1c_entities_association.png" alt="" /></p>
   </li>
   <li>Приложение передаёт товары из 1С в Эвотор. Проверяется:
     <ul>
@@ -447,7 +480,7 @@ $('#toc').on('click', 'a', function() {
       <li>Загрузка документов как по всему магазину, так и по конкретному смарт-терминалу (deviceUuid).</li>
       <li>Загрузка определённого типа документов (см. запрос <a href="https://api.evotor.ru/docs/#tag/Tovary-i-dokumenty%2Fpaths%2Fapi.evotor.ru~1api~1v1~1inventories~1stores~1%7BstoreUuid%7D~1documents%2Fget"><strong>[GET] Получить список документов</strong></a>).</li>
       <li>Корректность дат в GET-параметрах.</li>
-      <li>Обработка <a href="https://developer.evotor.ru/protocol_of_errors/">возвращаемых ошибок</a>.</li>
+      <li>Обработка <a href="doc_errors_returned.html">возвращаемых ошибок</a>.</li>
     </ul>
   </li>
 </ol>
