@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит информацию продвижении вашего приложения в магазине приложений.">
+<meta name="description" content="Раздел содержит инструкцию о том, как подготовить приложение для получения данных от сканера штрих-кодов.">
 <meta name="keywords" content=" sample">
-<title>Продвижение | Документация Эвотор</title>
+<title>Получение данных от сканера штрихкодов | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Продвижение">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Получение данных от сканера штрихкодов">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -298,7 +298,7 @@
             
             
             
-            <li><a href="doc_barcode_scanner.html">Получение данных от сканера штрихкодов</a></li>
+            <li class="active"><a href="doc_barcode_scanner.html">Получение данных от сканера штрихкодов</a></li>
             
             
             
@@ -385,7 +385,7 @@
             
             
             
-            <li class="active"><a href="doc_marketing.html">Продвижение</a></li>
+            <li><a href="doc_marketing.html">Продвижение</a></li>
             
             
             
@@ -424,7 +424,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Продвижение</h1>
+   <h1 class="post-title-main">Получение данных от сканера штрихкодов</h1>
 </div>
 
 
@@ -432,7 +432,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Раздел содержит информацию продвижении вашего приложения в магазине приложений.</div>
+    <div class="summary">Раздел содержит инструкцию о том, как подготовить приложение для получения данных от сканера штрих-кодов.</div>
    
 
     
@@ -463,16 +463,44 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Основным инструментом продажи является магазин приложений Эвотор. Также возможны различные виды продвижения:</p>
+  <p>Чтобы ваше приложение получало данные от сканера штрихкодов, подключённого к смарт-терминалу, вам требуется реализовать поддержку <code class="highlighter-rouge">mBarcodeBroadcastReceiver</code>.</p>
 
+<p>Для этого:</p>
 <ol>
-  <li>Дистрибьютеры.</li>
-  <li>Баннеры - продвижение на главное странице <a href="https://market.evotor.ru">market.evotor.ru </a></li>
-  <li>Бандлы (коплекты) - набор приложений по более выгодной цене, чем если бы они продавались по отдельности</li>
-  <li>Таргетированные рассылки (смс, email) по пользовательской базе</li>
+  <li>В манифесте приложения укажите следующий элемент:
+ <code class="highlighter-rouge">&lt;uses-permission android:name="ru.evotor.devices.scanner.SCANNER_RECEIVER" /&gt;</code></li>
+  <li>Убедитесь, что приложение содержит код вида:</li>
 </ol>
 
-<p>По вопросам продвижение обращайтесь сюда: <a href="mailto:developer@evotor.ru">developer@evotor.ru</a>.</p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">BarcodeBroadcastReceiver</span> <span class="n">mBarcodeBroadcastReceiver</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BarcodeBroadcastReceiver</span><span class="o">()</span> <span class="o">{</span>
+
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReceiveBarcode</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+            <span class="o">((</span><span class="n">TextView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">barcode_test</span><span class="o">)).</span><span class="na">setText</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">};</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPause</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onPause</span><span class="o">();</span>
+        <span class="n">unregisterReceiver</span><span class="o">(</span><span class="n">mBarcodeBroadcastReceiver</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onResume</span><span class="o">();</span>
+        <span class="n">registerReceiver</span><span class="o">(</span><span class="n">mBarcodeBroadcastReceiver</span><span class="o">,</span> <span class="n">BarcodeBroadcastReceiver</span><span class="o">.</span><span class="na">BARCODE_INTENT_FILTER</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
 
 
     <div class="tags">

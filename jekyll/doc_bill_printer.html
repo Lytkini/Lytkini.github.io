@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит информацию продвижении вашего приложения в магазине приложений.">
+<meta name="description" content="Раздел содержит информацию о том, что требуется сделать, чтобы приложение смогло печатать любую информацию на чеках">
 <meta name="keywords" content=" sample">
-<title>Продвижение | Документация Эвотор</title>
+<title>Печать информации на чеках | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Продвижение">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Печать информации на чеках">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -305,7 +305,7 @@
             
             
             
-            <li><a href="doc_bill_printer.html">Печать информации на чеках</a></li>
+            <li class="active"><a href="doc_bill_printer.html">Печать информации на чеках</a></li>
             
             
             
@@ -385,7 +385,7 @@
             
             
             
-            <li class="active"><a href="doc_marketing.html">Продвижение</a></li>
+            <li><a href="doc_marketing.html">Продвижение</a></li>
             
             
             
@@ -424,7 +424,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Продвижение</h1>
+   <h1 class="post-title-main">Печать информации на чеках</h1>
 </div>
 
 
@@ -432,7 +432,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Раздел содержит информацию продвижении вашего приложения в магазине приложений.</div>
+    <div class="summary">Раздел содержит информацию о том, что требуется сделать, чтобы приложение смогло печатать любую информацию на чеках</div>
    
 
     
@@ -463,16 +463,105 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Основным инструментом продажи является магазин приложений Эвотор. Также возможны различные виды продвижения:</p>
+  <h3 id="Подготовка-приложения">Подготовка приложения</h3>
+
+<p>В файле <code class="highlighter-rouge">build.gradle</code> приложения, укажите следующее:</p>
+
+<pre><code class="language-1">allprojects {
+    repositories {
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+dependencies {
+compile 'com.github.evotor:integration-library:v0.2.0'
+}
+</code></pre>
+
+<p>где:</p>
+<ul>
+  <li>repositories содержит ссылки на репозитории необходимые при сборке.</li>
+  <li>dependencies подключает библиотеку, которая содержит все необходимые данные для работы с оборудованием, подключённым к смарт-терминалу. <code class="highlighter-rouge">v0.2.0</code> – точная версия проекта.</li>
+</ul>
+
+<h3 id="Работа-с-принтером-чеков">Работа с принтером чеков</h3>
 
 <ol>
-  <li>Дистрибьютеры.</li>
-  <li>Баннеры - продвижение на главное странице <a href="https://market.evotor.ru">market.evotor.ru </a></li>
-  <li>Бандлы (коплекты) - набор приложений по более выгодной цене, чем если бы они продавались по отдельности</li>
-  <li>Таргетированные рассылки (смс, email) по пользовательской базе</li>
+  <li>
+    <p>В колбэке <code class="highlighter-rouge">onCreate()</code> или при запуске активности (<code class="highlighter-rouge">activity</code>) инициализируйте класс <code class="highlighter-rouge">ru.evotor.devices.commons.DeviceServiceConnector</code>.</p>
+
+    <p>Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку.</p>
+
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Воспользуйтесь методом <code class="highlighter-rouge">addConnectionWrapper</code>, чтобы получить событие об успешном подключении. <br /><br />
+
+ Используйте это событие, если необходимо выполнить какой-либо код сразу после установки соединения.</div>
+  </li>
+  <li>
+    <p>Вызовите метод <code class="highlighter-rouge">DeviceServiceConnector.getPrinterService()</code>.</p>
+
+    <p>Метод не может быть <code class="highlighter-rouge">null</code> и в случае успеха возвращает объект <code class="highlighter-rouge">ru.evotor.devices.commons.IPrinterService</code>.</p>
+
+    <p>Метод может вернуть следующие исключения (<code class="highlighter-rouge">exception</code>):</p>
+    <ul>
+      <li><code class="highlighter-rouge">ru.evotor.devices.commons.exception.ServiceNotConnectedException</code> возвращается в результате серии неудачных попыток подключиться к принтеру.</li>
+      <li><code class="highlighter-rouge">ru.evotor.devices.commons.exception.DeviceServiceException</code> – наследованое исключение.</li>
+    </ul>
+  </li>
+  <li>
+    <p>В случае необходимости, вы можете вызвать следующие методы объекта <code class="highlighter-rouge">ru.evotor.devices.commons.IPrinterService</code>:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">int getAllowableSymbolsLineLength(int deviceId)</code> – возвращает количество символов, которые помещаются на одной строке чека.</li>
+      <li><code class="highlighter-rouge">int getAllowablePixelLineLength(int deviceId)</code> – возвращает доступную для печати ширину бумаги в пикселях</li>
+      <li>
+        <p><code class="highlighter-rouge">void printDocument(int deviceId, in PrinterDocument printerDocument)</code> – печатает указанный массив объектов: текст, штрихкоды, изображения.</p>
+
+        <p>Аргумент <code class="highlighter-rouge">deviceId</code> указывает устройство, для которого вызывается метод.</p>
+
+        <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> Так как печать возможна только на ККМ, встроенной в смарт-терминал, вместо номера устройства всегда следует передавать константу <code class="highlighter-rouge">ru.evotor.devices.commons.Constants.DEFAULT_DEVICE_INDEX</code>.</div>
+
+        <p>Каждый из методов может вернуть наследованное исключение <code class="highlighter-rouge">ru.evotor.devices.commons.exception.DeviceServiceException</code>.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Передайте данные в печать с помощью метода <code class="highlighter-rouge">printDocument(int deviceId, in PrinterDocument printerDocument)</code>.</p>
+
+    <p>Аргумент <code class="highlighter-rouge">PrinterDocument</code> содержит список элементов печати <code class="highlighter-rouge">IPrintable</code>:</p>
+    <ul>
+      <li>Тексты – <code class="highlighter-rouge">ru.evotor.devices.commons.printer.printable.PrintableText</code>;</li>
+      <li>Штрихкоды – <code class="highlighter-rouge">ru.evotor.devices.commons.printer.printable.PrintableBarcode</code>;</li>
+      <li>Картинки – <code class="highlighter-rouge">ru.evotor.devices.commons.printer.printable.PrintableImage</code>.</li>
+    </ul>
+  </li>
 </ol>
 
-<p>По вопросам продвижение обращайтесь сюда: <a href="mailto:developer@evotor.ru">developer@evotor.ru</a>.</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Работа с удалённым сервисом может занимать длительное время, поэтому не вызывайте перечисленные методы в главном потоке приложения.</div>
+
+<h3 id="Примеры">Примеры</h3>
+
+<p>Пример аргумента <code class="highlighter-rouge">PrinterDocument</code> (см. пункт 4).</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Bitmap</span> <span class="n">bitmap1</span> <span class="o">=</span> <span class="n">BitmapFactory</span><span class="o">.</span><span class="na">decodeFile</span><span class="o">(</span><span class="n">Environment</span><span class="o">.</span><span class="na">getExternalStorageDirectory</span><span class="o">()</span> <span class="o">+</span> <span class="s">"/Pictures/1.png"</span><span class="o">);</span>
+<span class="n">DeviceServiceConnector</span><span class="o">.</span><span class="na">getPrinterService</span><span class="o">().</span><span class="na">printDocument</span><span class="o">(</span>
+  <span class="n">DEFAULT_DEVICE_INDEX_UNSET</span><span class="o">,</span>
+  <span class="k">new</span> <span class="nf">PrinterDocument</span><span class="o">(</span>
+            <span class="k">new</span> <span class="nf">PrintableText</span><span class="o">(</span><span class="s">"Первая строка"</span><span class="o">),</span>
+            <span class="k">new</span> <span class="nf">PrintableText</span><span class="o">(</span><span class="s">"Довольно длинный текст, помещающийся лишь на несколько строк"</span><span class="o">),</span>
+            <span class="k">new</span> <span class="nf">PrintableBarcode</span><span class="o">(</span><span class="s">"1234567890"</span><span class="o">,</span> <span class="n">PrintableBarcode</span><span class="o">.</span><span class="na">BarcodeType</span><span class="o">.</span><span class="na">CODE39</span><span class="o">),</span>
+            <span class="k">new</span> <span class="nf">PrintableImage</span><span class="o">(</span><span class="n">bitmap1</span><span class="o">)</span>
+    <span class="o">));</span></code></pre></figure>
+
+<p>Пример кода для печати сообщения на чеке:</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="k">try</span> <span class="o">{</span>
+  <span class="n">DeviceServiceConnector</span><span class="o">.</span><span class="na">getPrinterService</span><span class="o">().</span><span class="na">printDocument</span><span class="o">(</span>
+    <span class="n">DEFAULT_DEVICE_INDEX_UNSET</span><span class="o">,</span>
+    <span class="k">new</span> <span class="nf">PrinterDocument</span><span class="o">(</span><span class="k">new</span> <span class="n">PrintableText</span><span class="o">(</span><span class="s">"Первая строка"</span><span class="o">)));</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">DeviceServiceException</span> <span class="n">exc</span><span class="o">)</span> <span class="o">{</span>
+
+<span class="o">}</span></code></pre></figure>
+
 
 
     <div class="tags">

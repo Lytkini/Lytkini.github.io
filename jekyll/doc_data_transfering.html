@@ -284,7 +284,7 @@
             
             
             
-            <li><a href="doc_smart_terminal_app_tile.html">Главный экран смарт-терминала</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
             
             
             
@@ -298,7 +298,14 @@
             
             
             
-            <li><a href="doc_smart_terminal_logging.html">Логирование данных</a></li>
+            <li><a href="doc_barcode_scanner.html">Получение данных от сканера штрихкодов</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_bill_printer.html">Печать информации на чеках</a></li>
             
             
             
@@ -460,14 +467,14 @@ $('#toc').on('click', 'a', function() {
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">partner.ru/api/v1/user/tariff</code></p>
+    <p><code class="highlighter-rouge">/partner.ru/api/v1/user/tariff</code></p>
 
-    <p>Эвотор передаёт на URL сообщение об активации (<code class="highlighter-rouge">"status": "ACTIVE"</code>) и деактивации (<code class="highlighter-rouge">"status": "INACTIVE"</code>) тарифа. Сообщения по этому адресу требуется авторизовать с помощью токена стороннего сервиса (подробнее см. в разделе <a href="">””</a>)</p>
+    <p>Эвотор передаёт на URL сообщение об активации (<code class="highlighter-rouge">"status": "ACTIVE"</code>) и деактивации (<code class="highlighter-rouge">"status": "INACTIVE"</code>) тарифа. Сообщения по этому адресу требуется авторизовать с помощью токена стороннего сервиса (подробнее см. в разделе <a href="">””</a>).</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">partner.ru/api/v1/user/event</code></p>
+    <p><code class="highlighter-rouge">/partner.ru/api/v1/user/event</code></p>
 
-    <p>Эвотор передаёт на URL следующие сообщения:</p>
+    <p>Эвотор передаёт на URL события, связанные с биллингом:</p>
 
     <ul>
       <li><code class="highlighter-rouge">SubscriptionCreated</code> – новая подписка.</li>
