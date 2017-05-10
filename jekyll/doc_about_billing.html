@@ -469,9 +469,9 @@ $('#toc').on('click', 'a', function() {
 
 <p>Эвотор выполняет биллинг, если пользователь создал новую учётную запись в стороннем сервисе после установки приложения, из Личного кабинета Эвотор (сторонний сервис должен поддерживать URL <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1verify%2Fpost">/api/v1/user/create</a>). В этом случае, при создании новой учётной записи, сторонний сервис возвращает параметр <code class="highlighter-rouge">"hasBilling": "False"</code>. Впоследствии, при авторизации с помощью такой учётной записи, сторонний сервис всегда возвращает <code class="highlighter-rouge">"hasBilling": "False"</code>.</p>
 
-<p>Сторонний сервис выполняет биллинг, если после установки приложения пользователь авторизовался с помощью существующей учётной записи стороннего сервиса (сторонний сервис должен поддерживать URL <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1verify%2Fpost">/api/v1/user/verify</a>). При авторизации с помощью существующей учётной записи, сторонний сервис возвращает параметр <code class="highlighter-rouge">"hasBilling": "True"</code>.</p>
+<p>Сторонний сервис выполняет биллинг, если после установки приложения пользователь авторизовался с помощью учётной записи, созданной не из Личного кабинета. (сторонний сервис должен поддерживать URL <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1verify%2Fpost">/api/v1/user/verify</a>). Сторонний сервис возвращает параметр <code class="highlighter-rouge">"hasBilling": "True"</code> после авторизации пользователя, если биллинг выполняет сторонний сервис.</p>
 
-<p>Все изменения, связанные с подпиской, Эвотор отправляет по адресу <a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1user~1event%2Fpost">/partner.ru/api/v1/user/event</a>.</p>
+<p>Все изменения, связанные с подпиской, Эвотор отправляет по адресу <a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1user~1event%2Fpost">partner.ru/api/v1/user/event</a>.</p>
 
 <h3 id="Данные-о-биллинге-пользователей">Данные о биллинге пользователей</h3>
 
@@ -479,12 +479,12 @@ $('#toc').on('click', 'a', function() {
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">/partner.ru/api/v1/user/tariff</code></p>
+    <p><code class="highlighter-rouge">partner.ru/api/v1/user/tariff</code></p>
 
     <p>Эвотор передаёт на URL сообщение об активации (<code class="highlighter-rouge">"status": "ACTIVE"</code>) и деактивации (<code class="highlighter-rouge">"status": "INACTIVE"</code>) тарифа. Сообщения по этому адресу требуется авторизовать с помощью токена стороннего сервиса (подробнее см. в разделе <a href="">””</a>).</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">/partner.ru/api/v1/user/event</code></p>
+    <p><code class="highlighter-rouge">partner.ru/api/v1/user/event</code></p>
 
     <p>Эвотор передаёт на URL события, связанные с биллингом:</p>
 

@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Краткая инструкция по добавлению фрейма в настройки приложения">
-<meta name="keywords" content=" IFrame">
-<title>IFrame на странице приложения | Документация Эвотор</title>
+<meta name="description" content="">
+<meta name="keywords" content=",  ">
+<title>20.04.2017 | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -96,6 +96,10 @@
                 
                 
                 
+                <li><a href="whats_new">Что нового</a></li>
+                
+                
+                
                 <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
                 
                 
@@ -117,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="IFrame на странице приложения">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="20.04.2017">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -251,7 +255,7 @@
             
             
             
-            <li class="active"><a href="doc_iframe_within_application_page.html">IFrame на странице приложения</a></li>
+            <li><a href="doc_iframe_within_application_page.html">IFrame на странице приложения</a></li>
             
             
             
@@ -280,21 +284,50 @@
             
             
             
-            <li><a href="doc_smart_terminal_app_tile.html">Главный экран смарт-терминала</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
             
             
             
             
             
             
-            <li><a href="doc_smart_terminal_app_grants.html">Права доступа</a></li>
+            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
             
             
             
             
             
             
-            <li><a href="doc_smart_terminal_logging.html">Логирование данных</a></li>
+            <li><a href="doc_barcode_scanner.html">Получение данных от сканера штрихкодов</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_bill_printer.html">Печать информации на чеках</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Биллинг</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_about_billing.html">О биллинге</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_tariffs.html">Тарифы</a></li>
             
             
             
@@ -306,6 +339,13 @@
     <li>
         <a href="#">Публикация приложения</a>
         <ul>
+            
+            
+            
+            <li><a href="doc_billing_models.html">Модели биллинга</a></li>
+            
+            
+            
             
             
             
@@ -383,81 +423,37 @@
 
     <!-- Content Column -->
     <div class="col-md-9">
-        <div class="post-header">
-   <h1 class="post-title-main">IFrame на странице приложения</h1>
-</div>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">20.04.2017</h1>
+        <p class="post-meta"><time datetime="2017-04-20T00:00:00+03:00" itemprop="datePublished">Apr 20, 2017</time> /
+            
+            
+            
+
+        </p>
 
 
+    </header>
 
-<div class="post-content">
+    <div class="post-content" itemprop="articleBody">
 
-   
-    <div class="summary">Краткая инструкция по добавлению фрейма в настройки приложения</div>
-   
-
-    
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-  
-});
-</script>
-
-<div id="toc"></div>
-
-    
-
-
-    
-
-  <h2 id="Добавление-iframe">Добавление IFrame</h2>
-
-<p>С помощью IFrame ваше приложение может отображать информацию, переданную сторонним сервисом.
-Вы можете добавить IFrame на закладку <strong>Настройки</strong> вашего приложения.</p>
-
-<p>Чтобы добавить IFrame на закладку <strong>Настройки</strong> приложения, выполните следующие действия:</p>
-<ol>
-  <li>Войдите в личный кабинет разработчика на сайте https://developer.evotor.ru/.</li>
-  <li>Выберите приложение, для которого требуется добавить фрейм.</li>
-  <li>На закладке <strong>Интеграция</strong> установите флажок <strong>создать закладку “Настройки” на странице приложения</strong>.</li>
-  <li>В Форме кастомизации нажмите на кнопку <strong>iframe</strong>.</li>
-  <li>
-    <p>В поле <strong>Значение поля</strong> укажите веб-адрес страницы-источника фрейма в формате:
-<code class="highlighter-rouge">https://&lt;веб-адрес страницы-источника&gt;.com?token=${token}&amp;user_id=${uid}</code></p>
-
-    <p>Где:</p>
-
-    <p><code class="highlighter-rouge">${token}</code> – облако Эвотор передаёт токен приложения.</p>
-
-    <p><code class="highlighter-rouge">${uid}</code> – облако Эвотор передаёт идентификатор пользователя в облаке.</p>
-  </li>
-  <li>Нажмите на кнопку <strong>Сохранить</strong>.</li>
-  <li>В разделе <strong>Версии</strong> <a href="ссылка на страницу с информацией о том, как выложить приложение на тест">нажмите на кнопку <strong>Выложить на тест</strong></a>.</li>
-</ol>
-
-<p>Фрейм будет добавлен на закладку <strong>Настройки</strong> приложения.</p>
-
-
-    <div class="tags">
         
+
+        <ul>
+  <li>В <a href="https://api.evotor.ru/docs/">справочник API</a> добавлен раздел “Схемы и дополнительные поля товаров”.</li>
+  <li>В справочник API, в раздел “Вебхуки-уведомления”, добавлено описание событий, связанных с биллингом пользователей Эвотор.</li>
+  <li>В документацию, в раздел SDK смарт-терминала, добавлена страница ”<a href="https://developer.evotor.ru/st-main-screen-tile/">Плитка приложения на главном экране смарт-терминала</a>”.</li>
+  <li>Исправлены ошибки.</li>
+</ul>
+
     </div>
 
-    
 
-</div>
+
+</article>
+
 
 <hr class="shaded"/>
 

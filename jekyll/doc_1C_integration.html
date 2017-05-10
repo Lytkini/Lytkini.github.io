@@ -96,10 +96,6 @@
                 
                 
                 
-                <li><a href="whats_new">Что нового</a></li>
-                
-                
-                
                 <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
                 
                 
@@ -284,50 +280,21 @@
             
             
             
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Главный экран смарт-терминала</a></li>
             
             
             
             
             
             
-            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
+            <li><a href="doc_smart_terminal_app_grants.html">Права доступа</a></li>
             
             
             
             
             
             
-            <li><a href="doc_barcode_scanner.html">Получение данных от сканера штрихкодов</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_bill_printer.html">Печать информации на чеках</a></li>
-            
-            
-            
-            
-        </ul>
-        
-        
-    
-    <li>
-        <a href="#">Биллинг</a>
-        <ul>
-            
-            
-            
-            <li><a href="doc_about_billing.html">О биллинге</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_tariffs.html">Тарифы</a></li>
+            <li><a href="doc_smart_terminal_logging.html">Логирование данных</a></li>
             
             
             
@@ -339,13 +306,6 @@
     <li>
         <a href="#">Публикация приложения</a>
         <ul>
-            
-            
-            
-            <li><a href="doc_billing_models.html">Модели биллинга</a></li>
-            
-            
-            
             
             
             
@@ -465,7 +425,7 @@ $('#toc').on('click', 'a', function() {
 
   <p>Конфигурация 1С, установленная на компьютере пользователя, и обменивается данными с Эвотором с помощью <a href="https://api.evotor.ru/docs/">REST API</a>. Эвотор авторизует запросы от 1С с помощью <strong>токена приложения</strong>, который пользователь может получить на странице <strong>Настройки</strong> приложения в Личном кабинете.</p>
 
-<p><img src="images/1c_integration_API_key.png" alt="" /></p>
+<p><img src="https://developer.evotor.ru/app/uploads/2017/04/1c_integration_API_key-300x122.png" alt="" /></p>
 
 <p>Чтобы приложение работало корректно, убедитесь, что вы установили необходимые флажки на вкладке <strong>Интеграция</strong> приложения, на сайте разработчика:</p>
 
@@ -473,17 +433,17 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p><strong>Callback: Указать веб-адрес, на который облако Эвотор будет отправлять номенклатуру</strong>. Поля заполнять не требуется.</p>
 
-    <p><img src="images/flag1.jpg" alt="" /></p>
+    <p><img src="https://developer.evotor.ru/app/uploads/2017/04/flag1-300x127.jpg" alt="" /></p>
   </li>
   <li>
     <p><strong>REST: Получать документы из облака Эвотор</strong>.</p>
 
-    <p><img src="images/flag2.jpg" alt="" /></p>
+    <p><img src="https://developer.evotor.ru/app/uploads/2017/04/flag2-1-300x25.jpg" alt="" /></p>
   </li>
   <li>
     <p><strong>Создать закладку “Настройки” на странице приложения</strong>. В поле <strong>Значение поля</strong> укажите <code class="highlighter-rouge">${token}</code>, токен приложения отображался в соответствующем поле, в закладке <strong>Настройки</strong> приложения.</p>
 
-    <p><img src="images/flag3.jpg" alt="" /></p>
+    <p><img src="https://developer.evotor.ru/app/uploads/2017/04/flag3-1-300x131.jpg" alt="" /></p>
   </li>
 </ul>
 
@@ -494,7 +454,7 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Приложение сопоставляет сущности Эвотора (смарт-терминалы, сотрудников и магазины) и 1С.</p>
 
-    <p><img src="images/1c_entities_association.png" alt="" /></p>
+    <p><img src="https://developer.evotor.ru/app/uploads/2017/04/1c_entities_association-300x162.png" alt="" /></p>
   </li>
   <li>Приложение передаёт товары из 1С в Эвотор. Проверяется:
     <ul>
