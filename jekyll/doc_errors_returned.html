@@ -96,6 +96,10 @@
                 
                 
                 
+                <li><a href="whats_new">Что нового</a></li>
+                
+                
+                
                 <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
                 
                 
@@ -280,21 +284,50 @@
             
             
             
-            <li><a href="doc_smart_terminal_app_tile.html">Главный экран смарт-терминала</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
             
             
             
             
             
             
-            <li><a href="doc_smart_terminal_app_grants.html">Права доступа</a></li>
+            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
             
             
             
             
             
             
-            <li><a href="doc_smart_terminal_logging.html">Логирование данных</a></li>
+            <li><a href="doc_barcode_scanner.html">Получение данных от сканера штрихкодов</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_bill_printer.html">Печать информации на чеках</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Биллинг</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_about_billing.html">О биллинге</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_tariffs.html">Тарифы</a></li>
             
             
             
@@ -306,6 +339,13 @@
     <li>
         <a href="#">Публикация приложения</a>
         <ul>
+            
+            
+            
+            <li><a href="doc_billing_models.html">Модели биллинга</a></li>
+            
+            
+            
             
             
             
@@ -457,7 +497,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>2001</td>
 
-<td>`{ "errors": [ { "code": 2001 } ] }`</td>
+<td><pre>{ "errors": [ { "code": 2001 } ] }</pre></td>
 
 </tr>
 
@@ -467,7 +507,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>2002</td>
 
-<td>`{ "errors": [ { "code": 2002, "reason": "missing", "subject": "deviceUuid" }, { "code": 2002, "reason": "unexpected", "subject": "deviceUuid" } ] }`</td>
+<td><pre>{ "errors": [ { "code": 2002, "reason": "missing", "subject": "deviceUuid" }, { "code": 2002, "reason": "unexpected", "subject": "deviceUuid" } ] }</pre></td>
 
 </tr>
 
@@ -477,7 +517,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>2003</td>
 
-<td>`{ "errors": [ { "code": 2003, "reason": "incorrect", "subject": "deviceUuid", "value": "null" } ] }`</td>
+<td><pre>{ "errors": [ { "code": 2003, "reason": "incorrect", "subject": "deviceUuid", "value": "null" } ] }</pre></td>
 
 </tr>
 
@@ -493,7 +533,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>1001</td>
 
-<td>`{ "errors": [ { "code": 1001 } ] }`</td>
+<td><pre>{ "errors": [ { "code": 1001 } ] }</pre></td>
 
 </tr>
 
@@ -503,7 +543,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>1002</td>
 
-<td>`{ "errors": [ { "code": 1002 } ] }`</td>
+<td><pre>{ "errors": [ { "code": 1002 } ] }</pre></td>
 
 </tr>
 
@@ -513,7 +553,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>1003</td>
 
-<td>`{ "errors": [ { "code": 1003 } ] }`</td>
+<td><pre>{ "errors": [ { "code": 1003 } ] }</pre></td>
 
 </tr>
 
@@ -523,7 +563,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>1006</td>
 
-<td>`{ "errors": [ { "code": 1006 } ] }`</td>
+<td><pre>{ "errors": [ { "code": 1006 } ] }</pre></td>
 
 </tr>
 
@@ -535,7 +575,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>1004</td>
 
-<td>`{ "errors": [{ "code": 1004 "reason": "payment required" "subject": "userUuid" "value": "01-000000000015463" } ] }`</td>
+<td><pre>{ "errors": [{ "code": 1004 "reason": "payment required" "subject": "userUuid" "value": "01-000000000015463" } ] }</pre></td>
 
 </tr>
 
@@ -561,7 +601,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>1005</td>
 
-<td>`{ "errors": [{ "code": 1005 "reason": "not allowed" "subject": "deviceUuid" "value": "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f" } ] }`</td>
+<td><pre>{ "errors": [{ "code": 1005 "reason": "not allowed" "subject": "deviceUuid" "value": "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f" } ] }</pre></td>
 
 </tr>
 
@@ -571,7 +611,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>1007</td>
 
-<td>`{ "errors": [{ "code": 1007 "reason": "license overhead" "subject": "deviceUuid" "value": "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f" } ] }`</td>
+<td><pre>{ "errors": [{ "code": 1007 "reason": "license overhead" "subject": "deviceUuid" "value": "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f" } ] }</pre></td>
 
 </tr>
 
@@ -587,7 +627,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>2004</td>
 
-<td>`{ "errors": [ { "code": 2004 } ] }`</td>
+<td><pre>{ "errors": [ { "code": 2004 } ] }</pre></td>
 
 </tr>
 
@@ -597,7 +637,7 @@ $('#toc').on('click', 'a', function() {
 
 <td style="text-align: left;">2005</td>
 
-<td style="text-align: left;">`{ "errors": [ { "code": 2005 } ] }`</td>
+<td style="text-align: left;"><pre>{ "errors": [ { "code": 2005 } ] }</pre></td>
 
 </tr>
 

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит информацию о процессе разработки вебвью приложения для смарт-терминала.">
 <meta name="keywords" content=" sample">
-<title>Разработка вебвью приложения для смарт-терминала | Документация Эвотор</title>
+<title>Права приложения | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -96,6 +96,10 @@
                 
                 
                 
+                <li><a href="whats_new">Что нового</a></li>
+                
+                
+                
                 <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
                 
                 
@@ -117,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Разработка вебвью приложения для смарт-терминала">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Права приложения">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -280,21 +284,50 @@
             
             
             
-            <li><a href="doc_smart_terminal_app_tile.html">Главный экран смарт-терминала</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
             
             
             
             
             
             
-            <li class="active"><a href="doc_smart_terminal_app_grants.html">Права доступа</a></li>
+            <li class="active"><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
             
             
             
             
             
             
-            <li><a href="doc_smart_terminal_logging.html">Логирование данных</a></li>
+            <li><a href="doc_barcode_scanner.html">Получение данных от сканера штрихкодов</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_bill_printer.html">Печать информации на чеках</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Биллинг</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_about_billing.html">О биллинге</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_tariffs.html">Тарифы</a></li>
             
             
             
@@ -306,6 +339,13 @@
     <li>
         <a href="#">Публикация приложения</a>
         <ul>
+            
+            
+            
+            <li><a href="doc_billing_models.html">Модели биллинга</a></li>
+            
+            
+            
             
             
             
@@ -384,7 +424,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Разработка вебвью приложения для смарт-терминала</h1>
+   <h1 class="post-title-main">Права приложения</h1>
 </div>
 
 
@@ -423,204 +463,275 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Вы можете наделить приложение различными правами (grants), в зависимости от роли пользователя смарт-терминала. Таким образом, кассиру или администратору будут доступны разные функции приложения.</p>
+  <h3 id="О-правах-приложения">О правах приложения</h3>
+
+<p>С помощью прав (grants), назначенных различным компонентам приложения, вы можете ограничить функциональность приложения для пользователей с определёнными ролями. Чтобы узнать список прав той или иной роли, используйте <a href="doc_smart_terminal_app_grants.html#users-api-смарт-терминала">Users API</a>.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Чтобы приложение было доступно пользователю, список заданных прав приложения должен точно соответствовать списку прав роли пользователя. Пользователи создают и редактируют роли в <a href="https://lk.evotor.ru/web/login">Личном  кабинете</a>. Права предустановленных ролей “Кассир” и “Администратор” изменять нельзя.</div>
+
+<p><img src="images/Add_role.gif" alt="Добавление роли" title="Добавление роли" /></p>
+
+<p>Если оставить список прав пустым, приложение будет доступно любому пользоваетлю, независимо от роли.</p>
 
 <h3 id="Нативное-приложение">Нативное приложение</h3>
 
-<p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) необходимыми правами, выполните следующие действия:</p>
+<p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) нативного приложения необходимыми правами, выполните следующие действия:</p>
 
 <ol>
-  <li>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, где <Название> – имя требуемого плагина, демона или экрана.</Название></li>
-  <li>
-    <p>В файле <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code> укажите массив строк с правами следующим образом:</p>
-
-    <pre><code class="language-1xml"> &lt;resources&gt;
- &lt;string-array name="&lt;Название&gt;_grants"&gt;
-     &lt;item&gt;CASH_OPERATIONS_SELL&lt;/item&gt;
-     &lt;item&gt;CASH_OPERATIONS_PAYBACK &lt;/item&gt;
- &lt;/string-array&gt;
- &lt;/resources&gt;
-</code></pre>
-  </li>
-  <li>В манифесте приложения, для соответствующего элемента <code class="highlighter-rouge">activity</code>, добавьте элемент <code class="highlighter-rouge">meta-data</code> со следующими атрибутами:
-    <pre><code class="language-1xml"> &lt;meta-data android:name="ru.evotor.launcher.GRANTS" android:resource="@array/&lt;Название&gt;_grants" /&gt;
-</code></pre>
-  </li>
+  <li>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, где <code class="highlighter-rouge">&lt;Название&gt;</code> – имя требуемого плагина, демона или экрана.</li>
+  <li>В файле <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code> укажите массив строк с правами следующим образом:</li>
 </ol>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;resources&gt;</span>
+<span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"&lt;Название&gt;_grants"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_SELL<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_PAYBACK <span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/string-array&gt;</span>
+<span class="nt">&lt;/resources&gt;</span></code></pre></figure>
+
+<ol>
+  <li>В манифесте приложения, для соответствующего элемента <code class="highlighter-rouge">activity</code>, добавьте элемент <code class="highlighter-rouge">meta-data</code> со следующими атрибутами:</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span> <span class="na">android:resource=</span><span class="s">"@array/&lt;Название&gt;_grants"</span> <span class="nt">/&gt;</span></code></pre></figure>
 
 <h3 id="Вебвью-приложение">Вебвью приложение</h3>
 
-<p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) необходимыми правами, выполните следующие действия:</p>
+<p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) вебвью приложения необходимыми правами, выполните следующие действия:</p>
 <ol>
-  <li>
-    <p>В файле <code class="highlighter-rouge">client.yaml</code> добавьте список <code class="highlighter-rouge">grants</code> требуемых прав для соответствующего элемента (демона, плагина или экрана):</p>
-
-    <pre><code class="language-1yaml"> - name: &lt;Название&gt;
-   header: "&lt;Заголовок экрана&gt;"
-   launcher-label: "&lt;Название плитики&gt;"
-   launcher-icon: client/views/example-loader/icon.png
-   launcher-color: #133788
-   source: client/views/example-loader/view.html
-   scripts:
-     - no-script
-   styles:
-     - "*.css"
-   grants:
-     - CASH_OPERATIONS_SELL
-     - CASH_OPERATIONS_PAYBACK
-</code></pre>
-  </li>
-  <li>
-    <p>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, где <Название> – значение параметра `name` в файле `client.yaml`, который содержит массив строк с правами, перечисленными в списке `grants`:</Название></p>
-
-    <pre><code class="language-1xml"> &lt;resources&gt;
- &lt;string-array name="&lt;Название&gt;_grants"&gt;
-     &lt;item&gt;CASH_OPERATIONS_SELL&lt;/item&gt;
-     &lt;item&gt;CASH_OPERATIONS_PAYBACK &lt;/item&gt;
- &lt;/string-array&gt;
- &lt;/resources&gt;
-</code></pre>
-  </li>
-  <li>
-    <p>Убедитесь, что в созданном манифесте приложения, для соответствующего элемента <code class="highlighter-rouge">activity</code> добавлен элемент <code class="highlighter-rouge">meta-data</code> со следующими атрибутами:</p>
-    <pre><code class="language-1xml"> &lt;meta-data android:name="ru.evotor.launcher.GRANTS" android:resource="@array/&lt;Название&gt;_grants" /&gt;
-</code></pre>
-  </li>
+  <li>В файле <code class="highlighter-rouge">client.yaml</code> добавьте список <code class="highlighter-rouge">grants</code> требуемых прав для соответствующего элемента (демона, плагина или экрана):</li>
 </ol>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;Название&gt;</span>
+  <span class="na">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;Заголовок</span><span class="nv"> </span><span class="s">экрана&gt;"</span>
+  <span class="na">launcher-label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;Название</span><span class="nv"> </span><span class="s">плитики&gt;"</span>
+  <span class="na">launcher-icon</span><span class="pi">:</span> <span class="s">client/views/example-loader/icon.png</span>
+  <span class="na">launcher-color</span><span class="pi">:</span> <span class="c1">#133788</span>
+  <span class="na">source</span><span class="pi">:</span> <span class="s">client/views/example-loader/view.html</span>
+  <span class="na">scripts</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">no-script</span>
+  <span class="na">styles</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">*.css"</span>
+  <span class="na">grants</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">CASH_OPERATIONS_SELL</span>
+    <span class="pi">-</span> <span class="s">CASH_OPERATIONS_PAYBACK</span></code></pre></figure>
+
+<ol>
+  <li>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, который содержит массив строк с правами, перечисленными в списке <code class="highlighter-rouge">grants</code>:</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;resources&gt;</span>
+<span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"&lt;Название&gt;_grants"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_SELL<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_PAYBACK <span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/string-array&gt;</span>
+<span class="nt">&lt;/resources&gt;</span></code></pre></figure>
+
+<p>где <code class="highlighter-rouge">&lt;Название&gt;</code> – значение параметра <code class="highlighter-rouge">name</code> в файле <code class="highlighter-rouge">client.yaml</code></p>
+
+<ol>
+  <li>Убедитесь, что в созданном манифесте приложения, для соответствующего элемента <code class="highlighter-rouge">activity</code> добавлен элемент <code class="highlighter-rouge">meta-data</code> со следующими атрибутами:</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span> <span class="na">android:resource=</span><span class="s">"@array/&lt;Название&gt;_grants"</span> <span class="nt">/&gt;</span></code></pre></figure>
+
+<h3 id="Примеры">Примеры</h3>
+<p>Манифест приложения:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">".app.SomeJSWrappedActivity"</span> <span class="na">android:theme=</span><span class="s">"@style/JSWrappedTheme"</span> <span class="na">android:icon=</span><span class="s">"@drawable/icon"</span> <span class="na">android:label=</span><span class="s">"&lt;Название плитки&gt;"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;intent-filter&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.EVOTOR"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/intent-filter&gt;</span>
+    <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.BACKGROUND_COLOR"</span> <span class="na">android:value=</span><span class="s">"#133788"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span> <span class="na">android:resource=</span><span class="s">"@array/&lt;Название&gt;_grants"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/activity&gt;</span></code></pre></figure>
+
+<p>Список прав в файле ‘res/values/<Название>\_grants.xml':</Название></p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;resources&gt;</span>
+<span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"&lt;Название&gt;_grants"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_SELL<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_PAYBACK <span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/string-array&gt;</span>
+<span class="nt">&lt;/resources&gt;</span></code></pre></figure>
+
+<h3 id="users-api-смарт-терминала">Users API смарт-терминала</h3>
+
+<p>С помощью Users API вы можете узнать права всех ролей пользователя или только авторизованных на смарт-терминале в данный момент.</p>
+
+<p>С помощью Users API смарт-терминала приложение может работать с некоторыми данными пользователей, например, узнавать роли и соответствующие права всех ролей или авторизованных на терминале в данный момент.</p>
+
+<p>Users API смарт-терминала включает в себя:</p>
+
+<ul>
+  <li>поставщика контента <code class="highlighter-rouge">UsersContentProviderContract</code>:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="k">package</span> <span class="nn">ru.evotor.framework.users</span>
+
+<span class="k">import</span> <span class="nn">android.net.Uri</span>
+
+<span class="kd">object</span> <span class="nc">UsersContentProviderContract</span> <span class="p">{</span>
+    <span class="n">@JvmField</span> <span class="kd">val</span> <span class="py">BASE_URI</span> <span class="p">=</span> <span class="n">Uri</span><span class="p">.</span><span class="n">parse</span><span class="p">(</span><span class="s">"content://ru.evotor.users"</span><span class="p">)</span>
+<span class="p">}</span></code></pre></figure>
+
+<ul>
+  <li>Таблицу пользователей <code class="highlighter-rouge">UsersTable</code>:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="kd">object</span> <span class="nc">UsersTable</span> <span class="p">{</span>
+<span class="n">@JvmField</span> <span class="kd">val</span> <span class="py">URI</span> <span class="p">=</span> <span class="n">Uri</span><span class="p">.</span><span class="n">withAppendedPath</span><span class="p">(</span><span class="n">UsersContentProviderContract</span><span class="p">.</span><span class="n">BASE_URI</span><span class="p">,</span> <span class="s">"users"</span><span class="p">)</span>
+<span class="n">@JvmField</span> <span class="kd">val</span> <span class="py">URI_AUTHENTICATED</span> <span class="p">=</span> <span class="n">Uri</span><span class="p">.</span><span class="n">withAppendedPath</span><span class="p">(</span><span class="n">URI</span><span class="p">,</span> <span class="s">"authenticated"</span><span class="p">)</span>
+
+<span class="n">@JvmField</span> <span class="kd">val</span> <span class="py">ROW_USER_UUID</span> <span class="p">=</span> <span class="s">"USER_UUID"</span>
+<span class="n">@JvmField</span> <span class="kd">val</span> <span class="py">ROW_USER_SECOND_NAME</span> <span class="p">=</span> <span class="s">"USER_SECOND_NAME"</span>
+<span class="n">@JvmField</span> <span class="kd">val</span> <span class="py">ROW_USER_FIRST_NAME</span> <span class="p">=</span> <span class="s">"USER_FIRST_NAME"</span>
+<span class="n">@JvmField</span> <span class="kd">val</span> <span class="py">ROW_USER_PHONE</span> <span class="p">=</span> <span class="s">"USER_PHONE"</span>
+<span class="n">@JvmField</span> <span class="kd">val</span> <span class="py">ROW_USER_PIN</span> <span class="p">=</span> <span class="s">"USER_PIN"</span>
+<span class="n">@JvmField</span> <span class="kd">val</span> <span class="py">ROW_ROLE_UUID</span> <span class="p">=</span> <span class="s">"ROLE_UUID"</span>
+<span class="n">@JvmField</span> <span class="kd">val</span> <span class="py">ROW_ROLE_TITLE</span> <span class="p">=</span> <span class="s">"ROLE_TITLE"</span>
+<span class="p">}</span></code></pre></figure>
+
+<ul>
+  <li>Таблицу ролей <code class="highlighter-rouge">RolesTable</code>:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="kd">object</span> <span class="nc">RolesTable</span> <span class="p">{</span>
+<span class="n">@JvmField</span> <span class="kd">val</span> <span class="py">URI</span> <span class="p">=</span> <span class="n">Uri</span><span class="p">.</span><span class="n">withAppendedPath</span><span class="p">(</span><span class="n">UsersContentProviderContract</span><span class="p">.</span><span class="n">BASE_URI</span><span class="p">,</span> <span class="s">"roles"</span><span class="p">)</span>
+
+<span class="n">@JvmField</span> <span class="kd">val</span> <span class="py">ROW_UUID</span> <span class="p">=</span> <span class="s">"UUID"</span>
+<span class="n">@JvmField</span> <span class="kd">val</span> <span class="py">ROW_TITLE</span> <span class="p">=</span> <span class="s">"TITLE"</span>
+<span class="p">}</span></code></pre></figure>
+
+<ul>
+  <li>Таблицу прав <code class="highlighter-rouge">GrantsTable</code>:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="kd">object</span> <span class="nc">GrantsTable</span> <span class="p">{</span>
+<span class="n">@JvmField</span> <span class="kd">val</span> <span class="py">URI</span> <span class="p">=</span> <span class="n">Uri</span><span class="p">.</span><span class="n">withAppendedPath</span><span class="p">(</span><span class="n">UsersContentProviderContract</span><span class="p">.</span><span class="n">BASE_URI</span><span class="p">,</span> <span class="s">"grants"</span><span class="p">)</span>
+<span class="n">@JvmField</span> <span class="kd">val</span> <span class="py">URI_GRANTS_OF_AUTHENTICATED_USER</span> <span class="p">=</span> <span class="n">Uri</span><span class="p">.</span><span class="n">withAppendedPath</span><span class="p">(</span><span class="n">URI</span><span class="p">,</span> <span class="s">"authenticated"</span><span class="p">)</span>
+
+<span class="n">@JvmField</span> <span class="kd">val</span> <span class="py">ROW_ROLE_UUID</span> <span class="p">=</span> <span class="s">"ROLE_UUID"</span>
+<span class="n">@JvmField</span> <span class="kd">val</span> <span class="py">ROW_TITLE</span> <span class="p">=</span> <span class="s">"TITLE"</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Схема отношения данных в таблицах.</p>
+
+<p><img src="/images/UsersAPI.png" alt="" title="Диаграмма отношений данных" /></p>
+
+<h4 id="Примеры-запросов-users-api">Примеры запросов Users API</h4>
+
+<p>Запрос данных определённого пользователя:</p>
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="k">fun</span> <span class="nf">getUserByUuid</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">Context</span><span class="p">,</span> <span class="n">uuid</span><span class="p">:</span> <span class="n">String</span><span class="p">):</span> <span class="n">User</span><span class="p">?</span> <span class="p">{</span>
+        <span class="n">context</span><span class="p">.</span><span class="n">contentResolver</span>
+                <span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="n">Uri</span><span class="p">.</span><span class="n">withAppendedPath</span><span class="p">(</span><span class="n">UsersTable</span><span class="p">.</span><span class="n">URI</span><span class="p">,</span> <span class="n">uuid</span><span class="p">),</span> <span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">)</span>
+                <span class="o">?.</span><span class="n">let</span> <span class="p">{</span> <span class="n">cursor</span> <span class="p">-&gt;</span>
+                    <span class="k">try</span> <span class="p">{</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">cursor</span><span class="p">.</span><span class="n">moveToFirst</span><span class="p">())</span> <span class="p">{</span>
+                            <span class="k">return</span> <span class="n">Product</span><span class="p">(</span>
+                                    <span class="n">uuid</span> <span class="p">=</span> <span class="n">cursor</span><span class="p">.</span><span class="n">getString</span><span class="p">(</span><span class="n">cursor</span><span class="p">.</span><span class="n">getColumnIndex</span><span class="p">(</span><span class="n">UsersTable</span><span class="p">.</span><span class="n">USER_UUID</span><span class="p">)),</span>
+                                    <span class="n">userSecondName</span> <span class="p">=</span> <span class="n">cursor</span><span class="p">.</span><span class="n">getString</span><span class="p">(</span><span class="n">cursor</span><span class="p">.</span><span class="n">getColumnIndex</span><span class="p">(</span><span class="n">UsersTable</span><span class="p">.</span><span class="n">USER_SECOND_NAME</span><span class="p">)),</span>
+                                    <span class="n">userFirstName</span> <span class="p">=</span> <span class="n">cursor</span><span class="p">.</span><span class="n">getString</span><span class="p">(</span><span class="n">cursor</span><span class="p">.</span><span class="n">getColumnIndex</span><span class="p">(</span><span class="n">UsersTable</span><span class="p">.</span><span class="n">USER_FIRST_NAME</span><span class="p">)),</span>
+                                    <span class="n">userPhone</span> <span class="p">=</span> <span class="n">cursor</span><span class="p">.</span><span class="n">getString</span><span class="p">(</span><span class="n">cursor</span><span class="p">.</span><span class="n">getColumnIndex</span><span class="p">(</span><span class="n">UsersTable</span><span class="p">.</span><span class="n">USER_PHONE</span><span class="p">)),</span>
+                                    <span class="n">userPin</span> <span class="p">=</span> <span class="n">cursor</span><span class="p">.</span><span class="n">getString</span><span class="p">(</span><span class="n">cursor</span><span class="p">.</span><span class="n">getColumnIndex</span><span class="p">(</span><span class="n">UsersTable</span><span class="p">.</span><span class="n">USER_PIN</span><span class="p">))</span>
+                                    <span class="n">roleUuid</span> <span class="p">=</span> <span class="n">cursor</span><span class="p">.</span><span class="n">getString</span><span class="p">(</span><span class="n">cursor</span><span class="p">.</span><span class="n">getColumnIndex</span><span class="p">(</span><span class="n">UsersTable</span><span class="p">.</span><span class="n">ROLE_UUID</span><span class="p">)),</span>
+                                    <span class="n">roleTitle</span> <span class="p">=</span> <span class="n">cursor</span><span class="p">.</span><span class="n">getString</span><span class="p">(</span><span class="n">cursor</span><span class="p">.</span><span class="n">getColumnIndex</span><span class="p">(</span><span class="n">UsersTable</span><span class="p">.</span><span class="n">ROLE_TITLE</span><span class="p">))</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">Exception</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="n">e</span><span class="p">.</span><span class="n">printStackTrace</span><span class="p">()</span>
+                    <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+                        <span class="n">cursor</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+        <span class="k">return</span> <span class="k">null</span>
+    <span class="p">}</span></code></pre></figure>
+
+<p>Запрос прав авторизованной роли:</p>
+
+<figure class="highlight"><pre><code class="language-kotlin" data-lang="kotlin"><span class="n">@JvmStatic</span>
+<span class="k">fun</span> <span class="nf">getUserByUuid</span><span class="p">(</span><span class="n">context</span><span class="p">:</span> <span class="n">Context</span><span class="p">,</span> <span class="n">uuid</span><span class="p">:</span> <span class="n">String</span><span class="p">):</span> <span class="n">User</span><span class="p">?</span> <span class="p">{</span>
+    <span class="n">context</span><span class="p">.</span><span class="n">contentResolver</span>
+            <span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="n">Uri</span><span class="p">.</span><span class="n">withAppendedPath</span><span class="p">(</span><span class="n">GrantsTable</span><span class="p">.</span><span class="n">URI_GRANTS_OF_AUTHENTICATED_USER</span><span class="p">,</span> <span class="n">uuid</span><span class="p">),</span> <span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">)</span>
+            <span class="o">?.</span><span class="n">let</span> <span class="p">{</span> <span class="n">cursor</span> <span class="p">-&gt;</span>
+                <span class="k">try</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">cursor</span><span class="p">.</span><span class="n">moveToFirst</span><span class="p">())</span> <span class="p">{</span>
+                        <span class="k">return</span> <span class="n">User</span><span class="p">(</span>
+                                <span class="n">uuid</span> <span class="p">=</span> <span class="n">cursor</span><span class="p">.</span><span class="n">getString</span><span class="p">(</span><span class="n">cursor</span><span class="p">.</span><span class="n">getColumnIndex</span><span class="p">(</span><span class="n">GrantsTable</span><span class="p">.</span><span class="n">ROLE_UUID</span><span class="p">)),</span>
+                                <span class="n">title</span> <span class="p">=</span> <span class="n">cursor</span><span class="p">.</span><span class="n">getString</span><span class="p">(</span><span class="n">cursor</span><span class="p">.</span><span class="n">getColumnIndex</span><span class="p">(</span><span class="n">GrantsTable</span><span class="p">.</span><span class="n">TITLE</span><span class="p">))</span>
+                    <span class="p">}</span>
+                <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">e</span><span class="p">:</span> <span class="n">Exception</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">e</span><span class="p">.</span><span class="n">printStackTrace</span><span class="p">()</span>
+                <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+                    <span class="n">cursor</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+    <span class="k">return</span> <span class="k">null</span>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="Список-прав">Список прав</h3>
 
-<p>В таблице ниже представлены права, которыми вы можете наделить компоненты приложения. Права требуется указывать в списке в виде <Значение><Постфикс></Постфикс></Значение></p>
+<p>В таблице ниже представлены права, которыми вы можете наделить компоненты приложения.</p>
 
-<table>
-  <tr>
-    <th>Значение </th>
-    <th>Постфикс</th>
-    <th>Описание</th>
-  </tr>
-  <tr>
-    <td rowspan="5">CASH_OPERATIONS_SELL</td>
-    <td></td>
-    <td>Все действия продажи, кроме дополнительных (_ADDITIONAL_*).<br /></td>
-  </tr>
-  <tr>
-    <td>_ADDITIONAL_CHANGE_ZERO_PRICE</td>
-    <td>Редактирование цены товаров, в карточке которых нулевая цена продажи.</td>
-  </tr>
-  <tr>
-    <td>_ADDITIONAL_POSITION_DISCOUNT</td>
-    <td>Начисление скидки на позицию в соответствии с настройками приложения.</td>
-  </tr>
-  <tr>
-    <td>_ADDITIONAL_DOCUMENT_DISCOUNT</td>
-    <td>Начисление скидки на документ в соответствии с настройками приложения.</td>
-  </tr>
-  <tr>
-    <td>_ADDITIONAL_REGISTER_POSITION_FREE</td>
-    <td>Кнопка добавления по свободной цене.</td>
-  </tr>
-  <tr>
-    <td rowspan="7">CASH_OPERATIONS_SELL_PAYBACK</td>
-    <td></td>
-    <td>Создание документов возврата от покупателя покупателя, на основании документа продажи.</td>
-  </tr>
-  <tr>
-    <td>_BY_SUM</td>
-    <td>Создание документов возврата от покупателя, без документа основания.</td>
-  </tr>
-  <tr>
-    <td>_BY_SUM_ADDITIONAL_CHANGE_PRICE</td>
-    <td>Редактирование цены товаров, возвращаемых без основания. Цена продажи товара в карточке отлична от нуля.</td>
-  </tr>
-  <tr>
-    <td>_BY_SUM_ADDITIONAL_CHANGE_ZERO_PRICE</td>
-    <td>Редактирование цены товаров, возвращаемых без основания. Цена продажи товара в карточке равна нулю.</td>
-  </tr>
-  <tr>
-    <td>_BY_SUM_ADDITIONAL_POSITION_DISCOUNT</td>
-    <td>Начисление скидки на позицию в возврате без основания. Ограничения по скидкам, указанные в настройках приложения, не действуют.</td>
-  </tr>
-  <tr>
-    <td>_BY_SUM_ADDITIONAL_DOCUMENT_DISCOUNT</td>
-    <td>Начисление скидки на документ возврата без основания. Ограничения по скидкам, указанные в настройках приложения, не действуют.</td>
-  </tr>
-  <tr>
-    <td>_BY_SUM_ADDITIONAL_REGISTER_POSITION_FREE</td>
-    <td>Кнопка добавления по свободной цене.</td>
-  </tr>
-  <tr>
-    <td rowspan="2">CASH_OPERATIONS_CASH_DRAWER</td>
-    <td>_CASH_INCOME</td>
-    <td>Соответствующая кнопка в активности (Activity) «Денежный ящик».</td>
-  </tr>
-  <tr>
-    <td>_CASH_OUTCOME</td>
-    <td>Соответствующая кнопка в активности (Activity) «Денежный ящик».</td>
-  </tr>
-  <tr>
-    <td rowspan="2">CASH_REPORTS</td>
-    <td>_X_REPORT</td>
-    <td>Соответствующая кнопка в активности (Activity) «Кассовые отчёты».</td>
-  </tr>
-  <tr>
-    <td>_Z_REPORT</td>
-    <td>Соответствующая кнопка в активности (Activity) «Кассовые отчёты».</td>
-  </tr>
-  <tr>
-    <td rowspan="7">MANAGEMENT_REPORTS</td>
-    <td>_STOCK_REPORT</td>
-    <td>Управленческий отчёт "Товарные остатки в ценах реализации".</td>
-  </tr>
-  <tr>
-    <td>_PROCUREMENT_REPORT</td>
-    <td>Управленческие отчёт "Отчёт по закупкам".</td>
-  </tr>
-  <tr>
-    <td>_SALES_REPORT</td>
-    <td>Управленческие отчёт "Отчёт по продажам".</td>
-  </tr>
-  <tr>
-    <td>_CONSOLIDATED_SALES_REPORT</td>
-    <td>Управленческие отчёт "Сводный отчёт по продажам".</td>
-  </tr>
-  <tr>
-    <td>_GROSS_PROFIT_REPORT</td>
-    <td>Управленческие отчёт "Отчёт по валовой прибыли".</td>
-  </tr>
-  <tr>
-    <td>_COMMODITIES_MOVEMENTS_REPORT</td>
-    <td>Управленческие отчёт "Движения товаров".</td>
-  </tr>
-  <tr>
-    <td>_ALCOHOL_REPORT</td>
-    <td>Управленческие отчёт "Алкогольный отчёт".</td>
-  </tr>
-  <tr>
-    <td>DOCUMENTS_JOURNAL</td>
-    <td></td>
-    <td>Журнал документов.</td>
-  </tr>
-  <tr>
-    <td>OPERATIONS_JOURNAL</td>
-    <td></td>
-    <td>Журнал операций.</td>
-  </tr>
-  <tr>
-    <td>SERVICE_EXCHANGE</td>
-    <td></td>
-    <td>Доступ к сервису обмена.</td>
-  </tr>
-  <tr>
-    <td>SETTINGS_MENU</td>
-    <td></td>
-    <td>Доступ к настройкам.</td>
-  </tr>
-  <tr>
-    <td>APPLICATIONS_MERCHANDISER</td>
-    <td></td>
-    <td>Приложение товароведа.</td>
-  </tr>
-</table>
+<dl>
+  <dt>CASH_OPERATIONS_SELL</dt>
+  <dd>Все действия продажи, кроме дополнительных (<em>ADDITIONAL</em>*).</dd>
+  <dt>CASH_OPERATIONS_SELL_ADDITIONAL_CHANGE_ZERO_PRICE</dt>
+  <dd>Редактирование цены товаров, в карточке которых нулевая цена продажи.</dd>
+  <dt>CASH_OPERATIONS_SELL_ADDITIONAL_POSITION_DISCOUNT</dt>
+  <dd>Начисление скидки на позицию в соответствии с настройками приложения.</dd>
+  <dt>CASH_OPERATIONS_SELL_ADDITIONAL_DOCUMENT_DISCOUNT</dt>
+  <dd>Начисление скидки на документ в соответствии с настройками приложения.</dd>
+  <dt>CASH_OPERATIONS_SELL_ADDITIONAL_REGISTER_POSITION_FREE</dt>
+  <dd>Кнопка добавления по свободной цене.</dd>
+  <dt>CASH_OPERATIONS_PAYBACK</dt>
+  <dd>Создание документов возврата от покупателя покупателя, на основании документа продажи.</dd>
+  <dt>CASH_OPERATIONS_PAYBACK_BY_SUM</dt>
+  <dd>Создание документов возврата от покупателя, без документа основания.</dd>
+  <dt>CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_CHANGE_PRICE</dt>
+  <dd>Редактирование цены товаров, возвращаемых без основания. Цена продажи товара в карточке отлична от нуля.</dd>
+  <dt>CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_CHANGE_ZERO_PRICE</dt>
+  <dd>Редактирование цены товаров, возвращаемых без основания. Цена продажи товара в карточке равна нулю.</dd>
+  <dt>CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_POSITION_DISCOUNT</dt>
+  <dd>Начисление скидки на позицию в возврате без основания. Ограничения по скидкам, указанные в настройках приложения, не действуют.</dd>
+  <dt>CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_DOCUMENT_DISCOUNT</dt>
+  <dd>Начисление скидки на документ возврата без основания. Ограничения по скидкам, указанные в настройках приложения, не действуют.</dd>
+  <dt>CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_REGISTER_POSITION_FREE</dt>
+  <dd>Кнопка добавления по свободной цене.</dd>
+  <dt>CASH_OPERATIONS_CASH_DRAWER_CASH_INCOME</dt>
+  <dd>Соответствующая кнопка в активности (Activity) «Денежный ящик».</dd>
+  <dt>CASH_OPERATIONS_CASH_DRAWER_CASH_OUTCOME</dt>
+  <dd>Соответствующая кнопка в активности (Activity) «Денежный ящик».</dd>
+  <dt>CASH_REPORTS_X_REPORT</dt>
+  <dd>Соответствующая кнопка в активности (Activity) «Кассовые отчёты».</dd>
+  <dt>CASH_REPORTS_Z_REPORT</dt>
+  <dd>Соответствующая кнопка в активности (Activity) «Кассовые отчёты».</dd>
+  <dt>MANAGEMENT_REPORTS_STOCK_REPORT</dt>
+  <dd>Управленческий отчёт “Товарные остатки в ценах реализации”.</dd>
+  <dt>MANAGEMENT_REPORTS_PROCUREMENT_REPORT</dt>
+  <dd>Управленческие отчёт “Отчёт по закупкам”.</dd>
+  <dt>MANAGEMENT_REPORTS_SALES_REPORT</dt>
+  <dd>Управленческие отчёт “Отчёт по продажам”.</dd>
+  <dt>MANAGEMENT_REPORTS_CONSOLIDATED_SALES_REPORT</dt>
+  <dd>Управленческие отчёт “Сводный отчёт по продажам”.</dd>
+  <dt>MANAGEMENT_REPORTS_GROSS_PROFIT_REPORT</dt>
+  <dd>Управленческие отчёт “Отчёт по валовой прибыли”.</dd>
+  <dt>MANAGEMENT_REPORTS_COMMODITIES_MOVEMENTS_REPORT</dt>
+  <dd>Управленческие отчёт “Движения товаров”.</dd>
+  <dt>MANAGEMENT_REPORTS_ALCOHOL_REPORT</dt>
+  <dd>Управленческие отчёт “Алкогольный отчёт”.</dd>
+  <dt>DOCUMENTS_JOURNAL</dt>
+  <dd>Журнал документов.</dd>
+  <dt>OPERATIONS_JOURNAL</dt>
+  <dd>Журнал операций.</dd>
+  <dt>SERVICE_EXCHANGE</dt>
+  <dd>Доступ к сервису обмена.</dd>
+  <dt>SETTINGS_MENU</dt>
+  <dd>Доступ к настройкам.</dd>
+  <dt>APPLICATIONS_MERCHANDISER</dt>
+  <dd>Приложение товароведа.</dd>
+</dl>
 
 
     <div class="tags">
