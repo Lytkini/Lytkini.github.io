@@ -305,6 +305,13 @@
             
             
             
+            <li><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_barcode_scanner.html">Получение данных от сканера штрихкодов</a></li>
             
             
@@ -487,29 +494,28 @@ $('#toc').on('click', 'a', function() {
 <ol>
   <li>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, где <code class="highlighter-rouge">&lt;Название&gt;</code> – имя требуемого плагина, демона или экрана.</li>
   <li>В файле <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code> укажите массив строк с правами следующим образом:</li>
+</ol>
 
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;resources&gt;</span>
+    <span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"&lt;Название&gt;_grants"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_SELL<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_PAYBACK <span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/string-array&gt;</span>
+    <span class="nt">&lt;/resources&gt;</span>
+    </code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;resources&gt;</span>
-<span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"&lt;Название&gt;_grants"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_SELL<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_PAYBACK <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/string-array&gt;</span>
-<span class="nt">&lt;/resources&gt;</span></code></pre></figure>
-
-
+<ol>
   <li>В манифесте приложения, для соответствующего элемента <code class="highlighter-rouge">activity</code>, добавьте элемент <code class="highlighter-rouge">meta-data</code> со следующими атрибутами:</li>
-
+</ol>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span> <span class="na">android:resource=</span><span class="s">"@array/&lt;Название&gt;_grants"</span> <span class="nt">/&gt;</span></code></pre></figure>
-
-</ol>
 
 <h3 id="Вебвью-приложение">Вебвью приложение</h3>
 
 <p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) вебвью приложения необходимыми правами, выполните следующие действия:</p>
 <ol>
   <li>В файле <code class="highlighter-rouge">client.yaml</code> добавьте список <code class="highlighter-rouge">grants</code> требуемых прав для соответствующего элемента (демона, плагина или экрана):</li>
-
+</ol>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml">    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;Название&gt;</span>
       <span class="na">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;Заголовок</span><span class="nv"> </span><span class="s">экрана&gt;"</span>
@@ -526,8 +532,9 @@ $('#toc').on('click', 'a', function() {
         <span class="pi">-</span> <span class="s">CASH_OPERATIONS_PAYBACK</span>
     </code></pre></figure>
 
-
+<ol>
   <li>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, который содержит массив строк с правами, перечисленными в списке <code class="highlighter-rouge">grants</code>:</li>
+</ol>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;resources&gt;</span>
     <span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"&lt;Название&gt;_grants"</span><span class="nt">&gt;</span>
@@ -537,15 +544,16 @@ $('#toc').on('click', 'a', function() {
     <span class="nt">&lt;/resources&gt;</span>
     </code></pre></figure>
 
-<div>где <code class="highlighter-rouge">&lt;Название&gt;</code> – значение параметра <code class="highlighter-rouge">name</code> в файле <code class="highlighter-rouge">client.yaml</code>.</div>
+<div class="highlighter-rouge">где `&lt;Название&gt;` – значение параметра `name` в файле `client.yaml`.
+</div>
 
+<ol>
   <li>Убедитесь, что в созданном манифесте приложения, для соответствующего элемента <code class="highlighter-rouge">activity</code> добавлен элемент <code class="highlighter-rouge">meta-data</code> со следующими атрибутами:</li>
+</ol>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span> <span class="na">android:resource=</span><span class="s">"@array/&lt;Название&gt;_grants"</span> <span class="nt">/&gt;</span>
     </code></pre></figure>
-	
-</ol>
-	
+
 <h3 id="Примеры">Примеры</h3>
 <p>Манифест приложения:</p>
 
@@ -558,7 +566,7 @@ $('#toc').on('click', 'a', function() {
     <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span> <span class="na">android:resource=</span><span class="s">"@array/&lt;Название&gt;_grants"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/activity&gt;</span></code></pre></figure>
 
-<p>Список прав в файле <code class="language-xml" data-lang="xml">res/values/&lt;Название&gt;_grants.xml</code>:</p>
+<p>Список прав в файле ‘res/values/<Название>_grants.xml':</Название></p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;resources&gt;</span>
 <span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"&lt;Название&gt;_grants"</span><span class="nt">&gt;</span>
