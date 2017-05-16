@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит описание Inventory API смарт-терминала.">
 <meta name="keywords" content=" sample">
-<title>Users API | Документация Эвотор</title>
+<title>Inventory API | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Users API">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Inventory API">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -324,6 +324,13 @@
             
             
             
+            
+            
+            <li><a href="doc_logging.html">Логирование</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -438,7 +445,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Users API</h1>
+   <h1 class="post-title-main">Inventory API</h1>
 </div>
 
 
@@ -479,59 +486,79 @@ $('#toc').on('click', 'a', function() {
 
   <h3 id="inventory-api-смарт-терминала">Inventory API смарт-терминала</h3>
 
-<p>С помощью Inventory API вы можете получать информацию о товарах, передавать и получать дополнительную информацию о товарах.</p>
+<p>С помощью Inventory API вы можете получать как основную, так и дополнительную информацию о товарах.</p>
 
 <p>Users API смарт-терминала включает в себя:</p>
 
 <ul>
   <li>
-    <p>URI контента <code class="highlighter-rouge">BASE_URI = Uri.parse("content://ru.evotor.evotorpos.inventory")</code>:</p>
+    <p>URI контента <code class="highlighter-rouge">val BASE_URI = Uri.parse("content://ru.evotor.evotorpos.inventory")</code>:</p>
 
-    <p>Данные хранятся локально и синхронизируются с облаком Эвотор каждые четыре часа. Приложение может принудительно синхронизировать данные с облаком.</p>
+    <p>Данные хранятся локально и синхронизируются с облаком Эвотор каждые четыре часа.</p>
   </li>
   <li>
-    <p>Таблицу пользователей <code class="highlighter-rouge">ProductTable</code>:</p>
+    <p>Таблицу данных товара <code class="highlighter-rouge">ProductTable</code>:</p>
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">object</span> <span class="n">ProductTable</span> <span class="o">{</span>
-    <span class="nd">@JvmField</span> <span class="n">val</span> <span class="n">URI</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">InventoryApi</span><span class="o">.</span><span class="na">BASE_URI</span><span class="o">,</span> <span class="s">"Commodity"</span><span class="o">)</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">object</span> <span class="n">ProductTable</span> <span class="o">{</span>
+        <span class="n">val</span> <span class="n">URI</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">InventoryApi</span><span class="o">.</span><span class="na">BASE_URI</span><span class="o">,</span> <span class="s">"Commodity"</span><span class="o">)</span>
 
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_UUID</span> <span class="o">=</span> <span class="s">"UUID"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_CODE</span> <span class="o">=</span> <span class="s">"CODE"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_TYPE</span> <span class="o">=</span> <span class="s">"TYPE"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_PARENT_UUID</span> <span class="o">=</span> <span class="s">"PARENT_UUID"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_IS_GROUP</span> <span class="o">=</span> <span class="s">"IS_GROUP"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_NAME</span> <span class="o">=</span> <span class="s">"NAME"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_DESCRIPTION</span> <span class="o">=</span> <span class="s">"DESCRIPTION"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_PRICE_OUT</span> <span class="o">=</span> <span class="s">"PRICE_OUT"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_QUANTITY</span> <span class="o">=</span> <span class="s">"QUANTITY"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_MEASURE_NAME</span> <span class="o">=</span> <span class="s">"MEASURE_NAME"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_MEASURE_PRECISION</span> <span class="o">=</span> <span class="s">"MEASURE_PRECISION"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_ALCOHOL_BY_VOLUME</span> <span class="o">=</span> <span class="s">"ALCOHOL_BY_VOLUME"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_ALCOHOL_PRODUCT_KIND_CODE</span> <span class="o">=</span> <span class="s">"ALCOHOL_PRODUCT_KIND_CODE"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_TARE_VOLUME</span> <span class="o">=</span> <span class="s">"TARE_VOLUME"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_TAX_NUMBER</span> <span class="o">=</span> <span class="s">"TAX_NUMBER"</span>
-<span class="o">}</span></code></pre></figure>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_UUID</span> <span class="o">=</span> <span class="s">"UUID"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_CODE</span> <span class="o">=</span> <span class="s">"CODE"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_TYPE</span> <span class="o">=</span> <span class="s">"TYPE"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_PARENT_UUID</span> <span class="o">=</span> <span class="s">"PARENT_UUID"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_IS_GROUP</span> <span class="o">=</span> <span class="s">"IS_GROUP"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_NAME</span> <span class="o">=</span> <span class="s">"NAME"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_DESCRIPTION</span> <span class="o">=</span> <span class="s">"DESCRIPTION"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_PRICE_OUT</span> <span class="o">=</span> <span class="s">"PRICE_OUT"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_QUANTITY</span> <span class="o">=</span> <span class="s">"QUANTITY"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_MEASURE_NAME</span> <span class="o">=</span> <span class="s">"MEASURE_NAME"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_MEASURE_PRECISION</span> <span class="o">=</span> <span class="s">"MEASURE_PRECISION"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_ALCOHOL_BY_VOLUME</span> <span class="o">=</span> <span class="s">"ALCOHOL_BY_VOLUME"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_ALCOHOL_PRODUCT_KIND_CODE</span> <span class="o">=</span> <span class="s">"ALCOHOL_PRODUCT_KIND_CODE"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_TARE_VOLUME</span> <span class="o">=</span> <span class="s">"TARE_VOLUME"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_TAX_NUMBER</span> <span class="o">=</span> <span class="s">"TAX_NUMBER"</span>
+    <span class="o">}</span>
+    </code></pre></figure>
 
 <ul>
-  <li>Таблицу ролей <code class="highlighter-rouge">ProductsExtraTable</code>:</li>
+  <li>Таблицу дополнительных полей <code class="highlighter-rouge">ProductsFieldTable</code>:</li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">object</span> <span class="n">ProductExtraTable</span> <span class="o">{</span>
-    <span class="nd">@JvmField</span> <span class="n">val</span> <span class="n">URI</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">InventoryApi</span><span class="o">.</span><span class="na">BASE_URI</span><span class="o">,</span> <span class="s">"CommodityExtra"</span><span class="o">)</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">object</span> <span class="n">FieldTable</span> <span class="o">{</span>
+        <span class="n">val</span> <span class="n">URI</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">InventoryApi</span><span class="o">.</span><span class="na">BASE_URI</span><span class="o">,</span> <span class="s">"Field"</span><span class="o">)</span>
 
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_UUID</span> <span class="o">=</span> <span class="s">"UUID"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_NAME</span> <span class="o">=</span> <span class="s">"NAME"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_PRODUCT_UUID</span> <span class="o">=</span> <span class="s">"COMMODITY_UUID"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_FIELD_UUID</span> <span class="o">=</span> <span class="s">"FIELD_UUID"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_FIELD_VALUE</span> <span class="o">=</span> <span class="s">"FIELD_VALUE"</span>
-    <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_DATA</span> <span class="o">=</span> <span class="s">"DATA"</span>
-<span class="o">}</span></code></pre></figure>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_NAME</span> <span class="o">=</span> <span class="s">"NAME"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_FIELD_UUID</span> <span class="o">=</span> <span class="s">"FIELD_UUID"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_TITLE</span> <span class="o">=</span> <span class="s">"TITLE"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_TYPE</span> <span class="o">=</span> <span class="s">"TYPE"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_SPECIFIC_DATA</span> <span class="o">=</span> <span class="s">"SPECIFIC_DATA"</span>
+
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">TYPE_TEXT_FIELD</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">TYPE_DICTIONARY</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="o">}</span>
+    </code></pre></figure>
+
+<ul>
+  <li>Таблицу значений дополнительных полей товаров <code class="highlighter-rouge">ProductsExtraTable</code>:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">object</span> <span class="n">ProductExtraTable</span> <span class="o">{</span>
+        <span class="nd">@JvmField</span> <span class="n">val</span> <span class="n">URI</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">InventoryApi</span><span class="o">.</span><span class="na">BASE_URI</span><span class="o">,</span> <span class="s">"CommodityExtra"</span><span class="o">)</span>
+
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_UUID</span> <span class="o">=</span> <span class="s">"UUID"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_NAME</span> <span class="o">=</span> <span class="s">"NAME"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_PRODUCT_UUID</span> <span class="o">=</span> <span class="s">"COMMODITY_UUID"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_FIELD_UUID</span> <span class="o">=</span> <span class="s">"FIELD_UUID"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_FIELD_VALUE</span> <span class="o">=</span> <span class="s">"FIELD_VALUE"</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">ROW_DATA</span> <span class="o">=</span> <span class="s">"DATA"</span>
+    <span class="o">}</span>
+    </code></pre></figure>
 
 <p>Схема отношения данных в таблицах.</p>
 
-<p><img src="images/TablesInventoryAPI.png" alt="" title="Диаграмма отношений данных" /></p>
+<p><img src="images/TablesInventoryAPI.png" alt="" title="Схема отношения данных" /></p>
 
 <h3 id="Примеры-запросов-к-inventory-api">Примеры запросов к Inventory API</h3>
 
@@ -579,9 +606,31 @@ $('#toc').on('click', 'a', function() {
         <span class="k">return</span> <span class="kc">null</span>
     <span class="o">}</span></code></pre></figure>
 
-<p>Взаимодействие с дополнительными полями товара:</p>
+<p>Сделать возможные дополнительные поля:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">fun</span> <span class="nf">getProductExtras</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">productUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ProductExtra</span><span class="o">&gt;</span> <span class="o">{</span><span class="c1">//Получить дополнительные поля товара.</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">fun</span> <span class="nf">getField</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">fieldUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">Field</span><span class="o">?</span> <span class="o">{</span>
+        <span class="n">context</span><span class="o">.</span><span class="na">contentResolver</span>
+                <span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">FieldTable</span><span class="o">.</span><span class="na">URI</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="s">"${FieldTable.ROW_FIELD_UUID} = ?"</span><span class="o">,</span> <span class="n">arrayOf</span><span class="o">(</span><span class="n">fieldUuid</span><span class="o">),</span> <span class="kc">null</span><span class="o">)</span>
+                <span class="o">?.</span><span class="na">let</span> <span class="o">{</span> <span class="n">cursor</span> <span class="o">-&gt;</span>
+                    <span class="k">try</span> <span class="o">{</span>
+                        <span class="k">if</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">moveToFirst</span><span class="o">())</span> <span class="o">{</span>
+                            <span class="k">return</span> <span class="nf">createField</span><span class="o">(</span><span class="n">cursor</span><span class="o">)</span>
+                        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                            <span class="k">return</span> <span class="kc">null</span>
+                        <span class="o">}</span>
+                    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nl">e:</span> <span class="n">Exception</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">()</span>
+                    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+                        <span class="n">cursor</span><span class="o">.</span><span class="na">close</span><span class="o">()</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+
+        <span class="k">return</span> <span class="kc">null</span>
+    <span class="o">}</span></code></pre></figure>
+
+<p>Получить значения дополнительных полей товара:</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">fun</span> <span class="nf">getProductExtras</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">productUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ProductExtra</span><span class="o">&gt;</span> <span class="o">{</span>
         <span class="n">val</span> <span class="n">result</span> <span class="o">=</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ProductExtra</span><span class="o">&gt;()</span>
         <span class="n">context</span><span class="o">.</span><span class="na">contentResolver</span>
                 <span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">ProductExtraTable</span><span class="o">.</span><span class="na">URI</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="s">"${ProductExtraTable.ROW_PRODUCT_UUID} = ?"</span><span class="o">,</span> <span class="n">arrayOf</span><span class="o">(</span><span class="n">productUuid</span><span class="o">),</span> <span class="kc">null</span><span class="o">)</span>
@@ -599,16 +648,6 @@ $('#toc').on('click', 'a', function() {
                     <span class="o">}</span>
                 <span class="o">}</span>
         <span class="k">return</span> <span class="n">result</span>
-    <span class="o">}</span>
-<span class="kd">private</span> <span class="n">fun</span> <span class="nf">createProductExtra</span><span class="o">(</span><span class="nl">cursor:</span> <span class="n">Cursor</span><span class="o">):</span> <span class="n">ProductExtra</span> <span class="o">{</span><span class="c1">//Создать дополнительные поля товара.</span>
-        <span class="k">return</span> <span class="nf">ProductExtra</span><span class="o">(</span>
-                <span class="n">uuid</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductExtraTable</span><span class="o">.</span><span class="na">ROW_UUID</span><span class="o">)),</span>
-                <span class="n">name</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductExtraTable</span><span class="o">.</span><span class="na">ROW_NAME</span><span class="o">)),</span>
-                <span class="n">commodityUUID</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductExtraTable</span><span class="o">.</span><span class="na">ROW_PRODUCT_UUID</span><span class="o">)),</span>
-                <span class="n">fieldUUID</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductExtraTable</span><span class="o">.</span><span class="na">ROW_FIELD_UUID</span><span class="o">)),</span>
-                <span class="n">fieldValue</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductExtraTable</span><span class="o">.</span><span class="na">ROW_FIELD_VALUE</span><span class="o">)),</span>
-                <span class="n">data</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductExtraTable</span><span class="o">.</span><span class="na">ROW_DATA</span><span class="o">))</span>
-        <span class="o">)</span>
     <span class="o">}</span></code></pre></figure>
 
 

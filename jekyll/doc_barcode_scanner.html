@@ -324,6 +324,13 @@
             
             
             
+            
+            
+            <li><a href="doc_logging.html">Логирование</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -477,44 +484,43 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Чтобы ваше приложение получало данные от сканера штрихкодов, подключённого к смарт-терминалу, вам требуется реализовать поддержку <code class="highlighter-rouge">mBarcodeBroadcastReceiver</code>.</p>
+  <p>Чтобы ваше приложение получало данные от сканера штрихкодов, подключённого к смарт-терминалу, реализуйте интерфейс <code class="highlighter-rouge">BarcodeBroadcastReceiver</code>.</p>
 
 <p>Для этого:</p>
 <ol>
-  <li>В манифесте приложения укажите следующий элемент:
- <code class="highlighter-rouge">&lt;uses-permission android:name="ru.evotor.devices.scanner.SCANNER_RECEIVER" /&gt;</code></li>
-  <li>Убедитесь, что приложение содержит код вида:</li>
+  <li>
+    <p>В манифесте приложения укажите следующий элемент:
+ <code class="highlighter-rouge">&lt;uses-permission android:name="ru.evotor.devices.scanner.SCANNER_RECEIVER" /&gt;</code></p>
+  </li>
+  <li>
+    <p>Объявите класс <code class="highlighter-rouge">BarcodeBroadcastReceiver</code>:</p>
+
+    <div class="language-java highlighter-rouge"> <span class="n">BarcodeBroadcastReceiver</span> <span class="n">mBarcodeBroadcastReceiver</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BarcodeBroadcastReceiver</span><span class="o">()</span> <span class="o">{</span>
+
+     <span class="nd">@Override</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReceiveBarcode</span><span class="o">(</span><span class="n">String</span> <span class="n">barcode</span><span class="o">)</span> <span class="o">{</span>
+         <span class="c1">// Переменная barcode содержит считанный штрих-код.</span>
+     <span class="o">}</span>
+ <span class="o">};</span>
+    </div>
+  </li>
+  <li>
+    <p>В операции (<code class="highlighter-rouge">Activity</code>) или фрагменте (<code class="highlighter-rouge">Fragment</code>) запускайте и останавливайте подписку <code class="highlighter-rouge">BarcodeBroadcastReceiver</code> :</p>
+
+    <div class="language-java highlighter-rouge">     <span class="nd">@Override</span>
+     <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPause</span><span class="o">()</span> <span class="o">{</span>
+         <span class="kd">super</span><span class="o">.</span><span class="na">onPause</span><span class="o">();</span>
+         <span class="n">unregisterReceiver</span><span class="o">(</span><span class="n">mBarcodeBroadcastReceiver</span><span class="o">);</span>
+     <span class="o">}</span>
+     <span class="nd">@Override</span>
+     <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="o">()</span> <span class="o">{</span>
+         <span class="kd">super</span><span class="o">.</span><span class="na">onResume</span><span class="o">();</span>
+         <span class="n">registerReceiver</span><span class="o">(</span><span class="n">mBarcodeBroadcastReceiver</span><span class="o">,</span> <span class="n">BarcodeBroadcastReceiver</span><span class="o">.</span><span class="na">BARCODE_INTENT_FILTER</span><span class="o">);</span>
+     <span class="o">}</span>
+ <span class="o">}</span>
+    </div>
+  </li>
 </ol>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">BarcodeBroadcastReceiver</span> <span class="n">mBarcodeBroadcastReceiver</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BarcodeBroadcastReceiver</span><span class="o">()</span> <span class="o">{</span>
-
-        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReceiveBarcode</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
-            <span class="o">((</span><span class="n">TextView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">barcode_test</span><span class="o">)).</span><span class="na">setText</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
-        <span class="o">}</span>
-    <span class="o">};</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPause</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onPause</span><span class="o">();</span>
-        <span class="n">unregisterReceiver</span><span class="o">(</span><span class="n">mBarcodeBroadcastReceiver</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onResume</span><span class="o">();</span>
-        <span class="n">registerReceiver</span><span class="o">(</span><span class="n">mBarcodeBroadcastReceiver</span><span class="o">,</span> <span class="n">BarcodeBroadcastReceiver</span><span class="o">.</span><span class="na">BARCODE_INTENT_FILTER</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
-
 
 
     <div class="tags">

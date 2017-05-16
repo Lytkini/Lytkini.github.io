@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content=" ">
-<title>News | Документация Эвотор</title>
+<meta name="description" content="Раздел содержит информацию о доступе к логам приложений.">
+<meta name="keywords" content=" sample">
+<title>Логирование | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="News">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Логирование">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -326,7 +326,7 @@
             
             
             
-            <li><a href="doc_logging.html">Логирование</a></li>
+            <li class="active"><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -445,13 +445,15 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">News</h1>
+   <h1 class="post-title-main">Логирование</h1>
 </div>
 
 
 
 <div class="post-content">
 
+   
+    <div class="summary">Раздел содержит информацию о доступе к логам приложений.</div>
    
 
     
@@ -482,116 +484,42 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>The following pages and posts are tagged with <button type="button" style="cursor: default" class="btn btn-default navbar-btn">news</button></p>
-<table><thead><tr><th>Title</th><th>Type</th><th>Excerpt</th></tr></thead>
-    <tbody>
-    
-  
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
+  <p>Для доступа к логам и отладки приложения на терминале реализован <a href="./doc_developer_mode.html">режим разработчика</a>.</p>
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+<p>Вы можете просматривать логи с помощью утилиты <code class="highlighter-rouge">logcat</code>.</p>
 
-   </tbody>
-</table>
+<p>Запись событий приложения зависит от типа приложения.</p>
 
+<h3 id="Вебвью-приложение">Вебвью-приложение</h3>
+
+<p>Используйте функцию объекта <code class="highlighter-rouge">logger</code> для записи событий вебвью-приложений:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">)</span></code></pre></figure>
+
+<p>Функция отображает в <code class="highlighter-rouge">logcat</code> значение <code class="highlighter-rouge">String</code>.</p>
+
+<p>Вы так же можете использовать стандартные методы функции <code class="highlighter-rouge">console</code>:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">console.log(String)</code></li>
+  <li><code class="highlighter-rouge">console.info(String)</code></li>
+  <li><code class="highlighter-rouge">console.warn(String)</code></li>
+  <li><code class="highlighter-rouge">console.error(String)</code></li>
+</ul>
+
+<h3 id="java-приложение">Java-приложение</h3>
+
+<p>Для записи событий Java-приложений используйте методы класса <code class="highlighter-rouge">Log</code>:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Log.v(String, String)</code> – Verbose;</li>
+  <li><code class="highlighter-rouge">Log.d(String, String)</code> – Debug;</li>
+  <li><code class="highlighter-rouge">Log.i(String, String)</code> – Info;</li>
+  <li><code class="highlighter-rouge">Log.w(String, String)</code> – Warn;</li>
+  <li><code class="highlighter-rouge">Log.e(String, String)</code> – Error.</li>
+</ul>
+
+<p>Подробное описание класса и используемых методов смотрите в <a href="https://developer.android.com/reference/android/util/Log.html">документации для ОС Android</a>.</p>
 
 
     <div class="tags">
