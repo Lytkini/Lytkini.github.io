@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content=" ">
-<title>Страница не найдена | Документация Эвотор</title>
+<meta name="description" content="Раздел содержит вводную информацию для работы с нашей документацией.">
+<meta name="keywords" content=" sample">
+<title>Введение | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Страница не найдена">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Введение">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -442,13 +442,15 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Страница не найдена</h1>
+   <h1 class="post-title-main">Введение</h1>
 </div>
 
 
 
 <div class="post-content">
 
+   
+    <div class="summary">Раздел содержит вводную информацию для работы с нашей документацией.</div>
    
 
     
@@ -479,7 +481,14 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Запрашиваемая страница не существует. Проверьте URL или воспользуйтесь поиском по сайту.</p>
+  <p>Эвотор API – это интерфейс доступа к данным облака Эвотор:</p>
+<ul>
+  <li>данным пользователей;</li>
+  <li>документам смарт-терминала;</li>
+  <li>номенклатуре.</li>
+</ul>
+
+<p>Интерфейс представляет собой типичный REST API, который позволяет общаться стороннему сервису и облаку посредством HTTP-запросов.</p>
 
 
     <div class="tags">

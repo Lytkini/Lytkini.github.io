@@ -4,8 +4,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" ">
-<title>Страница не найдена | Документация Эвотор</title>
+<meta name="keywords" content=" sample">
+<title>Авторизация | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Страница не найдена">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Авторизация">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -205,7 +205,7 @@
             
             
             
-            <li><a href="doc_authorization.html">Авторизация</a></li>
+            <li class="active"><a href="doc_authorization.html">Авторизация</a></li>
             
             
             
@@ -442,7 +442,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Страница не найдена</h1>
+   <h1 class="post-title-main">Авторизация</h1>
 </div>
 
 
@@ -479,7 +479,49 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Запрашиваемая страница не существует. Проверьте URL или воспользуйтесь поиском по сайту.</p>
+  <h3 id="Авторизация-запросов-к-Эвотор-api">Авторизация запросов к Эвотор API</h3>
+
+<p>Все запросы к Эвотор API, должны содержать HTTP-заголовок <code class="highlighter-rouge">x-Authorization</code>, в котором требуется указать <em>токен приложения</em>.</p>
+
+<p>Токен приложения можно получить одним из следующих способов:</p>
+
+<ul>
+  <li>В GET-параметре <code class="highlighter-rouge">token</code> веб-адреса iframe-приложения:
+    <pre><code class="language-curl">https://partner.org/#/?uid=01-000000000011111&amp;token=string
+</code></pre>
+
+    <p><img src="images/iframe_token.png" alt="Токен для интеграции с 1с" /></p>
+  </li>
+  <li>
+    <p>В Личном кабинете пользователя Эвотор, в разделе <strong>Настройки</strong> приложения.</p>
+
+    <p>Для этого необходимо установить флажок <strong>Флажок</strong>, на вкладке <strong>Интеграция</strong>, на <a href="https://dev.evotor.ru/#/store/auth/login">сайте разработчика</a>.</p>
+
+    <p><img src="images/1c_integration_API_key.png" alt="Токен для интеграции с 1с" /></p>
+  </li>
+  <li>
+    <p>В <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1token%2Fpost">вебхуке-запросе “Передача токена приложения”</a> от облака Эвотор. Сторонний сервис авторизует вебхук с помощью <em>токена стороннего сервиса</em>.</p>
+
+    <p>Для этого необходимо установить флажок <strong>Флажок</strong>, на вкладке <strong>Интеграция</strong>, на <a href="https://dev.evotor.ru/">сайте разработчика</a>.</p>
+  </li>
+</ul>
+
+<h3 id="Авторизация-вебхуков-облака-Эвотор">Авторизация вебхуков облака Эвотор</h3>
+
+<p>Для авторизации <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy">вебхуков-запросов</a>, облако Эвотор передаёт в заголовке <code class="highlighter-rouge">Authorization</code> <em>токен стороннего сервиса</em>.</p>
+
+<p>Токен зависит от способа авторизации в стороннем сервисе (<code class="highlighter-rouge">Basic</code> или <code class="highlighter-rouge">Bearer</code>):</p>
+
+<ul>
+  <li>
+    <p>Для авторизации с типом <code class="highlighter-rouge">Basic</code>, в Эвотор требуется предоставить имя пользователя и пароль. В этом случае облако в заголовке <code class="highlighter-rouge">Authorization</code> будет передавать указанные данные, закодированные с помощью <code class="highlighter-rouge">base64</code>.</p>
+  </li>
+  <li>
+    <p>Для авторизации с типом <code class="highlighter-rouge">Bearer</code>, в Эвотор требуется предоставить токен в формате <code class="highlighter-rouge">string</code>, который облако будет передавать в заголовке <code class="highlighter-rouge">Authorization</code>.</p>
+  </li>
+</ul>
+
+<p>На вебхуки <code class="highlighter-rouge">/create</code>, <code class="highlighter-rouge">/verify</code>, <code class="highlighter-rouge">/tariff</code>, сторонний сервис сообщает облаку Эвотор <em>токен пользователя</em>. Этот токен облако передаёт в <a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya">вебхуках-уведомлениях</a> в заголовках <code class="highlighter-rouge">Authorization</code> с типом <code class="highlighter-rouge">Bearer</code>.</p>
 
 
     <div class="tags">

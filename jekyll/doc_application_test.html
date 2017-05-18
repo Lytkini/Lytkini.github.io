@@ -3,7 +3,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="This is just a sample topic...">
+<meta name="description" content="Раздел содержит инструкцию о том, как приступить к тестированию своего приложения.">
 <meta name="keywords" content=" sample">
 <title>Тестирование приложения | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
@@ -193,26 +193,26 @@
         
     
     <li>
-        <a href="#">Интеграция с платформой</a>
+        <a href="#">Эвотор API</a>
         <ul>
             
             
             
-            <li><a href="doc_release_notes.html">История изменений API и SDK</a></li>
+            <li><a href="doc_Evotor_API_about.html">Об Эвотор API</a></li>
             
             
             
             
             
             
-            <li><a href="doc_evotor_rest_api_calls.html">Запросы к облаку Эвотор</a></li>
+            <li><a href="doc_authorization.html">Авторизация</a></li>
             
             
             
             
             
             
-            <li><a href="doc_outgoing_calls_protocol.html">Запросы к стороннему сервису</a></li>
+            <li><a href="doc_example_calls.html">Примеры запросов</a></li>
             
             
             
@@ -234,6 +234,89 @@
             
             
             <li><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">SDK смарт-терминала</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Работа с оборудованием</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_integration_library_connection.html">Подготовка к работе</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_barcode_scanner.html">Работа со сканером штрихкодов</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_bill_printer.html">Работа с принтером чеков</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_scales.html">Работа с весами</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -274,59 +357,9 @@
             
             
             
-        </ul>
-        
-        
-    
-    <li>
-        <a href="#">SDK смарт-терминала</a>
-        <ul>
             
             
-            
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_barcode_scanner.html">Получение данных от сканера штрихкодов</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_bill_printer.html">Печать информации на чеках</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_logging.html">Логирование</a></li>
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -380,42 +413,6 @@
         
     
     <li>
-        <a href="#">Продажа</a>
-        <ul>
-            
-            
-            
-            <li><a href="doc_legal_scheme.html">Юридическая схема</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_applications_tariffs.html">Тарифы приложений</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_conditions.html">Условия</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_marketing.html">Продвижение</a></li>
-            
-            
-            
-            
-        </ul>
-        
-        
-    
-    <li>
         <a href="#">FAQ</a>
         <ul>
             
@@ -453,7 +450,7 @@
 <div class="post-content">
 
    
-    <div class="summary">This is just a sample topic...</div>
+    <div class="summary">Раздел содержит инструкцию о том, как приступить к тестированию своего приложения.</div>
    
 
     
@@ -488,19 +485,17 @@ $('#toc').on('click', 'a', function() {
 
 <p>Чтобы протестировать своё приложение выполните следующие действия:</p>
 <ol>
-  <li>Войдите в личный кабинет разработчика на сайте https://developer.evotor.ru/.</li>
+  <li>Войдите в <a href="https://dev.evotor.ru">личный кабинет разработчика</a>.</li>
   <li>Выберите приложение, которое требуется протестировать.
 <img src="images\Developer LK.png" alt="картинка1" /></li>
   <li>В разделе <strong>Тестирование</strong> добавьте необходимые телефонные номера в поле <strong>Добавить тестировщика</strong> и выберите требуюмую роль <strong>Тестировщик</strong> или <strong>Разработчик</strong>.
 <img src="images\Add_software_tester.png" alt="картинка2" /></li>
   <li>В разделе <strong>Версии</strong> нажмите на кнопку <strong>Выложить на тест</strong>.
 <img src="images\upload_to_test.png" alt="картинка3" /></li>
+  <li>Ознакомьтесь с условиями оферты и нажмите на кнопку <strong>Продолжить</strong>.</li>
 </ol>
 
-<p>Приложение будет добавлено в тестовом режиме в <a href="https://market.evotor.ru/">магазин</a>. Вы увидите приложение в магазине, если войдёте в Личный кабинет пользователя, зарегистрированный на номер телефона указанный в шаге 3.</p>
-<blockquote>
-  <p>Если вы хотите добавить новый телефон для тестирования, вам потребуется перевыложить приложение, чтобы изменения вступили в силу.</p>
-</blockquote>
+<p>Приложение будет добавлено в тестовом режиме в <a href="https://market.evotor.ru/">магазин</a>. Вы увидите приложение в магазине, если войдёте в Личный кабинет пользователя, зарегистрированный на номер телефона тестировщика, указанный в шаге 3.</p>
 
 
     <div class="tags">

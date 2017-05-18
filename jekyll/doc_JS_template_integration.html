@@ -4,8 +4,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" ">
-<title>Страница не найдена | Документация Эвотор</title>
+<meta name="keywords" content=" sample">
+<title>Создание JS-приложения с помощью шаблона | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Страница не найдена">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Создание JS-приложения с помощью шаблона">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -359,7 +359,7 @@
             
             
             
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            <li class="active"><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -442,7 +442,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Страница не найдена</h1>
+   <h1 class="post-title-main">Создание JS-приложения с помощью шаблона</h1>
 </div>
 
 
@@ -479,7 +479,64 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Запрашиваемая страница не существует. Проверьте URL или воспользуйтесь поиском по сайту.</p>
+  <p>С помощью шаблона JS-приложения вы можете создать APK приложения, которое добавляет две новые иконки на экран скидок. Нажатие на иконки запускает экраны (views) приложения.</p>
+
+<p>Перед использованием шаблона, убедитесь, что</p>
+
+<ul>
+  <li>Структура приложения;</li>
+  <li>ещё какая-то ботва;</li>
+  <li>и ещё какая-то ботва.</li>
+</ul>
+
+<p>Чтобы собрать приложение по шаблону:</p>
+
+<ol>
+  <li>Создайте новый проект в Android Studio.</li>
+  <li>
+    <p>В файле <code class="highlighter-rouge">build.gradle</code> проекта укажите:</p>
+
+    <div class="language-gradle highlighter-rouge"> <span class="k">buildscript</span> <span class="o">{</span>
+     <span class="k">repositories</span> <span class="o">{</span>
+         <span class="n">jcenter</span><span class="o">()</span>
+         <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">'https://jitpack.io'</span> <span class="o">}</span>
+     <span class="o">}</span>
+     <span class="k">dependencies</span> <span class="o">{</span>
+         <span class="o">...</span>
+         <span class="n">classpath</span> <span class="nl">group:</span> <span class="s1">'com.github.evotor'</span><span class="o">,</span> <span class="nl">name:</span> <span class="s1">'template-plugin'</span><span class="o">,</span> <span class="nl">version:</span> <span class="s1">'v1.0.7'</span>
+     <span class="o">}</span>
+ <span class="o">}</span>
+
+ <span class="k">allprojects</span> <span class="o">{</span>
+     <span class="k">repositories</span> <span class="o">{</span>
+       <span class="o">...</span>
+       <span class="n">maven</span> <span class="o">{</span> <span class="n">url</span> <span class="s1">'https://jitpack.io'</span> <span class="o">}</span>
+     <span class="o">}</span>
+   <span class="o">}</span>
+    </div>
+  </li>
+  <li>
+    <p>В файле <code class="highlighter-rouge">build.gradle</code> приложения добавьте зависимость:</p>
+
+    <div class="language-gradle highlighter-rouge"> <span class="k">dependencies</span> <span class="o">{</span>
+         <span class="n">compile</span> <span class="s1">'com.github.evotor:template-plugin:v1.0.7'</span>
+ <span class="o">}</span>
+    </div>
+
+    <p>и подключите плагин:</p>
+
+    <div class="language-gradle highlighter-rouge"> <span class="n">apply</span> <span class="nl">plugin:</span> <span class="s1">'ru.evotor.webbasedapplication'</span>
+    </div>
+  </li>
+  <li>
+    <p>Соберите apk.</p>
+
+    <p>Необходимые данные загружаются автоматически из нашего репозитория.</p>
+  </li>
+</ol>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> При возникновении ошибок, попробуйте отключить Instunt run в настройках Android studio.</div>
+
 
 
     <div class="tags">

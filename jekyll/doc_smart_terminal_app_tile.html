@@ -193,26 +193,26 @@
         
     
     <li>
-        <a href="#">Интеграция с платформой</a>
+        <a href="#">Эвотор API</a>
         <ul>
             
             
             
-            <li><a href="doc_release_notes.html">История изменений API и SDK</a></li>
+            <li><a href="doc_Evotor_API_about.html">Об Эвотор API</a></li>
             
             
             
             
             
             
-            <li><a href="doc_evotor_rest_api_calls.html">Запросы к облаку Эвотор</a></li>
+            <li><a href="doc_authorization.html">Авторизация</a></li>
             
             
             
             
             
             
-            <li><a href="doc_outgoing_calls_protocol.html">Запросы к стороннему сервису</a></li>
+            <li><a href="doc_example_calls.html">Примеры запросов</a></li>
             
             
             
@@ -234,6 +234,89 @@
             
             
             <li><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">SDK смарт-терминала</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li class="active"><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Работа с оборудованием</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_integration_library_connection.html">Подготовка к работе</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_barcode_scanner.html">Работа со сканером штрихкодов</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_bill_printer.html">Работа с принтером чеков</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_scales.html">Работа с весами</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -274,59 +357,9 @@
             
             
             
-        </ul>
-        
-        
-    
-    <li>
-        <a href="#">SDK смарт-терминала</a>
-        <ul>
             
             
-            
-            <li class="active"><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_barcode_scanner.html">Получение данных от сканера штрихкодов</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_bill_printer.html">Печать информации на чеках</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_logging.html">Логирование</a></li>
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -371,42 +404,6 @@
             
             
             <li><a href="doc_acceptance_testing.html">Приёмочное тестирование</a></li>
-            
-            
-            
-            
-        </ul>
-        
-        
-    
-    <li>
-        <a href="#">Продажа</a>
-        <ul>
-            
-            
-            
-            <li><a href="doc_legal_scheme.html">Юридическая схема</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_applications_tariffs.html">Тарифы приложений</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_conditions.html">Условия</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_marketing.html">Продвижение</a></li>
             
             
             
@@ -488,7 +485,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><img src="images\Tile_example.png" alt="Пример плитки" /></p>
 
-<h3 id="Требования">Требования</h3>
+<h3 id="Рекомендации-по-добавлению-плитки">Рекомендации по добавлению плитки</h3>
 
 <p>Добавляйте плитку если:</p>
 <ul>
@@ -501,17 +498,19 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p><strong>Цвет</strong>. Может быть любым, пока на его фоне отчётливо отображаются символы и иконка.</p>
 
-    <blockquote>
-      <p>Как правило цвет плитки делают таким же как и цвет основных кнопок в интерфейсе приложения.</p>
-    </blockquote>
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Как правило цвет плитки делают таким же как и цвет основных кнопок в интерфейсе приложения.</div>
   </li>
-  <li><strong>Название</strong>. Может быть названием приложения или полезного действия, например, “Продажи за неделю”. Плитка отображает до 20 символов. Остальные символы скрываются под многоточием.</li>
-  <li><strong>Иконка</strong>. Иконка должна быть квадратной – 64 dpi. Требуется обеспечить набор иконок в трёх разрешениях: 96, 192, 256px.</li>
+  <li>
+    <p><strong>Название</strong>. Может быть названием приложения или полезного действия, например, “Продажи за неделю”. Плитка отображает до 20 символов. Остальные символы скрываются под многоточием.</p>
+  </li>
+  <li>
+    <p><strong>Иконка</strong>. Иконка должна быть квадратной – 64 dpi. Требуется обеспечить набор иконок в трёх разрешениях: 96, 192, 256px.</p>
+  </li>
 </ul>
 
-<h3 id="Нативное-приложение">Нативное приложение</h3>
+<h3 id="java-приложение">Java-приложение</h3>
 
-<p>Чтобы добавить плитку нативного приложения на главный экран смарт-терминала, в манифесте приложения, измените соответствующий элемент <code class="highlighter-rouge">&lt;Activity&gt;</code> следующим образом:</p>
+<p>Чтобы добавить плитку java-приложения на главный экран смарт-терминала, в манифесте приложения, измените соответствующий элемент <code class="highlighter-rouge">&lt;Activity&gt;</code> следующим образом:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;activity</span>
     <span class="na">android:name=</span><span class="s">".someActivity"</span>
@@ -541,19 +540,22 @@ $('#toc').on('click', 'a', function() {
   <li>Интент фильтр содержит соответствующие элементы action (<code class="highlighter-rouge">android:name="android.intent.action.MAIN"</code>) и category (<code class="highlighter-rouge">android:name="android.intent.category.EVOTOR"</code>).</li>
 </ul>
 
-<h3 id="Вебвью-приложение">Вебвью приложение</h3>
+<h3 id="js-приложение">JS-приложение</h3>
 
-<p>Чтобы добавить плитку вебвью приложения на главный экран смарт-терминала, в файле <em>client.yaml</em>, модифицируйте список <code class="highlighter-rouge">views</code> следующим образом:</p>
+<p>Чтобы добавить плитку JS-приложения на главный экран смарт-терминала, в файле <em>client.yaml</em>, модифицируйте список <code class="highlighter-rouge">views</code> следующим образом:</p>
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"> <span class="na">views</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Example</span>
     <span class="na">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Заголовок</span><span class="nv"> </span><span class="s">окна"</span>
-    <span class="na">launcher_label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Название</span><span class="nv"> </span><span class="s">приложения</span><span class="nv"> </span><span class="s">для</span><span class="nv"> </span><span class="s">плитки"</span>
-    <span class="na">launcher_icon_96</span><span class="pi">:</span> <span class="s">client/views/example/icon-96.png</span>
-    <span class="na">launcher_icon_192</span><span class="pi">:</span> <span class="s">client/views/example/icon-192.png</span>
-    <span class="na">launcher_icon_256</span><span class="pi">:</span> <span class="s">client/views/example/icon-256.png</span>
-    <span class="na">launcher_color</span><span class="pi">:</span> <span class="c1">#133788</span>
+    <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Название</span><span class="nv"> </span><span class="s">приложения</span><span class="nv"> </span><span class="s">для</span><span class="nv"> </span><span class="s">плитки"</span>
+    <span class="na">color</span><span class="pi">:</span> <span class="c1">#133788</span>
+    <span class="na">icon_96</span><span class="pi">:</span> <span class="s">client/views/example/icon-96.png</span>
+    <span class="na">icon_192</span><span class="pi">:</span> <span class="s">client/views/example/icon-192.png</span>
+    <span class="na">icon_256</span><span class="pi">:</span> <span class="s">client/views/example/icon-256.png</span>
     <span class="na">source</span><span class="pi">:</span> <span class="s">client/views/example/view.html</span>
+    <span class="na">point</span><span class="pi">:</span> <span class="s">SALES_SCREEN</span>
+    <span class="na">grants</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">CASH_OPERATIONS_SELL</span>
     <span class="na">scripts</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">no-script</span>
     <span class="na">styles</span><span class="pi">:</span>
@@ -561,14 +563,20 @@ $('#toc').on('click', 'a', function() {
 
 <p>где:</p>
 <ul>
-  <li><code class="highlighter-rouge">name</code> – задаёт название элемента списка <code class="highlighter-rouge">views</code>.</li>
+  <li>
+    <p><code class="highlighter-rouge">name</code> – задаёт название элемента списка <code class="highlighter-rouge">views</code>.</p>
+
+    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> Название элемента может содержать только латинские буквы, цифры и символ “_”.</div>
+  </li>
   <li><code class="highlighter-rouge">header</code> – задаёт заголовок окна, которое открывается по нажатию на плитку.</li>
-  <li><code class="highlighter-rouge">launcher_label</code> – задаёт название плитки.</li>
-  <li><code class="highlighter-rouge">launcher_icon_96</code> – задаёт путь к иконке в разрешении 96 х 96 пикселей. Иконка копируется в папку drawable-hdpi, файл переименовывается в <code class="highlighter-rouge">&lt;Значение параметра name&gt;-icon.png</code>.</li>
-  <li><code class="highlighter-rouge">launcher_icon_192</code> – задаёт путь к иконке в разрешении 192 х 192 пикселя. Иконка копируется в папку xxdrawable-hdpi, файл переименовывается в <code class="highlighter-rouge">&lt;Значение параметра name&gt;-icon.png</code>.</li>
-  <li><code class="highlighter-rouge">launcher_icon_256</code> – задаёт путь к иконке в разрешении 256 х 256 пикселей. Иконка копируется в папку xxxdrawable-hdpi, файл переименовывается в <code class="highlighter-rouge">&lt;Значение параметра name&gt;-icon.png</code>.</li>
-  <li><code class="highlighter-rouge">launcher_color</code> – задаёт цвет плитки в шестнадцатиричной кодировке.</li>
+  <li><code class="highlighter-rouge">label</code> – задаёт название плитки.</li>
+  <li><code class="highlighter-rouge">color</code> – задаёт цвет плитки в шестнадцатиричной кодировке.</li>
+  <li><code class="highlighter-rouge">icon_96</code> – задаёт путь к иконке в разрешении 96 х 96 пикселей. Иконка копируется в папку drawable-hdpi, файл переименовывается в <code class="highlighter-rouge">&lt;Значение параметра name&gt;-icon.png</code>.</li>
+  <li><code class="highlighter-rouge">icon_192</code> – задаёт путь к иконке в разрешении 192 х 192 пикселя. Иконка копируется в папку xxdrawable-hdpi, файл переименовывается в <code class="highlighter-rouge">&lt;Значение параметра name&gt;-icon.png</code>.</li>
+  <li><code class="highlighter-rouge">icon_256</code> – задаёт путь к иконке в разрешении 256 х 256 пикселей. Иконка копируется в папку xxxdrawable-hdpi, файл переименовывается в <code class="highlighter-rouge">&lt;Значение параметра name&gt;-icon.png</code>.</li>
   <li><code class="highlighter-rouge">source</code> – задаёт полный путь к html-файлу, который открывается по нажатию на плитку.</li>
+  <li><code class="highlighter-rouge">point</code> – задаёт экран смарт-терминала, с которого вызывается приложение. Возможные значения: <code class="highlighter-rouge">SALES_SCREEN</code> и <code class="highlighter-rouge">MAIN_SCREEN</code></li>
+  <li><code class="highlighter-rouge">grants</code> – задаёт <a href="doc_smart_terminal_app_grants.html">права приложения</a>.</li>
   <li><code class="highlighter-rouge">scripts</code> – задаёт список подключаемых скриптов.</li>
   <li><code class="highlighter-rouge">styles</code> – задаёт список подключаемых стилей.</li>
 </ul>

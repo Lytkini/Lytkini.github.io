@@ -4,8 +4,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" ">
-<title>Страница не найдена | Документация Эвотор</title>
+<meta name="keywords" content=" sample">
+<title>Подключение оборудования | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Страница не найдена">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Подключение оборудования">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -286,7 +286,7 @@
                     
                     
                     
-                    <li><a href="doc_integration_library_connection.html">Подготовка к работе</a></li>
+                    <li class="active"><a href="doc_integration_library_connection.html">Подготовка к работе</a></li>
                     
                     
                     
@@ -442,7 +442,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Страница не найдена</h1>
+   <h1 class="post-title-main">Подключение оборудования</h1>
 </div>
 
 
@@ -479,7 +479,34 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Запрашиваемая страница не существует. Проверьте URL или воспользуйтесь поиском по сайту.</p>
+  <p>Приложение может работать с устройствами, подключёнными к смарт-терминалу:</p>
+
+<ul>
+  <li><a href="">сканером штрих-кодов</a>;</li>
+  <li><a href="">принтером чеков</a>;</li>
+  <li><a href="">весами</a>.</li>
+</ul>
+
+<p>Методы, которые может использовать приложение, содержатся в библиотеке <code class="highlighter-rouge">integration-library</code>.</p>
+
+<p>Чтобы подключить библиотеку, в файле <code class="highlighter-rouge">build.gradle</code> приложения, укажите:</p>
+
+<pre><code class="language-1">allprojects {
+    repositories {
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+dependencies {
+compile 'com.github.evotor:integration-library:v0.2.0'
+}
+</code></pre>
+
+<p>где:</p>
+<ul>
+  <li><code class="highlighter-rouge">repositories</code> – содержит ссылки на репозитории необходимые при сборке.</li>
+  <li><code class="highlighter-rouge">dependencies</code> – подключает библиотеку, которая содержит все данные, необходимые для работы с оборудованием, подключённым к смарт-терминалу. <code class="highlighter-rouge">v0.2.0</code> – точная версия проекта.</li>
+</ul>
 
 
     <div class="tags">

@@ -4,8 +4,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" ">
-<title>Страница не найдена | Документация Эвотор</title>
+<meta name="keywords" content=" sample">
+<title>Манифест приложения | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -121,7 +121,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Страница не найдена">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Манифест приложения">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -248,7 +248,7 @@
             
             
             
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            <li class="active"><a href="doc_app_manifest.html">Манифест приложения</a></li>
             
             
             
@@ -442,7 +442,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Страница не найдена</h1>
+   <h1 class="post-title-main">Манифест приложения</h1>
 </div>
 
 
@@ -479,7 +479,113 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Запрашиваемая страница не существует. Проверьте URL или воспользуйтесь поиском по сайту.</p>
+  <h3 id="Манифест-java-приложения">Манифест java-приложения</h3>
+
+<div class="language-xml highlighter-rouge"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><span class="nt">&lt;manifest</span> <span class="na">package=</span><span class="s">"com.example.name.name"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;application</span> <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> <span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span> <span class="na">android:allowBackup=</span><span class="s">"true"</span> <span class="na">android:theme=</span><span class="s">"@style/AppTheme"</span> <span class="na">android:label=</span><span class="s">"@string/generated_app_name"</span> <span class="na">tools:replace=</span><span class="s">"android:label"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta-data</span> <span class="na">android:value=</span><span class="s">"ApllicationUUID"</span> <span class="na">android:name=</span><span class="s">"app_uuid"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;activity</span> <span class="na">android:icon=</span><span class="s">"@mipmap/hello_sales_view_icon"</span> <span class="na">android:label=</span><span class="s">"Hello"</span> <span class="na">android:name=</span><span class="s">".HELLO_SALES_VIEW"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;intent-filter</span> <span class="na">android:priority=</span><span class="s">"90"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.SALES_SCREEN"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/intent-filter&gt;</span>
+      <span class="nt">&lt;meta-data</span> <span class="na">android:value=</span><span class="s">"@color/hello_sales_view_launcher_color"</span> <span class="na">android:name=</span><span class="s">"ru.evotor.sales_screen.BACKGROUND_COLOR"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;meta-data</span> <span class="na">android:resource=</span><span class="s">"@array/hello_sales_view_grants"</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/activity&gt;</span>
+    <span class="nt">&lt;activity</span> <span class="na">android:icon=</span><span class="s">"@mipmap/world_sales_view_icon"</span> <span class="na">android:label=</span><span class="s">"World"</span> <span class="na">android:name=</span><span class="s">".WORLD_SALES_VIEW"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;intent-filter</span> <span class="na">android:priority=</span><span class="s">"90"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.SALES_SCREEN"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/intent-filter&gt;</span>
+      <span class="nt">&lt;meta-data</span> <span class="na">android:value=</span><span class="s">"@color/world_sales_view_launcher_color"</span> <span class="na">android:name=</span><span class="s">"ru.evotor.sales_screen.BACKGROUND_COLOR"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;meta-data</span> <span class="na">android:resource=</span><span class="s">"@array/world_sales_view_grants"</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/activity&gt;</span>
+    <span class="nt">&lt;service</span> <span class="na">android:enabled=</span><span class="s">"true"</span> <span class="na">android:name=</span><span class="s">".UIPluginServiceImplementation"</span> <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;intent-filter&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.EVOTOR"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/intent-filter&gt;</span>
+    <span class="nt">&lt;/service&gt;</span>
+    <span class="nt">&lt;service</span> <span class="na">android:enabled=</span><span class="s">"true"</span> <span class="na">android:name=</span><span class="s">".DaemonServiceImplementation"</span> <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;intent-filter&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.EVOTOR"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/intent-filter&gt;</span>
+    <span class="nt">&lt;/service&gt;</span>
+  <span class="nt">&lt;/application&gt;</span>
+<span class="nt">&lt;/manifest&gt;</span>
+</div>
+
+<h3 id="Манифест-js-приложения">Манифест JS-приложения</h3>
+
+<div class="language-yaml highlighter-rouge"><span class="na">version</span><span class="pi">:</span> <span class="s">1</span>
+<span class="na">versionName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.0.0"</span>
+
+<span class="na">packageName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">packageName"</span>
+<span class="na">appName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ApplicationName"</span>
+<span class="na">appUUID</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ApllicationUUID"</span>
+
+<span class="na">views</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">hello_sales_view</span> <span class="c1"># Запрещено использовать верхний регистр и ,-*&amp;^%$# и т.д</span>
+    <span class="na">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Hello</span><span class="nv"> </span><span class="s">header"</span>
+    <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Hello"</span>
+    <span class="na">color</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#FF1493"</span>
+    <span class="na">icon_96</span><span class="pi">:</span> <span class="s">icons/icon-96.png</span>
+    <span class="na">icon_192</span><span class="pi">:</span> <span class="s">icons/icon-192.png</span>
+    <span class="na">icon_256</span><span class="pi">:</span> <span class="s">icons/icon-256.png</span>
+    <span class="na">source</span><span class="pi">:</span> <span class="s">views/view.html</span>
+    <span class="na">point</span><span class="pi">:</span> <span class="s">SALES_SCREEN</span> <span class="c1"># Variants are MAIN_SCREEN and SALES_SCREEN</span>
+    <span class="na">grants</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">CASH_OPERATIONS_SELL</span>
+    <span class="na">scripts</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">no-script</span>
+    <span class="na">styles</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">*.css"</span>
+  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">world_sales_view</span> <span class="c1"># Запрещено использовать верхний регистр и ,-*&amp;^%$# и т.д</span>
+    <span class="na">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">World</span><span class="nv"> </span><span class="s">header"</span>
+    <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">World"</span>
+    <span class="na">color</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#0000CD"</span>
+    <span class="na">icon_96</span><span class="pi">:</span> <span class="s">icons/icon-96.png</span>
+    <span class="na">icon_192</span><span class="pi">:</span> <span class="s">icons/icon-192.png</span>
+    <span class="na">icon_256</span><span class="pi">:</span> <span class="s">icons/icon-256.png</span>
+    <span class="na">source</span><span class="pi">:</span> <span class="s">views/view.html</span>
+    <span class="na">point</span><span class="pi">:</span> <span class="s">SALES_SCREEN</span> <span class="c1"># Variants are MAIN_SCREEN and SALES_SCREEN</span>
+    <span class="na">grants</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">CASH_OPERATIONS_SELL</span>
+    <span class="na">scripts</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">no-script</span>
+    <span class="na">styles</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">*.css"</span>
+</div>
+
+<p>Где:
+version: 2 — Код версии приложения (инкремент этого параметра значит, что приложение изменилось и его необходимо обновить на терминалах)
+versionName: “1.0.1” — Версия приложения (версия служит просто для отображения пользователю, можно писать что угодно)</p>
+
+<p>packageName: org.example.myApp — Имя пакета (используйте правила соглашения об именовании – https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html)
+appName: “testApp” — Отображаемое пользователю имя приложения
+appUUID: “2e6dc4b8-fdac-48c1-8a1a-ade402863947” — UUID приложения (его можно посмотреть в адресной строке приложения на dev.evotor.ru в личном кабинете разработчика)</p>
+
+<p>iconColor: “#0f70b7” — Цвет иконки приложения интеграции на терминале Evotor, если она размещена на рабочем столе (см. описание views, чтобы поместить иконку приложения на главный экран терминала)</p>
+
+<p>views: — список html загружаются внутрь WebView, которые затем можно отобразить пользователю в UI</p>
+<ul>
+  <li>name: karamba — Любое название view, по которому к нему можно обратиться</li>
+  <li>header: “Подождите” — Заголовок окна</li>
+  <li>label:</li>
+  <li>color:</li>
+  <li>icon_96:</li>
+  <li>icon_192:</li>
+  <li>icon_256:
+source: client/views/discount-loader/view.html — Полный путь к html файлу</li>
+  <li>point:</li>
+  <li>grants:</li>
+  <li>scripts:
+styles: — список стилей которые должны быть подключены</li>
+  <li>“*.css” — может подключить все файлы</li>
+</ul>
 
 
     <div class="tags">

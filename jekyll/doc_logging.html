@@ -248,6 +248,13 @@
             
             
             
+            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
             
             
@@ -273,17 +280,36 @@
             
             
             
-            
-            
-            
-            <li><a href="doc_barcode_scanner.html">Получение данных от сканера штрихкодов</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_bill_printer.html">Печать информации на чеках</a></li>
+            <li class="subfolders">
+                <a href="#">Работа с оборудованием</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_integration_library_connection.html">Подготовка к работе</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_barcode_scanner.html">Работа со сканером штрихкодов</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_bill_printer.html">Работа с принтером чеков</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_scales.html">Работа с весами</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -333,7 +359,7 @@
             
             
             
-            <li><a href="doc_JS_template_integration.html">Создание вебвью-приложения с помощью шаблона</a></li>
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -461,24 +487,15 @@ $('#toc').on('click', 'a', function() {
 
 <p>Запись событий приложения зависит от типа приложения.</p>
 
-<h3 id="Вебвью-приложение">Вебвью-приложение</h3>
+<h3 id="js-приложение">JS-приложение</h3>
 
-<p>Используйте функцию объекта <code class="highlighter-rouge">logger</code> для записи событий вебвью-приложений:</p>
+<p>Используйте функцию объекта <code class="highlighter-rouge">logger</code> для записи событий JS-приложений:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript">    <span class="nx">logger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">)</span></code></pre></figure>
 
 <p>Функция отображает в <code class="highlighter-rouge">logcat</code> значение <code class="highlighter-rouge">String</code>.</p>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> Перед использованием объекта <code class="highlighter-rouge">logger</code> в демонах или плагинах, объект требуется получить с помощью функции <code class="highlighter-rouge">require</code>: <code class="highlighter-rouge">var logger = require('logger')</code>.</div>
-
-<p>Вы так же можете использовать стандартные методы функции <code class="highlighter-rouge">console</code>:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">console.log(String)</code></li>
-  <li><code class="highlighter-rouge">console.info(String)</code></li>
-  <li><code class="highlighter-rouge">console.warn(String)</code></li>
-  <li><code class="highlighter-rouge">console.error(String)</code></li>
-</ul>
 
 <h3 id="java-приложение">Java-приложение</h3>
 
