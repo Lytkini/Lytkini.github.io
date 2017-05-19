@@ -286,7 +286,7 @@
                     
                     
                     
-                    <li class="active"><a href="doc_integration_library_connection.html">Подготовка к работе</a></li>
+                    <li class="active"><a href="doc_integration_library_connection.html">Подключение оборудования</a></li>
                     
                     
                     
@@ -310,6 +310,13 @@
                     
                 </ul>
             </li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_developer_mode.html">Включение режима разработчика</a></li>
             
             
             
@@ -479,15 +486,24 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Приложение может работать с устройствами, подключёнными к смарт-терминалу:</p>
+  <p>Помимо встроенного принтера чеков, с помощью USB-разъёмов, к смарт-терминалу можно подключить:</p>
 
 <ul>
-  <li><a href="">сканером штрих-кодов</a>;</li>
-  <li><a href="">принтером чеков</a>;</li>
-  <li><a href="">весами</a>.</li>
+  <li>сканер штрих-кодов;</li>
+  <li>весы;</li>
+  <li>принтер ценников;</li>
+  <li>пинпад;</li>
+  <li>денежный ящик.</li>
 </ul>
 
-<p>Методы, которые может использовать приложение, содержатся в библиотеке <code class="highlighter-rouge">integration-library</code>.</p>
+<p>Методы API смарт-терминала дают приложениям доступ к устройствам:</p>
+<ul>
+  <li><a href="doc_barcode_scanner.html">сканер штрих-кодов</a>;</li>
+  <li><a href="doc_bill_printer.html">встроенный принтер чеков</a>;</li>
+  <li><a href="doc_scales.html">весы</a>.</li>
+</ul>
+
+<p>Методы содержатся в библиотеке <code class="highlighter-rouge">integration-library</code>.</p>
 
 <p>Чтобы подключить библиотеку, в файле <code class="highlighter-rouge">build.gradle</code> приложения, укажите:</p>
 
