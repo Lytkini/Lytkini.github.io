@@ -3,9 +3,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит информацию о процессе разработки JS-приложения для смарт-терминала.">
+<meta name="description" content="Раздел содержит информацию о процессе разработки вебвью приложения для смарт-терминала.">
 <meta name="keywords" content=" sample">
-<title>Права приложения | Документация Эвотор</title>
+<title>Разработка вебвью приложения для смарт-терминала | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -96,10 +96,6 @@
                 
                 
                 
-                <li><a href="whats_new">Что нового</a></li>
-                
-                
-                
                 <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
                 
                 
@@ -121,7 +117,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Права приложения">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Разработка вебвью приложения для смарт-терминала">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -193,26 +189,26 @@
         
     
     <li>
-        <a href="#">Эвотор API</a>
+        <a href="#">Интеграция с платформой</a>
         <ul>
             
             
             
-            <li><a href="doc_Evotor_API_about.html">Об Эвотор API</a></li>
+            <li><a href="doc_release_notes.html">История изменений API и SDK</a></li>
             
             
             
             
             
             
-            <li><a href="doc_authorization.html">Авторизация</a></li>
+            <li><a href="doc_evotor_rest_api_calls.html">Запросы к облаку Эвотор</a></li>
             
             
             
             
             
             
-            <li><a href="doc_example_calls.html">Примеры запросов</a></li>
+            <li><a href="doc_outgoing_calls_protocol.html">Запросы к стороннему сервису</a></li>
             
             
             
@@ -234,89 +230,6 @@
             
             
             <li><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
-            
-            
-            
-            
-        </ul>
-        
-        
-    
-    <li>
-        <a href="#">SDK смарт-терминала</a>
-        <ul>
-            
-            
-            
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
-            <li class="active"><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></li>
-            
-            
-            
-            <li class="subfolders">
-                <a href="#">Работа с оборудованием</a>
-                <ul>
-                    
-                    
-                    
-                    <li><a href="doc_integration_library_connection.html">Подготовка к работе</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_barcode_scanner.html">Работа со сканером штрихкодов</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_bill_printer.html">Работа с принтером чеков</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_scales.html">Работа с весами</a></li>
-                    
-                    
-                    
-                </ul>
-            </li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -357,31 +270,31 @@
             
             
             
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
-            
-            
-            
-            
         </ul>
         
         
     
     <li>
-        <a href="#">Биллинг</a>
+        <a href="#">SDK смарт-терминала</a>
         <ul>
             
             
             
-            <li><a href="doc_about_billing.html">О биллинге</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Главный экран смарт-терминала</a></li>
             
             
             
             
             
             
-            <li><a href="doc_tariffs.html">Тарифы</a></li>
+            <li class="active"><a href="doc_smart_terminal_app_grants.html">Права доступа</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_logging.html">Логирование данных</a></li>
             
             
             
@@ -396,14 +309,43 @@
             
             
             
-            <li><a href="doc_billing_models.html">Модели биллинга</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_acceptance_testing.html">Приёмочное тестирование</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Продажа</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_legal_scheme.html">Юридическая схема</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_applications_tariffs.html">Тарифы приложений</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_conditions.html">Условия</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_marketing.html">Продвижение</a></li>
             
             
             
@@ -442,7 +384,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Права приложения</h1>
+   <h1 class="post-title-main">Разработка вебвью приложения для смарт-терминала</h1>
 </div>
 
 
@@ -450,7 +392,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Раздел содержит информацию о процессе разработки JS-приложения для смарт-терминала.</div>
+    <div class="summary">Раздел содержит информацию о процессе разработки вебвью приложения для смарт-терминала.</div>
    
 
     
@@ -481,167 +423,204 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="О-правах-приложения">О правах приложения</h3>
+  <p>Вы можете наделить приложение различными правами (grants), в зависимости от роли пользователя смарт-терминала. Таким образом, кассиру или администратору будут доступны разные функции приложения.</p>
 
-<p>С помощью прав (grants), назначенных различным компонентам приложения, вы можете ограничить функциональность приложения для пользователей с определёнными ролями. Чтобы узнать список прав той или иной роли, используйте <a href="doc_smart_terminal_users_api.html">Users API</a>.</p>
+<h3 id="Нативное-приложение">Нативное приложение</h3>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Чтобы приложение было доступно пользователю, список заданных прав приложения должен точно соответствовать списку прав роли пользователя. Пользователи создают и редактируют роли в <a href="https://lk.evotor.ru/web/login">Личном  кабинете</a>. Права предустановленных ролей “Кассир” и “Администратор” изменять нельзя.</div>
-
-<p><img src="images/Add_role.gif" alt="Добавление роли" title="Добавление роли" /></p>
-
-<p>Если оставить список прав пустым, приложение будет доступно любому пользоваетлю, независимо от роли.</p>
-
-<h3 id="java-приложение">Java-приложение</h3>
-
-<p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) java-приложения необходимыми правами, выполните следующие действия:</p>
+<p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) необходимыми правами, выполните следующие действия:</p>
 
 <ol>
-  <li>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, где <code class="highlighter-rouge">&lt;Название&gt;</code> – имя требуемого плагина, демона или экрана.</li>
-  <li>В файле <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code> укажите массив строк с правами следующим образом:</li>
+  <li>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, где <Название> – имя требуемого плагина, демона или экрана.</Название></li>
+  <li>
+    <p>В файле <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code> укажите массив строк с правами следующим образом:</p>
+
+    <pre><code class="language-1xml"> &lt;resources&gt;
+ &lt;string-array name="&lt;Название&gt;_grants"&gt;
+     &lt;item&gt;CASH_OPERATIONS_SELL&lt;/item&gt;
+     &lt;item&gt;CASH_OPERATIONS_PAYBACK &lt;/item&gt;
+ &lt;/string-array&gt;
+ &lt;/resources&gt;
+</code></pre>
+  </li>
+  <li>В манифесте приложения, для соответствующего элемента <code class="highlighter-rouge">activity</code>, добавьте элемент <code class="highlighter-rouge">meta-data</code> со следующими атрибутами:
+    <pre><code class="language-1xml"> &lt;meta-data android:name="ru.evotor.launcher.GRANTS" android:resource="@array/&lt;Название&gt;_grants" /&gt;
+</code></pre>
+  </li>
 </ol>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;resources&gt;</span>
-    <span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"&lt;Название&gt;_grants"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_SELL<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_PAYBACK <span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;/string-array&gt;</span>
-    <span class="nt">&lt;/resources&gt;</span>
-    </code></pre></figure>
+<h3 id="Вебвью-приложение">Вебвью приложение</h3>
 
+<p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) необходимыми правами, выполните следующие действия:</p>
 <ol>
-  <li>В манифесте приложения, для соответствующей операции (<code class="highlighter-rouge">activity</code>), добавьте элемент <code class="highlighter-rouge">meta-data</code> со следующими атрибутами:</li>
+  <li>
+    <p>В файле <code class="highlighter-rouge">client.yaml</code> добавьте список <code class="highlighter-rouge">grants</code> требуемых прав для соответствующего элемента (демона, плагина или экрана):</p>
+
+    <pre><code class="language-1yaml"> - name: &lt;Название&gt;
+   header: "&lt;Заголовок экрана&gt;"
+   launcher-label: "&lt;Название плитики&gt;"
+   launcher-icon: client/views/example-loader/icon.png
+   launcher-color: #133788
+   source: client/views/example-loader/view.html
+   scripts:
+     - no-script
+   styles:
+     - "*.css"
+   grants:
+     - CASH_OPERATIONS_SELL
+     - CASH_OPERATIONS_PAYBACK
+</code></pre>
+  </li>
+  <li>
+    <p>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, где <Название> – значение параметра `name` в файле `client.yaml`, который содержит массив строк с правами, перечисленными в списке `grants`:</Название></p>
+
+    <pre><code class="language-1xml"> &lt;resources&gt;
+ &lt;string-array name="&lt;Название&gt;_grants"&gt;
+     &lt;item&gt;CASH_OPERATIONS_SELL&lt;/item&gt;
+     &lt;item&gt;CASH_OPERATIONS_PAYBACK &lt;/item&gt;
+ &lt;/string-array&gt;
+ &lt;/resources&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>Убедитесь, что в созданном манифесте приложения, для соответствующего элемента <code class="highlighter-rouge">activity</code> добавлен элемент <code class="highlighter-rouge">meta-data</code> со следующими атрибутами:</p>
+    <pre><code class="language-1xml"> &lt;meta-data android:name="ru.evotor.launcher.GRANTS" android:resource="@array/&lt;Название&gt;_grants" /&gt;
+</code></pre>
+  </li>
 </ol>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span> <span class="na">android:resource=</span><span class="s">"@array/&lt;Название&gt;_grants"</span> <span class="nt">/&gt;</span>
-    </code></pre></figure>
-
-<h3 id="js-приложение">JS-приложение</h3>
-
-<p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) JS-приложения необходимыми правами, выполните следующие действия:</p>
-
-<ol>
-  <li>В файле <code class="highlighter-rouge">client.yaml</code> добавьте список <code class="highlighter-rouge">grants</code> требуемых прав для соответствующего элемента (демона, плагина или экрана):</li>
-</ol>
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml">    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;Название&gt;</span>
-      <span class="na">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;Заголовок</span><span class="nv"> </span><span class="s">экрана&gt;"</span>
-      <span class="na">launcher-label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;Название</span><span class="nv"> </span><span class="s">плитики&gt;"</span>
-      <span class="na">launcher-icon</span><span class="pi">:</span> <span class="s">client/views/example-loader/icon.png</span>
-      <span class="na">launcher-color</span><span class="pi">:</span> <span class="c1">#133788</span>
-      <span class="na">source</span><span class="pi">:</span> <span class="s">client/views/example-loader/view.html</span>
-      <span class="na">scripts</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">no-script</span>
-      <span class="na">styles</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s2">"</span><span class="s">*.css"</span>
-      <span class="na">grants</span><span class="pi">:</span>
-        <span class="pi">-</span> <span class="s">CASH_OPERATIONS_SELL</span>
-        <span class="pi">-</span> <span class="s">CASH_OPERATIONS_PAYBACK</span>
-    </code></pre></figure>
-
-<ol>
-  <li>По адресу <code class="highlighter-rouge">res/values</code> создайте файл <code class="highlighter-rouge">&lt;Название&gt;_grants.xml</code>, который содержит массив строк с правами, перечисленными в списке <code class="highlighter-rouge">grants</code>:</li>
-</ol>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;resources&gt;</span>
-    <span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"&lt;Название&gt;_grants"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_SELL<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_PAYBACK <span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;/string-array&gt;</span>
-    <span class="nt">&lt;/resources&gt;</span>
-    </code></pre></figure>
-
-<p>где <code class="highlighter-rouge">&lt;Название&gt;</code> – значение параметра <code class="highlighter-rouge">name</code> в файле <code class="highlighter-rouge">client.yaml</code>.</p>
-
-<ol>
-  <li>Убедитесь, что в созданном манифесте приложения, для соответствующей операции (<code class="highlighter-rouge">activity</code>) добавлен элемент <code class="highlighter-rouge">meta-data</code> со следующими атрибутами:</li>
-</ol>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span> <span class="na">android:resource=</span><span class="s">"@array/&lt;Название&gt;_grants"</span> <span class="nt">/&gt;</span>
-    </code></pre></figure>
-
-<h3 id="Примеры">Примеры</h3>
-<p>Манифест приложения:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">".app.SomeJSWrappedActivity"</span> <span class="na">android:theme=</span><span class="s">"@style/JSWrappedTheme"</span> <span class="na">android:icon=</span><span class="s">"@drawable/icon"</span> <span class="na">android:label=</span><span class="s">"&lt;Название плитки&gt;"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;intent-filter&gt;</span>
-        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.EVOTOR"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/intent-filter&gt;</span>
-    <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.BACKGROUND_COLOR"</span> <span class="na">android:value=</span><span class="s">"#133788"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span> <span class="na">android:resource=</span><span class="s">"@array/&lt;Название&gt;_grants"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/activity&gt;</span></code></pre></figure>
-
-<p>Список прав в файле ‘res/values/<Название>_grants.xml':</Название></p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;resources&gt;</span>
-<span class="nt">&lt;string-array</span> <span class="na">name=</span><span class="s">"&lt;Название&gt;_grants"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_SELL<span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;item&gt;</span>CASH_OPERATIONS_PAYBACK <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/string-array&gt;</span>
-<span class="nt">&lt;/resources&gt;</span></code></pre></figure>
 
 <h3 id="Список-прав">Список прав</h3>
 
-<p>В таблице ниже представлены права, которыми вы можете наделить компоненты приложения.</p>
+<p>В таблице ниже представлены права, которыми вы можете наделить компоненты приложения. Права требуется указывать в списке в виде <Значение><Постфикс></Постфикс></Значение></p>
 
-<dl>
-  <dt>CASH_OPERATIONS_SELL</dt>
-  <dd>Все действия продажи, кроме дополнительных (CASH_OPERATIONS_SELL_ADDITIONAL_*).</dd>
-  <dt>CASH_OPERATIONS_SELL_ADDITIONAL_CHANGE_ZERO_PRICE</dt>
-  <dd>Редактирование цены товаров, в карточке которых нулевая цена продажи.</dd>
-  <dt>CASH_OPERATIONS_SELL_ADDITIONAL_POSITION_DISCOUNT</dt>
-  <dd>Начисление скидки на позицию в соответствии с настройками приложения.</dd>
-  <dt>CASH_OPERATIONS_SELL_ADDITIONAL_DOCUMENT_DISCOUNT</dt>
-  <dd>Начисление скидки на документ в соответствии с настройками приложения.</dd>
-  <dt>CASH_OPERATIONS_SELL_ADDITIONAL_REGISTER_POSITION_FREE</dt>
-  <dd>Кнопка добавления по свободной цене.</dd>
-  <dt>CASH_OPERATIONS_PAYBACK</dt>
-  <dd>Создание документов возврата от покупателя покупателя, на основании документа продажи.</dd>
-  <dt>CASH_OPERATIONS_PAYBACK_BY_SUM</dt>
-  <dd>Создание документов возврата от покупателя, без документа основания.</dd>
-  <dt>CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_CHANGE_PRICE</dt>
-  <dd>Редактирование цены товаров, возвращаемых без основания. Цена продажи товара в карточке отлична от нуля.</dd>
-  <dt>CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_CHANGE_ZERO_PRICE</dt>
-  <dd>Редактирование цены товаров, возвращаемых без основания. Цена продажи товара в карточке равна нулю.</dd>
-  <dt>CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_POSITION_DISCOUNT</dt>
-  <dd>Начисление скидки на позицию в возврате без основания. Ограничения по скидкам, указанные в настройках приложения, не действуют.</dd>
-  <dt>CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_DOCUMENT_DISCOUNT</dt>
-  <dd>Начисление скидки на документ возврата без основания. Ограничения по скидкам, указанные в настройках приложения, не действуют.</dd>
-  <dt>CASH_OPERATIONS_PAYBACK_BY_SUM_ADDITIONAL_REGISTER_POSITION_FREE</dt>
-  <dd>Кнопка добавления по свободной цене.</dd>
-  <dt>CASH_OPERATIONS_CASH_DRAWER_CASH_INCOME</dt>
-  <dd>Соответствующая кнопка в операции (<code class="highlighter-rouge">Activity</code>) “Денежный ящик”.</dd>
-  <dt>CASH_OPERATIONS_CASH_DRAWER_CASH_OUTCOME</dt>
-  <dd>Соответствующая кнопка в операции (<code class="highlighter-rouge">Activity</code>) “Денежный ящик”.</dd>
-  <dt>CASH_REPORTS_X_REPORT</dt>
-  <dd>Соответствующая кнопка в операции (<code class="highlighter-rouge">Activity</code>) “Кассовые отчёты”.</dd>
-  <dt>CASH_REPORTS_Z_REPORT</dt>
-  <dd>Соответствующая кнопка в операции (<code class="highlighter-rouge">Activity</code>) “Кассовые отчёты”.</dd>
-  <dt>MANAGEMENT_REPORTS_STOCK_REPORT</dt>
-  <dd>Управленческий отчёт “Товарные остатки в ценах реализации”.</dd>
-  <dt>MANAGEMENT_REPORTS_PROCUREMENT_REPORT</dt>
-  <dd>Управленческие отчёт “Отчёт по закупкам”.</dd>
-  <dt>MANAGEMENT_REPORTS_SALES_REPORT</dt>
-  <dd>Управленческие отчёт “Отчёт по продажам”.</dd>
-  <dt>MANAGEMENT_REPORTS_CONSOLIDATED_SALES_REPORT</dt>
-  <dd>Управленческие отчёт “Сводный отчёт по продажам”.</dd>
-  <dt>MANAGEMENT_REPORTS_GROSS_PROFIT_REPORT</dt>
-  <dd>Управленческие отчёт “Отчёт по валовой прибыли”.</dd>
-  <dt>MANAGEMENT_REPORTS_COMMODITIES_MOVEMENTS_REPORT</dt>
-  <dd>Управленческие отчёт “Движения товаров”.</dd>
-  <dt>MANAGEMENT_REPORTS_ALCOHOL_REPORT</dt>
-  <dd>Управленческие отчёт “Алкогольный отчёт”.</dd>
-  <dt>DOCUMENTS_JOURNAL</dt>
-  <dd>Журнал документов.</dd>
-  <dt>OPERATIONS_JOURNAL</dt>
-  <dd>Журнал операций.</dd>
-  <dt>SERVICE_EXCHANGE</dt>
-  <dd>Доступ к сервису обмена.</dd>
-  <dt>SETTINGS_MENU</dt>
-  <dd>Доступ к настройкам.</dd>
-  <dt>APPLICATIONS_MERCHANDISER</dt>
-  <dd>Приложение товароведа.</dd>
-</dl>
+<table>
+  <tr>
+    <th>Значение </th>
+    <th>Постфикс</th>
+    <th>Описание</th>
+  </tr>
+  <tr>
+    <td rowspan="5">CASH_OPERATIONS_SELL</td>
+    <td></td>
+    <td>Все действия продажи, кроме дополнительных (_ADDITIONAL_*).<br /></td>
+  </tr>
+  <tr>
+    <td>_ADDITIONAL_CHANGE_ZERO_PRICE</td>
+    <td>Редактирование цены товаров, в карточке которых нулевая цена продажи.</td>
+  </tr>
+  <tr>
+    <td>_ADDITIONAL_POSITION_DISCOUNT</td>
+    <td>Начисление скидки на позицию в соответствии с настройками приложения.</td>
+  </tr>
+  <tr>
+    <td>_ADDITIONAL_DOCUMENT_DISCOUNT</td>
+    <td>Начисление скидки на документ в соответствии с настройками приложения.</td>
+  </tr>
+  <tr>
+    <td>_ADDITIONAL_REGISTER_POSITION_FREE</td>
+    <td>Кнопка добавления по свободной цене.</td>
+  </tr>
+  <tr>
+    <td rowspan="7">CASH_OPERATIONS_SELL_PAYBACK</td>
+    <td></td>
+    <td>Создание документов возврата от покупателя покупателя, на основании документа продажи.</td>
+  </tr>
+  <tr>
+    <td>_BY_SUM</td>
+    <td>Создание документов возврата от покупателя, без документа основания.</td>
+  </tr>
+  <tr>
+    <td>_BY_SUM_ADDITIONAL_CHANGE_PRICE</td>
+    <td>Редактирование цены товаров, возвращаемых без основания. Цена продажи товара в карточке отлична от нуля.</td>
+  </tr>
+  <tr>
+    <td>_BY_SUM_ADDITIONAL_CHANGE_ZERO_PRICE</td>
+    <td>Редактирование цены товаров, возвращаемых без основания. Цена продажи товара в карточке равна нулю.</td>
+  </tr>
+  <tr>
+    <td>_BY_SUM_ADDITIONAL_POSITION_DISCOUNT</td>
+    <td>Начисление скидки на позицию в возврате без основания. Ограничения по скидкам, указанные в настройках приложения, не действуют.</td>
+  </tr>
+  <tr>
+    <td>_BY_SUM_ADDITIONAL_DOCUMENT_DISCOUNT</td>
+    <td>Начисление скидки на документ возврата без основания. Ограничения по скидкам, указанные в настройках приложения, не действуют.</td>
+  </tr>
+  <tr>
+    <td>_BY_SUM_ADDITIONAL_REGISTER_POSITION_FREE</td>
+    <td>Кнопка добавления по свободной цене.</td>
+  </tr>
+  <tr>
+    <td rowspan="2">CASH_OPERATIONS_CASH_DRAWER</td>
+    <td>_CASH_INCOME</td>
+    <td>Соответствующая кнопка в активности (Activity) «Денежный ящик».</td>
+  </tr>
+  <tr>
+    <td>_CASH_OUTCOME</td>
+    <td>Соответствующая кнопка в активности (Activity) «Денежный ящик».</td>
+  </tr>
+  <tr>
+    <td rowspan="2">CASH_REPORTS</td>
+    <td>_X_REPORT</td>
+    <td>Соответствующая кнопка в активности (Activity) «Кассовые отчёты».</td>
+  </tr>
+  <tr>
+    <td>_Z_REPORT</td>
+    <td>Соответствующая кнопка в активности (Activity) «Кассовые отчёты».</td>
+  </tr>
+  <tr>
+    <td rowspan="7">MANAGEMENT_REPORTS</td>
+    <td>_STOCK_REPORT</td>
+    <td>Управленческий отчёт "Товарные остатки в ценах реализации".</td>
+  </tr>
+  <tr>
+    <td>_PROCUREMENT_REPORT</td>
+    <td>Управленческие отчёт "Отчёт по закупкам".</td>
+  </tr>
+  <tr>
+    <td>_SALES_REPORT</td>
+    <td>Управленческие отчёт "Отчёт по продажам".</td>
+  </tr>
+  <tr>
+    <td>_CONSOLIDATED_SALES_REPORT</td>
+    <td>Управленческие отчёт "Сводный отчёт по продажам".</td>
+  </tr>
+  <tr>
+    <td>_GROSS_PROFIT_REPORT</td>
+    <td>Управленческие отчёт "Отчёт по валовой прибыли".</td>
+  </tr>
+  <tr>
+    <td>_COMMODITIES_MOVEMENTS_REPORT</td>
+    <td>Управленческие отчёт "Движения товаров".</td>
+  </tr>
+  <tr>
+    <td>_ALCOHOL_REPORT</td>
+    <td>Управленческие отчёт "Алкогольный отчёт".</td>
+  </tr>
+  <tr>
+    <td>DOCUMENTS_JOURNAL</td>
+    <td></td>
+    <td>Журнал документов.</td>
+  </tr>
+  <tr>
+    <td>OPERATIONS_JOURNAL</td>
+    <td></td>
+    <td>Журнал операций.</td>
+  </tr>
+  <tr>
+    <td>SERVICE_EXCHANGE</td>
+    <td></td>
+    <td>Доступ к сервису обмена.</td>
+  </tr>
+  <tr>
+    <td>SETTINGS_MENU</td>
+    <td></td>
+    <td>Доступ к настройкам.</td>
+  </tr>
+  <tr>
+    <td>APPLICATIONS_MERCHANDISER</td>
+    <td></td>
+    <td>Приложение товароведа.</td>
+  </tr>
+</table>
 
 
     <div class="tags">

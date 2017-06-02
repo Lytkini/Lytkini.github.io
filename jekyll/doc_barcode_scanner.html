@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
+    </script>
+<!-- End Google Tag Manager -->
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит инструкцию о том, как подготовить приложение для получения данных от сканера штрих-кодов.">
+<meta name="description" content="Раздел содержит инструкцию о том, как подготовить приложение для получения данных от сканера штрихкодов.">
 <meta name="keywords" content=" sample">
-<title>Получение данных от сканера штрихкодов | Документация Эвотор</title>
+<title>Сканер штрихкодов | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -78,6 +82,10 @@
 
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4CBFKS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container topnavlinks">
@@ -96,11 +104,15 @@
                 
                 
                 
-                <li><a href="whats_new">Что нового</a></li>
+                <li><a href="whats_new.html">Что нового</a></li>
                 
                 
                 
                 <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
+                
+                
+                
+                <li><a href="doc_developer_mode.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -121,7 +133,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Получение данных от сканера штрихкодов">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Сканер штрихкодов">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -193,15 +205,8 @@
         
     
     <li>
-        <a href="#">Эвотор API</a>
+        <a href="#">Облако Эвотор</a>
         <ul>
-            
-            
-            
-            <li><a href="doc_Evotor_API_about.html">Об Эвотор API</a></li>
-            
-            
-            
             
             
             
@@ -248,7 +253,21 @@
             
             
             
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            <li><a href="doc_developer_mode.html">Включение режима разработчика</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
             
             
             
@@ -262,7 +281,7 @@
             
             
             
-            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
+            <li><a href="doc_cloud_proxy.html">Проксирование HTTP-запросов</a></li>
             
             
             
@@ -280,6 +299,60 @@
             
             
             
+            
+            
+            
+            <li><a href="doc_storage_api.html">Storage API</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_discounts.html">Скидки</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Драйвера для оборудования</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_drivers_library_connection.html">Подготовка к разработке</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_cashdrawer.html">SDK для денежных ящиков</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_pinpads.html">SDK для банковских терминалов</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_scales.html">SDK для весов</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Работа с оборудованием</a>
                 <ul>
@@ -292,38 +365,24 @@
                     
                     
                     
-                    <li class="active"><a href="doc_barcode_scanner.html">Работа со сканером штрихкодов</a></li>
+                    <li class="active"><a href="doc_barcode_scanner.html">Сканер штрихкодов</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="doc_bill_printer.html">Работа с принтером чеков</a></li>
+                    <li><a href="doc_bill_printer.html">Принтер чеков</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="doc_scales.html">Работа с весами</a></li>
+                    <li><a href="doc_scales.html">Весы</a></li>
                     
                     
                     
                 </ul>
             </li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_developer_mode.html">Включение режима разработчика</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -398,28 +457,6 @@
         
     
     <li>
-        <a href="#">Публикация приложения</a>
-        <ul>
-            
-            
-            
-            <li><a href="doc_billing_models.html">Модели биллинга</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_acceptance_testing.html">Приёмочное тестирование</a></li>
-            
-            
-            
-            
-        </ul>
-        
-        
-    
-    <li>
         <a href="#">FAQ</a>
         <ul>
             
@@ -449,7 +486,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Получение данных от сканера штрихкодов</h1>
+   <h1 class="post-title-main">Сканер штрихкодов</h1>
 </div>
 
 
@@ -457,7 +494,7 @@
 <div class="post-content">
 
    
-    <div class="summary">Раздел содержит инструкцию о том, как подготовить приложение для получения данных от сканера штрих-кодов.</div>
+    <div class="summary">Раздел содержит инструкцию о том, как подготовить приложение для получения данных от сканера штрихкодов.</div>
    
 
     
@@ -499,20 +536,20 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Объявите класс <code class="highlighter-rouge">BarcodeBroadcastReceiver</code>:</p>
   </li>
-
+</ol>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">BarcodeBroadcastReceiver</span> <span class="n">mBarcodeBroadcastReceiver</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BarcodeBroadcastReceiver</span><span class="o">()</span> <span class="o">{</span>
 
         <span class="nd">@Override</span>
         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReceiveBarcode</span><span class="o">(</span><span class="n">String</span> <span class="n">barcode</span><span class="o">)</span> <span class="o">{</span>
-            <span class="c1">// Переменная barcode содержит считанный штрих-код.</span>
+            <span class="c1">// Переменная barcode содержит считанный штрихкод.</span>
         <span class="o">}</span>
     <span class="o">};</span>
     </code></pre></figure>
 
-
+<ol>
   <li>В операции (<code class="highlighter-rouge">Activity</code>) или фрагменте (<code class="highlighter-rouge">Fragment</code>) запускайте и останавливайте подписку <code class="highlighter-rouge">BarcodeBroadcastReceiver</code> :</li>
-
+</ol>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java">        <span class="nd">@Override</span>
         <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPause</span><span class="o">()</span> <span class="o">{</span>
@@ -525,7 +562,7 @@ $('#toc').on('click', 'a', function() {
             <span class="n">registerReceiver</span><span class="o">(</span><span class="n">mBarcodeBroadcastReceiver</span><span class="o">,</span> <span class="n">BarcodeBroadcastReceiver</span><span class="o">.</span><span class="na">BARCODE_INTENT_FILTER</span><span class="o">,</span> <span class="n">BarcodeBroadcastReceiver</span><span class="o">.</span><span class="na">SENDER_PERMISSION</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
         <span class="o">}</span>
     <span class="o">}</span>
-    </code></pre></figure></ol>
+    </code></pre></figure>
 
 
 

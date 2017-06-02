@@ -96,10 +96,6 @@
                 
                 
                 
-                <li><a href="whats_new">Что нового</a></li>
-                
-                
-                
                 <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
                 
                 
@@ -193,26 +189,26 @@
         
     
     <li>
-        <a href="#">Эвотор API</a>
+        <a href="#">Интеграция с платформой</a>
         <ul>
             
             
             
-            <li><a href="doc_Evotor_API_about.html">Об Эвотор API</a></li>
+            <li><a href="doc_release_notes.html">История изменений API и SDK</a></li>
             
             
             
             
             
             
-            <li><a href="doc_authorization.html">Авторизация</a></li>
+            <li><a href="doc_evotor_rest_api_calls.html">Запросы к облаку Эвотор</a></li>
             
             
             
             
             
             
-            <li><a href="doc_example_calls.html">Примеры запросов</a></li>
+            <li><a href="doc_outgoing_calls_protocol.html">Запросы к стороннему сервису</a></li>
             
             
             
@@ -234,89 +230,6 @@
             
             
             <li class="active"><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
-            
-            
-            
-            
-        </ul>
-        
-        
-    
-    <li>
-        <a href="#">SDK смарт-терминала</a>
-        <ul>
-            
-            
-            
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></li>
-            
-            
-            
-            <li class="subfolders">
-                <a href="#">Работа с оборудованием</a>
-                <ul>
-                    
-                    
-                    
-                    <li><a href="doc_integration_library_connection.html">Подготовка к работе</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_barcode_scanner.html">Работа со сканером штрихкодов</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_bill_printer.html">Работа с принтером чеков</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_scales.html">Работа с весами</a></li>
-                    
-                    
-                    
-                </ul>
-            </li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -357,31 +270,31 @@
             
             
             
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
-            
-            
-            
-            
         </ul>
         
         
     
     <li>
-        <a href="#">Биллинг</a>
+        <a href="#">SDK смарт-терминала</a>
         <ul>
             
             
             
-            <li><a href="doc_about_billing.html">О биллинге</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Главный экран смарт-терминала</a></li>
             
             
             
             
             
             
-            <li><a href="doc_tariffs.html">Тарифы</a></li>
+            <li><a href="doc_smart_terminal_app_grants.html">Права доступа</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_logging.html">Логирование данных</a></li>
             
             
             
@@ -396,14 +309,43 @@
             
             
             
-            <li><a href="doc_billing_models.html">Модели биллинга</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_acceptance_testing.html">Приёмочное тестирование</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Продажа</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_legal_scheme.html">Юридическая схема</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_applications_tariffs.html">Тарифы приложений</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_conditions.html">Условия</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_marketing.html">Продвижение</a></li>
             
             
             
@@ -515,7 +457,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>2001</td>
 
-<td><pre>{ "errors": [ { "code": 2001 } ] }</pre></td>
+<td>`{ "errors": [ { "code": 2001 } ] }`</td>
 
 </tr>
 
@@ -525,7 +467,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>2002</td>
 
-<td><pre>{ "errors": [ { "code": 2002, "reason": "missing", "subject": "deviceUuid" }, { "code": 2002, "reason": "unexpected", "subject": "deviceUuid" } ] }</pre></td>
+<td>`{ "errors": [ { "code": 2002, "reason": "missing", "subject": "deviceUuid" }, { "code": 2002, "reason": "unexpected", "subject": "deviceUuid" } ] }`</td>
 
 </tr>
 
@@ -535,7 +477,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>2003</td>
 
-<td><pre>{ "errors": [ { "code": 2003, "reason": "incorrect", "subject": "deviceUuid", "value": "null" } ] }</pre></td>
+<td>`{ "errors": [ { "code": 2003, "reason": "incorrect", "subject": "deviceUuid", "value": "null" } ] }`</td>
 
 </tr>
 
@@ -551,7 +493,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>1001</td>
 
-<td><pre>{ "errors": [ { "code": 1001 } ] }</pre></td>
+<td>`{ "errors": [ { "code": 1001 } ] }`</td>
 
 </tr>
 
@@ -561,7 +503,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>1002</td>
 
-<td><pre>{ "errors": [ { "code": 1002 } ] }</pre></td>
+<td>`{ "errors": [ { "code": 1002 } ] }`</td>
 
 </tr>
 
@@ -571,7 +513,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>1003</td>
 
-<td><pre>{ "errors": [ { "code": 1003 } ] }</pre></td>
+<td>`{ "errors": [ { "code": 1003 } ] }`</td>
 
 </tr>
 
@@ -581,7 +523,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>1006</td>
 
-<td><pre>{ "errors": [ { "code": 1006 } ] }</pre></td>
+<td>`{ "errors": [ { "code": 1006 } ] }`</td>
 
 </tr>
 
@@ -593,7 +535,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>1004</td>
 
-<td><pre>{ "errors": [{ "code": 1004 "reason": "payment required" "subject": "userUuid" "value": "01-000000000015463" } ] }</pre></td>
+<td>`{ "errors": [{ "code": 1004 "reason": "payment required" "subject": "userUuid" "value": "01-000000000015463" } ] }`</td>
 
 </tr>
 
@@ -619,7 +561,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>1005</td>
 
-<td><pre>{ "errors": [{ "code": 1005 "reason": "not allowed" "subject": "deviceUuid" "value": "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f" } ] }</pre></td>
+<td>`{ "errors": [{ "code": 1005 "reason": "not allowed" "subject": "deviceUuid" "value": "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f" } ] }`</td>
 
 </tr>
 
@@ -629,7 +571,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>1007</td>
 
-<td><pre>{ "errors": [{ "code": 1007 "reason": "license overhead" "subject": "deviceUuid" "value": "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f" } ] }</pre></td>
+<td>`{ "errors": [{ "code": 1007 "reason": "license overhead" "subject": "deviceUuid" "value": "93a9bfa3-7353-490d-aa54-8c6efe9d8a8f" } ] }`</td>
 
 </tr>
 
@@ -645,7 +587,7 @@ $('#toc').on('click', 'a', function() {
 
 <td>2004</td>
 
-<td><pre>{ "errors": [ { "code": 2004 } ] }</pre></td>
+<td>`{ "errors": [ { "code": 2004 } ] }`</td>
 
 </tr>
 
@@ -655,7 +597,7 @@ $('#toc').on('click', 'a', function() {
 
 <td style="text-align: left;">2005</td>
 
-<td style="text-align: left;"><pre>{ "errors": [ { "code": 2005 } ] }</pre></td>
+<td style="text-align: left;">`{ "errors": [ { "code": 2005 } ] }`</td>
 
 </tr>
 

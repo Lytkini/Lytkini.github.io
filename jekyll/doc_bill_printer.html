@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
+    </script>
+<!-- End Google Tag Manager -->
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит информацию о том, как приложение может работать с принтером чеков.">
 <meta name="keywords" content=" sample">
-<title>Печать информации на чеках | Документация Эвотор</title>
+<title>Принтер чеков | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -78,6 +82,10 @@
 
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4CBFKS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container topnavlinks">
@@ -96,11 +104,15 @@
                 
                 
                 
-                <li><a href="whats_new">Что нового</a></li>
+                <li><a href="whats_new.html">Что нового</a></li>
                 
                 
                 
                 <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
+                
+                
+                
+                <li><a href="doc_developer_mode.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -121,7 +133,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Печать информации на чеках">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Принтер чеков">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -193,15 +205,8 @@
         
     
     <li>
-        <a href="#">Эвотор API</a>
+        <a href="#">Облако Эвотор</a>
         <ul>
-            
-            
-            
-            <li><a href="doc_Evotor_API_about.html">Об Эвотор API</a></li>
-            
-            
-            
             
             
             
@@ -248,7 +253,21 @@
             
             
             
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            <li><a href="doc_developer_mode.html">Включение режима разработчика</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
             
             
             
@@ -262,7 +281,7 @@
             
             
             
-            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
+            <li><a href="doc_cloud_proxy.html">Проксирование HTTP-запросов</a></li>
             
             
             
@@ -280,6 +299,60 @@
             
             
             
+            
+            
+            
+            <li><a href="doc_storage_api.html">Storage API</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_discounts.html">Скидки</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Драйвера для оборудования</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_drivers_library_connection.html">Подготовка к разработке</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_cashdrawer.html">SDK для денежных ящиков</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_pinpads.html">SDK для банковских терминалов</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_scales.html">SDK для весов</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Работа с оборудованием</a>
                 <ul>
@@ -292,38 +365,24 @@
                     
                     
                     
-                    <li><a href="doc_barcode_scanner.html">Работа со сканером штрихкодов</a></li>
+                    <li><a href="doc_barcode_scanner.html">Сканер штрихкодов</a></li>
                     
                     
                     
                     
                     
-                    <li class="active"><a href="doc_bill_printer.html">Работа с принтером чеков</a></li>
+                    <li class="active"><a href="doc_bill_printer.html">Принтер чеков</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="doc_scales.html">Работа с весами</a></li>
+                    <li><a href="doc_scales.html">Весы</a></li>
                     
                     
                     
                 </ul>
             </li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_developer_mode.html">Включение режима разработчика</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -398,28 +457,6 @@
         
     
     <li>
-        <a href="#">Публикация приложения</a>
-        <ul>
-            
-            
-            
-            <li><a href="doc_billing_models.html">Модели биллинга</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_acceptance_testing.html">Приёмочное тестирование</a></li>
-            
-            
-            
-            
-        </ul>
-        
-        
-    
-    <li>
         <a href="#">FAQ</a>
         <ul>
             
@@ -449,7 +486,7 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Печать информации на чеках</h1>
+   <h1 class="post-title-main">Принтер чеков</h1>
 </div>
 
 
@@ -491,19 +528,24 @@ $('#toc').on('click', 'a', function() {
   <h3 id="Работа-с-принтером-чеков">Работа с принтером чеков</h3>
 
 <ol>
-  <li>
-    <p>В колбэке <code class="highlighter-rouge">onCreate()</code> или при запуске операции (<code class="highlighter-rouge">activity</code>) инициализируйте класс <code class="highlighter-rouge">ru.evotor.devices.commons.DeviceServiceConnector</code>.</p>
+  <li>В колбэке <code class="highlighter-rouge">onCreate()</code> или при запуске операции (<code class="highlighter-rouge">activity</code>) инициализируйте класс <code class="highlighter-rouge">ru.evotor.devices.commons.DeviceServiceConnector</code>:</li>
+</ol>
 
-    <p>Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку.</p>
+<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">DeviceServiceConnector</span><span class="o">.</span><span class="na">startInitConnections</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">());</span>
+    </code></pre></figure>
 
-    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Воспользуйтесь методом <code class="highlighter-rouge">addConnectionWrapper</code>, чтобы получить событие об успешном подключении. <br /><br />
+<div class="highlighter-rouge">Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку.
 
- Используйте это событие, если необходимо выполнить какой-либо код сразу после установки соединения.</div>
-  </li>
+&lt;div markdown="span" class="alert alert-success" role="alert"&gt;&lt;i class="fa fa-check-square-o"&gt;&lt;/i&gt; &lt;b&gt;Совет:&lt;/b&gt; Воспользуйтесь методом `addConnectionWrapper`, чтобы получить событие об успешном подключении. &lt;br/&gt;&lt;br/&gt;
+
+Используйте это событие, если необходимо выполнить какой-либо код сразу после установки соединения.&lt;/div&gt;
+</div>
+
+<ol>
   <li>
     <p>Вызовите метод <code class="highlighter-rouge">DeviceServiceConnector.getPrinterService()</code>.</p>
 
-    <p>Метод не может быть <code class="highlighter-rouge">null</code> и в случае успеха возвращает объект <code class="highlighter-rouge">ru.evotor.devices.commons.IPrinterService</code>.</p>
+    <p>Метод не может быть <code class="highlighter-rouge">null</code> и в случае успеха возвращает объект <code class="highlighter-rouge">ru.evotor.devices.commons.IPrinterServiceWrapper</code>.</p>
 
     <p>Метод может вернуть следующие исключения (<code class="highlighter-rouge">exception</code>):</p>
     <ul>
@@ -522,7 +564,7 @@ $('#toc').on('click', 'a', function() {
 
         <p>Аргумент <code class="highlighter-rouge">deviceId</code> указывает устройство, для которого вызывается метод.</p>
 
-        <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> Так как печать возможна только на ККМ, встроенной в смарт-терминал, вместо номера устройства всегда следует передавать константу <code class="highlighter-rouge">ru.evotor.devices.commons.Constants.DEFAULT_DEVICE_INDEX</code>.</div>
+        <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> В настоящий момент печать возможна только на ККМ, встроенной в смарт-терминал, поэтому вместо номера устройства всегда следует передавать константу <code class="highlighter-rouge">ru.evotor.devices.commons.Constants.DEFAULT_DEVICE_INDEX</code>.</div>
 
         <p>Каждый из методов может вернуть наследованное исключение <code class="highlighter-rouge">ru.evotor.devices.commons.exception.DeviceServiceException</code>.</p>
       </li>
@@ -544,24 +586,16 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="Примеры">Примеры</h3>
 
-<p>Пример аргумента <code class="highlighter-rouge">PrinterDocument</code> (см. пункт 4).</p>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Bitmap</span> <span class="n">bitmap1</span> <span class="o">=</span> <span class="n">BitmapFactory</span><span class="o">.</span><span class="na">decodeFile</span><span class="o">(</span><span class="n">Environment</span><span class="o">.</span><span class="na">getExternalStorageDirectory</span><span class="o">()</span> <span class="o">+</span> <span class="s">"/Pictures/1.png"</span><span class="o">);</span>
-<span class="n">DeviceServiceConnector</span><span class="o">.</span><span class="na">getPrinterService</span><span class="o">().</span><span class="na">printDocument</span><span class="o">(</span>
-  <span class="n">DEFAULT_DEVICE_INDEX_UNSET</span><span class="o">,</span>
-  <span class="k">new</span> <span class="nf">PrinterDocument</span><span class="o">(</span>
-            <span class="k">new</span> <span class="nf">PrintableText</span><span class="o">(</span><span class="s">"Первая строка"</span><span class="o">),</span>
-            <span class="k">new</span> <span class="nf">PrintableText</span><span class="o">(</span><span class="s">"Довольно длинный текст, помещающийся лишь на несколько строк"</span><span class="o">),</span>
-            <span class="k">new</span> <span class="nf">PrintableBarcode</span><span class="o">(</span><span class="s">"1234567890"</span><span class="o">,</span> <span class="n">PrintableBarcode</span><span class="o">.</span><span class="na">BarcodeType</span><span class="o">.</span><span class="na">CODE39</span><span class="o">),</span>
-            <span class="k">new</span> <span class="nf">PrintableImage</span><span class="o">(</span><span class="n">bitmap1</span><span class="o">)</span>
-    <span class="o">));</span></code></pre></figure>
-
-<p>Пример кода для печати сообщения на чеке:</p>
+<p>Код для печати сообщения на чеке:</p>
 
 <figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="k">try</span> <span class="o">{</span>
   <span class="n">DeviceServiceConnector</span><span class="o">.</span><span class="na">getPrinterService</span><span class="o">().</span><span class="na">printDocument</span><span class="o">(</span>
     <span class="n">DEFAULT_DEVICE_INDEX_UNSET</span><span class="o">,</span>
-    <span class="k">new</span> <span class="nf">PrinterDocument</span><span class="o">(</span><span class="k">new</span> <span class="n">PrintableText</span><span class="o">(</span><span class="s">"Первая строка"</span><span class="o">)));</span>
+    <span class="k">new</span> <span class="nf">PrinterDocument</span><span class="o">(</span>
+              <span class="k">new</span> <span class="nf">PrintableText</span><span class="o">(</span><span class="s">"Первая строка"</span><span class="o">),</span>
+              <span class="k">new</span> <span class="nf">PrintableText</span><span class="o">(</span><span class="s">"Довольно длинный текст, помещающийся лишь на несколько строк"</span><span class="o">),</span>
+              <span class="k">new</span> <span class="nf">PrintableBarcode</span><span class="o">(</span><span class="s">"1234567890"</span><span class="o">,</span> <span class="n">PrintableBarcode</span><span class="o">.</span><span class="na">BarcodeType</span><span class="o">.</span><span class="na">CODE39</span><span class="o">),</span>
+              <span class="k">new</span> <span class="nf">PrintableImage</span><span class="o">(</span><span class="n">bitmap1</span><span class="o">)));</span>
 <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">DeviceServiceException</span> <span class="n">exc</span><span class="o">)</span> <span class="o">{</span>
 
 <span class="o">}</span></code></pre></figure>

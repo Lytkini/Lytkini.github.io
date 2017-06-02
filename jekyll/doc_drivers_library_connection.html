@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
+    </script>
+<!-- End Google Tag Manager -->
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит информацию о доступе к логам приложений.">
-<meta name="keywords" content=" ">
-<title> | Документация Эвотор</title>
+<meta name="description" content="">
+<meta name="keywords" content=" sample">
+<title>Подготовка к разработке | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -78,6 +82,10 @@
 
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4CBFKS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container topnavlinks">
@@ -96,11 +104,15 @@
                 
                 
                 
-                <li><a href="whats_new">Что нового</a></li>
+                <li><a href="whats_new.html">Что нового</a></li>
                 
                 
                 
                 <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
+                
+                
+                
+                <li><a href="doc_developer_mode.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -121,7 +133,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Подготовка к разработке">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -193,26 +205,19 @@
         
     
     <li>
-        <a href="#">Интеграция с платформой</a>
+        <a href="#">Облако Эвотор</a>
         <ul>
             
             
             
-            <li><a href="doc_release_notes.html">История изменений API и SDK</a></li>
+            <li><a href="doc_authorization.html">Авторизация</a></li>
             
             
             
             
             
             
-            <li><a href="doc_evotor_rest_api_calls.html">Запросы к облаку Эвотор</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_outgoing_calls_protocol.html">Запросы к стороннему сервису</a></li>
+            <li><a href="doc_example_calls.html">Примеры запросов</a></li>
             
             
             
@@ -234,6 +239,150 @@
             
             
             <li><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">SDK смарт-терминала</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_developer_mode.html">Включение режима разработчика</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_cloud_proxy.html">Проксирование HTTP-запросов</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_storage_api.html">Storage API</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_discounts.html">Скидки</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Драйвера для оборудования</a>
+                <ul>
+                    
+                    
+                    
+                    <li class="active"><a href="doc_drivers_library_connection.html">Подготовка к разработке</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_cashdrawer.html">SDK для денежных ящиков</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_pinpads.html">SDK для банковских терминалов</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_scales.html">SDK для весов</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Работа с оборудованием</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_integration_library_connection.html">Подключение оборудования</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_barcode_scanner.html">Сканер штрихкодов</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_bill_printer.html">Принтер чеков</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_scales.html">Весы</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -274,45 +423,9 @@
             
             
             
-        </ul>
-        
-        
-    
-    <li>
-        <a href="#">SDK смарт-терминала</a>
-        <ul>
             
             
-            
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_barcode_scanner.html">Получение данных от сканера штрихкодов</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_bill_printer.html">Печать информации на чеках</a></li>
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -335,64 +448,6 @@
             
             
             <li><a href="doc_tariffs.html">Тарифы</a></li>
-            
-            
-            
-            
-        </ul>
-        
-        
-    
-    <li>
-        <a href="#">Публикация приложения</a>
-        <ul>
-            
-            
-            
-            <li><a href="doc_billing_models.html">Модели биллинга</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_acceptance_testing.html">Приёмочное тестирование</a></li>
-            
-            
-            
-            
-        </ul>
-        
-        
-    
-    <li>
-        <a href="#">Продажа</a>
-        <ul>
-            
-            
-            
-            <li><a href="doc_legal_scheme.html">Юридическая схема</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_applications_tariffs.html">Тарифы приложений</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_conditions.html">Условия</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_marketing.html">Продвижение</a></li>
             
             
             
@@ -431,15 +486,13 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main"></h1>
+   <h1 class="post-title-main">Подготовка к разработке</h1>
 </div>
 
 
 
 <div class="post-content">
 
-   
-    <div class="summary">Раздел содержит информацию о доступе к логам приложений.</div>
    
 
     
@@ -470,9 +523,27 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="Вебвью-приложение">Вебвью-приложение</h3>
+  <p>Для начала разработки подключите библиотеку для работы с оборудованием.</p>
 
-<h3 id="Нативное-приложение">Нативное приложение</h3>
+<p>Добавьте ссылку на репозиторий на репозиторий <code class="highlighter-rouge">jitpack</code> в <code class="highlighter-rouge">build.gradle</code> проекта.</p>
+
+<pre><code class="language-g">     allprojects {
+repositories {
+    jcenter()
+    maven { url 'https://jitpack.io' }
+    }
+}
+</code></pre>
+
+<p>В модуле <code class="highlighter-rouge">build.gradle</code> добавьте зависимость и укажите точную версию:</p>
+
+<pre><code class="language-g">    dependencies {
+    compile 'com.github.evotor:device-drivers:v2.0.1+'
+    }
+</code></pre>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Все имена констант указаны из <code class="highlighter-rouge">ru.evotor.devices.drivers.Constants</code>.</div>
+
 
 
     <div class="tags">

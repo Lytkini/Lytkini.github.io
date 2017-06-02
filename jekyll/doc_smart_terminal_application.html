@@ -96,10 +96,6 @@
                 
                 
                 
-                <li><a href="whats_new">Что нового</a></li>
-                
-                
-                
                 <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
                 
                 
@@ -193,26 +189,26 @@
         
     
     <li>
-        <a href="#">Эвотор API</a>
+        <a href="#">Интеграция с платформой</a>
         <ul>
             
             
             
-            <li><a href="doc_Evotor_API_about.html">Об Эвотор API</a></li>
+            <li><a href="doc_release_notes.html">История изменений API и SDK</a></li>
             
             
             
             
             
             
-            <li><a href="doc_authorization.html">Авторизация</a></li>
+            <li><a href="doc_evotor_rest_api_calls.html">Запросы к облаку Эвотор</a></li>
             
             
             
             
             
             
-            <li><a href="doc_example_calls.html">Примеры запросов</a></li>
+            <li><a href="doc_outgoing_calls_protocol.html">Запросы к стороннему сервису</a></li>
             
             
             
@@ -234,89 +230,6 @@
             
             
             <li><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
-            
-            
-            
-            
-        </ul>
-        
-        
-    
-    <li>
-        <a href="#">SDK смарт-терминала</a>
-        <ul>
-            
-            
-            
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></li>
-            
-            
-            
-            <li class="subfolders">
-                <a href="#">Работа с оборудованием</a>
-                <ul>
-                    
-                    
-                    
-                    <li><a href="doc_integration_library_connection.html">Подготовка к работе</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_barcode_scanner.html">Работа со сканером штрихкодов</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_bill_printer.html">Работа с принтером чеков</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_scales.html">Работа с весами</a></li>
-                    
-                    
-                    
-                </ul>
-            </li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -357,31 +270,31 @@
             
             
             
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
-            
-            
-            
-            
         </ul>
         
         
     
     <li>
-        <a href="#">Биллинг</a>
+        <a href="#">SDK смарт-терминала</a>
         <ul>
             
             
             
-            <li><a href="doc_about_billing.html">О биллинге</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Главный экран смарт-терминала</a></li>
             
             
             
             
             
             
-            <li><a href="doc_tariffs.html">Тарифы</a></li>
+            <li><a href="doc_smart_terminal_app_grants.html">Права доступа</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_logging.html">Логирование данных</a></li>
             
             
             
@@ -396,14 +309,43 @@
             
             
             
-            <li><a href="doc_billing_models.html">Модели биллинга</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_acceptance_testing.html">Приёмочное тестирование</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Продажа</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_legal_scheme.html">Юридическая схема</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_applications_tariffs.html">Тарифы приложений</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_conditions.html">Условия</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_marketing.html">Продвижение</a></li>
             
             
             
@@ -481,7 +423,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Ваше приложение для смарт-терминала может быть написано на языке Java или JavaScript.</p>
+  <p>Ваше приложение для смарт-терминала может быть как нативным, написанным на JAVA, так и использовать технологию вебвью. Для разработки вебвью-приложения используйте <a href="https://github.com/evotor/device-app">SDK смарт-терминала</a>.</p>
 
 <blockquote>
   <p>Обратите внимание, что <code class="highlighter-rouge">packagename</code> вашего приложения должен соответствовать правилам, описанным <a href="https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html">в документации Oracle</a>.</p>
@@ -531,7 +473,7 @@ $('#toc').on('click', 'a', function() {
 
 <h4 id="Покупка-и-активация-приложения-для-смарт-терминала">Покупка и активация приложения для смарт-терминала</h4>
 
-<p><img src="images/smart_terminal_application_handling.png" alt="Схема покупки и активации приложения" title="Схема покупки и активации приложения" /></p>
+<p><img src="https://github.com/Lytkini/Drafts/blob/master/pictures/smart-terminal%20application%20handling.png" alt="Схема покупки и активации приложения" title="Схема покупки и активации приложения" /></p>
 
 <h5 id="Этап-1">Этап 1</h5>
 
@@ -584,7 +526,7 @@ $('#toc').on('click', 'a', function() {
       <li><strong>Вебхук: веб-адрес для активации / деактивации тарифа в стороннем сервисе</strong>, где в поле <strong>URL</strong> требуется указать URL вида <code class="highlighter-rouge">https://partner.ru/api/v1/tariff</code> (см. таблицу выше). URL требуется указывать только если приложение платное.</li>
     </ul>
   </li>
-  <li><a href="doc_application_test.html">Выложите приложение на тест, чтобы изменения вступили в силу</a>.</li>
+  <li><a href="https://developer.evotor.ru/application_testing/">Выложите приложение на тест, чтобы изменения вступили в силу</a>.</li>
   <li>Установите приложение Личном кабинете пользователя Эвотор.</li>
   <li>В Личном кабинете, на вкладке <strong>Установка / удаление</strong> приложения, выберите смарт-терминалы, с которых приложение сможет отправлять запросы в сторонний сервис.</li>
 </ol>
@@ -597,7 +539,6 @@ $('#toc').on('click', 'a', function() {
   <li>Эвотор добавляет к сообщению приложения заголовки:
     <ul>
       <li><code class="highlighter-rouge">X-Evotor-Store-Uuid</code> – содержит идентификатор магазина в формате uuid4, к которому привязан терминал.</li>
-      <li><code class="highlighter-rouge">X-Evotor-Device-UUID</code> – содержит идентификатор устройства в формате uuid4, полученный по запросу к <code class="highlighter-rouge">/api/v1/inventories/devices</code>.</li>
       <li><code class="highlighter-rouge">Authorization</code> – содержит токен пользователя. Токен необходим для bearer-авторизации.</li>
     </ul>
   </li>

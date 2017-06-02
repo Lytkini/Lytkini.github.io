@@ -3,7 +3,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
+<meta name="description" content="Раздел содержит общую информацию о приложениях для смарт-терминала.">
 <meta name="keywords" content=" sample">
 <title>Приложение для смарт-терминала | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
@@ -93,10 +93,6 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- entries without drop-downs appear here -->
-                
-                
-                
-                <li><a href="whats_new">Что нового</a></li>
                 
                 
                 
@@ -193,26 +189,26 @@
         
     
     <li>
-        <a href="#">Эвотор API</a>
+        <a href="#">Интеграция с платформой</a>
         <ul>
             
             
             
-            <li><a href="doc_Evotor_API_about.html">Об Эвотор API</a></li>
+            <li><a href="doc_release_notes.html">История изменений API и SDK</a></li>
             
             
             
             
             
             
-            <li><a href="doc_authorization.html">Авторизация</a></li>
+            <li><a href="doc_evotor_rest_api_calls.html">Запросы к облаку Эвотор</a></li>
             
             
             
             
             
             
-            <li><a href="doc_example_calls.html">Примеры запросов</a></li>
+            <li><a href="doc_outgoing_calls_protocol.html">Запросы к стороннему сервису</a></li>
             
             
             
@@ -234,89 +230,6 @@
             
             
             <li><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
-            
-            
-            
-            
-        </ul>
-        
-        
-    
-    <li>
-        <a href="#">SDK смарт-терминала</a>
-        <ul>
-            
-            
-            
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></li>
-            
-            
-            
-            <li class="subfolders">
-                <a href="#">Работа с оборудованием</a>
-                <ul>
-                    
-                    
-                    
-                    <li><a href="doc_integration_library_connection.html">Подготовка к работе</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_barcode_scanner.html">Работа со сканером штрихкодов</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_bill_printer.html">Работа с принтером чеков</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_scales.html">Работа с весами</a></li>
-                    
-                    
-                    
-                </ul>
-            </li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -357,31 +270,31 @@
             
             
             
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
-            
-            
-            
-            
         </ul>
         
         
     
     <li>
-        <a href="#">Биллинг</a>
+        <a href="#">SDK смарт-терминала</a>
         <ul>
             
             
             
-            <li><a href="doc_about_billing.html">О биллинге</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Главный экран смарт-терминала</a></li>
             
             
             
             
             
             
-            <li><a href="doc_tariffs.html">Тарифы</a></li>
+            <li><a href="doc_smart_terminal_app_grants.html">Права доступа</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_logging.html">Логирование данных</a></li>
             
             
             
@@ -396,14 +309,43 @@
             
             
             
-            <li><a href="doc_billing_models.html">Модели биллинга</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_acceptance_testing.html">Приёмочное тестирование</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Продажа</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_legal_scheme.html">Юридическая схема</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_applications_tariffs.html">Тарифы приложений</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_conditions.html">Условия</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_marketing.html">Продвижение</a></li>
             
             
             
@@ -450,6 +392,8 @@
 <div class="post-content">
 
    
+    <div class="summary">Раздел содержит общую информацию о приложениях для смарт-терминала.</div>
+   
 
     
     
@@ -479,16 +423,15 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Приложения для смарт-терминала можно разделить на созданные на языке JavaScript (JS-приложения) или языке Java (java-приложения).</p>
-
-<p>Оба типа приложений различаются по способу представления для пользователя платформы:</p>
+  <p>Приложения для смарт-терминала можно разделить на webview или нативные. Как webview, так и нативные приложения различаются по способу представления для пользователя платформы:</p>
 
 <ul>
-  <li>
-    <p>Отдельное приложение – <a href="./doc_smart_terminal_app_tile.html">запускается по плитке</a>, расположенной на главном экране смарт-терминала.</p>
+  <li>Отдельное приложение – запускается по иконке, расположенной на главном экране смарт-терминала.</li>
+</ul>
 
-    <p><img src="images\Tile_example.png" alt="" /></p>
-  </li>
+<p><img src="https://evotor.r1nat.com/app/uploads/sites/2/2017/03/main_screen-199x300.png" alt="" /></p>
+
+<ul>
   <li>
     <p>Приложение, встроенное в интерфейс – отслеживает действия на смарт-терминале и вызывает необходимый экран, если происходит определённое событие (например, переход к экрану оплаты).</p>
   </li>
@@ -499,7 +442,13 @@ $('#toc').on('click', 'a', function() {
 
 <p>Все приложения для смарт-терминала распространяются через <a href="https://market.evotor.ru/">Магазин приложений</a>. Пользователи приобретают приложения в магазине и, при наличии соединения с интернетом, облако Эвотор автоматичечски устанавливает их на смарт-терминал.</p>
 
-<p>Приложения могут общаться со сторонними сервисами. При этом, все запросы приложений <a href="./doc_smart_terminal_application.html">проксируются через облако Эвотор</a>.</p>
+<h3 id="webview-приложение">Webview-приложение</h3>
+
+<p>Для разработки webview-приложений используйте <a href="https://github.com/evotor/device-app">API смарт-терминала</a>. Пример webview-приложения вы можете посмотреть на странице <a href="https://github.com/evotor/whale-example/">https://github.com/evotor/whale-example/</a>.</p>
+
+<h3 id="Нативное-приложение">Нативное приложение</h3>
+
+<p>Нативные приложения для смарт-терминала разрабатываются на языке JAVA. Вы можете использовать методы и точки интеграции, описанные в API для webView-приложений (см. выше). Вы также можете использовать <a href="https://github.com/evotor/device-drivers">SDK смарт-терминала</a>, например, для разработки драйверов для подключаемого оборудования.</p>
 
 
     <div class="tags">

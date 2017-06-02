@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
+    </script>
+<!-- End Google Tag Manager -->
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -78,6 +82,10 @@
 
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4CBFKS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container topnavlinks">
@@ -96,11 +104,15 @@
                 
                 
                 
-                <li><a href="whats_new">Что нового</a></li>
+                <li><a href="whats_new.html">Что нового</a></li>
                 
                 
                 
                 <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
+                
+                
+                
+                <li><a href="doc_developer_mode.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -193,15 +205,8 @@
         
     
     <li>
-        <a href="#">Эвотор API</a>
+        <a href="#">Облако Эвотор</a>
         <ul>
-            
-            
-            
-            <li><a href="doc_Evotor_API_about.html">Об Эвотор API</a></li>
-            
-            
-            
             
             
             
@@ -248,7 +253,21 @@
             
             
             
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            <li><a href="doc_developer_mode.html">Включение режима разработчика</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
             
             
             
@@ -262,7 +281,7 @@
             
             
             
-            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
+            <li><a href="doc_cloud_proxy.html">Проксирование HTTP-запросов</a></li>
             
             
             
@@ -280,6 +299,60 @@
             
             
             
+            
+            
+            
+            <li><a href="doc_storage_api.html">Storage API</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_discounts.html">Скидки</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Драйвера для оборудования</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_drivers_library_connection.html">Подготовка к разработке</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_cashdrawer.html">SDK для денежных ящиков</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_pinpads.html">SDK для банковских терминалов</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_scales.html">SDK для весов</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Работа с оборудованием</a>
                 <ul>
@@ -292,38 +365,24 @@
                     
                     
                     
-                    <li><a href="doc_barcode_scanner.html">Работа со сканером штрихкодов</a></li>
+                    <li><a href="doc_barcode_scanner.html">Сканер штрихкодов</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="doc_bill_printer.html">Работа с принтером чеков</a></li>
+                    <li><a href="doc_bill_printer.html">Принтер чеков</a></li>
                     
                     
                     
                     
                     
-                    <li class="active"><a href="doc_scales.html">Работа с весами</a></li>
+                    <li class="active"><a href="doc_scales.html">Весы</a></li>
                     
                     
                     
                 </ul>
             </li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_developer_mode.html">Включение режима разработчика</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -389,28 +448,6 @@
             
             
             <li><a href="doc_tariffs.html">Тарифы</a></li>
-            
-            
-            
-            
-        </ul>
-        
-        
-    
-    <li>
-        <a href="#">Публикация приложения</a>
-        <ul>
-            
-            
-            
-            <li><a href="doc_billing_models.html">Модели биллинга</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_acceptance_testing.html">Приёмочное тестирование</a></li>
             
             
             
@@ -490,43 +527,44 @@ $('#toc').on('click', 'a', function() {
 
 <ol>
   <li>
-    <p>В колбэке <code class="highlighter-rouge">onCreate()</code> или при запуске операции (<code class="highlighter-rouge">activity</code>) инициализируйте класс <code class="highlighter-rouge">ru.evotor.devices.commons.DeviceServiceConnector</code>.</p>
+    <p>В колбэке <code class="highlighter-rouge">onCreate()</code> или при запуске операции (<code class="highlighter-rouge">activity</code>) инициализируйте класс <code class="highlighter-rouge">ru.evotor.devices.commons.DeviceServiceConnector</code>:</p>
 
-    <p>Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку.</p>
+    <p><code class="highlighter-rouge">DeviceServiceConnector.startInitConnections(getApplicationContext());</code></p>
 
-    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Воспользуйтесь методом <code class="highlighter-rouge">addConnectionWrapper</code>, чтобы получить событие об успешном подключении. <br /><br />
+    <p>Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку</p>
 
- Используйте это событие, если необходимо выполнить какой-либо код сразу после установки соединения.</div>
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Воспользуйтесь методом <code class="highlighter-rouge">addConnectionWrapper</code>, чтобы получить событие об успешном подключении. Используйте это событие, если необходимо выполнить какой-либо код сразу после установки соединения.</div>
   </li>
   <li>
-    <p>Вызовите метод <code class="highlighter-rouge">DeviceServiceConnector.ScalesService()</code>.</p>
+    <p>Вызовите метод <code class="highlighter-rouge">DeviceServiceConnector.getScalesService()</code>.</p>
 
-    <p>Метод не может быть <code class="highlighter-rouge">null</code> и в случае успеха возвращает объект <code class="highlighter-rouge">ru.evotor.devices.commons.IScalesService</code>.</p>
+    <p>Метод не может быть <code class="highlighter-rouge">null</code> и в случае успеха возвращает объект <code class="highlighter-rouge">ru.evotor.devices.commons.IScalesServiceWrapper</code>.</p>
 
     <p>Метод может вернуть следующие исключения (<code class="highlighter-rouge">exception</code>):</p>
     <ul>
-      <li><code class="highlighter-rouge">ru.evotor.devices.commons.exception.ServiceNotConnectedException</code> возвращается в результате серии неудачных попыток подключиться к принтеру.</li>
+      <li><code class="highlighter-rouge">ru.evotor.devices.commons.exception.ServiceNotConnectedException</code> возвращается в результате серии неудачных попыток подключиться к весам.</li>
       <li><code class="highlighter-rouge">ru.evotor.devices.commons.exception.DeviceServiceException</code> – наследованое исключение.</li>
     </ul>
   </li>
   <li>
     <p>С помощью метода <code class="highlighter-rouge">Weight getWeight(int deviceId)</code>, объекта <code class="highlighter-rouge">ru.evotor.devices.commons.IScalesService</code>, вы можете получить вес товара <code class="highlighter-rouge">Weight</code>.</p>
 
-    <p>где:</p>
+    <p>Где:</p>
 
     <p><code class="highlighter-rouge">deviceId</code> – указывает устройство, для которого вызывается метод.</p>
 
+    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> В настоящий момент приложения не могут получить список номеров подключённых устройств, поэтому вместо номера устройства всегда следует передавать константу <code class="highlighter-rouge">ru.evotor.devices.commons.Constants.DEFAULT_DEVICE_INDEX</code>. Будет использовано устройство, заданное по умолчанию.</div>
+
     <p><code class="highlighter-rouge">Weight</code> – вес товара, заданный в виде:</p>
   </li>
+</ol>
 
+<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">BigDecimal</span> <span class="n">weightInGrams</span><span class="o">;</span><span class="c1">//вес товара в граммах, возвращённый весами.</span>
+    <span class="c1">// поддерживали ли весы флаг стабильности при последнем взвешивании</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="n">supportStable</span><span class="o">;</span><span class="c1">//Указывает был установлен флаг стабильности при последнем взвешивании или нет.</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="n">stable</span><span class="o">;</span><span class="c1">//Указывает стабильность последнего взвешивания.</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">Weight</span><span class="o">(</span><span class="n">Parcel</span> <span class="n">parcel</span><span class="o">)</span> <span class="o">{</span>
-    <span class="n">weightInGrams</span> <span class="o">=</span> <span class="o">(</span><span class="n">BigDecimal</span><span class="o">)</span> <span class="n">parcel</span><span class="o">.</span><span class="na">readSerializable</span><span class="o">();</span>
-    <span class="n">supportStable</span> <span class="o">=</span> <span class="n">parcel</span><span class="o">.</span><span class="na">readInt</span><span class="o">()</span> <span class="o">==</span> <span class="mi">1</span><span class="o">;</span>
-    <span class="n">stable</span> <span class="o">=</span> <span class="n">parcel</span><span class="o">.</span><span class="na">readInt</span><span class="o">()</span> <span class="o">==</span> <span class="mi">1</span><span class="o">;</span>
-<span class="o">}</span></code></pre></figure>
-
-<p>Метод может вернуть наследованное исключение <code class="highlighter-rouge">ru.evotor.devices.commons.exception.DeviceServiceException</code>.</p></ol>
+<p>Метод может вернуть наследованное исключение <code class="highlighter-rouge">ru.evotor.devices.commons.exception.DeviceServiceException</code>.</p>
 
 
     <div class="tags">

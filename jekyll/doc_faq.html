@@ -96,10 +96,6 @@
                 
                 
                 
-                <li><a href="whats_new">Что нового</a></li>
-                
-                
-                
                 <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
                 
                 
@@ -193,26 +189,26 @@
         
     
     <li>
-        <a href="#">Эвотор API</a>
+        <a href="#">Интеграция с платформой</a>
         <ul>
             
             
             
-            <li><a href="doc_Evotor_API_about.html">Об Эвотор API</a></li>
+            <li><a href="doc_release_notes.html">История изменений API и SDK</a></li>
             
             
             
             
             
             
-            <li><a href="doc_authorization.html">Авторизация</a></li>
+            <li><a href="doc_evotor_rest_api_calls.html">Запросы к облаку Эвотор</a></li>
             
             
             
             
             
             
-            <li><a href="doc_example_calls.html">Примеры запросов</a></li>
+            <li><a href="doc_outgoing_calls_protocol.html">Запросы к стороннему сервису</a></li>
             
             
             
@@ -234,89 +230,6 @@
             
             
             <li><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
-            
-            
-            
-            
-        </ul>
-        
-        
-    
-    <li>
-        <a href="#">SDK смарт-терминала</a>
-        <ul>
-            
-            
-            
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></li>
-            
-            
-            
-            <li class="subfolders">
-                <a href="#">Работа с оборудованием</a>
-                <ul>
-                    
-                    
-                    
-                    <li><a href="doc_integration_library_connection.html">Подготовка к работе</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_barcode_scanner.html">Работа со сканером штрихкодов</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_bill_printer.html">Работа с принтером чеков</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_scales.html">Работа с весами</a></li>
-                    
-                    
-                    
-                </ul>
-            </li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -357,31 +270,31 @@
             
             
             
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
-            
-            
-            
-            
         </ul>
         
         
     
     <li>
-        <a href="#">Биллинг</a>
+        <a href="#">SDK смарт-терминала</a>
         <ul>
             
             
             
-            <li><a href="doc_about_billing.html">О биллинге</a></li>
+            <li><a href="doc_smart_terminal_app_tile.html">Главный экран смарт-терминала</a></li>
             
             
             
             
             
             
-            <li><a href="doc_tariffs.html">Тарифы</a></li>
+            <li><a href="doc_smart_terminal_app_grants.html">Права доступа</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_logging.html">Логирование данных</a></li>
             
             
             
@@ -396,14 +309,43 @@
             
             
             
-            <li><a href="doc_billing_models.html">Модели биллинга</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_acceptance_testing.html">Приёмочное тестирование</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Продажа</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_legal_scheme.html">Юридическая схема</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_applications_tariffs.html">Тарифы приложений</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_conditions.html">Условия</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_marketing.html">Продвижение</a></li>
             
             
             
@@ -512,62 +454,6 @@
                             <div class="panel-body">
                             <p>Пока тестовый токен не выводится на портале для разработчиков, установите любое приложение 1С. После установки в разделе “Настройки” будет ключ доступа.</p>
                             <p>Поскольку приложения с пробным периодом, вам не нужно ничего платить первые 30 дней.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Можно ли для разработки WebView-приложений использовать JavaScript-фреймворки, например, jQuery?</a>
-                            </h4>
-                        </div>
-                        <div id="collapseFive" class="panel-collapse collapse">
-                            <div class="panel-body">
-                            <p>Да, можно.</p>
-                            <p>Перед публикацией приложения, убедитесь что компонент Android System WebView версии 39, который поставляется на смарт-терминале, корректно обрабатывает код приложения.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">Что происходит при повторной установке после удаления приложения?</a>
-                            </h4>
-                        </div>
-                        <div id="collapseSix" class="panel-collapse collapse">
-                            <div class="panel-body">
-                            <p>Если пользователь удалил приложение и до конца оплаченного периода установил его обратно, то он ничего не платит и подписка продолжается как обычно. При этом, пользователь не может поменять тариф.
-                            </p>
-                            <p>Если пользователь удалил приложение и установил его уже после окончания оплаченного периода, то создается новая подписка. При этом, пользователь может поменять тариф.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">Возможна ли автогенерация кода приложения с помощью вашей openAPI спецификации?</a>
-                            </h4>
-                        </div>
-                        <div id="collapseSeven" class="panel-collapse collapse">
-                            <div class="panel-body">
-                            <p>В настоящий момент автоматически генерировать код нельзя. Работы по этому направлению не ведутся.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">После нажатия на кнопку "Выложить на тест" в интерфейсе разработчика, внесенные в версию приложения изменения не видны на странице приложения в маркетплейсе Эвотор. В чем может быть дело?</a>
-                            </h4>
-                        </div>
-                        <div id="collapseEight" class="panel-collapse collapse">
-                            <div class="panel-body">
-                            <p>На сервере Эвотор работает кэширование. Внесённые изменения отображаются на сайте с задержкой до 10 минут.</p>
-                            <p>Чтобы исключить возможность локального кэширования страницы приложения на вашем устройстве, требуется очистить кэш браузера.</p>
                             </div>
                         </div>
                     </div>
