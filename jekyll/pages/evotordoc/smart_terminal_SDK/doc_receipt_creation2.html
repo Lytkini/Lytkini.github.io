@@ -7,9 +7,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит общую информацию о биллинге пользователей Эвотор. ">
+<meta name="description" content="Раздел содержит информацию о том, как приложение может передать сформированный чек в смарт-терминал для оплаты.">
 <meta name="keywords" content=" sample">
-<title>О биллинге | Документация Эвотор</title>
+<title>Создание чека в приложении | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="О биллинге">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Создание чека в приложении">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -454,7 +454,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li class="active"><a href="doc_about_billing.html">О биллинге</a></li>
+            <li><a href="doc_about_billing.html">О биллинге</a></li>
             
             
             
@@ -500,7 +500,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">О биллинге</h1>
+   <h1 class="post-title-main">Создание чека в приложении</h1>
 </div>
 
 
@@ -508,7 +508,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="post-content">
 
    
-    <div class="summary">Раздел содержит общую информацию о биллинге пользователей Эвотор. </div>
+    <div class="summary">Раздел содержит информацию о том, как приложение может передать сформированный чек в смарт-терминал для оплаты.</div>
    
 
     
@@ -539,44 +539,10 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Эвотор определяет кто выполняет биллинг пользователя в зависимости от того, работает пользователь с существующей учётной записью стороннего сервиса или создаёт новую из Личного кабинета.</p>
+  <p>Мой нумерованный список</p>
 
-<h3 id="Кто-выполняет-биллинг">Кто выполняет биллинг</h3>
-
-<p>Эвотор выполняет биллинг, если пользователь создал новую учётную запись в стороннем сервисе после установки приложения, из Личного кабинета Эвотор (сторонний сервис должен поддерживать URL <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1verify%2Fpost">/api/v1/user/create</a>). В этом случае, при создании новой учётной записи, сторонний сервис возвращает параметр <code class="highlighter-rouge">"hasBilling": "False"</code>. Впоследствии, при авторизации с помощью такой учётной записи, сторонний сервис всегда возвращает <code class="highlighter-rouge">"hasBilling": "False"</code>.</p>
-
-<p>Сторонний сервис выполняет биллинг, если после установки приложения пользователь авторизовался с помощью учётной записи, созданной не из Личного кабинета. (сторонний сервис должен поддерживать URL <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1verify%2Fpost">/api/v1/user/verify</a>). Сторонний сервис возвращает параметр <code class="highlighter-rouge">"hasBilling": "True"</code> после авторизации пользователя, если биллинг выполняет сторонний сервис.</p>
-
-<p>Все изменения, связанные с подпиской, Эвотор отправляет по адресу <a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1user~1event%2Fpost">partner.ru/api/v1/user/event</a>.</p>
-
-<h3 id="Данные-о-биллинге-пользователей">Данные о биллинге пользователей</h3>
-
-<p>Эвотор отправляет данные о биллинге пользователей на два URL:</p>
-
-<ul>
-  <li>
-    <p><code class="highlighter-rouge">partner.ru/api/v1/user/tariff</code></p>
-
-    <p>Эвотор передаёт на URL сообщение об активации (<code class="highlighter-rouge">"status": "ACTIVE"</code>) и деактивации (<code class="highlighter-rouge">"status": "INACTIVE"</code>) тарифа. Сообщения по этому адресу требуется авторизовать с помощью токена стороннего сервиса (подробнее см. в разделе <a href="">””</a>).</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">partner.ru/api/v1/user/event</code></p>
-
-    <p>Эвотор передаёт на URL события, связанные с биллингом:</p>
-
-    <ul>
-      <li><code class="highlighter-rouge">SubscriptionCreated</code> – новая подписка.</li>
-      <li><code class="highlighter-rouge">SubscriptionActivated</code> – активирована платная фаза подписики. Эвотор передаёт сообщение, если пользователь решил продолжить использовать приложение после завершения пробного периода.</li>
-      <li><code class="highlighter-rouge">SubscriptionRenewed</code> – подписка продлена на следующий период.</li>
-      <li><code class="highlighter-rouge">SubscriptionCancelled</code> – подписка отменена.</li>
-      <li><code class="highlighter-rouge">SubscriptionTermsChanged</code> – изменились условия подписки, например, тарифный план или количество устройств.</li>
-    </ul>
-
-    <p>Стороннему сервису достаточно подписаться на эти сообщения. Эвотор гарантирует доставку сообщений и не требует подтверждения получения.</p>
-  </li>
-</ul>
-
-<p>Подробное описание передаваемых данных и способов авторизации смотрите в <a href="https://api.evotor.ru/docs">справочнике API</a>.</p>
+<p>1.
+2.</p>
 
 
     <div class="tags">

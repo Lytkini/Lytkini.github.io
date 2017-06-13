@@ -302,7 +302,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_smart_terminal_receipt_api.html">Receipt API</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_storage_api.html">Storage API</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
             
             
             
@@ -523,17 +537,18 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Для работы с облаком Эвотор вам понадобятся токены трёх типов:</p>
+  <p>В зависимости от типа приложения, для работы с Облаком Эвотор вам могут понадобиться следующие токены:</p>
 
 <ul>
-  <li>Токен стороннего сервиса</li>
-  <li>Токен пользователя</li>
-  <li>Токен приложения</li>
+  <li>токен стороннего сервиса;</li>
+  <li>токен пользователя;</li>
+  <li>токен приложения.</li>
 </ul>
 
 <h3 id="Токен-стороннего-сервиса">Токен стороннего сервиса</h3>
 
-<p>Облако передаёт токен стороннего сервиса в заголовке <code class="highlighter-rouge">Authorization</code>. Токен необходим для авторизации запросов и уведомлений облака Эвотор:</p>
+<p>Сторонний сервис использует токен для авторизации запросов Облака Эвотор в рамках работы с учётной записью в стороннем сервисе. Облако передаёт токен стороннего сервиса в заголовке <code class="highlighter-rouge">Authorization</code>. Токен необходим для авторизации следующих запросов и уведомлений:</p>
+
 <ul>
   <li><a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1create%2Fpost">Регистрация новой учётной записи</a></li>
   <li><a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1verify%2Fpost">Авторизация существующего пользователя</a></li>
@@ -547,7 +562,7 @@ $('#toc').on('click', 'a', function() {
   <li>На вкладке <strong>Интеграция</strong> выберите необходимый параметр (например, <strong>События биллинга</strong>) и укажите:
     <ul>
       <li>Токен в формате uuid4, если ваш сервис использует bearer-авторизацию.</li>
-      <li>Логин и пароль для доступа к вашему сервису, если он использует basic-авторизацию. Облако кодирует указанные данные с помощью <code class="highlighter-rouge">base64</code> и передаёт их в качестве токена.</li>
+      <li>Логин и пароль для доступа к вашему сервису, если он использует basic-авторизацию.</li>
     </ul>
   </li>
 </ol>
@@ -560,17 +575,25 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="Токен-приложения">Токен приложения</h3>
 
-<p>При запросе к REST API Облака Эвотор, например, для получения списка товаров или магазинов пользователя, сторонний сервис передаёт <em>токен приложения</em> в заголовке <code class="highlighter-rouge">X-Authorization</code>. Облако присваивает токен приложения каждому установленному приложению и с его помощью определяет в рамках какого пользователя действуют запросы стороннего сервиса.
-Вы можете узнать токен приложения одним из способов:</p>
+<p>Облако присваивает токен приложения каждому установленному приложению и с его помощью определяет в рамках какого пользователя действуют запросы стороннего сервиса. При запросе к REST API Облака Эвотор, например, для получения списка товаров или магазинов пользователя, сторонний сервис передаёт <em>токен приложения</em> в заголовке <code class="highlighter-rouge">X-Authorization</code>.
+Получить токен, который Облако выдало установленному приложению, вы можете одним из способов:</p>
 <ul>
-  <li>по адресу <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1token%2Fpost"><code class="highlighter-rouge">partner.ru/api/v1/user/token</code></a>. Авторизуйте запросы Облака с помощью токена стороннего сервиса.</li>
+  <li>
+    <p>по адресу <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1token%2Fpost"><code class="highlighter-rouge">partner.ru/api/v1/user/token</code></a>.</p>
+
+    <p>Авторизуйте запросы Облака с помощью токена стороннего сервиса.</p>
+  </li>
   <li>В GET-параметре <code class="highlighter-rouge">token</code> веб-адреса iframe-приложения:
-    <pre><code class="language-curl">https://partner.org/#/?uid=01-000000000011111&amp;token=string
+    <pre><code class="language-curl">https://partner.org/#/?uid=&lt;example&gt;&amp;token=string
 </code></pre>
 
     <p><img src="images/iframe_token.png" alt="Токен для интеграции с 1с" /></p>
   </li>
-  <li>В Личном кабинете пользователя Эвотор, в разделе <strong>Настройки</strong> приложения.</li>
+  <li>
+    <p>В Личном кабинете пользователя Эвотор, в разделе <strong>Настройки</strong> приложения.</p>
+
+    <p>В этом случае, пользователю требуется вручную указать токен в интерфейсе стороннего приложения. Такой метод рекомендуется при работе с интеграциями 1С.</p>
+  </li>
 </ul>
 
 <p>Чтобы отображать токен на закладке настроек приложения:</p>
@@ -579,8 +602,8 @@ $('#toc').on('click', 'a', function() {
   <li>На вкладке <strong>Интеграция</strong> установите флажок <strong>Создать закладку “Настройки” на странице приложения</strong>.</li>
   <li>В блоке <strong>Настройка формы</strong> нажмите на кнопку <strong>Текстовое поле</strong> и укажите поля:
     <ul>
-      <li><strong>FormData name</strong> – Токен приложения</li>
-      <li><strong>RegExp для ввода символов</strong> – ${token}</li>
+      <li><strong>FormData name</strong> – Токен приложения.</li>
+      <li><strong>RegExp для ввода символов</strong> – <code class="highlighter-rouge">${token}</code>.</li>
       <li>При необходимости укажите дополнительную информацию в поле <strong>Подсказка к полю</strong>.</li>
     </ul>
 
