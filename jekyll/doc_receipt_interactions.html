@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" sample">
-<title>Работа с чеком | Документация Эвотор</title>
+<title>Запуск приложения по событию | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Работа с чеком">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Запуск приложения по событию">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -486,7 +486,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Работа с чеком</h1>
+   <h1 class="post-title-main">Запуск приложения по событию</h1>
 </div>
 
 
@@ -523,208 +523,51 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="Добавление-изменение-удаление-позиций-в-чеке">Добавление, изменение, удаление позиций в чеке</h3>
+  <p>Кроме плитки на главном экране или иконки на экране оплаты смарт-терминала, приложение можно запускать автоматически при получении соответствующего события. Для этого требуется подписать приложение на получение событий.</p>
 
-<p>Вы можете взаимодействовать с чеком: добавлять, изменять и удалять позиции. Для этого требуется подписаться на событие редактирования позиций (<code class="highlighter-rouge">beforePositionsEditedEvent</code>), которое сообщает о намерении изменения чека и содержит список изменений:</p>
+<p>В зависимости от типа события подписку можно оформить одним из двух способов:</p>
+<ul>
+  <li><a href="###-Получение-событий-о-намерении-изменения-чека">Используйте службу</a>, если хотите получать события намерении изменения чека. В этом случае, приложение сможет взаимодействовать с чеком: добавлять, изменять и удалять позиции. События приходят как при продаже, так и при возврате товара.</li>
+  <li><a href="###-Получение-событий-об-открытии-чека-обновлении-базы-продуктов-или-результате-изменения-чека">Зарегистрируйте приёмник широковещательных сообщений</a>, если хотите получать сообщения об открытии чека, обновлении базы продуктов или результате изменения чека. Приложение не может взаимодействовать с чеком при получении этих сообщений, но они могут понадобиться, например, для ведения статистики. События приходят как при продаже, так и при возврате товара.</li>
+</ul>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Событие приходит как при продаже (<code class="highlighter-rouge">evo.v2.receipt.sell.beforePositionsEdited</code>), так и при возврате (<code class="highlighter-rouge">evo.v2.receipt.payback.beforePositionsEdited</code>).</div>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BeforePositionsEditedEvent</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">TAG</span> <span class="o">=</span> <span class="s">"PositionsEditedEvent"</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NAME_SELL_RECEIPT</span> <span class="o">=</span> <span class="s">"evo.v2.receipt.sell.beforePositionsEdited"</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NAME_PAYBACK_RECEIPT</span> <span class="o">=</span> <span class="s">"evo.v2.receipt.payback.beforePositionsEdited"</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">KEY_RECEIPT_UUID</span> <span class="o">=</span> <span class="s">"receiptUuid"</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">KEY_CHANGES</span> <span class="o">=</span> <span class="s">"changes"</span><span class="o">;</span>
-
-
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">receiptUuid</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">IPositionChange</span><span class="o">&gt;</span> <span class="n">changes</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="nf">BeforePositionsEditedEvent</span><span class="o">(</span>
-            <span class="n">String</span> <span class="n">receiptUuid</span><span class="o">,</span>
-            <span class="n">List</span><span class="o">&lt;</span><span class="n">IPositionChange</span><span class="o">&gt;</span> <span class="n">changes</span>
-    <span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">receiptUuid</span> <span class="o">=</span> <span class="n">receiptUuid</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">changes</span> <span class="o">=</span> <span class="n">changes</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="nf">BeforePositionsEditedEvent</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">bundle</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">(</span>
-                <span class="n">bundle</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">KEY_RECEIPT_UUID</span><span class="o">,</span> <span class="kc">null</span><span class="o">),</span>
-                <span class="n">Utils</span><span class="o">.</span><span class="na">filterByClass</span><span class="o">(</span>
-                        <span class="n">ChangesMapper</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">.</span><span class="na">getParcelableArray</span><span class="o">(</span><span class="n">KEY_CHANGES</span><span class="o">)),</span>
-                        <span class="n">IPositionChange</span><span class="o">.</span><span class="na">class</span>
-                <span class="o">)</span>
-        <span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="n">Bundle</span> <span class="nf">toBundle</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">Bundle</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
-        <span class="n">result</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="n">KEY_RECEIPT_UUID</span><span class="o">,</span> <span class="n">receiptUuid</span><span class="o">);</span>
-        <span class="n">Parcelable</span><span class="o">[]</span> <span class="n">changesParcelable</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Parcelable</span><span class="o">[</span><span class="n">changes</span><span class="o">.</span><span class="na">size</span><span class="o">()];</span>
-        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">changesParcelable</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="n">IChange</span> <span class="n">change</span> <span class="o">=</span> <span class="n">changes</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-            <span class="n">changesParcelable</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">ChangesMapper</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">.</span><span class="na">toBundle</span><span class="o">(</span><span class="n">change</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="n">result</span><span class="o">.</span><span class="na">putParcelableArray</span><span class="o">(</span><span class="n">KEY_CHANGES</span><span class="o">,</span> <span class="n">changesParcelable</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getReceiptUuid</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">receiptUuid</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">IPositionChange</span><span class="o">&gt;</span> <span class="nf">getChanges</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">changes</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
-
-<h4 id="Список-изменений">Список изменений</h4>
-
-<p>Изменение сообщает о том, что будет добавлена позиция:</p>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">data</span> <span class="kd">class</span> <span class="nf">PositionAdd</span><span class="o">(</span><span class="n">val</span> <span class="nl">position:</span> <span class="n">Position</span><span class="o">)</span> <span class="o">:</span> <span class="n">IPositionChange</span> <span class="o">{</span>
-
-    <span class="n">override</span> <span class="n">fun</span> <span class="nf">toBundle</span><span class="o">():</span> <span class="n">Bundle</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="nf">Bundle</span><span class="o">().</span><span class="na">apply</span> <span class="o">{</span>
-            <span class="n">putBundle</span><span class="o">(</span>
-                    <span class="n">PositionMapper</span><span class="o">.</span><span class="na">KEY_POSITION</span><span class="o">,</span>
-                    <span class="n">PositionMapper</span><span class="o">.</span><span class="na">toBundle</span><span class="o">(</span><span class="n">position</span><span class="o">)</span>
-            <span class="o">)</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="n">override</span> <span class="n">fun</span> <span class="nf">getPositionUuid</span><span class="o">():</span> <span class="n">String</span><span class="o">?</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">position</span><span class="o">.</span><span class="na">uuid</span>
-    <span class="o">}</span>
-
-    <span class="n">override</span> <span class="n">fun</span> <span class="nf">getType</span><span class="o">():</span> <span class="n">IChange</span><span class="o">.</span><span class="na">Type</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">IChange</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">POSITION_ADD</span>
-    <span class="o">}</span>
-
-    <span class="n">companion</span> <span class="n">object</span> <span class="o">{</span>
-        <span class="nd">@JvmStatic</span>
-        <span class="n">fun</span> <span class="nf">from</span><span class="o">(</span><span class="nl">bundle:</span> <span class="n">Bundle</span><span class="o">?):</span> <span class="n">PositionAdd</span><span class="o">?</span> <span class="o">{</span>
-            <span class="n">bundle</span> <span class="o">?:</span> <span class="k">return</span> <span class="kc">null</span>
-
-            <span class="k">return</span> <span class="nf">PositionAdd</span><span class="o">(</span>
-                    <span class="n">PositionMapper</span><span class="o">.</span><span class="na">from</span><span class="o">(</span>
-                            <span class="n">bundle</span><span class="o">.</span><span class="na">getBundle</span><span class="o">(</span><span class="n">PositionMapper</span><span class="o">.</span><span class="na">KEY_POSITION</span><span class="o">)</span>
-                    <span class="o">)</span> <span class="o">?:</span> <span class="k">return</span> <span class="kc">null</span>
-            <span class="o">)</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
-
-<p>Изменение сообщает том, что позиция будет отредактирована:</p>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">data</span> <span class="kd">class</span> <span class="nf">PositionEdit</span><span class="o">(</span><span class="n">val</span> <span class="nl">position:</span> <span class="n">Position</span><span class="o">)</span> <span class="o">:</span> <span class="n">IPositionChange</span> <span class="o">{</span>
-
-    <span class="n">override</span> <span class="n">fun</span> <span class="nf">toBundle</span><span class="o">():</span> <span class="n">Bundle</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="nf">Bundle</span><span class="o">().</span><span class="na">apply</span> <span class="o">{</span>
-            <span class="n">putBundle</span><span class="o">(</span>
-                    <span class="n">PositionMapper</span><span class="o">.</span><span class="na">KEY_POSITION</span><span class="o">,</span>
-                    <span class="n">PositionMapper</span><span class="o">.</span><span class="na">toBundle</span><span class="o">(</span><span class="n">position</span><span class="o">)</span>
-            <span class="o">)</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="n">override</span> <span class="n">fun</span> <span class="nf">getPositionUuid</span><span class="o">():</span> <span class="n">String</span><span class="o">?</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">position</span><span class="o">.</span><span class="na">uuid</span>
-    <span class="o">}</span>
-
-    <span class="n">override</span> <span class="n">fun</span> <span class="nf">getType</span><span class="o">():</span> <span class="n">IChange</span><span class="o">.</span><span class="na">Type</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">IChange</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">POSITION_EDIT</span>
-    <span class="o">}</span>
-
-    <span class="n">companion</span> <span class="n">object</span> <span class="o">{</span>
-        <span class="nd">@JvmStatic</span>
-        <span class="n">fun</span> <span class="nf">from</span><span class="o">(</span><span class="nl">bundle:</span> <span class="n">Bundle</span><span class="o">?):</span> <span class="n">PositionEdit</span><span class="o">?</span> <span class="o">{</span>
-            <span class="n">bundle</span> <span class="o">?:</span> <span class="k">return</span> <span class="kc">null</span>
-
-            <span class="k">return</span> <span class="nf">PositionEdit</span><span class="o">(</span>
-                    <span class="n">PositionMapper</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">bundle</span><span class="o">.</span><span class="na">getBundle</span><span class="o">(</span><span class="n">PositionMapper</span><span class="o">.</span><span class="na">KEY_POSITION</span><span class="o">))</span> <span class="o">?:</span> <span class="k">return</span> <span class="kc">null</span>
-            <span class="o">)</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
-
-<p>Изменение сообщает том, что позиция будет удалена:</p>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">data</span> <span class="kd">class</span> <span class="nf">PositionRemove</span><span class="o">(</span>
-        <span class="kd">private</span> <span class="n">val</span> <span class="nl">positionUuid:</span> <span class="n">String</span>
-<span class="o">)</span> <span class="o">:</span> <span class="n">IPositionChange</span> <span class="o">{</span>
-
-    <span class="n">override</span> <span class="n">fun</span> <span class="nf">toBundle</span><span class="o">():</span> <span class="n">Bundle</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="nf">Bundle</span><span class="o">().</span><span class="na">apply</span> <span class="o">{</span>
-            <span class="n">putString</span><span class="o">(</span>
-                    <span class="n">KEY_POSITION_UUID</span><span class="o">,</span>
-                    <span class="n">positionUuid</span>
-            <span class="o">)</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="n">override</span> <span class="n">fun</span> <span class="nf">getPositionUuid</span><span class="o">():</span> <span class="n">String</span><span class="o">?</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">positionUuid</span>
-    <span class="o">}</span>
-
-    <span class="n">override</span> <span class="n">fun</span> <span class="nf">getType</span><span class="o">():</span> <span class="n">IChange</span><span class="o">.</span><span class="na">Type</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">IChange</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">POSITION_REMOVE</span>
-    <span class="o">}</span>
-
-    <span class="n">companion</span> <span class="n">object</span> <span class="o">{</span>
-        <span class="kd">const</span> <span class="n">val</span> <span class="n">KEY_POSITION_UUID</span> <span class="o">=</span> <span class="s">"positionUuid"</span>
-
-        <span class="nd">@JvmStatic</span>
-        <span class="n">fun</span> <span class="nf">from</span><span class="o">(</span><span class="nl">bundle:</span> <span class="n">Bundle</span><span class="o">?):</span> <span class="n">PositionRemove</span><span class="o">?</span> <span class="o">{</span>
-            <span class="n">bundle</span> <span class="o">?:</span> <span class="k">return</span> <span class="kc">null</span>
-
-            <span class="k">return</span> <span class="nf">PositionRemove</span><span class="o">(</span>
-                    <span class="n">bundle</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">KEY_POSITION_UUID</span><span class="o">)</span> <span class="o">?:</span> <span class="k">return</span> <span class="kc">null</span>
-            <span class="o">)</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
-
-<h4 id="Подписка-на-событие">Подписка на событие</h4>
+<h3 id="Получение-событий-о-намерении-изменения-чека">Получение событий о намерении изменения чека</h3>
 
 <ol>
-  <li>Создайте службу, например <code class="highlighter-rouge">MyIntegrationService</code>, которая наследует класс <code class="highlighter-rouge">IntegrationService</code>. В колбэке <code class="highlighter-rouge">onCreate</code> службы, зарегистрируйте процессор <code class="highlighter-rouge">BeforePositionsEditedEventProcessor</code> (процессор наследует класс <code class="highlighter-rouge">ActionProcessor</code>).</li>
+  <li>
+    <p>Создайте службу, например <code class="highlighter-rouge">MyIntegrationService</code>, которая наследует класс <code class="highlighter-rouge">IntegrationService</code>. В колбэке <code class="highlighter-rouge">onCreate</code> службы, зарегистрируйте процессор <code class="highlighter-rouge">BeforePositionsEditedEventProcessor</code> (процессор наследует класс <code class="highlighter-rouge">ActionProcessor</code>).</p>
+
+    <div class="language-java highlighter-rouge"> <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyIntegrationService</span> <span class="kd">extends</span> <span class="n">IntegrationService</span> <span class="o">{</span>
+     <span class="nd">@Override</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{</span>
+         <span class="n">registerProcessor</span><span class="o">(</span><span class="k">new</span> <span class="n">BeforePositionsEditedEventProcessor</span><span class="o">()</span> <span class="o">{</span>
+             <span class="nd">@Override</span>
+             <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="n">BeforePositionsEditedEvent</span> <span class="n">beforePositionsEditedEvent</span><span class="o">,</span> <span class="n">Callback</span> <span class="n">callback</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="o">});</span>
+                 <span class="o">}</span>
+             <span class="o">}</span>
+    </div>
+  </li>
+  <li>
+    <p>Объявите службу в манифесте приложения:</p>
+    <div class="language-xml highlighter-rouge"> <span class="nt">&lt;service</span>
+         <span class="na">android:name=</span><span class="s">".MyIntegrationService"</span>
+         <span class="na">android:enabled=</span><span class="s">"true"</span>
+         <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;intent-filter&gt;</span>
+             <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span> <span class="nt">/&gt;</span>
+             <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evo.v2.receipt.sell.beforePositionsEdited"</span> <span class="nt">/&gt;</span>
+         <span class="nt">&lt;/intent-filter&gt;</span>
+ <span class="nt">&lt;/service&gt;</span>
+    </div>
+  </li>
 </ol>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyIntegrationService</span> <span class="kd">extends</span> <span class="n">IntegrationService</span> <span class="o">{</span>
-        <span class="nd">@Override</span>
-        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{</span>
-            <span class="n">registerProcessor</span><span class="o">(</span><span class="k">new</span> <span class="n">BeforePositionsEditedEventProcessor</span><span class="o">()</span> <span class="o">{</span>
-                <span class="nd">@Override</span>
-                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="n">BeforePositionsEditedEvent</span> <span class="n">beforePositionsEditedEvent</span><span class="o">,</span> <span class="n">Callback</span> <span class="n">callback</span><span class="o">)</span> <span class="o">{</span>
-                       <span class="o">});</span>
-                    <span class="o">}</span>
-                <span class="o">}</span>
-    </code></pre></figure>
-
-<ol>
-  <li>Объявите службу в манифесте приложения:</li>
-</ol>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="o">&lt;</span><span class="n">service</span>
-            <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">".MyIntegrationService"</span>
-            <span class="nl">android:</span><span class="n">enabled</span><span class="o">=</span><span class="s">"true"</span>
-            <span class="nl">android:</span><span class="n">exported</span><span class="o">=</span><span class="s">"true"</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">intent</span><span class="o">-</span><span class="n">filter</span><span class="o">&gt;</span>
-                <span class="o">&lt;</span><span class="n">category</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"android.intent.category.DEFAULT"</span> <span class="o">/&gt;</span>
-                <span class="o">&lt;</span><span class="n">action</span> <span class="nl">android:</span><span class="n">name</span><span class="o">=</span><span class="s">"evo.v2.receipt.sell.beforePositionsEdited"</span> <span class="o">/&gt;</span>
-            <span class="o">&lt;/</span><span class="n">intent</span><span class="o">-</span><span class="n">filter</span><span class="o">&gt;</span>
-    <span class="o">&lt;/</span><span class="n">service</span><span class="o">&gt;</span>
-    </code></pre></figure>
-
-<p>В метод <code class="highlighter-rouge">call</code> процессора приходит событие <code class="highlighter-rouge">beforePositionsEditedEvent</code> и объект для возврата результата <code class="highlighter-rouge">callback</code>.</p>
+<p>В метод <code class="highlighter-rouge">call</code> процессора приходит событие <a href="#### Описание события `BeforePositionsEditedEvent`"><code class="highlighter-rouge">beforePositionsEditedEvent</code></a> и объект для возврата результата <code class="highlighter-rouge">callback</code>.</p>
 
 <p>В ответ изменения могут вернуть результат со списком дополнительных изменений:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BeforePositionsEditedEventResult</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BeforePositionsEditedEventResult</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">KEY_RESULT</span> <span class="o">=</span> <span class="s">"result"</span><span class="o">;</span>
     <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">KEY_CHANGES</span> <span class="o">=</span> <span class="s">"changes"</span><span class="o">;</span>
@@ -777,26 +620,25 @@ $('#toc').on('click', 'a', function() {
         <span class="n">OK</span><span class="o">,</span>
         <span class="n">UNKNOWN</span><span class="o">;</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</div>
 
 <p>Чтобы вернуть результат, используйте метод:</p>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">callback</span><span class="o">.</span><span class="na">onResult</span><span class="o">(</span><span class="n">beforePositionsEditedEventResult</span><span class="o">.</span><span class="na">toBundle</span><span class="o">())</span></code></pre></figure>
+<div class="language-java highlighter-rouge"><span class="n">callback</span><span class="o">.</span><span class="na">onResult</span><span class="o">(</span><span class="n">beforePositionsEditedEventResult</span><span class="o">.</span><span class="na">toBundle</span><span class="o">())</span>
+</div>
 
 <p>Если приложению для возврата результата необходимо взаимодействие с пользователем, запустите операцию (<code class="highlighter-rouge">Activity</code>), которая наследует класс <code class="highlighter-rouge">BeforePositionsEditedEventActivity</code>:</p>
+<div class="language-java highlighter-rouge"><span class="n">callback</span><span class="o">.</span><span class="na">startActivity</span><span class="o">(</span><span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">MyIntegrationService</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">MainActivity</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+</div>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">callback</span><span class="o">.</span><span class="na">startActivity</span><span class="o">(</span><span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">MyIntegrationService</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">MainActivity</span><span class="o">.</span><span class="na">class</span><span class="o">));</span></code></pre></figure>
-
-<p>Ваша операция должна вызвать метод
-<code class="highlighter-rouge">setIntegrationResult</code>.</p>
+<p>Ваша операция должна вызвать метод <code class="highlighter-rouge">setIntegrationResult</code>.</p>
 
 <p>Например:</p>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">setIntegrationResult</span><span class="o">(</span><span class="k">new</span> <span class="n">BeforePositionsEditedEventResult</span><span class="o">(</span><span class="n">BeforePositionsEditedEventResult</span><span class="o">.</span><span class="na">Result</span><span class="o">.</span><span class="na">OK</span><span class="o">,</span> <span class="n">changes</span><span class="o">));</span></code></pre></figure>
+<div class="language-java highlighter-rouge"><span class="n">setIntegrationResult</span><span class="o">(</span><span class="k">new</span> <span class="n">BeforePositionsEditedEventResult</span><span class="o">(</span><span class="n">BeforePositionsEditedEventResult</span><span class="o">.</span><span class="na">Result</span><span class="o">.</span><span class="na">OK</span><span class="o">,</span> <span class="n">changes</span><span class="o">));</span>
+</div>
 
 <p>Класс <code class="highlighter-rouge">BeforePositionsEditedEventActivity</code> задан как:</p>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BeforePositionsEditedEventActivity</span> <span class="kd">extends</span> <span class="n">IntegrationActivity</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BeforePositionsEditedEventActivity</span> <span class="kd">extends</span> <span class="n">IntegrationActivity</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setIntegrationResult</span><span class="o">(</span><span class="n">BeforePositionsEditedEventResult</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">setIntegrationResult</span><span class="o">(</span><span class="n">result</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">?</span> <span class="kc">null</span> <span class="o">:</span> <span class="n">result</span><span class="o">.</span><span class="na">toBundle</span><span class="o">());</span>
     <span class="o">}</span>
@@ -804,15 +646,181 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">public</span> <span class="n">BeforePositionsEditedEvent</span> <span class="nf">getEvent</span><span class="o">()</span> <span class="o">{</span>
         <span class="k">return</span> <span class="n">BeforePositionsEditedEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">getSourceBundle</span><span class="o">());</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</div>
 
-<h3 id="Чек-изменён">Чек изменён</h3>
+<h4 id="Описание-события-beforepositionseditedevent">Описание события <code class="highlighter-rouge">BeforePositionsEditedEvent</code></h4>
 
-<p>Вы можете получать сообщения о факте добавления, удаления или изменения позиций в чеке. В отличие от события, которое сообщает о намерении изменения чека, после получения этого события приложения не могут редактировать чек. Тем не менее, такая информация может понадобиться, например, для ведения статистики.</p>
+<p>О намерении изменения чека сообщает событие <code class="highlighter-rouge">beforePositionsEditedEvent</code>:</p>
 
-<p>Чтобы получать сообщения о факте изменения позиций в чеке зарегистрируйте приёмник широковещательных сообщений:</p>
+<div class="language-java highlighter-rouge"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BeforePositionsEditedEvent</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">TAG</span> <span class="o">=</span> <span class="s">"PositionsEditedEvent"</span><span class="o">;</span>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="n">ru</span><span class="o">.</span><span class="na">evotor</span><span class="o">.</span><span class="na">consumer</span><span class="o">.</span><span class="na">consumer</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NAME_SELL_RECEIPT</span> <span class="o">=</span> <span class="s">"evo.v2.receipt.sell.beforePositionsEdited"</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NAME_PAYBACK_RECEIPT</span> <span class="o">=</span> <span class="s">"evo.v2.receipt.payback.beforePositionsEdited"</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">KEY_RECEIPT_UUID</span> <span class="o">=</span> <span class="s">"receiptUuid"</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">KEY_CHANGES</span> <span class="o">=</span> <span class="s">"changes"</span><span class="o">;</span>
+
+
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">receiptUuid</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">IPositionChange</span><span class="o">&gt;</span> <span class="n">changes</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">BeforePositionsEditedEvent</span><span class="o">(</span>
+            <span class="n">String</span> <span class="n">receiptUuid</span><span class="o">,</span>
+            <span class="n">List</span><span class="o">&lt;</span><span class="n">IPositionChange</span><span class="o">&gt;</span> <span class="n">changes</span>
+    <span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">receiptUuid</span> <span class="o">=</span> <span class="n">receiptUuid</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">changes</span> <span class="o">=</span> <span class="n">changes</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nf">BeforePositionsEditedEvent</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">bundle</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">(</span>
+                <span class="n">bundle</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">KEY_RECEIPT_UUID</span><span class="o">,</span> <span class="kc">null</span><span class="o">),</span>
+                <span class="n">Utils</span><span class="o">.</span><span class="na">filterByClass</span><span class="o">(</span>
+                        <span class="n">ChangesMapper</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">.</span><span class="na">getParcelableArray</span><span class="o">(</span><span class="n">KEY_CHANGES</span><span class="o">)),</span>
+                        <span class="n">IPositionChange</span><span class="o">.</span><span class="na">class</span>
+                <span class="o">)</span>
+        <span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">Bundle</span> <span class="nf">toBundle</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">Bundle</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
+        <span class="n">result</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="n">KEY_RECEIPT_UUID</span><span class="o">,</span> <span class="n">receiptUuid</span><span class="o">);</span>
+        <span class="n">Parcelable</span><span class="o">[]</span> <span class="n">changesParcelable</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Parcelable</span><span class="o">[</span><span class="n">changes</span><span class="o">.</span><span class="na">size</span><span class="o">()];</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">changesParcelable</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">IChange</span> <span class="n">change</span> <span class="o">=</span> <span class="n">changes</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+            <span class="n">changesParcelable</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">ChangesMapper</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">.</span><span class="na">toBundle</span><span class="o">(</span><span class="n">change</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">result</span><span class="o">.</span><span class="na">putParcelableArray</span><span class="o">(</span><span class="n">KEY_CHANGES</span><span class="o">,</span> <span class="n">changesParcelable</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getReceiptUuid</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">receiptUuid</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">IPositionChange</span><span class="o">&gt;</span> <span class="nf">getChanges</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">changes</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</div>
+
+<h4 id="Список-возможных-изменений">Список возможных изменений</h4>
+
+<p>Изменение сообщает о том, что будет добавлена позиция:</p>
+
+<div class="language-java highlighter-rouge"><span class="n">data</span> <span class="kd">class</span> <span class="nf">PositionAdd</span><span class="o">(</span><span class="n">val</span> <span class="nl">position:</span> <span class="n">Position</span><span class="o">)</span> <span class="o">:</span> <span class="n">IPositionChange</span> <span class="o">{</span>
+
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">toBundle</span><span class="o">():</span> <span class="n">Bundle</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="nf">Bundle</span><span class="o">().</span><span class="na">apply</span> <span class="o">{</span>
+            <span class="n">putBundle</span><span class="o">(</span>
+                    <span class="n">PositionMapper</span><span class="o">.</span><span class="na">KEY_POSITION</span><span class="o">,</span>
+                    <span class="n">PositionMapper</span><span class="o">.</span><span class="na">toBundle</span><span class="o">(</span><span class="n">position</span><span class="o">)</span>
+            <span class="o">)</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">getPositionUuid</span><span class="o">():</span> <span class="n">String</span><span class="o">?</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">position</span><span class="o">.</span><span class="na">uuid</span>
+    <span class="o">}</span>
+
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">getType</span><span class="o">():</span> <span class="n">IChange</span><span class="o">.</span><span class="na">Type</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">IChange</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">POSITION_ADD</span>
+    <span class="o">}</span>
+
+    <span class="n">companion</span> <span class="n">object</span> <span class="o">{</span>
+        <span class="nd">@JvmStatic</span>
+        <span class="n">fun</span> <span class="nf">from</span><span class="o">(</span><span class="nl">bundle:</span> <span class="n">Bundle</span><span class="o">?):</span> <span class="n">PositionAdd</span><span class="o">?</span> <span class="o">{</span>
+            <span class="n">bundle</span> <span class="o">?:</span> <span class="k">return</span> <span class="kc">null</span>
+
+            <span class="k">return</span> <span class="nf">PositionAdd</span><span class="o">(</span>
+                    <span class="n">PositionMapper</span><span class="o">.</span><span class="na">from</span><span class="o">(</span>
+                            <span class="n">bundle</span><span class="o">.</span><span class="na">getBundle</span><span class="o">(</span><span class="n">PositionMapper</span><span class="o">.</span><span class="na">KEY_POSITION</span><span class="o">)</span>
+                    <span class="o">)</span> <span class="o">?:</span> <span class="k">return</span> <span class="kc">null</span>
+            <span class="o">)</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</div>
+
+<p>Изменение сообщает том, что позиция будет отредактирована:</p>
+
+<div class="language-java highlighter-rouge"><span class="n">data</span> <span class="kd">class</span> <span class="nf">PositionEdit</span><span class="o">(</span><span class="n">val</span> <span class="nl">position:</span> <span class="n">Position</span><span class="o">)</span> <span class="o">:</span> <span class="n">IPositionChange</span> <span class="o">{</span>
+
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">toBundle</span><span class="o">():</span> <span class="n">Bundle</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="nf">Bundle</span><span class="o">().</span><span class="na">apply</span> <span class="o">{</span>
+            <span class="n">putBundle</span><span class="o">(</span>
+                    <span class="n">PositionMapper</span><span class="o">.</span><span class="na">KEY_POSITION</span><span class="o">,</span>
+                    <span class="n">PositionMapper</span><span class="o">.</span><span class="na">toBundle</span><span class="o">(</span><span class="n">position</span><span class="o">)</span>
+            <span class="o">)</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">getPositionUuid</span><span class="o">():</span> <span class="n">String</span><span class="o">?</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">position</span><span class="o">.</span><span class="na">uuid</span>
+    <span class="o">}</span>
+
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">getType</span><span class="o">():</span> <span class="n">IChange</span><span class="o">.</span><span class="na">Type</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">IChange</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">POSITION_EDIT</span>
+    <span class="o">}</span>
+
+    <span class="n">companion</span> <span class="n">object</span> <span class="o">{</span>
+        <span class="nd">@JvmStatic</span>
+        <span class="n">fun</span> <span class="nf">from</span><span class="o">(</span><span class="nl">bundle:</span> <span class="n">Bundle</span><span class="o">?):</span> <span class="n">PositionEdit</span><span class="o">?</span> <span class="o">{</span>
+            <span class="n">bundle</span> <span class="o">?:</span> <span class="k">return</span> <span class="kc">null</span>
+
+            <span class="k">return</span> <span class="nf">PositionEdit</span><span class="o">(</span>
+                    <span class="n">PositionMapper</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">bundle</span><span class="o">.</span><span class="na">getBundle</span><span class="o">(</span><span class="n">PositionMapper</span><span class="o">.</span><span class="na">KEY_POSITION</span><span class="o">))</span> <span class="o">?:</span> <span class="k">return</span> <span class="kc">null</span>
+            <span class="o">)</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</div>
+
+<p>Изменение сообщает том, что позиция будет удалена:</p>
+
+<div class="language-java highlighter-rouge"><span class="n">data</span> <span class="kd">class</span> <span class="nf">PositionRemove</span><span class="o">(</span>
+        <span class="kd">private</span> <span class="n">val</span> <span class="nl">positionUuid:</span> <span class="n">String</span>
+<span class="o">)</span> <span class="o">:</span> <span class="n">IPositionChange</span> <span class="o">{</span>
+
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">toBundle</span><span class="o">():</span> <span class="n">Bundle</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="nf">Bundle</span><span class="o">().</span><span class="na">apply</span> <span class="o">{</span>
+            <span class="n">putString</span><span class="o">(</span>
+                    <span class="n">KEY_POSITION_UUID</span><span class="o">,</span>
+                    <span class="n">positionUuid</span>
+            <span class="o">)</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">getPositionUuid</span><span class="o">():</span> <span class="n">String</span><span class="o">?</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">positionUuid</span>
+    <span class="o">}</span>
+
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">getType</span><span class="o">():</span> <span class="n">IChange</span><span class="o">.</span><span class="na">Type</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">IChange</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">POSITION_REMOVE</span>
+    <span class="o">}</span>
+
+    <span class="n">companion</span> <span class="n">object</span> <span class="o">{</span>
+        <span class="kd">const</span> <span class="n">val</span> <span class="n">KEY_POSITION_UUID</span> <span class="o">=</span> <span class="s">"positionUuid"</span>
+
+        <span class="nd">@JvmStatic</span>
+        <span class="n">fun</span> <span class="nf">from</span><span class="o">(</span><span class="nl">bundle:</span> <span class="n">Bundle</span><span class="o">?):</span> <span class="n">PositionRemove</span><span class="o">?</span> <span class="o">{</span>
+            <span class="n">bundle</span> <span class="o">?:</span> <span class="k">return</span> <span class="kc">null</span>
+
+            <span class="k">return</span> <span class="nf">PositionRemove</span><span class="o">(</span>
+                    <span class="n">bundle</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">KEY_POSITION_UUID</span><span class="o">)</span> <span class="o">?:</span> <span class="k">return</span> <span class="kc">null</span>
+            <span class="o">)</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</div>
+
+<h3 id="Получение-событий-об-открытии-чека-обновлении-базы-продуктов-или-результате-изменения-чека">Получение событий об открытии чека, обновлении базы продуктов или результате изменения чека</h3>
+
+<p>Чтобы получать сообщения о результате изменения позиций в чеке зарегистрируйте приёмник широковещательных сообщений:</p>
+
+<div class="language-java highlighter-rouge"><span class="kn">package</span> <span class="n">ru</span><span class="o">.</span><span class="na">evotor</span><span class="o">.</span><span class="na">consumer</span><span class="o">.</span><span class="na">consumer</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">android.content.BroadcastReceiver</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
@@ -827,11 +835,12 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReceive</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
         <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="s">"UUID: "</span> <span class="o">+</span> <span class="k">new</span> <span class="n">PositionAddedEvent</span><span class="o">(</span><span class="n">intent</span><span class="o">.</span><span class="na">getExtras</span><span class="o">()).</span><span class="na">getReceiptUuid</span><span class="o">(),</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</div>
 
-<p>И объявите его в манифесте приложения:</p>
+<p>Объявите приёмник в манифесте приложения:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;receiver</span>
+<div class="language-xml highlighter-rouge"><span class="nt">&lt;receiver</span>
         <span class="na">android:name=</span><span class="s">".AddPositionBroadcastReceiver"</span>
         <span class="na">android:enabled=</span><span class="s">"true"</span>
         <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
@@ -839,15 +848,23 @@ $('#toc').on('click', 'a', function() {
             <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evotor.intent.action.receipt.sell.POSITION_ADDED"</span> <span class="nt">/&gt;</span>
             <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;/intent-filter&gt;</span>
-    <span class="nt">&lt;/receiver&gt;</span></code></pre></figure>
+    <span class="nt">&lt;/receiver&gt;</span>
+</div>
 
-<h4 id="События-факта-изменения-чека">События факта изменения чека</h4>
-
-<p>Приёмник <code class="highlighter-rouge">AddPositionBroadcastReceiver</code> получает события факта изменения чека как при продаже, так и при возврате товара.</p>
+<h4 id="Сообщения-о-результатах-изменения-чека">Сообщения о результатах изменения чека</h4>
 
 <p>При добавлении позиции приходит сообщение:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionAddedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">ReceiptOpenedEvent</span> <span class="o">{</span>
+    <span class="n">String</span> <span class="n">BROADCAST_ACTION_SELL_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.sell.OPENED"</span><span class="o">;</span>
+    <span class="n">String</span> <span class="n">BROADCAST_ACTION_PAYBACK_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.payback.OPENED"</span><span class="o">;</span>
+    <span class="n">String</span> <span class="n">KEY_UUID</span> <span class="o">=</span> <span class="s">"uuid"</span><span class="o">;</span>
+<span class="o">}</span>
+</div>
+
+<p>При добавлении позиции приходит сообщение:</p>
+
+<div class="language-java highlighter-rouge"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionAddedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_SELL_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.sell.POSITION_ADDED"</span><span class="o">;</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_PAYBACK_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.payback.POSITION_ADDED"</span><span class="o">;</span>
 
@@ -858,11 +875,12 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">public</span> <span class="nf">PositionAddedEvent</span><span class="o">(</span><span class="n">String</span> <span class="n">receiptUuid</span><span class="o">,</span> <span class="n">Position</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">(</span><span class="n">receiptUuid</span><span class="o">,</span> <span class="n">position</span><span class="o">);</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</div>
 
 <p>При изменении позиции приходит сообщение:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionEditedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionEditedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_SELL_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.sell.POSITION_EDITED"</span><span class="o">;</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_PAYBACK_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.payback.POSITION_EDITED"</span><span class="o">;</span>
 
@@ -874,10 +892,11 @@ $('#toc').on('click', 'a', function() {
         <span class="kd">super</span><span class="o">(</span><span class="n">receiptUuid</span><span class="o">,</span> <span class="n">position</span><span class="o">);</span>
     <span class="o">}</span>
 <span class="o">}</span>
+</div>
 
-<span class="err">При</span> <span class="err">удалении</span> <span class="err">позиции</span> <span class="err">приходит</span> <span class="err">сообщение</span><span class="o">:</span></code></pre></figure>
+<p>При удалении позиции приходит сообщение:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionRemovedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionRemovedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_SELL_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.sell.POSITION_REMOVED"</span><span class="o">;</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_PAYBACK_RECEIPT</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.payback.POSITION_REMOVED"</span><span class="o">;</span>
 
@@ -888,48 +907,23 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">public</span> <span class="nf">PositionRemovedEvent</span><span class="o">(</span><span class="n">String</span> <span class="n">receiptUuid</span><span class="o">,</span> <span class="n">Position</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
         <span class="kd">super</span><span class="o">(</span><span class="n">receiptUuid</span><span class="o">,</span> <span class="n">position</span><span class="o">);</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</div>
 
-<p>При <strong>что-то там</strong> позиции приходит сообщение:</p>
+<p>При обновлении базы товаров приходит сообщение:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">PositionEvent</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">KEY_RECEIPT_UUID</span> <span class="o">=</span> <span class="s">"receiptUuid"</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">KEY_POSITION</span> <span class="o">=</span> <span class="s">"position"</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PositionRemovedEvent</span> <span class="kd">extends</span> <span class="n">PositionEvent</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_PRODUCTS_UPDATED</span> <span class="o">=</span> <span class="s">"evotor.intent.action.inventory.PRODUCTS_UPDATED"</span><span class="o">;</span>
 
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">receiptUuid</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">Position</span> <span class="n">position</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="nf">PositionEvent</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">extras</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">(</span>
-                <span class="n">extras</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">KEY_RECEIPT_UUID</span><span class="o">,</span> <span class="kc">null</span><span class="o">),</span>
-                <span class="n">PositionMapper</span><span class="o">.</span><span class="na">from</span><span class="o">(</span><span class="n">extras</span><span class="o">.</span><span class="na">getBundle</span><span class="o">(</span><span class="n">KEY_POSITION</span><span class="o">))</span>
-        <span class="o">);</span>
+    <span class="kd">public</span> <span class="nf">ProductsUpdatedEvent</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">extras</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">extras</span><span class="o">);</span>
     <span class="o">}</span>
 
-    <span class="kd">public</span> <span class="nf">PositionEvent</span><span class="o">(</span>
-            <span class="n">String</span> <span class="n">receiptUuid</span><span class="o">,</span>
-            <span class="n">Position</span> <span class="n">position</span>
-    <span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">receiptUuid</span> <span class="o">=</span> <span class="n">receiptUuid</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">position</span> <span class="o">=</span> <span class="n">position</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">ProductsUpdatedEvent</span><span class="o">(</span><span class="n">String</span> <span class="n">receiptUuid</span><span class="o">,</span> <span class="n">Position</span> <span class="n">position</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">receiptUuid</span><span class="o">,</span> <span class="n">position</span><span class="o">);</span>
     <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="n">Bundle</span> <span class="nf">toBundle</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">Bundle</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
-        <span class="n">result</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="n">KEY_RECEIPT_UUID</span><span class="o">,</span> <span class="n">receiptUuid</span><span class="o">);</span>
-        <span class="n">result</span><span class="o">.</span><span class="na">putBundle</span><span class="o">(</span><span class="n">KEY_POSITION</span><span class="o">,</span> <span class="n">PositionMapper</span><span class="o">.</span><span class="na">toBundle</span><span class="o">(</span><span class="n">position</span><span class="o">));</span>
-        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getReceiptUuid</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">receiptUuid</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="n">Position</span> <span class="nf">getPosition</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">position</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
-
+<span class="o">}</span>
+</div>
 
 
     <div class="tags">
@@ -949,12 +943,5 @@ $('#toc').on('click', 'a', function() {
     </div>
 
 </body>
-
-<!-- the google_analytics_id gets auto inserted from the config file -->
-
-
-
-<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-84163503-7','auto');ga('require','displayfeatures');ga('send','pageview');</script>
-
 
 </html>
