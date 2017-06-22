@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -451,6 +451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -492,11 +499,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -558,7 +563,7 @@ $('#toc').on('click', 'a', function() {
   <li>Получать и передавать номенклатуру.</li>
 </ul>
 
-<h3 id="Авторизация">Авторизация</h3>
+<h3 id="section">Авторизация</h3>
 <p>В зависимости от способа авторизации в стороннем сервисе, запросы облака Эвотор могут содержать заголовок <code class="highlighter-rouge">Authorization</code> с типом <code class="highlighter-rouge">Basic</code> или <code class="highlighter-rouge">Bearer</code>:</p>
 
 <ul>
@@ -574,11 +579,12 @@ $('#toc').on('click', 'a', function() {
 
 <p>Сторонний веб-сервис также может обращаться в облако Эвотор за дополнительной информацией. Ключ для авторизации таких запросов, облако Эвотор отправляет на адрес <code class="highlighter-rouge">http://&lt;веб-адрес стороннего сервиса&gt;/api/v1/user/token</code>. Подробнее, см. раздел <strong>Авторизация</strong> на странице <a href="https://dev.evotor.r1nat.com/evotor-cloud-rest-api/">REST API облака Эвотор</a>.</p>
 
-<h3 id="Пример-post-запроса">Пример POST-запроса</h3>
+<h3 id="post-">Пример POST-запроса</h3>
 <p>Проверить данные учётной записи.
-Запрос:</p>
-<pre><code class="language-curl">-X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: Basic RXhhbXBsZXBhc3N3b3Jk' -d '{"userUuid":"01-000000000000001","username":"&lt;Имя учётной записи&gt;","password":"&lt;пароль учётной записи&gt;","customField":"любое значение"}' 'https://partner.org/api/v1/user/verify'
-</code></pre>
+Запрос:
+<code class="highlighter-rouge">curl
+-X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: Basic RXhhbXBsZXBhc3N3b3Jk' -d '{"userUuid":"01-000000000000001","username":"&lt;Имя учётной записи&gt;","password":"&lt;пароль учётной записи&gt;","customField":"любое значение"}' 'https://partner.org/api/v1/user/verify'
+</code></p>
 
 <p>Ответ:</p>
 
@@ -589,7 +595,7 @@ $('#toc').on('click', 'a', function() {
 }
 </code></pre>
 
-<h3 id="Пример-put-запроса">Пример PUT-запроса</h3>
+<h3 id="put-">Пример PUT-запроса</h3>
 <p>Передать список магазинов в сторонний сервис.
 Запрос:</p>
 
@@ -605,8 +611,8 @@ $('#toc').on('click', 'a', function() {
   }
 ]
 </code></pre>
-<h3 id="Справочник-api">Справочник API</h3>
-<p>Ознакомиться и испробовать запросы к REST API облака Эвотор вы можете на сайте https://api.evotor.ru/docs в разделе <strong>Протокол исходящих запросов</strong>.</p>
+<p>### Справочник API
+Ознакомиться и испробовать запросы к REST API облака Эвотор вы можете на сайте https://api.evotor.ru/docs в разделе <strong>Протокол исходящих запросов</strong>.</p>
 
 
     <div class="tags">

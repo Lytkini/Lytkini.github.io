@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -451,6 +451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -492,11 +499,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -566,15 +571,15 @@ $('#toc').on('click', 'a', function() {
 
 <p>Все данные пользователей платформы (например, информация о магазинах, сотрудниках и смарт-терминалах пользователя) хранятся в <em>облаке Эвотор</em>.</p>
 
-<h3 id="С-чего-начать">С чего начать</h3>
+<h3 id="section">С чего начать</h3>
 
 <p><a href="doc_evotor_rest_api_calls.html">Ознакомьтесь со способами интеграции с платформой Эвотор</a>.</p>
 
-<h3 id="Полезные-ресурсы">Полезные ресурсы</h3>
+<h3 id="section-1">Полезные ресурсы</h3>
 
 <p>Изучите запросы к облаку Эвотор и к стороннему веб-сервису на сайте <a href="https://api.evotor.ru/docs/">api.evotor.ru</a>. Ознакомьтесь с <a href="doc_smart_terminal_documents.html">документами</a>, которые создают смарт-терминалы. Узнайте <a href="doc_errors_returned.html">какие ошибки</a> могут возникнуть при интеграции стороннего сервиса и платформы Эвотор.</p>
 
-<h3 id="Инструменты">Инструменты</h3>
+<h3 id="section-2">Инструменты</h3>
 
 <p>Ознакомьтесь с <a href="https://github.com/evotor/device-app">API смарт-терминала</a>, чтобы приступить к разработке webview-приложений. Используйте <a href="https://github.com/evotor/device-drivers">SDK смарт-терминала</a>, чтобы создать драйверы для подключаемых устройств.</p>
 

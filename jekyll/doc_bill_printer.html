@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -451,6 +451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -492,11 +499,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -546,7 +551,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="Работа-с-принтером-чеков">Работа с принтером чеков</h3>
+  <h3 id="section">Работа с принтером чеков</h3>
 
 <ol>
   <li>В колбэке <code class="highlighter-rouge">onCreate()</code> или при запуске операции (<code class="highlighter-rouge">activity</code>) инициализируйте класс <code class="highlighter-rouge">ru.evotor.devices.commons.DeviceServiceConnector</code>:</li>
@@ -555,11 +560,12 @@ $('#toc').on('click', 'a', function() {
 <figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">DeviceServiceConnector</span><span class="o">.</span><span class="na">startInitConnections</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">());</span>
     </code></pre></figure>
 
-<div class="highlighter-rouge">Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку.
+<div class="highlighter-rouge"><pre class="highlight"><code>Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку.
 
 &lt;div markdown="span" class="alert alert-success" role="alert"&gt;&lt;i class="fa fa-check-square-o"&gt;&lt;/i&gt; &lt;b&gt;Совет:&lt;/b&gt; Воспользуйтесь методом `addConnectionWrapper`, чтобы получить событие об успешном подключении. &lt;br/&gt;&lt;br/&gt;
 
 Используйте это событие, если необходимо выполнить какой-либо код сразу после установки соединения.&lt;/div&gt;
+</code></pre>
 </div>
 
 <ol>
@@ -568,11 +574,9 @@ $('#toc').on('click', 'a', function() {
 
     <p>Метод не может быть <code class="highlighter-rouge">null</code> и в случае успеха возвращает объект <code class="highlighter-rouge">ru.evotor.devices.commons.IPrinterServiceWrapper</code>.</p>
 
-    <p>Метод может вернуть следующие исключения (<code class="highlighter-rouge">exception</code>):</p>
-    <ul>
-      <li><code class="highlighter-rouge">ru.evotor.devices.commons.exception.ServiceNotConnectedException</code> возвращается в результате серии неудачных попыток подключиться к принтеру.</li>
-      <li><code class="highlighter-rouge">ru.evotor.devices.commons.exception.DeviceServiceException</code> – наследованое исключение.</li>
-    </ul>
+    <p>Метод может вернуть следующие исключения (<code class="highlighter-rouge">exception</code>):
+ * <code class="highlighter-rouge">ru.evotor.devices.commons.exception.ServiceNotConnectedException</code> возвращается в результате серии неудачных попыток подключиться к принтеру.
+ * <code class="highlighter-rouge">ru.evotor.devices.commons.exception.DeviceServiceException</code> – наследованое исключение.</p>
   </li>
   <li>
     <p>Вы можете вызвать следующие методы объекта <code class="highlighter-rouge">ru.evotor.devices.commons.IPrinterService</code>:</p>
@@ -594,18 +598,16 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Передайте данные в печать с помощью метода <code class="highlighter-rouge">printDocument(int deviceId, in PrinterDocument printerDocument)</code>.</p>
 
-    <p>Аргумент <code class="highlighter-rouge">PrinterDocument</code> содержит список элементов печати <code class="highlighter-rouge">IPrintable</code>:</p>
-    <ul>
-      <li>Тексты – <code class="highlighter-rouge">ru.evotor.devices.commons.printer.printable.PrintableText</code>;</li>
-      <li>Штрихкоды – <code class="highlighter-rouge">ru.evotor.devices.commons.printer.printable.PrintableBarcode</code>;</li>
-      <li>Картинки – <code class="highlighter-rouge">ru.evotor.devices.commons.printer.printable.PrintableImage</code>.</li>
-    </ul>
+    <p>Аргумент <code class="highlighter-rouge">PrinterDocument</code> содержит список элементов печати <code class="highlighter-rouge">IPrintable</code>:
+ * Тексты – <code class="highlighter-rouge">ru.evotor.devices.commons.printer.printable.PrintableText</code>;
+ * Штрихкоды – <code class="highlighter-rouge">ru.evotor.devices.commons.printer.printable.PrintableBarcode</code>;
+ * Картинки – <code class="highlighter-rouge">ru.evotor.devices.commons.printer.printable.PrintableImage</code>.</p>
   </li>
 </ol>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Работа с удалённым сервисом может занимать длительное время, поэтому не вызывайте перечисленные методы в главном потоке приложения.</div>
 
-<h3 id="Примеры">Примеры</h3>
+<h3 id="section-1">Примеры</h3>
 
 <p>Код для печати сообщения на чеке:</p>
 

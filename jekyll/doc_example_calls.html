@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -451,6 +451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -492,11 +499,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -546,7 +551,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="Запросы-к-Эвотор-api">Запросы к Эвотор API</h3>
+  <h3 id="api">Запросы к Эвотор API</h3>
 
 <p>С помощью Эвотор API сторонние сервисы могут получить доступ к данным пользователей платформы, которые хранятся в облаке Эвотор.</p>
 
@@ -563,39 +568,41 @@ $('#toc').on('click', 'a', function() {
   </li>
 </ul>
 
-<h4 id="Пример-get-запроса-к-облаку-Эвотор">Пример GET-запроса к облаку Эвотор</h4>
+<h4 id="get----">Пример GET-запроса к облаку Эвотор</h4>
 
-<p>Получить список всех магазинов пользователя:</p>
-<pre><code class="language-curl">-X GET --header 'Accept: application/json' --header 'X-Authorization: &lt;токен приложения&gt;' --header 'Content-Type: application/json' 'https://api.evotor.ru/api/v1/inventories/stores/search'
-</code></pre>
-<p>Ответ:</p>
+<p>Получить список всех магазинов пользователя:
+<code class="highlighter-rouge">curl
+-X GET --header 'Accept: application/json' --header 'X-Authorization: &lt;токен приложения&gt;' --header 'Content-Type: application/json' 'https://api.evotor.ru/api/v1/inventories/stores/search'
+</code>
+Ответ:</p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Мой магазин1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="nt">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Мой магазин1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Мой магазин3"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="nt">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Мой магазин3"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span></code></pre></figure>
 
-<h4 id="Пример-post-запроса">Пример POST-запроса</h4>
-<p>Создать новый товар в определённом магазине:</p>
-<pre><code class="language-curl">curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Authorization: &lt;токен приложения&gt;' -d '[{"uuid":"n1e2w3-t4ov5qr6","code":"","barCodes":[],"alcoCodes":[],"name":"Новый товар","price":0,"quantity":0,"costPrice":0,"measureName":"","tax":"NO_VAT","allowToSell":false,"description":"","articleNumber":"","parentUuid":"","group":false,"type":"NORMAL","alcoholByVolume":0,"alcoholProductKindCode":0,"tareVolume":0}]' 'https://api.evotor.ru/api/v1/inventories/stores/storeUuid-123456/products'
-</code></pre>
+<h4 id="post-">Пример POST-запроса</h4>
+<p>Создать новый товар в определённом магазине:
+<code class="highlighter-rouge">curl
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Authorization: &lt;токен приложения&gt;' -d '[{"uuid":"n1e2w3-t4ov5qr6","code":"","barCodes":[],"alcoCodes":[],"name":"Новый товар","price":0,"quantity":0,"costPrice":0,"measureName":"","tax":"NO_VAT","allowToSell":false,"description":"","articleNumber":"","parentUuid":"","group":false,"type":"NORMAL","alcoholByVolume":0,"alcoholProductKindCode":0,"tareVolume":0}]' 'https://api.evotor.ru/api/v1/inventories/stores/storeUuid-123456/products'
+</code></p>
 
 <pre><code class="language-curl">no content
 </code></pre>
 
 <p>При создании товаров в ответ приходит пустое сообщение. Код ответа в случае удачного добавления – 200.</p>
 
-<h3 id="Вебхуки-облака-Эвотор">Вебхуки облака Эвотор</h3>
+<h3 id="section">Вебхуки облака Эвотор</h3>
 
 <p>Все изменения в Личном кабинете пользователя (создание магазина, регистрация смарт-терминала и т.п.) облако Эвотор передаёт в сторонний сервис, с помощью вебхуков. Таким образом, все запросы пользователей к стороннему сервису проксируются через облако Эвотор.</p>
 
@@ -609,21 +616,22 @@ $('#toc').on('click', 'a', function() {
   <li>Получать и передавать номенклатуру.</li>
 </ul>
 
-<h4 id="Пример-вебкука-запроса">Пример вебкука-запроса</h4>
+<h4 id="section-1">Пример вебкука-запроса</h4>
 
-<p>Проверить данные учётной записи:</p>
-<pre><code class="language-curl">-X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: Basic &lt;токен стороннего сервиса&gt;' -d '{"userUuid":"01-000000000000001","username":"&lt;Имя учётной записи&gt;","password":"&lt;пароль учётной записи&gt;","customField":"любое значение"}' 'https://partner.org/api/v1/user/verify'
-</code></pre>
+<p>Проверить данные учётной записи:
+<code class="highlighter-rouge">curl
+-X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: Basic &lt;токен стороннего сервиса&gt;' -d '{"userUuid":"01-000000000000001","username":"&lt;Имя учётной записи&gt;","password":"&lt;пароль учётной записи&gt;","customField":"любое значение"}' 'https://partner.org/api/v1/user/verify'
+</code></p>
 
 <p>Ответ:</p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span><span class="w">
-  </span><span class="s2">"userUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01-000000000000001"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"hasBilling"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"пользовательский токен"</span><span class="w">
+  </span><span class="nt">"userUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01-000000000000001"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"hasBilling"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"пользовательский токен"</span><span class="w">
 </span><span class="p">}</span></code></pre></figure>
 
-<h4 id="Пример-вебхука-уведомления">Пример вебхука-уведомления</h4>
+<h4 id="section-2">Пример вебхука-уведомления</h4>
 <p>Передать список магазинов в сторонний сервис:</p>
 
 <pre><code class="language-curl">-X PUT --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'Authorization: &lt;пользовательсский токен&gt;' -d '[{"uuid": "string", "name": "string", "address": "string"}]' 'https://partner.org/api/v1/inventories/stores'
@@ -633,12 +641,12 @@ $('#toc').on('click', 'a', function() {
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"parentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="nt">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"parentId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="err">}</span><span class="w">
 </span><span class="p">]</span></code></pre></figure>
 
-<h3 id="Справочник-api">Справочник API</h3>
+<h3 id="api-1">Справочник API</h3>
 
 <p>Со всеми возможностями Эвотор API вы можете ознакомиться в <a href="https://api.evotor.ru/docs/">справочнике</a>.</p>
 

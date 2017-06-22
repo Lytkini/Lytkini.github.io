@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -451,6 +451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -492,11 +499,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -546,7 +551,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="О-правах-приложения">О правах приложения</h3>
+  <h3 id="section">О правах приложения</h3>
 
 <p>С помощью прав (grants), назначенных различным компонентам приложения, вы можете ограничить функциональность приложения для пользователей с определёнными ролями. Чтобы узнать список прав той или иной роли, используйте <a href="doc_smart_terminal_users_api.html">Users API</a>.</p>
 
@@ -556,7 +561,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Если оставить список прав пустым, приложение будет доступно любому пользоваетлю, независимо от роли.</p>
 
-<h3 id="java-приложение">Java-приложение</h3>
+<h3 id="java-">Java-приложение</h3>
 
 <p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) java-приложения необходимыми правами, выполните следующие действия:</p>
 
@@ -580,7 +585,7 @@ $('#toc').on('click', 'a', function() {
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span> <span class="na">android:resource=</span><span class="s">"@array/&lt;Название&gt;_grants"</span> <span class="nt">/&gt;</span>
     </code></pre></figure>
 
-<h3 id="js-приложение">JS-приложение</h3>
+<h3 id="js-">JS-приложение</h3>
 
 <p>Чтобы наделить плагин (plugin), демон (daemon) или экран (screen) JS-приложения необходимыми правами, выполните следующие действия:</p>
 
@@ -588,17 +593,17 @@ $('#toc').on('click', 'a', function() {
   <li>В файле <code class="highlighter-rouge">client.yaml</code> добавьте список <code class="highlighter-rouge">grants</code> требуемых прав для соответствующего элемента (демона, плагина или экрана):</li>
 </ol>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml">    <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">&lt;Название&gt;</span>
-      <span class="na">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;Заголовок</span><span class="nv"> </span><span class="s">экрана&gt;"</span>
-      <span class="na">launcher-label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;Название</span><span class="nv"> </span><span class="s">плитики&gt;"</span>
-      <span class="na">launcher-icon</span><span class="pi">:</span> <span class="s">client/views/example-loader/icon.png</span>
-      <span class="na">launcher-color</span><span class="pi">:</span> <span class="c1">#133788</span>
-      <span class="na">source</span><span class="pi">:</span> <span class="s">client/views/example-loader/view.html</span>
-      <span class="na">scripts</span><span class="pi">:</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml">    <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">&lt;Название&gt;</span>
+      <span class="s">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;Заголовок</span><span class="nv"> </span><span class="s">экрана&gt;"</span>
+      <span class="s">launcher-label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;Название</span><span class="nv"> </span><span class="s">плитики&gt;"</span>
+      <span class="s">launcher-icon</span><span class="pi">:</span> <span class="s">client/views/example-loader/icon.png</span>
+      <span class="s">launcher-color</span><span class="pi">:</span> <span class="c1">#133788</span>
+      <span class="s">source</span><span class="pi">:</span> <span class="s">client/views/example-loader/view.html</span>
+      <span class="s">scripts</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s">no-script</span>
-      <span class="na">styles</span><span class="pi">:</span>
+      <span class="s">styles</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s2">"</span><span class="s">*.css"</span>
-      <span class="na">grants</span><span class="pi">:</span>
+      <span class="s">grants</span><span class="pi">:</span>
         <span class="pi">-</span> <span class="s">CASH_OPERATIONS_SELL</span>
         <span class="pi">-</span> <span class="s">CASH_OPERATIONS_PAYBACK</span>
     </code></pre></figure>
@@ -624,7 +629,7 @@ $('#toc').on('click', 'a', function() {
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">    <span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.GRANTS"</span> <span class="na">android:resource=</span><span class="s">"@array/&lt;Название&gt;_grants"</span> <span class="nt">/&gt;</span>
     </code></pre></figure>
 
-<h3 id="Примеры">Примеры</h3>
+<h3 id="section-1">Примеры</h3>
 <p>Манифест приложения:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">".app.SomeJSWrappedActivity"</span> <span class="na">android:theme=</span><span class="s">"@style/JSWrappedTheme"</span> <span class="na">android:icon=</span><span class="s">"@drawable/icon"</span> <span class="na">android:label=</span><span class="s">"&lt;Название плитки&gt;"</span><span class="nt">&gt;</span>
@@ -645,7 +650,7 @@ $('#toc').on('click', 'a', function() {
 <span class="nt">&lt;/string-array&gt;</span>
 <span class="nt">&lt;/resources&gt;</span></code></pre></figure>
 
-<h3 id="Список-прав">Список прав</h3>
+<h3 id="section-2">Список прав</h3>
 
 <p>В таблице ниже представлены права, которыми вы можете наделить компоненты приложения.</p>
 

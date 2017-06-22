@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -451,6 +451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -492,11 +499,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -544,34 +549,62 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Режим разработчика даёт доступ к утилите <strong>LogCat</strong>, позволяет отлаживать приложение и собирать его на смарт-терминале в обход в магазина приложений.</p>
+  <p>Режим разработчика позволяет:
+* устанавливать приложение на смарт-терминал с помощью ADB, без необходимости загружать его в магазин приложений.
+* отлаживать приложение с помощью утилиты <strong>LogCat</strong>.</p>
 
 <p>Чтобы включить режим разработчика:</p>
 
 <ol>
-  <li>На <a href="https://dev.evotor.ru">сайте разработчиков</a> выберите разрабатываемое приложение.</li>
+  <li>На <a href="https://dev.evotor.ru">dev.evotor.ru</a> выберите необходимое приложение.</li>
+  <li>
+    <p>На вкладке <strong>Версии</strong>, выберите необходимую версию приложения и перейдите на вкладку <strong>APK</strong>.</p>
+
+    <p>Одноврменно у вас в разработке не может быть более двух версий приложения.</p>
+  </li>
+  <li>
+    <p>На вкладке <strong>APK</strong>:</p>
+
+    <ul>
+      <li>
+        <p>Если вы хотите, чтобы тестировщики и разработчики могли установить приложение из Магазина приложений, выберите <strong>Загрузить APK</strong>.</p>
+
+        <p>После того как вы загрузите APK, поля <strong>Код версии</strong> и <strong>Package name</strong> автоматически заполнятся значениями, указанными в APK приложения.</p>
+      </li>
+      <li>
+        <p>Если вы хотите вручную устанавливать приложение на смарт-терминал с помощью ADB, выберите <strong>Указать package name вручную</strong>.</p>
+
+        <p>Вам потребуется вручную указать имя пакета вашего приложения, в поле package name. Код версии в этом случае указывать не требуется.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>На вкладке <strong>Версии</strong>, выберите необходимую версию и нажмите на кнопку <strong>Выложить на тест</strong>.</p>
+  </li>
   <li>На вкладке <strong>Тестирование</strong> укажите номер телефона учётной записи, для которой требуется включить режим разработчика.</li>
-  <li>Выберите тип пользователя <strong>Разработчик</strong> и нажмите на кнопку <strong>Добавить</strong>.</li>
+  <li>Выберите тип пользователя <strong>Разработчик приложения на терминале Эвотор</strong> и нажмите на кнопку <strong>Добавить</strong>.</li>
 </ol>
 
 <p>Режим разработчика включается на всех терминалах, зарегистрированных на указанный номер телефона.</p>
 
-<p><img src="images/developer_mode_enabling.gif" alt="Режим разработчика на сайте разработчиков" title="Режим разработчика на сайте разработчиков" /></p>
+<p>Режим разработчика действует только для приложения с заданным package name.</p>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> Вы можете отлаживать только те приложения, для которых учётная запись задана как <strong>разработчик</strong>.</div>
+<p><img src="images/developer_mode_enabling.png" alt="Режим разработчика на сайте разработчиков" title="Режим разработчика на сайте разработчиков" /></p>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Если режим разработчика не включился сразу после добавления разработчика, убедитесь, что у вашего приложения указан идентификатор пакета (вкладка <strong>APK</strong>) и попробуйте выключить и включить wi-fi.</div>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Если режим разработчика не включился сразу после добавления разработчика, попробуйте выключить и включить wi-fi.</div>
 
-<p>В панели уведомлений смарт-терминалов появится сообщение:</p>
-<pre><code class="language-1">Режим разработчика активен
+<p>В панели уведомлений смарт-терминалов, зарегистрированных на указанный номер, появится сообщение:
+<code class="highlighter-rouge">1
+Режим разработчика активен
 ADB: &lt;IP-адрес&gt;:&lt;порт&gt;
-</code></pre>
+</code></p>
 
 <p><img src="images/developer_mode.png" alt="Режим разработчика на терминале" title="Режим разработчика на терминале" /></p>
 
-<p>Для подключения к смарт-терминалу в Android Studio, используйте команду:</p>
-<pre><code class="language-1">adb connect &lt;IP-адрес&gt;:&lt;порт&gt;
-</code></pre>
+<p>Для подключения к смарт-терминалу в Android Studio, используйте команду:
+<code class="highlighter-rouge">1
+adb connect &lt;IP-адрес&gt;:&lt;порт&gt;
+</code></p>
 
 
     <div class="tags">

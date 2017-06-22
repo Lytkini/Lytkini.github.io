@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -451,6 +451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -492,11 +499,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -555,37 +560,40 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>В файле <code class="highlighter-rouge">build.gradle</code> проекта укажите:</p>
 
-    <pre><code class="language-1"> buildscript {
+    <p>```1
+ buildscript {
      repositories {
          jcenter()
-         maven { url 'https://jitpack.io' }
+         maven { url ‘https://jitpack.io’ }
      }
      dependencies {
-         ...
-         classpath group: 'com.github.evotor', name: 'template-plugin', version: 'v1.1.2'
+         …
+         classpath group: ‘com.github.evotor’, name: ‘template-plugin’, version: ‘v1.1.4’
      }
- }
+ }</p>
 
- allprojects {
+    <p>allprojects {
      repositories {
-       ...
-       maven { url 'https://jitpack.io' }
+       …
+       maven { url ‘https://jitpack.io’ }
      }
    }
-</code></pre>
+```</p>
   </li>
   <li>
     <p>В файле <code class="highlighter-rouge">build.gradle</code> приложения добавьте зависимость:</p>
 
-    <pre><code class="language-1"> dependencies {
-         compile 'com.github.evotor:template-plugin:v1.1.2'
+    <p><code class="highlighter-rouge">1
+ dependencies {
+         compile 'com.github.evotor:template-plugin:v1.1.4'
  }
-</code></pre>
+</code></p>
 
     <p>и подключите плагин:</p>
 
-    <pre><code class="language-1"> apply plugin: 'ru.evotor.webbasedapplication'
-</code></pre>
+    <p><code class="highlighter-rouge">1
+ apply plugin: 'ru.evotor.webbasedapplication'
+</code></p>
   </li>
   <li>
     <p>Соберите apk.</p>

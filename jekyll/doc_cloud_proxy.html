@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -451,6 +451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -492,11 +499,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -560,23 +565,23 @@ $('#toc').on('click', 'a', function() {
 
 <!-- После создания списка, обмен сообщениями происходит по описанному ниже процессу. -->
 
-<h3 id="Шаг-1-Приложение-отправляет-http-сообщение">Шаг 1. Приложение отправляет HTTP-сообщение</h3>
+<h3 id="http-">Шаг 1. Приложение отправляет HTTP-сообщение</h3>
 
 <p>Приложение создаёт HTTP-сообщение и отправляет его в сторонний сервис. Вы можете воспользоваться любым удобным способом отправки сообщения.</p>
 
-<h4 id="java-приложение">Java-приложение</h4>
+<h4 id="java-">Java-приложение</h4>
 <p>Для отправки HTTP-сообщения из Java-приложения вы можете, например, использовать <a href="http://square.github.io/okhttp/">библиотеку OkHttp</a> или способ, описанный на <a href="https://developer.android.com/training/basics/network-ops/connecting.html">developer.android.com</a>.</p>
 
-<h4 id="js-приложение">JS-приложение</h4>
+<h4 id="js-">JS-приложение</h4>
 
 <p>В <code class="highlighter-rouge">client.yaml</code>, в списке <code class="highlighter-rouge">capabilities</code> требуется указать элемент <code class="highlighter-rouge">internet</code>:</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">capabilities</span><span class="pi">:</span>
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="s">capabilities</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s">internet</span></code></pre></figure>
 
 <!-- Из JS-приложения вы можете отправить сообщение следующим образом: -->
 
-<h3 id="Шаг-2-Смарт-терминал-передаёт-сообщение-в-облако">Шаг 2. Смарт-терминал передаёт сообщение в облако</h3>
+<h3 id="section">Шаг 2. Смарт-терминал передаёт сообщение в облако</h3>
 
 <p>Терминал перехватывает сообщение и передаёт его в облако Эвотор.</p>
 
@@ -600,7 +605,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">Transfer-Encoding</code></li>
 </ul>
 
-<h3 id="Шаг-3-Облако-передаёт-сообщение-адресату">Шаг 3. Облако передаёт сообщение адресату</h3>
+<h3 id="section-1">Шаг 3. Облако передаёт сообщение адресату</h3>
 
 <p>Облако удаляет служебные заголовки, добавляет свои заголовки и передаёт сообщение адресату.</p>
 
@@ -614,15 +619,13 @@ $('#toc').on('click', 'a', function() {
 
 <p>Сторонний сервер получает сообщение от облака Эвотор и определяет отправителя с помощью заголовка Authorization.</p>
 
-<h4 id="Шаг-4-Ответ-стороннего-сервиса">Шаг 4. Ответ стороннего сервиса</h4>
+<h4 id="section-2">Шаг 4. Ответ стороннего сервиса</h4>
 
 <p>Ответ стороннего сервиса передаётся приложению в обратном порядке.</p>
 
-<p>Ответы стороннего сервиса должны содержать объекты:</p>
-<ul>
-  <li><code class="highlighter-rouge">status</code> – содержит HTTP-код состояния.</li>
-  <li><code class="highlighter-rouge">body</code> – содержит тело запроса.</li>
-</ul>
+<p>Ответы стороннего сервиса должны содержать объекты:
+  * <code class="highlighter-rouge">status</code> – содержит HTTP-код состояния.
+  * <code class="highlighter-rouge">body</code> – содержит тело запроса.</p>
 
 
     <div class="tags">

@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -451,6 +451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -492,11 +499,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -561,14 +566,12 @@ $('#toc').on('click', 'a', function() {
   </li>
 </ul>
 
-<h3 id="Авторизация">Авторизация</h3>
-<p>Все запросы к REST API облака Эвотор, должны содержать HTTP-заголовок <code class="highlighter-rouge">x-Authorization</code>, в котором требуется указать <em>ключ авторизации</em>. Ключ авторизации можно получить одним из следующих способов:</p>
-<ul>
-  <li>В GET-параметре <code class="highlighter-rouge">token</code> веб-адреса iframe-приложения:
-    <pre><code class="language-curl">https://partner.org/#/?uid=01-000000000011111&amp;token=string
-</code></pre>
-  </li>
-</ul>
+<h3 id="section">Авторизация</h3>
+<p>Все запросы к REST API облака Эвотор, должны содержать HTTP-заголовок <code class="highlighter-rouge">x-Authorization</code>, в котором требуется указать <em>ключ авторизации</em>. Ключ авторизации можно получить одним из следующих способов:
+* В GET-параметре <code class="highlighter-rouge">token</code> веб-адреса iframe-приложения:
+<code class="highlighter-rouge">curl
+https://partner.org/#/?uid=01-000000000011111&amp;token=string
+</code></p>
 
 <p><img src="images/iframe_token.png" alt="Токен для интеграции с 1с" /></p>
 
@@ -582,12 +585,14 @@ $('#toc').on('click', 'a', function() {
   <li>В POST-запросе от облака Эвотор. Для этого сторонний сервис должен поддерживать адрес <code class="highlighter-rouge">http://&lt;веб-адрес стороннего сервиса&gt;/api/v1/user/token</code>.</li>
 </ul>
 
-<h3 id="Пример-get-запроса-к-облаку-Эвотор">Пример GET-запроса к облаку Эвотор</h3>
-<p>Получить список всех магазинов пользователя:</p>
-<pre><code class="language-curl">-X GET --header 'Accept: application/json' --header 'X-Authorization: &lt;ключ авторизации&gt;' --header 'Content-Type: application/json' 'https://api.evotor.ru/api/v1/inventories/stores/search'
-</code></pre>
-<p>Ответ:</p>
-<pre><code class="language-JSON">[
+<h3 id="get----">Пример GET-запроса к облаку Эвотор</h3>
+<p>Получить список всех магазинов пользователя:
+<code class="highlighter-rouge">curl
+-X GET --header 'Accept: application/json' --header 'X-Authorization: &lt;ключ авторизации&gt;' --header 'Content-Type: application/json' 'https://api.evotor.ru/api/v1/inventories/stores/search'
+</code>
+Ответ:
+<code class="highlighter-rouge">JSON
+[
   {
     "uuid": "string",
     "address": null,
@@ -601,18 +606,19 @@ $('#toc').on('click', 'a', function() {
     "code": null
   }
 ]
-</code></pre>
-<h3 id="Пример-post-запроса">Пример POST-запроса</h3>
-<p>Создать новый товар в определённом магазине:</p>
-<pre><code class="language-curl">curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Authorization: &lt;токен&gt;' -d '[{"uuid":"n1e2w3-t4ov5qr6","code":"","barCodes":[],"alcoCodes":[],"name":"Новый товар","price":0,"quantity":0,"costPrice":0,"measureName":"","tax":"NO_VAT","allowToSell":false,"description":"","articleNumber":"","parentUuid":"","group":false,"type":"NORMAL","alcoholByVolume":0,"alcoholProductKindCode":0,"tareVolume":0}]' 'https://api.evotor.ru/api/v1/inventories/stores/storeUuid-123456/products'
-</code></pre>
+</code>
+### Пример POST-запроса
+Создать новый товар в определённом магазине:
+<code class="highlighter-rouge">curl
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-Authorization: &lt;токен&gt;' -d '[{"uuid":"n1e2w3-t4ov5qr6","code":"","barCodes":[],"alcoCodes":[],"name":"Новый товар","price":0,"quantity":0,"costPrice":0,"measureName":"","tax":"NO_VAT","allowToSell":false,"description":"","articleNumber":"","parentUuid":"","group":false,"type":"NORMAL","alcoholByVolume":0,"alcoholProductKindCode":0,"tareVolume":0}]' 'https://api.evotor.ru/api/v1/inventories/stores/storeUuid-123456/products'
+</code></p>
 
 <pre><code class="language-curl">no cotent
 </code></pre>
 
 <p>При создании товаров в ответ приходит пустое сообщение. Код ответа в случае удачного добавления – 200.</p>
 
-<h3 id="Справочник-api">Справочник API</h3>
+<h3 id="api">Справочник API</h3>
 <p>Ознакомиться и попробовать запросы к REST API облака Эвотор вы можете на сайте https://api.evotor.ru/docs в разделе <strong>REST API облака Эвотор</strong>.</p>
 
 

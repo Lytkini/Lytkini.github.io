@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -451,6 +451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -492,11 +499,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -546,7 +551,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="users-api-смарт-терминала">Users API смарт-терминала</h3>
+  <h3 id="users-api--">Users API смарт-терминала</h3>
 
 <p>С помощью Users API вы можете узнать данные всех пользователей или пользователя, который авторизован на смарт-терминале в данный момент. Например, список прав авторизованного пользователя.</p>
 
@@ -560,10 +565,9 @@ $('#toc').on('click', 'a', function() {
   </li>
   <li>
     <p>Таблицу пользователей <code class="highlighter-rouge">UsersTable</code>:</p>
-  </li>
-</ul>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">object</span> <span class="n">UsersTable</span> <span class="o">{</span>
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code>
+<span class="n">object</span> <span class="n">UsersTable</span> <span class="o">{</span>
 <span class="n">val</span> <span class="n">URI</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">UsersContentProviderContract</span><span class="o">.</span><span class="na">BASE_URI</span><span class="o">,</span> <span class="s">"users"</span><span class="o">)</span>
 <span class="n">val</span> <span class="n">URI_AUTHENTICATED</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">URI</span><span class="o">,</span> <span class="s">"authenticated"</span><span class="o">)</span>
 
@@ -574,40 +578,47 @@ $('#toc').on('click', 'a', function() {
 <span class="n">val</span> <span class="n">ROW_USER_PIN</span> <span class="o">=</span> <span class="s">"USER_PIN"</span>
 <span class="n">val</span> <span class="n">ROW_ROLE_UUID</span> <span class="o">=</span> <span class="s">"ROLE_UUID"</span>
 <span class="n">val</span> <span class="n">ROW_ROLE_TITLE</span> <span class="o">=</span> <span class="s">"ROLE_TITLE"</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
 
-<ul>
-  <li>Таблицу ролей <code class="highlighter-rouge">RolesTable</code>:</li>
-</ul>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Таблицу ролей <code class="highlighter-rouge">RolesTable</code>:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">object</span> <span class="n">RolesTable</span> <span class="o">{</span>
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">object</span> <span class="n">RolesTable</span> <span class="o">{</span>
 <span class="n">URI</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">UsersContentProviderContract</span><span class="o">.</span><span class="na">BASE_URI</span><span class="o">,</span> <span class="s">"roles"</span><span class="o">)</span>
 
 <span class="n">val</span> <span class="n">ROW_UUID</span> <span class="o">=</span> <span class="s">"UUID"</span>
 <span class="n">val</span> <span class="n">ROW_TITLE</span> <span class="o">=</span> <span class="s">"TITLE"</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Таблицу прав <code class="highlighter-rouge">GrantsTable</code>:</p>
 
-<ul>
-  <li>Таблицу прав <code class="highlighter-rouge">GrantsTable</code>:</li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">object</span> <span class="n">GrantsTable</span> <span class="o">{</span>
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">object</span> <span class="n">GrantsTable</span> <span class="o">{</span>
 <span class="n">val</span> <span class="n">URI</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">UsersContentProviderContract</span><span class="o">.</span><span class="na">BASE_URI</span><span class="o">,</span> <span class="s">"grants"</span><span class="o">)</span>
 <span class="n">val</span> <span class="n">URI_GRANTS_OF_AUTHENTICATED_USER</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">URI</span><span class="o">,</span> <span class="s">"authenticated"</span><span class="o">)</span>
 
 <span class="n">val</span> <span class="n">ROW_ROLE_UUID</span> <span class="o">=</span> <span class="s">"ROLE_UUID"</span>
 <span class="n">val</span> <span class="n">ROW_TITLE</span> <span class="o">=</span> <span class="s">"TITLE"</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+    </div>
+  </li>
+</ul>
 
 <p>Схема отношения данных в таблицах.</p>
 
 <p><img src="images/UsersAPI.png" alt="" title="Диаграмма отношений данных" /></p>
 
-<h3 id="Примеры-запросов-к-users-api">Примеры запросов к Users API</h3>
+<h3 id="users-api">Примеры запросов к Users API</h3>
 
 <p>Работа с данными пользователей:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">fun</span> <span class="nf">createUser</span><span class="o">(</span><span class="nl">cursor:</span> <span class="n">Cursor</span><span class="o">):</span> <span class="n">User</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">fun</span> <span class="nf">createUser</span><span class="o">(</span><span class="nl">cursor:</span> <span class="n">Cursor</span><span class="o">):</span> <span class="n">User</span> <span class="o">{</span>
             <span class="k">return</span> <span class="nf">User</span><span class="o">(</span>
                     <span class="n">uuid</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">UsersTable</span><span class="o">.</span><span class="na">ROW_USER_UUID</span><span class="o">)),</span>
                     <span class="n">secondName</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">UsersTable</span><span class="o">.</span><span class="na">ROW_USER_SECOND_NAME</span><span class="o">)),</span>
@@ -655,11 +666,12 @@ $('#toc').on('click', 'a', function() {
             <span class="k">return</span> <span class="kc">null</span>
         <span class="o">}</span>
 
-    </code></pre></figure>
+</code></pre>
+</div>
 
 <p>Работа с правами:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">fun</span> <span class="nf">createGrant</span><span class="o">(</span><span class="nl">cursor:</span> <span class="n">Cursor</span><span class="o">):</span> <span class="n">Grant</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code>    <span class="n">fun</span> <span class="nf">createGrant</span><span class="o">(</span><span class="nl">cursor:</span> <span class="n">Cursor</span><span class="o">):</span> <span class="n">Grant</span> <span class="o">{</span>
          <span class="k">return</span> <span class="nf">Grant</span><span class="o">(</span>
                 <span class="n">title</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">GrantsTable</span><span class="o">.</span><span class="na">ROW_TITLE</span><span class="o">)),</span>
                 <span class="n">roleUuid</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">GrantsTable</span><span class="o">.</span><span class="na">ROW_ROLE_UUID</span><span class="o">))</span>
@@ -702,8 +714,8 @@ $('#toc').on('click', 'a', function() {
                         <span class="o">}</span>
                     <span class="o">}</span>
     <span class="o">}</span>
-    </code></pre></figure>
-
+</code></pre>
+</div>
 
 
     <div class="tags">

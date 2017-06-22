@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -451,6 +451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -492,11 +499,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -552,7 +557,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Запись событий приложения зависит от типа приложения.</p>
 
-<h3 id="js-приложение">JS-приложение</h3>
+<h3 id="js-">JS-приложение</h3>
 
 <p>Используйте функцию объекта <code class="highlighter-rouge">logger</code> для записи событий JS-приложений:</p>
 
@@ -562,7 +567,7 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> Перед использованием объекта <code class="highlighter-rouge">logger</code> в демонах или плагинах, объект требуется получить с помощью функции <code class="highlighter-rouge">require</code>: <code class="highlighter-rouge">var logger = require('logger')</code>.</div>
 
-<h3 id="java-приложение">Java-приложение</h3>
+<h3 id="java-">Java-приложение</h3>
 
 <p>Для записи событий Java-приложений используйте методы класса <code class="highlighter-rouge">Log</code>:</p>
 

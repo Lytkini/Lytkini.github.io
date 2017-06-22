@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -451,6 +451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -492,11 +499,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -548,69 +553,72 @@ $('#toc').on('click', 'a', function() {
 
 <p>Манифест JS-приложения генерируется автоматически на основе файла client.yaml, размещённого по адресу <code class="highlighter-rouge">app\assets</code>.</p>
 
-<h3 id="Пример-файла-clientyaml">Пример файла client.yaml</h3>
+<h3 id="clientyaml">Пример файла client.yaml</h3>
 
 <p>Ниже приведён пример заполненного файла <code class="highlighter-rouge">client.yaml</code> для приложения, которое имеет интерфейс, использует плагины и демоны.</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="na">version</span><span class="pi">:</span> <span class="s">1</span>
-<span class="na">versionName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.0.0"</span>
+<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">version</span><span class="pi">:</span> <span class="s">1</span>
+<span class="s">versionName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.0.0"</span>
 
-<span class="na">packageName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">packageName"</span>
-<span class="na">appName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ApplicationName"</span>
-<span class="na">appUUID</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ApllicationUUID"</span>
+<span class="s">packageName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">packageName"</span>
+<span class="s">appName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ApplicationName"</span>
+<span class="s">appUUID</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ApllicationUUID"</span>
 
-<span class="na">capabilities</span><span class="pi">:</span>
+<span class="s">capabilities</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s">internet</span>
   <span class="pi">-</span> <span class="s">barcode-scanner</span>
   <span class="pi">-</span> <span class="s">storage</span>
-<span class="na">daemons</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">daemon1</span>
-    <span class="na">events</span><span class="pi">:</span>
-    <span class="na">behavior</span><span class="pi">:</span> <span class="s">daemon1.js</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">daemon2</span>
-    <span class="na">events</span><span class="pi">:</span>
-    <span class="na">behavior</span><span class="pi">:</span> <span class="s">daemon2.js</span>
-<span class="na">plugins</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">plugin1</span>
-    <span class="na">moments</span><span class="pi">:</span>
-    <span class="na">behavior</span><span class="pi">:</span> <span class="s">plugin1.js</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">plugin2</span>
-    <span class="na">moments</span><span class="pi">:</span>
-    <span class="na">behavior</span><span class="pi">:</span> <span class="s">plugin2.js</span>
-<span class="na">views</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">hello_sales_view</span>
-    <span class="na">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Hello</span><span class="nv"> </span><span class="s">header"</span>
-    <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Hello"</span>
-    <span class="na">color</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#FF1493"</span>
-    <span class="na">icon_96</span><span class="pi">:</span> <span class="s">icons/icon-96.png</span>
-    <span class="na">icon_192</span><span class="pi">:</span> <span class="s">icons/icon-192.png</span>
-    <span class="na">icon_256</span><span class="pi">:</span> <span class="s">icons/icon-256.png</span>
-    <span class="na">source</span><span class="pi">:</span> <span class="s">views/view.html</span>
-    <span class="na">point</span><span class="pi">:</span> <span class="s">SALES_SCREEN</span>
-    <span class="na">grants</span><span class="pi">:</span>
+<span class="s">daemons</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">daemon1</span>
+    <span class="s">events</span><span class="pi">:</span>
+    <span class="s">behavior</span><span class="pi">:</span> <span class="s">daemon1.js</span>
+  <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">daemon2</span>
+    <span class="s">events</span><span class="pi">:</span>
+    <span class="s">behavior</span><span class="pi">:</span> <span class="s">daemon2.js</span>
+<span class="s">plugins</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">plugin1</span>
+    <span class="s">moments</span><span class="pi">:</span>
+    <span class="s">behavior</span><span class="pi">:</span> <span class="s">plugin1.js</span>
+  <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">plugin2</span>
+    <span class="s">moments</span><span class="pi">:</span>
+    <span class="s">behavior</span><span class="pi">:</span> <span class="s">plugin2.js</span>
+<span class="s">views</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">hello_sales_view</span>
+    <span class="s">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Hello</span><span class="nv"> </span><span class="s">header"</span>
+    <span class="s">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Hello"</span>
+    <span class="s">color</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#FF1493"</span>
+    <span class="s">icon_96</span><span class="pi">:</span> <span class="s">icons/icon-96.png</span>
+    <span class="s">icon_192</span><span class="pi">:</span> <span class="s">icons/icon-192.png</span>
+    <span class="s">icon_256</span><span class="pi">:</span> <span class="s">icons/icon-256.png</span>
+    <span class="s">source</span><span class="pi">:</span> <span class="s">views/view.html</span>
+    <span class="s">point</span><span class="pi">:</span> <span class="s">SALES_SCREEN</span>
+    <span class="s">grants</span><span class="pi">:</span>
             <span class="pi">-</span> <span class="s">CASH_OPERATIONS_SELL</span>
-    <span class="na">scripts</span><span class="pi">:</span>
+    <span class="s">scripts</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">script1.js</span>
       <span class="pi">-</span> <span class="s">script2.js</span>
-    <span class="na">styles</span><span class="pi">:</span>
+    <span class="s">styles</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s2">"</span><span class="s">*.css"</span>
-  <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">world_sales_view</span> <span class="c1"># Запрещено использовать верхний регистр и ,-*&amp;^%$# и т.д</span>
-    <span class="na">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">World</span><span class="nv"> </span><span class="s">header"</span>
-    <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">world"</span>
-    <span class="na">color</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#FF1493"</span>
-    <span class="na">icon_96</span><span class="pi">:</span> <span class="s">icons/icon-96.png</span>
-    <span class="na">icon_192</span><span class="pi">:</span> <span class="s">icons/icon-192.png</span>
-    <span class="na">icon_256</span><span class="pi">:</span> <span class="s">icons/icon-256.png</span>
-    <span class="na">source</span><span class="pi">:</span> <span class="s">views/view1.html</span>
-    <span class="na">point</span><span class="pi">:</span> <span class="s">SALES_SCREEN</span> <span class="c1"># Variants are MAIN_SCREEN and SALES_SCREEN</span>
-    <span class="na">grants</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">world_sales_view</span> <span class="c1"># Запрещено использовать верхний регистр и ,-*&amp;^%$# и т.д</span>
+    <span class="s">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">World</span><span class="nv"> </span><span class="s">header"</span>
+    <span class="s">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">world"</span>
+    <span class="s">color</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#FF1493"</span>
+    <span class="s">icon_96</span><span class="pi">:</span> <span class="s">icons/icon-96.png</span>
+    <span class="s">icon_192</span><span class="pi">:</span> <span class="s">icons/icon-192.png</span>
+    <span class="s">icon_256</span><span class="pi">:</span> <span class="s">icons/icon-256.png</span>
+    <span class="s">source</span><span class="pi">:</span> <span class="s">views/view1.html</span>
+    <span class="s">point</span><span class="pi">:</span> <span class="s">SALES_SCREEN</span> <span class="c1"># Variants are MAIN_SCREEN and SALES_SCREEN</span>
+    <span class="s">grants</span><span class="pi">:</span>
             <span class="pi">-</span> <span class="s">CASH_OPERATIONS_SELL</span>
-    <span class="na">scripts</span><span class="pi">:</span>
+    <span class="s">scripts</span><span class="pi">:</span>
       <span class="pi">-</span> <span class="s">no-script</span>
-    <span class="na">styles</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s2">"</span><span class="s">*.css"</span></code></pre></figure>
+    <span class="s">styles</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">*.css"</span>
+</code></pre>
+</div>
 
 <p>Где:</p>
+
 <ul>
   <li><code class="highlighter-rouge">version</code> – код версии приложения. При обновлении приложения возрастает на единицу. Увеличение версии сообщает смарт-терминалам о необходимости обновить приложение.</li>
   <li><code class="highlighter-rouge">versionName</code> – версия приложения, которая отображается в магазине приложений или в интерфейсе, может содержать любое значение. Версию требуется указывать в кавычках.</li>
@@ -619,23 +627,25 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">appUUID</code> – идентификатор приложения в формате uuid4. Отображается  в адресной строке приложения на <a href="https://dev.evotor.ru">dev.evotor.ru</a>, в личном кабинете разработчика.</li>
 </ul>
 
-<h4 id="Список-capabilities">Список capabilities</h4>
+<h4 id="capabilities">Список capabilities</h4>
 <p>Список доступных приложению функций:</p>
+
 <ul>
   <li><code class="highlighter-rouge">internet</code> – указывайте, если хотите дать приложению возможность <a href="./doc_cloud_proxy.html">выходить в интернет</a>, например, чтобы обратиться к стороннему сервису.</li>
   <li><code class="highlighter-rouge">barcode-scanner</code> – указывайте, если хотите дать приложению возможность получать штрихкоды от <a href="./doc_barcode_scanner.html">сканера штрихкодов</a>.</li>
   <li><code class="highlighter-rouge">storage</code> – указывайте, если хотите дать приложению возможность <a href="./doc_storage_api.html">хранить данные на смарт-терминале</a>, между запусками приложения.</li>
 </ul>
 
-<h4 id="Список-daemons">Список daemons</h4>
+<h4 id="daemons">Список daemons</h4>
 
-<p>Список демонов (js-скриптов), которые использует приложение. Храните демоны в папке <code class="highlighter-rouge">app\assets\daemons</code>.</p>
+<p>Список демонов (js-скриптов), которые использует приложение. Демонам доступна функциональность логирования (<code class="highlighter-rouge">logger</code>) и хранения данных (<code class="highlighter-rouge">storage</code>) Храните демоны в папке <code class="highlighter-rouge">app\assets\daemons</code>.</p>
 
 <p>С помощью демонов приложение можно подписать на широковещательные сообщения, которые рассылает смарт-терминал. Широковещательные сообщения рассылаются после применения изменений, смарт-терминал не ждёт ответа от приложений.
 Параметры элемента списка:</p>
+
 <ul>
   <li><code class="highlighter-rouge">name</code> – в параметре требуется указать имя демона. Имя может содержать только латинские буквы, цифры и символ “_”</li>
-  <li><code class="highlighter-rouge">events</code> – параметр, который содержит список событий, запускающих демон. При получении события, демон должен вызвать соответствующий метод:</li>
+  <li><code class="highlighter-rouge">events</code> – параметр, который содержит список событий, запускающих демон. Каждое событие вызывает соответствующий метод, в аргументе которого передаются данные о событии:</li>
 </ul>
 
 <style type="text/css">
@@ -653,67 +663,67 @@ $('#toc').on('click', 'a', function() {
   </tr>
   <tr>
     <td class="tg-031e"><code>evotor.intent.action.receipt.sell.OPENED</code></td>
-    <td class="tg-031e"><code>onSellReceiptOpened</code></td>
+    <td class="tg-031e"><code>onSellReceiptOpened(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-031e"><code>evotor.intent.action.receipt.payback.OPENED</code></td>
-    <td class="tg-031e"><code>onPaybackReceiptOpened</code></td>
+    <td class="tg-031e"><code>onPaybackReceiptOpened(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-031e"><code>evotor.intent.action.receipt.sell.CLEARED</code></td>
-    <td class="tg-031e"><code>onSellReceiptCleared</code></td>
+    <td class="tg-031e"><code>onSellReceiptCleared(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-031e"><code>evotor.intent.action.receipt.payback.CLEARED</code></td>
-    <td class="tg-031e"><code>onPaybackReceiptCleared</code></td>
+    <td class="tg-031e"><code>onPaybackReceiptCleared(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.receipt.sell.RECEIPT_CLOSED</code></td>
-    <td class="tg-yw4l"><code>onSellReceiptClosed</code></td>
+    <td class="tg-yw4l"><code>onSellReceiptClosed(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-031e"><code>evotor.intent.action.receipt.payback.RECEIPT_CLOSED</code></td>
-    <td class="tg-031e"><code>onPaybackReceiptClosed</code></td>
+    <td class="tg-031e"><code>onPaybackReceiptClosed(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-031e"><code>evotor.intent.action.cashDrawer.OPEN</code></td>
-    <td class="tg-031e"><code>onCashDrawerOpened</code></td>
+    <td class="tg-031e"><code>onCashDrawerOpened(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.cashOperation.IN</code></td>
-    <td class="tg-yw4l"><code>onCashIn</code></td>
+    <td class="tg-yw4l"><code>onCashIn(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.cashOperation.CASH_OUT</code></td>
-    <td class="tg-yw4l"><code>onCashOut</code></td>
+    <td class="tg-yw4l"><code>onCashOut(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.inventory.CARD_OPEN</code></td>
-    <td class="tg-yw4l"><code>onInventoryCardOpened</code></td>
+    <td class="tg-yw4l"><code>onInventoryCardOpened(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.receipt.sell.POSITION_ADDED</code></td>
-    <td class="tg-yw4l"><code>onSellReceiptPositionAdded</code></td>
+    <td class="tg-yw4l"><code>onSellReceiptPositionAdded(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.receipt.payback.POSITION_ADDED</code></td>
-    <td class="tg-yw4l"><code>onPaybackReceiptPositionAdded</code></td>
+    <td class="tg-yw4l"><code>onPaybackReceiptPositionAdded(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.receipt.sell.POSITION_EDITED</code></td>
-    <td class="tg-yw4l"><code>onSellReceiptPositionEdited</code></td>
+    <td class="tg-yw4l"><code>onSellReceiptPositionEdited(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.receipt.payback.POSITION_EDITED</code></td>
-    <td class="tg-yw4l"><code>onPaybackReceiptPositionEdited</code></td>
+    <td class="tg-yw4l"><code>onPaybackReceiptPositionEdited(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.receipt.sell.POSITION_REMOVED</code></td>
-    <td class="tg-yw4l"><code>onSellReceiptPositionRemoved</code></td>
+    <td class="tg-yw4l"><code>onSellReceiptPositionRemoved(actionData)</code></td>
   </tr>
   <tr>
     <td class="tg-yw4l"><code>evotor.intent.action.receipt.payback.POSITION_REMOVED</code></td>
-    <td class="tg-yw4l"><code>onPaybackReceiptPositionRemoved</code></td>
+    <td class="tg-yw4l"><code>onPaybackReceiptPositionRemoved(actionData)</code></td>
   </tr>
 </table></div>
 
@@ -721,12 +731,13 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">behavior</code> – в параметре требуется указать название запускаемого демона в формате <code class="highlighter-rouge">&lt;Название скрипта&gt;.js</code>.</li>
 </ul>
 
-<h4 id="Список-plugins">Список plugins</h4>
+<h4 id="plugins">Список plugins</h4>
 
 <p>Список плагинов (js-скриптов), которые использует приложение. Храните плагины в папке <code class="highlighter-rouge">app\assets\plugins</code>.</p>
 
 <p>С помощью плагинов приложение можно подписать на события, которые рассылает смарт-терминал. Смарт-терминал создаёт события перед применением изменений, смарт-терминал ждёт ответ от приложений, например, <a href="./doc_receipt_interactions.html">добавление позиции в чек</a>
 Параметры элемента списка:</p>
+
 <ul>
   <li><code class="highlighter-rouge">name</code> – в параметре требуется указать имя плагина. Имя может содержать только латинские буквы, цифры и символ “_”</li>
   <li>
@@ -735,11 +746,12 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">behavior</code> – в параметре требуется указать название запускаемого плагин в формате <code class="highlighter-rouge">&lt;Название скрипта&gt;.js</code>.</li>
 </ul>
 
-<h4 id="Список-views">Список views</h4>
+<h4 id="views">Список views</h4>
 
 <p>Список файлов экранов интерфейса приложения в формате HTML. Храните файлы экранов в папке <code class="highlighter-rouge">app\assets\views</code></p>
 
 <p>Параметры элемента списка:</p>
+
 <ul>
   <li><code class="highlighter-rouge">name</code> – имя экрана. Имя может содержать только латинские буквы, цифры и символ “_”.</li>
   <li><code class="highlighter-rouge">header</code> – Текст заголовка. Указывайте в кавычках. Поддерживает только латинские буквы.</li>

@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -451,6 +451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -492,11 +499,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -544,12 +549,10 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Методы API смарт-терминала дают приложениям доступ к:</p>
-<ul>
-  <li><a href="doc_barcode_scanner.html">сканеру штрихкодов</a>;</li>
-  <li><a href="doc_bill_printer.html">встроенному принтеру чеков</a>;</li>
-  <li><a href="doc_scales.html">весам</a>.</li>
-</ul>
+  <p>Методы API смарт-терминала дают приложениям доступ к:
+* <a href="doc_barcode_scanner.html">сканеру штрихкодов</a>;
+* <a href="doc_bill_printer.html">встроенному принтеру чеков</a>;
+* <a href="doc_scales.html">весам</a>.</p>
 
 <p>Методы содержатся в библиотеке <code class="highlighter-rouge">integration-library</code>.</p>
 
@@ -566,11 +569,9 @@ compile 'com.github.evotor:integration-library:v0.3.1'
 }
 </code></pre>
 
-<p>где:</p>
-<ul>
-  <li><code class="highlighter-rouge">repositories</code> – содержит ссылки на репозитории необходимые при сборке.</li>
-  <li><code class="highlighter-rouge">dependencies</code> – подключает библиотеку, которая содержит все данные, необходимые для работы с оборудованием, подключённым к смарт-терминалу. <code class="highlighter-rouge">v0.3.1</code> – точная версия проекта.</li>
-</ul>
+<p>где:
+* <code class="highlighter-rouge">repositories</code> – содержит ссылки на репозитории необходимые при сборке.
+* <code class="highlighter-rouge">dependencies</code> – подключает библиотеку, которая содержит все данные, необходимые для работы с оборудованием, подключённым к смарт-терминалу. <code class="highlighter-rouge">v0.3.1</code> – точная версия проекта.</p>
 
 
     <div class="tags">

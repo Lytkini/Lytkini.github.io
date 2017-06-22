@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -451,6 +451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -492,11 +499,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -568,29 +573,23 @@ $('#toc').on('click', 'a', function() {
   <li>Создайте команду открытия чека и вызовите метод <code class="highlighter-rouge">.process</code></li>
 </ol>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="k">new</span> <span class="n">OpenSellReceiptCommand</span><span class="o">(</span><span class="n">positionAddList</span><span class="o">,</span> <span class="k">new</span> <span class="n">SetExtra</span><span class="o">(</span><span class="n">extra</span><span class="o">))</span>
-            <span class="o">.</span><span class="na">process</span><span class="o">(</span>
-                    <span class="n">OpenReceiptActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span>
-                    <span class="k">new</span> <span class="nf">ICanStartActivity</span><span class="o">()</span> <span class="o">{</span>
-                        <span class="nd">@Override</span>
-                        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">startActivity</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
-                            <span class="n">OpenReceiptActivity</span><span class="o">.</span><span class="na">this</span><span class="o">.</span><span class="na">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-                        <span class="o">}</span>
-                    <span class="o">},</span> <span class="k">new</span> <span class="n">IntegrationManagerCallback</span><span class="o">()</span> <span class="o">{</span>
-                        <span class="nd">@Override</span>
-                        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">IntegrationManagerFuture</span> <span class="n">integrationManagerFuture</span><span class="o">)</span> <span class="o">{</span>
-                            <span class="k">try</span> <span class="o">{</span>
-                                <span class="k">if</span> <span class="o">(</span><span class="n">integrationManagerFuture</span><span class="o">.</span><span class="na">getResult</span><span class="o">().</span><span class="na">getType</span><span class="o">()</span> <span class="o">==</span> <span class="n">IntegrationManagerFuture</span><span class="o">.</span><span class="na">Result</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">OK</span><span class="o">)</span> <span class="o">{</span>
-                                    <span class="n">startActivity</span><span class="o">(</span><span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="s">"evotor.intent.action.payment.SELL"</span><span class="o">));</span>
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="k">new</span> <span class="n">OpenSellReceiptCommand</span><span class="o">(</span><span class="n">positionAddList</span><span class="o">,</span> <span class="k">new</span> <span class="n">SetExtra</span><span class="o">(</span><span class="n">object</span><span class="o">)).</span><span class="na">process</span><span class="o">(</span>
+                        <span class="n">activity</span><span class="o">,</span>
+                        <span class="k">new</span> <span class="nf">IntegrationManagerCallback</span><span class="o">()</span> <span class="o">{</span>
+                            <span class="nd">@Override</span>
+                            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">IntegrationManagerFuture</span> <span class="n">integrationManagerFuture</span><span class="o">)</span> <span class="o">{</span>
+                                <span class="k">try</span> <span class="o">{</span>
+                                    <span class="n">IntegrationManagerFuture</span><span class="o">.</span><span class="na">Result</span> <span class="n">result</span> <span class="o">=</span> <span class="n">integrationManagerFuture</span><span class="o">.</span><span class="na">getResult</span><span class="o">();</span>
+                                    <span class="k">if</span> <span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getType</span><span class="o">()</span> <span class="o">==</span> <span class="n">IntegrationManagerFuture</span><span class="o">.</span><span class="na">Result</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">OK</span><span class="o">)</span> <span class="o">{</span>
+                                        <span class="n">startActivity</span><span class="o">(</span><span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="s">"evotor.intent.action.payment.SELL"</span><span class="o">));</span>
+                                    <span class="o">}</span>
+                                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+                                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IntegrationException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
                                 <span class="o">}</span>
-                            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-                            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IntegrationException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
                             <span class="o">}</span>
-                        <span class="o">}</span>
-                    <span class="o">});</span>
-<span class="o">}</span></code></pre></figure>
+                        <span class="o">});</span></code></pre></figure>
 
 <p>Где:</p>
 

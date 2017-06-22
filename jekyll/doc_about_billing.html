@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -451,6 +451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -492,11 +499,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -548,7 +553,7 @@ $('#toc').on('click', 'a', function() {
 
   <p>Эвотор определяет кто выполняет биллинг пользователя в зависимости от того, работает пользователь с существующей учётной записью стороннего сервиса или создаёт новую из Личного кабинета.</p>
 
-<h3 id="Кто-выполняет-биллинг">Кто выполняет биллинг</h3>
+<h3 id="section">Кто выполняет биллинг</h3>
 
 <p>Эвотор выполняет биллинг, если пользователь создал новую учётную запись в стороннем сервисе после установки приложения, из Личного кабинета Эвотор (сторонний сервис должен поддерживать URL <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1verify%2Fpost">/api/v1/user/create</a>). В этом случае, при создании новой учётной записи, сторонний сервис возвращает параметр <code class="highlighter-rouge">"hasBilling": "False"</code>. Впоследствии, при авторизации с помощью такой учётной записи, сторонний сервис всегда возвращает <code class="highlighter-rouge">"hasBilling": "False"</code>.</p>
 
@@ -556,7 +561,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Все изменения, связанные с подпиской, Эвотор отправляет по адресу <a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1user~1event%2Fpost">partner.ru/api/v1/user/event</a>.</p>
 
-<h3 id="Данные-о-биллинге-пользователей">Данные о биллинге пользователей</h3>
+<h3 id="section-1">Данные о биллинге пользователей</h3>
 
 <p>Эвотор отправляет данные о биллинге пользователей на два URL:</p>
 

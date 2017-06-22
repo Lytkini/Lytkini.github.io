@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -451,6 +451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -492,11 +499,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -546,30 +551,26 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h2 id="Добавление-iframe">Добавление IFrame</h2>
+  <h2 id="iframe">Добавление IFrame</h2>
 
 <p>С помощью IFrame ваше приложение может отображать информацию, переданную сторонним сервисом.
 Вы можете добавить IFrame на закладку <strong>Настройки</strong> вашего приложения.</p>
 
-<p>Чтобы добавить IFrame на закладку <strong>Настройки</strong> приложения, выполните следующие действия:</p>
-<ol>
-  <li>Войдите в личный кабинет разработчика на сайте https://developer.evotor.ru/.</li>
-  <li>Выберите приложение, для которого требуется добавить фрейм.</li>
-  <li>На закладке <strong>Интеграция</strong> установите флажок <strong>создать закладку “Настройки” на странице приложения</strong>.</li>
-  <li>В Форме кастомизации нажмите на кнопку <strong>iframe</strong>.</li>
-  <li>
-    <p>В поле <strong>Значение поля</strong> укажите веб-адрес страницы-источника фрейма в формате:
-<code class="highlighter-rouge">https://&lt;веб-адрес страницы-источника&gt;.com?token=${token}&amp;user_id=${uid}</code></p>
+<p>Чтобы добавить IFrame на закладку <strong>Настройки</strong> приложения, выполните следующие действия:
+1. Войдите в личный кабинет разработчика на сайте https://developer.evotor.ru/.
+2. Выберите приложение, для которого требуется добавить фрейм.
+3. На закладке <strong>Интеграция</strong> установите флажок <strong>создать закладку “Настройки” на странице приложения</strong>.
+4. В Форме кастомизации нажмите на кнопку <strong>iframe</strong>.
+5. В поле <strong>Значение поля</strong> укажите веб-адрес страницы-источника фрейма в формате:
+   <code class="highlighter-rouge">https://&lt;веб-адрес страницы-источника&gt;.com?token=${token}&amp;user_id=${uid}</code></p>
 
-    <p>Где:</p>
+<p>Где:</p>
 
-    <p><code class="highlighter-rouge">${token}</code> – облако Эвотор передаёт токен приложения.</p>
+<p><code class="highlighter-rouge">${token}</code> – облако Эвотор передаёт токен приложения.</p>
 
-    <p><code class="highlighter-rouge">${uid}</code> – облако Эвотор передаёт идентификатор пользователя в облаке.</p>
-  </li>
-  <li>Нажмите на кнопку <strong>Сохранить</strong>.</li>
-  <li>В разделе <strong>Версии</strong> <a href="ссылка на страницу с информацией о том, как выложить приложение на тест">нажмите на кнопку <strong>Выложить на тест</strong></a>.</li>
-</ol>
+<p><code class="highlighter-rouge">${uid}</code> – облако Эвотор передаёт идентификатор пользователя в облаке.
+6. Нажмите на кнопку <strong>Сохранить</strong>.
+7. В разделе <strong>Версии</strong> <a href="ссылка на страницу с информацией о том, как выложить приложение на тест">нажмите на кнопку <strong>Выложить на тест</strong></a>.</p>
 
 <p>Фрейм будет добавлен на закладку <strong>Настройки</strong> приложения.</p>
 

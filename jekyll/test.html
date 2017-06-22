@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
+    </script>
+<!-- End Google Tag Manager -->
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит описание моделей биллинга, которые вы можете реализовать с помощью Эвотора.">
+<meta name="description" content="">
 <meta name="keywords" content=" sample">
-<title>Модели биллинга | Документация Эвотор</title>
+<title>Test | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -42,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -78,6 +82,10 @@
 
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4CBFKS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container topnavlinks">
@@ -96,7 +104,15 @@
                 
                 
                 
+                <li><a href="whats_new.html">Что нового</a></li>
+                
+                
+                
                 <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
+                
+                
+                
+                <li><a href="doc_developer_mode.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -117,7 +133,7 @@
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Модели биллинга">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Test">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -189,26 +205,19 @@
         
     
     <li>
-        <a href="#">Интеграция с платформой</a>
+        <a href="#">Облако Эвотор</a>
         <ul>
             
             
             
-            <li><a href="doc_release_notes.html">История изменений API и SDK</a></li>
+            <li><a href="doc_authorization.html">Авторизация</a></li>
             
             
             
             
             
             
-            <li><a href="doc_evotor_rest_api_calls.html">Запросы к облаку Эвотор</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_outgoing_calls_protocol.html">Запросы к стороннему сервису</a></li>
+            <li><a href="doc_example_calls.html">Примеры запросов</a></li>
             
             
             
@@ -230,6 +239,171 @@
             
             
             <li><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">SDK смарт-терминала</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_developer_mode.html">Включение режима разработчика</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_app_grants.html">Права приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_cloud_proxy.html">Проксирование HTTP-запросов</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_users_api.html">Users API</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_smart_terminal_receipt_api.html">Receipt API</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_storage_api.html">Storage API</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_discounts.html">Скидки</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Драйвера для оборудования</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_drivers_library_connection.html">Подготовка к разработке</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_cashdrawer.html">SDK для денежных ящиков</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_pinpads.html">SDK для банковских терминалов</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_drivers_scales.html">SDK для весов</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Работа с оборудованием</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_integration_library_connection.html">Подключение оборудования</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_barcode_scanner.html">Сканер штрихкодов</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_bill_printer.html">Принтер чеков</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_scales.html">Весы</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -270,31 +444,16 @@
             
             
             
-        </ul>
-        
-        
-    
-    <li>
-        <a href="#">SDK смарт-терминала</a>
-        <ul>
             
             
-            
-            <li><a href="doc_smart_terminal_app_tile.html">Главный экран смарт-терминала</a></li>
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
             
             
             
-            <li><a href="doc_smart_terminal_app_grants.html">Права доступа</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_smart_terminal_logging.html">Логирование данных</a></li>
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
             
             
             
@@ -304,48 +463,19 @@
         
     
     <li>
-        <a href="#">Публикация приложения</a>
+        <a href="#">Биллинг</a>
         <ul>
             
             
             
-            <li><a href="doc_acceptance_testing.html">Приёмочное тестирование</a></li>
-            
-            
-            
-            
-        </ul>
-        
-        
-    
-    <li>
-        <a href="#">Продажа</a>
-        <ul>
-            
-            
-            
-            <li><a href="doc_legal_scheme.html">Юридическая схема</a></li>
+            <li><a href="doc_about_billing.html">О биллинге</a></li>
             
             
             
             
             
             
-            <li><a href="doc_applications_tariffs.html">Тарифы приложений</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_conditions.html">Условия</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_marketing.html">Продвижение</a></li>
+            <li><a href="doc_tariffs.html">Тарифы</a></li>
             
             
             
@@ -369,11 +499,9 @@
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -384,15 +512,13 @@
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Модели биллинга</h1>
+   <h1 class="post-title-main">Test</h1>
 </div>
 
 
 
 <div class="post-content">
 
-   
-    <div class="summary">Раздел содержит описание моделей биллинга, которые вы можете реализовать с помощью Эвотора.</div>
    
 
     
@@ -423,15 +549,42 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>На <a href="https://dev.evotor.ru/">портале разработчиков</a> вы можете указать согласно какой модели биллинга будет распространяться ваше приложение.
-Доступны следующие модели:</p>
+  <p>Code highlighting</p>
+
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;intent-filter&gt;</span>
+    <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"some.event"</span> <span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"some.event"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/intent-filter&gt;</span>
+</code></pre>
+</div>
+
+<p>Code highlighting:</p>
+
 <ul>
-  <li>Бесплатное приложение.
-  Эта модель больше всего подходит альтруистам и людям, которые просто хотят сделать мир лучше. Естественно, при такой модели никаких обязательств перед пользователями создатели приложения не несут.</li>
-  <li>Разовая оплата.
-  Эта модель лучше всего подходит для распространения драйверов оборудования, которое пользователь подключает к смарт-терминалу.</li>
-  <li>Подписка.
-  Если вы предлагаете пользователям Эвотора какой-либо сервис, эта модель для вас. Стоимость подписки может изменяться в зависимости от времени, количества устройств или сотрудников, которые</li>
+  <li>
+    <p>Первый пункт списка</p>
+
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code>
+<span class="n">object</span> <span class="n">UsersTable</span> <span class="o">{</span>
+<span class="n">val</span> <span class="n">URI</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">UsersContentProviderContract</span><span class="o">.</span><span class="na">BASE_URI</span><span class="o">,</span> <span class="s">"users"</span><span class="o">)</span>
+<span class="n">val</span> <span class="n">URI_AUTHENTICATED</span> <span class="o">=</span> <span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">URI</span><span class="o">,</span> <span class="s">"authenticated"</span><span class="o">)</span>
+
+<span class="n">val</span> <span class="n">ROW_USER_UUID</span> <span class="o">=</span> <span class="s">"USER_UUID"</span>
+<span class="n">val</span> <span class="n">ROW_USER_SECOND_NAME</span> <span class="o">=</span> <span class="s">"USER_SECOND_NAME"</span>
+<span class="n">val</span> <span class="n">ROW_USER_FIRST_NAME</span> <span class="o">=</span> <span class="s">"USER_FIRST_NAME"</span>
+<span class="n">val</span> <span class="n">ROW_USER_PHONE</span> <span class="o">=</span> <span class="s">"USER_PHONE"</span>
+<span class="n">val</span> <span class="n">ROW_USER_PIN</span> <span class="o">=</span> <span class="s">"USER_PIN"</span>
+<span class="n">val</span> <span class="n">ROW_ROLE_UUID</span> <span class="o">=</span> <span class="s">"ROLE_UUID"</span>
+<span class="n">val</span> <span class="n">ROW_ROLE_TITLE</span> <span class="o">=</span> <span class="s">"ROLE_TITLE"</span>
+<span class="o">}</span>
+
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Второй пункт списка</p>
+  </li>
 </ul>
 
 

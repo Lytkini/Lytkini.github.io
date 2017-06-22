@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -451,6 +451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -492,11 +499,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -546,7 +551,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="Общие-термины">Общие термины</h3>
+  <h3 id="section">Общие термины</h3>
 
 <dl>
   <dt>Эвотор</dt>
@@ -571,17 +576,14 @@ $('#toc').on('click', 'a', function() {
   <dd>Сервис, который разработчики интегрируют с Эвотором посредством приложения, созданного на платформе.</dd>
 </dl>
 
-<h3 id="Технические-термины">Технические термины</h3>
+<h3 id="section-1">Технические термины</h3>
 
 <dl>
   <dt>Токен приложения</dt>
   <dd>После того как пользователь устанавливает приложение, облако Эвотор присваивает приложению токен, уникальный для каждого пользователя. Этот токен, сторонний сервис передаёт облаку для авторизации запросов приложения. Вы можете получить токен:
-    <ul>
-      <li>на url <code class="highlighter-rouge">partner.ru/api/v1/user/token</code> стороннего сервиса;</li>
-      <li>на странице настроек приложения;</li>
-      <li>в get-параметре <code class="highlighter-rouge">token</code> iframe-приложения.</li>
-    </ul>
-  </dd>
+* на url <code class="highlighter-rouge">partner.ru/api/v1/user/token</code> стороннего сервиса;
+* на странице настроек приложения;
+* в get-параметре <code class="highlighter-rouge">token</code> iframe-приложения.</dd>
 </dl>
 
 <p>С помощью этого токена облако авторизует запросы приложений к REST API.</p>
@@ -589,20 +591,15 @@ $('#toc').on('click', 'a', function() {
 <dl>
   <dt>Токен стороннего сервиса</dt>
   <dd>Токен, который облако Эвотор передаёт в запросах к следующим URL стороннего сервиса:
-    <ul>
-      <li><code class="highlighter-rouge">partner.ru/api/v1/user/create</code>;</li>
-      <li><code class="highlighter-rouge">partner.ru/api/v1/user/verify</code>;</li>
-      <li><code class="highlighter-rouge">partner.ru/api/v1/user/tariff</code>;</li>
-      <li><code class="highlighter-rouge">partner.ru/api/v1/user/token</code>.</li>
-    </ul>
-  </dd>
+* <code class="highlighter-rouge">partner.ru/api/v1/user/create</code>;
+* <code class="highlighter-rouge">partner.ru/api/v1/user/verify</code>;
+* <code class="highlighter-rouge">partner.ru/api/v1/user/tariff</code>;
+* <code class="highlighter-rouge">partner.ru/api/v1/user/token</code>.</dd>
 </dl>
 
-<p>В зависимости от типа авторизации, который поддерживает сторонний сервис, токен может быть:</p>
-<ul>
-  <li>Basic-авторизация – имя и пароль учётной записи стороннего сервиса, закодированные в <code class="highlighter-rouge">base64</code>.</li>
-  <li>Bearer-авторизация – строка символов.</li>
-</ul>
+<p>В зависимости от типа авторизации, который поддерживает сторонний сервис, токен может быть:
+* Basic-авторизация – имя и пароль учётной записи стороннего сервиса, закодированные в <code class="highlighter-rouge">base64</code>.
+* Bearer-авторизация – строка символов.</p>
 
 <p>Вы указываете токен или имя и пароль учётной записи стороннего сервиса при настройке интеграции приложения на портале разработчиков.</p>
 

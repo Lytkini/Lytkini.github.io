@@ -7,7 +7,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит информацию о том, какие события может использовать приложение, чтобы работать с чеком, например, добавлять или удаляться позиции из чека.">
+<meta name="description" content="Раздел содержит информацию о том, какие события может использовать приложение, чтобы работать с чеком, например, добавлять или удалять позиции из чека.">
 <meta name="keywords" content=" sample">
 <title>Работа с чеком | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
@@ -46,7 +46,7 @@
             // Initialize navgoco with default options
             $("#mysidebar").navgoco({
                 caretHtml: '',
-                accordion: true,
+                accordion: false,
                 openClass: 'active', // open
                 save: false, // leave false or nav highlighting doesn't work right
                 cookie: {
@@ -451,6 +451,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -492,11 +499,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
         
         
-        <!-- if you aren't using the accordion, uncomment this block:
            <p class="external">
-               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
            </p>
-           -->
     </li>
 </ul>
 </div>
@@ -515,7 +520,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="post-content">
 
    
-    <div class="summary">Раздел содержит информацию о том, какие события может использовать приложение, чтобы работать с чеком, например, добавлять или удаляться позиции из чека.</div>
+    <div class="summary">Раздел содержит информацию о том, какие события может использовать приложение, чтобы работать с чеком, например, добавлять или удалять позиции из чека.</div>
    
 
     
@@ -548,13 +553,11 @@ $('#toc').on('click', 'a', function() {
 
   <p>Кроме плитки на главном экране или иконки на экране оплаты смарт-терминала, приложение можно запускать автоматически при получении соответствующего события. Для этого требуется подписать приложение на получение событий.</p>
 
-<p>В зависимости от типа события подписку можно оформить одним из двух способов:</p>
-<ul>
-  <li>Используйте службу, если хотите получать события намерении изменения чека. В этом случае, смарт-терминал ждёт ответа от приложения и оно может взаимодействовать с чеком: добавлять, изменять и удалять позиции. События приходят как при продаже, так и при возврате товара.</li>
-  <li>Зарегистрируйте приёмник широковещательных сообщений, если хотите получать сообщения об открытии чека, обновлении базы продуктов или результате изменения чека. В этом случае смарт-терминал не ждёт ответа от приложения и оно не может взаимодействовать с чеком. Такие события могут понадобиться, например, для ведения статистики. События приходят как при продаже, так и при возврате товара.</li>
-</ul>
+<p>В зависимости от типа события, подписаться можно одним из двух способов:
+* С помощью службы, если хотите получать события намерении изменения чека. В этом случае, смарт-терминал ждёт ответа от приложения и оно может взаимодействовать с чеком: добавлять, изменять и удалять позиции. События приходят как при продаже, так и при возврате товара.
+* С помощью приёмника широковещательных сообщений, если хотите получать сообщения об открытии чека, обновлении базы продуктов или результате изменения чека. В этом случае смарт-терминал не ждёт ответа от приложения и оно не может взаимодействовать с чеком. Такие события могут понадобиться, например, для ведения статистики. События приходят как при продаже, так и при возврате товара.</p>
 
-<h3 id="Использование-службы-и-получение-событий-о-намерении-изменения-чека">Использование службы и получение событий о намерении изменения чека</h3>
+<h3 id="section">Использование службы и получение событий о намерении изменения чека</h3>
 
 <ol>
   <li>Создайте службу, например <code class="highlighter-rouge">MyIntegrationService</code>, которая наследует класс <code class="highlighter-rouge">IntegrationService</code>. В колбэке <code class="highlighter-rouge">onCreate</code> службы, зарегистрируйте процессор <code class="highlighter-rouge">BeforePositionsEditedEventProcessor</code> (процессор наследует класс <code class="highlighter-rouge">ActionProcessor</code>).</li>
@@ -565,10 +568,10 @@ $('#toc').on('click', 'a', function() {
         <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{</span>
             <span class="n">registerProcessor</span><span class="o">(</span><span class="k">new</span> <span class="n">BeforePositionsEditedEventProcessor</span><span class="o">()</span> <span class="o">{</span>
                 <span class="nd">@Override</span>
-                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="n">BeforePositionsEditedEvent</span> <span class="n">beforePositionsEditedEvent</span><span class="o">,</span> <span class="n">Callback</span> <span class="n">callback</span><span class="o">)</span> <span class="o">{</span>
-                       <span class="o">});</span>
-                    <span class="o">}</span>
-                <span class="o">}</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="n">BeforePositionsEditedEvent</span> <span class="n">beforePositionsEditedEvent</span><span class="o">,</span> <span class="n">Callback</span> <span class="n">callback</span><span class="o">)</span>
+            <span class="o">});</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
     </code></pre></figure>
 
 <ol>
@@ -671,7 +674,7 @@ $('#toc').on('click', 'a', function() {
     <span class="o">}</span>
 <span class="o">}</span></code></pre></figure>
 
-<h4 id="Описание-события-beforepositionseditedevent">Описание события <code class="highlighter-rouge">BeforePositionsEditedEvent</code></h4>
+<h4 id="beforepositionseditedevent">Описание события <code class="highlighter-rouge">BeforePositionsEditedEvent</code></h4>
 
 <p>О намерении изменения чека сообщает событие <code class="highlighter-rouge">beforePositionsEditedEvent</code>:</p>
 
@@ -727,7 +730,7 @@ $('#toc').on('click', 'a', function() {
     <span class="o">}</span>
 <span class="o">}</span></code></pre></figure>
 
-<h4 id="Список-возможных-изменений">Список возможных изменений</h4>
+<h4 id="section-1">Список возможных изменений</h4>
 
 <p>Изменение сообщает о том, что будет добавлена позиция:</p>
 
@@ -834,7 +837,7 @@ $('#toc').on('click', 'a', function() {
     <span class="o">}</span>
 <span class="o">}</span></code></pre></figure>
 
-<h3 id="Получение-событий-об-открытии-чека-обновлении-базы-продуктов-или-результате-изменения-чека">Получение событий об открытии чека, обновлении базы продуктов или результате изменения чека</h3>
+<h3 id="section-2">Получение событий об открытии чека, обновлении базы продуктов или результате изменения чека</h3>
 
 <p>Смарт терминал не ждёт ответ от приложения на широковещательные сообщения. Чтобы получать сообщения о результате изменения позиций в чеке зарегистрируйте приёмник широковещательных сообщений:</p>
 
@@ -867,7 +870,7 @@ $('#toc').on('click', 'a', function() {
         <span class="nt">&lt;/intent-filter&gt;</span>
     <span class="nt">&lt;/receiver&gt;</span></code></pre></figure>
 
-<h4 id="Сообщения-о-результатах-изменения-чека">Сообщения о результатах изменения чека</h4>
+<h4 id="section-3">Сообщения о результатах изменения чека</h4>
 
 <p>При открытии чека (продажи или возврата) приходит сообщение:</p>
 
