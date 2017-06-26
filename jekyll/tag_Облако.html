@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" ">
-<title>Java-приложение | Документация Эвотор</title>
+<title>Облако Эвотор | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Java-приложение">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Облако Эвотор">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -511,7 +511,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Java-приложение</h1>
+   <h1 class="post-title-main">Облако Эвотор</h1>
 </div>
 
 
@@ -548,7 +548,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Таблица ниже содержит страницы, отмеченные тэгом <button type="button" style="cursor: default" class="btn btn-default navbar-btn">Java</button></p>
+  <p>Таблица ниже содержит страницы, отмеченные тэгом <button type="button" style="cursor: default" class="btn btn-default navbar-btn">Облако</button></p>
 <table><thead><tr><th>Название</th><th>Тип</th><th>Выдержка</th></tr></thead>
     <tbody>
     
@@ -565,48 +565,10 @@ $('#toc').on('click', 'a', function() {
    
     
         
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-        
-     
-   
-    
-        
 
-        <tr><td><a href="doc_barcode_scanner.html">Сканер штрихкодов</a></td>
+        <tr><td><a href="doc_1C_integration.html">Интеграция с 1С</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит инструкцию о том, как подготовить приложение для получения данных от сканера штрихкодов. </td>
+          <td> Раздел содержит информацию об интеграции с 1С </td>
         </tr>
         
      
@@ -618,12 +580,10 @@ $('#toc').on('click', 'a', function() {
     
         
 
-        <tr><td><a href="doc_bill_printer.html">Принтер чеков</a></td>
+        <tr><td><a href="doc_evotor_api_about.html">Об Облаке Эвотор</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию о том, как приложение может работать с принтером чеков. </td>
+          <td> Раздел содержит вводную информацию для работы с нашей документацией. </td>
         </tr>
-        
-     
         
      
         
@@ -636,6 +596,48 @@ $('#toc').on('click', 'a', function() {
      
         
      
+   
+    
+   
+    
+        
+     
+        
+     
+   
+    
+   
+    
+   
+    
+        
+
+        <tr><td><a href="doc_authorization.html">Авторизация</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> В зависимости от типа приложения, для работы с Облаком Эвотор вам могут понадобиться следующие токены:  токен стороннего сервиса; токен пользователя; токен приложения.  Токен стороннего сервиса Сторонний сервис использует токен для авторизации запросов Облака Эвотор в рамках работы с учётной записью в стороннем сервисе. Облако передаёт токен стороннего... </td>
+        </tr>
+        
+     
+   
+    
+        
+     
+        
+     
+        
+     
+   
+    
+        
+     
+        
+     
+        
+     
+        
+     
+   
+    
         
 
         <tr><td><a href="doc_cloud_proxy.html">Обмен данными между приложением и сторонним сервисом</a></td>
@@ -646,58 +648,6 @@ $('#toc').on('click', 'a', function() {
      
         
      
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-
-        <tr><td><a href="doc_discounts.html">Скидки</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Скидки Эвотор позволяет рассчитывать и передавать скидки. Для этого: 1. Подпишитесь на событие ReceiptDiscountEvent. 2. Получите результат, которое сообщает о возможности начисления скидки. Подписка на событие ReceiptDiscountEventсообщает о возможности начислить скидку.  Создайте службу, которая наследует класс IntegrationService, например MyDiscountService.  Зарегистрируйте процессор &lt;code... </td>
-        </tr>
-        
-     
-        
-     
-   
-    
-        
-     
-        
-
-        <tr><td><a href="doc_drivers_cashdrawer.html">SDK для денежного ящика</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Определение внешнего сервиса в AndroidManifest.xml Укажите хотя бы один Intent filter: INTENT_FILTER_DRIVER_MANAGER или INTENT_FILTER_VIRTUAL_DRIVER_MANAGER. Пример объявленного сервиса: &lt;service android:name="ru.mycompany.drivers.MyDeviceService" android:enabled="true" android:exported="true" android:icon="@drawable/logo" android:label="@string/service_name"&gt; &lt;intent-filter&gt; &lt;action android:name="ru.evotor.devices.drivers.DriverManager" &lt;span... </td>
-        </tr>
-        
-     
-        
-     
-   
-    
-        
-     
-        
-
-        <tr><td><a href="doc_drivers_library_connection.html">Подготовка к разработке</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Для начала разработки подключите библиотеку для работы с оборудованием. Добавьте ссылку на репозиторий на репозиторий jitpack в build.gradle проекта.  allprojects { repositories { jcenter() maven { url 'https://jitpack.io' } } }   В модуле build.gradle добавьте зависимость и укажите точную версию: &lt;pre... </td>
-        </tr>
         
      
         
@@ -706,133 +656,9 @@ $('#toc').on('click', 'a', function() {
     
         
 
-        <tr><td><a href="doc_drivers_pinpads.html">SDK для банковский терминалов</a></td>
+        <tr><td><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Определение внешнего сервиса в AndroidManifest.xml Укажите хотя бы один Intent filter: INTENT_FILTER_DRIVER_MANAGER или INTENT_FILTER_VIRTUAL_DRIVER_MANAGER. Пример объявленного сервиса: &lt;service android:name="ru.mycompany.drivers.MyPaySystemService" android:enabled="true" android:exported="true" android:icon="@drawable/logo" android:label="@string/service_name"&gt; &lt;intent-filter&gt; &lt;action android:name="ru.evotor.devices.drivers.DriverManager" &lt;span... </td>
-        </tr>
-        
-     
-        
-     
-        
-     
-   
-    
-        
-
-        <tr><td><a href="doc_drivers_scales.html">SDK для весов</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Определение внешнего сервиса в AndroidManifest.xml Укажите хотя бы один Intent filter: INTENT_FILTER_DRIVER_MANAGER или INTENT_FILTER_VIRTUAL_DRIVER_MANAGER. Пример объявленного сервиса: &lt;service android:name="ru.mycompany.drivers.MyDeviceService" android:enabled="true" android:exported="true" android:icon="@drawable/logo" android:label="@string/service_name"&gt; &lt;intent-filter&gt; &lt;action android:name="ru.evotor.devices.drivers.DriverManager" &lt;span... </td>
-        </tr>
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-        
-     
-   
-    
-        
-
-        <tr><td><a href="doc_integrated_app_points.html">Встраивание приложения</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит пошаговое описание обмена сообщениями между приложением и сторонним сервисом </td>
-        </tr>
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-
-        <tr><td><a href="doc_integration_library_connection.html">Подключение оборудования</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Методы API смарт-терминала дают приложениям доступ к:  сканеру штрихкодов; встроенному принтеру чеков; весам.  Методы содержатся в библиотеке integration-library. Чтобы подключить библиотеку, в файле build.gradle приложения, укажите: allprojects { repositories { jcenter() maven { url 'https://jitpack.io' } } } dependencies { compile... </td>
-        </tr>
-        
-     
-   
-    
-   
-    
-        
-
-        <tr><td><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит инструкцию по созданию простого java-приложения для смарт-терминала. На разных этапах приложение обладает разными функциями. Так, итоговое пр... </td>
-        </tr>
-        
-     
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-
-        <tr><td><a href="doc_receipt_creation.html">Создание чека в приложении</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию о том, как приложение может передать сформированный чек в смарт-терминал для оплаты. </td>
-        </tr>
-        
-     
-        
-     
-   
-    
-        
-     
-        
-
-        <tr><td><a href="doc_receipt_interactions.html">Работа с позициями чека</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека, а также . </td>
+          <td> Раздел содержит информацию об интеграции с облачной товароучётной системой. </td>
         </tr>
         
      
@@ -846,10 +672,16 @@ $('#toc').on('click', 'a', function() {
      
         
 
-        <tr><td><a href="doc_smart_terminal_app_grants.html">Права приложения</a></td>
+        <tr><td><a href="doc_developer_mode.html">Включение режима разработчика</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию правах пользователей смарт терминала и примеры того, как получить данные о них. </td>
+          <td> Режим разработчика позволяет:  устанавливать приложение на смарт-терминал с помощью ADB, без необходимости загружать его в магазин приложений. отлаживать приложение с помощью утилиты LogCat.  Чтобы включить режим разработчика:  На dev.evotor.ru выберите необходимое приложение.  На вкладке Версии, выберите необходимую версию приложения и перейдите на вкладку APK. Одноврменно... </td>
         </tr>
+        
+     
+   
+    
+        
+     
         
      
         
@@ -858,11 +690,51 @@ $('#toc').on('click', 'a', function() {
     
         
      
+        
+     
+        
+     
+   
+    
+        
+     
+        
+     
+        
+     
+   
+    
+        
+     
+        
+     
+        
+     
+   
+    
+        
+     
+        
+     
+        
+     
+   
+    
         
 
-        <tr><td><a href="doc_smart_terminal_app_tile.html">Плитка приложения на главном экране смарт-терминала</a></td>
+        <tr><td><a href="doc_errors_returned.html">Возвращаемые ошибки</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит требования к плитке приложения, а также информацию о том как добвить плитку на главный экран смарт-терминала. </td>
+          <td> Раздел содержит информацию о возвращаемых ошибках </td>
+        </tr>
+        
+     
+   
+    
+        
+
+        <tr><td><a href="doc_evotor_rest_api_calls.html">Запросы REST API Эвотор</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Раздел содержит информацию о запросах, которые вы можете отправлять в REST API Эвотор </td>
         </tr>
         
      
@@ -870,6 +742,110 @@ $('#toc').on('click', 'a', function() {
      
    
     
+        
+     
+        
+     
+   
+    
+   
+    
+   
+    
+        
+
+        <tr><td><a href="doc_iframe_within_application_page.html">IFrame на странице приложения</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Краткая инструкция по добавлению фрейма в настройки приложения </td>
+        </tr>
+        
+     
+   
+    
+        
+     
+        
+     
+        
+     
+   
+    
+        
+     
+        
+     
+        
+     
+   
+    
+   
+    
+        
+     
+        
+     
+        
+     
+        
+     
+   
+    
+   
+    
+   
+    
+        
+
+        <tr><td><a href="doc_outgoing_calls_protocol.html">Запросы к стороннему сервису</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Раздел содержит информацию о запросах Эвотора к стороннему сервису. </td>
+        </tr>
+        
+     
+        
+     
+   
+    
+        
+     
+        
+     
+        
+     
+   
+    
+        
+     
+        
+     
+        
+     
+   
+    
+   
+    
+        
+     
+        
+     
+        
+     
+   
+    
+        
+     
+        
+     
+        
+     
+   
+    
+        
+     
+        
+     
+        
+     
         
 
         <tr><td><a href="doc_smart_terminal_application.html">Приложение для смарт-терминала</a></td>
@@ -878,89 +854,25 @@ $('#toc').on('click', 'a', function() {
         </tr>
         
      
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
    
     
         
      
         
 
-        <tr><td><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></td>
+        <tr><td><a href="doc_smart_terminal_applications.html">Приложения для смарт-терминала и Облако Эвотор</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит описание Inventory API смарт-терминала. </td>
+          <td> Приложения для смарт-терминала можно делятся на JS-приложения (созданные на языке JavaScript) и Java-приложения (созданные на языке Java). Оба типа приложений различаются по способу представления для пользователя смарт-терминала:   Отдельное приложение – запускается по плитке, расположенной на главном экране смарт-терминала.    Приложение, встроенное в... </td>
         </tr>
         
      
-        
-     
    
     
         
 
-        <tr><td><a href="doc_smart_terminal_receipt_api.html">Receipt API</a></td>
+        <tr><td><a href="doc_smart_terminal_documents.html">Документы смарт-терминала</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит описание Receipt API смарт-терминала. </td>
-        </tr>
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-
-        <tr><td><a href="doc_smart_terminal_users_api.html">Users API</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит описание Users API смарт-терминала. </td>
-        </tr>
-        
-     
-        
-     
-   
-    
-        
-
-        <tr><td><a href="doc_storage_api.html">Storage API</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Если Java-приложения могут хранить данные на смарт-терминале в любом виде, то JS-приложения для хранения данных между запусками используют специальный объект storage. Подготовка к работе Убедитесь, чтоб файл client.yaml содержит: capabilities: - storage   Функции для работы со Storage... </td>
-        </tr>
-        
-     
-        
-     
-        
-     
-   
-    
-        
-
-        <tr><td><a href="doc_scales.html">Весы</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Работа весами   В колбэке onCreate() или при запуске операции (activity) инициализируйте класс ru.evotor.devices.commons.DeviceServiceConnector: DeviceServiceConnector.startInitConnections(getApplicationContext()); Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку  Совет: Воспользуйтесь методом addConnectionWrapper, чтобы получить событие об успешном подключении. Используйте это событие, если... </td>
+          <td> Раздел содержит список документов, которые формирует смарт-терминал. </td>
         </tr>
         
      
@@ -975,11 +887,45 @@ $('#toc').on('click', 'a', function() {
         
      
         
-
-        <tr><td><a href="doc_logging.html">Логирование</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию о доступе к логам приложений. </td>
-        </tr>
+     
+   
+    
+        
+     
+        
+     
+        
+     
+   
+    
+        
+     
+        
+     
+        
+     
+   
+    
+        
+     
+        
+     
+        
+     
+   
+    
+        
+     
+        
+     
+        
+     
+   
+    
+        
+     
+        
+     
         
      
    
