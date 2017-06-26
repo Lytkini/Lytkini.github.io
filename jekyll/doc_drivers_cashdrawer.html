@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" sample">
+<meta name="keywords" content="ТерминалJavaОборудование,  sample">
 <title>SDK для денежного ящика | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -267,7 +267,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
             
             
             
@@ -288,7 +288,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_cloud_proxy.html">Проксирование HTTP-запросов</a></li>
+            <li><a href="doc_cloud_proxy.html">Обмен данными между приложением и сторонним сервисом</a></li>
             
             
             
@@ -306,10 +306,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            
-            <li><a href="doc_smart_terminal_receipt_api.html">Receipt API</a></li>
+            <li class="subfolders">
+                <a href="#">Receipt API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_smart_terminal_receipt_api.html">О Receipt API</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -317,20 +337,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_storage_api.html">Storage API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
             
             
             
@@ -418,6 +424,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -432,13 +445,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_application.html">Приложение для смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
             
             
@@ -447,13 +453,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
             
             
             
@@ -555,7 +554,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Пример объявленного сервиса:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;service</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;service</span>
     <span class="na">android:name=</span><span class="s">"ru.mycompany.drivers.MyDeviceService"</span>
     <span class="na">android:enabled=</span><span class="s">"true"</span>
     <span class="na">android:exported=</span><span class="s">"true"</span>
@@ -580,7 +579,9 @@ $('#toc').on('click', 'a', function() {
     <span class="nt">&lt;meta-data</span>
         <span class="na">android:name=</span><span class="s">"device_categories"</span>
         <span class="na">android:value=</span><span class="s">"CASHDRAWER"</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/service&gt;</span></code></pre></figure>
+<span class="nt">&lt;/service&gt;</span>
+</code></pre>
+</div>
 
 <p>Где:</p>
 
@@ -590,9 +591,11 @@ $('#toc').on('click', 'a', function() {
 
 <p><code class="highlighter-rouge">INTENT_FILTER_DRIVER_MANAGER</code> – используется для драйверов, требующих подключения USB- оборудования. Помимо <code class="highlighter-rouge">Intent filter</code> в <code class="highlighter-rouge">meta-data</code> необходимо указать характеристики <code class="highlighter-rouge">VendorID</code> и <code class="highlighter-rouge">ProductID</code> целевого устройства (десятичными числами):</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;meta-data</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;meta-data</span>
     <span class="na">android:name=</span><span class="s">"usb_device"</span>
-    <span class="na">android:value=</span><span class="s">"VID_1659PID_8963"</span> <span class="nt">/&gt;</span></code></pre></figure>
+    <span class="na">android:value=</span><span class="s">"VID_1659PID_8963"</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Можно указать несколько устройств: <code class="highlighter-rouge">VID_1659PID_8963|VID_123PID_456|VID_1659PID_8964</code>.</div>
 
@@ -600,9 +603,11 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>INTENT_FILTER_VIRTUAL_DRIVER_MANAGER</strong> – используется для драйверов, не требующих подключения USB-оборудования (сетевое, bluetooth и др.). В <code class="highlighter-rouge">meta-data</code> необходимо указать, что драйвер является виртуальным:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;meta-data</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;meta-data</span>
     <span class="na">android:name=</span><span class="s">"virtual_device"</span>
-    <span class="na">android:value=</span><span class="s">"true"</span> <span class="nt">/&gt;</span></code></pre></figure>
+    <span class="na">android:value=</span><span class="s">"true"</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> Экземпляр такого драйвера пользователь может создать исключительно вручную через настройки оборудования. В этом случае, все работы по подключению к нужному устройству берёт на себя производитель драйвера.</div>
 
@@ -610,13 +615,17 @@ $('#toc').on('click', 'a', function() {
 
 <p>Чтобы устройство было распознано как денежный ящик, используйте <code class="highlighter-rouge">Intent filter</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">INTENT_FILTER_CASH_DRAWER</code></pre></figure>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code>INTENT_FILTER_CASH_DRAWER
+</code></pre>
+</div>
 
 <p>Вместе с этим необходимо указать в meta-data категорию устройства:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;meta-data</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;meta-data</span>
     <span class="na">android:name=</span><span class="s">"device_categories"</span>
-    <span class="na">android:value=</span><span class="s">"CASHDRAWER"</span> <span class="nt">/&gt;</span></code></pre></figure>
+    <span class="na">android:value=</span><span class="s">"CASHDRAWER"</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
 
 <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Можно указать сразу несколько ролей устройству: <code class="highlighter-rouge">SCALES|PRICEPRINTER|CASHDRAWER</code>(весы | принтер чеков | денежный ящик).</div>
 
@@ -633,21 +642,25 @@ $('#toc').on('click', 'a', function() {
 
 <p>Можно задать <code class="highlighter-rouge">activity</code> настроек:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;meta-data</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;meta-data</span>
     <span class="na">android:name=</span><span class="s">"settings_activity"</span>
-    <span class="na">android:value=</span><span class="s">"ru.mycompany.drivers.MySettingsActivity"</span> <span class="nt">/&gt;</span></code></pre></figure>
+    <span class="na">android:value=</span><span class="s">"ru.mycompany.drivers.MySettingsActivity"</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
 
 <p>Указанная <code class="highlighter-rouge">activity</code> должна находиться в текущем <code class="highlighter-rouge">package</code> и будет вызвана при первом подключении устройства или при выборе устройства в меню настроек оборудования.</p>
 
 <p>Версия драйвера (<code class="highlighter-rouge">versionCode</code> и <code class="highlighter-rouge">versionName</code>) берётся из <code class="highlighter-rouge">build.gradle</code>:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="n">defaultConfig</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">defaultConfig</span> <span class="o">{</span>
     <span class="n">applicationId</span> <span class="s">"ru.mycompany.drivers.mycashdrawer"</span>
     <span class="n">minSdkVersion</span> <span class="mi">22</span>
     <span class="n">targetSdkVersion</span> <span class="mi">24</span>
     <span class="n">versionCode</span> <span class="mi">2</span>
     <span class="n">versionName</span> <span class="s">"1.0.1"</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> MinSdkVersion должна быть не выше версии 22.</div>
 
@@ -661,42 +674,43 @@ $('#toc').on('click', 'a', function() {
 
 <p>для <code class="highlighter-rouge">INTENT_FILTER_CASHDRAWER</code> – класс наследник <code class="highlighter-rouge">ru.evotor.devices.drivers.ICashDrawerDriverService.Stub</code>;</p>
 
-<p>Пример:</p>
+<p>Пример:
+```java
+public class MyDeviceService extends Service {</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyDeviceService</span> <span class="kd">extends</span> <span class="n">Service</span> <span class="o">{</span>
+<div class="highlighter-rouge"><pre class="highlight"><code>private final Map&lt;Integer, MyDevice&gt; instances = new HashMap&lt;&gt;();
+private volatile AtomicInteger newDeviceIndex = new AtomicInteger(0);
 
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">MyDevice</span><span class="o">&gt;</span> <span class="n">instances</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
-    <span class="kd">private</span> <span class="kd">volatile</span> <span class="n">AtomicInteger</span> <span class="n">newDeviceIndex</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AtomicInteger</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+@Nullable
+@Override
+public IBinder onBind(Intent intent) {
+    String action = intent.getAction();
+    switch (action) {
+        case Constants.INTENT_FILTER_DRIVER_MANAGER:
+            return new MyDriverManagerStub(MyDeviceService.this);
+        case Constants.INTENT_FILTER_CASHDRAWER:
+            return new MyCashDrawerStub(MyDeviceService.this);
+        default:
+            return null;
+    }
+}
 
-    <span class="nd">@Nullable</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">IBinder</span> <span class="nf">onBind</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">String</span> <span class="n">action</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getAction</span><span class="o">();</span>
-        <span class="k">switch</span> <span class="o">(</span><span class="n">action</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">case</span> <span class="n">Constants</span><span class="o">.</span><span class="na">INTENT_FILTER_DRIVER_MANAGER</span><span class="o">:</span>
-                <span class="k">return</span> <span class="k">new</span> <span class="nf">MyDriverManagerStub</span><span class="o">(</span><span class="n">MyDeviceService</span><span class="o">.</span><span class="na">this</span><span class="o">);</span>
-            <span class="k">case</span> <span class="n">Constants</span><span class="o">.</span><span class="na">INTENT_FILTER_CASHDRAWER</span><span class="o">:</span>
-                <span class="k">return</span> <span class="k">new</span> <span class="nf">MyCashDrawerStub</span><span class="o">(</span><span class="n">MyDeviceService</span><span class="o">.</span><span class="na">this</span><span class="o">);</span>
-            <span class="k">default</span><span class="o">:</span>
-                <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
+public int createNewDevice(UsbDevice usbDevice) {
+    int currentIndex = newDeviceIndex.getAndIncrement();
+    instances.put(currentIndex, new MyDevice(getApplicationContext(), usbDevice));
+    return currentIndex;
+}
 
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">createNewDevice</span><span class="o">(</span><span class="n">UsbDevice</span> <span class="n">usbDevice</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kt">int</span> <span class="n">currentIndex</span> <span class="o">=</span> <span class="n">newDeviceIndex</span><span class="o">.</span><span class="na">getAndIncrement</span><span class="o">();</span>
-        <span class="n">instances</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">currentIndex</span><span class="o">,</span> <span class="k">new</span> <span class="n">MyDevice</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="n">usbDevice</span><span class="o">));</span>
-        <span class="k">return</span> <span class="n">currentIndex</span><span class="o">;</span>
-    <span class="o">}</span>
+public MyDevice getMyDevice(int instanceId) {
+    return instances.get(instanceId);
+}
 
-    <span class="kd">public</span> <span class="n">MyDevice</span> <span class="nf">getMyDevice</span><span class="o">(</span><span class="kt">int</span> <span class="n">instanceId</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">instances</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">instanceId</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">destroy</span><span class="o">(</span><span class="kt">int</span> <span class="n">instanceId</span><span class="o">)</span> <span class="o">{</span>
-		<span class="n">getMyDevice</span><span class="o">(</span><span class="n">instanceId</span><span class="o">).</span><span class="na">destroy</span><span class="o">();</span>
-        <span class="n">instances</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">instanceId</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+public void destroy(int instanceId) {
+	getMyDevice(instanceId).destroy();
+    instances.remove(instanceId);
+} } ```
+</code></pre>
+</div>
 
 <p>В этом же сервисе можно определить <code class="highlighter-rouge">Map</code> для хранения списка нескольких активных экземпляров драйверов, т.к. обращаться к нему придётся из всех указанных Stub’ов.</p>
 
@@ -719,7 +733,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><code class="highlighter-rouge"> IUsbDriverManagerService.Stub</code> – класс для управления драйверами usb-устройств: подключение и отключение устройств происходят здесь. Требуется реализовать методы <code class="highlighter-rouge">addUsbDevice</code> и <code class="highlighter-rouge">destroy</code>.</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">ru.evotor.devices.drivers.IUsbDriverManagerService</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">ru.evotor.devices.drivers.IUsbDriverManagerService</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyDriverManagerStub</span> <span class="kd">extends</span> <span class="n">IUsbDriverManagerService</span><span class="o">.</span><span class="na">Stub</span> <span class="o">{</span>
 
@@ -738,7 +752,9 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">destroy</span><span class="o">(</span><span class="kt">int</span> <span class="n">instanceId</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">RemoteException</span> <span class="o">{</span>
         <span class="n">myDeviceService</span><span class="o">.</span><span class="na">destroy</span><span class="o">(</span><span class="n">instanceId</span><span class="o">);</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 <p>Метод <code class="highlighter-rouge">addUsbDevice</code> в <code class="highlighter-rouge">IUsbDriverManagerService</code> принимает на вход:</p>
 
@@ -759,7 +775,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>подключение и отключение устройств происходят здесь. Требуется реализовать методы <code class="highlighter-rouge">addNewVirtualDevice</code>, <code class="highlighter-rouge">recreateNewVirtualDevice</code> и <code class="highlighter-rouge">destroy</code>.</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">ru.evotor.devices.drivers.IVirtualDriverManagerService</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">ru.evotor.devices.drivers.IVirtualDriverManagerService</span><span class="o">;</span>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyDriverManagerStub</span> <span class="kd">extends</span> <span class="n">IVirtualDriverManagerService</span><span class="o">.</span><span class="na">Stub</span> <span class="o">{</span>
 
@@ -784,7 +800,9 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">destroy</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">RemoteException</span> <span class="o">{</span>
         <span class="n">myDeviceService</span><span class="o">.</span><span class="na">destroy</span><span class="o">(</span><span class="n">instanceId</span><span class="o">);</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 <p><code class="highlighter-rouge">addNewVirtualDevice</code> возвращает номер экземпляра драйвера внутри приложения. По этому номеру происходит обращение к конкретному драйверу.</p>
 
@@ -800,7 +818,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><code class="highlighter-rouge">ICashDrawerDriverService.Stub</code> – класс для работы с конкретными экземплярами денежных ящиков.</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyCashDrawerStub</span> <span class="kd">extends</span> <span class="n">ICashDrawerDriverService</span><span class="o">.</span><span class="na">Stub</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyCashDrawerStub</span> <span class="kd">extends</span> <span class="n">ICashDrawerDriverService</span><span class="o">.</span><span class="na">Stub</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="n">MyDeviceService</span> <span class="n">myDeviceService</span><span class="o">;</span>
 
@@ -812,7 +830,9 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">openCashDrawer</span><span class="o">(</span><span class="kt">int</span> <span class="n">instanceId</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">RemoteException</span> <span class="o">{</span>
         <span class="n">myDeviceService</span><span class="o">.</span><span class="na">getCashDrawer</span><span class="o">(</span><span class="n">instanceId</span><span class="o">).</span><span class="na">openCashDrawer</span><span class="o">();</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 <p>Метод <code class="highlighter-rouge">openCashDrawer</code> принимает на вход номер экземпляра драйвера и открывает указанный денежный ящик.</p>
 
@@ -820,7 +840,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Пример для денежного ящика с USB-подключением:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">ru.evotor.devices.drivers.cashdrawer.ICashDrawer</span><span class="o">;</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">ru.evotor.devices.drivers.cashdrawer.ICashDrawer</span><span class="o">;</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyDevice</span> <span class="kd">implements</span> <span class="n">ICashDrawer</span> <span class="o">{</span>
 
     <span class="kd">private</span> <span class="n">Context</span> <span class="n">context</span><span class="o">;</span>
@@ -834,7 +854,9 @@ $('#toc').on('click', 'a', function() {
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">openCashDrawer</span><span class="o">()</span> <span class="o">{</span>
         <span class="c1">//TODO Ваш код открытия денежного ящика</span>
     <span class="o">}</span>
-<span class="o">}</span></code></pre></figure>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 <p>Для устройств других категорий реализуйте соответствующие интерфейсы:</p>
 
@@ -850,6 +872,22 @@ $('#toc').on('click', 'a', function() {
 
 
     <div class="tags">
+        
+        <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        
+        
+        
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
+        
+        
+        
+        <a href="tag_Оборудование.html" class="btn btn-default navbar-btn cursorNorm" role="button">Оборудование</a>
+        
+        
         
     </div>
 

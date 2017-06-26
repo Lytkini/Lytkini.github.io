@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит информацию о том, как приложение может работать с принтером чеков.">
-<meta name="keywords" content=" sample">
+<meta name="keywords" content="JavaТерминалОборудованиеЧеки,  sample">
 <title>Принтер чеков | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -267,7 +267,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_app_manifest.html">Манифест приложения</a></li>
+            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
             
             
             
@@ -288,7 +288,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_cloud_proxy.html">Проксирование HTTP-запросов</a></li>
+            <li><a href="doc_cloud_proxy.html">Обмен данными между приложением и сторонним сервисом</a></li>
             
             
             
@@ -306,10 +306,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            
-            <li><a href="doc_smart_terminal_receipt_api.html">Receipt API</a></li>
+            <li class="subfolders">
+                <a href="#">Receipt API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_smart_terminal_receipt_api.html">О Receipt API</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -317,20 +337,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_storage_api.html">Storage API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_creation.html">Создание чека в приложении</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_interactions.html">Работа с чеками</a></li>
             
             
             
@@ -418,6 +424,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -432,13 +445,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_application.html">Приложение для смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
             
             
@@ -447,13 +453,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
             
             
             
@@ -554,29 +553,30 @@ $('#toc').on('click', 'a', function() {
   <h3 id="section">Работа с принтером чеков</h3>
 
 <ol>
-  <li>В колбэке <code class="highlighter-rouge">onCreate()</code> или при запуске операции (<code class="highlighter-rouge">activity</code>) инициализируйте класс <code class="highlighter-rouge">ru.evotor.devices.commons.DeviceServiceConnector</code>:</li>
-</ol>
+  <li>
+    <p>В колбэке <code class="highlighter-rouge">onCreate()</code> или при запуске операции (<code class="highlighter-rouge">activity</code>) инициализируйте класс <code class="highlighter-rouge">ru.evotor.devices.commons.DeviceServiceConnector</code>:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">DeviceServiceConnector</span><span class="o">.</span><span class="na">startInitConnections</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">());</span>
-    </code></pre></figure>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку.
-
-&lt;div markdown="span" class="alert alert-success" role="alert"&gt;&lt;i class="fa fa-check-square-o"&gt;&lt;/i&gt; &lt;b&gt;Совет:&lt;/b&gt; Воспользуйтесь методом `addConnectionWrapper`, чтобы получить событие об успешном подключении. &lt;br/&gt;&lt;br/&gt;
-
-Используйте это событие, если необходимо выполнить какой-либо код сразу после установки соединения.&lt;/div&gt;
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">DeviceServiceConnector</span><span class="o">.</span><span class="na">startInitConnections</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">());</span>
 </code></pre>
-</div>
+    </div>
 
-<ol>
+    <p>Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку.</p>
+
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Воспользуйтесь методом <code class="highlighter-rouge">addConnectionWrapper</code>, чтобы получить событие об успешном подключении. <br /><br />
+
+Используйте это событие, если необходимо выполнить какой-либо код сразу после установки соединения.</div>
+  </li>
   <li>
     <p>Вызовите метод <code class="highlighter-rouge">DeviceServiceConnector.getPrinterService()</code>.</p>
 
     <p>Метод не может быть <code class="highlighter-rouge">null</code> и в случае успеха возвращает объект <code class="highlighter-rouge">ru.evotor.devices.commons.IPrinterServiceWrapper</code>.</p>
 
-    <p>Метод может вернуть следующие исключения (<code class="highlighter-rouge">exception</code>):
- * <code class="highlighter-rouge">ru.evotor.devices.commons.exception.ServiceNotConnectedException</code> возвращается в результате серии неудачных попыток подключиться к принтеру.
- * <code class="highlighter-rouge">ru.evotor.devices.commons.exception.DeviceServiceException</code> – наследованое исключение.</p>
+    <p>Метод может вернуть следующие исключения (<code class="highlighter-rouge">exception</code>):</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">ru.evotor.devices.commons.exception.ServiceNotConnectedException</code> возвращается в результате серии неудачных попыток подключиться к принтеру.</li>
+      <li><code class="highlighter-rouge">ru.evotor.devices.commons.exception.DeviceServiceException</code> – наследованое исключение.</li>
+    </ul>
   </li>
   <li>
     <p>Вы можете вызвать следующие методы объекта <code class="highlighter-rouge">ru.evotor.devices.commons.IPrinterService</code>:</p>
@@ -598,10 +598,13 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Передайте данные в печать с помощью метода <code class="highlighter-rouge">printDocument(int deviceId, in PrinterDocument printerDocument)</code>.</p>
 
-    <p>Аргумент <code class="highlighter-rouge">PrinterDocument</code> содержит список элементов печати <code class="highlighter-rouge">IPrintable</code>:
- * Тексты – <code class="highlighter-rouge">ru.evotor.devices.commons.printer.printable.PrintableText</code>;
- * Штрихкоды – <code class="highlighter-rouge">ru.evotor.devices.commons.printer.printable.PrintableBarcode</code>;
- * Картинки – <code class="highlighter-rouge">ru.evotor.devices.commons.printer.printable.PrintableImage</code>.</p>
+    <p>Аргумент <code class="highlighter-rouge">PrinterDocument</code> содержит список элементов печати <code class="highlighter-rouge">IPrintable</code>:</p>
+
+    <ul>
+      <li>Тексты – <code class="highlighter-rouge">ru.evotor.devices.commons.printer.printable.PrintableText</code>;</li>
+      <li>Штрихкоды – <code class="highlighter-rouge">ru.evotor.devices.commons.printer.printable.PrintableBarcode</code>;</li>
+      <li>Картинки – <code class="highlighter-rouge">ru.evotor.devices.commons.printer.printable.PrintableImage</code>.</li>
+    </ul>
   </li>
 </ol>
 
@@ -611,7 +614,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Код для печати сообщения на чеке:</p>
 
-<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="k">try</span> <span class="o">{</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="k">try</span> <span class="o">{</span>
   <span class="n">DeviceServiceConnector</span><span class="o">.</span><span class="na">getPrinterService</span><span class="o">().</span><span class="na">printDocument</span><span class="o">(</span>
     <span class="n">DEFAULT_DEVICE_INDEX_UNSET</span><span class="o">,</span>
     <span class="k">new</span> <span class="nf">PrinterDocument</span><span class="o">(</span>
@@ -621,11 +624,32 @@ $('#toc').on('click', 'a', function() {
               <span class="k">new</span> <span class="nf">PrintableImage</span><span class="o">(</span><span class="n">bitmap1</span><span class="o">)));</span>
 <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">DeviceServiceException</span> <span class="n">exc</span><span class="o">)</span> <span class="o">{</span>
 
-<span class="o">}</span></code></pre></figure>
-
+<span class="o">}</span>
+</code></pre>
+</div>
 
 
     <div class="tags">
+        
+        <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
+        
+        
+        
+        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        
+        
+        
+        <a href="tag_Оборудование.html" class="btn btn-default navbar-btn cursorNorm" role="button">Оборудование</a>
+        
+        
+        
+        <a href="tag_Чеки.html" class="btn btn-default navbar-btn cursorNorm" role="button">Чеки</a>
+        
+        
         
     </div>
 
