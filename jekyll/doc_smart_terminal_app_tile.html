@@ -7,7 +7,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит требования к плитке приложения, а также информацию о том как добвить плитку на главный экран смарт-терминала.">
+<meta name="description" content="Раздел содержит требования к плитке приложения, а также информацию о том как добавить плитку на главный экран смарт-терминала.">
 <meta name="keywords" content="ТерминалJavaJavaScript,  sample">
 <title>Плитка приложения на главном экране смарт-терминала | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
@@ -260,7 +260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -325,6 +325,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_estras.html">Создание дополнительных полей в чеке</a></li>
                     
                     
                     
@@ -431,6 +437,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -446,13 +459,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -519,7 +525,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="post-content">
 
    
-    <div class="summary">Раздел содержит требования к плитке приложения, а также информацию о том как добвить плитку на главный экран смарт-терминала.</div>
+    <div class="summary">Раздел содержит требования к плитке приложения, а также информацию о том как добавить плитку на главный экран смарт-терминала.</div>
    
 
     
@@ -614,6 +620,25 @@ $('#toc').on('click', 'a', function() {
   <li>Интент фильтр содержит соответствующие элементы action (<code class="highlighter-rouge">android:name="android.intent.action.MAIN"</code>) и category (<code class="highlighter-rouge">android:name="android.intent.category.EVOTOR"</code>).</li>
 </ul>
 
+<p>Вы также можете добавить иконку приложения на экран продажи, например, для <a href="./doc_discounts.html">начисления скидок</a>. Для этого создайте соответствующую службу:</p>
+
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;service</span>
+  <span class="na">android:name=</span><span class="s">".InventoryAPI.ExampleService"</span>
+  <span class="na">android:enabled=</span><span class="s">"true"</span>
+  <span class="na">android:exported=</span><span class="s">"true"</span>
+  <span class="na">android:icon=</span><span class="s">"@mipmap/pirate"</span>
+  <span class="na">android:label=</span><span class="s">"DiscByButton"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta-data</span>
+  <span class="na">android:name=</span><span class="s">"ru.evotor.sales_screen.BACKGROUND_COLOR"</span>
+  <span class="na">android:value=</span><span class="s">"#cc0000"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;intent-filter</span> <span class="na">android:priority=</span><span class="s">"20"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evo.v2.receipt.sell.receiptDiscount"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/service&gt;</span>
+</code></pre>
+</div>
+
 <h3 id="js-">JS-приложение</h3>
 
 <p>Чтобы добавить плитку JS-приложения на главный экран смарт-терминала, в файле <em>client.yaml</em>, модифицируйте список <code class="highlighter-rouge">views</code> следующим образом:</p>
@@ -627,7 +652,7 @@ $('#toc').on('click', 'a', function() {
     <span class="s">icon_192</span><span class="pi">:</span> <span class="s">client/views/example/icon-192.png</span>
     <span class="s">icon_256</span><span class="pi">:</span> <span class="s">client/views/example/icon-256.png</span>
     <span class="s">source</span><span class="pi">:</span> <span class="s">client/views/example/view.html</span>
-    <span class="s">point</span><span class="pi">:</span> <span class="s">SALES_SCREEN</span>
+    <span class="s">point</span><span class="pi">:</span> <span class="s">MAIN_SCREEN</span>
     <span class="s">grants</span><span class="pi">:</span>
             <span class="pi">-</span> <span class="s">CASH_OPERATIONS_SELL</span>
     <span class="s">scripts</span><span class="pi">:</span>

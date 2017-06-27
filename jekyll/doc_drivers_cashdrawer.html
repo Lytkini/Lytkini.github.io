@@ -260,7 +260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -325,6 +325,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_estras.html">Создание дополнительных полей в чеке</a></li>
                     
                     
                     
@@ -431,6 +437,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -446,13 +459,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -635,10 +641,11 @@ $('#toc').on('click', 'a', function() {
 
 <p><code class="highlighter-rouge">android:icon</code> – картинка устройства, которая будет отображаться пользователю при инициализации устройства;</p>
 
-<p><code class="highlighter-rouge">android:label</code> – имя драйвера, которое будет отображаться пользователю при инициализации устройства
-Пример отображения иконки и имени драйвера</p>
+<p><code class="highlighter-rouge">android:label</code> – имя драйвера, которое будет отображаться пользователю при инициализации устройства.</p>
 
-<p>[picture_1]</p>
+<p>Пример отображения иконки и имени драйвера</p>
+
+<p><img src="images/icon_xmpl.png" alt="picture_1" /></p>
 
 <p>Можно задать <code class="highlighter-rouge">activity</code> настроек:</p>
 
@@ -674,41 +681,42 @@ $('#toc').on('click', 'a', function() {
 
 <p>для <code class="highlighter-rouge">INTENT_FILTER_CASHDRAWER</code> – класс наследник <code class="highlighter-rouge">ru.evotor.devices.drivers.ICashDrawerDriverService.Stub</code>;</p>
 
-<p>Пример:
-```java
-public class MyDeviceService extends Service {</p>
+<p>Пример:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>private final Map&lt;Integer, MyDevice&gt; instances = new HashMap&lt;&gt;();
-private volatile AtomicInteger newDeviceIndex = new AtomicInteger(0);
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyDeviceService</span> <span class="kd">extends</span> <span class="n">Service</span> <span class="o">{</span>
 
-@Nullable
-@Override
-public IBinder onBind(Intent intent) {
-    String action = intent.getAction();
-    switch (action) {
-        case Constants.INTENT_FILTER_DRIVER_MANAGER:
-            return new MyDriverManagerStub(MyDeviceService.this);
-        case Constants.INTENT_FILTER_CASHDRAWER:
-            return new MyCashDrawerStub(MyDeviceService.this);
-        default:
-            return null;
-    }
-}
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">MyDevice</span><span class="o">&gt;</span> <span class="n">instances</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;();</span>
+    <span class="kd">private</span> <span class="kd">volatile</span> <span class="n">AtomicInteger</span> <span class="n">newDeviceIndex</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AtomicInteger</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
 
-public int createNewDevice(UsbDevice usbDevice) {
-    int currentIndex = newDeviceIndex.getAndIncrement();
-    instances.put(currentIndex, new MyDevice(getApplicationContext(), usbDevice));
-    return currentIndex;
-}
+    <span class="nd">@Nullable</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">IBinder</span> <span class="nf">onBind</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">action</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getAction</span><span class="o">();</span>
+        <span class="k">switch</span> <span class="o">(</span><span class="n">action</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">case</span> <span class="n">Constants</span><span class="o">.</span><span class="na">INTENT_FILTER_DRIVER_MANAGER</span><span class="o">:</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="nf">MyDriverManagerStub</span><span class="o">(</span><span class="n">MyDeviceService</span><span class="o">.</span><span class="na">this</span><span class="o">);</span>
+            <span class="k">case</span> <span class="n">Constants</span><span class="o">.</span><span class="na">INTENT_FILTER_CASHDRAWER</span><span class="o">:</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="nf">MyCashDrawerStub</span><span class="o">(</span><span class="n">MyDeviceService</span><span class="o">.</span><span class="na">this</span><span class="o">);</span>
+            <span class="k">default</span><span class="o">:</span>
+                <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
 
-public MyDevice getMyDevice(int instanceId) {
-    return instances.get(instanceId);
-}
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">createNewDevice</span><span class="o">(</span><span class="n">UsbDevice</span> <span class="n">usbDevice</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">currentIndex</span> <span class="o">=</span> <span class="n">newDeviceIndex</span><span class="o">.</span><span class="na">getAndIncrement</span><span class="o">();</span>
+        <span class="n">instances</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">currentIndex</span><span class="o">,</span> <span class="k">new</span> <span class="n">MyDevice</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="n">usbDevice</span><span class="o">));</span>
+        <span class="k">return</span> <span class="n">currentIndex</span><span class="o">;</span>
+    <span class="o">}</span>
 
-public void destroy(int instanceId) {
-	getMyDevice(instanceId).destroy();
-    instances.remove(instanceId);
-} } ```
+    <span class="kd">public</span> <span class="n">MyDevice</span> <span class="nf">getMyDevice</span><span class="o">(</span><span class="kt">int</span> <span class="n">instanceId</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">instances</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">instanceId</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">destroy</span><span class="o">(</span><span class="kt">int</span> <span class="n">instanceId</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">getMyDevice</span><span class="o">(</span><span class="n">instanceId</span><span class="o">).</span><span class="na">destroy</span><span class="o">();</span>
+        <span class="n">instances</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">instanceId</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre>
 </div>
 

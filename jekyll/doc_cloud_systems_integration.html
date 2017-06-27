@@ -260,7 +260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -325,6 +325,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_estras.html">Создание дополнительных полей в чеке</a></li>
                     
                     
                     
@@ -431,6 +437,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            
+            
+            
+            
+            
+            
             <li class="active"><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -446,13 +459,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -579,12 +585,6 @@ $('#toc').on('click', 'a', function() {
       <td style="text-align: center"> </td>
     </tr>
     <tr>
-      <td style="text-align: center">https://example.com/api/v1/user/tariff</td>
-      <td style="text-align: center">Эвотор отправляет по адресу идентификатор пользователя Эвотор и идентификатор тарифа в товароучётной системе.</td>
-      <td style="text-align: center"> </td>
-      <td style="text-align: center">Вы указываете идентификатор тарифа в процессе разработки приложения на сайте https://dev.evotor.ru/, в разделе Тарифы.</td>
-    </tr>
-    <tr>
       <td style="text-align: center">https://example.com/api/v1/user/token</td>
       <td style="text-align: center">Эвотор отправляет по адресу токен приложения, с помощью которого будет авторизовывать запросы от товароучётной системы.</td>
       <td style="text-align: center"> </td>
@@ -639,10 +639,13 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="section-3">Удаление и деактивация приложения</h3>
 
-<p>Эвотор останавливает интеграцию и удаляет приложение если:
-* пользователь самостоятельно удалил приложение в разделе <strong>Мои приложения</strong> в Личном кабинете пользователя Эвотор;
-* у пользователя недостаточно средств для продления подписки.
-  В этом случае, за пять дней до отключения приложения, Эвотор начинает рассылать пользователю смс с предупреждением о скором отключении приложения.</p>
+<p>Эвотор останавливает интеграцию и удаляет приложение если:</p>
+
+<ul>
+  <li>пользователь самостоятельно удалил приложение в разделе <strong>Мои приложения</strong> в Личном кабинете пользователя Эвотор;</li>
+  <li>у пользователя недостаточно средств для продления подписки.
+В этом случае, за пять дней до отключения приложения, Эвотор начинает рассылать пользователю смс с предупреждением о скором отключении приложения.</li>
+</ul>
 
 <p>В обоих случаях, после удаления приложения, Эвотор передаёт в сторонний сервис запрос <a href="https://goo.gl/V71Guj"><strong>[POST] Активация / деактивация тарифа</strong></a> с состоянием <code class="highlighter-rouge">INACTIVE</code>.</p>
 

@@ -260,7 +260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -325,6 +325,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_estras.html">Создание дополнительных полей в чеке</a></li>
                     
                     
                     
@@ -431,6 +437,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -446,13 +459,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -555,21 +561,26 @@ $('#toc').on('click', 'a', function() {
 <p>С помощью IFrame ваше приложение может отображать информацию, переданную сторонним сервисом.
 Вы можете добавить IFrame на закладку <strong>Настройки</strong> вашего приложения.</p>
 
-<p>Чтобы добавить IFrame на закладку <strong>Настройки</strong> приложения, выполните следующие действия:
-1. Войдите в личный кабинет разработчика на сайте https://developer.evotor.ru/.
-2. Выберите приложение, для которого требуется добавить фрейм.
-3. На закладке <strong>Интеграция</strong> установите флажок <strong>создать закладку “Настройки” на странице приложения</strong>.
-4. В Форме кастомизации нажмите на кнопку <strong>iframe</strong>.
-5. В поле <strong>Значение поля</strong> укажите веб-адрес страницы-источника фрейма в формате:
-   <code class="highlighter-rouge">https://&lt;веб-адрес страницы-источника&gt;.com?token=${token}&amp;user_id=${uid}</code></p>
+<p>Чтобы добавить IFrame на закладку <strong>Настройки</strong> приложения, выполните следующие действия:</p>
 
-<p>Где:</p>
+<ol>
+  <li>Войдите в личный кабинет разработчика на сайте https://developer.evotor.ru/.</li>
+  <li>Выберите приложение, для которого требуется добавить фрейм.</li>
+  <li>На закладке <strong>Интеграция</strong> установите флажок <strong>создать закладку “Настройки” на странице приложения</strong>.</li>
+  <li>В Форме кастомизации нажмите на кнопку <strong>iframe</strong>.</li>
+  <li>
+    <p>В поле <strong>Значение поля</strong> укажите веб-адрес страницы-источника фрейма в формате:
+<code class="highlighter-rouge">https://&lt;веб-адрес страницы-источника&gt;.com?token=${token}&amp;user_id=${uid}</code></p>
 
-<p><code class="highlighter-rouge">${token}</code> – облако Эвотор передаёт токен приложения.</p>
+    <p>Где:</p>
 
-<p><code class="highlighter-rouge">${uid}</code> – облако Эвотор передаёт идентификатор пользователя в облаке.
-6. Нажмите на кнопку <strong>Сохранить</strong>.
-7. В разделе <strong>Версии</strong> <a href="ссылка на страницу с информацией о том, как выложить приложение на тест">нажмите на кнопку <strong>Выложить на тест</strong></a>.</p>
+    <p><code class="highlighter-rouge">${token}</code> – облако Эвотор передаёт токен приложения.</p>
+
+    <p><code class="highlighter-rouge">${uid}</code> – облако Эвотор передаёт идентификатор пользователя в облаке.</p>
+  </li>
+  <li>Нажмите на кнопку <strong>Сохранить</strong>.</li>
+  <li>В разделе <strong>Версии</strong> <a href="ссылка на страницу с информацией о том, как выложить приложение на тест">нажмите на кнопку <strong>Выложить на тест</strong></a>.</li>
+</ol>
 
 <p>Фрейм будет добавлен на закладку <strong>Настройки</strong> приложения.</p>
 

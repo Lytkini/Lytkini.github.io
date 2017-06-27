@@ -7,9 +7,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content=" ">
-<title>Работа с товарами | Документация Эвотор</title>
+<meta name="description" content="Раздел содержит информацию о том, как и когда вы можете добавлять дополнительные поля в чеки.">
+<meta name="keywords" content="ТерминалJavaЧеки,  sample">
+<title>Создание дополнительных полей в чеке | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Работа с товарами">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Создание дополнительных полей в чеке">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -260,7 +260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -325,6 +325,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_estras.html">Создание дополнительных полей в чеке</a></li>
                     
                     
                     
@@ -431,6 +437,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -446,13 +459,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -511,13 +517,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Работа с товарами</h1>
+   <h1 class="post-title-main">Создание дополнительных полей в чеке</h1>
 </div>
 
 
 
 <div class="post-content">
 
+   
+    <div class="summary">Раздел содержит информацию о том, как и когда вы можете добавлять дополнительные поля в чеки.</div>
    
 
     
@@ -548,439 +556,32 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Таблица ниже содержит страницы, отмеченные тэгом <button type="button" style="cursor: default" class="btn btn-default navbar-btn">Товары</button></p>
-<table><thead><tr><th>Title</th><th>Type</th><th>Excerpt</th></tr></thead>
-    <tbody>
-    
-  
-    
-   
-    
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-        
+  <p>Приложения могут записывать дополнительные данные в чеки, как продажи, так и возврата.</p>
 
-        <tr><td><a href="doc_1C_integration.html">Интеграция с 1С</a></td>
-            <td><span class="label label-default">Page</span></td>
-          <td> Раздел содержит информацию об интеграции с 1С </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
+<p>JSONObject object = new JSONObject();
+                object.put(“key”, “value”);
+                SetExtra extra = new SetExtra(object);</p>
 
-        <tr><td><a href="doc_evotor_api_about.html">Об Облаке Эвотор</a></td>
-            <td><span class="label label-default">Page</span></td>
-          <td> Раздел содержит вводную информацию для работы с нашей документацией. </td>
-        </tr>
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-
-        <tr><td><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></td>
-            <td><span class="label label-default">Page</span></td>
-          <td> Раздел содержит информацию об интеграции с облачной товароучётной системой. </td>
-        </tr>
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-   
-    
-        
-     
-        
-
-        <tr><td><a href="doc_evotor_rest_api_calls.html">Запросы REST API Эвотор</a></td>
-            <td><span class="label label-default">Page</span></td>
-          <td> Раздел содержит информацию о запросах, которые вы можете отправлять в REST API Эвотор </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-
-        <tr><td><a href="doc_example_calls.html">Примеры запросов</a></td>
-            <td><span class="label label-default">Page</span></td>
-          <td> Раздел содержит примеры запросов к Эвотор API и вебхуков облака Эвотор. </td>
-        </tr>
-        
-     
-   
-    
-   
-    
-   
-    
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-        
-
-        <tr><td><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></td>
-            <td><span class="label label-default">Page</span></td>
-          <td> Раздел содержит инструкцию по созданию простого java-приложения для смарт-терминала. На разных этапах приложение обладает разными функциями. Так, итоговое пр... </td>
-        </tr>
-        
-     
-   
-    
-   
-    
-   
-    
-        
-     
-        
-
-        <tr><td><a href="doc_outgoing_calls_protocol.html">Запросы к стороннему сервису</a></td>
-            <td><span class="label label-default">Page</span></td>
-          <td> Раздел содержит информацию о запросах Эвотора к стороннему сервису. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-
-        <tr><td><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></td>
-            <td><span class="label label-default">Page</span></td>
-          <td> Раздел содержит описание Inventory API смарт-терминала. </td>
-        </tr>
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-        
-     
-        
-     
-        
-     
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-        
-     
-   
-    
-   
-    
-   
-    
-   
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-   </tbody>
-</table>
-
+<p>Вы можете добавить дополнительные поля при открытии чека, применении скидки и изменении позиций в чеке.</p>
 
 
     <div class="tags">
+        
+        <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        
+        
+        
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
+        
+        
+        
+        <a href="tag_Чеки.html" class="btn btn-default navbar-btn cursorNorm" role="button">Чеки</a>
+        
+        
         
     </div>
 

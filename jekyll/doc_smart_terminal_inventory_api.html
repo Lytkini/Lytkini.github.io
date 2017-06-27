@@ -260,7 +260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -325,6 +325,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_estras.html">Создание дополнительных полей в чеке</a></li>
                     
                     
                     
@@ -431,6 +437,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -446,13 +459,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -631,117 +637,79 @@ $('#toc').on('click', 'a', function() {
 
 <p>Получить все штрихкоды товара:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getAllBarcodesForProduct</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">productUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="o">{</span>
-    <span class="n">val</span> <span class="n">barcodesList</span> <span class="o">=</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;()</span>
-    <span class="n">val</span> <span class="nl">cursor:</span> <span class="n">Cursor</span><span class="o">?</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">contentResolver</span><span class="o">.</span><span class="na">query</span><span class="o">(</span>
-            <span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">BarcodeTable</span><span class="o">.</span><span class="na">URI</span><span class="o">,</span> <span class="n">productUuid</span><span class="o">),</span>
-            <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">)</span>
-    <span class="k">if</span> <span class="o">(</span><span class="n">cursor</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">moveToFirst</span><span class="o">())</span> <span class="o">{</span>
-            <span class="k">do</span> <span class="o">{</span>
-                <span class="n">val</span> <span class="nl">barcode:</span> <span class="n">String</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">BarcodeTable</span><span class="o">.</span><span class="na">ROW_BARCODE</span><span class="o">))</span>
-                <span class="n">barcodesList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">barcode</span><span class="o">)</span>
-            <span class="o">}</span> <span class="k">while</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">moveToNext</span><span class="o">())</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-    <span class="k">return</span> <span class="n">barcodesList</span>
-<span class="o">}</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getAllBarcodesForProduct</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">productUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span>
 </code></pre>
 </div>
 
 <p>Получить данные товара:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getProductByUuid</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">uuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">ProductItem</span><span class="o">?</span> <span class="o">{</span>
-  <span class="n">context</span><span class="o">.</span><span class="na">contentResolver</span>
-      <span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">Uri</span><span class="o">.</span><span class="na">withAppendedPath</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">URI</span><span class="o">,</span> <span class="n">uuid</span><span class="o">),</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">)</span>
-          <span class="o">?.</span><span class="na">let</span> <span class="o">{</span> <span class="n">cursor</span> <span class="o">-&gt;</span>
-              <span class="k">try</span> <span class="o">{</span>
-                  <span class="k">if</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">moveToFirst</span><span class="o">())</span> <span class="o">{</span>
-                      <span class="k">if</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_IS_GROUP</span><span class="o">))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-                          <span class="k">return</span> <span class="n">ProductItem</span><span class="o">.</span><span class="na">ProductGroup</span><span class="o">(</span>
-                              <span class="n">uuid</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_UUID</span><span class="o">)),</span>
-                                  <span class="n">parentUuid</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_PARENT_UUID</span><span class="o">)),</span>
-                                  <span class="n">code</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_CODE</span><span class="o">)),</span>
-                                  <span class="n">name</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_NAME</span><span class="o">)),</span>
-                                  <span class="n">taxNumber</span> <span class="o">=</span> <span class="n">Utils</span><span class="o">.</span><span class="na">safeValueOf</span><span class="o">(</span><span class="nl">TaxNumber:</span><span class="o">:</span><span class="kd">class</span><span class="err">.</span><span class="nc">java</span><span class="o">,</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_TAX_NUMBER</span><span class="o">)),</span> <span class="n">TaxNumber</span><span class="o">.</span><span class="na">NO_VAT</span><span class="o">)</span>
-                          <span class="o">)</span>
-                      <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-                          <span class="k">return</span> <span class="n">ProductItem</span><span class="o">.</span><span class="na">Product</span><span class="o">(</span>
-                              <span class="n">uuid</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_UUID</span><span class="o">)),</span>
-                                  <span class="n">parentUuid</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_PARENT_UUID</span><span class="o">)),</span>
-                                  <span class="n">code</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_CODE</span><span class="o">)),</span>
-                                  <span class="n">type</span> <span class="o">=</span> <span class="n">Utils</span><span class="o">.</span><span class="na">safeValueOf</span><span class="o">(</span><span class="nl">ProductType:</span><span class="o">:</span><span class="kd">class</span><span class="err">.</span><span class="nc">java</span><span class="o">,</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_TYPE</span><span class="o">)),</span> <span class="n">ProductType</span><span class="o">.</span><span class="na">NORMAL</span><span class="o">),</span>
-                                  <span class="n">name</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_NAME</span><span class="o">)),</span>
-                                  <span class="n">description</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_DESCRIPTION</span><span class="o">)),</span>
-                                  <span class="n">price</span> <span class="o">=</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getLong</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_PRICE_OUT</span><span class="o">))).</span><span class="na">divide</span><span class="o">(</span><span class="n">BigDecimal</span><span class="o">(</span><span class="mi">100</span><span class="o">)),</span>
-                                  <span class="n">quantity</span> <span class="o">=</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getLong</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_QUANTITY</span><span class="o">))).</span><span class="na">divide</span><span class="o">(</span><span class="n">BigDecimal</span><span class="o">(</span><span class="mi">1000</span><span class="o">)),</span>
-                                  <span class="n">measureName</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_MEASURE_NAME</span><span class="o">)),</span>
-                                  <span class="n">measurePrecision</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_MEASURE_PRECISION</span><span class="o">)),</span>
-                                  <span class="n">alcoholByVolume</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getLong</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_ALCOHOL_BY_VOLUME</span><span class="o">)).</span><span class="na">let</span> <span class="o">{</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="n">it</span><span class="o">).</span><span class="na">divide</span><span class="o">(</span><span class="n">BigDecimal</span><span class="o">(</span><span class="mi">1000</span><span class="o">))</span> <span class="o">},</span>
-                                  <span class="n">alcoholProductKindCode</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getLong</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_ALCOHOL_PRODUCT_KIND_CODE</span><span class="o">)),</span>
-                                  <span class="n">tareVolume</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getLong</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_TARE_VOLUME</span><span class="o">)).</span><span class="na">let</span> <span class="o">{</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="n">it</span><span class="o">).</span><span class="na">divide</span><span class="o">(</span><span class="n">BigDecimal</span><span class="o">(</span><span class="mi">1000</span><span class="o">))</span> <span class="o">},</span>
-                                  <span class="n">taxNumber</span> <span class="o">=</span> <span class="n">Utils</span><span class="o">.</span><span class="na">safeValueOf</span><span class="o">(</span><span class="nl">TaxNumber:</span><span class="o">:</span><span class="kd">class</span><span class="err">.</span><span class="nc">java</span><span class="o">,</span> <span class="n">cursor</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">getColumnIndex</span><span class="o">(</span><span class="n">ProductTable</span><span class="o">.</span><span class="na">ROW_TAX_NUMBER</span><span class="o">)),</span> <span class="n">TaxNumber</span><span class="o">.</span><span class="na">NO_VAT</span><span class="o">)</span>
-                          <span class="o">)</span>
-                      <span class="o">}</span>
-                  <span class="o">}</span>
-              <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nl">e:</span> <span class="n">Exception</span><span class="o">)</span> <span class="o">{</span>
-                  <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">()</span>
-              <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-                  <span class="n">cursor</span><span class="o">.</span><span class="na">close</span><span class="o">()</span>
-              <span class="o">}</span>
-          <span class="o">}</span>
-  <span class="k">return</span> <span class="kc">null</span>
-<span class="o">}</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getProductByUuid</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">uuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">ProductItem</span><span class="o">?</span>
+</code></pre>
+</div>
+
+<p>Где ProductItem – абстракция над товарами и товарными группами.</p>
+
+<p>товар и группа имеют одинаковые поля</p>
+
+<p>uuid: String,
+parentUuid: String?,
+code: String?, – код товара из 1С, если нет, то null
+name: String – наименование товара или группы
+taxNumber – налоговая ставка</p>
+
+<p>Поля специфические товаров:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>        val type: ProductType, – тип товара: NORMAL, ALCOHOL_MARKED, ALKOHOL_NOT_MARKED.
+        val price: BigDecimal, цена
+        val quantity: BigDecimal, количество
+        val description: String?, описание
+        val measureName: String, единицы измерения
+        val measurePrecision: Int, точность измерения
+        val alcoholByVolume: BigDecimal?, крепость алкоголя, если не алкоголь то налл
+        val alcoholProductKindCode: Long?, код юида алкогольной продкуции
+        val tareVolume: BigDecimal? объём тары
 </code></pre>
 </div>
 
 <p>Получить возможные дополнительные поля:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getField</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">fieldUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">Field</span><span class="o">?</span> <span class="o">{</span>
-    <span class="n">context</span><span class="o">.</span><span class="na">contentResolver</span>
-            <span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">FieldTable</span><span class="o">.</span><span class="na">URI</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="s">"${FieldTable.ROW_FIELD_UUID} = ?"</span><span class="o">,</span> <span class="n">arrayOf</span><span class="o">(</span><span class="n">fieldUuid</span><span class="o">),</span> <span class="kc">null</span><span class="o">)</span>
-            <span class="o">?.</span><span class="na">let</span> <span class="o">{</span> <span class="n">cursor</span> <span class="o">-&gt;</span>
-                <span class="k">try</span> <span class="o">{</span>
-                    <span class="k">if</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">moveToFirst</span><span class="o">())</span> <span class="o">{</span>
-                        <span class="k">return</span> <span class="nf">createField</span><span class="o">(</span><span class="n">cursor</span><span class="o">)</span>
-                    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
-                        <span class="k">return</span> <span class="kc">null</span>
-                    <span class="o">}</span>
-                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nl">e:</span> <span class="n">Exception</span><span class="o">)</span> <span class="o">{</span>
-                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">()</span>
-                <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-                    <span class="n">cursor</span><span class="o">.</span><span class="na">close</span><span class="o">()</span>
-                <span class="o">}</span>
-            <span class="o">}</span>
-
-    <span class="k">return</span> <span class="kc">null</span>
-<span class="o">}</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getField</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">fieldUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">Field</span><span class="o">?</span>
 </code></pre>
 </div>
+<p>де context - контекст приложения
+productUuid - uuid товара
+в качетсве результата будет возвращен объект Field, который может быть двух типов TextField и DictionaryField.
+Они имеют общие поля:
+val name: String?, – имя полня
+ val fieldUUID: String, – идентификатор поля в
+ val title: String?, – заголовок, который отображается в интерфейсе смарт-терминала
+ val type: Type – тип поля: TEXT_FIELD или DICTIONARY_FIELD.</p>
+
+<p>Поля специфические для TEXT_FIELD:
+* data – Валидный JSON-объект, который содержит данные, отображаемые с помощью JavaScript в интерфейсе смарт-терминала.</p>
+
+<p>Поля специфические для DICTIONARY_FIELD:
+multiple	Включает или выключает возможность выбора нескольких значений
+items массив возможных значений: title (заголовок элемента управления, который отображается пользоваетелю), value (идентификатор элемента управления).</p>
 
 <p>Получить значения дополнительных полей товара:</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getProductExtras</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">productUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ProductExtra</span><span class="o">&gt;</span> <span class="o">{</span>
-    <span class="n">val</span> <span class="n">result</span> <span class="o">=</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ProductExtra</span><span class="o">&gt;()</span>
-    <span class="n">context</span><span class="o">.</span><span class="na">contentResolver</span>
-            <span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">ProductExtraTable</span><span class="o">.</span><span class="na">URI</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="s">"${ProductExtraTable.ROW_PRODUCT_UUID} = ?"</span><span class="o">,</span> <span class="n">arrayOf</span><span class="o">(</span><span class="n">productUuid</span><span class="o">),</span> <span class="kc">null</span><span class="o">)</span>
-            <span class="o">?.</span><span class="na">let</span> <span class="o">{</span> <span class="n">cursor</span> <span class="o">-&gt;</span>
-                <span class="k">try</span> <span class="o">{</span>
-                    <span class="k">if</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">moveToFirst</span><span class="o">())</span> <span class="o">{</span>
-                        <span class="k">do</span> <span class="o">{</span>
-                            <span class="n">result</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">createProductExtra</span><span class="o">(</span><span class="n">cursor</span><span class="o">))</span>
-                        <span class="o">}</span> <span class="k">while</span> <span class="o">(</span><span class="n">cursor</span><span class="o">.</span><span class="na">moveToNext</span><span class="o">());</span>
-                    <span class="o">}</span>
-                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nl">e:</span> <span class="n">Exception</span><span class="o">)</span> <span class="o">{</span>
-                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">()</span>
-                <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-                    <span class="n">cursor</span><span class="o">.</span><span class="na">close</span><span class="o">()</span>
-                <span class="o">}</span>
-            <span class="o">}</span>
-    <span class="k">return</span> <span class="n">result</span>
-<span class="o">}</span>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getProductExtras</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">,</span> <span class="nl">productUuid:</span> <span class="n">String</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ProductExtra</span><span class="o">&gt;</span>
 </code></pre>
 </div>
+<p>где context - контекст приложения
+productUuid - uuid товара
+в качетсве результата будет возвращен список значений дополнительных полей товара</p>
+
+<p>объект ProductExtra содержит в себе следующие данные:
+uuid - uuid значения дополнительного поля товара
+name - имя дополнительного поля товара
+fieldUUID - uuid дополнительного поля товара
+fieldValue - строка содержащая значение дополнительного поля в определенном формате:
+  для текстового поля - строка обрамленная кавычками (“785af1da-4053-4214-abd6-71c9cd4b5800”)
+  для поля из словаря - массив uuid элементов ([“61bff019-5040-40cd-bedf-d854ac935f6c”,”b993bd2a-8f6a-4fbc-b916-2d9786cd5def”])
+ data - дополнительные данные от интеграции
+)</p>
 
 
     <div class="tags">

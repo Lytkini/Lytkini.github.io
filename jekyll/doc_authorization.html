@@ -260,7 +260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_logging.html">Отладка приложения</a></li>
+            <li><a href="doc_logging.html">Логирование</a></li>
             
             
             
@@ -325,6 +325,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_estras.html">Создание дополнительных полей в чеке</a></li>
                     
                     
                     
@@ -431,6 +437,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
@@ -446,13 +459,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_JS_template_integration.html">Создание JS-приложения с помощью шаблона</a></li>
             
             
             
@@ -556,7 +562,7 @@ $('#toc').on('click', 'a', function() {
   <li>токен приложения.</li>
 </ul>
 
-<h3 id="section">Токен стороннего сервиса</h3>
+<h3 id="serverToken">Токен стороннего сервиса</h3>
 
 <p>Сторонний сервис использует токен для авторизации запросов Облака Эвотор в рамках работы с учётной записью в стороннем сервисе. Облако передаёт токен стороннего сервиса в заголовке <code class="highlighter-rouge">Authorization</code>. Токен необходим для авторизации следующих запросов и уведомлений:</p>
 
@@ -585,7 +591,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>При создании нового или авторизации существующего пользователя, сторонний сервис возвращает в Облако уникальный <em>токен пользователя</em>. Облако передаёт токен в заголовке <code class="highlighter-rouge">Authorization</code> запросов приложения к стороннему сервису.</p>
 
-<h3 id="section-1">Токен приложения</h3>
+<h3 id="section">Токен приложения</h3>
 
 <p>Облако присваивает токен приложения каждому установленному приложению и с его помощью определяет в рамках какого пользователя действуют запросы стороннего сервиса. При запросе к REST API Облака Эвотор, например, для получения списка товаров или магазинов пользователя, сторонний сервис передаёт <em>токен приложения</em> в заголовке <code class="highlighter-rouge">X-Authorization</code>.
 Получить токен, который Облако выдало установленному приложению, вы можете одним из способов:</p>
