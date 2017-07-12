@@ -7,9 +7,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит требования к плитке приложения, а также информацию о том как добавить плитку на главный экран смарт-терминала.">
+<meta name="description" content="Раздел содержит требования к плитке приложения, а также информацию о том как добавить плитку в интерфейс смарт-терминала.">
 <meta name="keywords" content="ТерминалJavaJavaScript,  sample">
-<title>Плитка или иконка приложения в интерфейсе смарт-терминала | Документация Эвотор</title>
+<title>Плитка приложения в интерфейсе смарт-терминала | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Плитка или иконка приложения в интерфейсе смарт-терминала">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Плитка приложения в интерфейсе смарт-терминала">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -295,19 +295,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_users_api.html">User API</a></li>
+            <li><a href="doc_smart_terminal_users_api.html">Работа с пользователями</a></li>
             
             
             
             
             
             
-            <li><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></li>
+            <li><a href="doc_smart_terminal_inventory_api.html">Товароучёт</a></li>
             
             
             
             <li class="subfolders">
-                <a href="#">Receipt API</a>
+                <a href="#">Работа с чеком</a>
                 <ul>
                     
                     
@@ -325,6 +325,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_division.html">Разделение чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_get_receipt.html">Получить данные сформированного чека</a></li>
                     
                     
                     
@@ -348,14 +360,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_storage_api.html">Storage API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_division.html">Разделение чека</a></li>
+            <li><a href="doc_storage_api.html">Хранение данных на терминале</a></li>
             
             
             
@@ -523,7 +528,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Плитка или иконка приложения в интерфейсе смарт-терминала</h1>
+   <h1 class="post-title-main">Плитка приложения в интерфейсе смарт-терминала</h1>
 </div>
 
 
@@ -531,7 +536,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="post-content">
 
    
-    <div class="summary">Раздел содержит требования к плитке приложения, а также информацию о том как добавить плитку на главный экран смарт-терминала.</div>
+    <div class="summary">Раздел содержит требования к плитке приложения, а также информацию о том как добавить плитку в интерфейс смарт-терминала.</div>
    
 
     
@@ -562,7 +567,17 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Вы можете интегрировать своё приложение в существующий процесс смарт-терминала, например, продажу или работу с оборудованием, или добавить плитку приложения на главный экран. Плиток может быть несколько, если приложение реализует независимые действия, например, плитки “Продать товар” и “Вернуть товар”.</p>
+  <p>Вы можете запустить своё приложение по плитке, расположенной на одном из экранов смарт-терминала:</p>
+
+<ul>
+  <li>на главном экране;</li>
+  <li>на экране продажи;</li>
+  <li>на экране возврата.</li>
+</ul>
+
+<p>Вы можете запускать приложение с помощью плитки на главном экране смарт-терминала или с помощью иконок на экране продажи и/или возврата товара</p>
+
+<p>Вы можете интегрировать своё приложение в существующий процесс смарт-терминала, например, продажу или работу с оборудованием, или добавить плитку приложения на главный экран. Плиток может быть несколько, если приложение реализует независимые действия, например, плитки “Продать товар” и “Вернуть товар”.</p>
 
 <p><img src="images\Tile_example.png" alt="Пример плитки" /></p>
 
@@ -584,7 +599,7 @@ $('#toc').on('click', 'a', function() {
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Как правило цвет плитки делают таким же как и цвет основных кнопок в интерфейсе приложения.</div>
   </li>
   <li>
-    <p><strong>Название</strong>. Может быть названием приложения или полезного действия, например, “Продажи за неделю”. Плитка отображает до 20 символов. Остальные символы скрываются под многоточием.</p>
+    <p><strong>Название</strong>. Может быть названием приложения или полезного действия, например, “Продажи за неделю”. Плитка отображает до 20 символов. Остальные символы скрываются многоточием.</p>
   </li>
   <li>
     <p><strong>Иконка</strong>. Иконка должна быть квадратной – 64 dpi. Требуется обеспечить набор иконок в трёх разрешениях: 96, 192, 256px.</p>

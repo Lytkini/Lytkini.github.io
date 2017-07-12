@@ -295,19 +295,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_users_api.html">User API</a></li>
+            <li><a href="doc_smart_terminal_users_api.html">Работа с пользователями</a></li>
             
             
             
             
             
             
-            <li><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></li>
+            <li><a href="doc_smart_terminal_inventory_api.html">Товароучёт</a></li>
             
             
             
             <li class="subfolders">
-                <a href="#">Receipt API</a>
+                <a href="#">Работа с чеком</a>
                 <ul>
                     
                     
@@ -325,6 +325,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     <li><a href="doc_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_receipt_division.html">Разделение чека</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_get_receipt.html">Получить данные сформированного чека</a></li>
                     
                     
                     
@@ -348,14 +360,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_storage_api.html">Storage API</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_receipt_division.html">Разделение чека</a></li>
+            <li><a href="doc_storage_api.html">Хранение данных на терминале</a></li>
             
             
             
@@ -692,7 +697,7 @@ $('#toc').on('click', 'a', function() {
 
         <tr><td><a href="doc_discounts.html">Скидки</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Для расчёта и назначения скидки:  Подпишитесь на событие ReceiptDiscountEvent. Получите результат, который сообщает о возможности начисления скидки.  Приложение не может автоматически применять скидку, перед этим его требуется вручную вызвать с помощью иконки на экране оплаты смарт-терминала. Подписка на событие ReceiptDiscountEventсообщает о возможности начислить скидку.... </td>
+          <td> Вы можете добавлять скидку как на каждую позицию отдельно, так и на весь чек. Скидка на чек Приложение не может автоматически применять скидку, перед этим его требуется вручную вызвать с помощью иконки на экране оплаты смарт-терминала. Для расчёта и назначения скидки:  Подпишитесь на событие ReceiptDiscountEvent.... </td>
         </tr>
         
      
@@ -774,6 +779,18 @@ $('#toc').on('click', 'a', function() {
     
    
     
+        
+     
+        
+
+        <tr><td><a href="doc_get_receipt.html">Получить данные сформированного чека</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Раздел содержит описание интерфейса, с помощью которого можно получить данные сформированного чека. </td>
+        </tr>
+        
+     
+   
+    
    
     
         
@@ -812,6 +829,18 @@ $('#toc').on('click', 'a', function() {
      
         
      
+        
+     
+   
+    
+        
+     
+        
+
+        <tr><td><a href="doc_java_getting_started.html">Начало разработки</a></td>
+            <td><span class="label label-default">Страница</span></td>
+          <td> Раздел содержит информацию, которая поможет вам начать разработку java-приложения с нуля. Вы узнаете как собрать APK-файл своей программы, который потребуетс... </td>
+        </tr>
         
      
    
@@ -900,9 +929,9 @@ $('#toc').on('click', 'a', function() {
      
         
 
-        <tr><td><a href="doc_smart_terminal_app_tile.html">Плитка или иконка приложения в интерфейсе смарт-терминала</a></td>
+        <tr><td><a href="doc_smart_terminal_app_tile.html">Плитка приложения в интерфейсе смарт-терминала</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит требования к плитке приложения, а также информацию о том как добавить плитку на главный экран смарт-терминала. </td>
+          <td> Раздел содержит требования к плитке приложения, а также информацию о том как добавить плитку в интерфейс смарт-терминала. </td>
         </tr>
         
      
@@ -944,7 +973,7 @@ $('#toc').on('click', 'a', function() {
      
         
 
-        <tr><td><a href="doc_smart_terminal_inventory_api.html">Inventory API</a></td>
+        <tr><td><a href="doc_smart_terminal_inventory_api.html">Товароучёт</a></td>
             <td><span class="label label-default">Страница</span></td>
           <td> Раздел содержит описание Inventory API смарт-терминала. </td>
         </tr>
@@ -970,7 +999,7 @@ $('#toc').on('click', 'a', function() {
     
         
 
-        <tr><td><a href="doc_smart_terminal_users_api.html">User API</a></td>
+        <tr><td><a href="doc_smart_terminal_users_api.html">Работа с пользователями</a></td>
             <td><span class="label label-default">Страница</span></td>
           <td> Раздел содержит описание Users API смарт-терминала. </td>
         </tr>
@@ -1004,20 +1033,6 @@ $('#toc').on('click', 'a', function() {
      
         
      
-        
-     
-   
-    
-        
-     
-        
-     
-        
-
-        <tr><td><a href="doc_logging.html">Логирование</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Раздел содержит информацию о доступе к логам приложений. </td>
-        </tr>
         
      
    

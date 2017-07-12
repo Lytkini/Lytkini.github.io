@@ -7,9 +7,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content="JavaТерминалОборудование,  sample">
-<title>Весы | Документация Эвотор</title>
+<meta name="description" content="Раздел содержит информацию, которая поможет вам начать разработку java-приложения с нуля. Вы узнаете как собрать APK-файл своей программы, который потребуетс...">
+<meta name="keywords" content="ТерминалJava,  ">
+<title>Начало разработки | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Весы">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Начало разработки">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -421,7 +421,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li class="active"><a href="doc_scales.html">Весы</a></li>
+                    <li><a href="doc_scales.html">Весы</a></li>
                     
                     
                     
@@ -528,13 +528,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Весы</h1>
+   <h1 class="post-title-main">Начало разработки</h1>
 </div>
 
 
 
 <div class="post-content">
 
+   
+    <div class="summary">Раздел содержит информацию, которая поможет вам начать разработку java-приложения с нуля. Вы узнаете как собрать APK-файл своей программы, который потребуется для установки на смарт-терминал.</div>
    
 
     
@@ -565,48 +567,83 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="section">Работа весами</h3>
+  <h3 id="section">Требования</h3>
+
+<p>Для разработки java-приложения, вам потребуется:</p>
+
+<ul>
+  <li>Android Studio версии  или выше;</li>
+  <li>библиотека <a href="https://github.com/evotor/integration-library">integration-library</a> версии 0.3+.</li>
+</ul>
+
+<h3 id="section-1">Подключение библиотеки</h3>
+
+<p><em>Чтобы подключить библиотеку integration-library:</em></p>
 
 <ol>
   <li>
-    <p>В колбэке <code class="highlighter-rouge">onCreate()</code> или при запуске операции (<code class="highlighter-rouge">activity</code>) инициализируйте класс <code class="highlighter-rouge">ru.evotor.devices.commons.DeviceServiceConnector</code>:</p>
+    <p>В Android Studio создайте новый проект: <code class="highlighter-rouge">&lt;YourProjectName&gt;</code>.</p>
 
-    <p><code class="highlighter-rouge">DeviceServiceConnector.startInitConnections(getApplicationContext());</code></p>
+    <p>При создании проекта убедитесь, что в раскрывающемся списке <strong>Minimum SDK</strong> выбран элемент <strong>API 22: Android 5.1 (Lollipop)</strong>.</p>
 
-    <p>Класс инициализируется асинхронно, чтобы не препятствовать вызывающему потоку</p>
+    <p>В качестве примера, используйте операцию <strong>Empty Activity</strong>. Вы можете не добавлять операцию или использовать любую из предложенных.</p>
 
-    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Воспользуйтесь методом <code class="highlighter-rouge">addConnectionWrapper</code>, чтобы получить событие об успешном подключении. Используйте это событие, если необходимо выполнить какой-либо код сразу после установки соединения.</div>
-  </li>
-  <li>
-    <p>Вызовите метод <code class="highlighter-rouge">DeviceServiceConnector.getScalesService()</code>.</p>
+    <p>На скриншоте представлена структура полученного проекта:</p>
 
-    <p>Метод не может быть <code class="highlighter-rouge">null</code> и в случае успеха возвращает объект <code class="highlighter-rouge">ru.evotor.devices.commons.IScalesServiceWrapper</code>.</p>
+    <p><img src="./images/project_sctructure.png" alt="" title="Структура проекта &lt;YourProjectName&gt;" /></p>
 
-    <p>Метод может вернуть следующие исключения (<code class="highlighter-rouge">exception</code>):
- * <code class="highlighter-rouge">ru.evotor.devices.commons.exception.ServiceNotConnectedException</code> возвращается в результате серии неудачных попыток подключиться к весам.
- * <code class="highlighter-rouge">ru.evotor.devices.commons.exception.DeviceServiceException</code> – наследованое исключение.</p>
-  </li>
-  <li>
-    <p>С помощью метода <code class="highlighter-rouge">Weight getWeight(int deviceId)</code>, объекта <code class="highlighter-rouge">ru.evotor.devices.commons.IScalesService</code>, вы можете получить вес товара <code class="highlighter-rouge">Weight</code>.</p>
+    <p><a href="/doc_app_manifest.html">Манифест проекта</a> выглядит так:</p>
 
-    <p>Где:</p>
+    <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+ <span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> <span class="na">package=</span><span class="s">"com.example.&lt;yourprojectname&gt;"</span><span class="nt">&gt;</span>
 
-    <p><code class="highlighter-rouge">deviceId</code> – указывает устройство, для которого вызывается метод.</p>
+   <span class="nt">&lt;application</span>
+       <span class="na">android:allowBackup=</span><span class="s">"true"</span>
+       <span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span>
+       <span class="na">android:label=</span><span class="s">"@string/app_name"</span>
+       <span class="na">android:roundIcon=</span><span class="s">"@mipmap/ic_launcher_round"</span>
+       <span class="na">android:supportsRtl=</span><span class="s">"true"</span>
+       <span class="na">android:theme=</span><span class="s">"@style/AppTheme"</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">".MainActivity"</span><span class="nt">&gt;</span>
+           <span class="nt">&lt;intent-filter&gt;</span>
+               <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span> <span class="nt">/&gt;</span>
 
-    <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> В настоящий момент приложения не могут получить список номеров подключённых устройств, поэтому вместо номера устройства всегда следует передавать константу <code class="highlighter-rouge">ru.evotor.devices.commons.Constants.DEFAULT_DEVICE_INDEX</code>. Будет использовано устройство, заданное по умолчанию.</div>
+               <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.LAUNCHER"</span> <span class="nt">/&gt;</span>
+           <span class="nt">&lt;/intent-filter&gt;</span>
+       <span class="nt">&lt;/activity&gt;</span>
+   <span class="nt">&lt;/application&gt;</span>
 
-    <p><code class="highlighter-rouge">Weight</code> – вес товара, заданный в виде:</p>
-
-    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">final</span> <span class="n">BigDecimal</span> <span class="n">weightInGrams</span><span class="o">;</span><span class="c1">//вес товара в граммах, возвращённый весами.</span>
-<span class="c1">// поддерживали ли весы флаг стабильности при последнем взвешивании</span>
-<span class="kd">private</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="n">supportStable</span><span class="o">;</span><span class="c1">//Указывает был установлен флаг стабильности при последнем взвешивании или нет.</span>
-<span class="kd">private</span> <span class="kd">final</span> <span class="kt">boolean</span> <span class="n">stable</span><span class="o">;</span><span class="c1">//Указывает стабильность последнего взвешивания.</span>
+ <span class="nt">&lt;/manifest&gt;</span>
 </code></pre>
     </div>
   </li>
+  <li>
+    <p>В файле <code class="highlighter-rouge">build.gradle (Project: &lt;YourProjectName&gt;)</code> укажите:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>allprojects {
+    repositories {
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>В файле <code class="highlighter-rouge">build.gradle (Module: app)</code>, добавьте библиотеку integration-library в зависимости:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>compile group: 'com.github.evotor', name: 'integration-library', version: 'v0.3.+'
+</code></pre>
+    </div>
+
+    <p>Убедитесь, что в зависимости указана <a href="https://github.com/evotor/integration-library/">актуальная версия библиотеки</a>.</p>
+  </li>
 </ol>
 
-<p>Метод может вернуть наследованное исключение <code class="highlighter-rouge">ru.evotor.devices.commons.exception.DeviceServiceException</code>.</p>
+<p>Библиотека подключена к проекту. Теперь вы можете собрать APK-файл своей программы и <a href="./doc_app_installation.html">установить её на смарт-терминал</a>.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Манифест должен содержать элемент &lt;meta-data/&gt; с информацией об идентификаторе приложения (см. раздел <a href="./doc_app_manifest.html">“Манифест приложения”</a>).</div>
+
 
 
     <div class="tags">
@@ -615,15 +652,11 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
-        
-        
-        
         <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
         
         
         
-        <a href="tag_Оборудование.html" class="btn btn-default navbar-btn cursorNorm" role="button">Оборудование</a>
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
         
         
         
