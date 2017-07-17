@@ -7,9 +7,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит информацию, которая потребуется при разработке приложения для терминала.">
-<meta name="keywords" content="JavaJavaScriptТерминалОблако,  sample">
-<title>Приложение для смарт-терминала | Документация Эвотор</title>
+<meta name="description" content="Этот раздел содержит информацию о событиях которые рассылает смарт-терминал. При получении различных событий приложение выполняет соответствующие функции, на...">
+<meta name="keywords" content="ТерминалJavaJavaScriptСобытия,  sample">
+<title>События смарт-терминала | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Приложение для смарт-терминала">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="События смарт-терминала">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -528,7 +528,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Приложение для смарт-терминала</h1>
+   <h1 class="post-title-main">События смарт-терминала</h1>
 </div>
 
 
@@ -536,7 +536,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="post-content">
 
    
-    <div class="summary">Раздел содержит информацию, которая потребуется при разработке приложения для терминала.</div>
+    <div class="summary">Этот раздел содержит информацию о событиях которые рассылает смарт-терминал. При получении различных событий приложение выполняет соответствующие функции, например, сохраняет логи, редактирует чек, начисляет скидки и т.д..</div>
    
 
     
@@ -567,153 +567,169 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Ваше приложение для смарт-терминала может быть написано на языке Java или JavaScript.</p>
+  <p>Смарт-терминал рассылает два вида событий, на которые можно подписать приложение:</p>
 
-<blockquote>
-  <p>Обратите внимание, что <code class="highlighter-rouge">packagename</code> вашего приложения должен соответствовать правилам, описанным <a href="https://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html">в документации Oracle</a>.</p>
-</blockquote>
+<ul>
+  <li>События, которые не требуют ответа. Такие события в основном используются для ведения статистики и записи логов.</li>
+  <li>События, которые требуют ответ. Такие события необходимы для интеграции функций приложения в процесс работы смарт-терминала, например, для редактирования позиций или начисления скидки при создании чека.</li>
+</ul>
 
-<p>Процесс установки и активации приложения для смарт терминала, отличается в зависимости от того, взаимодействует приложение со сторонним сервисом или нет.</p>
+<h3 id="section">События которые не требуют ответа</h3>
 
-<h3 id="section">Приложение не взаимодействует со сторонним сервисом</h3>
+<p>Чтобы подписать java-приложение на такие события укажите их в приёмнике широковещательных сообщений (BroadcastReceiver).</p>
 
-<p>После покупки приложения в Магазине приложений, Эвотор автоматически устанавливает его на смарт терминал, при наличии подключения к Интернету.</p>
+<p>Пример приёмника с нескольких сообщений.</p>
 
-<h3 id="section-1">Приложение взаимодействует со сторонним сервисом</h3>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;receiver</span>
+        <span class="na">android:name=</span><span class="s">".AddPositionBroadcastReceiver"</span>
+        <span class="na">android:enabled=</span><span class="s">"true"</span>
+        <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;intent-filter&gt;</span>
+            <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evotor.intent.action.receipt.sell.POSITION_ADDED"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evotor.intent.action.receipt.sell.POSITION_EDITED"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evotor.intent.action.receipt.sell.POSITION_REMOVED"</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/intent-filter&gt;</span>
+    <span class="nt">&lt;/receiver&gt;</span>
+</code></pre>
+</div>
 
-<p>Если приложение взаимодействует со сторонним сервисом, убедитесь, что сторонний сервис поддерживает URL, указанные в таблице ниже.</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Вы можете указать несколько сообщений в одном приёмнике или использовать отдельный приёмник для каждого сообщения.</div>
+
+<p>Чтобы подписать JS-приложение на получение таких событий, укажите их в списке daemons в <a href="./ссылка на топик с js-манифестом">манифесте приложения</a>. Каждое событие вызывает соответствующий метод, в аргументе которого передаются данные о событии.</p>
+
+<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">daemons</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">daemon1</span>
+    <span class="s">events</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">evotor.intent.action.receipt.sell.CLEARED</span>
+      <span class="pi">-</span> <span class="s">evotor.intent.action.receipt.sell.OPENED</span>
+    <span class="s">behavior</span><span class="pi">:</span> <span class="s">daemon1.js</span>
+  <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">daemon2</span>
+    <span class="s">events</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">evotor.intent.action.receipt.sell.POSITION_ADDED</span>
+      <span class="pi">-</span> <span class="s">evotor.intent.action.receipt.sell.POSITION_EDITED</span>
+      <span class="pi">-</span> <span class="s">evotor.intent.action.receipt.sell.POSITION_REMOVED</span>
+    <span class="s">behavior</span><span class="pi">:</span> <span class="s">daemon2.js</span>
+</code></pre>
+</div>
+
+<p>Таблица ниже содержит список всех событий, которые не требуют ответа.</p>
 
 <table>
   <thead>
     <tr>
-      <th style="text-align: left">URL</th>
-      <th style="text-align: left">Назначение</th>
-      <th style="text-align: left">Авторизация</th>
-      <th style="text-align: left">Дополнительно</th>
-      <th> </th>
+      <th>Пакет</th>
+      <th>Событие</th>
+      <th>Описание</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td style="text-align: left">https://example.com/api/v1/user/create</td>
-      <td style="text-align: left">Эвотор отправляет по адресу регистрационные данные для создания новой учётной записи в облачной товароучётной системе.</td>
-      <td style="text-align: left">Товароучётная система авторизует запрос облака с помощью имени пользователя и пароля (basic-авторизация) или токена (bearer-авторизация).</td>
-      <td style="text-align: left"> </td>
-      <td> </td>
+      <td>evotor.intent.action.receipt.sell.</td>
+      <td>CLEARED</td>
+      <td>Чек продажи очищен</td>
     </tr>
     <tr>
-      <td style="text-align: left">https://example.com/api/v1/user/verify</td>
-      <td style="text-align: left">Эвотор отправляет по адресу данные для авторизации пользователя в облачной товароучётной системе с помощью ранее созданной учётной записи.</td>
-      <td style="text-align: left"> </td>
-      <td style="text-align: left"> </td>
       <td> </td>
+      <td>OPENED</td>
+      <td>Чек продажи открыт</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>POSITION_ADDED</td>
+      <td>В чек продажи добавлена позиция</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>POSITION_EDITED</td>
+      <td>В чеке продажи изменена позиция</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>POSITION_REMOVED</td>
+      <td>Из чека продажи удалена позиция</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>RECEIPT_CLOSED</td>
+      <td>Чек продажи закрыт</td>
+    </tr>
+    <tr>
+      <td>evotor.intent.action.receipt.payback.</td>
+      <td>CLEARED</td>
+      <td>Чек возврата очищен</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>OPENED</td>
+      <td>Чек возврата открыт</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>POSITION_ADDED</td>
+      <td>В чек возврата добавлена позиция</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>POSITION_EDITED</td>
+      <td>В чеке возврата изменена позиция</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>POSITION_REMOVED</td>
+      <td>Из чека возврата удалена позиция</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>RECEIPT_CLOSED</td>
+      <td>Чек возврата закрыт</td>
+    </tr>
+    <tr>
+      <td>evotor.intent.action.cashOperation.</td>
+      <td>CASH_OUT</td>
+      <td>Выдача наличных из кассы</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>IN</td>
+      <td>Внесение наличных в кассу</td>
+    </tr>
+    <tr>
+      <td>evotor.intent.action.inventory.</td>
+      <td>CARD_OPEN</td>
+      <td>Открыта карточка товара</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>PRODUCTS_UPDATED</td>
+      <td>База товаров обновлена</td>
+    </tr>
+    <tr>
+      <td>evotor.intent.action.cashDrawer.</td>
+      <td>OPEN</td>
+      <td>Открыт денежный ящик</td>
     </tr>
   </tbody>
 </table>
 
-<!-- Если приложение платное, сторонний сервис должен также поддерживать адрес  `https://example.com/api/v1/user/tariff`. На этот адрес Эвотор отправляет идентификатор пользователя Эвотор и идентификатор тарифа в стороннем сервисе. Идентификатор тарифа вы указываете в процессе разработки приложения на сайте https://dev.evotor.ru/, в разделе Тарифы. -->
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Получение данных от сканера штрихкодов описано в соответствующих разделах для <a href="./doc_barcode_scanner.html">java-</a> и <a href="./doc_JS_barcode_scanner.html">JS-приложения</a></div>
 
-<p>Так же, если приложению требуется доступ к REST API Эвотора, сторонний сервис должен поддерживать адрес <code class="highlighter-rouge">https://example.com/api/v1/user/token</code>.</p>
+<h3 id="section-1">События, которые требуют ответа</h3>
 
-<h4 id="section-2">Покупка и активация приложения для смарт-терминала</h4>
+<p>События, которые требуют ответа являются <em>точками интеграции</em> приложения в процесс работы смарт-терминал. При получении таких событий приложение может реализовать свою логику и, например, редактировать чек, начислять скидки и т.д.</p>
 
-<p><img src="images/smart_terminal_application_handling.png" alt="Схема покупки и активации приложения" title="Схема покупки и активации приложения" /></p>
+<p>Информацию о функциях приложения в зависимости от события, а так же о том, как подписать приложение на событие, которое требует ответа, вы найдёте в <a href="./ссылка на архив тегов">соответствующих разделах</a>.</p>
 
-<h5 id="section-3">Этап 1</h5>
-
-<p>В магазине приложений, пользователь выбирает приложение и тариф, и авторизуется в стороннем сервисе одним из двух способов:</p>
-
-<ul>
-    <li>
-        <p>Если у пользователя нет учётной записи, Эвотор отправляет в сторонний сервис запрос <a href="https://goo.gl/lRg1ss"><strong>[POST] Регистрация учётной записи</strong></a>. Тело запроса содержит регистрационные данные, с помощью которых сторонний сервис создаёт учётную запись. Для авторизации своих запросов, Эвотор передаёт заголовок <code>Authorization</code>.</p>
-
-        <p>В ответе сервис передаёт облаку токен пользователя (токен, который Эвотор отправляет в <a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya">вебхуках-уведомлениях</a> и запросах от смарт-терминала).</p>
-    </li>
-
-    <li>
-        <p>Если у пользователя есть учётная запись, Эвотор отправляет в сторонний сервис запрос <a href="https://goo.gl/3lkKrL"><strong>[POST] Авторизация пользователя</strong></a>. Тело запроса содержит данные учётной записи пользоваетя в стороннем сервисе.  Для авторизации своих запросов, Эвотор передаёт заголовок <code>Authorization</code>.</p>
-
-        <p>Тело ответа должно содержать параметр <code>haslBilling</code>. В зависимости от значения параметра Эвотор определяет, кто выполняет биллинг пользователя:</p>
-
-        <ul>
-            <li>
-                <p>true – биллинг пользователя выполняет сторонний сервис;</p>
-            </li>
-
-            <li>
-                <p>false – биллинг пользователя выполняет Эвотор.</p>
-            </li>
-        </ul>
-    </li>
-</ul>
-
-<blockquote>
-    <p>Содержимое заголовка Authorization вы задаёте на <a href="https://dev.evotor.ru/">портале разработчиков</a>, при создании приложения. В зависимости от типа авторизации (basic или bearer), который поддерживает сторонний сервис, заголовок может содержать имя пользователя и пароль для доступа к стороннему сервису, закодированные в base64, или токен стороннего сервиса.</p>
-</blockquote>
-
-<h5 id="section-4">Этап 2</h5>
-
-<p>Эвотор передаёт в сторонний сервис запрос <a href="https://goo.gl/V71Guj"><strong>[POST] Активация / деактивация тарифа</strong></a>. Тело запроса содержит идентификатор пользователя в Эвоторе и идентификатор тарифа, который вы указали при настойке интеграции приложения на портале dev.evotor.ru, а так же состояние тарифа <code>ACTIVE</code>.</p>
-
-<h4 id="section-5">Взаимодействие приложения и стороннего сервиса</h4>
-
-<p>Эвотор проксирует все запросы от приложения к стороннему сервису, а также ответы стороннего сервиса.</p>
-
-<p>Чтобы приложение обменивалось сообщениями со сторонним сервисом, выполните следующие действия:
-1. На сайте разработчиков, выберите необходимое приложение и перейдите на вкладку <strong>Интеграция</strong>.
-3. Установите следующие флажки:
-  * <strong>Проксирование запросов из приложения с терминала на ваш сервер (ver.2)</strong>, где в поле <strong>URL</strong> требуется указать основной URL стороннего сервиса (baseUrl). Сообщения приложения содержат путь относительно указанного URL.
-  * <strong>Регистрация учётной записи в стороннем сервисе</strong>, где в поле <strong>URL</strong> требуется указать URL вида <code class="highlighter-rouge">https://partner.ru/api/v1/create</code> (см. таблицу выше).
-  * <strong>Авторизация учётной записи в стороннем сервисе</strong>, где в поле <strong>URL</strong> требуется указать URL вида <code class="highlighter-rouge">https://partner.ru/api/v1/verify</code> (см. таблицу выше).
-4. <a href="doc_application_test.html">Выложите приложение на тест, чтобы изменения вступили в силу</a>.
-5. Установите приложение Личном кабинете пользователя Эвотор.
-6. В Личном кабинете, на вкладке <strong>Установка / удаление</strong> приложения, выберите смарт-терминалы, с которых приложение сможет отправлять запросы в сторонний сервис.</p>
-
-<p>Процесс обмена сообщениями между приложением и сторонним сервисом выглядит так:</p>
-
-<ol>
-  <li>Приложение создаёт запрос, указывает его тело и относительный путь на сервере стороннего сервиса.</li>
-  <li>Эвотор проверяет, что смарт-терминал привязан к приложению, которое отправляет запрос.</li>
-  <li>Эвотор добавляет к сообщению приложения заголовки:
-    <ul>
-      <li><code class="highlighter-rouge">X-Evotor-Store-Uuid</code> – содержит идентификатор магазина в формате uuid4, к которому привязан терминал.</li>
-      <li><code class="highlighter-rouge">X-Evotor-Device-UUID</code> – содержит идентификатор устройства в формате uuid4, полученный по запросу к <code class="highlighter-rouge">/api/v1/inventories/devices</code>.</li>
-      <li><code class="highlighter-rouge">Authorization</code> – содержит токен пользователя. Токен необходим для bearer-авторизации.</li>
-    </ul>
-  </li>
-  <li>Эвотор передаёт запрос приложения в сторонний сервис по адресу, состоящему из основного URL сервиса и относительного пути.</li>
-</ol>
-
-<p>Сторонний сервис передаёт сообщения к приложению в обратном порядке. Эвотор авторизует сообщения с помощью токена приложения. Сообщения стороннего сервиса должны содержать объекты:
-  * <code class="highlighter-rouge">status</code> – содержит HTTP-код состояния.
-  * <code class="highlighter-rouge">body</code> – содержит тело запроса.</p>
-
-<h3 id="section-6">Режим разработчика</h3>
-
-<p>Для отладки приложения, вы можете <a href="./doc_developer_mode.html">включить Режим разработчика</a>. Режим разработчика предоставляет доступ к логам приложения и позволяет загружать приложение напрямую на смарт-терминал.</p>
-
-<p>Для доступа к логам приложения используйте Android Debug Bridge.</p>
-
-<blockquote>
-  <p>Внимание: не устанавливайте на смарт-терминал более одного приложения в режиме разработчика одновременно.</p>
-</blockquote>
-
-<h3 id="section-7">Удаление и деактивация приложения</h3>
-
-<p>Эвотор останавливает интеграцию и удаляет приложение если:
-* пользователь самостоятельно удалил приложение в разделе <strong>Мои приложения</strong> в Личном кабинете пользователя Эвотор;
-* у пользователя недостаточно средств для продления подписки.</p>
-
-<p>В обоих случаях Эвотор передаёт в сторонний сервис запрос <a href="https://goo.gl/V71Guj"><strong>[POST] Активация / деактивация тарифа</strong></a> с состоянием <code class="highlighter-rouge">INACTIVE</code>.</p>
-
-<h4 id="section-8">Повторная установка приложения</h4>
-
-<p>При повторной установке приложения Эвотор проверяет истёк пробный период использования приложения или нет. Так же если при повторной установке пользователь авторизовался в стороннем сервисе с помощью существующей учётной записи и сторонний сервис вернул <code class="highlighter-rouge">haslBilling: true</code>, блиллинг пользователя будет выполнять сторонний сервис. Независимо от того, кто выполнял биллинг при первичной установке.</p>
+<p>Схема ниже показывает процесс обмена событием, которое требует ответа.</p>
 
 
     <div class="tags">
         
         <b>Тэги: </b>
+        
+        
+        
+        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
         
         
         
@@ -724,12 +740,6 @@ $('#toc').on('click', 'a', function() {
         <a href="tag_JavaScript.html" class="btn btn-default navbar-btn cursorNorm" role="button">JavaScript</a>
         
         
-        
-        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
-        
-        
-        
-        <a href="tag_Облако.html" class="btn btn-default navbar-btn cursorNorm" role="button">Облако</a>
         
         
         
