@@ -7,9 +7,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит информацию об интеграции с облачной товароучётной системой.">
-<meta name="keywords" content="ОблакоТовары,  sample">
-<title>Облачная товароучётная система | Документация Эвотор</title>
+<meta name="description" content="">
+<meta name="keywords" content="ТерминалJava,  ">
+<title>Иконка приложения в интерфейсе смарт-терминала | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Облачная товароучётная система">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Иконка приложения в интерфейсе смарт-терминала">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -262,7 +262,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_java_app_icon.html">Иконка приложения в интерфейсе смарт-терминала</a></li>
+                    <li class="active"><a href="doc_java_app_icon.html">Иконка приложения в интерфейсе смарт-терминала</a></li>
                     
                     
                     
@@ -482,7 +482,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li class="active"><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
+            <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
             
             
             
@@ -555,15 +555,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Облачная товароучётная система</h1>
+   <h1 class="post-title-main">Иконка приложения в интерфейсе смарт-терминала</h1>
 </div>
 
 
 
 <div class="post-content">
 
-   
-    <div class="summary">Раздел содержит информацию об интеграции с облачной товароучётной системой.</div>
    
 
     
@@ -594,106 +592,76 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Облачная товароучётная система это сторонний сервис, который позволяет  пользователям взаимодействовать с сущностями предприятия: магазинами, сотрудниками и товарами.</p>
+  <p><em>Чтобы добавить иконку приложения в интерфейс смарт-терминала:</em></p>
 
-<p>Для пользователей Эвотора интеграция выглядит как приложение, которое можно купить в Магазине приложений. Купленные приложения отображаются в Личном кабинете, в разделе <strong>Мои приложения</strong>.</p>
+<ol>
+  <li>
+    <p>В <a href="./doc_java_getting_started.html">созданном приложении</a> выберите или создайте операцию (<code class="highlighter-rouge">activity</code>), которая будет запускаться по иконке.</p>
+  </li>
+  <li>
+    <p>В манифесте приложения, в секции измените секцию, соответствующую операции следующим образом:</p>
 
-<p>Перед интеграцией, убедитесь, что облачная  товароучётная система поддерживает адреса, указанные в таблице ниже.</p>
+    <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;activity</span>
+    <span class="na">android:name=</span><span class="s">".&lt;НазваниеОперации&gt;"</span>
+    <span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span>
+    <span class="na">android:label=</span><span class="s">"Example tile"</span>
+    <span class="nt">&gt;</span>
+    <span class="nt">&lt;meta-data</span>
+        <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.BACKGROUND_COLOR"</span>
+        <span class="na">android:value=</span><span class="s">"#133788"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;intent-filter&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.EVOTOR"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/activity&gt;</span>
+</code></pre>
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left">URL</th>
-      <th style="text-align: left">Назначение</th>
-      <th style="text-align: left">Авторизация</th>
-      <th style="text-align: left">Дополнительно</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">https://example.com/api/v1/user/create</td>
-      <td style="text-align: left">Эвотор отправляет по адресу регистрационные данные для создания новой учётной записи в облачной товароучётной системе.</td>
-      <td style="text-align: left">Товароучётная система авторизует запрос облака с помощью имени пользователя и пароля (basic-авторизация) или токена (bearer-авторизация).</td>
-      <td style="text-align: left"> </td>
-    </tr>
-    <tr>
-      <td style="text-align: left">https://example.com/api/v1/user/verify</td>
-      <td style="text-align: left">Эвотор отправляет по адресу данные для авторизации пользователя в облачной товароучётной системе с помощью ранее созданной учётной записи.</td>
-      <td style="text-align: left"> </td>
-      <td style="text-align: left"> </td>
-    </tr>
-    <tr>
-      <td style="text-align: left">https://example.com/api/v1/user/token</td>
-      <td style="text-align: left">Эвотор отправляет по адресу токен приложения, с помощью которого будет авторизовывать запросы от товароучётной системы.</td>
-      <td style="text-align: left"> </td>
-      <td style="text-align: left"> </td>
-    </tr>
-  </tbody>
-</table>
+    <p>Где:</p>
 
-<blockquote>
-  <p>Информацию о сущностях пользователя Эвотор (магазинах, товарах, сотрудниках и смарт-терминалах), товароучётная система получает с помощью запросов к облаку Эвотор.</p>
-</blockquote>
+    <p>Атрибут <code class="highlighter-rouge">android:name="ru.evotor.launcher.BACKGROUND_COLOR"</code> указывает где именно будет отображаться иконка приложения:</p>
 
-<h3 id="section">Покупка и активация приложения</h3>
+    <ul>
+      <li><code class="highlighter-rouge">ru.evotor.launcher.BACKGROUND_COLOR</code> – иконка отображается на главном экране смарт-терминала.</li>
+      <li><code class="highlighter-rouge">ru.evotor.sales_screen.BACKGROUND_COLOR</code> – иконка отображается на экране оплаты (возврата) товара. Может понадобиться, например, для запуска приложения для начисления скидки на чек.</li>
+    </ul>
 
-<p><img src="images/cloud_application_handling.png" alt="Схема покупки и активации приложения" title="Схема покупки и активации приложения" /></p>
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> По иконке, расположенной на экране оплаты(возврата) может запускаться не только операция но и служба (Service), в то время как иконка на главном экране может запускать только операции.</div>
+  </li>
+</ol>
 
-<h4 id="section-1">Этап 1</h4>
+<p>Итоговый манифест <a href="./doc_java_getting_started.html">вашего приложения</a> будет выглядеть так:</p>
 
-<p>В магазине приложений, пользователь выбирает приложение и тариф, и авторизуется в стороннем сервисе одним из двух способов:</p>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+ <span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> <span class="na">package=</span><span class="s">"com.example.&lt;yourprojectname&gt;"</span><span class="nt">&gt;</span>
 
-<ul>
-    <li>
-        <p>Если у пользователя нет учётной записи, Эвотор отправляет в сторонний сервис запрос <a href="https://goo.gl/lRg1ss"><strong>[POST] Регистрация учётной записи</strong></a>. Тело запроса содержит регистрационные данные, с помощью которых сторонний сервис создаёт учётную запись. Для авторизации своих запросов, Эвотор передаёт заголовок <code>Authorization</code>.</p>
+   <span class="nt">&lt;application</span>
+       <span class="na">android:allowBackup=</span><span class="s">"true"</span>
+       <span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span>
+       <span class="na">android:label=</span><span class="s">"@string/app_name"</span>
+       <span class="na">android:roundIcon=</span><span class="s">"@mipmap/ic_launcher_round"</span>
+       <span class="na">android:supportsRtl=</span><span class="s">"true"</span>
+       <span class="na">android:theme=</span><span class="s">"@style/AppTheme"</span><span class="nt">&gt;</span>
+       <span class="nt">&lt;activity</span>
+           <span class="na">android:name=</span><span class="s">".&lt;НазваниеОперации&gt;"</span>
+           <span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span>
+           <span class="na">android:label=</span><span class="s">"Example tile"</span>
+           <span class="nt">&gt;</span>
+           <span class="nt">&lt;meta-data</span>
+               <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.BACKGROUND_COLOR"</span>
+               <span class="na">android:value=</span><span class="s">"#133788"</span> <span class="nt">/&gt;</span>
+           <span class="nt">&lt;intent-filter&gt;</span>
+               <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span> <span class="nt">/&gt;</span>
+               <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.EVOTOR"</span> <span class="nt">/&gt;</span>
+           <span class="nt">&lt;/intent-filter&gt;</span>
+       <span class="nt">&lt;/activity&gt;</span>
+   <span class="nt">&lt;/application&gt;</span>
 
-        <p>В ответе сервис передаёт облаку токен пользователя (токен, который Эвотор отправляет в <a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya">вебхуках-уведомлениях</a> и запросах от смарт-терминала).</p>
-    </li>
+ <span class="nt">&lt;/manifest&gt;</span>
+</code></pre>
+</div>
 
-    <li>
-        <p>Если у пользователя есть учётная запись, Эвотор отправляет в сторонний сервис запрос <a href="https://goo.gl/3lkKrL"><strong>[POST] Авторизация пользователя</strong></a>. Тело запроса содержит данные учётной записи пользоваетя в стороннем сервисе.  Для авторизации своих запросов, Эвотор передаёт заголовок <code>Authorization</code>.</p>
-
-        <p>Тело ответа должно содержать параметр <code>haslBilling</code>. В зависимости от значения параметра Эвотор определяет, кто выполняет биллинг пользователя:</p>
-
-        <ul>
-            <li>
-                <p>true – биллинг пользователя выполняет сторонний сервис;</p>
-            </li>
-
-            <li>
-                <p>false – биллинг пользователя выполняет Эвотор.</p>
-            </li>
-        </ul>
-    </li>
-</ul>
-
-<blockquote>
-    <p>Содержимое заголовка Authorization вы задаёте на <a href="https://dev.evotor.ru/">портале разработчиков</a>, при создании приложения. В зависимости от типа авторизации (basic или bearer), который поддерживает сторонний сервис, заголовок может содержать имя пользователя и пароль для доступа к стороннему сервису, закодированные в base64, или токен стороннего сервиса.</p>
-</blockquote>
-
-<h4 id="section-2">Этап 2</h4>
-
-<p>Эвотор передаёт в сторонний сервис запрос <a href="https://goo.gl/V71Guj"><strong>[POST] Активация / деактивация тарифа</strong></a>. Тело запроса содержит идентификатор пользователя в Эвоторе и идентификатор тарифа, который вы указали при настойке интеграции приложения на портале dev.evotor.ru, а так же состояние тарифа <code>ACTIVE</code>.</p>
-
-<h3 id="section-3">Удаление и деактивация приложения</h3>
-
-<p>Эвотор останавливает интеграцию и удаляет приложение если:</p>
-
-<ul>
-  <li>пользователь самостоятельно удалил приложение в разделе <strong>Мои приложения</strong> в Личном кабинете пользователя Эвотор;</li>
-  <li>у пользователя недостаточно средств для продления подписки.
-В этом случае, за пять дней до отключения приложения, Эвотор начинает рассылать пользователю смс с предупреждением о скором отключении приложения.</li>
-</ul>
-
-<p>В обоих случаях, после удаления приложения, Эвотор передаёт в сторонний сервис запрос <a href="https://goo.gl/V71Guj"><strong>[POST] Активация / деактивация тарифа</strong></a> с состоянием <code class="highlighter-rouge">INACTIVE</code>.</p>
-
-<h4 id="section-4">Повторная установка приложения</h4>
-
-<p>При повторной установке приложения, Эвотор проверяет истёк пробный период использования приложения или нет. Так же, в зависимости от значения параметра <code class="highlighter-rouge">haslBilling</code>, возможно изменение стороны ответственной за биллинг пользователя.</p>
-
-<h4 id="section-5">Подробная схема покупки и установки приложения</h4>
-
-<p><img src="images/market_app_install_schema.png" alt="" /></p>
+<p>Теперь вы можете собрать apk своего приложения и <a href="./doc_app_installation.html">установить его на терминал</a>. На главном экране терминала будет отображаться иконка вашего приложения.</p>
 
 
     <div class="tags">
@@ -702,11 +670,11 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_Облако.html" class="btn btn-default navbar-btn cursorNorm" role="button">Облако</a>
+        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
         
         
         
-        <a href="tag_Товары.html" class="btn btn-default navbar-btn cursorNorm" role="button">Товары</a>
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
         
         
         

@@ -250,6 +250,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li class="subfolders">
+                <a href="#">С чего начать разработку Java-приложения</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_java_getting_started.html">Начало разработки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_java_app_icon.html">Иконка приложения в интерфейсе смарт-терминала</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_app_installation.html">Установка приложения</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
             
             
             
@@ -572,11 +599,11 @@ $('#toc').on('click', 'a', function() {
 <p>Следующие методы определяют, где печатаются переданные данные:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">PrintExtraPlacePrintGroupTop</code> – данные печатаются;</li>
-  <li><code class="highlighter-rouge">PrintExtraPlacePrintGroupHeader</code> – данные печатаются;</li>
-  <li><code class="highlighter-rouge">PrintExtraPlacePrintGroupSummary</code> – данные печатаются;</li>
-  <li><code class="highlighter-rouge">PrintExtraPlacePositionFooter</code> – данные печатаются;</li>
-  <li><code class="highlighter-rouge">PrintExtraPlacePositionAllSubpositionsFooter</code> – данные печатаются.</li>
+  <li><code class="highlighter-rouge">PrintExtraPlacePrintGroupTop</code> – данные печатаются после клише и до текста “Кассовый чек”;</li>
+  <li><code class="highlighter-rouge">PrintExtraPlacePrintGroupHeader</code> – данные печатаются после текста “Кассовый чек”, до имени пользователя;</li>
+  <li><code class="highlighter-rouge">PrintExtraPlacePrintGroupSummary</code> – данные печатаются после итога и списка оплат, до текста “всего оплачено”;</li>
+  <li><code class="highlighter-rouge">PrintExtraPlacePositionFooter</code> – данные печатаются в позиции в чеке, до <a href="./doc_receipt_interactions.html#Position">подпозиций</a>;</li>
+  <li><code class="highlighter-rouge">PrintExtraPlacePositionAllSubpositionsFooter</code> – данные печатаются в позиции в чеке, после всех подпозиций.</li>
 </ul>
 
 <h3 id="section">Печать данных внутри кассового чека</h3>
@@ -601,7 +628,17 @@ $('#toc').on('click', 'a', function() {
 
     <p>Где:</p>
 
-    <p>Событие <code class="highlighter-rouge">evo.v2.receipt.sell.printExtra.REQUIRED</code> – сообщает о возможности печати внутри кассового чека.</p>
+    <p>Событие <code class="highlighter-rouge">evo.v2.receipt.sell.printExtra.REQUIRED</code> – сообщает о возможности печати внутри кассового чека продажи. Для печати внутри кассового чека возврата подпишитесь на событие <code class="highlighter-rouge">evo.v2.receipt.payback.printExtra.REQUIRED</code>.</p>
+  </li>
+  <li>
+    <p>В службе, подпишите процессор <code class="highlighter-rouge">PrintExtraRequiredEventProcessor</code> на событие:</p>
+
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">processorMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span>
+                <span class="n">PrintExtraRequiredEvent</span><span class="o">.</span><span class="na">NAME_SELL_RECEIPT</span><span class="o">,</span>
+                <span class="k">new</span> <span class="nf">PrintExtraRequiredEventProcessor</span><span class="o">()</span> <span class="o">{</span>
+                <span class="o">}</span>
+</code></pre>
+    </div>
   </li>
   <li>
     <p>В службе, в методе <code class="highlighter-rouge">PrintExtraRequiredEventProcessor</code> укажите место и массив данных, которые требуется распечатать:</p>
