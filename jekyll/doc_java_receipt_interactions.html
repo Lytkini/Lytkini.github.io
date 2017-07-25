@@ -246,13 +246,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_getting_started.html">С чего начать</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_app_components.html">Компоненты приложения</a></li>
             
             
@@ -333,13 +326,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            <li><a href="doc_product_extras.html.html">Схемы и дополнительные поля товаров</a></li>
-            
-            
-            
-            
         </ul>
         
         
@@ -357,7 +343,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_app_icon.html">Приложение в интерфейсе терминала</a></li>
+            <li><a href="doc_java_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
             
             
             
@@ -478,7 +464,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_js_app_icon.html">Иконка приложения в интерфейсе терминала</a></li>
+            <li><a href="doc_js_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
             
             
             
@@ -492,7 +478,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_js_inventory.html">Поиск товара</a></li>
+            <li><a href="doc_js_inventory.html">Поиск товара по идентификатору</a></li>
             
             
             
@@ -736,7 +722,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<p>Где вместо null вы можете передать <code class="highlighter-rouge">new SetExtra(extra)</code>, команду для <a href="./doc_receipt_extras.html">создания дополнительных полей в чеке</a>.</p>
+<p>Где вместо null вы можете передать <code class="highlighter-rouge">new SetExtra(extra)</code>, команду для <a href="./doc_java_receipt_extras.html">создания дополнительных полей в чеке</a>.</p>
 
 <h4 id="beforepositionseditedevent">Описание события <code class="highlighter-rouge">BeforePositionsEditedEvent</code></h4>
 
@@ -1141,7 +1127,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<p>При <a href="./doc_receipt_creation.html">очистке чека</a> приходит сообщение:</p>
+<p>При <a href="./doc_java_receipt_creation.html">очистке чека</a> приходит сообщение:</p>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ReceiptClearedEvent</span> <span class="kd">extends</span> <span class="n">ReceiptEvent</span> <span class="o">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BROADCAST_ACTION_SELL_RECEIPT_CLEARED</span> <span class="o">=</span> <span class="s">"evotor.intent.action.receipt.sell.CLEARED"</span><span class="o">;</span>

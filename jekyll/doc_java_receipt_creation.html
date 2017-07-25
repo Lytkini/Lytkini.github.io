@@ -246,13 +246,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_getting_started.html">С чего начать</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_app_components.html">Компоненты приложения</a></li>
             
             
@@ -333,13 +326,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            <li><a href="doc_product_extras.html.html">Схемы и дополнительные поля товаров</a></li>
-            
-            
-            
-            
         </ul>
         
         
@@ -357,7 +343,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_app_icon.html">Приложение в интерфейсе терминала</a></li>
+            <li><a href="doc_java_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
             
             
             
@@ -478,7 +464,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_js_app_icon.html">Иконка приложения в интерфейсе терминала</a></li>
+            <li><a href="doc_js_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
             
             
             
@@ -492,7 +478,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_js_inventory.html">Поиск товара</a></li>
+            <li><a href="doc_js_inventory.html">Поиск товара по идентификатору</a></li>
             
             
             
@@ -669,7 +655,7 @@ $('#toc').on('click', 'a', function() {
 
     <p>Где:</p>
 
-    <p><code class="highlighter-rouge">List&lt;PositionAdd&gt; positionAddList = new ArrayList&lt;&gt;()</code>– список позиций. Как добавить позицию в чек смотрите в разделе <a href="doc_receipt_interactions.html#PositionAltering">Добавление, изменение и удаление позиций</a>.</p>
+    <p><code class="highlighter-rouge">List&lt;PositionAdd&gt; positionAddList = new ArrayList&lt;&gt;()</code>– список позиций. Как добавить позицию в чек смотрите в разделе <a href="doc_java_receipt_interactions.html#PositionAltering">Добавление, изменение и удаление позиций</a>.</p>
 
     <p><code class="highlighter-rouge">JSONObject extra = new JSONObject();</code>– добавляет дополнительные данные к чеку. Данные доступны только вашему приложению. Не создавайте этот объект, если приложение не добавляет дополнительные поля к чеку.</p>
   </li>
@@ -696,7 +682,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
     </div>
 
-    <p>Где вместо null вы можете передать <code class="highlighter-rouge">new SetExtra(extra)</code>, команду для <a href="./doc_receipt_extras.html">создания дополнительных полей в чеке</a>.</p>
+    <p>Где вместо null вы можете передать <code class="highlighter-rouge">new SetExtra(extra)</code>, команду для <a href="./doc_java_receipt_extras.html">создания дополнительных полей в чеке</a>.</p>
 
     <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> При создании нового чека, происходит автоматическая очистка существующего открытого чека.</div>
   </li>

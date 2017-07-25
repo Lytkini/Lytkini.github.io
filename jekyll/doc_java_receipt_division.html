@@ -246,13 +246,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_getting_started.html">С чего начать</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_app_components.html">Компоненты приложения</a></li>
             
             
@@ -333,13 +326,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            <li><a href="doc_product_extras.html.html">Схемы и дополнительные поля товаров</a></li>
-            
-            
-            
-            
         </ul>
         
         
@@ -357,7 +343,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_app_icon.html">Приложение в интерфейсе терминала</a></li>
+            <li><a href="doc_java_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
             
             
             
@@ -478,7 +464,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_js_app_icon.html">Иконка приложения в интерфейсе терминала</a></li>
+            <li><a href="doc_js_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
             
             
             
@@ -492,7 +478,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_js_inventory.html">Поиск товара</a></li>
+            <li><a href="doc_js_inventory.html">Поиск товара по идентификатору</a></li>
             
             
             
@@ -703,7 +689,7 @@ $('#toc').on('click', 'a', function() {
 
     <p>Чтобы получить список счетов, доступных на данном смарт-терминале, <a href="./doc_receipt_division.html#PaymentSystemApiMethods">воспользуйтесь методом</a> <code class="highlighter-rouge">getPaymentSystems</code>, класса <code class="highlighter-rouge">PaymentSystemApi</code>.</p>
 
-    <p>Используйте команду <code class="highlighter-rouge">SetExtra</code>, чтобы добавить к чеку <a href="./doc_receipt_extras.html">дополнительные поля</a>.</p>
+    <p>Используйте команду <code class="highlighter-rouge">SetExtra</code>, чтобы добавить к чеку <a href="./doc_java_receipt_extras.html">дополнительные поля</a>.</p>
   </li>
   <li>
     <p>На основе данных, полученных от приложения, смарт-терминал совершает платежи и начинает печать чека. Перед печатью чека EvoPOS передаёт событие <code class="highlighter-rouge">PrintGroupRequiredEvent</code> и ожидает ответа от приложений.</p>
@@ -734,7 +720,7 @@ $('#toc').on('click', 'a', function() {
       <li>реквизиты организации (название, ИНН, адрес).</li>
     </ul>
 
-    <p>Используйте команду <code class="highlighter-rouge">SetExtra</code>, чтобы добавить к чеку <a href="./doc_receipt_extras.html">дополнительные поля</a>.</p>
+    <p>Используйте команду <code class="highlighter-rouge">SetExtra</code>, чтобы добавить к чеку <a href="./doc_java_receipt_extras.html">дополнительные поля</a>.</p>
   </li>
   <li>EvoPOS печатает чек в соответствии с полученными печатными группами.</li>
 </ol>

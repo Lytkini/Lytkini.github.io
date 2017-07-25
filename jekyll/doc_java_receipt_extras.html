@@ -7,7 +7,7 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
+<meta name="description" content="Раздел содержит информацию о том, как и когда вы можете добавлять дополнительные поля в чеки.">
 <meta name="keywords" content="ТерминалJava,  ">
 <title>Создание дополнительных полей в чеке | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
@@ -246,13 +246,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_getting_started.html">С чего начать</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_app_components.html">Компоненты приложения</a></li>
             
             
@@ -333,13 +326,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            <li><a href="doc_product_extras.html.html">Схемы и дополнительные поля товаров</a></li>
-            
-            
-            
-            
         </ul>
         
         
@@ -357,7 +343,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_app_icon.html">Приложение в интерфейсе терминала</a></li>
+            <li><a href="doc_java_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
             
             
             
@@ -478,7 +464,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_js_app_icon.html">Иконка приложения в интерфейсе терминала</a></li>
+            <li><a href="doc_js_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
             
             
             
@@ -492,7 +478,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_js_inventory.html">Поиск товара</a></li>
+            <li><a href="doc_js_inventory.html">Поиск товара по идентификатору</a></li>
             
             
             
@@ -623,6 +609,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="post-content">
 
    
+    <div class="summary">Раздел содержит информацию о том, как и когда вы можете добавлять дополнительные поля в чеки.</div>
+   
 
     
     
@@ -652,7 +640,23 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  
+  <p>Приложения могут записывать дополнительные данные в чеки, как продажи, так и возврата.</p>
+
+<p>Дополнительные данные должны представлять валидный JSON-объект:</p>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">JSONObject</span> <span class="n">object</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+                <span class="n">object</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"key"</span><span class="o">,</span> <span class="s">"value"</span><span class="o">);</span>
+                <span class="n">SetExtra</span> <span class="n">extra</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SetExtra</span><span class="o">(</span><span class="n">object</span><span class="o">);</span>
+</code></pre>
+</div>
+
+<p>Вы можете создавать дополнительные поля в чеках в следующих случаях:</p>
+
+<ul>
+  <li><a href="./doc_java_receipt_creation.html">при открытии чека</a>;</li>
+  <li><a href="./doc_java_discounts.html">при применении скидки</a>;</li>
+  <li><a href="./doc_java_receipt_interactions.html">при изменении позиций в чеке</a>.</li>
+</ul>
 
 
     <div class="tags">

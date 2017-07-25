@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content="ТерминалJS,  ">
-<title>Поиск товара | Документация Эвотор</title>
+<title>Поиск товара по идентификатору | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Поиск товара">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Поиск товара по идентификатору">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -246,13 +246,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_getting_started.html">С чего начать</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_app_components.html">Компоненты приложения</a></li>
             
             
@@ -333,13 +326,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            <li><a href="doc_product_extras.html.html">Схемы и дополнительные поля товаров</a></li>
-            
-            
-            
-            
         </ul>
         
         
@@ -357,7 +343,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_app_icon.html">Приложение в интерфейсе терминала</a></li>
+            <li><a href="doc_java_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
             
             
             
@@ -478,7 +464,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_js_app_icon.html">Иконка приложения в интерфейсе терминала</a></li>
+            <li><a href="doc_js_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
             
             
             
@@ -492,7 +478,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li class="active"><a href="doc_js_inventory.html">Поиск товара</a></li>
+            <li class="active"><a href="doc_js_inventory.html">Поиск товара по идентификатору</a></li>
             
             
             
@@ -615,7 +601,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Поиск товара</h1>
+   <h1 class="post-title-main">Поиск товара по идентификатору</h1>
 </div>
 
 
@@ -652,13 +638,13 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Чтобы найти товарв локальной базе смарт-терминала используйте функцию</p>
+  <p>Чтобы найти товар по идентификатору в локальной базе смарт-терминала используйте функцию</p>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">fun</span> <span class="nx">getProduct</span><span class="p">(</span><span class="nx">commodityUuid</span><span class="err">:</span> <span class="nb">String</span><span class="p">)</span><span class="err">:</span> <span class="nx">JSValue</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">getProduct</span><span class="p">()</span>
 </code></pre>
 </div>
 
-<p>в аргументе функции требуется передать uuid товара.</p>
+<p>В аргументе функции требуется передать строку с идентификатором товара в формате <code class="highlighter-rouge">uuid4</code>.</p>
 
 
     <div class="tags">

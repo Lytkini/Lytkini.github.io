@@ -246,13 +246,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_getting_started.html">С чего начать</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_app_components.html">Компоненты приложения</a></li>
             
             
@@ -333,13 +326,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            <li><a href="doc_product_extras.html.html">Схемы и дополнительные поля товаров</a></li>
-            
-            
-            
-            
         </ul>
         
         
@@ -357,7 +343,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_app_icon.html">Приложение в интерфейсе терминала</a></li>
+            <li><a href="doc_java_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
             
             
             
@@ -478,7 +464,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_js_app_icon.html">Иконка приложения в интерфейсе терминала</a></li>
+            <li><a href="doc_js_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
             
             
             
@@ -492,7 +478,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_js_inventory.html">Поиск товара</a></li>
+            <li><a href="doc_js_inventory.html">Поиск товара по идентификатору</a></li>
             
             
             
@@ -1132,7 +1118,7 @@ $('#toc').on('click', 'a', function() {
     
         
 
-        <tr><td><a href="doc_java_app_icon.html">Иконка приложения в интерфейсе смарт-терминала</a></td>
+        <tr><td><a href="doc_java_app_icon.html">Приложение в интерфейсе смарт-терминала</a></td>
             <td><span class="label label-default">Страница</span></td>
           <td> Иконка приложения на главном экране смарт-терминала Чтобы добавить иконку приложения на главный экран смарт-терминала: В манифесте приложения, измените секцию требуемой операции следующим образом:  &lt;activity android:name=".&lt;НазваниеОперации&gt;" android:icon="@mipmap/ic_launcher" android:label="Example tile" &gt; &lt;meta-data android:name="ru.evotor.launcher.BACKGROUND_COLOR" android:value=&lt;span... </td>
         </tr>
@@ -1360,8 +1346,7 @@ $('#toc').on('click', 'a', function() {
 
         <tr><td><a href="doc_java_receipt_extras.html">Создание дополнительных полей в чеке</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> 
- </td>
+          <td> Раздел содержит информацию о том, как и когда вы можете добавлять дополнительные поля в чеки. </td>
         </tr>
         
      
@@ -1427,7 +1412,7 @@ $('#toc').on('click', 'a', function() {
     
         
 
-        <tr><td><a href="doc_js_app_icon.html">Иконка приложения в интерфейсе смарт-терминала</a></td>
+        <tr><td><a href="doc_js_app_icon.html">Приложение в интерфейсе смарт-терминала</a></td>
             <td><span class="label label-default">Страница</span></td>
           <td> Вы можете запустить своё приложение по плитке, расположенной на одном из экранов смарт-терминала:  на главном экране; на экране продажи; на экране возврата.  Вы можете запускать приложение с помощью плитки на главном экране смарт-терминала или с помощью иконок на экране продажи и/или возврата товара Вы можете интегрировать своё приложение... </td>
         </tr>
@@ -1453,7 +1438,7 @@ $('#toc').on('click', 'a', function() {
 
         <tr><td><a href="doc_js_devices_interactions.html">Получение данных с подключённого оборудования</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Ваше приложение может получать данные от сканера штрихкодов и весов, подключённых к смарт-терминалу. Подготовка Перед тем как ваше приложение сможет получать данные от устройств, вам потребуется подключить к проекту библиотеку integration-library. Получение данных от подключённых устройств Получить штрихкод товара fun barcodeScanned&lt;span... </td>
+          <td> Ваше приложение может получать данные от сканера штрихкодов и весов, подключённых к смарт-терминалу. Подготовка Перед тем как ваше приложение сможет получать данные от устройств, вам потребуется подключить к проекту библиотеку integration-library. Получение данных от подключённых устройств Получить штрихкод товара barcodeScanned() ... </td>
         </tr>
         
      
@@ -1475,15 +1460,15 @@ $('#toc').on('click', 'a', function() {
     
         
 
-        <tr><td><a href="doc_js_inventory.html">Поиск товара</a></td>
+        <tr><td><a href="doc_js_inventory.html">Поиск товара по идентификатору</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Чтобы найти товарв локальной базе смарт-терминала используйте функцию
+          <td> Чтобы найти товар по идентификатору в локальной базе смарт-терминала используйте функцию
 
-fun getProduct(commodityUuid: String): JSValue
+getProduct()
 
 
 
-в аргументе функции требуется передать uuid товара.
+В аргументе функции требуется передать строку с идентификатором товара в формате uuid4.
  </td>
         </tr>
         
@@ -1496,7 +1481,7 @@ fun getProduct(commodityUuid: String): JSValue
 
         <tr><td><a href="doc_js_receipt_interactions.html">Работа с чеком</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Функции для работы с чеком Записать в чек дополнительные данные fun addReceiptExtra(extra: String?)   Добавить позицию в чек fun addPosition(position: String?)   Редактировать позицию... </td>
+          <td> Функции для работы с чеком Записать в чек дополнительные данные addReceiptExtra()   В аргументе функции требуется передать строку с дополнительными данными, которые добавятся к чеку. Добавить позицию в чек addPosition()   В аргументе функции требуется... </td>
         </tr>
         
      

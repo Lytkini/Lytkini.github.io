@@ -246,13 +246,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_getting_started.html">С чего начать</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_app_components.html">Компоненты приложения</a></li>
             
             
@@ -333,13 +326,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            <li><a href="doc_product_extras.html.html">Схемы и дополнительные поля товаров</a></li>
-            
-            
-            
-            
         </ul>
         
         
@@ -357,7 +343,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_app_icon.html">Приложение в интерфейсе терминала</a></li>
+            <li><a href="doc_java_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
             
             
             
@@ -478,7 +464,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_js_app_icon.html">Иконка приложения в интерфейсе терминала</a></li>
+            <li><a href="doc_js_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
             
             
             
@@ -492,7 +478,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_js_inventory.html">Поиск товара</a></li>
+            <li><a href="doc_js_inventory.html">Поиск товара по идентификатору</a></li>
             
             
             
@@ -652,11 +638,11 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Вы можете добавлять скидку как на <a href="/doc_discounts.html#discountPosition">каждую позицию отдельно</a>, так и на весь чек.</p>
+  <p>Вы можете добавлять скидку как на <a href="/doc_java_discounts.html#discountPosition">каждую позицию отдельно</a>, так и на весь чек.</p>
 
 <h3 id="section">Скидка на чек</h3>
 
-<p>Приложение не может автоматически применять скидку, перед этим его требуется вручную вызвать с помощью <a href="./doc_smart_terminal_app_tile.html">иконки на экране оплаты смарт-терминала</a>.</p>
+<p>Приложение не может автоматически применять скидку, перед этим его требуется вручную вызвать с помощью <a href="./doc_java_app_icon.html">иконки на экране оплаты смарт-терминала</a>.</p>
 
 <p>Для расчёта и назначения скидки:</p>
 
@@ -743,7 +729,7 @@ $('#toc').on('click', 'a', function() {
 
 <ul>
   <li><code class="highlighter-rouge">discount</code> – значение скидки в валюте.</li>
-  <li><code class="highlighter-rouge">new SetExtra(extra)</code> – команда для <a href="./doc_receipt_extras.html">создания дополнительных полей в чеке</a>. Если дополнительные поля создавать не требуется вы можете передать <code class="highlighter-rouge">null</code>.</li>
+  <li><code class="highlighter-rouge">new SetExtra(extra)</code> – команда для <a href="./doc_java_receipt_extras.html">создания дополнительных полей в чеке</a>. Если дополнительные поля создавать не требуется вы можете передать <code class="highlighter-rouge">null</code>.</li>
   <li><code class="highlighter-rouge">changes</code> – список изменений по позициям.</li>
 </ul>
 
@@ -754,8 +740,8 @@ $('#toc').on('click', 'a', function() {
 <p>Передать поле можно в любой момент, когда доступно редактирование существующих или добавление новых позиций в чек:</p>
 
 <ul>
-  <li><a href="./doc_receipt_creation.html">При создании чека в приложении</a>.</li>
-  <li><a href="./doc_receipt_interactions.html">В списке изменений changes, при работе с чеком</a>.</li>
+  <li><a href="./doc_java_receipt_creation.html">При создании чека в приложении</a>.</li>
+  <li><a href="./doc_java_receipt_interactions.html">В списке изменений changes, при работе с чеком</a>.</li>
   <li>В списке изменений по позициям (см. выше)</li>
 </ul>
 

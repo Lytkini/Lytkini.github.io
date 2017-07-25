@@ -246,13 +246,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_getting_started.html">С чего начать</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_app_components.html">Компоненты приложения</a></li>
             
             
@@ -333,13 +326,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            <li><a href="doc_product_extras.html.html">Схемы и дополнительные поля товаров</a></li>
-            
-            
-            
-            
         </ul>
         
         
@@ -357,7 +343,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_app_icon.html">Приложение в интерфейсе терминала</a></li>
+            <li><a href="doc_java_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
             
             
             
@@ -478,7 +464,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_js_app_icon.html">Иконка приложения в интерфейсе терминала</a></li>
+            <li><a href="doc_js_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
             
             
             
@@ -492,7 +478,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_js_inventory.html">Поиск товара</a></li>
+            <li><a href="doc_js_inventory.html">Поиск товара по идентификатору</a></li>
             
             
             
@@ -683,46 +669,46 @@ $('#toc').on('click', 'a', function() {
 
     <p><a href="/doc_app_manifest.html">Манифест проекта</a> выглядит так:</p>
 
-    <p>```yaml
-version: 1
-versionName: “1.0.0”</p>
+    <div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">version</span><span class="pi">:</span> <span class="s">1</span>
+<span class="s">versionName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.0.0"</span>
 
-    <p>packageName: “packageName”
-appName: “ApplicationName”
-appUUID: “ApllicationUUID”</p>
+<span class="s">packageName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">packageName"</span>
+<span class="s">appName</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ApplicationName"</span>
+<span class="s">appUUID</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ApllicationUUID"</span>
 
-    <p>views:
-  - name: hello_sales_view # Запрещено использовать верхний регистр и ,-<em>&amp;^%$# и т.д
-    header: “Hello header”
-    label: “Hello”
-    color: “#FF1493”
-    icon_96: icons/icon-96.png
-    icon_192: icons/icon-192.png
-    icon_256: icons/icon-256.png
-    source: views/view.html
-    point: SALES_SCREEN # Variants are MAIN_SCREEN and SALES_SCREEN
-    grants:
-            - CASH_OPERATIONS_SELL
-    scripts:
-      - no-script
-    styles:
-      - “</em>.css”
-  - name: world_sales_view # Запрещено использовать верхний регистр и ,-<em>&amp;^%$# и т.д
-    header: “World header”
-    label: “World”
-    color: “#0000CD”
-    icon_96: icons/icon-96.png
-    icon_192: icons/icon-192.png
-    icon_256: icons/icon-256.png
-    source: views/view.html
-    point: SALES_SCREEN # Variants are MAIN_SCREEN and SALES_SCREEN
-    grants:
-            - CASH_OPERATIONS_SELL
-    scripts:
-      - no-script
-    styles:
-      - “</em>.css”
-   ```</p>
+<span class="s">views</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">hello_sales_view</span> <span class="c1"># Запрещено использовать верхний регистр и ,-*&amp;^%$# и т.д</span>
+    <span class="s">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Hello</span><span class="nv"> </span><span class="s">header"</span>
+    <span class="s">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Hello"</span>
+    <span class="s">color</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#FF1493"</span>
+    <span class="s">icon_96</span><span class="pi">:</span> <span class="s">icons/icon-96.png</span>
+    <span class="s">icon_192</span><span class="pi">:</span> <span class="s">icons/icon-192.png</span>
+    <span class="s">icon_256</span><span class="pi">:</span> <span class="s">icons/icon-256.png</span>
+    <span class="s">source</span><span class="pi">:</span> <span class="s">views/view.html</span>
+    <span class="s">point</span><span class="pi">:</span> <span class="s">SALES_SCREEN</span> <span class="c1"># Variants are MAIN_SCREEN and SALES_SCREEN</span>
+    <span class="s">grants</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">CASH_OPERATIONS_SELL</span>
+    <span class="s">scripts</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">no-script</span>
+    <span class="s">styles</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">*.css"</span>
+  <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">world_sales_view</span> <span class="c1"># Запрещено использовать верхний регистр и ,-*&amp;^%$# и т.д</span>
+    <span class="s">header</span><span class="pi">:</span> <span class="s2">"</span><span class="s">World</span><span class="nv"> </span><span class="s">header"</span>
+    <span class="s">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">World"</span>
+    <span class="s">color</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#0000CD"</span>
+    <span class="s">icon_96</span><span class="pi">:</span> <span class="s">icons/icon-96.png</span>
+    <span class="s">icon_192</span><span class="pi">:</span> <span class="s">icons/icon-192.png</span>
+    <span class="s">icon_256</span><span class="pi">:</span> <span class="s">icons/icon-256.png</span>
+    <span class="s">source</span><span class="pi">:</span> <span class="s">views/view.html</span>
+    <span class="s">point</span><span class="pi">:</span> <span class="s">SALES_SCREEN</span> <span class="c1"># Variants are MAIN_SCREEN and SALES_SCREEN</span>
+    <span class="s">grants</span><span class="pi">:</span>
+            <span class="pi">-</span> <span class="s">CASH_OPERATIONS_SELL</span>
+    <span class="s">scripts</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">no-script</span>
+    <span class="s">styles</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">*.css"</span>
+</code></pre>
+    </div>
   </li>
   <li>
     <p>В файле <code class="highlighter-rouge">build.gradle (Project: &lt;YourProjectName&gt;)</code> укажите:</p>
@@ -771,7 +757,7 @@ allprojects {
 <p>Так же, теперь вы можете:</p>
 
 <ul>
-  <li><a href="doc_java_app_icon.html">добавить иконку приложения на главный экран или экран оплаты</a>;</li>
+  <li><a href="doc_js_app_icon.html">добавить иконку приложения на главный экран или экран оплаты</a>;</li>
   <li><a href="./doc_app_installation.html">установить приложение на смарт-терминал</a>.</li>
 </ul>
 
