@@ -257,30 +257,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li class="subfolders">
-                <a href="#">Манифест приложения</a>
-                <ul>
-                    
-                    
-                    
-                    <li><a href="doc_about_manifest.html">О манифесте приложения</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_java_app_manifest.html">Манифест Java-приложения</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
-                    
-                    
-                    
-                </ul>
-            </li>
+            
+            
+            
+            <li><a href="doc_about_manifest.html">Манифест приложения</a></li>
             
             
             
@@ -344,6 +324,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_java_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_java_app_manifest.html">Манифест Java-приложения</a></li>
             
             
             
@@ -471,6 +458,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_js_third_party_service_communication.html">Обмен сообщениями со сторонним сервисом</a></li>
             
             
@@ -499,7 +493,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_js_devices_interactions.html">Получение данных от подключённых устройств</a></li>
+            <li><a href="doc_js_devices.html">Получение данных от подключённых устройств</a></li>
             
             
             
@@ -565,6 +559,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_tariffs.html">Тарифы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_payoff.html">Выплаты</a></li>
             
             
             
@@ -638,13 +639,34 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Чтобы найти товар по идентификатору в локальной базе смарт-терминала используйте функцию</p>
+  <h3 id="section">Подготовка к работе</h3>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">getProduct</span><span class="p">()</span>
+<p>Убедитесь, что в файле <code class="highlighter-rouge">client.yaml</code>, в списке <code class="highlighter-rouge">capabilities</code>, указан модуль для работы с номенклатурой:</p>
+
+<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">capabilities</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">inventory</span>
+</code></pre>
+</div>
+
+<h3 id="section-1">Методы для работы номенклатурой</h3>
+
+<h4 id="section-2">Подключение модуля</h4>
+
+<p><em>Чтобы использовать методы для работы с номенклатурой подключите модуль:</em></p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">inventory</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'inventory'</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<h4 id="section-3">Метод для поиска товаров по идентификатору</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">inventory</span><span class="p">.</span><span class="nx">getProduct</span><span class="p">(</span><span class="nx">uuid</span><span class="p">)</span>
 </code></pre>
 </div>
 
 <p>В аргументе функции требуется передать строку с идентификатором товара в формате <code class="highlighter-rouge">uuid4</code>.</p>
+
+<p>Функция возвращает JSON-объект с данными требуемого товара.</p>
 
 
     <div class="tags">

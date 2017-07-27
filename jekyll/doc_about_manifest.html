@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="ТерминалНачало,  ">
+<meta name="keywords" content="ТерминалJavaJS,  ">
 <title>О манифесте приложения | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -257,30 +257,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li class="subfolders">
-                <a href="#">Манифест приложения</a>
-                <ul>
-                    
-                    
-                    
-                    <li class="active"><a href="doc_about_manifest.html">О манифесте приложения</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_java_app_manifest.html">Манифест Java-приложения</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
-                    
-                    
-                    
-                </ul>
-            </li>
+            
+            
+            
+            <li class="active"><a href="doc_about_manifest.html">Манифест приложения</a></li>
             
             
             
@@ -344,6 +324,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_java_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_java_app_manifest.html">Манифест Java-приложения</a></li>
             
             
             
@@ -471,6 +458,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_js_third_party_service_communication.html">Обмен сообщениями со сторонним сервисом</a></li>
             
             
@@ -499,7 +493,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_js_devices_interactions.html">Получение данных от подключённых устройств</a></li>
+            <li><a href="doc_js_devices.html">Получение данных от подключённых устройств</a></li>
             
             
             
@@ -565,6 +559,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_tariffs.html">Тарифы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_payoff.html">Выплаты</a></li>
             
             
             
@@ -640,9 +641,14 @@ $('#toc').on('click', 'a', function() {
 
   <p>В структуре каждого приложения должен быть манифест AndroidManifest.xml.</p>
 
-<p>В манифесте необходимо объявить все компоненты, которые использует приложение: операции, службы, приёмники.
-Ниже приводятся примеры манифестов <a href="./doc_java_app_manifest.html">java</a> и <a href="./doc_app_manifest.html">JS приложений</a>.
-Подробнее о том, что такое <a href="https://developer.android.com/guide/topics/manifest/manifest-intro.html?hl=ru">манифест приложения</a>.</p>
+<p>В манифесте необходимо объявить все компоненты, которые использует приложение:</p>
+
+<ul>
+  <li>Для <a href="./doc_java_app_manifest.html">java-приложения</a> – операции, службы и приёмники.</li>
+  <li>Для <a href="./doc_js_app_manifest.html">js-приложения</a> – демоны, плагины и экраны</li>
+</ul>
+
+<p>Подробнее о том, что такое <a href="https://developer.android.com/guide/topics/manifest/manifest-intro.html?hl=ru">манифест приложения</a>.</p>
 
 
     <div class="tags">
@@ -652,6 +658,10 @@ $('#toc').on('click', 'a', function() {
         
         
         <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        
+        
+        
+        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
         
         
         

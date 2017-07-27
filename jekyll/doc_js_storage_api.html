@@ -257,30 +257,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li class="subfolders">
-                <a href="#">Манифест приложения</a>
-                <ul>
-                    
-                    
-                    
-                    <li><a href="doc_about_manifest.html">О манифесте приложения</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_java_app_manifest.html">Манифест Java-приложения</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
-                    
-                    
-                    
-                </ul>
-            </li>
+            
+            
+            
+            <li><a href="doc_about_manifest.html">Манифест приложения</a></li>
             
             
             
@@ -344,6 +324,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_java_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_java_app_manifest.html">Манифест Java-приложения</a></li>
             
             
             
@@ -471,6 +458,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_js_third_party_service_communication.html">Обмен сообщениями со сторонним сервисом</a></li>
             
             
@@ -499,7 +493,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_js_devices_interactions.html">Получение данных от подключённых устройств</a></li>
+            <li><a href="doc_js_devices.html">Получение данных от подключённых устройств</a></li>
             
             
             
@@ -565,6 +559,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_tariffs.html">Тарифы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_payoff.html">Выплаты</a></li>
             
             
             
@@ -640,22 +641,24 @@ $('#toc').on('click', 'a', function() {
 
   <h3 id="section">Подготовка к работе</h3>
 
-<p>Убедитесь, чтоб файл <code class="highlighter-rouge">client.yaml</code> содержит права на доступ к хранению данных на терминале:</p>
+<p>Убедитесь, что в файле <code class="highlighter-rouge">client.yaml</code>, в списке <code class="highlighter-rouge">capabilities</code>, указан модуль для работы с хранилищем данных на смарт-терминале:</p>
 
 <div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">capabilities</span><span class="pi">:</span>
     <span class="pi">-</span> <span class="s">storage</span>
 </code></pre>
 </div>
 
-<h3 id="storage-api">Функции для работы со Storage API</h3>
+<h3 id="section-1">Методы для работы с хранилищем данных</h3>
 
-<h4 id="api">Вызов объекта для работы с API.</h4>
+<h4 id="section-2">Подключение модуля</h4>
+
+<p>Чтобы использовать методы для работы с хранилищем данных подключите модуль:</p>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">storage</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'storage'</span><span class="p">)</span>
 </code></pre>
 </div>
 
-<h4 id="section-1">Сохранение данных</h4>
+<h4 id="section-3">Сохранение данных</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">storage</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="o">&lt;</span><span class="err">ключ</span><span class="o">&gt;</span><span class="p">,</span> <span class="o">&lt;</span><span class="err">значение</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre>
@@ -667,7 +670,7 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Одна пара <ключ>-<значение> не может занимать более 600 Кбайт.</значение></ключ></div>
 
-<h4 id="section-2">Получение данных</h4>
+<h4 id="section-4">Получение данных</h4>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">storage</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="o">&lt;</span><span class="err">ключ</span><span class="o">&gt;</span><span class="p">)</span>
 </code></pre>
@@ -677,9 +680,9 @@ $('#toc').on('click', 'a', function() {
 
 <p>Возвращает ранее записанную строковую переменную или <code class="highlighter-rouge">null</code>, если значение не найдено.</p>
 
-<h4 id="section-3">Удаление данных</h4>
+<h4 id="section-5">Удаление данных</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">clear</span><span class="p">()</span>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">storage</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span>
 </code></pre>
 </div>
 

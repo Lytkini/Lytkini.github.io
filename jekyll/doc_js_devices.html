@@ -257,30 +257,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li class="subfolders">
-                <a href="#">Манифест приложения</a>
-                <ul>
-                    
-                    
-                    
-                    <li><a href="doc_about_manifest.html">О манифесте приложения</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_java_app_manifest.html">Манифест Java-приложения</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
-                    
-                    
-                    
-                </ul>
-            </li>
+            
+            
+            
+            <li><a href="doc_about_manifest.html">Манифест приложения</a></li>
             
             
             
@@ -344,6 +324,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_java_app_icon.html">Приложение в интерфейсе смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_java_app_manifest.html">Манифест Java-приложения</a></li>
             
             
             
@@ -471,6 +458,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_app_manifest.html">Манифест JS-приложения</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_js_third_party_service_communication.html">Обмен сообщениями со сторонним сервисом</a></li>
             
             
@@ -499,7 +493,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li class="active"><a href="doc_js_devices_interactions.html">Получение данных от подключённых устройств</a></li>
+            <li class="active"><a href="doc_js_devices.html">Получение данных от подключённых устройств</a></li>
             
             
             
@@ -565,6 +559,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_tariffs.html">Тарифы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_payoff.html">Выплаты</a></li>
             
             
             
@@ -640,27 +641,44 @@ $('#toc').on('click', 'a', function() {
 
   <p>Ваше приложение может получать данные от сканера штрихкодов и весов, подключённых к смарт-терминалу.</p>
 
-<h3 id="section">Подготовка</h3>
+<h3 id="section">Подготовка к работе</h3>
 
-<p>Перед тем как ваше приложение сможет получать данные от устройств, вам потребуется <a href="/doc_java_integration_library_connection.html">подключить к проекту библиотеку integration-library</a>.</p>
+<p>Убедитесь, что в файле <code class="highlighter-rouge">client.yaml</code>, в списке <code class="highlighter-rouge">capabilities</code>, указан модуль для работы с подключёнными устройствами:</p>
 
-<h3 id="section-1">Получение данных от подключённых устройств</h3>
-
-<h4 id="section-2">Получить штрихкод товара</h4>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">barcodeScanned</span><span class="p">()</span>
+<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">capabilities</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">devices</span>
 </code></pre>
 </div>
 
-<!-- Функция возвращает... -->
+<h3 id="section-1">Методы для работы с подключёнными устройствами</h3>
 
-<h4 id="section-3">Получить вес товара</h4>
+<h4 id="section-2">Подключение модуля</h4>
 
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">getWeight</span><span class="p">()</span><span class="err">:</span> <span class="nx">JSValue</span>
+<p>Чтобы использовать методы для работы с подключёнными устройствами подключите модуль:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">devices</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'devices'</span><span class="p">)</span>
 </code></pre>
 </div>
 
-<!-- Функция возвращает... -->
+<h4 id="section-3">Получить штрихкод товара</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">devices</span><span class="p">.</span><span class="nx">barcodeScanned</span><span class="p">(</span><span class="nx">scanneddata</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>Метод возвращает данные, полученные от сканера штрихкодов.</p>
+
+<p>Метод можно реализовать только во view.html.</p>
+
+<h4 id="section-4">Получить вес товара</h4>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">devices</span><span class="p">.</span><span class="nx">getWeight</span><span class="p">()</span>
+</code></pre>
+</div>
+
+<p>Метод возвращает данные, полученные от весов.</p>
+
+<p>Метод можно реализовать как в демоне, так и во view.html</p>
 
 
     <div class="tags">
