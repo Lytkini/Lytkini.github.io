@@ -1,0 +1,21 @@
+
+# Follow the pattern here for the URLs -- no slash at the beginning, and include the .html. The link here is rendered exactly as is in the Markdown references.
+
+entries:
+- title: other
+  folders:
+
+  - title: Other Links
+    folderitems:
+
+    - title: Automated links bookmark
+      url: /mydoc_hyperlinks.html#automatedlinks
+
+    - title: Bookmark links
+      url: /mydoc_hyperlinks.html#bookmarklinks
+
+    - title: Position altering link
+      url: /doc_receipt_interactions.html#PositionAltering
+
+    - title: Server token link
+      url: /doc_authorization.html#serverToken
