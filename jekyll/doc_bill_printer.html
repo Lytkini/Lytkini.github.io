@@ -645,6 +645,10 @@ $('#toc').on('click', 'a', function() {
 
 <ol>
   <li>
+    <p>В манифесте приложения укажите следующий элемент:
+ <code class="highlighter-rouge">&lt;uses-permission android:name="ru.evotor.permission.receipt.printExtra.SET" /&gt;</code></p>
+  </li>
+  <li>
     <p>В колбэке <code class="highlighter-rouge">onCreate()</code> или при запуске операции (<code class="highlighter-rouge">activity</code>) инициализируйте класс <code class="highlighter-rouge">ru.evotor.devices.commons.DeviceServiceConnector</code>:</p>
 
     <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">DeviceServiceConnector</span><span class="o">.</span><span class="na">startInitConnections</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">());</span>
