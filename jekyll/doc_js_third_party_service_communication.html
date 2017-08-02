@@ -503,6 +503,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        <a href="#">Драйвера для оборудования</a>
+        <ul>
+            
+            
+            
+            <li><a href="doc_drivers_library_connection.html">Подготовка к разработке</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_drivers_cashdrawer.html">SDK для денежных ящиков</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_drivers_pinpads.html">SDK для банковских терминалов</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_drivers_scales.html">SDK для весов</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
         <a href="#">Примеры реализации</a>
         <ul>
             
@@ -678,17 +714,17 @@ $('#toc').on('click', 'a', function() {
 <p>Убедитесь что в файле <code class="highlighter-rouge">client.yaml</code>, в списке <code class="highlighter-rouge">capabilities</code>, указан модулю для отправки HTTP-запросов:</p>
 
 <div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">capabilities</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">http</span>
+  <span class="pi">-</span> <span class="s">internet</span>
 </code></pre>
 </div>
 
-<p>Подключите модуль в плагине, демоне или view.html:</p>
+<p>Отправляйте запросы с помощью методов объекта <code class="highlighter-rouge">http</code>. Объект <code class="highlighter-rouge">http</code> доступен во view.html без подключения модуля.</p>
+
+<p>Чтобы получить доступ к объекту <code class="highlighter-rouge">http</code> в плагине или демоне, требуется подключить модуль:</p>
 
 <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'http'</span><span class="p">)</span>
 </code></pre>
 </div>
-
-<p>Отправляйте запросы с помощью методов объекта http.</p>
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Во view.html вы также можете использовать ajax или другие способы обмена сообщениями.</div>
 
