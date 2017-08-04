@@ -534,6 +534,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_drivers_other.html">SDK подключаемого USB-оборудования</a></li>
+            
+            
+            
+            
         </ul>
         
         
@@ -558,14 +565,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_cloud_systems_integration.html">Облачная товароучётная система</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_iframe_within_application_page.html">IFrame на странице приложения</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_cloud_systems_integration.html">Интеграция с облачными сервисами</a></li>
             
             
             
@@ -864,123 +871,6 @@ $('#toc').on('click', 'a', function() {
                 <span class="o">}</span>
         <span class="o">);</span>
 </code></pre>
-</div>
-
-<p>Пример чека, разделённого на несколько печатных групп:</p>
-
-<div class="language-json highlighter-rouge"><pre class="highlight"><code><span class="p">[{</span><span class="w">
-  </span><span class="nt">"transactions"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-  </span><span class="nt">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T05:19:28.000+0000"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">208</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="mi">10800000</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DOCUMENT_OPEN"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"userUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20160916-6C67-4005-80AA-13CD29C259F9"</span><span class="w">
-</span><span class="p">},</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nt">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T05:19:28.000+0000"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">209</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="mi">10800000</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REGISTER_POSITION"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"userUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20160916-6C67-4005-80AA-13CD29C259F9"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"alcoholByVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"alcoholProductKindCode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"balanceQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">-9</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"commodityCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"commodityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"штуки"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"commodityUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51ff07d6-06cb-4624-9301-fb6b3e561c7e"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"costPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"extraKeys"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
-  </span><span class="nt">"fprintSection"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"measureName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"шт"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"positionUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cdb0de9a-9eed-423b-a88d-c8cf9dbc18ff"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"commodityType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NORMAL"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.000</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"resultPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"resultSum"</span><span class="p">:</span><span class="w"> </span><span class="mf">12.00</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"sum"</span><span class="p">:</span><span class="w"> </span><span class="mf">12.00</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"tareVolume"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"printGroupUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"609552e6-5d7c-40f7-9f49-29022409b968"</span><span class="w">
-</span><span class="p">},</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nt">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T05:19:28.000+0000"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">210</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="mi">10800000</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"POSITION_TAX"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"userUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20160916-6C67-4005-80AA-13CD29C259F9"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"commodityCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"commodityUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"51ff07d6-06cb-4624-9301-fb6b3e561c7e"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"resultPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"resultSum"</span><span class="p">:</span><span class="w"> </span><span class="mf">12.00</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"resultTaxSum"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"tax"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NO_VAT"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"taxPercent"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"taxSum"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00</span><span class="w">
-</span><span class="p">},</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nt">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T05:19:28.000+0000"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">217</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="mi">10800000</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PAYMENT"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"userUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20160916-6C67-4005-80AA-13CD29C259F9"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CASH"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"sum"</span><span class="p">:</span><span class="w"> </span><span class="mf">24.00</span><span class="w">
-</span><span class="p">},</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nt">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T05:19:28.000+0000"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">218</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="mi">10800000</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PAYMENT"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"userUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20160916-6C67-4005-80AA-13CD29C259F9"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CASH"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"sum"</span><span class="p">:</span><span class="w"> </span><span class="mf">12.00</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"printGroupUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"609552e6-5d7c-40f7-9f49-29022409b968"</span><span class="w">
-</span><span class="p">},</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nt">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T05:19:28.000+0000"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">221</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="mi">10800000</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DOCUMENT_CLOSE_FPRINT"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"userUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20160916-6C67-4005-80AA-13CD29C259F9"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"documentNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"receiptNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"sessionNumber"</span><span class="p">:</span><span class="w"> </span><span class="s2">"52"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="w">
-</span><span class="p">},</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nt">"creationDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T05:19:28.000+0000"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">222</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"timezone"</span><span class="p">:</span><span class="w"> </span><span class="mi">10800000</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DOCUMENT_CLOSE"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"userUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20160916-6C67-4005-80AA-13CD29C259F9"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">2.000</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"sum"</span><span class="p">:</span><span class="w"> </span><span class="mf">36.00</span><span class="w">
-</span><span class="p">}],</span><span class="w">
-</span><span class="nt">"closeDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T05:19:28.000+0000"</span><span class="p">,</span><span class="w">
-</span><span class="nt">"closeResultSum"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w">
-</span><span class="nt">"closeSum"</span><span class="p">:</span><span class="w"> </span><span class="mi">36</span><span class="p">,</span><span class="w">
-</span><span class="nt">"closeUserUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20160916-6C67-4005-80AA-13CD29C259F9"</span><span class="p">,</span><span class="w">
-</span><span class="nt">"number"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
-</span><span class="nt">"openDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T05:19:28.000+0000"</span><span class="p">,</span><span class="w">
-</span><span class="nt">"openUserUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20160916-6C67-4005-80AA-13CD29C259F9"</span><span class="p">,</span><span class="w">
-</span><span class="nt">"sessionNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-</span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SELL"</span><span class="p">,</span><span class="w">
-</span><span class="nt">"uuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"29de9624-1255-44fa-ac6d-5660e5e2fd4c"</span><span class="p">,</span><span class="w">
-</span><span class="nt">"extras"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-
-</span><span class="p">},</span><span class="w">
-</span><span class="nt">"printGroups"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="kc">null</span><span class="p">,</span><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="nt">"printGroupUuid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"609552e6-5d7c-40f7-9f49-29022409b968"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STRING_UTII"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"orgName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ООО \"Пример\""</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"orgInn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"098765432123"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"orgAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"г. Москва, пл. Манежная 1"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"orgTaxationSystem"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PATENT"</span><span class="w">
-</span><span class="p">}],</span><span class="w">
-</span><span class="nt">"sessionUUID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2c058a83-6e4d-4ba2-8f3d-57a8dc6409c3"</span><span class="w">
-</span><span class="p">}]</span><span class="w">
-</span></code></pre>
 </div>
 
 
