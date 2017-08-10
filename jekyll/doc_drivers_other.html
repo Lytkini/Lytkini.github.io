@@ -394,6 +394,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
+                    
+                    
+                    <li><a href="doc_java_receipt_print.html">Печать внутри кассового чека</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -530,13 +536,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_drivers_scales.html">SDK для весов</a></li>
-            
-            
-            
-            
-            
-            
-            <li class="active"><a href="doc_drivers_other.html">SDK подключаемого USB-оборудования</a></li>
             
             
             
@@ -699,10 +698,10 @@ $('#toc').on('click', 'a', function() {
     <span class="nt">&lt;/intent-filter&gt;</span>
     <span class="nt">&lt;meta-data</span>
         <span class="na">android:name=</span><span class="s">"vendor_name"</span>
-        <span class="na">android:value=</span><span class="s">"CAS"</span> <span class="nt">/&gt;</span>
+        <span class="na">android:value=</span><span class="s">"SHTRIH-M"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;meta-data</span>
         <span class="na">android:name=</span><span class="s">"model_name"</span>
-        <span class="na">android:value=</span><span class="s">"AD"</span> <span class="nt">/&gt;</span>
+        <span class="na">android:value=</span><span class="s">"SHTRIH-T"</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;meta-data</span>
         <span class="na">android:name=</span><span class="s">"usb_device"</span>
         <span class="na">android:value=</span><span class="s">"VID_1659PID_8963"</span> <span class="nt">/&gt;</span>
@@ -734,7 +733,27 @@ $('#toc').on('click', 'a', function() {
 
 <p>Экземпляр драйвера будет автоматически создан/удалён при подключении/отключении указанного оборудования к смарт-терминалу. При наличии нескольких подходящих драйверов, пользователю будет предложен выбор.</p>
 
-<h3 id="section">Присвоение картинки для драйвера</h3>
+<h3 id="section">Определение роли и категории устройства</h3>
+
+<p>Если ваше устройство не относится к заданным категориям, используйте <code class="highlighter-rouge">Intent filter</code>:</p>
+
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code>INTENT_FILTER_OTHER
+</code></pre>
+</div>
+
+<p>Вместе с этим необходимо указать в meta-data категорию устройства:</p>
+
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;meta-data</span>
+    <span class="na">android:name=</span><span class="s">"device_categories"</span>
+    <span class="na">android:value=</span><span class="s">"OTHER"</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<p>Только ваше приложение получит разрешение (<code class="highlighter-rouge">permission</code>) для работы с подключённым оборудованием.</p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Можно указать сразу несколько ролей устройству: <code class="highlighter-rouge">SCALES|PRICEPRINTER|CASHDRAWER|OTHER</code>(весы | принтер чеков | денежный ящик | другое оборудование).</div>
+
+<h3 id="section-1">Присвоение картинки для драйвера</h3>
 
 <p>Укажите в манифесте приложения у сервиса:</p>
 
@@ -866,7 +885,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Метод <code class="highlighter-rouge">destroy</code> в <code class="highlighter-rouge">IUsbDriverManagerService</code> принимает на вход номер экземпляра драйвера. Вызов этого метода уведомляет об отключении от устройства. В этот момент у приложения-драйвера уже нет <code class="highlighter-rouge">permission</code> для работы с этим устройством, само устройство уже может быть удалено из смарт-терминала.</p>
 
-<h3 id="section-1">Завершение работы</h3>
+<h3 id="section-2">Завершение работы</h3>
 
 <p>Загрузите приложение на смарт-терминал, чтобы работать с драйвером.</p>
 
