@@ -9,7 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content="ТерминалJava,  ">
-<title>Передача чеков на email и номер телефона | Документация Эвотор</title>
+<title>Печать электронных чеков | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Передача чеков на email и номер телефона">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Печать электронных чеков">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -400,6 +400,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
+                    
+                    
+                    <li class="active"><a href="doc_online_store_receipt.html">Печать электронных чеков</a></li>
+                    
+                    
+                    
                 </ul>
             </li>
             
@@ -644,7 +650,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
     <div class="col-md-9">
         <div class="post-header">
-   <h1 class="post-title-main">Передача чеков на email и номер телефона</h1>
+   <h1 class="post-title-main">Печать электронных чеков</h1>
 </div>
 
 
@@ -681,7 +687,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Приложение может создавать чеки и передавать их для оформления в смарт-терминал. Созданные чеки смарт-терминал может автоматически передавать созданные чеки на указанный адрес электронной почты (email) и / или номер телефона. Передача чеков актуальна, например, для интернет-магазинов.</p>
+  <p>Приложение может создавать чеки и передавать их для оформления в смарт-терминал. Созданные чеки смарт-терминал может автоматически передавать чеки на указанный адрес электронной почты (email) и / или номер телефона. Передача чеков актуальна, например, для интернет-магазинов.</p>
 
 <p>С помощью отдельной <a href="./doc_app_integration_points.html#Commands">команды</a> приложение может напечатать созданный чек.</p>
 
@@ -695,7 +701,7 @@ $('#toc').on('click', 'a', function() {
 
 <ol>
   <li>
-    <p>В <a href="./doc_java_app_manifest.html">манифесте приложения</a> укажите следующий элемент:</p>
+    <p>В <a href="./doc_java_app_manifest.html">манифесте приложения</a> укажите права для приложения:</p>
 
     <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"ru.evotor.permission.receipt.print.INTERNET_RECEIPT"</span> <span class="nt">/&gt;</span>
 </code></pre>
@@ -708,6 +714,7 @@ $('#toc').on('click', 'a', function() {
         <span class="n">List</span><span class="o">&lt;</span><span class="n">PositionAdd</span><span class="o">&gt;</span> <span class="n">positionAddList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
 
         <span class="n">JSONObject</span> <span class="n">extra</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+      <span class="o">}</span>
 </code></pre>
     </div>
 
@@ -724,7 +731,7 @@ $('#toc').on('click', 'a', function() {
 <span class="n">Payment</span> <span class="n">payment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Payment</span><span class="o">(</span>
         <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
         <span class="k">new</span> <span class="nf">BigDecimal</span><span class="o">(</span><span class="mi">9000</span><span class="o">),</span>
-        <span class="k">new</span> <span class="nf">PaymentSystem</span><span class="o">(</span><span class="n">PaymentType</span><span class="o">.</span><span class="na">ELECTRON</span><span class="o">,</span> <span class="s">"Internet"</span><span class="o">,</span> <span class="s">"12424"</span><span class="o">),</span>
+        <span class="k">new</span> <span class="nf">PaymentSystem</span><span class="o">(</span><span class="n">PaymentType</span><span class="o">.</span><span class="na">ELECTRON</span><span class="o">,</span> <span class="s">"Card"</span><span class="o">,</span> <span class="s">"Cashless"</span><span class="o">),</span>
         <span class="kc">null</span><span class="o">,</span>
         <span class="kc">null</span><span class="o">,</span>
         <span class="kc">null</span>
@@ -779,9 +786,9 @@ $('#toc').on('click', 'a', function() {
   </li>
 </ol>
 
-<h3 id="section">Примеры</h3>
+<h3 id="section">Пример</h3>
 
-<p>Существует также более детальный сопособ создания и передачи чека:</p>
+<p>Существует также более детальный способ создания и передачи чека:</p>
 
 <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">List</span><span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
 <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span>
@@ -806,16 +813,26 @@ $('#toc').on('click', 'a', function() {
                 <span class="n">BigDecimal</span><span class="o">.</span><span class="na">ONE</span>
         <span class="o">).</span><span class="na">setPriceWithDiscountPosition</span><span class="o">(</span><span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">300</span><span class="o">)).</span><span class="na">build</span><span class="o">()</span>
 <span class="o">);</span>
+<span class="n">HashMap</span> <span class="n">payments</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Payment</span><span class="o">,</span> <span class="n">BigDecimal</span><span class="o">&gt;();</span>
+<span class="n">payments</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="k">new</span> <span class="n">Payment</span><span class="o">(</span>
+                    <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
+                    <span class="k">new</span> <span class="nf">BigDecimal</span><span class="o">(</span><span class="mi">9300</span><span class="o">),</span>
+                    <span class="k">new</span> <span class="nf">PaymentSystem</span><span class="o">(</span><span class="n">PaymentType</span><span class="o">.</span><span class="na">ELECTRON</span><span class="o">,</span> <span class="s">"Internet"</span><span class="o">,</span> <span class="s">"12424"</span><span class="o">),</span>
+                    <span class="kc">null</span><span class="o">,</span>
+                    <span class="kc">null</span><span class="o">,</span>
+                    <span class="kc">null</span>
+            <span class="o">),</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">9300</span><span class="o">));</span>
 <span class="kd">final</span> <span class="n">Receipt</span><span class="o">.</span><span class="na">PrintReceipt</span> <span class="n">printReceipt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Receipt</span><span class="o">.</span><span class="na">PrintReceipt</span><span class="o">(</span>
         <span class="kc">null</span><span class="o">,</span>
         <span class="n">list</span><span class="o">,</span>
-        <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Payment</span><span class="o">,</span> <span class="n">BigDecimal</span><span class="o">&gt;()</span> <span class="o">,</span>
+        <span class="n">payments</span><span class="o">,</span>
         <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Payment</span><span class="o">,</span> <span class="n">BigDecimal</span><span class="o">&gt;()</span>
 <span class="o">);</span>
 
 <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Receipt</span><span class="o">.</span><span class="na">PrintReceipt</span><span class="o">&gt;</span> <span class="n">listDocs</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
 <span class="n">listDocs</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">printReceipt</span><span class="o">);</span>
-<span class="k">new</span> <span class="nf">PrintSellReceiptCommand</span><span class="o">(</span><span class="n">listDocs</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="s">"test2@email.ru"</span><span class="o">,</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">1000</span><span class="o">)).</span><span class="na">process</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="k">new</span> <span class="n">IntegrationManagerCallback</span><span class="o">()</span> <span class="o">{</span>
+<span class="n">BigDecimal</span> <span class="n">receiptDiscount</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">1000</span><span class="o">);</span>
+<span class="k">new</span> <span class="nf">PrintSellReceiptCommand</span><span class="o">(</span><span class="n">listDocs</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="s">"example@example.com"</span><span class="o">,</span> <span class="n">receiptDiscount</span><span class="o">).</span><span class="na">process</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="k">new</span> <span class="n">IntegrationManagerCallback</span><span class="o">()</span> <span class="o">{</span>
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">IntegrationManagerFuture</span> <span class="n">integrationManagerFuture</span><span class="o">)</span> <span class="o">{</span>
         <span class="k">try</span> <span class="o">{</span>
