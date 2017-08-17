@@ -8,8 +8,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="ТерминалJavaJS,  ">
-<title>О манифесте приложения | Документация Эвотор</title>
+<meta name="keywords" content=",  ">
+<title>15.08.2017 | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -133,7 +133,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="О манифесте приложения">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="15.08.2017">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -260,7 +260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li class="active"><a href="doc_about_manifest.html">Манифест приложения</a></li>
+            <li><a href="doc_about_manifest.html">Манифест приложения</a></li>
             
             
             
@@ -656,77 +656,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Content Column -->
     <div class="col-md-9">
-        <div class="post-header">
-   <h1 class="post-title-main">О манифесте приложения</h1>
-</div>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">15.08.2017</h1>
+        <p class="post-meta"><time datetime="2017-08-12T00:00:00+03:00" itemprop="datePublished">Aug 12, 2017</time> /
+            
+            
+            
+
+        </p>
 
 
+    </header>
 
-<div class="post-content">
+    <div class="post-content" itemprop="articleBody">
 
-   
+        
 
-    
-    
-<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
-<script>
-$( document ).ready(function() {
-  // Handler for .ready() called.
-
-$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
-
-/* this offset helps account for the space taken up by the floating toolbar. */
-$('#toc').on('click', 'a', function() {
-  var target = $(this.getAttribute('href'))
-    , scroll_target = target.offset().top
-
-  $(window).scrollTop(scroll_target - 10);
-  return false
-})
-  
-});
-</script>
-
-<div id="toc"></div>
-
-    
-
-
-    
-
-  <p>В структуре каждого приложения должен быть манифест AndroidManifest.xml.</p>
-
-<p>В манифесте необходимо объявить все компоненты, которые использует приложение:</p>
+        <p>Добавлено описание новых API:</p>
 
 <ul>
-  <li>Для <a href="./doc_java_app_manifest.html">java-приложения</a> – операции, службы и приёмники.</li>
-  <li>Для <a href="./doc_js_app_manifest.html">js-приложения</a> – демоны, плагины и экраны</li>
+  <li><a href="./doc_java_receipt_division.html">Описано разделение чека на несколько чеков</a></li>
+  <li><a href="./doc_java_receipt_print.html">Описан API для печать внутри кассового чека</a></li>
+  <li><a href="./doc_drivers_other.html">Описан SDK для подключаемого USB-оборудования</a></li>
+  <li><a href="./doc_java_app_icon.html">Описана замена кнопки “Продажа” на главном экране смарт-терминала</a></li>
+  <li><a href="./doc_app_integration_points.html">Описаны точки интеграции со смарт-терминалом</a></li>
+  <li><a href="./doc_js_devices.html">Описано получение данных от подключённых устройств в JavaScript-приложении</a></li>
+  <li><a href="doc_js_inventory.html">Описан поиск товара по идентификатору в JavaScript-приложении</a></li>
+  <li><a href="https://developer.evotor.ru/docs/doc_java_navigation.html">Описан вызов окон терминала</a></li>
+  <li><a href="https://developer.evotor.ru/docs/doc_java_receipt_interactions.html#Position">Обновлено описание позиции, добавлены поля</a></li>
+  <li>Добавлены интрукции по созданию Java и JavaScript-приложения</li>
 </ul>
 
-<p>Подробнее о том, что такое <a href="https://developer.android.com/guide/topics/manifest/manifest-intro.html?hl=ru">манифест приложения</a>.</p>
+<p>Изменена структура документации. Информация, ранее представленная в “SDK смарт-терминала”, теперь содержится в четырёх разделах:</p>
 
+<ul>
+  <li>Разработка для смарт-терминала – содержит общие темы, относящиеся к разработке приложений для смарт-терминала.</li>
+  <li>Java SDK – содержит описание API, которые необходимы при разработке Java-приложения.</li>
+  <li>JavaScript SDK – содержит описание API, которые необходимы при разработке JavaScript-приложения.</li>
+  <li>Драйвера для оборудования – содержит описание API, необходимых при разработке драйверов для оборудования, подключаемого к смарт-терминалу.</li>
+</ul>
 
-    <div class="tags">
-        
-        <b>Тэги: </b>
-        
-        
-        
-        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
-        
-        
-        
-        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
-        
-        
-        
-        
-        
+<p>REST API Облака Эвотор:</p>
+
+<ul>
+  <li><a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1subscription~1event%2Fpost">Добавлены события подписки</a></li>
+  <li><a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1receipt%2Fpost">Изменен формат чеков</a></li>
+</ul>
+
     </div>
 
-    
 
-</div>
+
+</article>
+
 
 <hr class="shaded"/>
 
