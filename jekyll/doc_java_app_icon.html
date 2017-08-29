@@ -7,8 +7,8 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="keywords" content="ТерминалJava,  ">
+<meta name="description" content="Вы можете запускать приложение с помощью кнопок и иконок, добавленных в интерфейс смарт-терминала. Раздел содержит информацию о том как добавить свои иконки ...">
+<meta name="keywords" content="ТерминалJava,  Интерфейс, иконка, плитка, манифест, экран, оплата, возврат, продажа">
 <title>Приложение в интерфейсе смарт-терминала | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -112,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li><a href="doc_developer_mode.html">SDK смарт-терминала</a></li>
+                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -361,12 +361,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_java_receipt_api.html">Поиск товара по штрихкоду</a></li>
-                    
-                    
-                    
-                    
-                    
                     <li><a href="doc_java_receipt_creation.html">Открытие чека в приложении</a></li>
                     
                     
@@ -409,7 +403,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_online_store_receipt.html">Печать электронных чеков</a></li>
+                    <li><a href="doc_java_online_store_receipt.html">Печать электронных чеков</a></li>
                     
                     
                     
@@ -449,6 +443,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                 </ul>
             </li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_java_logging.html">Логирование Java-приложения</a></li>
             
             
             
@@ -513,6 +514,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_js_devices.html">Получение данных от подключённых устройств</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_js_logging.html">Логирование JS-приложения</a></li>
             
             
             
@@ -613,6 +621,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_app_tariffication.html">О тарификации приложений</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_tariffs.html">Тарифы</a></li>
             
             
@@ -665,6 +680,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="post-content">
 
    
+    <div class="summary">Вы можете запускать приложение с помощью кнопок и иконок, добавленных в интерфейс смарт-терминала. Раздел содержит информацию о том как добавить свои иконки или заменить существующую кнопку интерфейса смарт-терминала.</div>
+   
 
     
     
@@ -694,25 +711,64 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <h3 id="section">Иконка приложения на главном экране смарт-терминала</h3>
+  <p>Вы можете запустить своё приложение по плитке, расположенной на одном из экранов смарт-терминала:</p>
+
+<ul>
+  <li>на главном экране;</li>
+  <li>на экране продажи;</li>
+  <li>на экране возврата.</li>
+</ul>
+
+<p>Вы можете запускать приложение с помощью плитки на главном экране смарт-терминала или с помощью иконок на экране продажи и/или возврата товара</p>
+
+<p>Вы можете интегрировать своё приложение в существующий процесс смарт-терминала, например, продажу или работу с оборудованием, или добавить плитку приложения на главный экран. Плиток может быть несколько, если приложение реализует независимые действия, например, плитки “Продать товар” и “Вернуть товар”.</p>
+
+<p class="center-image"><img src="images\Tile_example.png" alt="Пример плитки" /></p>
+
+<h2 id="section">Рекомендации по добавлению плитки</h2>
+
+<p>Добавляйте плитку если:</p>
+
+<ul>
+  <li>у приложения есть свой интерфейс;</li>
+  <li>приложение реализует полезное действие и / или предоставляет сотруднику магазина доступ к аналитической информации.</li>
+</ul>
+
+<p>Вы можете изменять следующие параметры плитки:</p>
+
+<ul>
+  <li>
+    <p><strong>Цвет</strong>. Может быть любым, пока на его фоне отчётливо отображаются символы и иконка.</p>
+
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Как правило цвет плитки делают таким же как и цвет основных кнопок в интерфейсе приложения.</div>
+  </li>
+  <li>
+    <p><strong>Название</strong>. Может быть названием приложения или полезного действия, например, “Продажи за неделю”. Плитка отображает до 20 символов. Остальные символы скрываются многоточием.</p>
+  </li>
+  <li>
+    <p><strong>Иконка</strong>. Иконка должна быть квадратной – 64 dp. Требуется обеспечить набор иконок в трёх разрешениях: 96, 192, 256px.</p>
+  </li>
+</ul>
+
+<h2 id="section-1">Иконка приложения на главном экране смарт-терминала</h2>
 
 <p><em>Чтобы добавить иконку приложения на главный экран смарт-терминала:</em></p>
 
 <p>В <a href="./doc_java_app_manifest.html">манифесте приложения</a>, измените секцию требуемой операции следующим образом:</p>
 
-<div class="language-xml highlighter-rouge"><pre class="highlight"><code> <span class="nt">&lt;activity</span>
-   <span class="na">android:name=</span><span class="s">".&lt;НазваниеОперации&gt;"</span>
-   <span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span>
-   <span class="na">android:label=</span><span class="s">"Example tile"</span>
-   <span class="nt">&gt;</span>
-   <span class="nt">&lt;meta-data</span>
-       <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.BACKGROUND_COLOR"</span>
-       <span class="na">android:value=</span><span class="s">"#133788"</span> <span class="nt">/&gt;</span>
-   <span class="nt">&lt;intent-filter&gt;</span>
-       <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span> <span class="nt">/&gt;</span>
-       <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.EVOTOR"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/intent-filter&gt;</span>
- <span class="nt">&lt;/activity&gt;</span>
+<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;activity</span>
+  <span class="na">android:name=</span><span class="s">".&lt;НазваниеОперации&gt;"</span>
+  <span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span>
+  <span class="na">android:label=</span><span class="s">"Example tile"</span>
+  <span class="nt">&gt;</span>
+  <span class="nt">&lt;meta-data</span>
+      <span class="na">android:name=</span><span class="s">"ru.evotor.launcher.BACKGROUND_COLOR"</span>
+      <span class="na">android:value=</span><span class="s">"#133788"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;intent-filter&gt;</span>
+      <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.EVOTOR"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/activity&gt;</span>
 </code></pre>
 </div>
 
@@ -721,7 +777,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Элемент <code class="highlighter-rouge">&lt;action android:name="android.intent.action.MAIN" /&gt;</code> указывает, что иконка приложения будет отображаться на главном экране смарт-терминала.</p>
 
-<h3 id="section-1">Иконка приложения на экране оплаты:</h3>
+<h2 id="SalesScreen">Иконка приложения на экране оплаты</h2>
 
 <p><em>Чтобы добавить иконку приложения на экран оплаты смарт-терминала:</em></p>
 
@@ -729,7 +785,7 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>В <a href="./doc_java_getting_started.html">созданном приложении</a> создайте службу (<code class="highlighter-rouge">service</code>).</p>
 
-    <p>Для этого выполните следующие действия: File → New → Service → Service (IntentService).</p>
+    <p>Для этого, в Android Studio, в проекте выберите <code class="highlighter-rouge">app</code> и выполните следующие действия: File → New → Service → Service (IntentService).</p>
 
     <p>Добавленная служба автоматически объявится в манифесте приложения:</p>
 
@@ -765,6 +821,8 @@ $('#toc').on('click', 'a', function() {
     <p>Атрибут <code class="highlighter-rouge">android:name="ru.evotor.sales_screen.BACKGROUND_COLOR"</code> задаёт фон, на котором отображается иконка приложения.</p>
 
     <p>Элемент <code class="highlighter-rouge">&lt;action android:name="evo.v2.receipt.sell.receiptDiscount" /&gt;</code> сообщает приложению где отображать иконку.</p>
+
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Чтобы добавить иконку приложения на экран возврата товара, используйте элемент <code class="highlighter-rouge">&lt;action android:name="evo.v2.receipt.payback.receiptDiscount" /&gt;</code>.</div>
   </li>
 </ol>
 
@@ -817,7 +875,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="section-2">Замена кнопки “Продажа” на главном экране смарт-терминала</h3>
+<h2 id="section-2">Замена кнопки <strong>Продажа</strong> на главном экране смарт-терминала</h2>
 
 <p>Вы можете заменить кнопку <strong>Продажа</strong>, расположенную на главном экране смарт-терминала, на кнопку своего приложения:</p>
 
@@ -825,7 +883,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><em>Чтобы заменить кнопку <strong>Продажа</strong>:</em></p>
 
-<p>В <a href="./doc_java_app_manifest.html">манифесте приложения</a>, измените секцию требуемой операции следующим образом:</p>
+<p>В <a href="./doc_java_app_manifest.html">манифесте приложения</a>, измените секцию соответствующей операции следующим образом:</p>
 
 <div class="language-xml highlighter-rouge"><pre class="highlight"><code> <span class="nt">&lt;activity</span>
    <span class="na">android:name=</span><span class="s">".&lt;НазваниеОперации&gt;"</span>
@@ -850,7 +908,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Элемент <code class="highlighter-rouge">&lt;action android:name="ru.evotor.intent.action.SELL_MAIN" /&gt;</code> указывает, что иконка приложения заменит кнопку <strong>Продажа</strong> на главном экране смарт-терминала.</p>
 
-<p>Теперь вы можете собрать apk своего приложения и <a href="./doc_app_installation.html">установить его на терминал</a>. Иконки приложения будут отображаться как на главном экране смарт-терминала, так и на экране оплаты.</p>
+<p>Теперь вы можете собрать apk своего приложения и <a href="./doc_app_installation.html">установить его на терминал</a>.</p>
 
 
     <div class="tags">

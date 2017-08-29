@@ -112,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li><a href="doc_developer_mode.html">SDK смарт-терминала</a></li>
+                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
                 
                 
                 
@@ -361,12 +361,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_java_receipt_api.html">Поиск товара по штрихкоду</a></li>
-                    
-                    
-                    
-                    
-                    
                     <li><a href="doc_java_receipt_creation.html">Открытие чека в приложении</a></li>
                     
                     
@@ -409,7 +403,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="doc_online_store_receipt.html">Печать электронных чеков</a></li>
+                    <li><a href="doc_java_online_store_receipt.html">Печать электронных чеков</a></li>
                     
                     
                     
@@ -449,6 +443,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                 </ul>
             </li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_java_logging.html">Логирование Java-приложения</a></li>
             
             
             
@@ -513,6 +514,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_js_devices.html">Получение данных от подключённых устройств</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_js_logging.html">Логирование JS-приложения</a></li>
             
             
             
@@ -607,6 +615,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_about_billing.html">О биллинге</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_tariffication.html">О тарификации приложений</a></li>
             
             
             
@@ -796,6 +811,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="panel-body">
                             <p>Создайте учётную запись в вашей системе с помощью своего интерфейса, чтобы биллинг пользователя проходил на вашей стороне. В этом случае, при установке приложения на учётную запись тестировщика или разработчика, выберите опцию <b>у меня уже есть учётная запись</b>. Облако Эвотор передаст в вашу систему <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1verify%2Fpost">запрос на авторизацию данных пользователя в вашей системе</a>. В ответ ваша система передаёт токен пользователя и параметр hasBilling: true.</p>
                             <p>Так как биллинг выполняет ваша система, Эвотор не пытается снять деньги с пользователя.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">Что делать если Облако Эвотор не проксирует запросы к стороннему сервису?</a>
+                            </h4>
+                        </div>
+                        <div id="collapseTen" class="panel-collapse collapse">
+                            <div class="panel-body">
+                            <p>Если Облако Эвотор не <a href="https://developer.evotor.ru/docs/doc_java_third_party_service_communication.html">проксирует запросы</a>  от вашего приложения к стороннему сервису, убедитесь что:</p>
+                            <ul>
+                              <li>для обмена сообщениями со сторонним сервисом приложение использует порты 80 и 443;</li>
+                              <li>приложение <a href="https://developer.evotor.ru/docs/doc_app_installation.html#MarkeplaceAppInstallation">установлено из Магазина приложений</a>;</li>
+                              <li>на смарт-терминале установлены последние версии Evotor POS и EvoWall.</li>
+                            </ul>
                             </div>
                         </div>
                     </div>
