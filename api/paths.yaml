@@ -1,0 +1,1183 @@
+/api.evotor.ru/api/v1/inventories/stores/search:
+ x-summary: Получить список магазинов
+ get:
+   tags:
+     - Сущности пользователя Эвотор
+   summary: 'Получить список магазинов'
+   description: |
+     Возвращает массив с информацией о всех магазинах пользователя.
+   parameters:
+     - $ref: ./parameters.yaml#/auth
+   responses:
+     '200':
+       description: OK
+       schema:
+          title: Список магазинов
+          type: array
+          items:
+            $ref: ./definitions.yaml#/store
+     '413':
+       description: Превышен максимальный объём данных в запросе
+#       headers:
+#         X-RateLimit-Limit:
+#           schema:
+#             type: integer
+#           description: Максимальное количество запросов, которые вы можете сделать в текущем временном интервале.
+#         X-RateLimit-Remaining:
+#           schema:
+#             type: integer
+#           description: Количество запросов, оставшихся в текущем временном интервале.
+#         X-RateLimit-Reset:
+#           schema:
+#             type: string
+#             format: integer
+#           description: Время, оставшееся до начала нового временного интервала. В секундах UTC.
+
+/api.evotor.ru/api/v1/inventories/employees/search:
+ x-summary: Получить список сотрудников
+ get:
+   tags:
+     - Сущности пользователя Эвотор
+   summary: 'Получить список сотрудников'
+   description: |
+     Возвращает массив с информацией о всех сотрудниках пользователя. Под сотрудниками понимаются пользователи смарт-терминалов, например, кассиры.
+   parameters:
+     - $ref: ./parameters.yaml#/auth
+   responses:
+     '200':
+       description: OK
+       schema:
+         title: Cписок сотрудников
+         type: array
+         items:
+           $ref: ./definitions.yaml#/employee
+     '413':
+       description: Превышен максимальный объём данных в запросе
+#       headers:
+#         X-RateLimit-Limit:
+#           schema:
+#             type: integer
+#           description: Максимальное количество запросов, которые вы можете сделать в текущем временном интервале.
+#         X-RateLimit-Remaining:
+#           schema:
+#             type: integer
+#           description: Количество запросов, оставшихся в текущем временном интервале.
+#         X-RateLimit-Reset:
+#           schema:
+#             type: string
+#             format: integer
+#           description: Время, оставшееся до начала нового временного интервала. В секундах UTC.
+
+
+/api.evotor.ru/api/v1/inventories/devices/search:
+ x-summary: Получить список смарт-терминалов
+ get:
+   tags:
+     - Сущности пользователя Эвотор
+   summary: 'Получить список смарт-терминалов'
+   description: |
+     Возвращает массив с информацией о всех смарт-терминалах пользователя.
+   parameters:
+     - $ref: ./parameters.yaml#/auth
+   responses:
+     '200':
+       description: OK
+       schema:
+         title: Список смарт-терминалов
+         type: array
+         items:
+           $ref: ./definitions.yaml#/device
+     '413':
+       description: Превышен максимальный объём данных в запросе
+#       headers:
+#         X-RateLimit-Limit:
+#           schema:
+#             type: integer
+#           description: Максимальное количество запросов, которые вы можете сделать в текущем временном интервале.
+#         X-RateLimit-Remaining:
+#           schema:
+#             type: integer
+#           description: Количество запросов, оставшихся в текущем временном интервале.
+#         X-RateLimit-Reset:
+#           schema:
+#             type: string
+#             format: integer
+#           description: Время, оставшееся до начала нового временного интервала. В секундах UTC.
+
+
+/api.evotor.ru/api/v1/inventories/stores/{storeUuid}/products:
+ x-summary: Обмен товарами
+ get:
+   tags:
+     - Товары и документы
+   summary: 'Получить список товаров'
+   description: |
+       Возвращает информацию обо всех товарах в определённом магазине (`{storeUuid}`) пользователя платформы.
+   parameters:
+     - $ref: ./parameters.yaml#/auth
+     - $ref: ./parameters.yaml#/storeUuid
+   responses:
+     '200':
+       description: OK
+       schema:
+         type: array
+         items:
+           $ref: ./definitions.yaml#/product
+     '413':
+       description: Превышен максимальный объём данных в запросе
+#       headers:
+#         X-RateLimit-Limit:
+#           schema:
+#             type: integer
+#           description: Максимальное количество запросов, которые вы можете сделать в текущем временном интервале.
+#         X-RateLimit-Remaining:
+#           schema:
+#             type: integer
+#           description: Количество запросов, оставшихся в текущем временном интервале.
+#         X-RateLimit-Reset:
+#           schema:
+#             type: string
+#             format: integer
+#           description: Время, оставшееся до начала нового временного интервала. В секундах UTC.
+ post:
+   tags:
+     - Товары и документы
+   summary: 'Передать список товаров'
+   description: |
+     Загружает информацию об одном или нескольких товарах в определённый магазин (`{storeUuid}`) пользователя платформы.
+
+     > С 1.11.2017 Облако перестанет обрабатывать запросы содержащие некорректную схему товаров. Вы по-прежнему сможете получить из Облака ранее созданные товары с некорректной схемой.
+   parameters:
+     - $ref: ./parameters.yaml#/auth
+     - $ref: ./parameters.yaml#/contentType
+     - $ref: ./parameters.yaml#/storeUuid
+     - name: products
+       in: body
+       description: Массив товаров
+       required: true
+       schema:
+         type: array
+         items:
+           $ref: ./definitions.yaml#/product
+   responses:
+     '200':
+       description: OK
+       headers:
+         X-Products-Violations-Count:
+           schema:
+             type: integer
+           description: Количество элементов, которые не соответствуют схеме.
+         X-Products-Violations:
+           schema:
+             type: string
+           description: Подробное описание первых 20-ти ошибок.
+     '413':
+       description: Превышен максимальный объём данных в запросе
+#         X-RateLimit-Limit:
+#           schema:
+#             type: integer
+#           description: Максимальное количество запросов, которые вы можете сделать в текущем временном интервале.
+#         X-RateLimit-Remaining:
+#           schema:
+#             type: integer
+#           description: Количество запросов, оставшихся в текущем временном интервале.
+#         X-RateLimit-Reset:
+#           schema:
+#             type: string
+#             format: integer
+#           description: Время, оставшееся до начала нового временного интервала. В секундах UTC.
+
+
+/partner.ru/api/v1/inventories/stores/{storeUuid}/products:
+ post:
+   tags:
+     - Вебхуки-уведомления
+   summary: 'Создать товары'
+   description: |
+     Загружает в сторонний сервис массив новых товаров, созданных на терминале.
+   parameters:
+     - $ref: ./parameters.yaml#/clientAuth
+     - $ref: ./parameters.yaml#/storeUuid
+       in: path
+       required: true
+       type: string
+       pattern: >-
+         ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89aAbB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$
+     - name: products
+       in: body
+       description: Массив товаров
+       required: true
+       schema:
+         type: array
+         items:
+           $ref: ./definitions.yaml#/product
+   responses:
+     '200':
+       description: OK
+#       headers:
+#         X-RateLimit-Limit:
+#           schema:
+#             type: integer
+#           description: Максимальное количество запросов, которые вы можете сделать в текущем временном интервале.
+#         X-RateLimit-Remaining:
+#           schema:
+#             type: integer
+#           description: Количество запросов, оставшихся в текущем временном интервале.
+#         X-RateLimit-Reset:
+#           schema:
+#             type: string
+#             format: integer
+#           description: Время, оставшееся до начала нового временного интервала. В секундах UTC.
+     '400':
+       $ref: ./responses.yaml#/40020012003
+     '401':
+       $ref: ./responses.yaml#/40110021003
+     '402':
+       $ref: ./responses.yaml#/402
+     '404':
+       $ref: ./responses.yaml#/404
+     '405':
+       $ref: ./responses.yaml#/4051005
+
+
+/api.evotor.ru/api/v1/inventories/stores/{storeUuid}/products/delete:
+ x-summary: Удаление товаров
+ post:
+   tags:
+     - Товары и документы
+   summary: 'Удалить товар / все товары'
+   description: |
+     HTTP-запрос с пустым массивом удалит все товары в магазине.
+     Чтобы удалить определённый товар, в теле HTTP-запроса требуется указать его UUID.
+   parameters:
+     - $ref: ./parameters.yaml#/auth
+     - $ref: ./parameters.yaml#/contentType
+     - $ref: ./parameters.yaml#/storeUuid
+     - name: products
+       in: body
+       description: Массив товаров
+       required: true
+       schema:
+         type: array
+         items:
+           $ref: ./definitions.yaml#/productToDelete
+   responses:
+     '200':
+       description: OK
+     '413':
+       description: Превышен максимальный объём данных в запросе
+#       headers:
+#         X-RateLimit-Limit:
+#           schema:
+#             type: integer
+#           description: Максимальное количество запросов, которые вы можете сделать в текущем временном интервале.
+#         X-RateLimit-Remaining:
+#           schema:
+#             type: integer
+#           description: Количество запросов, оставшихся в текущем временном интервале.
+#         X-RateLimit-Reset:
+#           schema:
+#             type: string
+#             format: integer
+#           description: Время, оставшееся до начала нового временного интервала. В секундах UTC.
+
+
+/api.evotor.ru/api/v1/inventories/stores/{storeUuid}/documents:
+ x-summary: Документы
+ get:
+   tags:
+     - Товары и документы
+   summary: 'Получить список документов'
+   description: |
+     Возвращает массив документов.
+   parameters:
+     - $ref: ./parameters.yaml#/auth
+     - $ref: ./parameters.yaml#/storeUuid
+     - name: deviceUuid
+       in: query
+       type: string
+       description: |
+         Идентификатор устройства в Облаке Эвотор.
+
+         Формат – `uuid4`. Регистрозависимый.
+     - name: ltCloseDate
+       in: query
+       format: date-time
+       type: string
+       description: |
+         Дата окончания выборки. Ответ содержит документы, созданные до указанной даты.
+
+         Если не заданы даты начала и окончания выборки, возвращаются документы созданные за последний месяц с текущей даты.
+
+         Для выгрузки доступны документы, созданные не более шести месяцев назад, с момента выполнения запроса. Диапазон дат (от `gtCloseDate` до `ltCloseDate`) в рамках одного запроса не может превышать один месяц.
+
+         Формат времени - 2017-01-10T09:33:19.757+0000
+     - name: gtCloseDate
+       in: query
+       format: date-time
+       type: string
+       description: |
+         Дата начала выборки. Ответ содержит документы, созданные после указанной даты.
+
+         Если не заданы даты начала и окончания выборки, возвращаются документы созданные за последний месяц с текущей даты.
+
+         Для выгрузки доступны документы, созданные не более шести месяцев назад, с момента выполнения запроса. Диапазон дат (от `gtCloseDate` до `ltCloseDate`) в рамках одного запроса не может превышать один месяц.
+
+         Формат времени - 2017-01-10T09:33:19.757+0000
+     - name: types
+       description: |
+         Ответ будет содержать документы определенных типов. Можно указать несколько типов через запятую. Возможные значения:
+         * Кассовые документы – `SELL`,`PAYBACK`,`CASH_INCOME`,`CASH_OUTCOME`,`OPEN_SESSION`,`FPRINT`,`CLOSE_SESSION`.
+         * Инвентаризация – `INVENTORY`;
+         * Приемка – `ACCEPT`;
+         * Возврат поставщику – `RETURN`;
+         * Списание – `WRITE_OFF`;
+         * Акт переоценки – `REVALUATION`;
+         * Вскрытие тары – `OPEN_TARE`.
+       in: query
+       type: string
+   responses:
+     '200':
+       description: OK
+       schema:
+         title: Массив документов
+         type: array
+         items:
+           $ref: ./definitions.yaml#/document
+     '413':
+       description: Превышен максимальный объём данных в запросе
+#       headers:
+#         X-RateLimit-Limit:
+#           schema:
+#             type: integer
+#           description: Максимальное количество запросов, которые вы можете сделать в текущем временном интервале.
+#         X-RateLimit-Remaining:
+#           schema:
+#             type: integer
+#           description: Количество запросов, оставшихся в текущем временном интервале.
+#         X-RateLimit-Reset:
+#           schema:
+#             type: string
+#             format: integer
+#           description: Время, оставшееся до начала нового временного интервала. В секундах UTC.
+
+
+/partner.ru/api/v1/inventories/stores/{storeUuid}/documents:
+ put:
+   tags:
+     - Вебхуки-уведомления
+   summary: 'Передать документы'
+   description: |
+     Передаёт в сторонний сервис массив документов с транзакциями.
+   parameters:
+     - $ref: ./parameters.yaml#/clientAuth
+     - $ref: ./parameters.yaml#/storeUuid
+     - name: documents
+       in: body
+       description: Массив документов
+       required: true
+       schema:
+         type: array
+         items:
+           $ref: ./definitions.yaml#/document
+   responses:
+     '200':
+       description: OK
+     '400':
+       $ref: ./responses.yaml#/40020012003
+     '401':
+       $ref: ./responses.yaml#/40110021003
+     '402':
+       $ref: ./responses.yaml#/402
+     '404':
+       $ref: ./responses.yaml#/404
+     '405':
+       $ref: ./responses.yaml#/4051005
+
+
+/partner.ru/api/v1/user/verify:
+  post:
+    tags:
+      - Вебхуки-запросы
+    summary: 'Авторизация пользователя'
+    description: |
+      Авторизация существующего пользователя в стороннем сервисе с помощью данных учётной записи Личного кабинета Эвотор.
+      > Под пользователем понимается мастер-аккаунт владельца бизнеса в стороннем сервисе.
+    parameters:
+      - $ref: ./parameters.yaml#/serverAuth
+      - $ref: ./parameters.yaml#/Accept
+      - $ref: ./parameters.yaml#/Content-Type
+      - name: ''
+        in: body
+        description: |
+          Поля, необходимые для авторизации существующего пользователя в стороннем сервисе.
+        required: true
+        schema:
+          $ref: ./definitions.yaml#/authorizeFormData
+    responses:
+      '200':
+        description: OK
+        schema:
+          title: Данные пользователя
+          type: object
+          required:
+            - userId
+            - hasBilling
+            - token
+          properties:
+            userId:
+              $ref: './definitions.yaml#/userId'
+            hasBilling:
+              type: boolean
+              description: |
+                Определяет наличие биллинга по данному пользователю в стороннем сервисе.
+
+                Эвотор не выполняет биллинг, если на момент авторизации пользователь оплачивает подписку в стороннем сервисе.
+
+                Работает, когда учётная запись, первоначально зарегестрированна через интерфей партнёра.
+            token:
+              description: |
+                Токен, который облако Эвотор будет передавать в заголове `Authorization` с типом `Bearer`, для авторизации своих HTTP-запросов в стороннем сервисе.
+              type: string
+              maxLength: 128
+              example: toaWaep4chou7ahkoogiu9Iusaht9ima
+      '400':
+        $ref: ./responses.yaml#/40020012002
+      '401':
+        $ref: ./responses.yaml#/40110011006
+      '404':
+        $ref: ./responses.yaml#/404
+      '409':
+        $ref: ./responses.yaml#/4092004
+
+
+/partner.ru/api/v1/user/create:
+  post:
+    tags:
+      - Вебхуки-запросы
+    summary: 'Регистрация учётной записи'
+    description: |
+      Регистрирует новую учётную запись в стороннем сервисе.
+      **ВАЖНО:** Под пользователем понимается мастер-аккаунт владельца бизнеса в системе партнера.
+    parameters:
+      - $ref: ./parameters.yaml#/Accept
+      - $ref: ./parameters.yaml#/Content-Type
+      - $ref: ./parameters.yaml#/serverAuth
+      - name: ''
+        in: body
+        description: |
+          Поля необходимые для регистрации нового пользователя в стороннем сервисе.
+        required: true
+        schema:
+          $ref: ./definitions.yaml#/registerFormData
+    responses:
+      '200':
+        description: OK
+        schema:
+          title: Данные пользователя
+          type: object
+          required:
+            - userId
+            - token
+          properties:
+            userId:
+              $ref: './definitions.yaml#/userId'
+            token:
+              description: |
+                Токен, который облако Эвотор будет передавать в заголове `Authorization` с типом `Bearer`, для авторизации своих HTTP-запросов в стороннем сервисе.
+              type: string
+              maxLength: 128
+              example: toaWaep4chou7ahkoogiu9Iusaht9ima
+      '400':
+        $ref: ./responses.yaml#/40020012002
+      '401':
+        $ref: ./responses.yaml#/4011001
+      '404':
+        $ref: ./responses.yaml#/404
+      '409':
+        $ref: ./responses.yaml#/4092005
+
+
+#/partner.ru/api/v1/user/tariff:
+#  post:
+#    tags:
+#      - Вебхуки-запросы
+#    summary: 'Активация / деактивация тарифа'
+#    description: |
+#      **Важно:** Не рекомендуется использовать этот метод. Используйте события биллинга.
+#      Активация / деактивация тарифа для учетной записи пользователя в стороннем сервисе.
+#    parameters:
+#      - $ref: ./parameters.yaml#/serverAuth
+#      - name: ''
+#        in: body
+#        description: |
+#          Параметры, необходимые для активации тарифа в стороннем сервисе.
+#        required: true
+#        schema:
+#          type: object
+#          required:
+#            - userUuid
+#            - tariffId
+#            - status
+#          properties:
+#            userUuid:
+#              type: string
+#              description: |
+#                **Важно:** Параметр `userUuid` к августу будет заменён на параметр `userId`. Используйте новое наименование параметра.
+
+#                Идентификатор пользователя в облаке Эвотор.
+#              pattern: '^[0-9]{2}-[0-9]{15}$'
+#              example: 01-000000000000001
+#            tariffId:
+#              type: string
+#              description: Код тарифа в платформе Эвотор.
+#              pattern: '^[a-zA-Z0-9\_\-]+$'
+#              default: starter
+#            status:
+#              type: string
+#              description: >-
+#                Статус тарифа. Возможные значения:
+#                 * ACTIVE -  установка приложения или подтверждение активности тарифа.
+#                 * INACTIVE - удаление приложение или деактивация тарифа из-за неоплаты.
+#              enum:
+#                - ACTIVE
+#                - INACTIVE
+#    responses:
+#      '200':
+#        description: OK
+#      '400':
+#        $ref: ./responses.yaml#/40020012002
+#      '401':
+#        $ref: ./responses.yaml#/4011001
+#      '404':
+#        $ref: ./responses.yaml#/404
+
+
+/partner.ru/api/v1/commodities:
+  get:
+    tags:
+      - Вебхуки-запросы
+    summary: Поиск по штрихкоду
+    description: |
+      Возвращает объект с информацией о товаре, найденном в базе стороннего сервиса с помощью штрихкода и/или кода алкогольной продукции.
+    parameters:
+      - $ref: ./parameters.yaml#/clientAuth
+      - name: scanCode
+        in: query
+        required: true
+        type: string
+        description: Штрихкод товара.
+      - name: alcCode
+        in: query
+        required: false
+        type: string
+        description: Код алкогольной продукции ЕГАИС.
+    responses:
+      '200':
+        schema:
+          $ref: ./definitions.yaml#/commodity
+        description: OK
+      '400':
+        $ref: ./responses.yaml#/40020012002
+      '401':
+        $ref: ./responses.yaml#/4011001
+      '404':
+        $ref: ./responses.yaml#/404
+
+
+/partner.ru/api/v1/inventories/devices:
+  put:
+    tags:
+      - Вебхуки-уведомления
+    summary: 'Создать смарт-терминал'
+    description: |
+      Создать / отредактировать один или несколько смарт-терминалов в стороннем сервисе. Облако эвотор передаёт в сторонний сервис все изменения, сделанные в Личном кабинете. Эвотор является
+      мастер-системой по данной сущности.
+    parameters:
+      - $ref: ./parameters.yaml#/clientAuth
+      - name: device
+        in: body
+        description: Массив смарт-терминалов
+        required: true
+        schema:
+          type: array
+          items:
+            $ref: ./definitions.yaml#/device
+    responses:
+      '200':
+        description: OK
+      '400':
+        $ref: ./responses.yaml#/4002001
+      '401':
+        $ref: ./responses.yaml#/40110021003
+      '402':
+        $ref: ./responses.yaml#/402
+      '404':
+        $ref: ./responses.yaml#/404
+      '405':
+        $ref: ./responses.yaml#/4051005
+
+
+/partner.ru/api/v1/inventories/employees:
+  put:
+    tags:
+      - Вебхуки-уведомления
+    summary: 'Создать сотрудника'
+    description: |
+      Создать / отредактировать одного или нескольких сотрудников в стороннем сервисе. Облако эвотор передаёт в сторонний сервис все изменения, сделанные в Личном кабинете. Эвотор является
+      мастер-системой по данной сущности.
+    parameters:
+      - $ref: ./parameters.yaml#/clientAuth
+      - name: employee
+        in: body
+        description: Массив сотрудников, созданных в платформе Эвотор.
+        required: true
+        schema:
+          type: array
+          items:
+            $ref: ./definitions.yaml#/employee
+    responses:
+      '200':
+        description: OK
+      '400':
+        $ref: ./responses.yaml#/4002001
+      '401':
+        $ref: ./responses.yaml#/40110021003
+      '402':
+        $ref: ./responses.yaml#/402
+      '404':
+        $ref: ./responses.yaml#/404
+      '405':
+        $ref: ./responses.yaml#/4051005
+
+
+/partner.ru/api/v1/inventories/stores:
+  put:
+    tags:
+      - Вебхуки-уведомления
+    summary: 'Создать магазин'
+    description: >-
+      Создать / отредактировать однин или несколько магазинов в стороннем сервисе. Облако эвотор передаёт в сторонний сервис все изменения, сделанные в Личном кабинете. Эвотор является
+      мастер-системой по данной сущности.
+    parameters:
+      - $ref: ./parameters.yaml#/clientAuth
+      - name: store
+        in: body
+        description: Массив магазинов из Эвотор
+        required: true
+        schema:
+          type: array
+          items:
+            $ref: ./definitions.yaml#/store
+    responses:
+      '200':
+        description: OK
+      '400':
+        $ref: ./responses.yaml#/4002001
+      '401':
+        $ref: ./responses.yaml#/40110021003
+      '402':
+        $ref: ./responses.yaml#/402
+      '404':
+        $ref: ./responses.yaml#/404
+      '405':
+        $ref: ./responses.yaml#/4051005
+
+
+#/partner.ru/api/v1/receipts:
+#  post:
+#    tags:
+#      - Вебхуки-уведомления
+#    summary: 'Отправить чек (V1) [DEPRECATED]'
+#    description: |
+#      После оплаты отправляет чек в сторонний сервис. Тело запроса содержит один или несколько чеков.
+#    deprecated: true
+#    parameters:
+#      - $ref: ./parameters.yaml#/clientAuth
+#      - name: receipt
+#        in: body
+#        description: Массив чеков.
+#        required: true
+#        schema:
+#          type: array
+#          items:
+#            $ref: ./definitions.yaml#/receipt
+#    responses:
+#      '200':
+#        description: OK
+#      '400':
+#        $ref: ./responses.yaml#/40020012003
+#      '401':
+#        $ref: ./responses.yaml#/40110021003
+#      '402':
+#        $ref: ./responses.yaml#/402
+#      '404':
+#        $ref: ./responses.yaml#/404
+#      '405':
+#        $ref: ./responses.yaml#/4051005
+
+/partner.ru/api/v2/receipts:
+  post:
+    tags:
+      - Вебхуки-уведомления
+    summary: 'Отправить чек (V2)'
+    description: |
+      После оплаты отправляет чек в сторонний сервис. Тело запроса содержит один или несколько чеков.
+    parameters:
+      - $ref: ./parameters.yaml#/clientAuth
+      - $ref: ./definitions.yaml#/receipt
+
+    responses:
+      '200':
+        description: OK
+      '400':
+        $ref: ./responses.yaml#/40020012003
+      '401':
+        $ref: ./responses.yaml#/40110021003
+      '402':
+        $ref: ./responses.yaml#/402
+      '404':
+        $ref: ./responses.yaml#/404
+      '405':
+        $ref: ./responses.yaml#/4051005
+
+/partner.ru/api/v1/user/token:
+  post:
+    tags:
+      - Вебхуки-запросы
+    summary: 'Передача токена приложения'
+    description: |
+      Передаёт токен приложения, после того, как пользователь установил приложение в Личном кабинете. Сторонний сервис использует токен приложения для авторизации запросов к облаку Эвотор.
+    parameters:
+      - $ref: ./parameters.yaml#/serverAuth
+      - $ref: ./parameters.yaml#/Accept
+      - $ref: ./parameters.yaml#/Content-Type
+      - $ref: ./parameters.yaml#/Accept-Charset
+      - name: ''
+        in: body
+        description: Тело запроса.
+        required: true
+        schema:
+          type: object
+          required:
+            - userUuid
+            - token
+          properties:
+            userUuid:
+              $ref: './definitions.yaml#/userId'
+            token:
+              type: string
+              description: Токен, с которым приложение будет обращаться в Облако Эвотор для запроса данных по пользователю с идентификатором `userId`.
+              example: f46b89a5-8e80-4591-b0aa-94551790444b
+    responses:
+      '200':
+        description: OK
+      '400':
+        $ref: ./responses.yaml#/40020012002
+      '401':
+        $ref: ./responses.yaml#/4011001
+      '404':
+        $ref: ./responses.yaml#/404
+
+
+/partner.ru/api/v1/subscription/event:
+  post:
+    tags:
+      - Вебхуки-уведомления
+    summary: 'События подписки'
+    description: |
+        Связанные с биллингом события, которые облако Эвотор передаёт в сторонний сервис.
+
+        Облако выполняет попытки передать события в течение трёх суток, до тех пор пока не будет получен ответ об успешной доставке сообщения (200 ОК).
+
+        Интервал повторной отправки события около одной минуты.
+
+        Если ваше приложение распространяется за разовые платежи, а не по подписке, Облако Эвотор передаёт только следующие события:
+          * `SubscriptionCreated` – новая подписка. Сообщает о том, что пользователь установил приложение в Личном кабинете. Приходит в начале пробного периода или перед сообщением об успешной оплате, если пробного периода нет.
+          * `SubscriptionActivated` – подписка активирована. Сообщает об успешной оплате. SubscriptionCreated, если пробного периода нет.
+          * `SubscriptionTerminated` – Подписка завершена. Приходит если не прошла регулярная оплата, независимо от того запросил пользователь завершение подписки или нет.
+    parameters:
+      - $ref: './parameters.yaml#/clientAuth'
+      - name: body
+        in: body
+        description: Содержимое запроса меняется в зависимости от события.
+        required: true
+        schema:
+          $ref: ./definitions.yaml#/subscriptionevents
+    responses:
+      '200':
+        description: OK
+
+/partner.ru/api/v2/installation/event:
+  post:
+    tags:
+      - Вебхуки-уведомления
+    summary: 'События установки и удаления приложений'
+    description: |
+        Связанные с установкой и удалением приложения события, которые облако Эвотор передаёт в сторонний сервис.
+
+        Облако выполняет попытки передать события в течение трёх суток, до тех пор пока не будет получен ответ об успешной доставке сообщения (200 ОК).
+
+        Интервал повторной отправки события около одной минуты.
+    parameters:
+      - $ref: './parameters.yaml#/clientAuth'
+      - $ref: './parameters.yaml#/contentType'
+      - $ref: './parameters.yaml#/Accept'
+      - $ref: './parameters.yaml#/Accept-Charset'
+      - name: body
+        in: body
+        description: Содержимое запроса меняется в зависимости от события.
+        required: true
+        schema:
+          $ref: ./definitions.yaml#/appevents
+    responses:
+      '200':
+        description: OK
+
+
+/api.evotor.ru/api/v1/inventories/stores/{storeUuid}/products/schemes:
+  x-summary: Получение схем магазина
+  get:
+    tags:
+      - Схемы и дополнительные поля товаров
+    summary: 'Получить схемы товаров'
+    description: |
+        Возвращает схемы товаров для определённого магазина (`{storeUuid}`) пользователя платформы. Эвотор возвращает схемы в соответствии с приложением, создавшим схемы. Эвотор определяет приложение по токену, который сторонний сервис передаёт в заголовке `X-Authorization`.
+    parameters:
+      - $ref: ./parameters.yaml#/Content-Type
+      - $ref: ./parameters.yaml#/auth
+    responses:
+      '200':
+        description: OK
+      '413':
+        description: Превышен максимальный объём данных в запросе
+#       headers:
+#         X-RateLimit-Limit:
+#           schema:
+#             type: integer
+#           description: Максимальное количество запросов, которые вы можете сделать в текущем временном интервале.
+#         X-RateLimit-Remaining:
+#           schema:
+#             type: integer
+#           description: Количество запросов, оставшихся в текущем временном интервале.
+#         X-RateLimit-Reset:
+#           schema:
+#             type: string
+#             format: integer
+#           description: Время, оставшееся до начала нового временного интервала. В секундах UTC.
+      '400':
+        description: Неверный запрос
+      '401':
+        description: Не авторизован
+
+  post:
+    tags:
+      - Схемы и дополнительные поля товаров
+    summary: 'Создать / Изменить схемы товаров'
+    description: |
+      Создаёт / изменяет схемы товаров для определённого магазина (`{storeUuid}`) пользователя платформы. Эвотор создаёт схему в рамках приложения. Эвотор определяет приложение по токену, который сторонний сервис передаёт в заголовке `X-Authorization`.
+    parameters:
+      - $ref: ./parameters.yaml#/Content-Type
+      - $ref: ./parameters.yaml#/auth
+      - name: schemas
+        in: body
+        description: Массив значений схемы.
+        required: true
+        schema:
+          type: array
+          items:
+            $ref: ./definitions.yaml#/productSchema
+        x-examples:
+          application/json:
+            - uuid: "1eaca77f-1579-5078-a726-83c892348acd"
+              appId: "1eaca77f-1579-5078-a726-83c892348abc"
+              items:
+                - title: "Схема 1"
+                  editable: true
+                  uuid: "1eaca77f-8937-5314-a726-83c892348acd"
+                  type: "TEXT_FIELD"
+                  data: {}
+                  regexp: "\\\\w+"
+                - title: "Схема 2"
+                  editable: false
+                  uuid: "1eaca88f-1579-5078-a726-83c892348acd"
+                  type: "DICTIONARY_FIELD"
+                  multiple: false
+                  items:
+                    - title: "Элемент 1"
+                      value: "1eaca77f-1579-5078-a726-83c892348ghj"
+    responses:
+      '200':
+        description: OK
+      '413':
+        description: Превышен максимальный объём данных в запросе
+#        headers:
+#          X-RateLimit-Limit:
+#            schema:
+#              type: integer
+#            description: Максимальное количество запросов, которые вы можете сделать в текущем временном интервале.
+#          X-RateLimit-Remaining:
+#            schema:
+#              type: integer
+#            description: Количество запросов, оставшихся в текущем временном интервале.
+#          X-RateLimit-Reset:
+#            schema:
+#              type: string
+#              format: integer
+#            description: Время, оставшееся до начала нового временного интервала. В секундах UTC.
+      '400':
+        description: Неверный запрос
+      '401':
+        description: Не авторизован
+
+
+/api.evotor.ru/api/v1/inventories/stores/{storeUuid}/products/schemes/delete:
+ x-summary: Удаление схем
+ post:
+   tags:
+     - Схемы и дополнительные поля товаров
+   summary: 'Удалить схемы товаров'
+   description: |
+     Удаляет указанные схемы.
+
+     В теле запроса укажите один или несколько идентификаторов схем, которые требуется удалить.
+
+   parameters:
+     - $ref: ./parameters.yaml#/contentType
+     - $ref: ./parameters.yaml#/auth
+     - $ref: ./parameters.yaml#/storeUuid
+     - name: schemas
+       in: body
+       description: Массив идентификаторов схем.
+       schema:
+         type: array
+         items:
+           type: string
+           description: |
+             Идентификатор схемы в Облаке Эвотор, уникальный в рамках приложения.
+
+             Формат – `uuid4`.
+           pattern: >-
+             ^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$
+           example: 1eaca77f-1579-5078-a726-83c892348acd
+   responses:
+      '200':
+        description: OK
+      '413':
+        description: Превышен максимальный объём данных в запросе
+#        headers:
+#          X-RateLimit-Limit:
+#            schema:
+#              type: integer
+#            description: Максимальное количество запросов, которые вы можете сделать в текущем временном интервале.
+#          X-RateLimit-Remaining:
+#            schema:
+#              type: integer
+#            description: Количество запросов, оставшихся в текущем временном интервале.
+#          X-RateLimit-Reset:
+#            schema:
+#              type: string
+#              format: integer
+#            description: Время, оставшееся до начала нового временного интервала. В секундах UTC.
+      '400':
+        description: Неверный запрос
+      '401':
+        description: Не авторизован
+
+
+/api.evotor.ru/api/v1/inventories/stores/{storeUuid}/products/extras:
+  x-summary: Дополнительные поля
+  get:
+    tags:
+     - Схемы и дополнительные поля товаров
+    summary: 'Получить дополнительные поля товара'
+    description: |
+        Возвращает информацию обо всех товарах в определённом магазине (`{storeUuid}`) пользователя платформы.
+    parameters:
+      - $ref: ./parameters.yaml#/auth
+      - $ref: ./parameters.yaml#/storeUuid
+    responses:
+      '200':
+        description: OK
+        schema:
+            $ref: ./definitions.yaml#/productExtras
+      '413':
+        description: Превышен максимальный объём данных в запросе
+#        headers:
+#          X-RateLimit-Limit:
+#            schema:
+#              type: integer
+#            description: Максимальное количество запросов, которые вы можете сделать в текущем временном интервале.
+#          X-RateLimit-Remaining:
+#            schema:
+#              type: integer
+#            description: Количество запросов, оставшихся в текущем временном интервале.
+#          X-RateLimit-Reset:
+#            schema:
+#              type: string
+#              format: integer
+#            description: Время, оставшееся до начала нового временного интервала. В секундах UTC.
+      '400':
+        description: Неверный запрос
+      '401':
+        description: Не авторизован
+
+  post:
+    tags:
+     - Схемы и дополнительные поля товаров
+    summary: 'Создать / Изменить дополнительные поля товара'
+    description: |
+      Загружает информацию об одном или нескольких товарах в определённый магазин (`{storeUuid}`) пользователя платформы.
+    parameters:
+      - $ref: ./parameters.yaml#/auth
+      - $ref: ./parameters.yaml#/contentType
+      - $ref: ./parameters.yaml#/storeUuid
+      - name: extras
+        in: body
+        description: Массив дополнительных полей.
+        required: true
+        schema:
+            $ref: ./definitions.yaml#/productExtras
+    responses:
+      '200':
+        description: OK
+      '413':
+        description: Превышен максимальный объём данных в запросе
+#        headers:
+#          X-RateLimit-Limit:
+#            schema:
+#              type: integer
+#            description: Максимальное количество запросов, которые вы можете сделать в текущем временном интервале.
+#          X-RateLimit-Remaining:
+#            schema:
+#              type: integer
+#            description: Количество запросов, оставшихся в текущем временном интервале.
+#          X-RateLimit-Reset:
+#            schema:
+#              type: string
+#              format: integer
+#            description: Время, оставшееся до начала нового временного интервала. В секундах UTC.
+      '400':
+        description: Неверный запрос
+      '401':
+        description: Не авторизован
+
+/api.evotor.ru/api/v1/inventories/stores/{storeUuid}/products/extras/delete:
+ x-summary: Удаление дополнительных полей
+ post:
+   tags:
+     - Схемы и дополнительные поля товаров
+   summary: 'Удалить дополнительные поля товаров'
+   description: |
+     Удаляет указанные дополнительные поля.
+
+     В теле запроса укажите один или несколько идентификаторов дополнительных полей, которые требуется удалить.
+
+   parameters:
+     - $ref: ./parameters.yaml#/contentType
+     - $ref: ./parameters.yaml#/auth
+     - $ref: ./parameters.yaml#/storeUuid
+     - name: extras
+       in: body
+       description: Массив идентификаторов дополнительных полей.
+       required: true
+       schema:
+         type: array
+         items:
+           type: string
+           description: |
+             Идентификатор дополнительного поля в Облаке Эвотор, уникальный в рамках приложения.
+
+             Формат – `uuid4`.
+           example: 2bnmv77f-1579-5078-a726-83c892348acd
+   responses:
+      '200':
+        description: OK
+      '413':
+        description: Превышен максимальный объём данных в запросе
+#        headers:
+#          X-RateLimit-Limit:
+#            schema:
+#              type: integer
+#            description: Максимальное количество запросов, которые вы можете сделать в текущем временном интервале.
+#          X-RateLimit-Remaining:
+#            schema:
+#              type: integer
+#            description: Количество запросов, оставшихся в текущем временном интервале.
+#          X-RateLimit-Reset:
+#            schema:
+#              type: string
+#              format: integer
+#            description: Время, оставшееся до начала нового временного интервала. В секундах UTC.
+      '400':
+        description: Неверный запрос
+      '401':
+        description: Не авторизован
+
+
+#/api.evotor.ru/api/v1/inventories/stores/{storeUuid}/products/quantities:
+# x-summary:
+# get:
+#    tags:
+#     - Товары и документы
+#    summary: 'Получить остатки товаров в магазине'
+#    description: |
+#        Возвращает информацию об остатках всех товаров в определённом магазине (`{storeUuid}`) пользователя платформы. Ответ содержит JSON-объект с набором пар {"идентификатор товара" - "остаток"} (см. пример ответа).
+#    parameters:
+#      - $ref: ./parameters.yaml#/auth
+#      - $ref: ./parameters.yaml#/storeUuid
+#      - $ref: ./parameters.yaml#/contentType
+#    responses:
+#      '200':
+#        description: OK
+#        examples:
+#            application/json: { "35fac185-8e78-4495-b7d2-7a3aac129356": "1.23", "a0128ed3-06b6-4dd3-99f6-6eb8f5545b80": "2.0" }
+#      '401':
+#        $ref: ./responses.yaml#/40110021003
+
+# post:
+#    tags:
+#     - Товары и документы
+#    summary: 'Передать остатки товара в магазине'
+#    description: |
+#        Передаёт информацию об остатках определённого товара (`{productUuid}`), в определённом магазине (`{storeUuid}`) пользователя платформы.
+#    parameters:
+#      - $ref: ./parameters.yaml#/auth
+#      - $ref: ./parameters.yaml#/storeUuid
+#      - $ref: ./parameters.yaml#/contentType
+#      - name: ''
+#        in: body
+#        description: JSON-объект, в котором требуется указать пары идентификатор продукта - остатки. Остатки требуется указывать в виде целого числа.
+#        required: true
+#        schema:
+#          type: object
+#          description:
+#        x-examples:
+#          application/json:
+#              productUuid: "quantitiesValue"
+#              productUuid2: "quantitiesValue"
+#    responses:
+#      '200':
+#        description: OK
+#      '401':
+#        $ref: ./responses.yaml#/40110021003
+
+
+#/api.evotor.ru/api/v1/inventories/stores/{storeUuid}/products/{productUuid}/quantities:
+# x-summary:
+# get:
+#    tags:
+#     - Товары и документы
+#    summary: 'Получить остатки определённого товара в магазине'
+#    description: |
+#        Возвращает информацию об остатках всех определённого товара (`{productUuid}`) в определённом магазине (`{storeUuid}`) пользователя платформы.
+#    parameters:
+#      - $ref: ./parameters.yaml#/auth
+#      - $ref: ./parameters.yaml#/storeUuid
+#      - $ref: ./parameters.yaml#/productUuid
+#      - $ref: ./parameters.yaml#/contentType
+#    responses:
+#      '200':
+#        description: OK
+#      '401':
+#        $ref: ./responses.yaml#/40110021003
