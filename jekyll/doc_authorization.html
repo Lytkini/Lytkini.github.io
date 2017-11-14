@@ -3,13 +3,15 @@
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
     </script>
-<!-- End Google Tag Manager -->
+    <!-- End Google Tag Manager -->
+
+
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="Облако,  ">
-<title>Авторизация | Документация Эвотор</title>
+<meta name="keywords" content="cloud,  ">
+<title>Авторизация запросов к Облаку Эвотор | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -32,14 +34,14 @@
 
 <link rel="shortcut icon" href="images/favicon.ico">
 
+<link rel="stylesheet" href="css/magnific-popup.css">
+
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -78,6 +80,7 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
+
     
 
 </head>
@@ -96,7 +99,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Документация Эвотор</span></a>
+            <a class="navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Документация Эвотор</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -104,15 +107,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li><a href="whats_new.html">Что нового</a></li>
+                <li><a href="https://dev.evotor.ru/" target="_blank">Разработчикам</a></li>
                 
                 
                 
-                <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
+                <li><a href="https://api.evotor.ru/" target="_blank">Справочник API</a></li>
                 
                 
                 
                 <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
+                
+                
+                
+                <li><a href="whats_new.html">Что нового</a></li>
                 
                 
                 
@@ -133,7 +140,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Авторизация">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Авторизация запросов к Облаку Эвотор">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -154,7 +161,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="row">
         <!-- Sidebar Column -->
         <div class="col-md-3">
-
           
 
 
@@ -170,18 +176,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <ul id="mysidebar" class="nav">
     <li class="sidebarTitle"> </li>
+    <p class="external">
+        <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
+    </p>
     
     
     
         
     
     <li>
+        
         <a href="#">О платформе Эвотор</a>
+        
         <ul>
             
             
             
             <li><a href="doc_integration_types.html">Способы интеграции</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_version_lifespan.html">Жизненный цикл версии приложения</a></li>
             
             
             
@@ -198,12 +216,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Облако Эвотор</a>
+        
         <ul>
             
             
             
-            <li class="active"><a href="doc_authorization.html">Авторизация</a></li>
+            <li><a href="doc_evotor_api_introduction.html">Введение</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Авторизация</a>
+                <ul>
+                    
+                    
+                    
+                    <li class="active"><a href="doc_authorization.html">Авторизация запросов к Облаку Эвотор</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_evotor_api_authorization.html">Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -217,7 +258,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_applications.html">Приложения для смарт-терминала</a></li>
+            <li><a href="doc_errors_returned.html">Ошибки, которые может возвращать сторонний сервис</a></li>
             
             
             
@@ -229,19 +270,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            <li><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
-            
-            
-            
-            
         </ul>
         
         
     
     <li>
+        
         <a href="#">Разработка для смарт-терминала</a>
+        
         <ul>
             
             
@@ -311,7 +347,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">JAVA SDK</a>
+        
         <ul>
             
             
@@ -352,6 +390,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_java_navigation.html">Вызов окон смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
             
             
             
@@ -459,7 +504,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">JavaScript SDK</a>
+        
         <ul>
             
             
@@ -530,7 +577,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Драйвера для оборудования</a>
+        
         <ul>
             
             
@@ -566,7 +615,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Примеры реализации</a>
+        
         <ul>
             
             
@@ -604,12 +655,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_app_review.html">Черновики, модерация и публикация приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
     
     <li>
+        
         <a href="#">Биллинг</a>
+        
         <ul>
             
             
@@ -640,12 +700,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_subscriptions.html">Подписки</a></li>
+            
+            
+            
+            
         </ul>
         
         
     
     <li>
-        <a href="#">FAQ</a>
+        
+        <a href="#">Вопросы и устранение проблем</a>
+        
         <ul>
             
             
@@ -655,13 +724,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
         
-           <p class="external">
-               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
-           </p>
+
     </li>
 </ul>
 </div>
@@ -670,19 +744,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>$("li.active").parents('li').toggleClass("active");</script>
 
     <!-- Content Column -->
-    <div class="col-md-9">
-        <div class="post-header">
-   <h1 class="post-title-main">Авторизация</h1>
+          <div class="col-md-9">
+                <div class="post-header">
+   <h1 class="post-title-main">Авторизация запросов к Облаку Эвотор</h1>
 </div>
 
 
 
-<div class="post-content">
 
-   
 
-    
-    
+
+
 <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
 <script>
 $( document ).ready(function() {
@@ -704,95 +776,159 @@ $('#toc').on('click', 'a', function() {
 
 <div id="toc"></div>
 
+
+
+<div class="post-content">
+
+   <!--  -->
+
     
 
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/evotor_api/doc_authorization.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <p>В зависимости от типа приложения, для работы с Облаком Эвотор вам могут понадобиться следующие токены:</p>
+  <p>Все запросы к Облаку Эвотор осуществляются в рамках приложения. После установки приложения в <a href="https://market.evotor.ru/#/store/auth/login">Личном кабинете</a>, Облако присваивает ему <em>токен Облака Эвотор</em>, уникальный для пары приложение-пользователь.</p>
+
+<p>Передавайте этот токен в заголовке <code class="highlighter-rouge">X-Authorization</code>, чтобы авторизовать <a href="./doc_example_calls.html#evotorApi">свои запросы к Облаку</a>.</p>
+
+<h2 id="section">Как получить токен Облака Эвотор</h2>
+
+<p>Вы можете получить токен Облака Эвотор:</p>
 
 <ul>
-  <li>токен стороннего сервиса;</li>
-  <li>токен пользователя;</li>
-  <li>токен приложения.</li>
+  <li><a href="./doc_authorization.html#byhand">вручную</a>;</li>
+  <li>
+    <p><a href="./doc_authorization.html#automated">автоматически</a>.</p>
+
+    <p>Для автоматического получения токена Облака Эвотор вам потребуется поддержать собственный сервис. В документации такой сервис называется <em>сторонним</em>.</p>
+  </li>
 </ul>
 
-<h3 id="serverToken">Токен стороннего сервиса</h3>
+<h3 id="byhand">Получение токена вручную</h3>
 
-<p>Сторонний сервис использует токен для авторизации запросов Облака Эвотор в рамках работы с учётной записью в стороннем сервисе. Облако передаёт токен стороннего сервиса в заголовке <code class="highlighter-rouge">Authorization</code>. Токен необходим для авторизации следующих запросов и уведомлений:</p>
-
-<ul>
-  <li><a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1create%2Fpost">Регистрация новой учётной записи</a></li>
-  <li><a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1verify%2Fpost">Авторизация существующего пользователя</a></li>
-  <li><a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1subscription~1event%2Fpost">События биллинга</a></li>
-  <li><a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1token%2Fpost">Адрес для получения токена приложения</a></li>
-</ul>
-
-<p>Чтобы задать токен стороннего сервиса:</p>
+<p><em>Чтобы получить токен Облака Эвотор вручную:</em></p>
 
 <ol>
-  <li>На сайте <a href="https://dev.evotor.ru/">dev.evotor.ru</a> выберите приложение для которого требуется задать токен.</li>
-  <li>На вкладке <strong>Интеграция</strong> выберите необходимый параметр (например, <strong>События биллинга</strong>) и укажите:</li>
+  <li>
+    <p>Войдите в <a href="https://dev.evotor.ru/#/store/apps">Личный кабинет</a> на сайте разработчиков и выберите <a href="./doc_evotor_api_introduction.html">созданное приложение</a>.</p>
+  </li>
+  <li>
+    <p>Выберите необходимый черновик и перейдите на вкладку <strong>Интеграция</strong>.</p>
+  </li>
+  <li>
+    <p>В разделе <strong>Настройки приложения</strong>, включите опцию <strong>Создать вкладку “Настройки” на странице приложения</strong>.</p>
+
+    <p>Опция добавляет вкладку <strong>Настройки</strong> для приложения установленного в <a href="https://market.evotor.ru/#/store/auth/login">Личном кабинете пользователя Эвотор</a>.</p>
+  </li>
+  <li>
+    <p>Нажмите кнопку <strong>Текстовое поле</strong>, в поле <strong>Значение поля</strong> укажите <code class="highlighter-rouge">${token}</code>.</p>
+  </li>
+  <li>
+    <p>Сохраните изменения, вернитесь к списку черновиков приложения и переведите необходимый черновик в тестирование.</p>
+  </li>
+  <li>
+    <p>Войдите в <a href="https://market.evotor.ru/#/store/auth/login">Личный кабинет</a> в Магазине приложений.</p>
+  </li>
+  <li>
+    <p>На вкладке <strong>Мои приложения</strong>, выберите приложение, в котором были сделаны изменения.</p>
+  </li>
+  <li>
+    <p>Перейдите на вкладку <strong>Настройки</strong>.</p>
+
+    <p>На вкладке отображается поле, которое содержит токен Облака Эвотор, необходимый для авторизации запросов к Облаку. Передавайте токен в заголовке <code class="highlighter-rouge">X-Authorization</code>.</p>
+
+    <p class="center-image"><img src="./images/app_token.png" alt="" /></p>
+  </li>
 </ol>
 
-<ul>
-  <li>Токен в формате uuid4, если ваш сервис использует bearer-авторизацию.</li>
-  <li>Логин и пароль для доступа к вашему сервису, если он использует basic-авторизацию.</li>
-</ul>
+<h3 id="automated">Автоматическое получение токена</h3>
 
-<p>В ответ на запросы <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1create%2Fpost">Регистрация новой учётной записи</a> и <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1verify%2Fpost">Авторизация существующего пользователя</a> сторонний сервис возвращает в Облако <em>токен пользователя</em>.</p>
-
-<h3 id="usersToken">Токен пользователя</h3>
-
-<p>При создании нового или авторизации существующего пользователя, сторонний сервис возвращает в Облако уникальный <em>токен пользователя</em>. Облако передаёт токен в заголовке <code class="highlighter-rouge">Authorization</code> запросов приложения к стороннему сервису.</p>
-
-<h3 id="section">Токен приложения</h3>
-
-<p>Облако присваивает токен приложения каждому установленному приложению и с его помощью определяет в рамках какого пользователя действуют запросы стороннего сервиса. При запросе к REST API Облака Эвотор, например, для получения списка товаров или магазинов пользователя, сторонний сервис передаёт <em>токен приложения</em> в заголовке <code class="highlighter-rouge">X-Authorization</code>.
-Получить токен, который Облако выдало установленному приложению, вы можете одним из способов:</p>
+<p>Автоматически вы можете получить токен Облака Эвотор одним из двух способов:</p>
 
 <ul>
   <li>
-    <p>по адресу <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1token%2Fpost"><code class="highlighter-rouge">partner.ru/api/v1/user/token</code></a>.</p>
-
-    <p>Авторизуйте запросы Облака с помощью токена стороннего сервиса.</p>
+    <p>На адрес <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1token%2Fpost"><code class="highlighter-rouge">partner.ru/api/v1/user/token</code></a>;</p>
   </li>
   <li>
-    <p>В GET-параметре <code class="highlighter-rouge">token</code> веб-адреса iframe-приложения:
-<code class="highlighter-rouge">curl
-https://partner.org/#/?uid=&lt;example&gt;&amp;token=string
-</code></p>
-
-    <p class="center-image"><img src="images/iframe_token.png" alt="Токен из iframe'а" /></p>
-  </li>
-  <li>
-    <p>В <a href="https://lk.evotor.ru/web/login">Личном кабинете пользователя Эвотор</a>, в разделе <strong>Настройки</strong> приложения.</p>
-
-    <p>В этом случае, пользователю требуется вручную указать токен в интерфейсе стороннего приложения. Такой метод рекомендуется при работе с интеграциями 1С.</p>
+    <p>В GET-параметре <code class="highlighter-rouge">token</code> веб-адреса iframe-приложения.</p>
   </li>
 </ul>
 
-<p>Чтобы отображать токен на вкладке настроек приложения:</p>
+<p><em>Чтобы получить токен Облака Эвотор на адрес <code class="highlighter-rouge">partner.ru/api/v1/user/token</code>:</em></p>
 
 <ol>
-  <li>На сайте <a href="https://dev.evotor.ru">dev.evotor.ru</a> выберите приложение для которого требуется задать токен.</li>
-  <li>На вкладке <strong>Интеграция</strong> установите флажок <strong>Создать закладку “Настройки” на странице приложения</strong>.</li>
   <li>
-    <p>В блоке <strong>Настройка формы</strong> нажмите на кнопку <strong>Текстовое поле</strong> и укажите поля:</p>
+    <p>Поддержите в своём сервисе адрес <code class="highlighter-rouge">partner.ru/api/v1/user/token</code>.</p>
+
+    <p>На указанный адрес Облако передаёт токен Облака Эвотор после его установки в <a href="https://market.evotor.ru/#/store/auth/login">Личном кабинете</a> пользователя. Запросы облака необходимо авторизовать с помощью <a href="https://developer.evotor.ru/docs/doc_evotor_api_authorization.html#serverToken"><em>токена приложения стороннего сервиса</em></a>.</p>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Токен приложения стороннего сервиса – токен, с помощью которого ваш сервис авторизует запросы от Облака Эвотор</div>
+  </li>
+  <li>
+    <p>Войдите в <a href="https://dev.evotor.ru/#/store/apps">Личный кабинет</a> на сайте разработчиков и выберите <a href="./doc_evotor_api_introduction.html">созданное приложение</a>.</p>
+  </li>
+  <li>
+    <p>Выберите необходимый черновик и перейдите на вкладку <strong>Интеграция</strong>.</p>
+  </li>
+  <li>
+    <p>Включите опцию <strong>Токен приложения для доступа к REST API Эвотор</strong>.</p>
+  </li>
+  <li>
+    <p>В поле <strong>URL</strong>, укажите адрес вида <code class="highlighter-rouge">partner.ru/api/v1/user/token</code>, на который Облако будет передавать токен Облака Эвотор.</p>
+  </li>
+  <li>
+    <p>Выберите тип авторизации, с помощью которого ваш сервис будет авторизовать <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1token%2Fpost">передачу токена Облака Эвотор</a>.</p>
 
     <ul>
-      <li><strong>FormData name</strong> – Название поля, например, “Токен приложения”.</li>
-      <li><strong>Значение поля</strong> – <code class="highlighter-rouge">${token}</code>, переменная, которая автоматически заменяется на токен приложения, полученный в базе данных.</li>
-      <li><strong>Подсказка к полю</strong> – при необходимости, укажите здесь дополнительную информацию.</li>
+      <li>
+        <p>Если вы выбрали <strong>С помощью токена</strong>. В поле <strong>Токен</strong>, укажите токен приложения стороннего сервиса в формате <code class="highlighter-rouge">uuid4</code>.</p>
+
+        <p>Облако передаёт токен в заголовке <code class="highlighter-rouge">Authorization</code>.</p>
+      </li>
+      <li>
+        <p>Если вы выбрали <strong>Запрос логина и пароля ( Basic Auth )</strong>. В полях <strong>Логин</strong> и <strong>Пароль</strong> укажите данные для доступа к стороннему сервису.</p>
+
+        <p>Облако кодирует логин и пароль с помощью base64 и передаёт закодированные данные в заголовке <code class="highlighter-rouge">Authorization</code>.</p>
+      </li>
     </ul>
 
-    <p class="center-image"><img src="images/users_token_setting_up.png" alt="Настройка токена на вкладке Интеграция" /></p>
+    <p>Подробное описание запроса на передачу токена Облака Эвотор вы найдёте в <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1token%2Fpost">Справочнике API</a>. Полученный токен передавайте в заголовке <code class="highlighter-rouge">X-Authorization</code>, в своих запросах к Облаку.</p>
+  </li>
+  <li>
+    <p>Сохраните изменения, вернитесь к списку черновиков приложения и переведите необходимый черновик в тестирование.</p>
   </li>
 </ol>
 
-<p>Токен приложения будет автоматически скопирован из базы данных и отображён в поле <strong>Токен приложения</strong> на вкладке <strong>Настройки</strong>, в <a href="https://lk.evotor.ru/web/login">Личном кабинете пользователя Эвотор</a>.</p>
+<p>После того, как пользователь Магазина приложений установит ваше приложение, Облако будет передавать в ваш сервис токен Облака Эвотор.</p>
 
-<p class="center-image"><img src="images/users_token.png" alt="Токен пользователя в Личном кабинете" /></p>
+<p><em>Чтобы получить токен Облака Эвотор в GET-параметре <code class="highlighter-rouge">token</code> веб-адреса iframe-приложения:</em></p>
+
+<ol>
+  <li>
+    <p>Войдите в <a href="https://dev.evotor.ru/#/store/apps">Личный кабинет</a> на сайте разработчиков и выберите <a href="./doc_evotor_api_introduction.html">созданное приложение</a>.</p>
+  </li>
+  <li>
+    <p>Выберите необходимый черновик и перейдите на вкладку <strong>Интеграция</strong>.</p>
+  </li>
+  <li>
+    <p>В разделе <strong>Настройки приложения</strong>, включите опцию <strong>Создать вкладку “Настройки” на странице приложения</strong>.</p>
+  </li>
+  <li>
+    <p>Нажмите на <strong>iframe</strong> и укажите необходимые поля.</p>
+  </li>
+  <li>
+    <p>Сохраните изменения, вернитесь к списку черновиков приложения и переведите необходимый черновик в тестирование.</p>
+  </li>
+</ol>
+
+<p>Iframe будет добавлен на вкладку <strong>Настройки</strong>, на странице установленного приложения. Облако передаёт токен Облака Эвотор в GET-параметре <code class="highlighter-rouge">token</code> веб-адреса iframe:</p>
+
+<pre><code class="language-curl">https://partner.org/#/?uid=&lt;example&gt;&amp;token=string
+</code></pre>
+
+<figure class="center-image"><a class="no_icon" href="images/iframe_token.png"><img class="docimage center-image" id="imageborder" src="images/iframe_token.png" alt="" /></a><figcaption>Токен из iframe</figcaption></figure>
+
 
 
     <div class="tags">
@@ -801,7 +937,7 @@ https://partner.org/#/?uid=&lt;example&gt;&amp;token=string
         
         
         
-        <a href="tag_Облако.html" class="btn btn-default navbar-btn cursorNorm" role="button">Облако</a>
+        <a href="tag_cloud.html" class="btn btn-default navbar-btn cursorNorm" role="button">cloud</a>
         
         
         
@@ -813,12 +949,38 @@ https://partner.org/#/?uid=&lt;example&gt;&amp;token=string
 
 <hr class="shaded"/>
 
-    </div>
+          </div>
     <!-- /.row -->
-</div>
+        </div>
 <!-- /.container -->
     </div>
+</div>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script>
+    $('.no_icon').magnificPopup({
+		type: 'image',
+		closeBtnInside: false,
+    closeOnContentClick: false,
 
+    callbacks: {
+      open: function() {
+        var self = this;
+        self.wrap.on('click.pinhandler', 'img', function() {
+          self.wrap.toggleClass('mfp-force-scrollbars');
+        });
+      },
+      beforeClose: function() {
+            this.wrap.off('click.pinhandler');
+        this.wrap.removeClass('mfp-force-scrollbars');
+      }
+    },
+
+    image: {
+			verticalFit: false
+		}
+
+	});
+  </script>
 </body>
 
 </html>

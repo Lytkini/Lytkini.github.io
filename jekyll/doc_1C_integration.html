@@ -3,12 +3,14 @@
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
     </script>
-<!-- End Google Tag Manager -->
+    <!-- End Google Tag Manager -->
+
+
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит информацию об интеграции с 1С">
-<meta name="keywords" content="ОблакоЧекиТовары,  ">
+<meta name="keywords" content="cloudreceiptsproducts,  ">
 <title>Интеграция с 1С | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -32,14 +34,14 @@
 
 <link rel="shortcut icon" href="images/favicon.ico">
 
+<link rel="stylesheet" href="css/magnific-popup.css">
+
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -78,6 +80,7 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
+
     
 
 </head>
@@ -96,7 +99,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Документация Эвотор</span></a>
+            <a class="navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Документация Эвотор</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -104,15 +107,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li><a href="whats_new.html">Что нового</a></li>
+                <li><a href="https://dev.evotor.ru/" target="_blank">Разработчикам</a></li>
                 
                 
                 
-                <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
+                <li><a href="https://api.evotor.ru/" target="_blank">Справочник API</a></li>
                 
                 
                 
                 <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
+                
+                
+                
+                <li><a href="whats_new.html">Что нового</a></li>
                 
                 
                 
@@ -154,7 +161,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="row">
         <!-- Sidebar Column -->
         <div class="col-md-3">
-
           
 
 
@@ -170,18 +176,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <ul id="mysidebar" class="nav">
     <li class="sidebarTitle"> </li>
+    <p class="external">
+        <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
+    </p>
     
     
     
         
     
     <li>
+        
         <a href="#">О платформе Эвотор</a>
+        
         <ul>
             
             
             
             <li><a href="doc_integration_types.html">Способы интеграции</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_version_lifespan.html">Жизненный цикл версии приложения</a></li>
             
             
             
@@ -198,12 +216,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Облако Эвотор</a>
+        
         <ul>
             
             
             
-            <li><a href="doc_authorization.html">Авторизация</a></li>
+            <li><a href="doc_evotor_api_introduction.html">Введение</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Авторизация</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_authorization.html">Авторизация запросов к Облаку Эвотор</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_evotor_api_authorization.html">Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -217,7 +258,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_applications.html">Приложения для смарт-терминала</a></li>
+            <li><a href="doc_errors_returned.html">Ошибки, которые может возвращать сторонний сервис</a></li>
             
             
             
@@ -229,19 +270,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            <li><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
-            
-            
-            
-            
         </ul>
         
         
     
     <li>
+        
         <a href="#">Разработка для смарт-терминала</a>
+        
         <ul>
             
             
@@ -311,7 +347,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">JAVA SDK</a>
+        
         <ul>
             
             
@@ -352,6 +390,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_java_navigation.html">Вызов окон смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
             
             
             
@@ -459,7 +504,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">JavaScript SDK</a>
+        
         <ul>
             
             
@@ -530,7 +577,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Драйвера для оборудования</a>
+        
         <ul>
             
             
@@ -566,7 +615,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Примеры реализации</a>
+        
         <ul>
             
             
@@ -604,12 +655,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_app_review.html">Черновики, модерация и публикация приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
     
     <li>
+        
         <a href="#">Биллинг</a>
+        
         <ul>
             
             
@@ -640,12 +700,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_subscriptions.html">Подписки</a></li>
+            
+            
+            
+            
         </ul>
         
         
     
     <li>
-        <a href="#">FAQ</a>
+        
+        <a href="#">Вопросы и устранение проблем</a>
+        
         <ul>
             
             
@@ -655,13 +724,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
         
-           <p class="external">
-               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
-           </p>
+
     </li>
 </ul>
 </div>
@@ -670,21 +744,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>$("li.active").parents('li').toggleClass("active");</script>
 
     <!-- Content Column -->
-    <div class="col-md-9">
-        <div class="post-header">
+          <div class="col-md-9">
+                <div class="post-header">
    <h1 class="post-title-main">Интеграция с 1С</h1>
 </div>
 
 
 
-<div class="post-content">
 
-   
-    <div class="summary">Раздел содержит информацию об интеграции с 1С</div>
-   
+ <div class="summary">Раздел содержит информацию об интеграции с 1С</div>
 
-    
-    
+
+
+
 <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
 <script>
 $( document ).ready(function() {
@@ -706,55 +778,76 @@ $('#toc').on('click', 'a', function() {
 
 <div id="toc"></div>
 
+
+
+<div class="post-content">
+
+   <!-- 
+    <div class="summary">Раздел содержит информацию об интеграции с 1С</div>
+    -->
+
     
 
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/tutorials/doc_1C_integration.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
   <p>Конфигурация 1С, установленная на компьютере пользователя, и обменивается данными с Эвотором с помощью <a href="https://api.evotor.ru/docs/">REST API</a>. Эвотор авторизует запросы от 1С с помощью <strong>токена приложения</strong>, который пользователь может получить на странице <strong>Настройки</strong> приложения в Личном кабинете.</p>
 
-<p class="center-image"><img src="images/1c_integration_API_key.png" alt="" /></p>
+<figure class="center-image"><a class="no_icon" href="images/1c_integration_API_key.png"><img class="docimage center-image" id="imageborder" src="images/1c_integration_API_key.png" alt="" /></a><figcaption>Ключ для интеграции с 1С</figcaption></figure>
 
-<p>Чтобы приложение работало корректно, убедитесь, что вы установили необходимые флажки на вкладке <strong>Интеграция</strong> приложения, на сайте разработчика:</p>
+<p>Чтобы приложение работало корректно, убедитесь, что вы включили необходимые опции на вкладке <strong>Интеграция</strong> приложения, на <a href="https://dev.evotor.ru/">сайте разработчиков</a>:</p>
 
 <ul>
   <li>
-    <p><strong>Получение номенклатуры в стороннем сервисе</strong>. Поля заполнять не требуется.</p>
+    <p><strong>Признак товароучетной системы, получение номенклатуры и остатков в стороннем сервисе и запрет редактирования товаров</strong>. Поля заполнять не требуется.</p>
   </li>
   <li>
-    <p><strong>REST: Получать документы из облака Эвотор</strong>.</p>
+    <p><strong>Получать документы из облака Эвотор</strong>.</p>
   </li>
   <li>
     <p><strong>Создать вкладку “Настройки” на странице приложения</strong>. В поле <strong>Значение поля</strong> укажите <code class="highlighter-rouge">${token}</code>, чтобы токен приложения отображался в соответствующем поле, в закладке <strong>Настройки</strong> приложения.</p>
   </li>
+  <li>
+    <p><strong>Управлять номенклатурой в облаке Эвотор</strong>.</p>
+  </li>
+  <li>
+    <p><strong>Получать номенклатуру из облака Эвотор</strong>.</p>
+  </li>
 </ul>
 
-<p>При оформлении приложения следуйте ограничениям, описанным на <a href="https://dev.evotor.ru/">сайте разработчиков</a>. Когда вы оформите и протестируете приложение, и будете готовы выложить его в открытый доступ, нам потребуется провести приёмочное тестирование. О готовности приложения сообщите по адресу <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#100;&#101;&#118;&#101;&#108;&#111;&#112;&#101;&#114;&#064;&#101;&#118;&#111;&#116;&#111;&#114;&#046;&#114;&#117;">&#100;&#101;&#118;&#101;&#108;&#111;&#112;&#101;&#114;&#064;&#101;&#118;&#111;&#116;&#111;&#114;&#046;&#114;&#117;</a>. Приёмочное тестирование включает следующие проверки:</p>
+<p>При оформлении приложения следуйте ограничениям, описанным на <a href="https://dev.evotor.ru/">сайте разработчиков</a>. Когда вы оформите и протестируете приложение, и будете готовы выложить его в открытый доступ, нам потребуется провести приёмочное тестирование. О готовности приложения сообщите по адресу <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#100;&#101;&#118;&#101;&#108;&#111;&#112;&#101;&#114;&#064;&#101;&#118;&#111;&#116;&#111;&#114;&#046;&#114;&#117;">&#100;&#101;&#118;&#101;&#108;&#111;&#112;&#101;&#114;&#064;&#101;&#118;&#111;&#116;&#111;&#114;&#046;&#114;&#117;</a>.</p>
+
+<p>Приёмочное тестирование включает следующие проверки:</p>
 
 <ol>
   <li>Эвотор авторизует запросы приложения с помощью токена, указанного на странице <strong>Настройки</strong>.</li>
   <li>
     <p>Приложение сопоставляет сущности Эвотора (смарт-терминалы, сотрудников и магазины) и 1С.</p>
 
-    <p class="center-image"><img src="images/1c_entities_association.png" alt="" /></p>
+    <figure class="center-image"><a class="no_icon" href="images/1c_entities_association.png"><img class="docimage center-image" id="imageborder" src="images/1c_entities_association.png" alt="" /></a><figcaption>Сопоставление сущностей Облака Эвотор и 1С</figcaption></figure>
   </li>
-  <li>Приложение передаёт товары из 1С в Эвотор. Проверяется:</li>
-</ol>
+  <li>
+    <p>Приложение передаёт товары из 1С в Эвотор. Проверяется:</p>
 
-<ul>
-  <li>Корректность данных: данные соответствуют описанию в <a href="https://api.evotor.ru/docs/">Справочнике REST API</a>.</li>
-  <li>Сжатие запросов в gzip.</li>
-  <li>Передача товаров пачками (актуально для большой базы товаров)
-    <ol>
-      <li>Приложение удаляет товары в Эвоторе как поштучно, так и все товары одновременно.</li>
-      <li>Приложение загружает документы из Эвотора. Проверяется:</li>
-    </ol>
+    <ul>
+      <li>Корректность данных: данные соответствуют описанию в <a href="https://api.evotor.ru/docs/">Справочнике REST API</a>.</li>
+      <li>Сжатие запросов в gzip.</li>
+      <li>Передача товаров пачками (актуально для большой базы товаров)</li>
+    </ul>
   </li>
-  <li>Загрузка документов как по всему магазину, так и по конкретному смарт-терминалу (deviceUuid).</li>
-  <li>Загрузка определённого типа документов (см. запрос <a href="https://api.evotor.ru/docs/#tag/Tovary-i-dokumenty%2Fpaths%2F~1api.evotor.ru~1api~1v1~1inventories~1stores~1%7BstoreUuid%7D~1documents%2Fget"><strong>Получить список документов</strong></a>/.</li>
-  <li>Корректность дат в GET-параметрах.</li>
-  <li>Обработка <a href="https://developer.evotor.ru/protocol_of_errors/">возвращаемых ошибок</a>.</li>
-</ul>
+  <li>Приложение удаляет товары в Эвоторе как поштучно, так и все товары одновременно.</li>
+  <li>
+    <p>Приложение загружает документы из Эвотора. Проверяется:</p>
+
+    <ul>
+      <li>Загрузка документов как по всему магазину, так и по конкретному смарт-терминалу (deviceUuid).</li>
+      <li>Загрузка определённого типа документов (см. запрос <a href="https://api.evotor.ru/docs/#tag/Tovary-i-dokumenty%2Fpaths%2F~1api.evotor.ru~1api~1v1~1inventories~1stores~1%7BstoreUuid%7D~1documents%2Fget"><strong>Получить список документов</strong></a>/.</li>
+      <li>Корректность дат в GET-параметрах.</li>
+      <li>Обработка <a href="https://developer.evotor.ru/protocol_of_errors/">возвращаемых ошибок</a>.</li>
+    </ul>
+  </li>
+</ol>
 
 <p>После того как приложение пройдёт приёмочное тестирование, мы выложим его в открытый доступ.</p>
 
@@ -765,15 +858,15 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_Облако.html" class="btn btn-default navbar-btn cursorNorm" role="button">Облако</a>
+        <a href="tag_cloud.html" class="btn btn-default navbar-btn cursorNorm" role="button">cloud</a>
         
         
         
-        <a href="tag_Чеки.html" class="btn btn-default navbar-btn cursorNorm" role="button">Чеки</a>
+        <a href="tag_receipts.html" class="btn btn-default navbar-btn cursorNorm" role="button">receipts</a>
         
         
         
-        <a href="tag_Товары.html" class="btn btn-default navbar-btn cursorNorm" role="button">Товары</a>
+        <a href="tag_products.html" class="btn btn-default navbar-btn cursorNorm" role="button">products</a>
         
         
         
@@ -785,12 +878,38 @@ $('#toc').on('click', 'a', function() {
 
 <hr class="shaded"/>
 
-    </div>
+          </div>
     <!-- /.row -->
-</div>
+        </div>
 <!-- /.container -->
     </div>
+</div>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script>
+    $('.no_icon').magnificPopup({
+		type: 'image',
+		closeBtnInside: false,
+    closeOnContentClick: false,
 
+    callbacks: {
+      open: function() {
+        var self = this;
+        self.wrap.on('click.pinhandler', 'img', function() {
+          self.wrap.toggleClass('mfp-force-scrollbars');
+        });
+      },
+      beforeClose: function() {
+            this.wrap.off('click.pinhandler');
+        this.wrap.removeClass('mfp-force-scrollbars');
+      }
+    },
+
+    image: {
+			verticalFit: false
+		}
+
+	});
+  </script>
 </body>
 
 </html>

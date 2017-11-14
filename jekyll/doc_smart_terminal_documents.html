@@ -3,12 +3,14 @@
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
     </script>
-<!-- End Google Tag Manager -->
+    <!-- End Google Tag Manager -->
+
+
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит список документов, которые формирует смарт-терминал.">
-<meta name="keywords" content="ОблакоТерминалЧеки,  ">
+<meta name="keywords" content="cloudterminalreceipts,  ">
 <title>Документы смарт-терминала | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -32,14 +34,14 @@
 
 <link rel="shortcut icon" href="images/favicon.ico">
 
+<link rel="stylesheet" href="css/magnific-popup.css">
+
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -78,6 +80,7 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
+
     
 
 </head>
@@ -96,7 +99,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Документация Эвотор</span></a>
+            <a class="navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Документация Эвотор</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -104,15 +107,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li><a href="whats_new.html">Что нового</a></li>
+                <li><a href="https://dev.evotor.ru/" target="_blank">Разработчикам</a></li>
                 
                 
                 
-                <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
+                <li><a href="https://api.evotor.ru/" target="_blank">Справочник API</a></li>
                 
                 
                 
                 <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
+                
+                
+                
+                <li><a href="whats_new.html">Что нового</a></li>
                 
                 
                 
@@ -154,7 +161,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="row">
         <!-- Sidebar Column -->
         <div class="col-md-3">
-
           
 
 
@@ -170,18 +176,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <ul id="mysidebar" class="nav">
     <li class="sidebarTitle"> </li>
+    <p class="external">
+        <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
+    </p>
     
     
     
         
     
     <li>
+        
         <a href="#">О платформе Эвотор</a>
+        
         <ul>
             
             
             
             <li><a href="doc_integration_types.html">Способы интеграции</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_version_lifespan.html">Жизненный цикл версии приложения</a></li>
             
             
             
@@ -198,12 +216,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Облако Эвотор</a>
+        
         <ul>
             
             
             
-            <li><a href="doc_authorization.html">Авторизация</a></li>
+            <li><a href="doc_evotor_api_introduction.html">Введение</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Авторизация</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_authorization.html">Авторизация запросов к Облаку Эвотор</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_evotor_api_authorization.html">Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -217,7 +258,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_applications.html">Приложения для смарт-терминала</a></li>
+            <li><a href="doc_errors_returned.html">Ошибки, которые может возвращать сторонний сервис</a></li>
             
             
             
@@ -229,19 +270,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            <li><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
-            
-            
-            
-            
         </ul>
         
         
     
     <li>
+        
         <a href="#">Разработка для смарт-терминала</a>
+        
         <ul>
             
             
@@ -311,7 +347,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">JAVA SDK</a>
+        
         <ul>
             
             
@@ -352,6 +390,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_java_navigation.html">Вызов окон смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
             
             
             
@@ -459,7 +504,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">JavaScript SDK</a>
+        
         <ul>
             
             
@@ -530,7 +577,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Драйвера для оборудования</a>
+        
         <ul>
             
             
@@ -566,7 +615,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Примеры реализации</a>
+        
         <ul>
             
             
@@ -604,12 +655,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_app_review.html">Черновики, модерация и публикация приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
     
     <li>
+        
         <a href="#">Биллинг</a>
+        
         <ul>
             
             
@@ -640,12 +700,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_subscriptions.html">Подписки</a></li>
+            
+            
+            
+            
         </ul>
         
         
     
     <li>
-        <a href="#">FAQ</a>
+        
+        <a href="#">Вопросы и устранение проблем</a>
+        
         <ul>
             
             
@@ -655,13 +724,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
         
-           <p class="external">
-               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
-           </p>
+
     </li>
 </ul>
 </div>
@@ -670,21 +744,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>$("li.active").parents('li').toggleClass("active");</script>
 
     <!-- Content Column -->
-    <div class="col-md-9">
-        <div class="post-header">
+          <div class="col-md-9">
+                <div class="post-header">
    <h1 class="post-title-main">Документы смарт-терминала</h1>
 </div>
 
 
 
-<div class="post-content">
 
-   
-    <div class="summary">Раздел содержит список документов, которые формирует смарт-терминал.</div>
-   
+ <div class="summary">Раздел содержит список документов, которые формирует смарт-терминал.</div>
 
-    
-    
+
+
+
 <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
 <script>
 $( document ).ready(function() {
@@ -706,12 +778,23 @@ $('#toc').on('click', 'a', function() {
 
 <div id="toc"></div>
 
+
+
+<div class="post-content">
+
+   <!-- 
+    <div class="summary">Раздел содержит список документов, которые формирует смарт-терминал.</div>
+    -->
+
     
 
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/evotor_api/doc_smart_terminal_documents.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <p>При организации товарно-денежных операций, смарт-терминал создаёт и обменивается <em>документами</em>. Документ – JSON-файл с информацией о транзакциях (действиях), выполненных на смарт-терминале, например, открытие или закрытие смены, продажа товара. Как и другая информация пользователей платформы, документы хранятся в облаке Эвотор. Порядок транзакций важен при чтении документа.</p>
+  <p>При организации товарно-денежных операций, смарт-терминал создаёт и обменивается <em>документами</em>.</p>
+
+<p>Документ – JSON-файл с информацией о транзакциях (действиях), выполненных на смарт-терминале, например, открытие или закрытие смены, продажа товара. Как и другая информация пользователей платформы, документы хранятся в облаке Эвотор. Порядок транзакций важен при чтении документа.</p>
 
 <table dir="ltr" border="1" cellspacing="0" cellpadding="10"><colgroup><col width="261" /> <col width="217" /></colgroup>
 
@@ -727,7 +810,7 @@ $('#toc').on('click', 'a', function() {
 
 <tr>
 
-<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;ACCEPT&quot;}">ACCEPT</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;ACCEPT&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/01-ACCEPT.json">ACCEPT</a></td>
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u041f\u0440\u0438\u0451\u043c\u043a\u0430&quot;}">Приёмка</td>
 
@@ -735,7 +818,7 @@ $('#toc').on('click', 'a', function() {
 
 <tr>
 
-<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;SELL&quot;}">SELL</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;SELL&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/02-SELL.json">SELL</a></td>
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u041f\u0440\u043e\u0434\u0430\u0436\u0430&quot;}">Продажа</td>
 
@@ -743,7 +826,15 @@ $('#toc').on('click', 'a', function() {
 
 <tr>
 
-<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;PAYBACK&quot;}">PAYBACK</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;BUY&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/14-BUY.json">BUY</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u041f\u0440\u043e\u0434\u0430\u0436\u0430&quot;}">Выкуп товара у клиента, с увеличением остатка. Например, при приёме цветного металла.</td>
+
+</tr>
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;PAYBACK&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/03-PAYBACK.json">PAYBACK</a></td>
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0412\u043e\u0437\u0432\u0440\u0430\u0442 \u0434\u0435\u043d\u0435\u0433&quot;}">Возврат денег</td>
 
@@ -751,7 +842,15 @@ $('#toc').on('click', 'a', function() {
 
 <tr>
 
-<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CASH_INCOME&quot;}">CASH_INCOME</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;PAYBACK&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/15-BUYBACK.json">BUYBACK</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0412\u043e\u0437\u0432\u0440\u0430\u0442 \u0434\u0435\u043d\u0435\u0433&quot;}">Выкуп товара клиентом, с уменьшением остатка. Например, выкуп залога в ломбарде.</td>
+
+</tr>
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CASH_INCOME&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/04-CASH_INCOME.json">CASH_INCOME</a></td>
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0412\u043d\u0435\u0441\u0435\u043d\u0438\u0435 \u043d\u0430\u043b\u0438\u0447\u043d\u044b\u0445&quot;}">Внесение наличных</td>
 
@@ -759,7 +858,7 @@ $('#toc').on('click', 'a', function() {
 
 <tr>
 
-<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CASH_OUTCOME&quot;}">CASH_OUTCOME</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CASH_OUTCOME&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/05-CASH_OUTCOME.json">CASH_OUTCOME</a></td>
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0418\u0437\u044a\u044f\u0442\u0438\u0435 \u043d\u0430\u043b\u0438\u0447\u043d\u044b\u0445&quot;}">Изъятие наличных</td>
 
@@ -767,7 +866,7 @@ $('#toc').on('click', 'a', function() {
 
 <tr>
 
-<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CLOSE_SESSION&quot;}">CLOSE_SESSION</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CLOSE_SESSION&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/06-CLOSE_SESSION.json">CLOSE_SESSION</a></td>
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0417\u0430\u043a\u0440\u044b\u0442\u0438\u0435 \u0441\u043c\u0435\u043d\u044b \u0441\u043c\u0430\u0440\u0442-\u0442\u0435\u0440\u043c\u0438\u043d\u0430\u043b\u0430&quot;}">Закрытие смены смарт-терминала</td>
 
@@ -775,7 +874,7 @@ $('#toc').on('click', 'a', function() {
 
 <tr>
 
-<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;OPEN_SESSION&quot;}">OPEN_SESSION</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;OPEN_SESSION&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/07-OPEN_SESSION.json">OPEN_SESSION</a></td>
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u041e\u0442\u043a\u0440\u044b\u0442\u0438\u0435 \u0441\u043c\u0435\u043d\u044b \u0441\u043c\u0430\u0440\u0442-\u0442\u0435\u0440\u043c\u0438\u043d\u0430\u043b\u0430&quot;}">Открытие смены смарт-терминала</td>
 
@@ -783,7 +882,7 @@ $('#toc').on('click', 'a', function() {
 
 <tr>
 
-<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;INVENTORY&quot;}">INVENTORY</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;INVENTORY&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/08-INVENTORY.json">INVENTORY</a></td>
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0418\u043d\u0432\u0435\u043d\u0442\u0430\u0440\u0438\u0437\u0430\u0446\u0438\u044f&quot;}">Инвентаризация</td>
 
@@ -791,7 +890,7 @@ $('#toc').on('click', 'a', function() {
 
 <tr>
 
-<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;WRITE_OFF&quot;}">WRITE_OFF</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;WRITE_OFF&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/09-WRITE_OFF.json">WRITE_OFF</a></td>
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0421\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u0442\u043e\u0432\u0430\u0440\u0430&quot;}">Списание товара</td>
 
@@ -799,7 +898,7 @@ $('#toc').on('click', 'a', function() {
 
 <tr>
 
-<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;RETURN&quot;}">RETURN</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;RETURN&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/10-RETURN.json">RETURN</a></td>
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0412\u043e\u0437\u0432\u0440\u0430\u0442 \u0442\u043e\u0432\u0430\u0440\u0430 \u043f\u043e\u0441\u0442\u0430\u0432\u0449\u0438\u043a\u0443&quot;}">Возврат товара поставщику</td>
 
@@ -807,7 +906,7 @@ $('#toc').on('click', 'a', function() {
 
 <tr>
 
-<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;REVALUATION&quot;}">REVALUATION</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;REVALUATION&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/11-REVALUATION.json">REVALUATION</a></td>
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u041f\u0435\u0440\u0435\u043e\u0446\u0435\u043d\u043a\u0430&quot;}">Переоценка</td>
 
@@ -815,7 +914,7 @@ $('#toc').on('click', 'a', function() {
 
 <tr>
 
-<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;FPRINT (Transaction:FPRINT_X_REPORT)&quot;}">FPRINT (Transaction:FPRINT_X_REPORT)</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;FPRINT (Transaction:FPRINT_X_REPORT)&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/12-FPRINT_X_REPORT.json">FPRINT (Transaction:FPRINT_X_REPORT)</a></td>
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u041f\u0435\u0447\u0430\u0442\u044c X-\u043e\u0442\u0447\u0451\u0442\u0430&quot;}">Печать X-отчёта</td>
 
@@ -823,17 +922,25 @@ $('#toc').on('click', 'a', function() {
 
 <tr>
 
-<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;FPRINT (Transaction:FPRINT_Z_REPORT)&quot;}">FPRINT (Transaction:FPRINT_Z_REPORT)</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;FPRINT (Transaction:FPRINT_Z_REPORT)&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/13-FPRINT-Z-REPORT.json">FPRINT (Transaction:FPRINT_Z_REPORT)</a></td>
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u041f\u0435\u0447\u0430\u0442\u044c Z-\u043e\u0442\u0447\u0451\u0442\u0430&quot;}">Печать Z-отчёта</td>
 
 </tr>
 
-<tr>
+<!-- <tr>
 
-<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;FPRINT (Transaction:OPEN_SESSION)&quot;}">FPRINT (Transaction:OPEN_SESSION)</td>
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;FPRINT (Transaction:CLOSE_SESSION)&quot;}">FPRINT (Transaction:CLOSE_SESSION)</td>
 
 <td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0417\u0430\u043a\u0440\u044b\u0442\u0438\u0435 \u0441\u043c\u0435\u043d\u044b \u041a\u041a\u041c&quot;}">Закрытие смены ККМ</td>
+
+</tr> -->
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;OPEN_TARE&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/16-OPEN_TARE.json">OPEN_TARE</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0417\u0430\u043a\u0440\u044b\u0442\u0438\u0435 \u0441\u043c\u0435\u043d\u044b \u041a\u041a\u041c&quot;}">Вскрытие тары алкогольной продукции</td>
 
 </tr>
 
@@ -841,7 +948,7 @@ $('#toc').on('click', 'a', function() {
 
 </table>
 
-<p>  Со структурой всех типов документов смарт-терминала вы можете ознакомиться <a href="https://github.com/evotor/documentation-api/tree/master/pos-docs">в нашем репозитории</a>.</p>
+<p>Со структурой всех типов документов смарт-терминала вы можете ознакомиться <a href="https://github.com/evotor/documentation-api/tree/master/pos-docs">в нашем репозитории на гитхабе</a>.</p>
 
 
     <div class="tags">
@@ -850,15 +957,15 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_Облако.html" class="btn btn-default navbar-btn cursorNorm" role="button">Облако</a>
+        <a href="tag_cloud.html" class="btn btn-default navbar-btn cursorNorm" role="button">cloud</a>
         
         
         
-        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        <a href="tag_terminal.html" class="btn btn-default navbar-btn cursorNorm" role="button">terminal</a>
         
         
         
-        <a href="tag_Чеки.html" class="btn btn-default navbar-btn cursorNorm" role="button">Чеки</a>
+        <a href="tag_receipts.html" class="btn btn-default navbar-btn cursorNorm" role="button">receipts</a>
         
         
         
@@ -870,12 +977,38 @@ $('#toc').on('click', 'a', function() {
 
 <hr class="shaded"/>
 
-    </div>
+          </div>
     <!-- /.row -->
-</div>
+        </div>
 <!-- /.container -->
     </div>
+</div>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script>
+    $('.no_icon').magnificPopup({
+		type: 'image',
+		closeBtnInside: false,
+    closeOnContentClick: false,
 
+    callbacks: {
+      open: function() {
+        var self = this;
+        self.wrap.on('click.pinhandler', 'img', function() {
+          self.wrap.toggleClass('mfp-force-scrollbars');
+        });
+      },
+      beforeClose: function() {
+            this.wrap.off('click.pinhandler');
+        this.wrap.removeClass('mfp-force-scrollbars');
+      }
+    },
+
+    image: {
+			verticalFit: false
+		}
+
+	});
+  </script>
 </body>
 
 </html>

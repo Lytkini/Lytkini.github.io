@@ -3,12 +3,14 @@
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
     </script>
-<!-- End Google Tag Manager -->
+    <!-- End Google Tag Manager -->
+
+
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="ТерминалJavaScript,  обмен, сообщения, HTTP, сторонний, сервис, проксирование">
+<meta name="keywords" content="terminaljavascript,  обмен, сообщения, HTTP, сторонний, сервис, проксирование">
 <title>Обмен сообщениями со сторонним сервисом | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -32,14 +34,14 @@
 
 <link rel="shortcut icon" href="images/favicon.ico">
 
+<link rel="stylesheet" href="css/magnific-popup.css">
+
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -78,6 +80,7 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
+
     
 
 </head>
@@ -96,7 +99,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Документация Эвотор</span></a>
+            <a class="navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Документация Эвотор</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -104,15 +107,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li><a href="whats_new.html">Что нового</a></li>
+                <li><a href="https://dev.evotor.ru/" target="_blank">Разработчикам</a></li>
                 
                 
                 
-                <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
+                <li><a href="https://api.evotor.ru/" target="_blank">Справочник API</a></li>
                 
                 
                 
                 <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
+                
+                
+                
+                <li><a href="whats_new.html">Что нового</a></li>
                 
                 
                 
@@ -154,7 +161,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="row">
         <!-- Sidebar Column -->
         <div class="col-md-3">
-
           
 
 
@@ -170,18 +176,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <ul id="mysidebar" class="nav">
     <li class="sidebarTitle"> </li>
+    <p class="external">
+        <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
+    </p>
     
     
     
         
     
     <li>
+        
         <a href="#">О платформе Эвотор</a>
+        
         <ul>
             
             
             
             <li><a href="doc_integration_types.html">Способы интеграции</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_version_lifespan.html">Жизненный цикл версии приложения</a></li>
             
             
             
@@ -198,12 +216,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Облако Эвотор</a>
+        
         <ul>
             
             
             
-            <li><a href="doc_authorization.html">Авторизация</a></li>
+            <li><a href="doc_evotor_api_introduction.html">Введение</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Авторизация</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_authorization.html">Авторизация запросов к Облаку Эвотор</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_evotor_api_authorization.html">Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -217,7 +258,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_applications.html">Приложения для смарт-терминала</a></li>
+            <li><a href="doc_errors_returned.html">Ошибки, которые может возвращать сторонний сервис</a></li>
             
             
             
@@ -229,19 +270,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            <li><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
-            
-            
-            
-            
         </ul>
         
         
     
     <li>
+        
         <a href="#">Разработка для смарт-терминала</a>
+        
         <ul>
             
             
@@ -311,7 +347,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">JAVA SDK</a>
+        
         <ul>
             
             
@@ -352,6 +390,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_java_navigation.html">Вызов окон смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
             
             
             
@@ -459,7 +504,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">JavaScript SDK</a>
+        
         <ul>
             
             
@@ -530,7 +577,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Драйвера для оборудования</a>
+        
         <ul>
             
             
@@ -566,7 +615,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Примеры реализации</a>
+        
         <ul>
             
             
@@ -604,12 +655,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_app_review.html">Черновики, модерация и публикация приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
     
     <li>
+        
         <a href="#">Биллинг</a>
+        
         <ul>
             
             
@@ -640,12 +700,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_subscriptions.html">Подписки</a></li>
+            
+            
+            
+            
         </ul>
         
         
     
     <li>
-        <a href="#">FAQ</a>
+        
+        <a href="#">Вопросы и устранение проблем</a>
+        
         <ul>
             
             
@@ -655,13 +724,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
         
-           <p class="external">
-               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
-           </p>
+
     </li>
 </ul>
 </div>
@@ -670,19 +744,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>$("li.active").parents('li').toggleClass("active");</script>
 
     <!-- Content Column -->
-    <div class="col-md-9">
-        <div class="post-header">
+          <div class="col-md-9">
+                <div class="post-header">
    <h1 class="post-title-main">Обмен сообщениями со сторонним сервисом</h1>
 </div>
 
 
 
-<div class="post-content">
 
-   
 
-    
-    
+
+
 <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
 <script>
 $( document ).ready(function() {
@@ -704,8 +776,15 @@ $('#toc').on('click', 'a', function() {
 
 <div id="toc"></div>
 
+
+
+<div class="post-content">
+
+   <!--  -->
+
     
 
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/js_SDK/doc_js_third_party_service_communication.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
@@ -715,7 +794,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Для отправки запросов приложения могут использовать только 80 и 443 порт.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Установленные на смарт-терминале приложения могут обращаться только к сторонним сервисам. Обращаться к REST API Облака Эвотор нельзя.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Установленные на смарт-терминале приложения могут обращаться только к сторонним сервисам. При этом, сторонние сервисы не должны быть в одной локальной сети со смарт-терминалом. Обращаться к REST API Облака Эвотор нельзя.</div>
 
 <h2 id="section">Подготовка к отправке запросов</h2>
 
@@ -754,6 +833,15 @@ $('#toc').on('click', 'a', function() {
 
 <p>Приложение создаёт HTTP-сообщение и отправляет его в сторонний сервис. Вы можете воспользоваться любым удобным способом отправки сообщения.</p>
 
+<p>Независимо от версии проксирования SDK смарт-терминала и Облако Эвотор поддерживают следующие HTTP-методы:</p>
+
+<ul>
+  <li>GET;</li>
+  <li>POST;</li>
+  <li>PUT;</li>
+  <li>DELETE.</li>
+</ul>
+
 <p>Эвотор гарантирует поддержку следующих MIME-типов:</p>
 
 <ul>
@@ -762,6 +850,7 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">application/xml</code></li>
   <li><code class="highlighter-rouge">text/*</code></li>
   <li><code class="highlighter-rouge">image/*</code></li>
+  <li><code class="highlighter-rouge">multipart/form-data</code></li>
 </ul>
 
 <p>Поддержка других MIME-типов не гарантируется.</p>
@@ -834,7 +923,8 @@ $('#toc').on('click', 'a', function() {
 <ul>
   <li><code class="highlighter-rouge">X-Evotor-Store-Uuid</code> – содержит идентификатор магазина в формате uuid4, к которому привязан терминал.</li>
   <li><code class="highlighter-rouge">X-Evotor-Device-UUID</code> – содержит идентификатор устройства в формате uuid4, полученный по запросу к <code class="highlighter-rouge">/api/v1/inventories/devices</code>.</li>
-  <li><code class="highlighter-rouge">Authorization</code> – содержит <a href="./doc_authorization.html#serverToken">токен стороннего сервиса</a>. Токен необходим для bearer-авторизации.</li>
+  <li><code class="highlighter-rouge">X-Evotor-User-Id</code> – содержит идентификатор пользователя в Облаке Эвотор.</li>
+  <li><code class="highlighter-rouge">Authorization</code> – содержит <a href="./doc_evotor_api_authorization.html#usersToken">токен пользователя</a>. Токен необходим для bearer-авторизации.</li>
 </ul>
 
 <p>Сторонний сервер получает сообщение от облака Эвотор и определяет отправителя с помощью заголовка Authorization.</p>
@@ -843,12 +933,17 @@ $('#toc').on('click', 'a', function() {
 
 <p>Ответ стороннего сервиса передаётся приложению в обратном порядке.</p>
 
-<p>Ответы стороннего сервиса должны содержать объекты:</p>
+<p>Если вы используете проксирование ver.2 требования к содержимому ответа отсутствуют.</p>
+
+<p>Если вы используете проксирование ver.1 ответы стороннего сервиса должны содержать объекты:</p>
 
 <ul>
   <li><code class="highlighter-rouge">status</code> – содержит HTTP-код состояния.</li>
   <li><code class="highlighter-rouge">body</code> – содержит тело запроса.</li>
 </ul>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> За проксирование отвечает параметр <strong>Проксирование запросов из приложения с терминала на ваш сервер</strong> на вкладке <strong>Интеграция</strong> вашего приложения, на сайте <a href="https://dev.evotor.ru/">dev.evotor.ru</a>.</div>
+
 
 
     <div class="tags">
@@ -857,11 +952,11 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        <a href="tag_terminal.html" class="btn btn-default navbar-btn cursorNorm" role="button">terminal</a>
         
         
         
-        <a href="tag_JavaScript.html" class="btn btn-default navbar-btn cursorNorm" role="button">JavaScript</a>
+        <a href="tag_javascript.html" class="btn btn-default navbar-btn cursorNorm" role="button">javascript</a>
         
         
         
@@ -873,12 +968,38 @@ $('#toc').on('click', 'a', function() {
 
 <hr class="shaded"/>
 
-    </div>
+          </div>
     <!-- /.row -->
-</div>
+        </div>
 <!-- /.container -->
     </div>
+</div>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script>
+    $('.no_icon').magnificPopup({
+		type: 'image',
+		closeBtnInside: false,
+    closeOnContentClick: false,
 
+    callbacks: {
+      open: function() {
+        var self = this;
+        self.wrap.on('click.pinhandler', 'img', function() {
+          self.wrap.toggleClass('mfp-force-scrollbars');
+        });
+      },
+      beforeClose: function() {
+            this.wrap.off('click.pinhandler');
+        this.wrap.removeClass('mfp-force-scrollbars');
+      }
+    },
+
+    image: {
+			verticalFit: false
+		}
+
+	});
+  </script>
 </body>
 
 </html>

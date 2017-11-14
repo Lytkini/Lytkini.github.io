@@ -3,12 +3,14 @@
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
     </script>
-<!-- End Google Tag Manager -->
+    <!-- End Google Tag Manager -->
+
+
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Раздел содержит информацию, которая поможет вам начать разработку java-приложения с нуля. Вы узнаете как собрать APK-файл своей программы, который потребуетс...">
-<meta name="keywords" content="ТерминалJava,  Разработка, Java, библиотека, integration-library">
+<meta name="keywords" content="terminaljava,  Разработка, Java, библиотека, integration-library">
 <title>Подключение библиотеки для разработки Java-приложений | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
@@ -32,14 +34,14 @@
 
 <link rel="shortcut icon" href="images/favicon.ico">
 
+<link rel="stylesheet" href="css/magnific-popup.css">
+
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-
-<link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000feed.xml">
 
     <script>
         $(document).ready(function() {
@@ -78,6 +80,7 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
+
     
 
 </head>
@@ -96,7 +99,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Документация Эвотор</span></a>
+            <a class="navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Документация Эвотор</span></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
@@ -104,15 +107,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li><a href="whats_new.html">Что нового</a></li>
+                <li><a href="https://dev.evotor.ru/" target="_blank">Разработчикам</a></li>
                 
                 
                 
-                <li><a href="https://api.evotor.ru/docs/" target="_blank">Справочник API</a></li>
+                <li><a href="https://api.evotor.ru/" target="_blank">Справочник API</a></li>
                 
                 
                 
                 <li class="active"><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
+                
+                
+                
+                <li><a href="whats_new.html">Что нового</a></li>
                 
                 
                 
@@ -154,7 +161,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="row">
         <!-- Sidebar Column -->
         <div class="col-md-3">
-
           
 
 
@@ -170,18 +176,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <ul id="mysidebar" class="nav">
     <li class="sidebarTitle"> </li>
+    <p class="external">
+        <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
+    </p>
     
     
     
         
     
     <li>
+        
         <a href="#">О платформе Эвотор</a>
+        
         <ul>
             
             
             
             <li><a href="doc_integration_types.html">Способы интеграции</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_app_version_lifespan.html">Жизненный цикл версии приложения</a></li>
             
             
             
@@ -198,12 +216,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Облако Эвотор</a>
+        
         <ul>
             
             
             
-            <li><a href="doc_authorization.html">Авторизация</a></li>
+            <li><a href="doc_evotor_api_introduction.html">Введение</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Авторизация</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="doc_authorization.html">Авторизация запросов к Облаку Эвотор</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="doc_evotor_api_authorization.html">Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
@@ -217,7 +258,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_smart_terminal_applications.html">Приложения для смарт-терминала</a></li>
+            <li><a href="doc_errors_returned.html">Ошибки, которые может возвращать сторонний сервис</a></li>
             
             
             
@@ -229,19 +270,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            
-            
-            <li><a href="doc_errors_returned.html">Возвращаемые ошибки</a></li>
-            
-            
-            
-            
         </ul>
         
         
     
     <li>
+        
         <a href="#">Разработка для смарт-терминала</a>
+        
         <ul>
             
             
@@ -311,7 +347,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">JAVA SDK</a>
+        
         <ul>
             
             
@@ -352,6 +390,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             <li><a href="doc_java_navigation.html">Вызов окон смарт-терминала</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_java_payment_systems.html">Платёжные системы</a></li>
             
             
             
@@ -459,7 +504,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">JavaScript SDK</a>
+        
         <ul>
             
             
@@ -530,7 +577,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Драйвера для оборудования</a>
+        
         <ul>
             
             
@@ -566,7 +615,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         
     
     <li>
+        
         <a href="#">Примеры реализации</a>
+        
         <ul>
             
             
@@ -604,12 +655,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_app_review.html">Черновики, модерация и публикация приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
     
     <li>
+        
         <a href="#">Биллинг</a>
+        
         <ul>
             
             
@@ -640,12 +700,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_subscriptions.html">Подписки</a></li>
+            
+            
+            
+            
         </ul>
         
         
     
     <li>
-        <a href="#">FAQ</a>
+        
+        <a href="#">Вопросы и устранение проблем</a>
+        
         <ul>
             
             
@@ -655,13 +724,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            <li><a href="doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
+            
+            
+            
+            
         </ul>
         
         
         
-           <p class="external">
-               <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
-           </p>
+
     </li>
 </ul>
 </div>
@@ -670,21 +744,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>$("li.active").parents('li').toggleClass("active");</script>
 
     <!-- Content Column -->
-    <div class="col-md-9">
-        <div class="post-header">
+          <div class="col-md-9">
+                <div class="post-header">
    <h1 class="post-title-main">Подключение библиотеки для разработки Java-приложений</h1>
 </div>
 
 
 
-<div class="post-content">
 
-   
-    <div class="summary">Раздел содержит информацию, которая поможет вам начать разработку java-приложения с нуля. Вы узнаете как собрать APK-файл своей программы, который потребуется для установки на смарт-терминал.</div>
-   
+ <div class="summary">Раздел содержит информацию, которая поможет вам начать разработку java-приложения с нуля. Вы узнаете как собрать APK-файл своей программы, который потребуется для установки на смарт-терминал.</div>
 
-    
-    
+
+
+
 <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
 <script>
 $( document ).ready(function() {
@@ -706,8 +778,17 @@ $('#toc').on('click', 'a', function() {
 
 <div id="toc"></div>
 
+
+
+<div class="post-content">
+
+   <!-- 
+    <div class="summary">Раздел содержит информацию, которая поможет вам начать разработку java-приложения с нуля. Вы узнаете как собрать APK-файл своей программы, который потребуется для установки на смарт-терминал.</div>
+    -->
+
     
 
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/java_SDK/doc_java_integration_library_connection.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
@@ -716,7 +797,7 @@ $('#toc').on('click', 'a', function() {
 <p>Для разработки java-приложения, вам потребуется:</p>
 
 <ul>
-  <li>Android Studio версии 2.3.3 или выше;</li>
+  <li>Android Studio версии 3.0 или выше;</li>
   <li>библиотека <a href="https://github.com/evotor/integration-library">integration-library</a> версии 0.4+.</li>
 </ul>
 
@@ -734,9 +815,9 @@ $('#toc').on('click', 'a', function() {
 
     <p>На скриншоте представлена структура полученного проекта:</p>
 
-    <p class="center-image"><img src="./images/project_sctructure.png" alt="" title="Структура проекта &lt;YourProjectName&gt;" /></p>
+    <figure class="center-image"><a class="no_icon" href="images/project_sctructure.png"><img class="docimage center-image" id="imageborder" src="images/project_sctructure.png" alt="" /></a><figcaption>Структура проекта</figcaption></figure>
 
-    <p><a href="/doc_js_app_manifest.html">Манифест проекта</a> выглядит так:</p>
+    <p><a href="/doc_java_app_manifest.html">Манифест созданного проекта</a> выглядит так:</p>
 
     <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
  <span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span> <span class="na">package=</span><span class="s">"com.example.&lt;yourprojectname&gt;"</span><span class="nt">&gt;</span>
@@ -760,9 +841,11 @@ $('#toc').on('click', 'a', function() {
  <span class="nt">&lt;/manifest&gt;</span>
 </code></pre>
     </div>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Работы с приложением, манифест должен содержать элемент <code class="highlighter-rouge">&lt;meta-data/&gt;</code> с идентификатором приложения (см. раздел <a href="./doc_java_app_manifest.html">“Манифест приложения”</a>).</div>
   </li>
   <li>
-    <p>В файле <code class="highlighter-rouge">build.gradle (Project: &lt;YourProjectName&gt;)</code> укажите:</p>
+    <p>В файле проекта <code class="highlighter-rouge">build.gradle (Project: &lt;YourProjectName&gt;)</code> укажите:</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>allprojects {
     repositories {
@@ -774,13 +857,25 @@ $('#toc').on('click', 'a', function() {
     </div>
   </li>
   <li>
-    <p>В файле <code class="highlighter-rouge">build.gradle (Module: app)</code>, добавьте библиотеку integration-library в зависимости (dependencies):</p>
+    <p>В файле приложения <code class="highlighter-rouge">build.gradle (Module: app)</code>, добавьте библиотеку integration-library в зависимости:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>compile group: 'com.github.evotor', name: 'integration-library', version: 'v0.4.+'
+    <div class="highlighter-rouge"><pre class="highlight"><code>dependencies {
+compile group: 'com.github.evotor', name: 'integration-library', version: 'v0.4.+'
+}
 </code></pre>
     </div>
 
-    <p>Убедитесь, что в зависимости указана <a href="https://github.com/evotor/integration-library/">актуальная версия библиотеки</a>.</p>
+    <p>Убедитесь, что вы используете <a href="https://github.com/evotor/integration-library/">актуальную версию библиотеки</a>.</p>
+  </li>
+  <li>
+    <p>В проекте укажите параметр minSdkVersion:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>defaultConfig {
+     minSdkVersion 22
+...
+}
+</code></pre>
+    </div>
   </li>
 </ol>
 
@@ -793,9 +888,6 @@ $('#toc').on('click', 'a', function() {
   <li><a href="./doc_app_installation.html">установить приложение на смарт-терминал</a>.</li>
 </ul>
 
-<!-- <div markdown="span" class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Манифест должен содержать элемент \<meta-data/\> с информацией об идентификаторе приложения (см. раздел ["Манифест приложения"](./doc_js_app_manifest.html)).</div>
- -->
-
 
     <div class="tags">
         
@@ -803,11 +895,11 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_Терминал.html" class="btn btn-default navbar-btn cursorNorm" role="button">Терминал</a>
+        <a href="tag_terminal.html" class="btn btn-default navbar-btn cursorNorm" role="button">terminal</a>
         
         
         
-        <a href="tag_Java.html" class="btn btn-default navbar-btn cursorNorm" role="button">Java</a>
+        <a href="tag_java.html" class="btn btn-default navbar-btn cursorNorm" role="button">java</a>
         
         
         
@@ -819,12 +911,38 @@ $('#toc').on('click', 'a', function() {
 
 <hr class="shaded"/>
 
-    </div>
+          </div>
     <!-- /.row -->
-</div>
+        </div>
 <!-- /.container -->
     </div>
+</div>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script>
+    $('.no_icon').magnificPopup({
+		type: 'image',
+		closeBtnInside: false,
+    closeOnContentClick: false,
 
+    callbacks: {
+      open: function() {
+        var self = this;
+        self.wrap.on('click.pinhandler', 'img', function() {
+          self.wrap.toggleClass('mfp-force-scrollbars');
+        });
+      },
+      beforeClose: function() {
+            this.wrap.off('click.pinhandler');
+        this.wrap.removeClass('mfp-force-scrollbars');
+      }
+    },
+
+    image: {
+			verticalFit: false
+		}
+
+	});
+  </script>
 </body>
 
 </html>
