@@ -9,9 +9,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит инструкцию о том, как приступить к тестированию своего приложения.">
-<meta name="keywords" content="cloudJavajavascript,  ">
-<title>Перевод приложения в тестирование | Документация Эвотор</title>
+<meta name="description" content="">
+<meta name="keywords" content="terminalreact,  ">
+<title>Работа с чеком | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -140,7 +140,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Перевод приложения в тестирование">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Работа с чеком">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -326,7 +326,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li class="active"><a href="doc_app_testing.html">Перевод приложения в тестирование</a></li>
+                    <li><a href="doc_app_testing.html">Перевод приложения в тестирование</a></li>
                     
                     
                     
@@ -546,7 +546,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_react_receipt.html">Работа с чеками</a></li>
+            <li class="active"><a href="doc_react_receipt.html">Работа с чеками</a></li>
             
             
             
@@ -812,13 +812,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Перевод приложения в тестирование</h1>
+   <h1 class="post-title-main">Работа с чеком</h1>
 </div>
 
 
 
-
- <div class="summary">Раздел содержит инструкцию о том, как приступить к тестированию своего приложения.</div>
 
 
 
@@ -848,48 +846,79 @@ $('#toc').on('click', 'a', function() {
 
 <div class="post-content">
 
-   <!-- 
-    <div class="summary">Раздел содержит инструкцию о том, как приступить к тестированию своего приложения.</div>
-    -->
+   <!--  -->
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/smart_terminal_app_development/doc_app_testing.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/react_SDK/doc_react_receipt.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <p>Если вы изменяете APK приложения, добавляете скриншоты, видео и т.п. приложение необходимо выкладывать в тестирование, чтобы изменения вступили в силу. Приложение в тестировании доступно учётным записям, указанным в роли <strong>Тестировщик</strong>, на вкладке <strong>Тестирование</strong>.</p>
+  <h2 id="section">Методы</h2>
 
-<h3 id="section">Тестирование приложения</h3>
+<h3 id="section-1">Получить по штрихкоду позицию для добавления в чек</h3>
 
-<p><em>Чтобы протестировать своё приложение выполните следующие действия:</em></p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllBarcodesForProduct</span><span class="p">(</span><span class="nx">productUuid</span><span class="err">:</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">callback</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">InventoryModule</span><span class="p">.</span><span class="nx">getAllBarcodesForProduct</span><span class="p">(</span><span class="nx">productUuid</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
-<ol>
-  <li>Войдите в <a href="https://dev.evotor.ru">личный кабинет разработчика</a>.</li>
-  <li>
-    <p>Выберите приложение, которое требуется протестировать.</p>
+<h3 id="section-2">Открыть чек в приложении</h3>
 
-    <figure class="center-image"><a class="no_icon" href="images/Developer LK.png"><img class="docimage center-image" id="imageborder" src="images/Developer LK.png" alt="" /></a><figcaption>Выбор приложения</figcaption></figure>
-  </li>
-  <li>
-    <p>На вкладке <strong>Тестирование</strong>, в разделе <strong>Тестировщик</strong>, в поле <strong>Мобильный телефон</strong>, укажите номер телефона, к которому привязана учётная запись Эвотор и нажмите на кнопку <strong>Добавить</strong>.</p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">openReceipt</span><span class="p">(</span><span class="nx">positions</span><span class="err">:</span> <span class="p">[</span><span class="nx">Position</span><span class="p">],</span> <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ReceiptModule</span><span class="p">.</span><span class="nx">openReceipt</span><span class="p">(</span><span class="nx">positions</span><span class="p">,</span> <span class="nx">extra</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
-    <p>Одновременно вы можете добавить не более пяти тестировщиков.</p>
+<h3 id="section-3">Отправить чек</h3>
 
-    <figure class="center-image"><a class="no_icon" href="images/Add_software_tester.png"><img class="docimage center-image" id="imageborder" src="images/Add_software_tester.png" alt="" /></a><figcaption>Добавление тестировщика</figcaption></figure>
-  </li>
-  <li>
-    <p>В разделе <strong>Версии</strong> нажмите на кнопку <strong>Выложить на тест</strong>.</p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">sendReceipt</span><span class="p">(</span><span class="nx">printReceipts</span><span class="err">:</span> <span class="p">[</span><span class="nx">Receipt</span><span class="p">.</span><span class="nx">PrintReceipt</span><span class="p">],</span> <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span><span class="p">,</span> <span class="nx">phone</span><span class="err">:</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">email</span><span class="err">:</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">discount</span><span class="err">:</span> <span class="nb">Number</span><span class="p">,</span> <span class="nx">success</span><span class="err">:</span> <span class="nb">Function</span><span class="p">,</span> <span class="nx">error</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ReceiptModule</span><span class="p">.</span><span class="nx">sendReceipt</span><span class="p">(</span><span class="nx">printReceipts</span><span class="p">,</span> <span class="nx">extra</span><span class="p">,</span> <span class="nx">phone</span><span class="p">,</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">discount</span><span class="p">,</span> <span class="nx">success</span><span class="p">,</span> <span class="nx">error</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
-    <figure class="center-image"><a class="no_icon" href="images/upload_to_test.png"><img class="docimage center-image" id="imageborder" src="images/upload_to_test.png" alt="" /></a><figcaption>Передача приложения в тестирование</figcaption></figure>
+<h3 id="section-4">Получить сформированный чек</h3>
 
-    <p>Статус приложения изменится на <strong>В тестировании</strong></p>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getReceipt</span><span class="p">(</span><span class="nx">findBy</span><span class="err">:</span> <span class="nx">Receipt</span><span class="p">.</span><span class="nx">FindBy</span><span class="p">,</span> <span class="nx">value</span><span class="err">:</span> <span class="nx">Receipt</span><span class="p">.</span><span class="nx">Type</span> <span class="o">|</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">callback</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ReceiptModule</span><span class="p">.</span><span class="nx">getReceipt</span><span class="p">(</span><span class="nx">findBy</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
-    <p>Приложение будет добавлено в тестовом режиме в <a href="https://market.evotor.ru/">Магазин приложений</a>. Вы увидите приложение в магазине, если войдёте в Личный кабинет пользователя, зарегистрированный на номер телефона тестировщика, указанный в шаге 3. На иконке приложения будет надпись <strong>В разработке</strong>.</p>
+<h3 id="section-5">Получить позиции сформированного чека</h3>
 
-    <p class="center-image"><img src="images\app_in_development.png" alt="картинка4" /></p>
-  </li>
-</ol>
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getPositions</span><span class="p">(</span><span class="nx">findBy</span><span class="err">:</span> <span class="nx">Receipt</span><span class="p">.</span><span class="nx">FindBy</span><span class="p">,</span> <span class="nx">value</span><span class="err">:</span> <span class="nx">Receipt</span><span class="p">.</span><span class="nx">Type</span> <span class="o">|</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">callback</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ReceiptModule</span><span class="p">.</span><span class="nx">getPositions</span><span class="p">(</span><span class="nx">findBy</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="getpayments">Получить getPayments</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getPayments</span><span class="p">(</span><span class="nx">findBy</span><span class="err">:</span> <span class="nx">Receipt</span><span class="p">.</span><span class="nx">FindBy</span><span class="p">,</span> <span class="nx">value</span><span class="err">:</span> <span class="nx">Receipt</span><span class="p">.</span><span class="nx">Type</span> <span class="o">|</span> <span class="nb">String</span><span class="p">,</span> <span class="nx">callback</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ReceiptModule</span><span class="p">.</span><span class="nx">getPayments</span><span class="p">(</span><span class="nx">findBy</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="section-6">Получить заголовки сформированного чека</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getReceiptHeaders</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">Receipt</span><span class="p">.</span><span class="nx">Type</span><span class="p">,</span> <span class="nx">callback</span><span class="err">:</span> <span class="nb">Function</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ReceiptModule</span><span class="p">.</span><span class="nx">getReceiptHeaders</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span> <span class="nx">callback</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="section-7">Пример</h2>
+
+<p>В примере представлены все методы, доступные в API.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+</code></pre>
+</div>
 
 
     <div class="tags">
@@ -898,13 +927,9 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_cloud.html" class="btn btn-default navbar-btn cursorNorm" role="button">cloud</a>
+        <a href="tag_terminal.html" class="btn btn-default navbar-btn cursorNorm" role="button">terminal</a>
         
         
-        
-        
-        
-        <a href="tag_javascript.html" class="btn btn-default navbar-btn cursorNorm" role="button">javascript</a>
         
         
         

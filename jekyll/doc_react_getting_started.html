@@ -9,9 +9,9 @@
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Раздел содержит инструкцию о том, как приступить к тестированию своего приложения.">
-<meta name="keywords" content="cloudJavajavascript,  ">
-<title>Перевод приложения в тестирование | Документация Эвотор</title>
+<meta name="description" content="">
+<meta name="keywords" content="terminalreact,  ">
+<title>Подготовка среды для разработки на React Native | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -140,7 +140,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Перевод приложения в тестирование">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Подготовка среды для разработки на React Native">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -326,7 +326,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li class="active"><a href="doc_app_testing.html">Перевод приложения в тестирование</a></li>
+                    <li><a href="doc_app_testing.html">Перевод приложения в тестирование</a></li>
                     
                     
                     
@@ -511,7 +511,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_react_getting_started.html">Подготовка среды для разработки на React Native</a></li>
+            <li class="active"><a href="doc_react_getting_started.html">Подготовка среды для разработки на React Native</a></li>
             
             
             
@@ -812,13 +812,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Перевод приложения в тестирование</h1>
+   <h1 class="post-title-main">Подготовка среды для разработки на React Native</h1>
 </div>
 
 
 
-
- <div class="summary">Раздел содержит инструкцию о том, как приступить к тестированию своего приложения.</div>
 
 
 
@@ -848,48 +846,128 @@ $('#toc').on('click', 'a', function() {
 
 <div class="post-content">
 
-   <!-- 
-    <div class="summary">Раздел содержит инструкцию о том, как приступить к тестированию своего приложения.</div>
-    -->
+   <!--  -->
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/smart_terminal_app_development/doc_app_testing.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/react_SDK/doc_react_getting_started.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <p>Если вы изменяете APK приложения, добавляете скриншоты, видео и т.п. приложение необходимо выкладывать в тестирование, чтобы изменения вступили в силу. Приложение в тестировании доступно учётным записям, указанным в роли <strong>Тестировщик</strong>, на вкладке <strong>Тестирование</strong>.</p>
+  <p>React Native - технология, которая позволяет использовать JavaScript для создания мобильных приложений. С помощью React Native вы можете обращаться к API написанному на Java используя только JavaScript.</p>
 
-<h3 id="section">Тестирование приложения</h3>
+<h2 id="section">Требования</h2>
 
-<p><em>Чтобы протестировать своё приложение выполните следующие действия:</em></p>
+<p>Убедитесь, что у вас установлено следующее ПО:</p>
+
+<ul>
+  <li>Актуальная версия <a href="https://nodejs.org/en/download/">Node.js</a>.</li>
+  <li><a href="https://developer.android.com/studio/index.html">Android Studio версии 3.0 или выше</a>.</li>
+</ul>
+
+<h2 id="section-1">Подготовка к разработке</h2>
+
+<p><em>Чтобы начать разработку приложения на React Native:</em></p>
 
 <ol>
-  <li>Войдите в <a href="https://dev.evotor.ru">личный кабинет разработчика</a>.</li>
   <li>
-    <p>Выберите приложение, которое требуется протестировать.</p>
+    <p>Установите утилиту для создания React Native приложений:</p>
 
-    <figure class="center-image"><a class="no_icon" href="images/Developer LK.png"><img class="docimage center-image" id="imageborder" src="images/Developer LK.png" alt="" /></a><figcaption>Выбор приложения</figcaption></figure>
+    <p><code class="highlighter-rouge">
+ npm install -g create-react-native-app
+</code></p>
   </li>
   <li>
-    <p>На вкладке <strong>Тестирование</strong>, в разделе <strong>Тестировщик</strong>, в поле <strong>Мобильный телефон</strong>, укажите номер телефона, к которому привязана учётная запись Эвотор и нажмите на кнопку <strong>Добавить</strong>.</p>
+    <p>Создайте проект (React Native приложение) с помощью команды:</p>
 
-    <p>Одновременно вы можете добавить не более пяти тестировщиков.</p>
+    <p><code class="highlighter-rouge">
+ create-react-native-app YourAppName
+</code></p>
 
-    <figure class="center-image"><a class="no_icon" href="images/Add_software_tester.png"><img class="docimage center-image" id="imageborder" src="images/Add_software_tester.png" alt="" /></a><figcaption>Добавление тестировщика</figcaption></figure>
+    <p>Для создания проекта вам может потребоваться установить npm версии 4. Используйте для этого команду:</p>
+
+    <p><code class="highlighter-rouge">
+ npm install -g npm@4
+</code></p>
   </li>
   <li>
-    <p>В разделе <strong>Версии</strong> нажмите на кнопку <strong>Выложить на тест</strong>.</p>
+    <p>Чтобы получить возможность использовать Java API, в корневой папке проекта выполните команду:</p>
 
-    <figure class="center-image"><a class="no_icon" href="images/upload_to_test.png"><img class="docimage center-image" id="imageborder" src="images/upload_to_test.png" alt="" /></a><figcaption>Передача приложения в тестирование</figcaption></figure>
-
-    <p>Статус приложения изменится на <strong>В тестировании</strong></p>
-
-    <p>Приложение будет добавлено в тестовом режиме в <a href="https://market.evotor.ru/">Магазин приложений</a>. Вы увидите приложение в магазине, если войдёте в Личный кабинет пользователя, зарегистрированный на номер телефона тестировщика, указанный в шаге 3. На иконке приложения будет надпись <strong>В разработке</strong>.</p>
-
-    <p class="center-image"><img src="images\app_in_development.png" alt="картинка4" /></p>
+    <p><code class="highlighter-rouge">
+ npm run eject
+</code></p>
   </li>
 </ol>
+
+<p>В папке проекта появится папка android, которую требуется открыть в Android Studio.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> После установки приложения React Native, вам потребуется обновить Gradle Plugin и Build Tools. Android Studio автоматически предложит установить необходимые обновления.</div>
+
+<h2 id="evotor-integration-library">Подключение библиотеки evotor integration library</h2>
+
+<p><em>Установите нашу библиотеку с помощью команды:</em></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>npm install evotor-integration-library --save
+</code></pre>
+</div>
+
+<p><em>Чтобы связать своё React Native приложение с нашей библиотекой выполните следующую команду:</em></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>react-native link evotor-integration-library
+</code></pre>
+</div>
+
+<p>Выполнение команды приводит к следующим изменениям:</p>
+
+<ul>
+  <li>
+    <p>В файле <code class="highlighter-rouge">settings.gradle</code>:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>include ':evotor-integration-library'
+project(':evotor-integration-library').projectDir = new File(rootProject.projectDir, '../node_modules/evotor-integration-library/android/app')
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>В файле <code class="highlighter-rouge">app/build.gradle</code>:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>compile project(':evotor-integration-library')
+</code></pre>
+    </div>
+
+    <p>и</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>compileSdkVersion 26
+buildToolsVersion '26.0.2'
+com.android.support:appcompat-v7:26.0.2
+minSdkVersion 22
+   targetSdkVersion 22
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>В файле <code class="highlighter-rouge">android/build.gradle</code> в разделе <code class="highlighter-rouge">allprojects repositories</code>:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>maven { url 'https://jitpack.io' }
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>В файле <code class="highlighter-rouge">app/src/main/java/package.name/MainApplication</code>:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>protected List&lt;ReactPackage&gt; getPackages() {
+  return Arrays.&lt;ReactPackage&gt;asList(
+      new MainReactPackage(),
+      new EvotorPackage()
+  );
+}
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> Убедитесь, что ваш проект содержит все указанные изменения. При необходимости, внесите изменения вручную.</div>
+
 
 
     <div class="tags">
@@ -898,13 +976,9 @@ $('#toc').on('click', 'a', function() {
         
         
         
-        <a href="tag_cloud.html" class="btn btn-default navbar-btn cursorNorm" role="button">cloud</a>
+        <a href="tag_terminal.html" class="btn btn-default navbar-btn cursorNorm" role="button">terminal</a>
         
         
-        
-        
-        
-        <a href="tag_javascript.html" class="btn btn-default navbar-btn cursorNorm" role="button">javascript</a>
         
         
         
