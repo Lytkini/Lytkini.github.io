@@ -104,6 +104,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <!-- entries without drop-downs appear here -->
+
+
+
                 
                 
                 
@@ -115,16 +118,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
                 
                 
-                <li><a href="doc_java_integration_library_connection.html">SDK смарт-терминала</a></li>
-                
-                
-                
                 <li><a href="whats_new.html">Что нового</a></li>
                 
                 
                 
                 <!-- entries with drop-downs appear here -->
                 <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Справочники<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="java_reference_introduction.html">Java SDK</a></li>
+                        
+                        
+                        
+                        <li><a href="react_reference_introduction.html">React Ntive SDK</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
                 
                 
                 <!--comment out this block if you want to hide search-->
@@ -464,6 +480,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            
+            
+            
+            <li><a href="doc_java_st_events.html">Обработка событий смарт-терминала</a></li>
+            
+            
+            
             <li class="subfolders">
                 <a href="#">Работа с оборудованием</a>
                 <ul>
@@ -525,42 +548,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_react_navigationAPI.html">Открытие окон смарт-терминала</a></li>
-            
-            
-            
-            
-            
-            
             <li><a href="doc_react_app_installation.html">Установка приложения на смарт-терминал</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_react_usersAPI.html">Работа с пользователями</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_react_receipt.html">Работа с чеками</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_react_devices.html">Работа с подключаемым оборудованием</a></li>
-            
-            
-            
-            
-            
-            
-            <li><a href="doc_react_inventoryAPI.html">Товароучёт</a></li>
             
             
             
@@ -688,7 +676,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_java_app_tutorial.html">Разработка Java-приложения</a></li>
+            <li><a href="doc_java_app_tutorial.html">Сборка и установка демонстрационного приложения</a></li>
             
             
             
@@ -1068,7 +1056,7 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="Callbacks">События, которые требуют ответа</h3>
 
-<p>На события, которые не требуют ответа, следует подписывать службы (плагины в JS-приложении).</p>
+<p>На события, которые требуют ответа, следует подписывать службы (плагины в JS-приложении).</p>
 
 <table>
 <tr>

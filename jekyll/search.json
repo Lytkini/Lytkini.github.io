@@ -367,11 +367,11 @@
 
 
 {
-"title": "Разработка Java-приложения",
-"tags": "javaterminalreceiptsproducts",
+"title": "Сборка и установка демонстрационного приложения",
+"tags": "javaterminal",
 "keywords": "",
 "url": "doc_java_app_tutorial.html",
-"summary": "Раздел содержит инструкцию по созданию простого java-приложения для смарт-терминала. На разных этапах приложение обладает разными функциями. Так, итоговое приложение сможет показывать интерфейс по нажатию на плитку на главном экране смарт-терминала, получать информацию о том, что в чек добавлен определённый товар, выводить экран с предложением добавить к этому товару ещё один, получать информацию о закрытии чека и записывать сообщение об этом в лог."
+"summary": ""
 }
 ,
 
@@ -547,7 +547,7 @@
 "tags": "terminaljavaReceipts",
 "keywords": "позиция, чек, события, открыть, добавить, изменить",
 "url": "doc_java_receipt_interactions.html",
-"summary": "Раздел содержит информацию о том, как приложение может взаимодействовать с позициями чека."
+"summary": "Приложение может добавлять, удалять и изменять позиции в чеке. Если вы хотите работать с позициями в чеке используйте службу, чтобы получать события о намерении изменения чека. В этом случае, смарт-терминал ждёт ответа от приложения. События приходят как при продаже, так и при возврате товара."
 }
 ,
 
@@ -570,6 +570,17 @@
 "keywords": "оборудование, весы, вес, масса, метод",
 "url": "doc_java_scales.html",
 "summary": ""
+}
+,
+
+
+
+{
+"title": "Обработка событий смарт-терминала",
+"tags": "terminaljavaReceipts",
+"keywords": "позиция, чек, события",
+"url": "doc_java_st_events.html",
+"summary": "Приложение может добавлять, удалять и изменять позиции в чеке. Если вы хотите получать события изменения чека или обновления базы продуктов, например, для логирования и оповещения пользователей, используйте приёмник широковещательных сообщений. В этом случае смарт-терминал не ждёт ответа от приложения. События приходят как при продаже, так и при возврате товара."
 }
 ,
 
@@ -785,6 +796,17 @@
 
 
 {
+"title": "Работа с чеком",
+"tags": "terminalreact",
+"keywords": "",
+"url": "doc_react_receipt.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Работа с пользователями смарт-терминала",
 "tags": "terminalreact",
 "keywords": "",
@@ -862,6 +884,17 @@
 
 
 {
+"title": "Справочник по Java SDK платформы Эвотор",
+"tags": "",
+"keywords": "java",
+"url": "java_reference_introduction.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Что нового",
 "tags": "",
 "keywords": "новости, блог, обновления, release notes, изменения",
@@ -877,6 +910,105 @@
 "tags": "",
 "keywords": "news, blog, updates, release notes, announcements",
 "url": "news_archive.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Описание",
+"tags": "",
+"keywords": "react",
+"url": "react_reference_broadcastreceivers.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Описание",
+"tags": "",
+"keywords": "react",
+"url": "react_reference_devices.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Описание",
+"tags": "",
+"keywords": "react",
+"url": "react_reference_enums.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Описание",
+"tags": "",
+"keywords": "react",
+"url": "react_reference_integrationapi.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Введение",
+"tags": "",
+"keywords": "react, справка",
+"url": "react_reference_introduction.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Описание",
+"tags": "",
+"keywords": "react",
+"url": "react_reference_inventoryapi.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Описание",
+"tags": "",
+"keywords": "react",
+"url": "react_reference_navigationapi.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Описание",
+"tags": "",
+"keywords": "react",
+"url": "react_reference_receiptapi.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Описание",
+"tags": "",
+"keywords": "react",
+"url": "react_reference_userapi.html",
 "summary": ""
 }
 ,
