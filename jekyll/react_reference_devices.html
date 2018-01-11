@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" react">
-<title>Интерфейс для работы с устройствами | Документация Эвотор</title>
+<title>Сканер штрихкодов | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -156,7 +156,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Интерфейс для работы с устройствами">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Сканер штрихкодов">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -261,7 +261,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="react_reference_broadcastreceivers.html">Приёмники сообщений</a></li>
+            <li><a href="react_reference_broadcastreceivers.html">Приёмник сообщений</a></li>
             
             
             
@@ -278,7 +278,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li class="active"><a href="react_reference_devices.html">Интерфейс для работы с устройствами</a></li>
+            <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_devicesprinter.html">Принтер чеков</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_devicescanner.html">Сканер штрихкодов</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_devicescales.html">Весы</a></li>
             
             
             
@@ -298,7 +319,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Интерфейс для работы с устройствами</h1>
+   <h1 class="post-title-main">Сканер штрихкодов</h1>
 </div>
 
 
@@ -344,9 +365,9 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="section-1">Методы</h2>
 
-<h3 id="startinitconnections">startInitConnections</h3>
+<h3 id="addeventlistener">addEventListener</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">startInitConnections</span><span class="p">()</span><span class="err">:</span> <span class="k">void</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">ScannerEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="err">:</span> <span class="nx">ScannerEventListener</span><span class="p">,</span> <span class="nx">isGlobal</span><span class="err">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
 </code></pre>
 </div>
 
@@ -354,117 +375,15 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Параметры</strong></p>
 
-<p><strong>Возвращает</strong></p>
-
-<h3 id="addeventlistener---">addEventListener для любого устройства</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">DeviceConnectionEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="err">:</span> <span class="nx">DeviceConnectionEventListener</span><span class="p">,</span> <span class="nx">isGlobal</span><span class="err">:</span> <span class="kr">boolean</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p><strong>Параметры</strong></p>
+<ul>
+  <li><code class="highlighter-rouge">type</code></li>
+  <li><code class="highlighter-rouge">listener</code></li>
+  <li><code class="highlighter-rouge">isGlobal</code></li>
+</ul>
 
 <p><strong>Возвращает</strong></p>
 
-<h3 id="removeeventlistener---">removeEventListener для любого устройства</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">removeEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">DeviceConnectionEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="p">?:</span> <span class="nx">DeviceConnectionEventListener</span><span class="p">)</span><span class="err">:</span> <span class="kr">boolean</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p><strong>Параметры</strong></p>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="print">print</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">print</span><span class="p">(</span><span class="nx">printables</span><span class="err">:</span> <span class="p">[</span><span class="nx">PrintableText</span><span class="p">,</span> <span class="nx">PrintableBarcode</span><span class="p">,</span> <span class="nx">PrintableImage</span><span class="p">])</span><span class="err">:</span> <span class="nx">Promise</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p><strong>Параметры</strong></p>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="getallowablesymbolslinelength">getAllowableSymbolsLineLength</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllowableSymbolsLineLength</span><span class="p">(</span><span class="nx">getter</span><span class="err">:</span> <span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p><strong>Параметры</strong></p>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="getallowablepixellinelength">getAllowablePixelLineLength</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllowablePixelLineLength</span><span class="p">(</span><span class="nx">getter</span><span class="err">:</span> <span class="p">(</span><span class="nx">number</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p><strong>Параметры</strong></p>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="getweight">getWeight</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getWeight</span><span class="p">(</span><span class="nx">getter</span><span class="err">:</span> <span class="p">(</span><span class="nx">weight</span><span class="err">:</span> <span class="nx">Weight</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p><strong>Параметры</strong></p>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="registerreceiver">registerReceiver</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">registerReceiver</span><span class="p">()</span><span class="err">:</span> <span class="k">void</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p><strong>Параметры</strong></p>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="unregisterreceiver">unregisterReceiver</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">unregisterReceiver</span><span class="p">()</span><span class="err">:</span> <span class="k">void</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p><strong>Параметры</strong></p>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="addeventlistener----">addEventListener для сканера штрих-кодов</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">ScannerEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="err">:</span> <span class="nx">ScannerEventListener</span><span class="p">,</span> <span class="nx">isGlobal</span><span class="err">:</span> <span class="kr">boolean</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p><strong>Параметры</strong></p>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="removeeventlistener----">removeEventListener для сканера штрих-кодов</h3>
+<h3 id="removeeventlistener">removeEventListener</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">removeEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">ScannerEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="p">?:</span> <span class="nx">ScannerEventListener</span><span class="p">)</span><span class="err">:</span> <span class="kr">boolean</span>
 </code></pre>
@@ -473,6 +392,11 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Описание</strong></p>
 
 <p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">type</code></li>
+  <li><code class="highlighter-rouge">listener</code></li>
+</ul>
 
 <p><strong>Возвращает</strong></p>
 

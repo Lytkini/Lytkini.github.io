@@ -261,7 +261,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="react_reference_broadcastreceivers.html">Приёмники сообщений</a></li>
+            <li><a href="react_reference_broadcastreceivers.html">Приёмник сообщений</a></li>
             
             
             
@@ -278,7 +278,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="react_reference_devices.html">Интерфейс для работы с устройствами</a></li>
+            <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_devicesprinter.html">Принтер чеков</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_devicescanner.html">Сканер штрихкодов</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_devicescales.html">Весы</a></li>
             
             
             
@@ -352,6 +373,22 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
+<p>Создаёт намерение (<code class="highlighter-rouge">intent</code>) изменения чека продажи.</p>
+
+<p><strong>Параметры</strong></p>
+
+<p><strong>Возвращает</strong></p>
+
+<h3 id="createintentforpaybackreceiptedit">createIntentForPaybackReceiptEdit</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">createIntentForPaybackReceiptEdit</span><span class="p">()</span><span class="err">:</span> <span class="nx">Intent</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Создаёт намерение (<code class="highlighter-rouge">intent</code>) изменения чека возврата.</p>
+
 <p><strong>Параметры</strong></p>
 
 <p><strong>Возвращает</strong></p>
@@ -363,6 +400,8 @@ $('#toc').on('click', 'a', function() {
 </div>
 
 <p><strong>Описание</strong></p>
+
+<p>Создаёт намерение (<code class="highlighter-rouge">intent</code>) оплаты по чеку продажи.</p>
 
 <p><strong>Параметры</strong></p>
 
@@ -376,6 +415,8 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
+<p>Создаёт намерение (<code class="highlighter-rouge">intent</code>) оплаты по чеку возврата.</p>
+
 <p><strong>Параметры</strong></p>
 
 <p><strong>Возвращает</strong></p>
@@ -387,6 +428,8 @@ $('#toc').on('click', 'a', function() {
 </div>
 
 <p><strong>Описание</strong></p>
+
+<p>Создаёт намерение (<code class="highlighter-rouge">intent</code>) оплаты по чеку продажи.</p>
 
 <p><strong>Параметры</strong></p>
 
@@ -412,7 +455,13 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
+<p>Получает намерение (<code class="highlighter-rouge">intent</code>).</p>
+
 <p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">getter</code></li>
+</ul>
 
 <p><strong>Возвращает</strong></p>
 
@@ -424,7 +473,13 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
+<p>Запускает операцию (<code class="highlighter-rouge">activity</code>).</p>
+
 <p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">intent</code></li>
+</ul>
 
 <p><strong>Возвращает</strong></p>
 
@@ -438,6 +493,11 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Параметры</strong></p>
 
+<ul>
+  <li><code class="highlighter-rouge">intent</code></li>
+  <li><code class="highlighter-rouge">requestCode</code></li>
+</ul>
+
 <p><strong>Возвращает</strong></p>
 
 <h3 id="setresult">setResult</h3>
@@ -449,6 +509,26 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Описание</strong></p>
 
 <p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">resultCode</code></li>
+</ul>
+
+<p><strong>Возвращает</strong></p>
+
+<h3 id="setintegrationresult">setIntegrationResult</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">setIntegrationResult</span><span class="p">(</span><span class="nx">result</span><span class="err">:</span> <span class="nx">IntegrationEventResult</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">result</code></li>
+</ul>
 
 <p><strong>Возвращает</strong></p>
 
@@ -474,6 +554,11 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Параметры</strong></p>
 
+<ul>
+  <li><code class="highlighter-rouge">type</code></li>
+  <li><code class="highlighter-rouge">listener</code></li>
+</ul>
+
 <p><strong>Возвращает</strong></p>
 
 <h3 id="removeeventlistener">removeEventListener</h3>
@@ -485,6 +570,11 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Описание</strong></p>
 
 <p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">type</code></li>
+  <li><code class="highlighter-rouge">listener</code></li>
+</ul>
 
 <p><strong>Возвращает</strong></p>
 

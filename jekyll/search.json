@@ -928,10 +928,43 @@
 
 
 {
-"title": "Интерфейс для работы с устройствами",
+"title": "Подключение устройств",
+"tags": "",
+"keywords": "react",
+"url": "react_reference_devicesconnection.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Принетр чеков",
+"tags": "",
+"keywords": "react",
+"url": "react_reference_devicesprinter.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Сканер штрихкодов",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_devices.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Интерфейс для работы с устройствами",
+"tags": "",
+"keywords": "react",
+"url": "react_reference_devicesscales.html",
 "summary": ""
 }
 ,

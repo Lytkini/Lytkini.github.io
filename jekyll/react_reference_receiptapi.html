@@ -261,7 +261,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="react_reference_broadcastreceivers.html">Приёмники сообщений</a></li>
+            <li><a href="react_reference_broadcastreceivers.html">Приёмник сообщений</a></li>
             
             
             
@@ -278,7 +278,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="react_reference_devices.html">Интерфейс для работы с устройствами</a></li>
+            <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_devicesprinter.html">Принтер чеков</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_devicescanner.html">Сканер штрихкодов</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_devicescales.html">Весы</a></li>
             
             
             
@@ -352,13 +373,13 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Получить това</p>
+<p>Получает товарную позицию по значению штрихкода.</p>
 
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">barcode</code> –</li>
-  <li><code class="highlighter-rouge">getter</code> –</li>
+  <li><code class="highlighter-rouge">barcode</code></li>
+  <li><code class="highlighter-rouge">getter</code></li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -371,13 +392,13 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Открыть чек, сформированный в смарт-терминале.</p>
+<p>Открывает чек, сформированный в смарт-терминале.</p>
 
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">positions</code> –</li>
-  <li><code class="highlighter-rouge">extra</code> –</li>
+  <li><code class="highlighter-rouge">positions</code></li>
+  <li><code class="highlighter-rouge">extra</code></li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -396,18 +417,18 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Передать чек, сформированный в приложении.</p>
+<p>Передаёт чек, сформированный в приложении, в смарт-терминал.</p>
 
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">printReceipts</code> –</li>
-  <li><code class="highlighter-rouge">extra</code> –</li>
-  <li><code class="highlighter-rouge">phone</code> –</li>
-  <li><code class="highlighter-rouge">email</code> –</li>
-  <li><code class="highlighter-rouge">discount</code> –</li>
-  <li><code class="highlighter-rouge">onSuccess</code> –</li>
-  <li><code class="highlighter-rouge">onError</code> –</li>
+  <li><code class="highlighter-rouge">printReceipts</code></li>
+  <li><code class="highlighter-rouge">extra</code></li>
+  <li><code class="highlighter-rouge">phone</code></li>
+  <li><code class="highlighter-rouge">email</code></li>
+  <li><code class="highlighter-rouge">discount</code></li>
+  <li><code class="highlighter-rouge">onSuccess</code></li>
+  <li><code class="highlighter-rouge">onError</code></li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -420,13 +441,13 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Получить чек по типу.</p>
+<p>Получает чек по типу: чек продажи (<code class="highlighter-rouge">SELL</code>) или чек возврата (<code class="highlighter-rouge">PAYBACK</code>).</p>
 
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">type</code> –</li>
-  <li><code class="highlighter-rouge">getter</code> –</li>
+  <li><code class="highlighter-rouge">type</code></li>
+  <li><code class="highlighter-rouge">getter</code></li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -439,13 +460,13 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Получить чек по идентификатору (<code class="highlighter-rouge">uuid</code>).</p>
+<p>Получает чек по идентификатору (<code class="highlighter-rouge">uuid</code>).</p>
 
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">uuid</code> –</li>
-  <li><code class="highlighter-rouge">getter</code> –</li>
+  <li><code class="highlighter-rouge">uuid</code></li>
+  <li><code class="highlighter-rouge">getter</code></li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -458,13 +479,13 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Получить заголовки чека.</p>
+<p>Получает заголовки чека.</p>
 
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">type</code> –</li>
-  <li><code class="highlighter-rouge">getter</code> –</li>
+  <li><code class="highlighter-rouge">type</code></li>
+  <li><code class="highlighter-rouge">getter</code></li>
 </ul>
 
 <p><strong>Возвращает</strong></p>

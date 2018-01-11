@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" react">
-<title>Inventory API | Документация Эвотор</title>
+<title>Интерфейс для работы с устройствами | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -156,7 +156,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Inventory API">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Интерфейс для работы с устройствами">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -230,7 +230,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li class="active"><a href="react_reference_inventoryapi.html">Inventory API</a></li>
+            <li><a href="react_reference_inventoryapi.html">Inventory API</a></li>
             
             
             
@@ -319,7 +319,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Inventory API</h1>
+   <h1 class="post-title-main">Интерфейс для работы с устройствами</h1>
 </div>
 
 
@@ -357,85 +357,21 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/react_reference/react_reference_inventoryapi.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/react_reference/react_reference_devicesscales.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <h2 id="section">Описание</h2>
+  <h3 id="getweight">getWeight</h3>
 
-<h2 id="section-1">Методы</h2>
-
-<h3 id="getallbarcodesforproduct">getAllBarcodesForProduct</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllBarcodesForProduct</span><span class="p">(</span><span class="nx">productUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">getter</span><span class="err">:</span> <span class="p">(</span><span class="nx">string</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getWeight</span><span class="p">(</span><span class="nx">getter</span><span class="err">:</span> <span class="p">(</span><span class="nx">weight</span><span class="err">:</span> <span class="nx">Weight</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span>
 </code></pre>
 </div>
 
 <p><strong>Описание</strong></p>
 
-<p>Получает все штрихкоды товара.</p>
-
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">productUuid</code></li>
-  <li><code class="highlighter-rouge">getter</code></li>
-</ul>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="getproductbyuuid">getProductByUuid</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getProductByUuid</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">getter</span><span class="err">:</span> <span class="p">(</span><span class="nx">ProductItem</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p>Получает товар по идентификатору (<code class="highlighter-rouge">uuid</code>)</p>
-
-<p><strong>Параметры</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">uuid</code></li>
-  <li><code class="highlighter-rouge">getter</code></li>
-</ul>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="getfield">getField</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getField</span><span class="p">(</span><span class="nx">fieldUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">getter</span><span class="err">:</span> <span class="p">(</span><span class="nx">Field</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p>Получает поле.</p>
-
-<p><strong>Параметры</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">fieldUuid</code></li>
-  <li><code class="highlighter-rouge">getter</code></li>
-</ul>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="getproductextras">getProductExtras</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getProductExtras</span><span class="p">(</span><span class="nx">productUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">getter</span><span class="err">:</span> <span class="p">(</span><span class="nx">ProductExtra</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p>Получает дополнительные поля товара.</p>
-
-<p><strong>Параметры</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">productUuid</code></li>
   <li><code class="highlighter-rouge">getter</code></li>
 </ul>
 
