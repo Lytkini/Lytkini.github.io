@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" react">
-<title>Описание | Документация Эвотор</title>
+<title>Receipt API | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -156,7 +156,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Описание">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Receipt API">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -242,9 +242,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+        </ul>
+        
+        
+    
+    <li>
+        
+        <a href="#">Службы</a>
+        
+        <ul>
             
             
-            <li><a href="react_reference_integrationapi.html">Integration API</a></li>
+            
+            <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
             
             
             
@@ -256,9 +266,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+        </ul>
+        
+        
+    
+    <li>
+        
+        <a href="#">Устройства</a>
+        
+        <ul>
             
             
-            <li><a href="react_reference_devices.html">Подключение устройств</a></li>
+            
+            <li><a href="react_reference_devices.html">Интерфейс для работы с устройствами</a></li>
             
             
             
@@ -278,7 +298,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Описание</h1>
+   <h1 class="post-title-main">Receipt API</h1>
 </div>
 
 
@@ -332,7 +352,14 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
+<p>Получить това</p>
+
 <p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">barcode</code> –</li>
+  <li><code class="highlighter-rouge">getter</code> –</li>
+</ul>
 
 <p><strong>Возвращает</strong></p>
 
@@ -344,7 +371,14 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
+<p>Открыть чек, сформированный в смарт-терминале.</p>
+
 <p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">positions</code> –</li>
+  <li><code class="highlighter-rouge">extra</code> –</li>
+</ul>
 
 <p><strong>Возвращает</strong></p>
 
@@ -362,7 +396,19 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
+<p>Передать чек, сформированный в приложении.</p>
+
 <p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">printReceipts</code> –</li>
+  <li><code class="highlighter-rouge">extra</code> –</li>
+  <li><code class="highlighter-rouge">phone</code> –</li>
+  <li><code class="highlighter-rouge">email</code> –</li>
+  <li><code class="highlighter-rouge">discount</code> –</li>
+  <li><code class="highlighter-rouge">onSuccess</code> –</li>
+  <li><code class="highlighter-rouge">onError</code> –</li>
+</ul>
 
 <p><strong>Возвращает</strong></p>
 
@@ -374,7 +420,14 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
+<p>Получить чек по типу.</p>
+
 <p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">type</code> –</li>
+  <li><code class="highlighter-rouge">getter</code> –</li>
+</ul>
 
 <p><strong>Возвращает</strong></p>
 
@@ -386,7 +439,14 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
+<p>Получить чек по идентификатору (<code class="highlighter-rouge">uuid</code>).</p>
+
 <p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">uuid</code> –</li>
+  <li><code class="highlighter-rouge">getter</code> –</li>
+</ul>
 
 <p><strong>Возвращает</strong></p>
 
@@ -398,7 +458,14 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
+<p>Получить заголовки чека.</p>
+
 <p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">type</code> –</li>
+  <li><code class="highlighter-rouge">getter</code> –</li>
+</ul>
 
 <p><strong>Возвращает</strong></p>
 

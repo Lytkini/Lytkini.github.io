@@ -917,7 +917,7 @@
 
 
 {
-"title": "Описание",
+"title": "Приёмники широковещательных сообщений",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_broadcastreceivers.html",
@@ -928,7 +928,7 @@
 
 
 {
-"title": "Описание",
+"title": "Интерфейс для работы с устройствами",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_devices.html",
@@ -950,7 +950,7 @@
 
 
 {
-"title": "Описание",
+"title": "Интерфейс интеграционных служб",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_integrationapi.html",
@@ -972,7 +972,7 @@
 
 
 {
-"title": "Описание",
+"title": "Inventory API",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_inventoryapi.html",
@@ -983,7 +983,7 @@
 
 
 {
-"title": "Описание",
+"title": "Navigation API",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_navigationapi.html",
@@ -994,7 +994,7 @@
 
 
 {
-"title": "Описание",
+"title": "Receipt API",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_receiptapi.html",
@@ -1005,7 +1005,7 @@
 
 
 {
-"title": "Описание",
+"title": "User API",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_userapi.html",
