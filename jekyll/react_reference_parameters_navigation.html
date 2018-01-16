@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
+    </script>
+    <!-- End Google Tag Manager -->
+
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" react">
+<title>Навигация | Документация Эвотор</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-orange.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<link rel="stylesheet" href="css/magnific-popup.css">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: false,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+
+    
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W4CBFKS"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> Документация Эвотор</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+
+
+
+                
+                
+                
+                <li><a href="https://dev.evotor.ru/" target="_blank">Разработчикам</a></li>
+                
+                
+                
+                <li><a href="https://api.evotor.ru/" target="_blank">Справочник API</a></li>
+                
+                
+                
+                <li><a href="whats_new.html">Что нового</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Справочники<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="java_reference_introduction.html">Java SDK</a></li>
+                        
+                        
+                        
+                        <li><a href="react_reference_introduction.html">React Ntive SDK</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="Поиск...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Навигация">{title}</a></li>',
+                    noResultsText: 'Ничего не найдено',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+    <li class="sidebarTitle">Интерфейсы React Native SDK </li>
+    <p class="external">
+        <a href="#" id="collapseAll">Свернуть все</a> | <a href="#" id="expandAll">Развернуть все</a>
+    </p>
+    
+    
+    
+    <li>
+        
+        <a href="react_reference_introduction.html">Введение</a>
+        
+        <ul>
+            
+        </ul>
+        
+        
+    
+    <li>
+        
+        <a href="#">Интерфейсы</a>
+        
+        <ul>
+            
+            
+            
+            <li><a href="react_reference_userapi.html">User API</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_receiptapi.html">Receipt API</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_inventoryapi.html">Inventory API</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_navigationapi.html">Navigation API</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Службы</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_broadcastreceivers.html">Приёмник сообщений</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Устройства</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesprinter.html">Принтер чеков</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescanner.html">Сканер штрихкодов</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescales.html">Весы</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        
+        <a href="#">Параметры</a>
+        
+        <ul>
+            
+            
+            
+            <li><a href="react_reference_parameters_receipt.html">Чеки</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_parameters_device.html">Устройства</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_parameters_user.html">Товары</a></li>
+            
+            
+            
+            
+            
+            
+            <li class="active"><a href="react_reference_parameters_navigation.html">Навигация</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_parameters_payments.html">Платежи</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_parameters_service.html">Службы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_parameters_user.html">Пользователи</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_parameters_errors.html">Ошибки</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+        
+
+    </li>
+</ul>
+</div>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+    <!-- Content Column -->
+          <div class="col-md-9">
+                <div class="post-header">
+   <h1 class="post-title-main">Навигация</h1>
+</div>
+
+
+
+
+
+
+
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+
+
+<div class="post-content">
+
+   <!--  -->
+
+    
+
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/react_reference/react_reference_parameters_navigation.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+
+    
+
+  <h2 id="abstractjavareadable">Класс AbstractJavaReadable</h2>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AbstractJavaReadable</span> <span class="p">{</span>
+
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">__name__</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">toJavaReadable</span><span class="p">()</span><span class="err">:</span> <span class="nx">JavaReadable</span> <span class="p">{</span>
+        <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="na">__name__</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">__name__</span><span class="p">,</span>
+            <span class="na">__value__</span><span class="p">:</span> <span class="p">{}</span>
+        <span class="p">};</span>
+        <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="intent">Класс Intent</h2>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Intent</span> <span class="p">{</span>
+
+    <span class="kr">static</span> <span class="nx">ACTION_AIRPLANE_MODE_CHANGED</span> <span class="o">=</span> <span class="s2">"android.intent.action.AIRPLANE_MODE"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_ALL_APPS</span> <span class="o">=</span> <span class="s2">"android.intent.action.ALL_APPS"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_ANSWER</span> <span class="o">=</span> <span class="s2">"android.intent.action.ANSWER"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_APPLICATION_PREFERENCES</span> <span class="o">=</span> <span class="s2">"android.intent.action.APPLICATION_PREFERENCES"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_APPLICATION_RESTRICTIONS_CHANGED</span> <span class="o">=</span> <span class="s2">"android.intent.action.APPLICATION_RESTRICTIONS_CHANGED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_APP_ERROR</span> <span class="o">=</span> <span class="s2">"android.intent.action.APP_ERROR"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_ASSIST</span> <span class="o">=</span> <span class="s2">"android.intent.action.ASSIST"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_ATTACH_DATA</span> <span class="o">=</span> <span class="s2">"android.intent.action.ATTACH_DATA"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_BATTERY_CHANGED</span> <span class="o">=</span> <span class="s2">"android.intent.action.BATTERY_CHANGED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_BATTERY_LOW</span> <span class="o">=</span> <span class="s2">"android.intent.action.BATTERY_LOW"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_BATTERY_OKAY</span> <span class="o">=</span> <span class="s2">"android.intent.action.BATTERY_OKAY"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_BOOT_COMPLETED</span> <span class="o">=</span> <span class="s2">"android.intent.action.BOOT_COMPLETED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_BUG_REPORT</span> <span class="o">=</span> <span class="s2">"android.intent.action.BUG_REPORT"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_CALL</span> <span class="o">=</span> <span class="s2">"android.intent.action.CALL"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_CALL_BUTTON</span> <span class="o">=</span> <span class="s2">"android.intent.action.CALL_BUTTON"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_CAMERA_BUTTON</span> <span class="o">=</span> <span class="s2">"android.intent.action.CAMERA_BUTTON"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_CARRIER_SETUP</span> <span class="o">=</span> <span class="s2">"android.intent.action.CARRIER_SETUP"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_CHOOSER</span> <span class="o">=</span> <span class="s2">"android.intent.action.CHOOSER"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_CLOSE_SYSTEM_DIALOGS</span> <span class="o">=</span> <span class="s2">"android.intent.action.CLOSE_SYSTEM_DIALOGS"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_CONFIGURATION_CHANGED</span> <span class="o">=</span> <span class="s2">"android.intent.action.CONFIGURATION_CHANGED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_CREATE_DOCUMENT</span> <span class="o">=</span> <span class="s2">"android.intent.action.CREATE_DOCUMENT"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_CREATE_SHORTCUT</span> <span class="o">=</span> <span class="s2">"android.intent.action.CREATE_SHORTCUT"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_DATE_CHANGED</span> <span class="o">=</span> <span class="s2">"android.intent.action.DATE_CHANGED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_DEFAULT</span> <span class="o">=</span> <span class="s2">"android.intent.action.VIEW"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_DELETE</span> <span class="o">=</span> <span class="s2">"android.intent.action.DELETE"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_DIAL</span> <span class="o">=</span> <span class="s2">"android.intent.action.DIAL"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_DOCK_EVENT</span> <span class="o">=</span> <span class="s2">"android.intent.action.DOCK_EVENT"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_DREAMING_STARTED</span> <span class="o">=</span> <span class="s2">"android.intent.action.DREAMING_STARTED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_DREAMING_STOPPED</span> <span class="o">=</span> <span class="s2">"android.intent.action.DREAMING_STOPPED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_EDIT</span> <span class="o">=</span> <span class="s2">"android.intent.action.EDIT"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_EXTERNAL_APPLICATIONS_AVAILABLE</span> <span class="o">=</span> <span class="s2">"android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_EXTERNAL_APPLICATIONS_UNAVAILABLE</span> <span class="o">=</span> <span class="s2">"android.intent.action.EXTERNAL_APPLICATIONS_UNAVAILABLE"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_FACTORY_TEST</span> <span class="o">=</span> <span class="s2">"android.intent.action.FACTORY_TEST"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_GET_CONTENT</span> <span class="o">=</span> <span class="s2">"android.intent.action.GET_CONTENT"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_GET_RESTRICTION_ENTRIES</span> <span class="o">=</span> <span class="s2">"android.intent.action.GET_RESTRICTION_ENTRIES"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_GTALK_SERVICE_CONNECTED</span> <span class="o">=</span> <span class="s2">"android.intent.action.GTALK_CONNECTED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_GTALK_SERVICE_DISCONNECTED</span> <span class="o">=</span> <span class="s2">"android.intent.action.GTALK_DISCONNECTED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_HEADSET_PLUG</span> <span class="o">=</span> <span class="s2">"android.intent.action.HEADSET_PLUG"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_INPUT_METHOD_CHANGED</span> <span class="o">=</span> <span class="s2">"android.intent.action.INPUT_METHOD_CHANGED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_INSERT</span> <span class="o">=</span> <span class="s2">"android.intent.action.INSERT"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_INSERT_OR_EDIT</span> <span class="o">=</span> <span class="s2">"android.intent.action.INSERT_OR_EDIT"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_INSTALL_FAILURE</span> <span class="o">=</span> <span class="s2">"android.intent.action.INSTALL_FAILURE"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_INSTALL_PACKAGE</span> <span class="o">=</span> <span class="s2">"android.intent.action.INSTALL_PACKAGE"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_LOCALE_CHANGED</span> <span class="o">=</span> <span class="s2">"android.intent.action.LOCALE_CHANGED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_LOCKED_BOOT_COMPLETED</span> <span class="o">=</span> <span class="s2">"android.intent.action.LOCKED_BOOT_COMPLETED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MAIN</span> <span class="o">=</span> <span class="s2">"android.intent.action.MAIN"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MANAGED_PROFILE_ADDED</span> <span class="o">=</span> <span class="s2">"android.intent.action.MANAGED_PROFILE_ADDED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MANAGED_PROFILE_AVAILABLE</span> <span class="o">=</span> <span class="s2">"android.intent.action.MANAGED_PROFILE_AVAILABLE"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MANAGED_PROFILE_REMOVED</span> <span class="o">=</span> <span class="s2">"android.intent.action.MANAGED_PROFILE_REMOVED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MANAGED_PROFILE_UNAVAILABLE</span> <span class="o">=</span> <span class="s2">"android.intent.action.MANAGED_PROFILE_UNAVAILABLE"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MANAGED_PROFILE_UNLOCKED</span> <span class="o">=</span> <span class="s2">"android.intent.action.MANAGED_PROFILE_UNLOCKED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MANAGE_NETWORK_USAGE</span> <span class="o">=</span> <span class="s2">"android.intent.action.MANAGE_NETWORK_USAGE"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MANAGE_PACKAGE_STORAGE</span> <span class="o">=</span> <span class="s2">"android.intent.action.MANAGE_PACKAGE_STORAGE"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MEDIA_BAD_REMOVAL</span> <span class="o">=</span> <span class="s2">"android.intent.action.MEDIA_BAD_REMOVAL"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MEDIA_BUTTON</span> <span class="o">=</span> <span class="s2">"android.intent.action.MEDIA_BUTTON"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MEDIA_CHECKING</span> <span class="o">=</span> <span class="s2">"android.intent.action.MEDIA_CHECKING"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MEDIA_EJECT</span> <span class="o">=</span> <span class="s2">"android.intent.action.MEDIA_EJECT"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MEDIA_MOUNTED</span> <span class="o">=</span> <span class="s2">"android.intent.action.MEDIA_MOUNTED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MEDIA_NOFS</span> <span class="o">=</span> <span class="s2">"android.intent.action.MEDIA_NOFS"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MEDIA_REMOVED</span> <span class="o">=</span> <span class="s2">"android.intent.action.MEDIA_REMOVED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MEDIA_SCANNER_FINISHED</span> <span class="o">=</span> <span class="s2">"android.intent.action.MEDIA_SCANNER_FINISHED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MEDIA_SCANNER_SCAN_FILE</span> <span class="o">=</span> <span class="s2">"android.intent.action.MEDIA_SCANNER_SCAN_FILE"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MEDIA_SCANNER_STARTED</span> <span class="o">=</span> <span class="s2">"android.intent.action.MEDIA_SCANNER_STARTED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MEDIA_SHARED</span> <span class="o">=</span> <span class="s2">"android.intent.action.MEDIA_SHARED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MEDIA_UNMOUNTABLE</span> <span class="o">=</span> <span class="s2">"android.intent.action.MEDIA_UNMOUNTABLE"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MEDIA_UNMOUNTED</span> <span class="o">=</span> <span class="s2">"android.intent.action.MEDIA_UNMOUNTED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_MY_PACKAGE_REPLACED</span> <span class="o">=</span> <span class="s2">"android.intent.action.MY_PACKAGE_REPLACED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_NEW_OUTGOING_CALL</span> <span class="o">=</span> <span class="s2">"android.intent.action.NEW_OUTGOING_CALL"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_OPEN_DOCUMENT</span> <span class="o">=</span> <span class="s2">"android.intent.action.OPEN_DOCUMENT"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_OPEN_DOCUMENT_TREE</span> <span class="o">=</span> <span class="s2">"android.intent.action.OPEN_DOCUMENT_TREE"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_PACKAGES_SUSPENDED</span> <span class="o">=</span> <span class="s2">"android.intent.action.PACKAGES_SUSPENDED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_PACKAGES_UNSUSPENDED</span> <span class="o">=</span> <span class="s2">"android.intent.action.PACKAGES_UNSUSPENDED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_PACKAGE_ADDED</span> <span class="o">=</span> <span class="s2">"android.intent.action.PACKAGE_ADDED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_PACKAGE_CHANGED</span> <span class="o">=</span> <span class="s2">"android.intent.action.PACKAGE_CHANGED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_PACKAGE_DATA_CLEARED</span> <span class="o">=</span> <span class="s2">"android.intent.action.PACKAGE_DATA_CLEARED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_PACKAGE_FIRST_LAUNCH</span> <span class="o">=</span> <span class="s2">"android.intent.action.PACKAGE_FIRST_LAUNCH"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_PACKAGE_FULLY_REMOVED</span> <span class="o">=</span> <span class="s2">"android.intent.action.PACKAGE_FULLY_REMOVED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_PACKAGE_NEEDS_VERIFICATION</span> <span class="o">=</span> <span class="s2">"android.intent.action.PACKAGE_NEEDS_VERIFICATION"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_PACKAGE_REMOVED</span> <span class="o">=</span> <span class="s2">"android.intent.action.PACKAGE_REMOVED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_PACKAGE_REPLACED</span> <span class="o">=</span> <span class="s2">"android.intent.action.PACKAGE_REPLACED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_PACKAGE_RESTARTED</span> <span class="o">=</span> <span class="s2">"android.intent.action.PACKAGE_RESTARTED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_PACKAGE_VERIFIED</span> <span class="o">=</span> <span class="s2">"android.intent.action.PACKAGE_VERIFIED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_PASTE</span> <span class="o">=</span> <span class="s2">"android.intent.action.PASTE"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_PICK</span> <span class="o">=</span> <span class="s2">"android.intent.action.PICK"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_PICK_ACTIVITY</span> <span class="o">=</span> <span class="s2">"android.intent.action.PICK_ACTIVITY"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_POWER_CONNECTED</span> <span class="o">=</span> <span class="s2">"android.intent.action.ACTION_POWER_CONNECTED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_POWER_DISCONNECTED</span> <span class="o">=</span> <span class="s2">"android.intent.action.ACTION_POWER_DISCONNECTED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_POWER_USAGE_SUMMARY</span> <span class="o">=</span> <span class="s2">"android.intent.action.POWER_USAGE_SUMMARY"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_PROCESS_TEXT</span> <span class="o">=</span> <span class="s2">"android.intent.action.PROCESS_TEXT"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_PROVIDER_CHANGED</span> <span class="o">=</span> <span class="s2">"android.intent.action.PROVIDER_CHANGED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_QUICK_CLOCK</span> <span class="o">=</span> <span class="s2">"android.intent.action.QUICK_CLOCK"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_QUICK_VIEW</span> <span class="o">=</span> <span class="s2">"android.intent.action.QUICK_VIEW"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_REBOOT</span> <span class="o">=</span> <span class="s2">"android.intent.action.REBOOT"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_RUN</span> <span class="o">=</span> <span class="s2">"android.intent.action.RUN"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_SCREEN_OFF</span> <span class="o">=</span> <span class="s2">"android.intent.action.SCREEN_OFF"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_SCREEN_ON</span> <span class="o">=</span> <span class="s2">"android.intent.action.SCREEN_ON"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_SEARCH</span> <span class="o">=</span> <span class="s2">"android.intent.action.SEARCH"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_SEARCH_LONG_PRESS</span> <span class="o">=</span> <span class="s2">"android.intent.action.SEARCH_LONG_PRESS"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_SEND</span> <span class="o">=</span> <span class="s2">"android.intent.action.SEND"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_SENDTO</span> <span class="o">=</span> <span class="s2">"android.intent.action.SENDTO"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_SEND_MULTIPLE</span> <span class="o">=</span> <span class="s2">"android.intent.action.SEND_MULTIPLE"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_SET_WALLPAPER</span> <span class="o">=</span> <span class="s2">"android.intent.action.SET_WALLPAPER"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_SHOW_APP_INFO</span> <span class="o">=</span> <span class="s2">"android.intent.action.SHOW_APP_INFO"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_SHUTDOWN</span> <span class="o">=</span> <span class="s2">"android.intent.action.ACTION_SHUTDOWN"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_SYNC</span> <span class="o">=</span> <span class="s2">"android.intent.action.SYNC"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_SYSTEM_TUTORIAL</span> <span class="o">=</span> <span class="s2">"android.intent.action.SYSTEM_TUTORIAL"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_TIMEZONE_CHANGED</span> <span class="o">=</span> <span class="s2">"android.intent.action.TIMEZONE_CHANGED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_TIME_CHANGED</span> <span class="o">=</span> <span class="s2">"android.intent.action.TIME_SET"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_TIME_TICK</span> <span class="o">=</span> <span class="s2">"android.intent.action.TIME_TICK"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_UID_REMOVED</span> <span class="o">=</span> <span class="s2">"android.intent.action.UID_REMOVED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_UNINSTALL_PACKAGE</span> <span class="o">=</span> <span class="s2">"android.intent.action.UNINSTALL_PACKAGE"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_USER_BACKGROUND</span> <span class="o">=</span> <span class="s2">"android.intent.action.USER_BACKGROUND"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_USER_FOREGROUND</span> <span class="o">=</span> <span class="s2">"android.intent.action.USER_FOREGROUND"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_USER_INITIALIZE</span> <span class="o">=</span> <span class="s2">"android.intent.action.USER_INITIALIZE"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_USER_PRESENT</span> <span class="o">=</span> <span class="s2">"android.intent.action.USER_PRESENT"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_USER_UNLOCKED</span> <span class="o">=</span> <span class="s2">"android.intent.action.USER_UNLOCKED"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_VIEW</span> <span class="o">=</span> <span class="s2">"android.intent.action.VIEW"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_VOICE_COMMAND</span> <span class="o">=</span> <span class="s2">"android.intent.action.VOICE_COMMAND"</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">ACTION_WEB_SEARCH</span> <span class="o">=</span> <span class="s2">"android.intent.action.WEB_SEARCH"</span><span class="p">;</span>
+
+    <span class="kr">static</span> <span class="nx">CATEGORY_ALTERNATIVE</span> <span class="o">=</span> <span class="s1">'android.intent.category.ALTERNATIVE'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_APP_BROWSER</span> <span class="o">=</span> <span class="s1">'android.intent.category.APP_BROWSER'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_APP_CALCULATOR</span> <span class="o">=</span> <span class="s1">'android.intent.category.APP_CALCULATOR'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_APP_CALENDAR</span> <span class="o">=</span> <span class="s1">'android.intent.category.APP_CALENDAR'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_APP_CONTACTS</span> <span class="o">=</span> <span class="s1">'android.intent.category.APP_CONTACTS'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_APP_EMAIL</span> <span class="o">=</span> <span class="s1">'android.intent.category.APP_EMAIL'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_APP_GALLERY</span> <span class="o">=</span> <span class="s1">'android.intent.category.APP_GALLERY'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_APP_MAPS</span> <span class="o">=</span> <span class="s1">'android.intent.category.APP_MAPS'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_APP_MARKET</span> <span class="o">=</span> <span class="s1">'android.intent.category.APP_MARKET'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_APP_MESSAGING</span> <span class="o">=</span> <span class="s1">'android.intent.category.APP_MESSAGING'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_APP_MUSIC</span> <span class="o">=</span> <span class="s1">'android.intent.category.APP_MUSIC'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_BROWSABLE</span> <span class="o">=</span> <span class="s1">'android.intent.category.BROWSABLE'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_CAR_DOCK</span> <span class="o">=</span> <span class="s1">'android.intent.category.CAR_DOCK'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_CAR_MODE</span> <span class="o">=</span> <span class="s1">'android.intent.category.CAR_MODE'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_DEFAULT</span> <span class="o">=</span> <span class="s1">'android.intent.category.DEFAULT'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_DESK_DOCK</span> <span class="o">=</span> <span class="s1">'android.intent.category.DESK_DOCK'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_DEVELOPMENT_PREFERENCE</span> <span class="o">=</span> <span class="s1">'android.intent.category.DEVELOPMENT_PREFERENCE'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_EMBED</span> <span class="o">=</span> <span class="s1">'android.intent.category.EMBED'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_FRAMEWORK_INSTRUMENTATION_TEST</span> <span class="o">=</span> <span class="s1">'android.intent.category.FRAMEWORK_INSTRUMENTATION_TEST'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_HE_DESK_DOCK</span> <span class="o">=</span> <span class="s1">'android.intent.category.HE_DESK_DOCK'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_HOME</span> <span class="o">=</span> <span class="s1">'android.intent.category.HOME'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_INFO</span> <span class="o">=</span> <span class="s1">'android.intent.category.INFO'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_LAUNCHER</span> <span class="o">=</span> <span class="s1">'android.intent.category.LAUNCHER'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_LEANBACK_LAUNCHER</span> <span class="o">=</span> <span class="s1">'android.intent.category.LEANBACK_LAUNCHER'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_LE_DESK_DOCK</span> <span class="o">=</span> <span class="s1">'android.intent.category.LE_DESK_DOCK'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_MONKEY</span> <span class="o">=</span> <span class="s1">'android.intent.category.MONKEY'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_OPENABLE</span> <span class="o">=</span> <span class="s1">'android.intent.category.OPENABLE'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_PREFERENCE</span> <span class="o">=</span> <span class="s1">'android.intent.category.PREFERENCE'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_SAMPLE_CODE</span> <span class="o">=</span> <span class="s1">'android.intent.category.SAMPLE_CODE'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_SELECTED_ALTERNATIVE</span> <span class="o">=</span> <span class="s1">'android.intent.category.SELECTED_ALTERNATIVE'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_TAB</span> <span class="o">=</span> <span class="s1">'android.intent.category.TAB'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_TEST</span> <span class="o">=</span> <span class="s1">'android.intent.category.TEST'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_TYPED_OPENABLE</span> <span class="o">=</span> <span class="s1">'android.intent.category.TYPED_OPENABLE'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_UNIT_TEST</span> <span class="o">=</span> <span class="s1">'android.intent.category.UNIT_TEST'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_VOICE</span> <span class="o">=</span> <span class="s1">'android.intent.category.VOICE'</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">CATEGORY_VR_HOME</span> <span class="o">=</span> <span class="s1">'android.intent.category.VR_HOME'</span><span class="p">;</span>
+
+    <span class="kr">static</span> <span class="nx">FLAG_ACTIVITY_BROUGHT_TO_FRONT</span> <span class="o">=</span> <span class="mi">4194304</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_ACTIVITY_CLEAR_TASK</span> <span class="o">=</span> <span class="mi">32768</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_ACTIVITY_CLEAR_TOP</span> <span class="o">=</span> <span class="mi">67108864</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS</span> <span class="o">=</span> <span class="mi">8388608</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_ACTIVITY_FORWARD_RESULT</span> <span class="o">=</span> <span class="mi">33554432</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY</span> <span class="o">=</span> <span class="mi">1048576</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_ACTIVITY_LAUNCH_ADJACENT</span> <span class="o">=</span> <span class="mi">4096</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_ACTIVITY_MULTIPLE_TASK</span> <span class="o">=</span> <span class="mi">134217728</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_ACTIVITY_NEW_DOCUMENT</span> <span class="o">=</span> <span class="mi">524288</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_ACTIVITY_NEW_TASK</span> <span class="o">=</span> <span class="mi">268435456</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_ACTIVITY_NO_HISTORY</span> <span class="o">=</span> <span class="mi">1073741824</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_ACTIVITY_NO_USER_ACTION</span> <span class="o">=</span> <span class="mi">262144</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_ACTIVITY_PREVIOUS_IS_TOP</span> <span class="o">=</span> <span class="mi">16777216</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_ACTIVITY_REORDER_TO_FRONT</span> <span class="o">=</span> <span class="mi">131072</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_ACTIVITY_RESET_TASK_IF_NEEDED</span> <span class="o">=</span> <span class="mi">2097152</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_ACTIVITY_RETAIN_IN_RECENTS</span> <span class="o">=</span> <span class="mi">8192</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_ACTIVITY_SINGLE_TOP</span> <span class="o">=</span> <span class="mi">536870912</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_ACTIVITY_TASK_ON_HOME</span> <span class="o">=</span> <span class="mi">16384</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_DEBUG_LOG_RESOLUTION</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_EXCLUDE_STOPPED_PACKAGES</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_FROM_BACKGROUND</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_GRANT_PERSISTABLE_URI_PERMISSION</span> <span class="o">=</span> <span class="mi">64</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_GRANT_PREFIX_URI_PERMISSION</span> <span class="o">=</span> <span class="mi">128</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_GRANT_READ_URI_PERMISSION</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_GRANT_WRITE_URI_PERMISSION</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_INCLUDE_STOPPED_PACKAGES</span> <span class="o">=</span> <span class="mi">32</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_RECEIVER_FOREGROUND</span> <span class="o">=</span> <span class="mi">268435456</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_RECEIVER_NO_ABORT</span> <span class="o">=</span> <span class="mi">134217728</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_RECEIVER_REGISTERED_ONLY</span> <span class="o">=</span> <span class="mi">1073741824</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_RECEIVER_REPLACE_PENDING</span> <span class="o">=</span> <span class="mi">536870912</span><span class="p">;</span>
+    <span class="kr">static</span> <span class="nx">FLAG_RECEIVER_VISIBLE_TO_INSTANT_APPS</span> <span class="o">=</span> <span class="mi">2097152</span><span class="p">;</span>
+
+    <span class="nx">constructor</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_extras</span> <span class="o">=</span> <span class="p">{};</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_categories</span> <span class="o">=</span> <span class="p">[];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_flags</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="p">}</span>
+
+    <span class="nx">setAction</span><span class="p">(</span><span class="nx">action</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_action</span> <span class="o">=</span> <span class="nx">action</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">getAction</span><span class="p">():</span> <span class="nx">string</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_action</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">setClassName</span><span class="p">(</span><span class="na">className</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_className</span> <span class="o">=</span> <span class="nx">className</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">getClassName</span><span class="p">():</span> <span class="nx">string</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_className</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">setPackage</span><span class="p">(</span><span class="na">packageName</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_package</span> <span class="o">=</span> <span class="nx">packageName</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">getPackage</span><span class="p">():</span> <span class="nx">string</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_package</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">putExtra</span><span class="p">(</span><span class="na">key</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span> <span class="na">extra</span><span class="p">:</span> <span class="nx">Writable</span> <span class="o">|</span> <span class="nx">JavaReadable</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_extras</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">extra</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">putExtras</span><span class="p">(</span><span class="na">extras</span><span class="p">:</span> <span class="nx">Bundle</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_extras</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_extras</span><span class="p">,</span> <span class="nx">extras</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">removeExtra</span><span class="p">(</span><span class="na">key</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="k">delete</span> <span class="k">this</span><span class="p">.</span><span class="nx">_extras</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="nx">replaceExtras</span><span class="p">(</span><span class="na">extras</span><span class="p">:</span> <span class="nx">Bundle</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_extras</span> <span class="o">=</span> <span class="nx">extras</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">getExtra</span><span class="p">(</span><span class="na">key</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="nx">Writable</span> <span class="o">|</span> <span class="nx">JavaReadable</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_extras</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="nx">getExtras</span><span class="p">():</span> <span class="nx">Bundle</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_extras</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">hasExtra</span><span class="p">(</span><span class="na">key</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="kr">boolean</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_extras</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">addCategory</span><span class="p">(</span><span class="na">category</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_categories</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">category</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">removeCategory</span><span class="p">(</span><span class="na">category</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_categories</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">e</span> <span class="o">!==</span> <span class="nx">category</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">getCategories</span><span class="p">():</span> <span class="nx">string</span><span class="p">[]</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_categories</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">hasCategory</span><span class="p">(</span><span class="na">category</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="kr">boolean</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_categories</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">category</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">addFlags</span><span class="p">(</span><span class="na">flags</span><span class="p">:</span> <span class="nx">number</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_flags</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">flags</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="nx">setFlags</span><span class="p">(</span><span class="na">flags</span><span class="p">:</span> <span class="nx">number</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_flags</span> <span class="o">=</span> <span class="p">[</span><span class="nx">flags</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="nx">getFlags</span><span class="p">():</span> <span class="nx">number</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">_flags</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nx">removeFlags</span><span class="p">(</span><span class="na">flags</span><span class="p">:</span> <span class="nx">number</span><span class="p">):</span> <span class="k">void</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">_flags</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="nx">e</span> <span class="o">!==</span> <span class="nx">flags</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre>
+</div>
+
+
+    <div class="tags">
+        
+    </div>
+
+    
+
+</div>
+
+<hr class="shaded"/>
+
+          </div>
+    <!-- /.row -->
+        </div>
+<!-- /.container -->
+    </div>
+</div>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script>
+    $('.no_icon').magnificPopup({
+		type: 'image',
+		closeBtnInside: false,
+    closeOnContentClick: false,
+
+    callbacks: {
+      open: function() {
+        var self = this;
+        self.wrap.on('click.pinhandler', 'img', function() {
+          self.wrap.toggleClass('mfp-force-scrollbars');
+        });
+      },
+      beforeClose: function() {
+            this.wrap.off('click.pinhandler');
+        this.wrap.removeClass('mfp-force-scrollbars');
+      }
+    },
+
+    image: {
+			verticalFit: false
+		}
+
+	});
+  </script>
+</body>
+
+</html>

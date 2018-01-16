@@ -241,6 +241,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li class="subfolders">
+                <a href="#">Службы</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_broadcastreceivers.html">Приёмник сообщений</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Устройства</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesprinter.html">Принтер чеков</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescanner.html">Сканер штрихкодов</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescales.html">Весы</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
             
         </ul>
         
@@ -248,58 +302,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">Службы</a>
+        <a href="#">Параметры</a>
         
         <ul>
             
             
             
-            <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+            <li><a href="react_reference_parameters_receipt.html">Чеки</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_broadcastreceivers.html">Приёмник сообщений</a></li>
-            
-            
-            
-            
-        </ul>
-        
-        
-    
-    <li>
-        
-        <a href="#">Устройства</a>
-        
-        <ul>
-            
-            
-            
-            <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+            <li><a href="react_reference_parameters_device.html">Устройства</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_devicesprinter.html">Принтер чеков</a></li>
+            <li><a href="react_reference_parameters_user.html">Товары</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_devicescanner.html">Сканер штрихкодов</a></li>
+            <li><a href="react_reference_parameters_navigation.html">Навигация</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_devicescales.html">Весы</a></li>
+            <li><a href="react_reference_parameters_payments.html">Платежи</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_parameters_service.html">Службы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_parameters_user.html">Пользователи</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_parameters_errors.html">Ошибки</a></li>
             
             
             
@@ -373,12 +431,14 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
+<p>Метод для <a href="./react_reference_introduction.html#eventslistening">подписки приложения на события</a>.</p>
+
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">type</code></li>
-  <li><code class="highlighter-rouge">listener</code></li>
-  <li><code class="highlighter-rouge">isGlobal</code></li>
+  <li><code class="highlighter-rouge">type</code> – тип события. Для получения данных от сканера штрихкодов указывайте тип <code class="highlighter-rouge">ScannerEventType</code>.</li>
+  <li><code class="highlighter-rouge">listener</code> – тип слушателя. Для получения данных от сканера штрихкодов указывайте тип <code class="highlighter-rouge">ScannerEventListener</code>.</li>
+  <li><code class="highlighter-rouge">isGlobal</code> – указывает глобальную доступность метода. По умолчанию <code class="highlighter-rouge">true</code>.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -391,14 +451,21 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
+<p>Метод для отмены подписки на события.</p>
+
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">type</code></li>
-  <li><code class="highlighter-rouge">listener</code></li>
+  <li><code class="highlighter-rouge">type</code> – тип события. Для отмены получения данных от сканера штрихкодов указывайте тип <code class="highlighter-rouge">ScannerEventType</code>.</li>
+  <li><code class="highlighter-rouge">listener</code> – тип слушателя. Для отмены получения данных от сканера штрихкодов указывайте тип <code class="highlighter-rouge">ScannerEventListener</code>.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">true</code> – если слушатель удалён.</li>
+  <li><code class="highlighter-rouge">false</code> – если слушатель не удалён.</li>
+</ul>
 
 
     <div class="tags">

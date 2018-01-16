@@ -241,6 +241,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li class="subfolders">
+                <a href="#">Службы</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_broadcastreceivers.html">Приёмник сообщений</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Устройства</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesprinter.html">Принтер чеков</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescanner.html">Сканер штрихкодов</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescales.html">Весы</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
             
         </ul>
         
@@ -248,58 +302,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">Службы</a>
+        <a href="#">Параметры</a>
         
         <ul>
             
             
             
-            <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+            <li><a href="react_reference_parameters_receipt.html">Чеки</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_broadcastreceivers.html">Приёмник сообщений</a></li>
-            
-            
-            
-            
-        </ul>
-        
-        
-    
-    <li>
-        
-        <a href="#">Устройства</a>
-        
-        <ul>
-            
-            
-            
-            <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+            <li><a href="react_reference_parameters_device.html">Устройства</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_devicesprinter.html">Принтер чеков</a></li>
+            <li><a href="react_reference_parameters_user.html">Товары</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_devicescanner.html">Сканер штрихкодов</a></li>
+            <li><a href="react_reference_parameters_navigation.html">Навигация</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_devicescales.html">Весы</a></li>
+            <li><a href="react_reference_parameters_payments.html">Платежи</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_parameters_service.html">Службы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_parameters_user.html">Пользователи</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_parameters_errors.html">Ошибки</a></li>
             
             
             
@@ -361,11 +419,15 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p>Используя React Native SDK приложения могут:</p>
+  <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Создание приложения для смарт-терминала на основе React Native SDK описано в разделе <a href="./doc_react_getting_started.html"><em>Подготовка среды для разработки на React Native</em></a>.</div>
+
+<h2 id="section">Взаимодействие со смарт-терминалом</h2>
+
+<p>Используя React Native SDK приложения могут:</p>
 
 <p><strong>Получать данные</strong></p>
 
-<p>Приложения могут получать данные от смарт-терминала одним из двух способов: с помощью <a href="./react_reference_broadcastreceivers.html">подписки на широковещательные сообщения</a> и с помощью методов <code class="highlighter-rouge">get*</code>.
+<p>Приложения могут получать данные от смарт-терминала с помощью методов <code class="highlighter-rouge">get*</code>.
 Методы <code class="highlighter-rouge">get*</code> представлены в следующих API:</p>
 
 <ul>
@@ -390,12 +452,33 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Изменять данные</strong></p>
 
-<p>Приложения могут изменять данные с помощью интеграционных служб, работать с которыми вы можете посредством <a href="./react_reference_integrationapi.html">интеграционных служб</a>.</p>
+<p>Приложения могут изменять данные, например применять скидку для уже созданных чеков с помощью <a href="./react_reference_integrationapi.html">интеграционных служб</a>.</p>
 
-<p>Также с помощью библиотеки React Native SDK вы можете <a href="./react_reference_devices.html">подключать к смарт-терминалу различные устройства</a>.</p>
+<h2 id="section-1">Взаимодействие с интерфейсом смарт-терминала</h2>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Создание приложения и подключение библиотеки <code class="highlighter-rouge">evotor-integration-library</code> описано в разделе <a href="./doc_react_getting_started.html"><em>Подготовка среды для разработки на React Native</em></a>.</div>
+<p>Для взаимодействия с интерфейсом смарт-терминала и другими приложениями, установленными на смарт-терминале используйте <a href="./react_reference_navigationapi.html">Navigation API</a>.</p>
 
+<h2 id="section-2">Подключение устройств</h2>
+
+<p>Также с помощью React Native SDK вы можете <a href="./react_reference_devices.html">подключать к смарт-терминалу различные устройства</a>.</p>
+
+<h2 id="eventslistening">Подписка на события {eventslistening}</h2>
+
+<p>Вы можете подписывать приложения на события, которые создаёт смарт-терминал. Для этого используйте метод:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="o">*</span><span class="err">тип</span> <span class="err">события</span><span class="o">*</span><span class="p">,</span> <span class="nx">listener</span><span class="err">:</span> <span class="o">*</span><span class="err">тип</span> <span class="err">слушателя</span><span class="o">*</span><span class="p">,</span> <span class="nx">isGlobal</span><span class="err">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
+</code></pre>
+</div>
+
+<p>Метод представлен в:</p>
+
+<ul>
+  <li><a href="./react_reference_integrationapi.html">Интеграционных службах</a></li>
+  <li><a href="./react_reference_broadcastreceivers.html">Широковещательных сообщениях</a></li>
+  <li><a href="./react_reference_devicesconnection.html">Подключении устройств</a></li>
+  <li><a href="./react_reference_devices.html">Подключении сканера штрихкодов</a></li>
+  <li><a href="./react_reference_navigationapi.html">Navigation API</a></li>
+</ul>
 
 
     <div class="tags">

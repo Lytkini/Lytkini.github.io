@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" react">
-<title>Подключение устройств | Документация Эвотор</title>
+<title>Платежи | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -156,7 +156,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Подключение устройств">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Платежи">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -268,7 +268,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li class="active"><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+                    <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
                     
                     
                     
@@ -336,7 +336,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="react_reference_parameters_payments.html">Платежи</a></li>
+            <li class="active"><a href="react_reference_parameters_payments.html">Платежи</a></li>
             
             
             
@@ -377,7 +377,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Подключение устройств</h1>
+   <h1 class="post-title-main">Платежи</h1>
 </div>
 
 
@@ -415,69 +415,41 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/react_reference/react_reference_devicesconnection.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/react_reference/react_reference_parameters_payments.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <h2 id="section">Описание</h2>
+  <h2 id="paymentpurpose">Класс PaymentPurpose</h2>
 
-<h2 id="section-1">Методы</h2>
-
-<h3 id="startinitconnections">startInitConnections</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">startInitConnections</span><span class="p">()</span><span class="err">:</span> <span class="k">void</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PaymentPurpose</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">identifier</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">paymentSystemId</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">total</span><span class="err">:</span> <span class="nx">number</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">accountId</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">userMessage</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">__name__</span> <span class="o">=</span> <span class="s1">'PaymentPurpose'</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">identifier</span> <span class="o">=</span> <span class="nx">identifier</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">paymentSystemId</span> <span class="o">=</span> <span class="nx">paymentSystemId</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">total</span> <span class="o">=</span> <span class="nx">total</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">accountId</span> <span class="o">=</span> <span class="nx">accountId</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">userMessage</span> <span class="o">=</span> <span class="nx">userMessage</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
 </div>
 
-<p><strong>Описание</strong></p>
+<h2 id="paymentsystem">Класс PaymentSystem</h2>
 
-<p><strong>Параметры</strong></p>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="addeventlistener---">addEventListener для любого устройства</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">DeviceConnectionEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="err">:</span> <span class="nx">DeviceConnectionEventListener</span><span class="p">,</span> <span class="nx">isGlobal</span><span class="err">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PaymentSystem</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">paymentType</span><span class="err">:</span> <span class="nx">PaymentType</span><span class="p">,</span> <span class="nx">userDescription</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">paymentSystemId</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">__name__</span> <span class="o">=</span> <span class="s1">'PaymentSystem'</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">paymentType</span> <span class="o">=</span> <span class="nx">paymentType</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">userDescription</span> <span class="o">=</span> <span class="nx">userDescription</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">paymentSystemId</span> <span class="o">=</span> <span class="nx">paymentSystemId</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
 </div>
-
-<p><strong>Описание</strong></p>
-
-<p>Метод для <a href="./react_reference_introduction.html#eventslistening">подписки приложения на события</a>.</p>
-
-<p><strong>Параметры</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">type</code> – тип события. Для получения данных от подключённого устройства указывайте тип <code class="highlighter-rouge">DeviceConnectionEventType</code>.</li>
-  <li><code class="highlighter-rouge">listener</code> – тип слушателя. Для получения данных от подключённого устройства указывайте тип <code class="highlighter-rouge">DeviceConnectionEventListener</code>.</li>
-  <li><code class="highlighter-rouge">isGlobal</code> – указывает глобальную доступность метода. По умолчанию <code class="highlighter-rouge">true</code>.</li>
-</ul>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="removeeventlistener---">removeEventListener для любого устройства</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">removeEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">DeviceConnectionEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="p">?:</span> <span class="nx">DeviceConnectionEventListener</span><span class="p">)</span><span class="err">:</span> <span class="kr">boolean</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p>Метод для отмены подписки на события.</p>
-
-<p><strong>Параметры</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">type</code> – тип события. Для отмены получения данных от подключённого устройства указывайте тип <code class="highlighter-rouge">DeviceConnectionEventType</code>.</li>
-  <li><code class="highlighter-rouge">listener</code> – тип слушателя. Для отмены получения данных от подключённого устройства указывайте тип <code class="highlighter-rouge">DeviceConnectionEventListener</code>.</li>
-</ul>
-
-<p><strong>Возвращает</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">true</code> – если слушатель удалён.</li>
-  <li><code class="highlighter-rouge">false</code> – если слушатель не удалён.</li>
-</ul>
 
 
     <div class="tags">

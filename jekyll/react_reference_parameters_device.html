@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" react">
-<title>Подключение устройств | Документация Эвотор</title>
+<title>Устройства | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -156,7 +156,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Подключение устройств">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Устройства">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -268,7 +268,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li class="active"><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+                    <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
                     
                     
                     
@@ -315,7 +315,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="react_reference_parameters_device.html">Устройства</a></li>
+            <li class="active"><a href="react_reference_parameters_device.html">Устройства</a></li>
             
             
             
@@ -377,7 +377,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Подключение устройств</h1>
+   <h1 class="post-title-main">Устройства</h1>
 </div>
 
 
@@ -415,69 +415,59 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/react_reference/react_reference_devicesconnection.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/react_reference/react_reference_parameters_device.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <h2 id="section">Описание</h2>
+  <h2 id="printabletext">Класс PrintableText</h2>
 
-<h2 id="section-1">Методы</h2>
-
-<h3 id="startinitconnections">startInitConnections</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">startInitConnections</span><span class="p">()</span><span class="err">:</span> <span class="k">void</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintableText</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">text</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">__name__</span> <span class="o">=</span> <span class="s1">'PrintableText'</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">'TEXT'</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">text</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
 </div>
 
-<p><strong>Описание</strong></p>
+<h2 id="printablebarcode">Класс PrintableBarcode</h2>
 
-<p><strong>Параметры</strong></p>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="addeventlistener---">addEventListener для любого устройства</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">DeviceConnectionEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="err">:</span> <span class="nx">DeviceConnectionEventListener</span><span class="p">,</span> <span class="nx">isGlobal</span><span class="err">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintableBarcode</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">barcodeValue</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">barcodeType</span><span class="err">:</span> <span class="nx">BarcodeType</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">__name__</span> <span class="o">=</span> <span class="s1">'PrintableBarcode'</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">'BARCODE'</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">barcodeValue</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">barcodeType</span> <span class="o">=</span> <span class="nx">barcodeType</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
 </div>
 
-<p><strong>Описание</strong></p>
+<h2 id="printableimage">Класс PrintableImage</h2>
 
-<p>Метод для <a href="./react_reference_introduction.html#eventslistening">подписки приложения на события</a>.</p>
-
-<p><strong>Параметры</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">type</code> – тип события. Для получения данных от подключённого устройства указывайте тип <code class="highlighter-rouge">DeviceConnectionEventType</code>.</li>
-  <li><code class="highlighter-rouge">listener</code> – тип слушателя. Для получения данных от подключённого устройства указывайте тип <code class="highlighter-rouge">DeviceConnectionEventListener</code>.</li>
-  <li><code class="highlighter-rouge">isGlobal</code> – указывает глобальную доступность метода. По умолчанию <code class="highlighter-rouge">true</code>.</li>
-</ul>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="removeeventlistener---">removeEventListener для любого устройства</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">removeEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">DeviceConnectionEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="p">?:</span> <span class="nx">DeviceConnectionEventListener</span><span class="p">)</span><span class="err">:</span> <span class="kr">boolean</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintableImage</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">path</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">__name__</span> <span class="o">=</span> <span class="s1">'PrintableImage'</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">'IMAGE'</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="nx">path</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
 </div>
 
-<p><strong>Описание</strong></p>
+<h2 id="weight">Класс Weight</h2>
 
-<p>Метод для отмены подписки на события.</p>
-
-<p><strong>Параметры</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">type</code> – тип события. Для отмены получения данных от подключённого устройства указывайте тип <code class="highlighter-rouge">DeviceConnectionEventType</code>.</li>
-  <li><code class="highlighter-rouge">listener</code> – тип слушателя. Для отмены получения данных от подключённого устройства указывайте тип <code class="highlighter-rouge">DeviceConnectionEventListener</code>.</li>
-</ul>
-
-<p><strong>Возвращает</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">true</code> – если слушатель удалён.</li>
-  <li><code class="highlighter-rouge">false</code> – если слушатель не удалён.</li>
-</ul>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Weight</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">weightInGrams</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">supportStable</span><span class="err">:</span> <span class="kr">boolean</span><span class="p">,</span> <span class="nx">stable</span><span class="err">:</span> <span class="kr">boolean</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">__name__</span> <span class="o">=</span> <span class="s1">'Weight'</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">weightInGrams</span> <span class="o">=</span> <span class="nx">weightInGrams</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">supportStable</span> <span class="o">=</span> <span class="nx">supportStable</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">stable</span> <span class="o">=</span> <span class="nx">stable</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
 
     <div class="tags">

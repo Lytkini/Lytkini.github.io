@@ -241,6 +241,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li class="subfolders">
+                <a href="#">Службы</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_broadcastreceivers.html">Приёмник сообщений</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Устройства</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesprinter.html">Принтер чеков</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescanner.html">Сканер штрихкодов</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescales.html">Весы</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
             
         </ul>
         
@@ -248,58 +302,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">Службы</a>
+        <a href="#">Параметры</a>
         
         <ul>
             
             
             
-            <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+            <li><a href="react_reference_parameters_receipt.html">Чеки</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_broadcastreceivers.html">Приёмник сообщений</a></li>
-            
-            
-            
-            
-        </ul>
-        
-        
-    
-    <li>
-        
-        <a href="#">Устройства</a>
-        
-        <ul>
-            
-            
-            
-            <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+            <li><a href="react_reference_parameters_device.html">Устройства</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_devicesprinter.html">Принтер чеков</a></li>
+            <li><a href="react_reference_parameters_user.html">Товары</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_devicescanner.html">Сканер штрихкодов</a></li>
+            <li><a href="react_reference_parameters_navigation.html">Навигация</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_devicescales.html">Весы</a></li>
+            <li><a href="react_reference_parameters_payments.html">Платежи</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_parameters_service.html">Службы</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_parameters_user.html">Пользователи</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="react_reference_parameters_errors.html">Ошибки</a></li>
             
             
             
@@ -365,9 +423,7 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="section-1">Методы</h2>
 
-<h3 id="getallusers"><code class="highlighter-rouge">getAllUsers</code></h3>
-
-<h4 id="getallusers-1">getAllUsers</h4>
+<h3 id="getallusers">getAllUsers</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllUsers</span><span class="p">(</span><span class="nx">getter</span><span class="err">:</span> <span class="p">(</span><span class="nx">User</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
 </code></pre>
@@ -380,7 +436,7 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">getter</code></li>
+  <li><code class="highlighter-rouge">getter</code> – функция, в параметры которой требуется передавать массив <a href="./react_reference_parameters_user.html#user">пользователей</a>.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -398,7 +454,7 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">getter</code></li>
+  <li><code class="highlighter-rouge">getter</code> – функция, в параметры которой требуется передавать <a href="./react_reference_parameters_user.html#user">пользователя</a>.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -416,7 +472,7 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">getter</code></li>
+  <li><code class="highlighter-rouge">getter</code> – функция, в параметры которой требуется передавать массив <a href="./react_reference_parameters_user.html#grant">прав пользователей</a>.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -434,7 +490,7 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">getter</code></li>
+  <li><code class="highlighter-rouge">getter</code> – функция, в параметры которой требуется передавать <a href="./react_reference_parameters_user.html#grant">права пользователей</a>.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
