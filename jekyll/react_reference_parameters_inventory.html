@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" react">
-<title>Receipt API | Документация Эвотор</title>
+<title>Товары | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -156,7 +156,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Receipt API">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Товары">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -223,7 +223,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li class="active"><a href="react_reference_receiptapi.html">Receipt API</a></li>
+            <li><a href="react_reference_receiptapi.html">Receipt API</a></li>
             
             
             
@@ -322,7 +322,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="react_reference_parameters_inventory.html">Товары</a></li>
+            <li class="active"><a href="react_reference_parameters_inventory.html">Товары</a></li>
             
             
             
@@ -377,7 +377,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Receipt API</h1>
+   <h1 class="post-title-main">Товары</h1>
 </div>
 
 
@@ -415,138 +415,64 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/react_reference/react_reference_receiptapi.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/react_reference/react_reference_parameters_inventory.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <h2 id="section">Описание</h2>
+  <h2 id="productitem">Класс ProductItem</h2>
 
-<h2 id="section-1">Методы</h2>
-
-<h3 id="getpositionbybarcode">getPositionByBarcode</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getPositionByBarcode</span><span class="p">(</span><span class="nx">barcode</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">getter</span><span class="err">:</span> <span class="p">(</span><span class="nx">Position</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ProductItem</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">parentUuid</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">code</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">name</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">__name__</span> <span class="o">=</span> <span class="s1">'ProductItem'</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">uuid</span> <span class="o">=</span> <span class="nx">uuid</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">parentUuid</span> <span class="o">=</span> <span class="nx">parentUuid</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">code</span> <span class="o">=</span> <span class="nx">code</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
 </div>
 
-<p><strong>Описание</strong></p>
+<h2 id="field">Класс Field</h2>
 
-<p>Получает товарную позицию по значению штрихкода.</p>
-
-<p><strong>Параметры</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">barcode</code></li>
-  <li><code class="highlighter-rouge">getter</code></li>
-</ul>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="openreceipt">openReceipt</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">openReceipt</span><span class="p">(</span><span class="nx">positions</span><span class="err">:</span> <span class="nx">Position</span><span class="p">[],</span> <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Field</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">fieldUUID</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">title</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">type</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">__name__</span> <span class="o">=</span> <span class="s1">'Field'</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">fieldUUID</span> <span class="o">=</span> <span class="nx">fieldUUID</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">title</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="nx">type</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
 </div>
 
-<p><strong>Описание</strong></p>
+<h2 id="productextra">Класс ProductExtra</h2>
 
-<p>Открывает чек, сформированный в смарт-терминале.</p>
-
-<p><strong>Параметры</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">positions</code></li>
-  <li><code class="highlighter-rouge">extra</code></li>
-</ul>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="sendreceipt">sendReceipt</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">sendReceipt</span><span class="p">(</span><span class="nx">printReceipts</span><span class="err">:</span> <span class="nx">PrintReceipt</span><span class="p">[],</span>
-                   <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                   <span class="nx">phone</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                   <span class="nx">email</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                   <span class="nx">discount</span><span class="err">:</span> <span class="nb">Number</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                   <span class="nx">onSuccess</span><span class="err">:</span> <span class="p">((</span><span class="nx">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                   <span class="nx">onError</span><span class="err">:</span> <span class="p">((</span><span class="nx">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ProductExtra</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">name</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">commodityUUID</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">fieldUUID</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">fieldValue</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">data</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">__name__</span> <span class="o">=</span> <span class="s1">'ProductExtra'</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">uuid</span> <span class="o">=</span> <span class="nx">uuid</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">commodityUUID</span> <span class="o">=</span> <span class="nx">commodityUUID</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">fieldUUID</span> <span class="o">=</span> <span class="nx">fieldUUID</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">fieldValue</span> <span class="o">=</span> <span class="nx">fieldValue</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="nx">data</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre>
 </div>
-
-<p><strong>Описание</strong></p>
-
-<p>Передаёт чек, сформированный в приложении, в смарт-терминал.</p>
-
-<p><strong>Параметры</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">printReceipts</code></li>
-  <li><code class="highlighter-rouge">extra</code></li>
-  <li><code class="highlighter-rouge">phone</code></li>
-  <li><code class="highlighter-rouge">email</code></li>
-  <li><code class="highlighter-rouge">discount</code></li>
-  <li><code class="highlighter-rouge">onSuccess</code></li>
-  <li><code class="highlighter-rouge">onError</code></li>
-</ul>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="getreceiptbytype">getReceiptByType</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getReceiptByType</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">ReceiptType</span><span class="p">,</span> <span class="nx">getter</span><span class="err">:</span> <span class="p">(</span><span class="nx">Receipt</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p>Получает чек по типу: чек продажи (<code class="highlighter-rouge">SELL</code>) или чек возврата (<code class="highlighter-rouge">PAYBACK</code>).</p>
-
-<p><strong>Параметры</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">type</code></li>
-  <li><code class="highlighter-rouge">getter</code></li>
-</ul>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="getreceiptbyuuid">getReceiptByUuid</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getReceiptByUuid</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">getter</span><span class="err">:</span> <span class="p">(</span><span class="nx">Receipt</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p>Получает чек по идентификатору (<code class="highlighter-rouge">uuid</code>).</p>
-
-<p><strong>Параметры</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">uuid</code></li>
-  <li><code class="highlighter-rouge">getter</code></li>
-</ul>
-
-<p><strong>Возвращает</strong></p>
-
-<h3 id="getreceiptheaders">getReceiptHeaders</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getReceiptHeaders</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">ReceiptType</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">getter</span><span class="err">:</span> <span class="p">(</span><span class="nx">ReceiptHeader</span><span class="p">[])</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p>Получает заголовки чека.</p>
-
-<p><strong>Параметры</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">type</code></li>
-  <li><code class="highlighter-rouge">getter</code></li>
-</ul>
-
-<p><strong>Возвращает</strong></p>
 
 
     <div class="tags">

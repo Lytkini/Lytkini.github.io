@@ -322,7 +322,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="react_reference_parameters_user.html">Товары</a></li>
+            <li><a href="react_reference_parameters_inventory.html">Товары</a></li>
             
             
             
@@ -427,10 +427,12 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
+<p>Передаёт данные для печати на принтере смарт-терминала.</p>
+
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">printables</code></li>
+  <li><code class="highlighter-rouge">printables</code> – функция, в параметры которой требуется передать массив элементов для печати: <a href="./react_reference_parameters_device.html#PrintableText">текст</a>, <a href="./react_reference_parameters_device.html#PrintableBarcode">штрихкод</a>, <a href="./react_reference_parameters_device.html#PrintableImage">изображение</a>.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -443,10 +445,12 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
+<p>Получает длину печатной строки в символах.</p>
+
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">getter</code></li>
+  <li><code class="highlighter-rouge">getter</code> – функция, в параметры которой передаётся число, указывающее длину печатной строки в символах.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -459,10 +463,12 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
+<p>Получает длину печатной строки в пикселях.</p>
+
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">getter</code></li>
+  <li><code class="highlighter-rouge">getter</code> – функция, в параметры которой передаётся число, указывающее длину печатной строки в пикселях.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
