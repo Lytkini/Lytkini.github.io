@@ -216,28 +216,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="react_reference_userapi.html">User API</a></li>
+            <li><a href="react_reference_userapi.html">UserAPI</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_receiptapi.html">Receipt API</a></li>
+            <li><a href="react_reference_receiptapi.html">ReceiptAPI</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_inventoryapi.html">Inventory API</a></li>
+            <li><a href="react_reference_inventoryapi.html">InventoryAPI</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_navigationapi.html">Navigation API</a></li>
+            <li><a href="react_reference_navigationapi.html">NavigationAPI</a></li>
             
             
             
@@ -247,13 +247,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    <li><a href="react_reference_integrationapi.html">IntegrationServices</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="react_reference_broadcastreceivers.html">Приёмник сообщений</a></li>
+                    <li><a href="react_reference_broadcastreceivers.html">BroadcastReceiver</a></li>
                     
                     
                     
@@ -268,25 +268,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+                    <li><a href="react_reference_devicesconnection.html">DeviceServiceConnector</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="react_reference_devicesprinter.html">Принтер чеков</a></li>
+                    <li><a href="react_reference_devicesprinter.html">Printer</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="react_reference_devicescanner.html">Сканер штрихкодов</a></li>
+                    <li><a href="react_reference_devicescanner.html">Scanner</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="react_reference_devicescales.html">Весы</a></li>
+                    <li><a href="react_reference_devicescales.html">Scales</a></li>
                     
                     
                     
@@ -423,18 +423,9 @@ $('#toc').on('click', 'a', function() {
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">AbstractJavaReadable</span> <span class="p">{</span>
 
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">__name__</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{}</span>
 
-    <span class="nx">toJavaReadable</span><span class="p">()</span><span class="err">:</span> <span class="nx">JavaReadable</span> <span class="p">{</span>
-        <span class="kr">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="na">__name__</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">__name__</span><span class="p">,</span>
-            <span class="na">__value__</span><span class="p">:</span> <span class="p">{}</span>
-        <span class="p">};</span>
-        <span class="nb">Object</span><span class="p">.</span><span class="nx">assign</span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="k">this</span><span class="p">);</span>
-        <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span class="nx">toJavaReadable</span><span class="p">()</span><span class="err">:</span> <span class="nx">JavaReadable</span>
 
 <span class="p">}</span>
 </code></pre>

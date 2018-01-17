@@ -216,28 +216,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="react_reference_userapi.html">User API</a></li>
+            <li><a href="react_reference_userapi.html">UserAPI</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_receiptapi.html">Receipt API</a></li>
+            <li><a href="react_reference_receiptapi.html">ReceiptAPI</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_inventoryapi.html">Inventory API</a></li>
+            <li><a href="react_reference_inventoryapi.html">InventoryAPI</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_navigationapi.html">Navigation API</a></li>
+            <li><a href="react_reference_navigationapi.html">NavigationAPI</a></li>
             
             
             
@@ -247,13 +247,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    <li><a href="react_reference_integrationapi.html">IntegrationServices</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="react_reference_broadcastreceivers.html">Приёмник сообщений</a></li>
+                    <li><a href="react_reference_broadcastreceivers.html">BroadcastReceiver</a></li>
                     
                     
                     
@@ -268,25 +268,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+                    <li><a href="react_reference_devicesconnection.html">DeviceServiceConnector</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="react_reference_devicesprinter.html">Принтер чеков</a></li>
+                    <li><a href="react_reference_devicesprinter.html">Printer</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="react_reference_devicescanner.html">Сканер штрихкодов</a></li>
+                    <li><a href="react_reference_devicescanner.html">Scanner</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="react_reference_devicescales.html">Весы</a></li>
+                    <li><a href="react_reference_devicescales.html">Scales</a></li>
                     
                     
                     
@@ -430,16 +430,7 @@ $('#toc').on('click', 'a', function() {
                 <span class="nx">phone</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
                 <span class="nx">pin</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
                 <span class="nx">roleUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
-                <span class="nx">roleTitle</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">__name__</span> <span class="o">=</span> <span class="s1">'User'</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">uid</span> <span class="o">=</span> <span class="nx">uuid</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">secondName</span> <span class="o">=</span> <span class="nx">secondName</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">=</span> <span class="nx">firstName</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">phone</span> <span class="o">=</span> <span class="nx">phone</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">pin</span> <span class="o">=</span> <span class="nx">pin</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">roleUuid</span> <span class="o">=</span> <span class="nx">roleUuid</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">roleTitle</span> <span class="o">=</span> <span class="nx">roleTitle</span><span class="p">;</span>
-    <span class="p">}</span>
+                <span class="nx">roleTitle</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
 </code></pre>
 </div>
@@ -447,11 +438,7 @@ $('#toc').on('click', 'a', function() {
 <h2 id="grant">Класс Grant</h2>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Grant</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">title</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">roleUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">__name__</span> <span class="o">=</span> <span class="s1">'Grant'</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">title</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="nx">roleUuid</span> <span class="o">=</span> <span class="nx">roleUuid</span>
-    <span class="p">}</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">title</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">roleUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
 </code></pre>
 </div>

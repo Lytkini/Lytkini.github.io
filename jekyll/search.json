@@ -917,7 +917,7 @@
 
 
 {
-"title": "Приёмники широковещательных сообщений",
+"title": "BroadcastReceiver",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_broadcastreceivers.html",
@@ -928,7 +928,7 @@
 
 
 {
-"title": "Подключение устройств",
+"title": "DeviceServiceConnector",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_devicesconnection.html",
@@ -939,7 +939,7 @@
 
 
 {
-"title": "Принетр чеков",
+"title": "Printer",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_devicesprinter.html",
@@ -950,10 +950,10 @@
 
 
 {
-"title": "Сканер штрихкодов",
+"title": "Scanner",
 "tags": "",
 "keywords": "react",
-"url": "react_reference_devices.html",
+"url": "react_reference_devicescanner.html",
 "summary": ""
 }
 ,
@@ -961,10 +961,10 @@
 
 
 {
-"title": "Интерфейс для работы с устройствами",
+"title": "Scales",
 "tags": "",
 "keywords": "react",
-"url": "react_reference_devicesscales.html",
+"url": "react_reference_devicescales.html",
 "summary": ""
 }
 ,
@@ -983,7 +983,7 @@
 
 
 {
-"title": "Интерфейс интеграционных служб",
+"title": "IntegrationServices",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_integrationapi.html",

@@ -216,28 +216,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="react_reference_userapi.html">User API</a></li>
+            <li><a href="react_reference_userapi.html">UserAPI</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_receiptapi.html">Receipt API</a></li>
+            <li><a href="react_reference_receiptapi.html">ReceiptAPI</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_inventoryapi.html">Inventory API</a></li>
+            <li><a href="react_reference_inventoryapi.html">InventoryAPI</a></li>
             
             
             
             
             
             
-            <li><a href="react_reference_navigationapi.html">Navigation API</a></li>
+            <li><a href="react_reference_navigationapi.html">NavigationAPI</a></li>
             
             
             
@@ -247,13 +247,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    <li><a href="react_reference_integrationapi.html">IntegrationServices</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="react_reference_broadcastreceivers.html">Приёмник сообщений</a></li>
+                    <li><a href="react_reference_broadcastreceivers.html">BroadcastReceiver</a></li>
                     
                     
                     
@@ -268,25 +268,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+                    <li><a href="react_reference_devicesconnection.html">DeviceServiceConnector</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="react_reference_devicesprinter.html">Принтер чеков</a></li>
+                    <li><a href="react_reference_devicesprinter.html">Printer</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="react_reference_devicescanner.html">Сканер штрихкодов</a></li>
+                    <li><a href="react_reference_devicescanner.html">Scanner</a></li>
                     
                     
                     
                     
                     
-                    <li><a href="react_reference_devicescales.html">Весы</a></li>
+                    <li><a href="react_reference_devicescales.html">Scales</a></li>
                     
                     
                     
@@ -427,57 +427,74 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Получать данные</strong></p>
 
-<p>Приложения могут получать данные от смарт-терминала с помощью методов <code class="highlighter-rouge">get*</code>.
-Методы <code class="highlighter-rouge">get*</code> представлены в следующих API:</p>
+<p>Приложения получают данные от смарт-терминала с помощью методов <code class="highlighter-rouge">get*</code>.
+Методы <code class="highlighter-rouge">get*</code> представлены в классах:</p>
 
 <ul>
-  <li><a href="./react_reference_userapi.html"><code class="highlighter-rouge">User API</code></a> – с помощью методов интерфейса приложения могут получать данные пользователей смарт-терминала.</li>
-  <li><a href="./react_reference_devices.html"><code class="highlighter-rouge">Интерфейс для работы с устройствами</code></a> – с помощью методов интерфейса приложения могут узнавать допустимую длину строки для печати в символах или пикселях, а также узнавать вес товара, с помощью весов, подключённых к смарт-терминалу.</li>
-  <li><a href="./react_reference_inventoryapi.html"><code class="highlighter-rouge">Inventory API</code></a> – с помощью методов интерфейса приложения могут получать данные товаров, которые хранятся в базе смарт-терминала.
+  <li><a href="./react_reference_userapi.html"><code class="highlighter-rouge">UserAPI</code></a> – с помощью методов класса приложения получают данные пользователей смарт-терминала.</li>
+  <li><a href="./react_reference_inventoryapi.html"><code class="highlighter-rouge">InventoryAPI</code></a> – с помощью методов класса приложения получают данные товаров, которые хранятся в базе смарт-терминала.
 <!-- * [`Navigation API`](./react_reference_navigationapi.html) – с помощью методов интерфейса приложения могут получать намерения платежей или изменения чеков продажи и возврата. --></li>
-  <li><a href="./react_reference_receiptapi.html"><code class="highlighter-rouge">Receipt API</code></a> – с помощью методов интерфейса приложения могут получать данные о позициях для добавления в чек, получать чеки по <code class="highlighter-rouge">uuid</code>, а также получать заголовки чеков.</li>
+  <li><a href="./react_reference_receiptapi.html"><code class="highlighter-rouge">ReceiptAPI</code></a> – с помощью методов класса приложения получают данные о позициях для добавления в чек, получать чеки по <code class="highlighter-rouge">uuid</code>, а также получать заголовки чеков.</li>
+  <li><a href="./react_reference_devicesprinter.html"><code class="highlighter-rouge">Printer</code></a> – с помощью методов класса приложения получают допустимую длину строки для печати в символах или пикселях.</li>
+  <li><a href="./react_reference_devicesscales.html"><code class="highlighter-rouge">Scales</code></a> – с помощью методов класса приложения получают вес товара, взвешиваемого на весах, подключённых к смарт-терминалу.</li>
 </ul>
 
-<p>Все методы <code class="highlighter-rouge">get*</code> содержат в качестве параметра функцию <code class="highlighter-rouge">getter</code>, в параметры которой передаётся результат вызова метода.</p>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Получение данных происходит асинхронно, поэтому все методы <code class="highlighter-rouge">get*</code> содержат в качестве параметра функцию <code class="highlighter-rouge">getter</code>, в параметры которой передаётся результат вызова метода.</div>
 
 <p><strong>Передавать данные</strong></p>
 
-<p>Методы, с помощью которых приложения передают данные для обработки в смарт-терминале, представлены в следующих API:</p>
+<p>Методы, с помощью которых приложения передают данные для обработки в смарт-терминале, представлены в классах:</p>
 
+<!-- * [`Navigation API`](./react_reference_navigationapi.html) – с помощью методов интерфейса приложения могут -->
 <ul>
-  <li><a href="./react_reference_devices.html"><code class="highlighter-rouge">Интерфейс для работы с устройствами</code></a> – с помощью методов интерфейса приложения могут передавать данные для печати на принтере, встроенном в смарт-терминал.
-<!-- * [`Navigation API`](./react_reference_navigationapi.html) – с помощью методов интерфейса приложения могут --></li>
-  <li><a href="./react_reference_receiptapi.html"><code class="highlighter-rouge">Receipt API</code></a> – с помощью методов интерфейса приложения могут передавать чек для оплаты в смарт-терминале.</li>
+  <li><a href="./react_reference_receiptapi.html"><code class="highlighter-rouge">ReceiptAPI</code></a> – с помощью методов класса приложения могут передавать чек для оплаты в смарт-терминале и отправить чек на emqil или телефон.</li>
+  <li><a href="./react_reference_devicesprinter.html"><code class="highlighter-rouge">Printer</code></a> – с помощью методов класса приложения могут передавать данные для печати на принтере, встроенном в смарт-терминал.</li>
 </ul>
 
 <p><strong>Изменять данные</strong></p>
 
 <p>Приложения могут изменять данные, например применять скидку для уже созданных чеков с помощью <a href="./react_reference_integrationapi.html">интеграционных служб</a>.</p>
 
-<h2 id="section-1">Взаимодействие с интерфейсом смарт-терминала</h2>
+<h2 id="section-1">Навигация и взаимодействие с приложениями смарт-терминала</h2>
 
-<p>Для взаимодействия с интерфейсом смарт-терминала и другими приложениями, установленными на смарт-терминале используйте <a href="./react_reference_navigationapi.html">Navigation API</a>.</p>
+<p>Для навигации и взаимодействия с приложениями смарт-терминала используйте класс <a href="./react_reference_navigationapi.html">NavigationAPI</a>.</p>
 
-<h2 id="section-2">Подключение устройств</h2>
+<h2 id="section-2">Работа с устройствами</h2>
 
-<p>Также с помощью React Native SDK вы можете <a href="./react_reference_devices.html">подключать к смарт-терминалу различные устройства</a>.</p>
+<p>Также с помощью React Native SDK вы можете <a href="./react_reference_devicesconnection.html">подключать устройтсва к смарт-терминалу</a> и взаимодействовать с ними.</p>
 
-<h2 id="eventslistening">Подписка на события {eventslistening}</h2>
+<p>Для работы с устройствами используйте классы:</p>
 
-<p>Вы можете подписывать приложения на события, которые создаёт смарт-терминал. Для этого используйте метод:</p>
+<ul>
+  <li><a href="./react_reference_devicesprinter.html"><code class="highlighter-rouge">Printer</code></a> – с помощью методов класса приложения могут работать с принтером чеков.</li>
+  <li><a href="./react_reference_devicescales.html"><code class="highlighter-rouge">Scales</code></a> – с помощью методов класса приложения могут работать с весами.</li>
+  <li><a href="./react_reference_devicescanner.html"><code class="highlighter-rouge">Scanner</code></a> – с помощью методов класса приложения могут работать со сканером штрихкодов.</li>
+</ul>
+
+<h2 id="eventslistening">Подписка на события</h2>
+
+<p>Вы можете подписать приложение на прослушивание событий. Для этого добавьте один или несколько слушателей с помощью метода:</p>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="o">*</span><span class="err">тип</span> <span class="err">события</span><span class="o">*</span><span class="p">,</span> <span class="nx">listener</span><span class="err">:</span> <span class="o">*</span><span class="err">тип</span> <span class="err">слушателя</span><span class="o">*</span><span class="p">,</span> <span class="nx">isGlobal</span><span class="err">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
 </code></pre>
 </div>
 
-<p>Метод представлен в:</p>
+<p>Чтобы удалить все слушатель, используйте метод:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">removeEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">IntegrationEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="err">:</span> <span class="nx">IntegrationEventListener</span><span class="p">)</span><span class="err">:</span> <span class="kr">boolean</span>
+</code></pre>
+</div>
+
+<p>Если вы не передадите в метод аргумент <code class="highlighter-rouge">listener</code>, он удалит все зарегистрированные слушатели.</p>
+
+<p>Методы представлены в классах:</p>
 
 <ul>
-  <li><a href="./react_reference_integrationapi.html">Интеграционных службах</a></li>
-  <li><a href="./react_reference_broadcastreceivers.html">Широковещательных сообщениях</a></li>
-  <li><a href="./react_reference_devicesconnection.html">Подключении устройств</a></li>
-  <li><a href="./react_reference_devices.html">Подключении сканера штрихкодов</a></li>
-  <li><a href="./react_reference_navigationapi.html">Navigation API</a></li>
+  <li><a href="./react_reference_integrationapi.html"><code class="highlighter-rouge">IntegrationServices</code></a></li>
+  <li><a href="./react_reference_broadcastreceivers.html"><code class="highlighter-rouge">BroadcastReceiver</code></a></li>
+  <li><a href="./react_reference_devicesconnection.html"><code class="highlighter-rouge">DeviceServiceConnector</code></a></li>
+  <li><a href="./react_reference_devices.html"><code class="highlighter-rouge">Scanner</code></a></li>
+  <li><a href="./react_reference_navigationapi.html"><code class="highlighter-rouge">NavigationAPI</code></a></li>
 </ul>
 
 
