@@ -10,8 +10,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="terminaljavascriptjava,  интеграция, манифест, подписка, события, BroadcastReceiver, команды">
-<title>Точки интеграции | Документация Эвотор</title>
+<meta name="keywords" content="terminalreact,  ">
+<title>Типы взаиможействия со смарт-терминалом | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -139,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Точки интеграции">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Типы взаиможействия со смарт-терминалом">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -288,7 +288,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li class="active"><a href="doc_app_integration_points.html">Точки интеграции</a></li>
+            <li><a href="doc_app_integration_points.html">Точки интеграции</a></li>
             
             
             
@@ -524,7 +524,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_react_interactiontypes.html">Типы взаиможействия со смарт-терминалом</a></li>
+            <li class="active"><a href="doc_react_interactiontypes.html">Типы взаиможействия со смарт-терминалом</a></li>
             
             
             
@@ -877,7 +877,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Точки интеграции</h1>
+   <h1 class="post-title-main">Типы взаиможействия со смарт-терминалом</h1>
 </div>
 
 
@@ -915,263 +915,86 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/smart_terminal_app_development/doc_app_integration_points.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/react_SDK/doc_react_interactiontypes.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <p><em>Точки интеграции</em> необходимы для взаимодействия приложения и смарт-терминала. Точки интеграции представляют собой события, которые распространяет смарт-терминал и <a href="./doc_app_integration_points.html#Commands">команды</a>, которые может передавать приложение. В ответ на события смарт-терминал <a href="./doc_app_integration_points.html#Callbacks">может ожидать</a> (в этом случае на событие требуется подписать службу) или <a href="./doc_app_integration_points.html#Events">не ожидать ответа</a> от приложения (на такие события требуется подписывать приёмники широковещательных сообщений). События, требующие ответа, похожи на команды, но передаёт их терминал.</p>
+  <h2 id="getter">Получение данных</h2>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> О том, что представляют из себя службы и приёмники сообщений вы можете <a href="https://developer.android.com/guide/index.html">узнать в документации для Android ОС</a>.</div>
+<p>Приложения получают данные от смарт-терминала с помощью методов <code class="highlighter-rouge">get*</code>.
+Методы <code class="highlighter-rouge">get*</code> представлены в классах:</p>
 
-<p>Схема ниже показывает процесс обмена событием, которое требует ответа. Первое приложение, которое получает событие, смарт-терминал выбирает случайным образом.</p>
+<ul>
+  <li><a href="./react_reference_userapi.html"><code class="highlighter-rouge">UserAPI</code></a> – с помощью методов класса приложения получают данные пользователей смарт-терминала.</li>
+  <li><a href="./react_reference_inventoryapi.html"><code class="highlighter-rouge">InventoryAPI</code></a> – с помощью методов класса приложения получают данные товаров, которые хранятся в базе смарт-терминала.</li>
+  <li><a href="./react_reference_receiptapi.html"><code class="highlighter-rouge">ReceiptAPI</code></a> – с помощью методов класса приложения получают данные о позициях для добавления в чек, получать чеки по <code class="highlighter-rouge">uuid</code>, а также получать заголовки чеков.</li>
+  <li><a href="./react_reference_devicesprinter.html"><code class="highlighter-rouge">Printer</code></a> – с помощью методов класса приложения получают допустимую длину строки для печати в символах или пикселях.</li>
+  <li><a href="./react_reference_devicescales.html"><code class="highlighter-rouge">Scales</code></a> – с помощью методов класса приложения получают вес товара, взвешиваемого на весах, подключённых к смарт-терминалу.</li>
+</ul>
 
-<figure class="center-image"><a class="no_icon" href="images/EventSequenceDiagram.png"><img class="docimage center-image" id="imageborder" src="images/EventSequenceDiagram.png" alt="" /></a><figcaption>Обмен событиями, которые требуют ответа</figcaption></figure>
+<p>Данные получаются асинхронно, поэтому все методы <code class="highlighter-rouge">get*</code> возвращают обещание (<code class="highlighter-rouge">promise</code>).</p>
 
-<h2 id="section">Подготовка манифеста приложения</h2>
-<p>В зависимости от типа точки интеграции, вам потребуется соответствующим образом изменить <a href="./doc_about_manifest.html">манифест приложения</a>. Так, если вы используете службы или приёмники сообщений, вам необходимо объявить их в манифесте приложения.</p>
+<p>Пример использования метода, возвращающего обещание:</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Если ваше приложение передаёт в смарт-терминал команды, манифест изменять не требуется.</div>
-
-<h3 id="java-">Объявление службы в манифесте java-приложения</h3>
-
-<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;service</span>
-            <span class="na">android:name=</span><span class="s">".YourService"</span>
-            <span class="na">android:enabled=</span><span class="s">"true"</span>
-            <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;intent-filter&gt;</span>
-                <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span> <span class="nt">/&gt;</span>
-                <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"&lt;Событие, которое требуют ответа&gt;"</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;/intent-filter&gt;</span>
-        <span class="nt">&lt;/service&gt;</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">workflow</span> <span class="o">=</span> <span class="nx">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">users</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">UserAPI</span><span class="p">.</span><span class="nx">getAllUsers</span><span class="p">();</span>
+    <span class="kr">const</span> <span class="nx">qwiojdio</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">UserAPI</span><span class="p">.</span><span class="nx">getAllGrants</span><span class="p">();</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"REVOUT "</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">await</span> <span class="nx">UserAPI</span><span class="p">.</span><span class="nx">getAllUsers</span><span class="p">()));</span>
+    <span class="kr">const</span> <span class="nx">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Intent</span><span class="p">();</span>
+    <span class="nx">intent</span><span class="p">.</span><span class="nx">packageName</span> <span class="o">=</span> <span class="s1">'com.revonavigatio'</span><span class="p">;</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="nx">await</span> <span class="nx">NavigationAPI</span><span class="p">.</span><span class="nx">startActivity</span><span class="p">(</span><span class="nx">intent</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"REVOUT "</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 </code></pre>
 </div>
 
-<h3 id="java--1">Объявление приёмника широковещательных сообщений в манифесте java-приложения</h3>
+<h2 id="commands">Команды</h2>
 
-<div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;receiver</span>
- <span class="na">android:name=</span><span class="s">".YourBroadcastReceiver"</span>
- <span class="na">android:enabled=</span><span class="s">"true"</span>
- <span class="na">android:exported=</span><span class="s">"true"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;intent-filter&gt;</span>
-        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"&lt;Событие, которое не требует ответа&gt;"</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/intent-filter&gt;</span>
-<span class="nt">&lt;/receiver&gt;</span>
+<p>Команды – методы с помощью которых ваше приложение может передавать данные в смарт-терминал.</p>
+
+<p>Команды представлены в классах:</p>
+
+<ul>
+  <li><a href="./react_reference_receiptapi.html"><code class="highlighter-rouge">ReceiptAPI</code></a> – с помощью методов класса приложения могут передавать чек для оплаты в смарт-терминале и отправить чек на email или телефон.</li>
+  <li><a href="./react_reference_devicesprinter.html"><code class="highlighter-rouge">Printer</code></a> – с помощью методов класса приложения могут передавать данные для печати на принтере, встроенном в смарт-терминал.</li>
+</ul>
+
+<h2 id="callbacks">Коллбэки</h2>
+
+<p>Коллбэки, с помощью которых вы можете изменять данные, например, применять скидку к созданным чекам, представлены в классе <a href="react_reference_integrationapi.html">IntegrationCallback</a>.</p>
+
+<h2 id="eventsubscription">Подписка на события</h2>
+
+<p>Вы можете подписать приложение на прослушивание событий. Для этого добавьте один или несколько слушателей с помощью метода:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="o">*</span><span class="err">тип</span> <span class="err">события</span><span class="o">*</span><span class="p">,</span> <span class="nx">listener</span><span class="err">:</span> <span class="o">*</span><span class="err">тип</span> <span class="err">слушателя</span><span class="o">*</span><span class="p">,</span> <span class="nx">isGlobal</span><span class="err">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
 </code></pre>
 </div>
 
-<h3 id="js-">Объявление плагина (службы) в манифесте JS-приложения</h3>
+<p>Чтобы удалить слушатель, используйте метод:</p>
 
-<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">plugins</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">plugin1</span>
-    <span class="s">moments</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">&lt;Событие, которое требует ответа&gt;</span>
-    <span class="s">behavior</span><span class="pi">:</span> <span class="s">plugin1.js</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">removeEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="o">*</span><span class="err">тип</span> <span class="err">события</span><span class="o">*</span><span class="p">,</span> <span class="nx">listener</span><span class="p">?:</span> <span class="o">*</span><span class="err">тип</span> <span class="err">слушателя</span><span class="o">*</span><span class="p">)</span><span class="err">:</span> <span class="kr">boolean</span>
 </code></pre>
 </div>
 
-<h3 id="js--1">Объявление демона (приёмника широковещательных сообщений) в манифесте JS-приложения</h3>
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Чтобы удалить все слушатели события не передавайте параметр <code class="highlighter-rouge">listener</code>.</div>
 
-<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">daemons</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">name</span><span class="pi">:</span> <span class="s">daemon1</span>
-    <span class="s">events</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">&lt;Событие, которое не требует ответа&gt;</span>
-    <span class="s">behavior</span><span class="pi">:</span> <span class="s">daemon1.js</span>
-</code></pre>
-</div>
+<p>Методы представлены в классах:</p>
 
-<h2 id="section-1">Список точек интеграции</h2>
+<ul>
+  <li><a href="./react_reference_integrationapi.html"><code class="highlighter-rouge">IntegrationServices</code></a></li>
+  <li><a href="./react_reference_broadcastreceivers.html"><code class="highlighter-rouge">BroadcastReceiver</code></a></li>
+  <li><a href="./react_reference_devicesconnection.html"><code class="highlighter-rouge">DeviceServiceConnector</code></a></li>
+  <li><a href="./react_reference_devicescanner.html"><code class="highlighter-rouge">Scanner</code></a></li>
+  <li><a href="./react_reference_navigationapi.html"><code class="highlighter-rouge">NavigationAPI</code></a></li>
+</ul>
 
-<p>Ниже приведены таблицы с описанием всех точек интеграции приложения и смарт-терминала.</p>
+<h3 id="broadcastreceiver">Широковещательные сообщения</h3>
 
-<h3 id="Commands">Команды приложения</h3>
-
-<p>Пример объявленной команды:</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="k">new</span> <span class="n">OpenSellReceiptCommand</span><span class="o">(</span><span class="n">positionAddList</span><span class="o">,</span> <span class="n">extra</span><span class="o">).</span><span class="na">process</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">callback</span><span class="o">);</span>
-</code></pre>
-</div>
-
-<table>
-<tr>
-<td>Команда открытия чека продажи</td>
-<td>evo.v2.receipt.sell.openReceipt</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/command/open_receipt_command/OpenSellReceiptCommand.java">OpenSellReceiptCommand</a></td>
-<td>new OpenSellReceiptCommand(positionAddList, extra).process(context, callback);</td>
-</tr>
-<tr><td>Команда открытия чека возврата</td>
-<td>evo.v2.receipt.payback.openReceipt</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/command/open_receipt_command/OpenPaybackReceiptCommand.java">OpenPaybackReceiptCommand </a></td>
-<td>new OpenPaybackReceiptCommand(positionAddList, extra).process(context, callback);</td>
-</tr>
-<tr><td>Команда печати чека продажи</td>
-<td>evo.v2.receipt.sell.printReceipt</td>
-<td><a href="https://github.com/evotor/integration-library/blob/develop/src/main/java/ru/evotor/framework/core/action/command/print_receipt_command/PrintSellReceiptCommand.kt">PrintSellReceiptCommand</a></td>
-<td>PrintSellReceiptCommand command = new PrintSellReceiptCommand(positionsList, payments, clientPhone, clientEmail);</td>
-</tr>
-<tr><td>Команда печати чека возврата</td>
-<td>evo.v2.receipt.payback.printReceipt</td>
-<td><a href="https://github.com/evotor/integration-library/blob/develop/src/main/java/ru/evotor/framework/core/action/command/print_receipt_command/PrintPaybackReceiptCommand.kt">PrintPaybackReceiptCommand </a></td>
-<td>PrintPaybackReceiptCommand command = new PrintPaybackReceiptCommand(positions, payments, clientPhone, clientEmail);</td>
-</tr>
-</table>
-
-<h3 id="Events">События, которые не требуют ответа</h3>
-
-<p>На события, которые не требуют ответа, следует подписывать приёмники широковещательных сообщений (демоны в JS-приложении).</p>
-
-<p>Пример подписанного приёмника широковещательных сообщений в Java-приложении:</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyBroadcastReceiver</span> <span class="kd">extends</span> <span class="n">BroadcastReceiver</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
- <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReceive</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">CashDrawerOpenEvent</span> <span class="n">event</span> <span class="o">=</span> <span class="n">CashDrawerOpenEvent</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">intent</span><span class="o">.</span><span class="na">getExtras</span><span class="o">());</span>
-        <span class="c1">// TODO insert your code here</span>
- <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-</div>
-
-<table>
-<tr>
-<td>Событие открытия денежного ящика</td>
-<td>evotor.intent.action.cashDrawer.OPEN</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/cash_drawer/CashDrawerOpenEvent.java">CashDrawerOpenEvent.java</a></td>
-</tr>
-<tr><td>Внесение денег</td>
-<td>evotor.intent.action.cashOperation.CASH_IN</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/cash_operations/CashInEvent.java">CashInEvent.java</a></td>
-</tr>
-<tr><td>Выплата денег</td>
-<td>evotor.intent.action.cashOperation.CASH_OUT</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/cash_operations/CashOutEvent.java">CashOutEvent.java </a></td>
-</tr>
-<tr><td>Обновление базы товаров</td>
-<td>evotor.intent.action.inventory.PRODUCTS_UPDATED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/inventory/InventoryApi.kt">InventoryApi.kt</a></td>
-</tr>
-<tr><td>Открытие карточки товара\товарной группы</td>
-<td>evotor.intent.action.inventory.CARD_OPEN</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/inventory/ProductCardOpenedEvent.java">ProductCardOpenedEvent.java</a></td>
-</tr>
-<tr><td>Позиция была отредактирована в чеке продажи</td>
-<td>evotor.intent.action.receipt.sell.POSITION_EDITED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/position_edited/PositionEditedEvent.java">PositionEditedEvent.java</a></td>
-</tr>
-<tr><td>Позиция была отредактирована в чеке возврата</td>
-<td>evotor.intent.action.receipt.payback.POSITION_EDITED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/position_edited/PositionEditedEvent.java">PositionEditedEvent.java </a></td>
-</tr>
-<tr><td>Позиция была добавлена в чек продажи</td>
-<td>evotor.intent.action.receipt.sell.POSITION_ADDED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/position_edited/PositionAddedEvent.java">PositionAddedEvent.java </a></td>
-</tr>
-<tr><td>Позиция была добавлена в чек возврата</td>
-<td>evotor.intent.action.receipt.payback.POSITION_ADDED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/position_edited/PositionAddedEvent.java">PositionAddedEvent.java </a></td>
-</tr>
-<tr><td>Позиция была удалена из чека продажи</td>
-<td>evotor.intent.action.receipt.sell.POSITION_REMOVED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/position_edited/PositionRemovedEvent.java">PositionRemovedEvent.java </a></td>
-</tr>
-<tr>
-<td>Позиция была удалена из чека возврата</td>
-<td>evotor.intent.action.receipt.payback.POSITION_REMOVED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/position_edited/PositionRemovedEvent.java">PositionRemovedEvent.java </a></td>
-</tr>
-<tr>
-<td>Чек продажи был очищен</td>
-<td>evotor.intent.action.receipt.sell.CLEARED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/receipt_edited/ReceiptClearedEvent.java">ReceiptClearedEvent.java</a></td>
-</tr>
-<tr>
-<td>Чек возврата был очищен</td>
-<td>evotor.intent.action.receipt.payback.CLEARED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/receipt_edited/ReceiptClearedEvent.java">ReceiptClearedEvent.java </a></td>
-</tr>
-<tr>
-<td>Чек продажи был успешно закрыт</td>
-<td>evotor.intent.action.receipt.sell.RECEIPT_CLOSED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/receipt_edited/ReceiptClosedEvent.java">ReceiptClosedEvent.java</a></td>
-</tr>
-<tr>
-<td>Чек возврата был успешно закрыт</td>
-<td>evotor.intent.action.receipt.payback.RECEIPT_CLOSED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/receipt_edited/ReceiptClosedEvent.java">ReceiptClosedEvent.java </a></td>
-</tr>
-<tr>
-<td>Чек продажи был успешно открыт</td>
-<td>evotor.intent.action.receipt.sell.OPENED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/receipt_edited/ReceiptOpenedEvent.java">ReceiptOpenedEvent.java</a></td>
-</tr>
-<tr>
-<td>Чек возврата был успешно открыт</td>
-<td>evotor.intent.action.receipt.payback.OPENED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/receipt_edited/ReceiptOpenedEvent.java">ReceiptOpenedEvent.java </a></td>
-</tr>
-<tr>
-<td>Печатные группы были изменены для чека продажи</td>
-<td>evotor.intent.action.receipt.sell.printGroup.EDITED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/receipt_edited/ReceiptPrintGroupEditedEvent.java">ReceiptPrintGroupEditedEvent.java</a></td>
-</tr>
-<tr>
-<td>Печатные группы были изменены для чека врзврата</td>
-<td>evotor.intent.action.receipt.payback.printGroup.EDITED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/receipt_edited/ReceiptPrintGroupEditedEvent.java">ReceiptPrintGroupEditedEvent.java </a></td>
-</tr>
-<tr>
-<td>Оплаты по чеку продажи были разделены</td>
-<td>evotor.intent.action.receipt.sell.paymentParts.EDITED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/receipt_edited/ReceiptPaymentPartsEditedEvent.java">ReceiptPaymentPartsEditedEvent.java</a></td>
-</tr>
-<tr>
-<td>Оплаты по чеку возврата были разделены</td>
-<td>evotor.intent.action.receipt.payback.paymentParts.EDITED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/receipt_edited/ReceiptPaymentPartsEditedEvent.java">ReceiptPaymentPartsEditedEvent.java</a></td>
-</tr>
-</table>
-
-<h3 id="Callbacks">События, которые требуют ответа</h3>
-
-<p>На события, которые требуют ответа, следует подписывать службы (плагины в JS-приложении).</p>
-
-<table>
-<tr>
-<td><a href="https://developer.evotor.ru/docs/doc_java_receipt_interactions.html">Намерение изменить позицию в чеке продажи</a></td>
-<td>evo.v2.receipt.sell.beforePositionsEdited</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEvent.java">BeforePositionsEditedEvent.java</a></td>
-</tr>
-<tr>
-<td><a href="https://developer.evotor.ru/docs/doc_java_receipt_interactions.html">Намерение изменить позицию в чеке возврата</a></td>
-<td>evo.v2.receipt.payback.beforePositionsEdited</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEvent.java">BeforePositionsEditedEvent.java</a></td>
-</tr>
-<tr>
-<td><a href="https://developer.evotor.ru/docs/doc_java_receipt_division.html">Разделение платежей в чеке продажи</a></td>
-<td>evo.v2.receipt.sell.payment.SELECTED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/payment/PaymentSelectedEvent.java">PaymentSelectedEvent.java</a></td>
-</tr>
-<tr>
-<td><a href="https://developer.evotor.ru/docs/doc_java_receipt_division.html">Разделение чека продажи на несколько печатных групп</a></td>
-<td>evo.v2.receipt.sell.printGroup.REQUIRED</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/print_group/PrintGroupRequiredEvent.java">PrintGroupRequiredEvent.java</a></td>
-</tr>
-<tr>
-<td><a href="https://developer.evotor.ru/docs/doc_java_discounts.html">Начисление скидки на чек продажи</a></td>
-<td>evo.v2.receipt.sell.receiptDiscount</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/discount/ReceiptDiscountEvent.java">ReceiptDiscountEvent.java</a></td>
-</tr>
-<tr>
-<td><a href="https://developer.evotor.ru/docs/doc_java_discounts.html">Начисление скидки на чек возврата</a></td>
-<td>evo.v2.receipt.payback.receiptDiscount</td>
-<td><a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/discount/ReceiptDiscountEvent.java">ReceiptDiscountEvent.java</a></td>
-</tr>
-<tr>
-<td><a href="https://developer.evotor.ru/docs/doc_java_payment_systems.html">Оплата в сторонней платёжной системе</a></td>
-<td>evo.v2.receipt.paymentSystem</td>
-<td><a href="https://github.com/evotor/integration-library/blob/develop/src/main/java/ru/evotor/framework/core/action/event/receipt/payment/system/event/PaymentSystemEvent.kt">PaymentSystemEvent.kt</a></td>
-</tr>
-</table>
+<p>Частным случаем подписки на события является <a href="./react_reference_broadcastreceivers.html">подписка на широковещательные сообщения</a>. Широковещательные сообщения – сообщения, которые смарт-терминал рассылает на все приложения.</p>
 
 
     <div class="tags">
@@ -1183,12 +1006,6 @@ $('#toc').on('click', 'a', function() {
         <a href="tag_terminal.html" class="btn btn-default navbar-btn cursorNorm" role="button">terminal</a>
         
         
-        
-        <a href="tag_javascript.html" class="btn btn-default navbar-btn cursorNorm" role="button">javascript</a>
-        
-        
-        
-        <a href="tag_java.html" class="btn btn-default navbar-btn cursorNorm" role="button">java</a>
         
         
         

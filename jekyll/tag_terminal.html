@@ -126,23 +126,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
                 
                 
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Справочники<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        
-                        
-                        <li><a href="java_reference_introduction.html">Java SDK</a></li>
-                        
-                        
-                        
-                        <li><a href="react_reference_introduction.html">React Ntive SDK</a></li>
-                        
-                        
-                    </ul>
-                </li>
-                
-                
-                
                 <!--comment out this block if you want to hide search-->
                 <li>
                     <!--start search-->
@@ -528,27 +511,121 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <li>
         
-        <a href="#">REACT SDK</a>
+        <a href="#">REACT NATIVE SDK</a>
         
         <ul>
             
             
             
-            <li><a href="doc_react_getting_started.html">Подготовка среды для разработки на React Native</a></li>
+            <li><a href="doc_react_gettingstarted.html">Начало работы</a></li>
             
             
             
             
             
             
-            <li><a href="doc_react_manifest.html">Манифест React Native приложения</a></li>
+            <li><a href="doc_react_interactiontypes.html">Типы взаиможействия со смарт-терминалом</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Основные API</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_userapi.html">Пользователи</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_receiptapi.html">Чеки</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_inventoryapi.html">Товароучёт</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_navigationapi.html">Навигация</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Службы</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_broadcastreceivers.html">Широковещательный приёмник</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Устройства</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesconnection.html">Подключение устройств</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicesprinter.html">Принтер</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescanner.html">Сканер</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_devicescales.html">Весы</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
             
             
             
             
             
             
-            <li><a href="doc_react_app_installation.html">Установка приложения на смарт-терминал</a></li>
+            <li><a href="doc_react_errorshandling.html">Обработка ошибок</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="doc_react_generatingsignedapk.html">Создание и установка подписанного APK</a></li>
             
             
             
@@ -838,7 +915,7 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/comments/pages/evotordoc/tags/tag_terminal.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/tags/tag_terminal.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
@@ -1557,9 +1634,9 @@ $('#toc').on('click', 'a', function() {
     
         
 
-        <tr><td><a href="doc_react_devices.html">Работа с подключаемым оборудованием</a></td>
+        <tr><td><a href="doc_react_errorshandling.html">Обработка ошибок</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Подключение оборудования static startInitConnections() { DevicesModule.startInitConnections(); }   Принтер чеков Для подключения принтера используйте метод: static setOnPrinterConnectionEventsListener(onEvent: (connected: boolean) =&gt; &lt;span... </td>
+          <td> Вы можете отслеживать ошибки во всех методах, которые возвращают обещание (promise). Пример кода для отслеживания ошибок: NavigationAPI.startActivity(intent).catch((e)=&gt;{console.log(e.message)});   &lt;!-- Методы, которые возвращают обещание (`promise`): *... </td>
         </tr>
         
      
@@ -1569,9 +1646,9 @@ $('#toc').on('click', 'a', function() {
     
         
 
-        <tr><td><a href="doc_react_getting_started.html">Подготовка среды для разработки на React Native</a></td>
+        <tr><td><a href="doc_react_generatingsignedapk.html">Создание и установка подписанного APK</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> React Native - технология, которая позволяет использовать JavaScript для создания мобильных приложений. С помощью React Native вы можете обращаться к API написанному на Java используя только JavaScript. Требования Убедитесь, что у вас установлено следующее ПО:  Актуальная версия Node.js. Android Studio версии 3.0 или выше.  &lt;h2... </td>
+          <td> Создание ключа для подписи apk-файла приложения Чтобы пользователи могли установить ваше приложение на смарт-терминал вам необходимо создать подписанный apk-файл приложения. Для этого вам потребуется ключ, с помощью которого будет подписан apk-файл. Чтобы создать ключ:   Перейдите в папку с установленным JDK. cd C:\Program Files\Java\jdkX.X.X_X\bin  ... </td>
         </tr>
         
      
@@ -1581,9 +1658,9 @@ $('#toc').on('click', 'a', function() {
     
         
 
-        <tr><td><a href="doc_react_inventoryAPI.html">Товароучёт</a></td>
+        <tr><td><a href="doc_react_gettingstarted.html">Начало работы</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> В разделе приведены методы для работы с базой товаров на смарт-терминале. Методы React Native обращаются к Java интерфейсу описанному в разделе “Товароучёт”. Методы Получить все штрихкоды товара static getAllBarcodesForProduct(productUuid: string, callback: (string[])... </td>
+          <td> Подготовка к разработке Убедитесь, что у вас установлено следующее ПО:  Node.js; Yarn; Java SE Development Kit; Android Studio.  Установка React Native CLI Для создания и работы с проектами React Native установите интерфейс командной строки React Native CLI: npm install -g... </td>
         </tr>
         
      
@@ -1593,57 +1670,9 @@ $('#toc').on('click', 'a', function() {
     
         
 
-        <tr><td><a href="doc_react_manifest.html">Манифест приложения на React Native</a></td>
+        <tr><td><a href="doc_react_interactiontypes.html">Типы взаиможействия со смарт-терминалом</a></td>
             <td><span class="label label-default">Страница</span></td>
-          <td> Ниже приведён пример манифеста React Native приложения, которое вы создали при подготовке среды к разработке приложения.  Примечание: В секции application, требуется указать элемент meta-data, который содержит идентификатор приложения – строка в формате uuid4. Идентификатор отображается в поле Идентификатор приложениия на... </td>
-        </tr>
-        
-     
-        
-     
-   
-    
-        
-
-        <tr><td><a href="doc_react_navigationAPI.html">Вызов окон смарт-терминала</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Для вызова окон смарт-терминала используйте класс NavigationApi. Ваше приложение может вызывать следующие окна смарт-терминала:   окно редактирования клише чека (Настройки → Кассовый чек);    окно доступа к кассовым отчётам (Отчёты → Кассовый отчёт).    &lt;h2... </td>
-        </tr>
-        
-     
-        
-     
-   
-    
-        
-
-        <tr><td><a href="doc_react_receipt.html">Работа с чеком</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Методы Получить по штрихкоду позицию для добавления в чек static getAllBarcodesForProduct(productUuid: String, callback: Function) { InventoryModule.getAllBarcodesForProduct(productUuid, callback); }   Открыть чек в... </td>
-        </tr>
-        
-     
-        
-     
-   
-    
-        
-
-        <tr><td><a href="doc_react_receipt.html">Работа с чеком</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> Методы Получить по штрихкоду позицию для добавления в чек static getAllBarcodesForProduct(productUuid: String, callback: Function) { InventoryModule.getAllBarcodesForProduct(productUuid, callback); }   Открыть чек в... </td>
-        </tr>
-        
-     
-        
-     
-   
-    
-        
-
-        <tr><td><a href="doc_react_usersAPI.html">Работа с пользователями смарт-терминала</a></td>
-            <td><span class="label label-default">Страница</span></td>
-          <td> В разделе приведены методы для работы с пользователями смарт-терминала. Методы React Native обращаются к Java интерфейсу описанному в разделе “Работа с пользователями смарт-терминала”.  Примечание: Так как выполнение запросов к Java API занимает много времени, методы React SDK требуется выполнять асинхронно. Для этого в... </td>
+          <td> Получение данных Приложения получают данные от смарт-терминала с помощью методов get*. Методы get* представлены в классах:  UserAPI – с помощью методов класса приложения получают данные пользователей смарт-терминала. InventoryAPI – с помощью методов класса приложения получают данные товаров, которые хранятся в базе смарт-терминала.... </td>
         </tr>
         
      
@@ -1699,20 +1728,6 @@ $('#toc').on('click', 'a', function() {
     
         
      
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
-   
-    
    
     
    

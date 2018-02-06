@@ -730,10 +730,10 @@
 
 
 {
-"title": "Работа с подключаемым оборудованием",
+"title": "Обработка ошибок",
 "tags": "terminalreact",
 "keywords": "",
-"url": "doc_react_devices.html",
+"url": "doc_react_errorshandling.html",
 "summary": ""
 }
 ,
@@ -741,10 +741,10 @@
 
 
 {
-"title": "Подготовка среды для разработки на React Native",
+"title": "Создание и установка подписанного APK",
 "tags": "terminalreact",
 "keywords": "",
-"url": "doc_react_getting_started.html",
+"url": "doc_react_generatingsignedapk.html",
 "summary": ""
 }
 ,
@@ -752,10 +752,10 @@
 
 
 {
-"title": "Товароучёт",
+"title": "Начало работы",
 "tags": "terminalreact",
 "keywords": "",
-"url": "doc_react_inventoryAPI.html",
+"url": "doc_react_gettingstarted.html",
 "summary": ""
 }
 ,
@@ -763,54 +763,10 @@
 
 
 {
-"title": "Манифест приложения на React Native",
+"title": "Типы взаиможействия со смарт-терминалом",
 "tags": "terminalreact",
 "keywords": "",
-"url": "doc_react_manifest.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Вызов окон смарт-терминала",
-"tags": "terminalreact",
-"keywords": "",
-"url": "doc_react_navigationAPI.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Работа с чеком",
-"tags": "terminalreact",
-"keywords": "",
-"url": "doc_react_receipt.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Работа с чеком",
-"tags": "terminalreact",
-"keywords": "",
-"url": "doc_react_receipt.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Работа с пользователями смарт-терминала",
-"tags": "terminalreact",
-"keywords": "",
-"url": "doc_react_usersAPI.html",
+"url": "doc_react_interactiontypes.html",
 "summary": ""
 }
 ,
@@ -928,21 +884,10 @@
 
 
 {
-"title": "DeviceServiceConnector",
+"title": "Весы",
 "tags": "",
 "keywords": "react",
-"url": "react_reference_devicesconnection.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Printer",
-"tags": "",
-"keywords": "react",
-"url": "react_reference_devicesprinter.html",
+"url": "react_reference_devicescales.html",
 "summary": ""
 }
 ,
@@ -961,10 +906,10 @@
 
 
 {
-"title": "Scales",
+"title": "DeviceServiceConnector",
 "tags": "",
 "keywords": "react",
-"url": "react_reference_devicescales.html",
+"url": "react_reference_devicesconnection.html",
 "summary": ""
 }
 ,
@@ -972,10 +917,10 @@
 
 
 {
-"title": "Описание",
+"title": "Принтер",
 "tags": "",
 "keywords": "react",
-"url": "react_reference_enums.html",
+"url": "react_reference_devicesprinter.html",
 "summary": ""
 }
 ,
@@ -983,7 +928,7 @@
 
 
 {
-"title": "IntegrationServices",
+"title": "IntegrationCallback и ServicesAPI",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_integrationapi.html",
@@ -1027,39 +972,6 @@
 
 
 {
-"title": "Устройства",
-"tags": "",
-"keywords": "react",
-"url": "react_reference_parameters_device.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Ошибки",
-"tags": "",
-"keywords": "react",
-"url": "react_reference_parameters_user.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Товары",
-"tags": "",
-"keywords": "react",
-"url": "react_reference_parameters_inventory.html",
-"summary": ""
-}
-,
-
-
-
-{
 "title": "Навигация",
 "tags": "",
 "keywords": "react",
@@ -1071,43 +983,10 @@
 
 
 {
-"title": "Платежи",
+"title": "Типы данных",
 "tags": "",
 "keywords": "react",
-"url": "react_reference_parameters_payments.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Чеки",
-"tags": "",
-"keywords": "react",
-"url": "react_reference_parameters_receipt.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "User API",
-"tags": "",
-"keywords": "react",
-"url": "react_reference_parameters_service.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Пользователи",
-"tags": "",
-"keywords": "react",
-"url": "react_reference_parameters_user.html",
+"url": "react_reference_parameters_types.html",
 "summary": ""
 }
 ,
