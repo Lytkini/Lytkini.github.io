@@ -921,22 +921,15 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="section">Подготовка к разработке</h2>
 
+<!-- Представленная информация актуальна для ОС Wndows, Mac OS, Linux. -->
+
 <p>Убедитесь, что у вас установлено следующее ПО:</p>
 
 <ul>
   <li><a href="https://nodejs.org/en/download/">Node.js</a>;</li>
-  <li><a href="https://yarnpkg.com/lang/en/docs/install/">Yarn</a>;</li>
   <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">Java SE Development Kit</a>;</li>
   <li><a href="https://developer.android.com/studio/install.html">Android Studio</a>.</li>
 </ul>
-
-<h3 id="react-native-cli">Установка React Native CLI</h3>
-
-<p>Для создания и работы с проектами React Native установите интерфейс командной строки React Native CLI:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>npm install -g react-native-cli
-</code></pre>
-</div>
 
 <h3 id="react-native">Создание проекта React Native</h3>
 
@@ -956,9 +949,6 @@ $('#toc').on('click', 'a', function() {
     <div class="highlighter-rouge"><pre class="highlight"><code>create-react-native-app YourAppName
 </code></pre>
     </div>
-
-    <p>Команда создаст проект со следующей структурой:</p>
-    <figure class="center-image"><a class="no_icon" href="images/eject_project_structure.png"><img class="docimage center-image" id="imageborder" src="images/eject_project_structure.png" alt="" /></a><figcaption>Структура проекта</figcaption></figure>
   </li>
   <li>
     <p>Перейдите в папку проекта:</p>
@@ -974,7 +964,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
     </div>
 
-    <p>Ответьте на вопросы, которые появятся в командной строке. В результате выполнения команды, в папке проекта появится папка <code class="highlighter-rouge">Android</code>.</p>
+    <p>Ответьте на вопросы, которые появятся в командной строке. В результате выполнения команды, в папке проекта появится папка <code class="highlighter-rouge">android</code>.</p>
   </li>
 </ol>
 
@@ -1015,6 +1005,7 @@ $('#toc').on('click', 'a', function() {
 
 <ol>
   <li>Удалите из проекта папку <code class="highlighter-rouge">node_modules</code>.</li>
+  <li><a href="https://yarnpkg.com/lang/en/docs/install/">Скачайте и установите менеджер пакетов Yarn</a>.</li>
   <li>
     <p>Выполните команду:</p>
 

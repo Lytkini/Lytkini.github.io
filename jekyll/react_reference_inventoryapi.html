@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" react">
-<title>Inventory API | Документация Эвотор</title>
+<title>InventoryAPI | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -139,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Inventory API">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="InventoryAPI">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -877,7 +877,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Inventory API</h1>
+   <h1 class="post-title-main">InventoryAPI</h1>
 </div>
 
 
@@ -921,6 +921,8 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="section">Описание</h2>
 
+<p>С помощью методов класса приложения получают данные товаров, которые хранятся в базе смарт-терминала.</p>
+
 <h2 id="section-1">Методы</h2>
 
 <h3 id="getallbarcodesforproduct">getAllBarcodesForProduct</h3>
@@ -936,13 +938,13 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">productUuid</code> – идентификатор товара в формате <code class="highlighter-rouge">uuid4</code>. Строка.</li>
+  <li><code class="highlighter-rouge">productUuid</code> – идентификатор товара в формате <code class="highlighter-rouge">uuid4</code>.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Promise</code> – тип данных – массив строк, штрихкодов товара.</li>
+  <li><code class="highlighter-rouge">Promise</code> – массив строк, штрихкодов товара.</li>
 </ul>
 
 <h3 id="getproductbyuuid">getProductByUuid</h3>
@@ -958,13 +960,13 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">uuid</code> – идентификатор товара. Строка.</li>
+  <li><code class="highlighter-rouge">uuid</code> – идентификатор товара в формате <code class="highlighter-rouge">uuid4</code>.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Promise</code> – тип данных – <a href="./react_reference_inventoryapi.html#productitem"><code class="highlighter-rouge">ProductItem</code></a>.</li>
+  <li><code class="highlighter-rouge">Promise</code> – <a href="./react_reference_inventoryapi.html#productitem">товар</a>  или <code class="highlighter-rouge">null</code>.</li>
 </ul>
 
 <h3 id="getfield">getField</h3>
@@ -980,13 +982,13 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">fieldUuid</code> – идентификатор поля в формате <code class="highlighter-rouge">uuid4</code>. Строка.</li>
+  <li><code class="highlighter-rouge">fieldUuid</code> – идентификатор поля в формате <code class="highlighter-rouge">uuid4</code>.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Promise</code> – тип данных – <a href="./react_reference_inventoryapi.html#field"><code class="highlighter-rouge">Field</code></a>.</li>
+  <li><code class="highlighter-rouge">Promise</code> – <a href="./react_reference_inventoryapi.html#field"><code class="highlighter-rouge">поле</code></a> или <code class="highlighter-rouge">null</code>.</li>
 </ul>
 
 <h3 id="getproductextras">getProductExtras</h3>
@@ -1002,13 +1004,13 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">productUuid</code> – идентификатор товара в формате <code class="highlighter-rouge">uuid4</code>. Строка.</li>
+  <li><code class="highlighter-rouge">productUuid</code> – идентификатор товара в формате <code class="highlighter-rouge">uuid4</code>.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Promise</code> – тип данных – <a href="./react_reference_inventoryapi.html#productextra"><code class="highlighter-rouge">ProductExtra[ ]</code></a>.</li>
+  <li><code class="highlighter-rouge">Promise</code> – массив <a href="./react_reference_inventoryapi.html#productextra">дополнительных полей</a>.</li>
 </ul>
 
 <h3 id="section-2">Параметры</h3>

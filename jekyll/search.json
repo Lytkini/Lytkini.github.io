@@ -928,7 +928,7 @@
 
 
 {
-"title": "IntegrationCallback и ServicesAPI",
+"title": "Интеграционные службы",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_integrationapi.html",
@@ -950,7 +950,7 @@
 
 
 {
-"title": "Inventory API",
+"title": "InventoryAPI",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_inventoryapi.html",
@@ -961,7 +961,7 @@
 
 
 {
-"title": "Navigation API",
+"title": "NavigationAPI",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_navigationapi.html",
@@ -994,7 +994,7 @@
 
 
 {
-"title": "Receipt API",
+"title": "ReceiptAPI",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_receiptapi.html",
@@ -1005,7 +1005,7 @@
 
 
 {
-"title": "User API",
+"title": "UserAPI",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_userapi.html",

@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" react">
-<title>Navigation API | Документация Эвотор</title>
+<title>NavigationAPI | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -139,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Navigation API">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="NavigationAPI">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -877,7 +877,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Navigation API</h1>
+   <h1 class="post-title-main">NavigationAPI</h1>
 </div>
 
 
@@ -920,6 +920,13 @@ $('#toc').on('click', 'a', function() {
     
 
   <h2 id="section">Описание</h2>
+<p>класс это обертка нативной навигации андроида</p>
+
+<p>методы класса позволяют</p>
+
+<p>вы создаёте интент, который передаётте в навигационные методы</p>
+
+<p>таким образом вы можете запускать сервисы и нативные операции  внутри своего приложения и можете запускать любые экспортированные операции других приложений</p>
 
 <h2 id="section-1">Методы</h2>
 
@@ -931,7 +938,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Создаёт намерение (<code class="highlighter-rouge">intent</code>) изменения чека продажи.</p>
+<p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) изменения чека продажи.</p>
 
 <p><strong>Параметры</strong></p>
 
@@ -949,7 +956,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Создаёт намерение (<code class="highlighter-rouge">intent</code>) изменения чека возврата.</p>
+<p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) изменения чека возврата.</p>
 
 <p><strong>Параметры</strong></p>
 
@@ -967,7 +974,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Создаёт намерение (<code class="highlighter-rouge">intent</code>) оплаты по чеку продажи.</p>
+<p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) оплаты по чеку продажи.</p>
 
 <p><strong>Параметры</strong></p>
 
@@ -985,7 +992,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Создаёт намерение (<code class="highlighter-rouge">intent</code>) оплаты по чеку возврата.</p>
+<p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) оплаты по чеку возврата.</p>
 
 <p><strong>Параметры</strong></p>
 
@@ -1003,7 +1010,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Создаёт намерение (<code class="highlighter-rouge">intent</code>) оплаты по чеку продажи.</p>
+<p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) оплаты по чеку продажи.</p>
 
 <p><strong>Параметры</strong></p>
 
@@ -1037,7 +1044,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Получает намерение (<code class="highlighter-rouge">intent</code>).</p>
+<p>Получает намерение (<code class="highlighter-rouge">Intent</code>).</p>
 
 <p><strong>Параметры</strong></p>
 
@@ -1060,7 +1067,7 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">intent</code></li>
+  <li><code class="highlighter-rouge">Intent</code></li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -1120,6 +1127,8 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
+<p>Устанавливает результат, если ваша активность была открыта методом <a href="./">startActivityForResult</a>.</p>
+
 <p><strong>Параметры</strong></p>
 
 <ul>
@@ -1139,6 +1148,8 @@ $('#toc').on('click', 'a', function() {
 </div>
 
 <p><strong>Описание</strong></p>
+
+<p>Устанавливает результат <a href="./">интеграционного события</a>.</p>
 
 <p><strong>Параметры</strong></p>
 
@@ -1181,8 +1192,8 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">type</code> – тип события. Для получения данных о навигации указывайте тип <a href="./react_reference_navigationapi.html#navigationeventtype"><code class="highlighter-rouge">NavigationEventType</code></a>.</li>
-  <li><code class="highlighter-rouge">listener</code> – тип слушателя. Для получения данных о навигации указывайте тип <code class="highlighter-rouge">NavigationEventListener</code>.</li>
+  <li><code class="highlighter-rouge">type</code> – тип навигационного события. Для получения данных о навигации указывайте тип <a href="./react_reference_navigationapi.html#navigationeventtype"><code class="highlighter-rouge">NavigationEventType</code></a>.</li>
+  <li><code class="highlighter-rouge">listener</code> – тип слушателя навигационного события. Для получения данных о навигации указывайте тип <code class="highlighter-rouge">NavigationEventListener</code>.</li>
   <li><code class="highlighter-rouge">isGlobal</code> – указывает глобальную доступность метода. По умолчанию <code class="highlighter-rouge">true</code>.</li>
 </ul>
 
@@ -1241,6 +1252,8 @@ $('#toc').on('click', 'a', function() {
 <span class="p">}</span>
 </code></pre>
 </div>
+
+<p>tobundle - TODO</p>
 
 
     <div class="tags">

@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" react">
-<title>Receipt API | Документация Эвотор</title>
+<title>ReceiptAPI | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -139,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Receipt API">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="ReceiptAPI">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -877,7 +877,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Receipt API</h1>
+   <h1 class="post-title-main">ReceiptAPI</h1>
 </div>
 
 
@@ -921,6 +921,8 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="section">Описание</h2>
 
+<p>С помощью методов класса приложения получают данные о позициях для добавления в чек, получать чеки по <code class="highlighter-rouge">uuid</code>, а также получать заголовки чеков. Используя методы класса приложения также могут передавать чек для оплаты в смарт-терминале и отправить чек на email или телефон.</p>
+
 <h2 id="section-1">Методы</h2>
 
 <h3 id="getpositionbybarcode">getPositionByBarcode</h3>
@@ -931,18 +933,18 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Получает товарную позицию по значению штрихкода.</p>
+<p>Получает массив позиций чека по значению штрихкода.</p>
 
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">barcode</code>– штрихкод товара. Строка.</li>
+  <li><code class="highlighter-rouge">barcode</code>– штрихкод товара.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Promise</code> – тип данных – <a href="./react_reference_receiptapi.html#position"><code class="highlighter-rouge">Position[]</code></a>.</li>
+  <li><code class="highlighter-rouge">Promise</code> – массив <a href="./react_reference_receiptapi.html#position">позиций</a>.</li>
 </ul>
 
 <h3 id="openreceipt">openReceipt</h3>
@@ -958,7 +960,7 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">positions</code> – <a href="./react_reference_receiptapi.html#position">массив позиций</a>.</li>
+  <li><code class="highlighter-rouge">positions</code> – массив <a href="./react_reference_receiptapi.html#position">позиций</a>.</li>
   <li><code class="highlighter-rouge">extra</code> – указывает наличие <a href="./react_reference_receiptapi.html#setextra">дополнительных полей</a> в чеке.</li>
 </ul>
 
@@ -985,19 +987,17 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">printReceipts</code> – <a href="./react_reference_receiptapi.html#printreceipt">массив</a></li>
+  <li><code class="highlighter-rouge">printReceipts</code> – массив <a href="./react_reference_receiptapi.html#printreceipt">печатных форм чека</a>.</li>
   <li><code class="highlighter-rouge">extra</code> – указывает наличие <a href="./react_reference_receiptapi.html#setextra">дополнительных полей</a> в чеке.</li>
-  <li><code class="highlighter-rouge">phone</code> – телефонный номер покупателя. Строка.</li>
-  <li><code class="highlighter-rouge">email</code> – адрес электронной почты покупателя. Строка.</li>
-  <li><code class="highlighter-rouge">discount</code> – скидка на чек. Число.</li>
-  <li><code class="highlighter-rouge">onSuccess</code></li>
-  <li><code class="highlighter-rouge">onError</code></li>
+  <li><code class="highlighter-rouge">phone</code> – телефонный номер покупателя.</li>
+  <li><code class="highlighter-rouge">email</code> – адрес электронной почты покупателя.</li>
+  <li><code class="highlighter-rouge">discount</code> – скидка на чек.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Promise</code> – тип данных – строка.</li>
+  <li><code class="highlighter-rouge">Promise</code></li>
 </ul>
 
 <h3 id="getreceiptbytype">getReceiptByType</h3>
@@ -1013,13 +1013,13 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">type</code> – тип чека: чек продажи (<code class="highlighter-rouge">SELL</code>) или чек возврата (<code class="highlighter-rouge">PAYBACK</code>).</li>
+  <li><code class="highlighter-rouge">type</code> – <a href="./react_reference_receiptapi.html#receipttype">тип чека</a>.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Promise</code> – тип данных – <a href="./react_reference_receiptapi.html#receipt"><code class="highlighter-rouge">Receipt</code></a>.</li>
+  <li><code class="highlighter-rouge">Promise</code> – <a href="./react_reference_receiptapi.html#receipt">чек</a>.</li>
 </ul>
 
 <h3 id="getreceiptbyuuid">getReceiptByUuid</h3>
@@ -1035,13 +1035,13 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">uuid</code> – идентификатор чека. Строка.</li>
+  <li><code class="highlighter-rouge">uuid</code> – идентификатор чека.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Promise</code> – тип данных – <a href="./react_reference_receiptapi.html#receipt"><code class="highlighter-rouge">Receipt</code></a>.</li>
+  <li><code class="highlighter-rouge">Promise</code> – <a href="./react_reference_receiptapi.html#receipt">чек</a> или <code class="highlighter-rouge">null</code>.</li>
 </ul>
 
 <h3 id="getreceiptheaders">getReceiptHeaders</h3>
@@ -1063,7 +1063,7 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Возвращает</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Promise</code> – тип данных – <a href="./react_reference_receiptapi.html#receiptheader"><code class="highlighter-rouge">ReceiptHeader[]</code></a>.</li>
+  <li><code class="highlighter-rouge">Promise</code> – массив <a href="./react_reference_receiptapi.html#receiptheader">заголовков чека</a>.</li>
 </ul>
 
 <h2 id="section-2">Параметры</h2>
@@ -1094,8 +1094,6 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="section-4">Содержимое чека</h3>
-
 <h4 id="setextra">Класс SetExtra</h4>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">SetExtra</span> <span class="p">{</span>
@@ -1123,6 +1121,8 @@ $('#toc').on('click', 'a', function() {
 <span class="p">}</span>
 </code></pre>
 </div>
+
+<h3 id="section-4">Содержимое чека</h3>
 
 <h4 id="extrakey">Класс ExtraKey</h4>
 
@@ -1231,11 +1231,9 @@ $('#toc').on('click', 'a', function() {
 
 <p>Возвращает массив позиций, добавленных в чек.</p>
 
-<p><strong>Параметры</strong></p>
-
 <p><strong>Возвращает</strong></p>
 
-<p>Метод возвращает <a href="./react_reference_receiptapi.html#position"><code class="highlighter-rouge">Position[]</code></a>.</p>
+<p>Метод возвращает массив <a href="./react_reference_receiptapi.html#position">позиций</a>.</p>
 
 <h5 id="getpayments">getPayments</h5>
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">getPayments</span><span class="p">()</span><span class="err">:</span> <span class="nx">Payment</span><span class="p">[]</span>
@@ -1246,11 +1244,9 @@ $('#toc').on('click', 'a', function() {
 
 <p>Возвращает массив платежей, с помощью которых оплачен чек.</p>
 
-<p><strong>Параметры</strong></p>
-
 <p><strong>Возвращает</strong></p>
 
-<p>Метод возвращает <a href="./react_reference_receiptapi.html#payment"><code class="highlighter-rouge">Payment[]</code></a></p>
+<p>Метод <a href="./react_reference_receiptapi.html#payment">массив платежей</a></p>
 
 <h4 id="paymentpurpose">Класс PaymentPurpose</h4>
 

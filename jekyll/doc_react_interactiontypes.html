@@ -925,46 +925,40 @@ $('#toc').on('click', 'a', function() {
 Методы <code class="highlighter-rouge">get*</code> представлены в классах:</p>
 
 <ul>
-  <li><a href="./react_reference_userapi.html"><code class="highlighter-rouge">UserAPI</code></a> – с помощью методов класса приложения получают данные пользователей смарт-терминала.</li>
-  <li><a href="./react_reference_inventoryapi.html"><code class="highlighter-rouge">InventoryAPI</code></a> – с помощью методов класса приложения получают данные товаров, которые хранятся в базе смарт-терминала.</li>
-  <li><a href="./react_reference_receiptapi.html"><code class="highlighter-rouge">ReceiptAPI</code></a> – с помощью методов класса приложения получают данные о позициях для добавления в чек, получать чеки по <code class="highlighter-rouge">uuid</code>, а также получать заголовки чеков.</li>
-  <li><a href="./react_reference_devicesprinter.html"><code class="highlighter-rouge">Printer</code></a> – с помощью методов класса приложения получают допустимую длину строки для печати в символах или пикселях.</li>
-  <li><a href="./react_reference_devicescales.html"><code class="highlighter-rouge">Scales</code></a> – с помощью методов класса приложения получают вес товара, взвешиваемого на весах, подключённых к смарт-терминалу.</li>
+  <li><a href="./react_reference_userapi.html"><code class="highlighter-rouge">UserAPI</code></a>;</li>
+  <li><a href="./react_reference_inventoryapi.html"><code class="highlighter-rouge">InventoryAPI</code></a>;</li>
+  <li><a href="./react_reference_receiptapi.html"><code class="highlighter-rouge">ReceiptAPI</code></a>;</li>
+  <li><a href="./react_reference_devicesprinter.html"><code class="highlighter-rouge">Printer</code></a>;</li>
+  <li><a href="./react_reference_devicescales.html"><code class="highlighter-rouge">Scales</code></a>.</li>
 </ul>
 
-<p>Данные получаются асинхронно, поэтому все методы <code class="highlighter-rouge">get*</code> возвращают обещание (<code class="highlighter-rouge">promise</code>).</p>
+<p>Данные получаются асинхронно, поэтому все методы <code class="highlighter-rouge">get*</code> возвращают обещание (<code class="highlighter-rouge">Promise</code>).</p>
 
 <p>Пример использования метода, возвращающего обещание:</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">workflow</span> <span class="o">=</span> <span class="nx">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">users</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">UserAPI</span><span class="p">.</span><span class="nx">getAllUsers</span><span class="p">();</span>
-    <span class="kr">const</span> <span class="nx">qwiojdio</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">UserAPI</span><span class="p">.</span><span class="nx">getAllGrants</span><span class="p">();</span>
-    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"REVOUT "</span> <span class="o">+</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">await</span> <span class="nx">UserAPI</span><span class="p">.</span><span class="nx">getAllUsers</span><span class="p">()));</span>
-    <span class="kr">const</span> <span class="nx">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Intent</span><span class="p">();</span>
-    <span class="nx">intent</span><span class="p">.</span><span class="nx">packageName</span> <span class="o">=</span> <span class="s1">'com.revonavigatio'</span><span class="p">;</span>
-    <span class="k">try</span> <span class="p">{</span>
-        <span class="nx">await</span> <span class="nx">NavigationAPI</span><span class="p">.</span><span class="nx">startActivity</span><span class="p">(</span><span class="nx">intent</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"REVOUT "</span> <span class="o">+</span> <span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
-    <span class="p">}</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">let</span> <span class="nx">users</span><span class="p">,</span> <span class="nx">product</span><span class="p">;</span>
+<span class="kr">const</span> <span class="nx">workflow</span> <span class="o">=</span> <span class="nx">async</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">users</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">UserAPI</span><span class="p">.</span><span class="nx">getAllUsers</span><span class="p">();</span>
+    <span class="nx">product</span> <span class="o">=</span> <span class="nx">await</span> <span class="nx">InventoryAPI</span><span class="p">.</span><span class="nx">getProductByUuid</span><span class="p">(</span><span class="s2">"58e11d31-b2d8-40a0-a1b0-cbd44620a9ec"</span><span class="p">);</span>
 <span class="p">};</span>
+<span class="nx">workflow</span><span class="p">();</span>
 </code></pre>
 </div>
 
 <h2 id="commands">Команды</h2>
 
-<p>Команды – методы с помощью которых ваше приложение может передавать данные в смарт-терминал.</p>
+<p>Команды – методы, которые инициируют действия на смарт-терминале.</p>
 
 <p>Команды представлены в классах:</p>
 
 <ul>
-  <li><a href="./react_reference_receiptapi.html"><code class="highlighter-rouge">ReceiptAPI</code></a> – с помощью методов класса приложения могут передавать чек для оплаты в смарт-терминале и отправить чек на email или телефон.</li>
-  <li><a href="./react_reference_devicesprinter.html"><code class="highlighter-rouge">Printer</code></a> – с помощью методов класса приложения могут передавать данные для печати на принтере, встроенном в смарт-терминал.</li>
+  <li><a href="./react_reference_receiptapi.html"><code class="highlighter-rouge">ReceiptAPI</code></a>;</li>
+  <li><a href="./react_reference_devicesprinter.html"><code class="highlighter-rouge">Printer</code></a>.</li>
 </ul>
 
 <h2 id="callbacks">Коллбэки</h2>
 
-<p>Коллбэки, с помощью которых вы можете изменять данные, например, применять скидку к созданным чекам, представлены в классе <a href="react_reference_integrationapi.html">IntegrationCallback</a>.</p>
+<p>Методы обратного вызова с помощью которых вы можете изменять данные чека, во время работы с ним, например, применять скидку к созданным чекам. Все методы этого типа представлены в классе <a href="react_reference_integrationapi.html">IntegrationCallback</a>.</p>
 
 <h2 id="eventsubscription">Подписка на события</h2>
 
@@ -973,6 +967,12 @@ $('#toc').on('click', 'a', function() {
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="o">*</span><span class="err">тип</span> <span class="err">события</span><span class="o">*</span><span class="p">,</span> <span class="nx">listener</span><span class="err">:</span> <span class="o">*</span><span class="err">тип</span> <span class="err">слушателя</span><span class="o">*</span><span class="p">,</span> <span class="nx">isGlobal</span><span class="err">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
 </code></pre>
 </div>
+
+<p>где:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">isGlobal</code> – указывает на то получает приложение события, если не запущено. По умолчанию – <code class="highlighter-rouge">true</code> (приложение получает сообщения если не запущено).</li>
+</ul>
 
 <p>Чтобы удалить слушатель, используйте метод:</p>
 
@@ -992,9 +992,9 @@ $('#toc').on('click', 'a', function() {
   <li><a href="./react_reference_navigationapi.html"><code class="highlighter-rouge">NavigationAPI</code></a></li>
 </ul>
 
-<h3 id="broadcastreceiver">Широковещательные сообщения</h3>
+<!-- ### Широковещательные сообщения {#broadcastreceiver}
 
-<p>Частным случаем подписки на события является <a href="./react_reference_broadcastreceivers.html">подписка на широковещательные сообщения</a>. Широковещательные сообщения – сообщения, которые смарт-терминал рассылает на все приложения.</p>
+Частным случаем подписки на события является [подписка на широковещательные сообщения](./react_reference_broadcastreceivers.html). Широковещательные сообщения – сообщения о взаимодействии с чеком, которые смарт-терминал рассылает на все приложения. -->
 
 
     <div class="tags">

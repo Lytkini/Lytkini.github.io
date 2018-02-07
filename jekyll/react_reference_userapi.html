@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" react">
-<title>User API | Документация Эвотор</title>
+<title>UserAPI | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -139,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="User API">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="UserAPI">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -877,7 +877,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">User API</h1>
+   <h1 class="post-title-main">UserAPI</h1>
 </div>
 
 
@@ -921,6 +921,8 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="section">Описание</h2>
 
+<p>С помощью методов класса приложения получают данные пользователей смарт-терминала.</p>
+
 <h2 id="section-1">Методы</h2>
 
 <h3 id="getallusers">getAllUsers</h3>
@@ -933,12 +935,10 @@ $('#toc').on('click', 'a', function() {
 
 <p>Получает список всех пользователей смарт-терминала.</p>
 
-<p><strong>Параметры</strong></p>
-
 <p><strong>Возвращает</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Promise</code> – тип данных – <a href="./react_reference_userapi.html#user"><code class="highlighter-rouge">User[]</code></a></li>
+  <li><code class="highlighter-rouge">Promise</code> – массив <a href="./react_reference_userapi.html#user">пользователей</a></li>
 </ul>
 
 <h3 id="getauthenticateduser">getAuthenticatedUser</h3>
@@ -951,12 +951,10 @@ $('#toc').on('click', 'a', function() {
 
 <p>Получает данные авторизованного пользователя смарт-терминала.</p>
 
-<p><strong>Параметры</strong></p>
-
 <p><strong>Возвращает</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Promise</code> – тип данных – <a href="./react_reference_userapi.html#user"><code class="highlighter-rouge">User</code></a>.</li>
+  <li><code class="highlighter-rouge">Promise</code> – <a href="./react_reference_userapi.html#user"><code class="highlighter-rouge">пользователь</code></a>.</li>
 </ul>
 
 <h3 id="getallgrants">getAllGrants</h3>
@@ -974,7 +972,7 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Возвращает</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Promise</code> – тип данных – <a href="./react_reference_userapi.html#grant"><code class="highlighter-rouge">Grant[]</code></a>.</li>
+  <li><code class="highlighter-rouge">Promise</code> – массив <a href="./react_reference_userapi.html#grant">прав</a>.</li>
 </ul>
 
 <h3 id="getgrantsofauthenticateduser">getGrantsOfAuthenticatedUser</h3>
@@ -992,7 +990,7 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Возвращает</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Promise</code> – тип данных – <a href="./react_reference_userapi.html#grant"><code class="highlighter-rouge">Grant[]</code></a>.</li>
+  <li><code class="highlighter-rouge">Promise</code> – массив <a href="./react_reference_userapi.html#grant">прав</a>.</li>
 </ul>
 
 <h2 id="section-2">Параметры</h2>
