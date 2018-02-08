@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" react">
-<title>Весы | Документация Эвотор</title>
+<title>Класс Scales | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -139,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Весы">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Класс Scales">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -567,19 +567,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="react_reference_seviceapi.html">Интеграционные службы</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    <li><a href="react_reference_seviceapi.html">Создание служб</a></li>
                     
                     
                     
                     
                     
                     <li><a href="react_reference_broadcastreceivers.html">Широковещательный приёмник</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
                     
                     
                     
@@ -883,7 +883,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Весы</h1>
+   <h1 class="post-title-main">Класс Scales</h1>
 </div>
 
 
@@ -944,7 +944,13 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Возвращает</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Promise</code> – <a href="./react_reference_devicescales.html#weight">вес товара</a>.</li>
+  <li><code class="highlighter-rouge">Promise</code>, результат которого, - <a href="./react_reference_devicescales.html#weight">вес товара</a>.</li>
+</ul>
+
+<p><strong>Возможные ошибки</strong></p>
+
+<ul>
+  <li><a href="./doc_react_errorshandling.html#DeviceError"><code class="highlighter-rouge">DeviceError</code></a></li>
 </ul>
 
 <h2 id="section-2">Параметры</h2>
@@ -956,10 +962,6 @@ $('#toc').on('click', 'a', function() {
 <span class="p">}</span>
 </code></pre>
 </div>
-
-<h2 id="section-3">Ошибки</h2>
-
-<p>При вызове методов класса могут возникать ошибки класса <a href="./doc_react_errorshandling.html#DeviceError"><code class="highlighter-rouge">DeviceError</code></a>.</p>
 
 
     <div class="tags">

@@ -567,19 +567,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li class="active"><a href="react_reference_seviceapi.html">Интеграционные службы</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    <li class="active"><a href="react_reference_seviceapi.html">Создание служб</a></li>
                     
                     
                     
                     
                     
                     <li><a href="react_reference_broadcastreceivers.html">Широковещательный приёмник</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
                     
                     
                     
@@ -927,67 +927,9 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="section">Описание</h2>
 
-<p>Интеграционные службы позволяют подписываться на события изменения и создания чека, а также вносить изменения в чеки с помощью методов класса <code class="highlighter-rouge">IntegrationCallback</code>.</p>
+<p>С помощью методов класса вы можете создавать собственные службы, а также регистрировать <a href="./react_reference_integrationapi.html">интеграционные службы</a>.</p>
 
-<h2 id="integrationcallback">Методы класса IntegrationCallback</h2>
-
-<h3 id="onresult">onResult</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">onResult</span><span class="p">(</span><span class="nx">result</span><span class="err">:</span> <span class="nx">IntegrationEventResult</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p><strong>Параметры</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">result</code></li>
-</ul>
-
-<p><strong>Возвращает</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">Promise</code></li>
-</ul>
-
-<h3 id="startactivity">startActivity</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">startActivity</span><span class="p">(</span><span class="nx">intent</span><span class="err">:</span> <span class="nx">Intent</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p>Запускает операцию при получении намерения.</p>
-
-<p><strong>Параметры</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">Intent</code></li>
-</ul>
-
-<p><strong>Возвращает</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">Promise</code></li>
-</ul>
-
-<h3 id="skip">skip</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">skip</span><span class="p">()</span><span class="err">:</span> <span class="nx">Promise</span>
-</code></pre>
-</div>
-
-<p><strong>Описание</strong></p>
-
-<p><strong>Возвращает</strong></p>
-
-<ul>
-  <li><code class="highlighter-rouge">Promise</code></li>
-</ul>
-
-<h2 id="section-1">Методы для подписки на события</h2>
+<h2 id="section-1">Методы</h2>
 
 <h3 id="addeventlistener">addEventListener</h3>
 
@@ -1002,8 +944,8 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">type</code> – событие типа <a href="./react_reference_integrationapi.html#IntegrationEventType"><code class="highlighter-rouge">IntegrationEventType</code></a>.</li>
-  <li><code class="highlighter-rouge">listener</code> – слушатель типа <code class="highlighter-rouge">ServiceEventListener</code>.</li>
+  <li><code class="highlighter-rouge">type</code> – событие типа <a href="./react_reference_integrationapi.html#ServiceEventType"><code class="highlighter-rouge">ServiceEventType</code></a>.</li>
+  <li><code class="highlighter-rouge">listener</code> – слушатель типа <a href="./react_reference_integrationapi.html#ServiceEventListener"><code class="highlighter-rouge">ServiceEventListener</code></a>.</li>
   <li><code class="highlighter-rouge">isGlobal</code> – указывает <a href="./doc_react_interactiontypes.html#eventsubscription">глобальную доступность метода</a>.</li>
 </ul>
 
@@ -1027,8 +969,8 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">type</code> – тип события. Для отмены получения данных от интеграционных служб указывайте тип <a href="./react_reference_integrationapi.html#IntegrationEventType"><code class="highlighter-rouge">IntegrationEventType</code></a>.</li>
-  <li><code class="highlighter-rouge">listener</code> – тип слушателя. Для отмены получения данных от интеграционных служб указывайте тип <code class="highlighter-rouge">ServiceEventListener</code>. Не передавайте параметр если хотите удалить все слушатели.</li>
+  <li><code class="highlighter-rouge">type</code> – событие типа <a href="./react_reference_integrationapi.html#ServiceEventType"><code class="highlighter-rouge">ServiceEventType</code></a>.</li>
+  <li><code class="highlighter-rouge">listener</code> – слушатель типа <a href="./react_reference_integrationapi.html#ServiceEventListener"><code class="highlighter-rouge">ServiceEventListener</code></a>. Не передавайте параметр если хотите удалить все слушатели.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -1040,61 +982,29 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="section-2">Параметры</h2>
 
-<h3 id="beforepositionseditedeventresult">Класс BeforePositionsEditedEventResult</h3>
+<h3 id="ServiceEventType">Тип ServiceEventType</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">BeforePositionsEditedEventResult</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">changes</span><span class="err">:</span> <span class="nx">PositionChange</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">ServiceEventType</span> <span class="o">=</span> <span class="nx">CustomServiceEventType</span> <span class="o">|</span> <span class="nx">IntegrationServiceEventType</span><span class="p">;</span>
 </code></pre>
 </div>
 
-<h3 id="receiptdiscounteventresult">Класс ReceiptDiscountEventResult</h3>
+<h3 id="customserviceeventtype">Тип CustomServiceEventType</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ReceiptDiscountEventResult</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">discount</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">changes</span><span class="err">:</span> <span class="nx">PositionChange</span><span class="p">[])</span> <span class="p">{}</span>
-<span class="p">}</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">CustomServiceEventType</span> <span class="o">=</span> <span class="nx">string</span><span class="p">;</span>
 </code></pre>
 </div>
 
-<h3 id="paymentselectedeventresult">Класс PaymentSelectedEventResult</h3>
+<h3 id="ServiceEventListener">Тип ServiceEventListener</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PaymentSelectedEventResult</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">paymentParts</span><span class="err">:</span> <span class="nx">PaymentPurpose</span><span class="p">[])</span> <span class="p">{}</span>
-<span class="p">}</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">ServiceEventListener</span> <span class="o">=</span> <span class="nx">CustomServiceEventListener</span> <span class="o">|</span> <span class="nx">IntegrationServiceEventListener</span><span class="p">;</span>
 </code></pre>
 </div>
 
-<h3 id="printgrouprequiredeventresult">Класс PrintGroupRequiredEventResult</h3>
+<h3 id="customserviceeventlistener">Тип CustomServiceEventListener</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintGroupRequiredEventResult</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">setPrintGroups</span><span class="err">:</span> <span class="nx">SetPrintGroup</span><span class="p">[])</span> <span class="p">{}</span>
-<span class="p">}</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">CustomServiceEventListener</span> <span class="o">=</span> <span class="p">(</span><span class="nx">extras</span><span class="err">:</span> <span class="nb">Object</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
 </code></pre>
 </div>
-
-<h3 id="printextrarequiredeventresult">Класс PrintExtraRequiredEventResult</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraRequiredEventResult</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="err">:</span> <span class="nx">SetPrintExtra</span><span class="p">[])</span> <span class="p">{}</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<h3 id="IntegrationEventType">Тип IntegrationEventType</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">IntegrationEventType</span> <span class="p">{</span>
-    <span class="nx">BEFORE_POSITIONS_EDITED</span> <span class="o">=</span> <span class="s2">"BEFORE_POSITIONS_EDITED"</span><span class="p">,</span>
-    <span class="nx">RECEIPT_DISCOUNT</span> <span class="o">=</span> <span class="s2">"RECEIPT_DISCOUNT"</span><span class="p">,</span>
-    <span class="nx">PAYMENT_SELECTED</span> <span class="o">=</span> <span class="s2">"PAYMENT_SELECTED"</span><span class="p">,</span>
-    <span class="nx">PRINT_GROUP_REQUIRED</span> <span class="o">=</span> <span class="s2">"PRINT_GROUP_REQUIRED"</span><span class="p">,</span>
-    <span class="nx">PRINT_EXTRA_REQUIRED</span> <span class="o">=</span> <span class="s2">"PRINT_EXTRA_REQUIRED"</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<h2 id="section-3">Ошибки</h2>
-
-<p>При вызове методов класса могут возникать ошибки класса <a href="./doc_react_errorshandling.html#integrationerror"><code class="highlighter-rouge">IntegrationError</code></a>.</p>
 
 
     <div class="tags">

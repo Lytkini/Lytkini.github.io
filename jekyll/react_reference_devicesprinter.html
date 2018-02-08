@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" react">
-<title>Принтер | Документация Эвотор</title>
+<title>Класс Printer | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -139,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Принтер">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Класс Printer">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -567,19 +567,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="react_reference_seviceapi.html">Интеграционные службы</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    <li><a href="react_reference_seviceapi.html">Создание служб</a></li>
                     
                     
                     
                     
                     
                     <li><a href="react_reference_broadcastreceivers.html">Широковещательный приёмник</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
                     
                     
                     
@@ -883,7 +883,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Принтер</h1>
+   <h1 class="post-title-main">Класс Printer</h1>
 </div>
 
 
@@ -927,7 +927,7 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="section">Описание</h2>
 
-<p>Класс позволяет работать с принтером к смарт-терминала.</p>
+<p>Класс позволяет работать с принтером смарт-терминала.</p>
 
 <h2 id="section-1">Методы</h2>
 
@@ -944,13 +944,19 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">printables</code> – массив печатных элементов: <a href="./react_reference_devicesprinter.html#PrintableText">текста</a>, <a href="./react_reference_devicesprinter.html#PrintableBarcode">штрихкодов</a>, <a href="./react_reference_devicesprinter.html#PrintableImage">изображений</a>.</li>
+  <li><code class="highlighter-rouge">printables</code> – массив <a href="./react_reference_devicesprinter.html#printable"> печатных элементов</a>.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
 
 <ul>
   <li><code class="highlighter-rouge">Promise</code></li>
+</ul>
+
+<p><strong>Возможные ошибки</strong></p>
+
+<ul>
+  <li><a href="./doc_react_errorshandling.html#DeviceError"><code class="highlighter-rouge">DeviceError</code></a></li>
 </ul>
 
 <h3 id="getallowablesymbolslinelength">getAllowableSymbolsLineLength</h3>
@@ -969,6 +975,12 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">Promise</code> – обещание, результат которого число.</li>
 </ul>
 
+<p><strong>Возможные ошибки</strong></p>
+
+<ul>
+  <li><a href="./doc_react_errorshandling.html#DeviceError"><code class="highlighter-rouge">DeviceError</code></a></li>
+</ul>
+
 <h3 id="getallowablepixellinelength">getAllowablePixelLineLength</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllowablePixelLineLength</span><span class="p">()</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span>
@@ -985,20 +997,24 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">Promise</code> – обещание, результат которого число.</li>
 </ul>
 
+<p><strong>Возможные ошибки</strong></p>
+
+<ul>
+  <li><a href="./doc_react_errorshandling.html#DeviceError"><code class="highlighter-rouge">DeviceError</code></a></li>
+</ul>
+
 <h2 id="section-2">Параметры</h2>
+
+<h3 id="printable">Тип Printable</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">Printable</span> <span class="o">=</span> <span class="nx">PrintableText</span> <span class="o">|</span> <span class="nx">PrintableBarcode</span> <span class="o">|</span> <span class="nx">PrintableImage</span><span class="p">;</span>
+</code></pre>
+</div>
 
 <h3 id="PrintableText">Класс PrintableText</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintableText</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">text</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<h3 id="PrintableBarcode">Класс PrintableBarcode</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintableBarcode</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">barcodeValue</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">barcodeType</span><span class="err">:</span> <span class="nx">BarcodeType</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
 </code></pre>
 </div>
@@ -1011,7 +1027,15 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="barcodetype">Тип BarcodeType</h3>
+<h3 id="PrintableBarcode">Класс PrintableBarcode</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintableBarcode</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">barcodeValue</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">barcodeType</span><span class="err">:</span> <span class="nx">BarcodeType</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="barcodetype">Перечисление BarcodeType</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">BarcodeType</span> <span class="p">{</span>
     <span class="nx">EAN8</span><span class="p">,</span>
@@ -1021,10 +1045,6 @@ $('#toc').on('click', 'a', function() {
 <span class="p">}</span>
 </code></pre>
 </div>
-
-<h2 id="section-3">Ошибки</h2>
-
-<p>При вызове методов класса могут возникать ошибки класса <a href="./doc_react_errorshandling.html#DeviceError"><code class="highlighter-rouge">DeviceError</code></a>.</p>
 
 
     <div class="tags">

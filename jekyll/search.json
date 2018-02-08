@@ -884,7 +884,7 @@
 
 
 {
-"title": "Весы",
+"title": "Класс Scales",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_devicescales.html",
@@ -895,7 +895,7 @@
 
 
 {
-"title": "Сканер",
+"title": "Класс Scaner",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_devicescanner.html",
@@ -906,7 +906,7 @@
 
 
 {
-"title": "DeviceServiceConnector",
+"title": "Класс DeviceServiceConnector",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_devicesconnection.html",
@@ -917,7 +917,7 @@
 
 
 {
-"title": "Принтер",
+"title": "Класс Printer",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_devicesprinter.html",

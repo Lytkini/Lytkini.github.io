@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content=" react">
-<title>Сканер | Документация Эвотор</title>
+<title>Класс Scaner | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -139,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Сканер">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Класс Scaner">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -567,19 +567,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="react_reference_seviceapi.html">Интеграционные службы</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    <li><a href="react_reference_seviceapi.html">Создание служб</a></li>
                     
                     
                     
                     
                     
                     <li><a href="react_reference_broadcastreceivers.html">Широковещательный приёмник</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
                     
                     
                     
@@ -883,7 +883,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Сканер</h1>
+   <h1 class="post-title-main">Класс Scaner</h1>
 </div>
 
 
@@ -944,9 +944,9 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">type</code> – событие типа <a href="./react_reference_devicescanner.html#ScannerEventType"><code class="highlighter-rouge">ScannerEventType</code></a>.</li>
-  <li><code class="highlighter-rouge">listener</code> – слушатель типа <code class="highlighter-rouge">ScannerEventListener</code>.</li>
-  <li><code class="highlighter-rouge">isGlobal</code> - <a href="./doc_react_interactiontypes.html#eventsubscription">глобальная доступность метода</a>.</li>
+  <li><code class="highlighter-rouge">type</code> – событие типа  <a href="./react_reference_devicescanner.html#ScannerEventType"><code class="highlighter-rouge">ScannerEventType</code></a>.</li>
+  <li><code class="highlighter-rouge">listener</code> – слушатель типа  <a href="./react_reference_devicescanner.html#scannereventlistener"><code class="highlighter-rouge">ScannerEventListener</code></a>.</li>
+  <li><code class="highlighter-rouge">isGlobal</code> – <a href="./doc_react_interactiontypes.html#eventsubscription">глобальная доступность метода</a>.</li>
 </ul>
 
 <h3 id="removeeventlistener">removeEventListener</h3>
@@ -963,7 +963,7 @@ $('#toc').on('click', 'a', function() {
 
 <ul>
   <li><code class="highlighter-rouge">type</code> – событие типа <a href="./react_reference_devicescanner.html#ScannerEventType"><code class="highlighter-rouge">ScannerEventType</code></a>.</li>
-  <li><code class="highlighter-rouge">listener</code> – слушатель типа <code class="highlighter-rouge">ScannerEventListener</code>. Не передавайте параметр если хотите удалить все слушатели.</li>
+  <li><code class="highlighter-rouge">listener</code> – слушатель типа <a href="./react_reference_devicescanner.html#scannereventlistener"><code class="highlighter-rouge">ScannerEventListener</code></a>. Не передавайте параметр, если хотите удалить все слушатели.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -975,11 +975,23 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="section-2">Параметры</h2>
 
-<h3 id="ScannerEventType">Тип ScannerEventType</h3>
+<h3 id="ScannerEventType">Перечисление ScannerEventType</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">ScannerEventType</span> <span class="p">{</span>
     <span class="nx">BARCODE_RECEIVED</span> <span class="o">=</span> <span class="s2">"BARCODE_RECEIVED"</span>
 <span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="scannereventlistener">Тип ScannerEventListener</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">ScannerEventListener</span> <span class="o">=</span> <span class="nx">BarcodeReceiveListener</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<h3 id="barcodereceivelistener">Тип BarcodeReceiveListener</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">BarcodeReceiveListener</span> <span class="o">=</span> <span class="p">(</span><span class="nx">barcode</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
 </code></pre>
 </div>
 

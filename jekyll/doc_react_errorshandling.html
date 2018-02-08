@@ -567,19 +567,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="react_reference_seviceapi.html">Интеграционные службы</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    <li><a href="react_reference_seviceapi.html">Создание служб</a></li>
                     
                     
                     
                     
                     
                     <li><a href="react_reference_broadcastreceivers.html">Широковещательный приёмник</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
                     
                     
                     
@@ -945,9 +945,9 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Возникает везде, где может быть вызвана интеграционная служба: при отправке электронного чека, при открытии чека, при вызове методов IntegrationCallback, при применении интеграционного результата интеграционной операции.</p>
+<p>Может возникнуть при работе с интеграционной службой, интеграционной операцией, а также при при открытии чека и отправке электронного чека.</p>
 
-<h2 id="navigationerror">NavigationError</h2>
+<h3 id="navigationerror">NavigationError</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">NavigationError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">NavigationErrorMessage</span><span class="p">)</span> <span class="p">{}</span>
@@ -959,11 +959,9 @@ $('#toc').on('click', 'a', function() {
 
 <p>Возникает если при навигации, если вы указали неверные данные.</p>
 
-<h3 id="navigationerrormessage">Тип NavigationErrorMessage</h3>
+<h4 id="navigationerrormessage">Тип NavigationErrorMessage</h4>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">NavigationErrorMessage</span> <span class="p">{</span>
-    <span class="nx">CURRENT_ACTIVITY_IS_NULL</span> <span class="o">=</span> <span class="s2">"CURRENT_ACTIVITY_IS_NULL"</span><span class="p">,</span>
-    <span class="nx">MISSED_NECESSARY_INTENT_DATA</span> <span class="o">=</span> <span class="s2">"MISSED_NECESSARY_INTENT_DATA"</span><span class="p">,</span>
     <span class="nx">TARGET_CLASS_NOT_FOUND</span> <span class="o">=</span> <span class="s2">"TARGET_CLASS_NOT_FOUND"</span><span class="p">,</span>
     <span class="nx">TARGET_PACKAGE_NOT_FOUND</span> <span class="o">=</span> <span class="s2">"TARGET_PACKAGE_NOT_FOUND"</span><span class="p">,</span>
     <span class="nx">TARGET_CLASS_NOT_EXPORTED</span> <span class="o">=</span> <span class="s2">"TARGET_CLASS_NOT_EXPORTED"</span>
@@ -993,7 +991,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Возникает при обращении к не подключённому устройству.</p>
+<p>Возникает при обращении к неподключённому устройству.</p>
 
 
     <div class="tags">
