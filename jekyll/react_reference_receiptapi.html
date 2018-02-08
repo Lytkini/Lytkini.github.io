@@ -567,19 +567,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="react_reference_seviceapi.html">Создание служб</a></li>
-                    
-                    
-                    
-                    
-                    
-                    <li><a href="react_reference_broadcastreceivers.html">Широковещательный приёмник</a></li>
+                    <li><a href="react_reference_seviceapi.html">Инициализация служб</a></li>
                     
                     
                     
                     
                     
                     <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="react_reference_broadcastreceivers.html">Широковещательный приёмник</a></li>
                     
                     
                     
@@ -1074,9 +1074,7 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="section-2">Параметры</h2>
 
-<h3 id="section-3">Изменение чека</h3>
-
-<h4 id="positionadd">Класс PositionAdd</h4>
+<h3 id="positionadd">Класс PositionAdd</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PositionAdd</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">position</span><span class="err">:</span> <span class="nx">Position</span><span class="p">)</span> <span class="p">{}</span>
@@ -1084,7 +1082,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="positionedit">Класс PositionEdit</h4>
+<h3 id="positionedit">Класс PositionEdit</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PositionEdit</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">position</span><span class="err">:</span> <span class="nx">Position</span><span class="p">)</span> <span class="p">{}</span>
@@ -1092,7 +1090,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="positionremove">Класс PositionRemove</h4>
+<h3 id="positionremove">Класс PositionRemove</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PositionRemove</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">positionUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
@@ -1100,7 +1098,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="setextra">Класс SetExtra</h4>
+<h3 id="setextra">Класс SetExtra</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">SetExtra</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="err">:</span> <span class="nx">WritableObject</span><span class="p">)</span> <span class="p">{}</span>
@@ -1108,7 +1106,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="setprintgroup">Класс SetPrintGroup</h4>
+<h3 id="setprintgroup">Класс SetPrintGroup</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">SetPrintGroup</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">printGroup</span><span class="err">:</span> <span class="nx">PrintGroup</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
@@ -1118,7 +1116,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="setprintextra">Класс SetPrintExtra</h4>
+<h3 id="setprintextra">Класс SetPrintExtra</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">SetPrintExtra</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">printExtraPlace</span><span class="err">:</span> <span class="nx">PrintExtraPlace</span><span class="p">,</span>
@@ -1128,9 +1126,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="section-4">Содержимое чека</h3>
-
-<h4 id="extrakey">Класс ExtraKey</h4>
+<h3 id="extrakey">Класс ExtraKey</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ExtraKey</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">identity</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">appId</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">description</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
@@ -1138,7 +1134,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="position">Класс Position</h4>
+<h3 id="position">Класс Position</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Position</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
@@ -1163,7 +1159,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="receiptheader">Класс ReceiptHeader</h4>
+<h3 id="receiptheader">Класс ReceiptHeader</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ReceiptHeader</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
@@ -1177,7 +1173,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="printgroup">Класс PrintGroup</h4>
+<h3 id="printgroup">Класс PrintGroup</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintGroup</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">identifier</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
@@ -1191,7 +1187,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="payment">Класс Payment</h4>
+<h3 id="payment">Класс Payment</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Payment</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
@@ -1204,7 +1200,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="printreceipt">Класс PrintReceipt</h4>
+<h3 id="printreceipt">Класс PrintReceipt</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintReceipt</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">printGroup</span><span class="err">:</span> <span class="nx">PrintGroup</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
@@ -1215,7 +1211,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="receipt">Класс Receipt</h4>
+<h3 id="receipt">Класс Receipt</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Receipt</span> <span class="p">{</span>
 
@@ -1225,7 +1221,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="section-5">Методы класса</h4>
+<h4 id="section-3">Методы класса</h4>
 
 <h5 id="getpositions">getPositions</h5>
 
@@ -1254,7 +1250,7 @@ $('#toc').on('click', 'a', function() {
 
 <p>Метод <a href="./react_reference_receiptapi.html#payment">массив платежей</a></p>
 
-<h4 id="paymentpurpose">Класс PaymentPurpose</h4>
+<h3 id="paymentpurpose">Класс PaymentPurpose</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PaymentPurpose</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">identifier</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
@@ -1266,7 +1262,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="paymentsystem">Класс PaymentSystem</h4>
+<h3 id="paymentsystem">Класс PaymentSystem</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PaymentSystem</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">paymentType</span><span class="err">:</span> <span class="nx">PaymentType</span><span class="p">,</span> <span class="nx">userDescription</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">paymentSystemId</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
@@ -1274,7 +1270,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="receipttype">Тип ReceiptType</h4>
+<h3 id="receipttype">Тип ReceiptType</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">ReceiptType</span> <span class="p">{</span>
     <span class="nx">SELL</span> <span class="o">=</span> <span class="s2">"SELL"</span><span class="p">,</span>
@@ -1283,7 +1279,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="taxnumber">Тип TaxNumber</h4>
+<h3 id="taxnumber">Перечисление TaxNumber</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">TaxNumber</span> <span class="p">{</span>
     <span class="nx">VAT_18</span> <span class="o">=</span> <span class="s2">"VAT_18"</span><span class="p">,</span>
@@ -1296,7 +1292,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="taxationsystem">Тип TaxationSystem</h4>
+<h3 id="taxationsystem">Перечисление TaxationSystem</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">TaxationSystem</span> <span class="p">{</span>
     <span class="nx">COMMON</span> <span class="o">=</span> <span class="s2">"COMMON"</span><span class="p">,</span>
@@ -1309,7 +1305,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="printgrouptype">Тип PrintGroupType</h4>
+<h3 id="printgrouptype">Перечисление PrintGroupType</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">PrintGroupType</span> <span class="p">{</span>
     <span class="nx">CASH_RECEIPT</span> <span class="o">=</span> <span class="s2">"CASH_RECEIPT"</span><span class="p">,</span>
@@ -1319,7 +1315,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="printextraplace">Тип PrintExtraPlace</h4>
+<h3 id="printextraplace">Перечисление PrintExtraPlace</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">PrintExtraPlace</span> <span class="p">{</span>
     <span class="nx">PrintExtraPlacePrintGroupTop</span> <span class="o">=</span> <span class="s2">"PrintExtraPlacePrintGroupTop"</span><span class="p">,</span>
@@ -1331,7 +1327,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h4 id="paymenttype">Тип PaymentType</h4>
+<h3 id="paymenttype">Перечисление PaymentType</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">PaymentType</span> <span class="p">{</span>
     <span class="nx">UNKNOWN</span> <span class="o">=</span> <span class="s2">"UNKNOWN"</span><span class="p">,</span>
