@@ -567,6 +567,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
+                    <li><a href="react_reference_seviceapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
                     <li class="active"><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
                     
                     
@@ -921,9 +927,7 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="section">Описание</h2>
 
-<p>Подписываешься на события изменения и создания чека,</p>
-
-<p>внести изменения с помощью методов класса IntegrationCallback</p>
+<p>Интеграционные службы позволяют подписываться на события изменения и создания чека, а также вносить изменения в чеки с помощью методов класса <code class="highlighter-rouge">IntegrationCallback</code>.</p>
 
 <h2 id="integrationcallback">Методы класса IntegrationCallback</h2>
 
@@ -998,12 +1002,17 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">type</code> – тип события. Для получения данных от интеграционных служб указывайте тип <a href="./react_reference_integrationapi.html#IntegrationEventType"><code class="highlighter-rouge">IntegrationEventType</code></a>.</li>
-  <li><code class="highlighter-rouge">listener</code> – тип слушателя. Для получения данных от интеграционных служб указывайте тип <code class="highlighter-rouge">ServiceEventListener</code>.</li>
-  <li><code class="highlighter-rouge">isGlobal</code> – указывает глобальную доступность метода. По умолчанию <code class="highlighter-rouge">true</code>.</li>
+  <li><code class="highlighter-rouge">type</code> – событие типа <a href="./react_reference_integrationapi.html#IntegrationEventType"><code class="highlighter-rouge">IntegrationEventType</code></a>.</li>
+  <li><code class="highlighter-rouge">listener</code> – слушатель типа <code class="highlighter-rouge">ServiceEventListener</code>.</li>
+  <li><code class="highlighter-rouge">isGlobal</code> – указывает <a href="./doc_react_interactiontypes.html#eventsubscription">глобальную доступность метода</a>.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">true</code> – если слушатель удалён.</li>
+  <li><code class="highlighter-rouge">false</code> – если слушатель не удалён.</li>
+</ul>
 
 <h3 id="removeeventlistener">removeEventListener</h3>
 
@@ -1071,14 +1080,6 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="IntegrationError">Класс IntegrationError</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">IntegrationError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
 <h3 id="IntegrationEventType">Тип IntegrationEventType</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">IntegrationEventType</span> <span class="p">{</span>
@@ -1090,6 +1091,10 @@ $('#toc').on('click', 'a', function() {
 <span class="p">}</span>
 </code></pre>
 </div>
+
+<h2 id="section-3">Ошибки</h2>
+
+<p>При вызове методов класса могут возникать ошибки класса <a href="./doc_react_errorshandling.html#integrationerror"><code class="highlighter-rouge">IntegrationError</code></a>.</p>
 
 
     <div class="tags">

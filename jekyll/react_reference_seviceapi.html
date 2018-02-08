@@ -10,8 +10,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content=" sample homepage">
-<title>О платформе Эвотор | Документация Эвотор</title>
+<meta name="keywords" content=" react">
+<title>Собственные службы | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -139,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="О платформе Эвотор">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Собственные службы">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -567,7 +567,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="react_reference_seviceapi.html">Интеграционные службы</a></li>
+                    <li class="active"><a href="react_reference_seviceapi.html">Интеграционные службы</a></li>
                     
                     
                     
@@ -883,7 +883,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">О платформе Эвотор</h1>
+   <h1 class="post-title-main">Собственные службы</h1>
 </div>
 
 
@@ -921,46 +921,180 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/master//index.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/react_reference/react_reference_seviceapi.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <h3 id="section">О платформе</h3>
+  <h2 id="section">Описание</h2>
 
-<p>Платформа Эвотор это:</p>
+<p>Интеграционные службы позволяют подписываться на события изменения и создания чека, а также вносить изменения в чеки с помощью методов класса <code class="highlighter-rouge">IntegrationCallback</code>.</p>
 
-<ul>
-  <li><em>Облако Эвотор</em>. Облако хранит информацию о сотрудниках (например, кассирах), терминалах, магазинах и товарах пользователей платформы. Пользователи могут создавать, редактировать и удалять магазины, терминалы и сотрудников. Облако также содержит информацию о товарах пользователей.</li>
-  <li><em>Смарт-терминал</em>. Смарт-терминал позволяет совершать товарно-денежные операции с товарами пользователей. Это могут быть как произвольные товары, так и товары, которые хранятся локально на терминале.</li>
-</ul>
+<h2 id="integrationcallback">Методы класса IntegrationCallback</h2>
 
-<p><a href="https://buy.evotor.ru/types">Приобретая смарт-терминал</a> пользователи платформы получают доступ к базовой функциональности:</p>
+<h3 id="onresult">onResult</h3>
 
-<ul>
-  <li>Редактирование списка магазинов, сотрудников и смарт-терминалов.</li>
-  <li>Редактирование номенклатуры.</li>
-  <li>Просмотр базовых отчётов.</li>
-  <li>Установка приложений для интеграции со сторонними сервисами.</li>
-</ul>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">onResult</span><span class="p">(</span><span class="nx">result</span><span class="err">:</span> <span class="nx">IntegrationEventResult</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span>
+</code></pre>
+</div>
 
-<p>С помощью интеграции сторонних приложений, которые распространяются в <em>Магазине приложений</em>, вы можете помочь пользователям:</p>
+<p><strong>Описание</strong></p>
+
+<p><strong>Параметры</strong></p>
 
 <ul>
-  <li>взаимодействовать со сторонними товароучётными системами, как установленными на компьютере пользователя, так и доступными в облаке;</li>
-  <li>автоматически обновлять информацию о магазинах в картографических сервисах;</li>
-  <li>использовать различные системы лояльности для клиентов пользователей платформы;</li>
-  <li>и многое другое.</li>
+  <li><code class="highlighter-rouge">result</code></li>
 </ul>
 
-<h3 id="section-1">С чего начать</h3>
+<p><strong>Возвращает</strong></p>
 
-<p><a href="./doc_integration_types.html">Ознакомьтесь со способами интеграции с платформой Эвотор</a>.</p>
+<ul>
+  <li><code class="highlighter-rouge">Promise</code></li>
+</ul>
 
-<p>Чтобы наглядно ознакомиться с функциями смарт-терминала, <a href="./doc_java_app_tutorial.html">установите демонстрационное приложение</a>.</p>
+<h3 id="startactivity">startActivity</h3>
 
-<h3 id="section-2">Полезные ресурсы</h3>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">startActivity</span><span class="p">(</span><span class="nx">intent</span><span class="err">:</span> <span class="nx">Intent</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span>
+</code></pre>
+</div>
 
-<p>Изучите запросы к облаку Эвотор и к стороннему веб-сервису на сайте <a href="https://api.evotor.ru/docs/">api.evotor.ru</a>. Ознакомьтесь с <a href="https://dev.evotor.ru">порталом разработчиков</a>, которые создают смарт-терминалы. Узнайте <a href="doc_errors_returned.html">какие ошибки</a> могут возникнуть при интеграции стороннего сервиса и платформы Эвотор.</p>
+<p><strong>Описание</strong></p>
+
+<p>Запускает операцию при получении намерения.</p>
+
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Intent</code></li>
+</ul>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code></li>
+</ul>
+
+<h3 id="skip">skip</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">skip</span><span class="p">()</span><span class="err">:</span> <span class="nx">Promise</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code></li>
+</ul>
+
+<h2 id="section-1">Методы для подписки на события</h2>
+
+<h3 id="addeventlistener">addEventListener</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">ServiceEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="err">:</span> <span class="nx">ServiceEventListener</span><span class="p">,</span> <span class="nx">isGlobal</span><span class="err">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Регистрирует слушатель и <a href="./doc_react_interactiontypes.html#eventsubscription">подписывает приложение на события</a>.</p>
+
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">type</code> – событие типа <a href="./react_reference_integrationapi.html#IntegrationEventType"><code class="highlighter-rouge">IntegrationEventType</code></a>.</li>
+  <li><code class="highlighter-rouge">listener</code> – слушатель типа <code class="highlighter-rouge">ServiceEventListener</code>.</li>
+  <li><code class="highlighter-rouge">isGlobal</code> – указывает <a href="./doc_react_interactiontypes.html#eventsubscription">глобальную доступность метода</a>.</li>
+</ul>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">true</code> – если слушатель удалён.</li>
+  <li><code class="highlighter-rouge">false</code> – если слушатель не удалён.</li>
+</ul>
+
+<h3 id="removeeventlistener">removeEventListener</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">removeEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">ServiceEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="p">?:</span> <span class="nx">ServiceEventListener</span><span class="p">)</span><span class="err">:</span> <span class="kr">boolean</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Удаляет слушатель и отменяет <a href="./doc_react_interactiontypes.html#eventsubscription">подписку на события</a>.</p>
+
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">type</code> – тип события. Для отмены получения данных от интеграционных служб указывайте тип <a href="./react_reference_integrationapi.html#IntegrationEventType"><code class="highlighter-rouge">IntegrationEventType</code></a>.</li>
+  <li><code class="highlighter-rouge">listener</code> – тип слушателя. Для отмены получения данных от интеграционных служб указывайте тип <code class="highlighter-rouge">ServiceEventListener</code>. Не передавайте параметр если хотите удалить все слушатели.</li>
+</ul>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">true</code> – если слушатель удалён.</li>
+  <li><code class="highlighter-rouge">false</code> – если слушатель не удалён.</li>
+</ul>
+
+<h2 id="section-2">Параметры</h2>
+
+<h3 id="beforepositionseditedeventresult">Класс BeforePositionsEditedEventResult</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">BeforePositionsEditedEventResult</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">changes</span><span class="err">:</span> <span class="nx">PositionChange</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="receiptdiscounteventresult">Класс ReceiptDiscountEventResult</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ReceiptDiscountEventResult</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">discount</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">changes</span><span class="err">:</span> <span class="nx">PositionChange</span><span class="p">[])</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="paymentselectedeventresult">Класс PaymentSelectedEventResult</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PaymentSelectedEventResult</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">paymentParts</span><span class="err">:</span> <span class="nx">PaymentPurpose</span><span class="p">[])</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="printgrouprequiredeventresult">Класс PrintGroupRequiredEventResult</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintGroupRequiredEventResult</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">setPrintGroups</span><span class="err">:</span> <span class="nx">SetPrintGroup</span><span class="p">[])</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="printextrarequiredeventresult">Класс PrintExtraRequiredEventResult</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraRequiredEventResult</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="err">:</span> <span class="nx">SetPrintExtra</span><span class="p">[])</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="IntegrationEventType">Тип IntegrationEventType</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">IntegrationEventType</span> <span class="p">{</span>
+    <span class="nx">BEFORE_POSITIONS_EDITED</span> <span class="o">=</span> <span class="s2">"BEFORE_POSITIONS_EDITED"</span><span class="p">,</span>
+    <span class="nx">RECEIPT_DISCOUNT</span> <span class="o">=</span> <span class="s2">"RECEIPT_DISCOUNT"</span><span class="p">,</span>
+    <span class="nx">PAYMENT_SELECTED</span> <span class="o">=</span> <span class="s2">"PAYMENT_SELECTED"</span><span class="p">,</span>
+    <span class="nx">PRINT_GROUP_REQUIRED</span> <span class="o">=</span> <span class="s2">"PRINT_GROUP_REQUIRED"</span><span class="p">,</span>
+    <span class="nx">PRINT_EXTRA_REQUIRED</span> <span class="o">=</span> <span class="s2">"PRINT_EXTRA_REQUIRED"</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="section-3">Ошибки</h2>
+
+<p>При вызове методов класса могут возникать ошибки класса <a href="./doc_react_errorshandling.html#integrationerror"><code class="highlighter-rouge">IntegrationError</code></a>.</p>
 
 
     <div class="tags">

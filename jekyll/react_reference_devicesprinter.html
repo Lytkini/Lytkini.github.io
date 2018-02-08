@@ -567,6 +567,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
+                    <li><a href="react_reference_seviceapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
                     <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
                     
                     
@@ -921,24 +927,24 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="section">Описание</h2>
 
-<p>С помощью методов класса приложения получают допустимую длину строки для печати в символах или пикселях, а также передавать данные для печати на принтере, встроенном в смарт-терминал.</p>
+<p>Класс позволяет работать с принтером к смарт-терминала.</p>
 
 <h2 id="section-1">Методы</h2>
 
 <h3 id="print">print</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">print</span><span class="p">(</span><span class="nx">printables</span><span class="err">:</span> <span class="p">[</span><span class="nx">PrintableText</span><span class="p">,</span> <span class="nx">PrintableBarcode</span><span class="p">,</span> <span class="nx">PrintableImage</span><span class="p">])</span><span class="err">:</span> <span class="nx">Promise</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">print</span><span class="p">(</span><span class="nx">printables</span><span class="err">:</span> <span class="nx">Printable</span><span class="p">[])</span><span class="err">:</span> <span class="nx">Promise</span>
 </code></pre>
 </div>
 
 <p><strong>Описание</strong></p>
 
-<p>Передаёт данные для печати на принтере смарт-терминала.</p>
+<p>Вызывает команду печати.</p>
 
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">printables</code> – функция, в параметры которой передаётся массив элементов для печати: <a href="./react_reference_devicesprinter.html#PrintableText"><code class="highlighter-rouge">PrintableText</code></a>, <a href="./react_reference_devicesprinter.html#PrintableBarcode">PrintableBarcode</a>, <a href="./react_reference_devicesprinter.html#PrintableImage">PrintableImage</a>.</li>
+  <li><code class="highlighter-rouge">printables</code> – массив печатных элементов: <a href="./react_reference_devicesprinter.html#PrintableText">текста</a>, <a href="./react_reference_devicesprinter.html#PrintableBarcode">штрихкодов</a>, <a href="./react_reference_devicesprinter.html#PrintableImage">изображений</a>.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -955,14 +961,12 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Получает длину печатной строки в символах.</p>
-
-<p><strong>Параметры</strong></p>
+<p>Позволяет получить длину печатной строки в символах.</p>
 
 <p><strong>Возвращает</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Promise</code> – объект, который содержит число, указывающее длину печатной строки в символах.</li>
+  <li><code class="highlighter-rouge">Promise</code> – обещание, результат которого число.</li>
 </ul>
 
 <h3 id="getallowablepixellinelength">getAllowablePixelLineLength</h3>
@@ -973,25 +977,15 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Получает длину печатной строки в пикселях.</p>
-
-<p><strong>Параметры</strong></p>
+<p>Позволяет получить длину печатной строки в пикселях.</p>
 
 <p><strong>Возвращает</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Promise</code> – объект, который содержит число, указывающее длину печатной строки в пикселях.</li>
+  <li><code class="highlighter-rouge">Promise</code> – обещание, результат которого число.</li>
 </ul>
 
 <h2 id="section-2">Параметры</h2>
-
-<h2 id="DeviceError">Класс DeviceError</h2>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">DeviceError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
-</code></pre>
-</div>
 
 <h3 id="PrintableText">Класс PrintableText</h3>
 
@@ -1027,6 +1021,10 @@ $('#toc').on('click', 'a', function() {
 <span class="p">}</span>
 </code></pre>
 </div>
+
+<h2 id="section-3">Ошибки</h2>
+
+<p>При вызове методов класса могут возникать ошибки класса <a href="./doc_react_errorshandling.html#DeviceError"><code class="highlighter-rouge">DeviceError</code></a>.</p>
 
 
     <div class="tags">

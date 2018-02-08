@@ -567,6 +567,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
+                    <li><a href="react_reference_seviceapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
                     <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
                     
                     
@@ -971,7 +977,7 @@ $('#toc').on('click', 'a', function() {
 <p>где:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">isGlobal</code> – указывает на то получает приложение события, если не запущено. По умолчанию – <code class="highlighter-rouge">true</code> (приложение получает сообщения если не запущено).</li>
+  <li><code class="highlighter-rouge">isGlobal</code> – указывает глобальную доступность метода: если <code class="highlighter-rouge">true</code>, приложение получает события независимо от того запущено оно или нет. По умолчанию – <code class="highlighter-rouge">true</code>.</li>
 </ul>
 
 <p>Чтобы удалить слушатель, используйте метод:</p>
@@ -980,7 +986,11 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Чтобы удалить все слушатели события не передавайте параметр <code class="highlighter-rouge">listener</code>.</div>
+<p>где:</p>
+
+<p>Метод возвращает <code class="highlighter-rouge">true</code>, если слушатель удалён успешно, и <code class="highlighter-rouge">false</code>, если удалить слушатель не удалось.</p>
+
+<p>Чтобы удалить все слушатели события не передавайте параметр <code class="highlighter-rouge">listener</code>.</p>
 
 <p>Методы представлены в классах:</p>
 
@@ -991,10 +1001,6 @@ $('#toc').on('click', 'a', function() {
   <li><a href="./react_reference_devicescanner.html"><code class="highlighter-rouge">Scanner</code></a></li>
   <li><a href="./react_reference_navigationapi.html"><code class="highlighter-rouge">NavigationAPI</code></a></li>
 </ul>
-
-<!-- ### Широковещательные сообщения {#broadcastreceiver}
-
-Частным случаем подписки на события является [подписка на широковещательные сообщения](./react_reference_broadcastreceivers.html). Широковещательные сообщения – сообщения о взаимодействии с чеком, которые смарт-терминал рассылает на все приложения. -->
 
 
     <div class="tags">

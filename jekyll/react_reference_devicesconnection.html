@@ -567,6 +567,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
+                    <li><a href="react_reference_seviceapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
                     <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
                     
                     
@@ -921,6 +927,8 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="section">Описание</h2>
 
+<p>Класс подключает устройства (принтер чеков и весы) к смарт-терминалу.</p>
+
 <h2 id="section-1">Методы</h2>
 
 <h3 id="startinitconnections">startInitConnections</h3>
@@ -931,11 +939,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Инициализирует оборудование подключённое к смарт-терминалу.</p>
-
-<p><strong>Параметры</strong></p>
-
-<p><strong>Возвращает</strong></p>
+<p>Инициализирует подключение устройств.</p>
 
 <h3 id="addeventlistener">addEventListener</h3>
 
@@ -950,12 +954,10 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">type</code> – тип события. Для получения данных от подключённого устройства указывайте тип <a href="./react_reference_devicesconnection.html#DeviceConnectionEventType"><code class="highlighter-rouge">DeviceConnectionEventType</code></a>.</li>
-  <li><code class="highlighter-rouge">listener</code> – тип слушателя. Для получения данных от подключённого устройства указывайте тип <code class="highlighter-rouge">DeviceConnectionEventListener</code>.</li>
-  <li><code class="highlighter-rouge">isGlobal</code> – указывает глобальную доступность метода. По умолчанию <code class="highlighter-rouge">true</code>.</li>
+  <li><code class="highlighter-rouge">type</code> – событие типа <a href="./react_reference_devicesconnection.html#DeviceConnectionEventType"><code class="highlighter-rouge">DeviceConnectionEventType</code></a>.</li>
+  <li><code class="highlighter-rouge">listener</code> – слушатель типа <code class="highlighter-rouge">DeviceConnectionEventListener</code>.</li>
+  <li><code class="highlighter-rouge">isGlobal</code> – указывает <a href="./doc_react_interactiontypes.html#eventsubscription">глобальную доступность метода</a>.</li>
 </ul>
-
-<p><strong>Возвращает</strong></p>
 
 <h3 id="removeeventlistener">removeEventListener</h3>
 
@@ -970,8 +972,8 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">type</code> – тип события. Для отмены получения данных от подключённого устройства указывайте тип <a href="./react_reference_devicesconnection.html#DeviceConnectionEventType"><code class="highlighter-rouge">DeviceConnectionEventType</code></a>.</li>
-  <li><code class="highlighter-rouge">listener</code> – тип слушателя. Для отмены получения данных от подключённого устройства указывайте тип <code class="highlighter-rouge">DeviceConnectionEventListener</code>. Не передавайте параметр если хотите удалить все слушатели.</li>
+  <li><code class="highlighter-rouge">type</code> – событие типа <a href="./react_reference_devicesconnection.html#DeviceConnectionEventType"><code class="highlighter-rouge">DeviceConnectionEventType</code></a>.</li>
+  <li><code class="highlighter-rouge">listener</code> – слушатель типа <code class="highlighter-rouge">DeviceConnectionEventListener</code>. Не передавайте параметр если хотите удалить все слушатели.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>

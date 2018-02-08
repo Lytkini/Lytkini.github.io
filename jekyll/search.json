@@ -895,7 +895,7 @@
 
 
 {
-"title": "Scanner",
+"title": "Сканер",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_devicescanner.html",
@@ -939,17 +939,6 @@
 
 
 {
-"title": "Введение",
-"tags": "",
-"keywords": "react, справка",
-"url": "react_reference_introduction.html",
-"summary": ""
-}
-,
-
-
-
-{
 "title": "InventoryAPI",
 "tags": "",
 "keywords": "react",
@@ -972,32 +961,21 @@
 
 
 {
-"title": "Навигация",
-"tags": "",
-"keywords": "react",
-"url": "react_reference_parameters_navigation.html",
-"summary": ""
-}
-,
-
-
-
-{
-"title": "Типы данных",
-"tags": "",
-"keywords": "react",
-"url": "react_reference_parameters_types.html",
-"summary": ""
-}
-,
-
-
-
-{
 "title": "ReceiptAPI",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_receiptapi.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Собственные службы",
+"tags": "",
+"keywords": "react",
+"url": "react_reference_seviceapi.html",
 "summary": ""
 }
 ,

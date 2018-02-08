@@ -567,6 +567,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
+                    <li><a href="react_reference_seviceapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
                     <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
                     
                     
@@ -921,7 +927,7 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="section">Описание</h2>
 
-<p>С помощью методов класса приложения получают вес товара, взвешиваемого на весах, подключённых к смарт-терминалу.</p>
+<p>Класс позволяет работать с весами, подключёнными к смарт-терминалу.</p>
 
 <h2 id="section-1">Методы</h2>
 
@@ -933,31 +939,27 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Получает вес товара с помощью весов, подключённых к смарт-терминалу.</p>
+<p>Получает вес товара, установленного на весах.</p>
 
 <p><strong>Возвращает</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Promise</code> – <a href="./react_reference_devicescales.html#weight">весе товара</a>.</li>
+  <li><code class="highlighter-rouge">Promise</code> – <a href="./react_reference_devicescales.html#weight">вес товара</a>.</li>
 </ul>
 
 <h2 id="section-2">Параметры</h2>
 
-<h2 id="DeviceError">Класс DeviceError</h2>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">DeviceError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<h3 id="weight">Класс Weight</h3>
+<h3 id="weight">Weight</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Weight</span> <span class="p">{</span>
     <span class="nx">constructor</span><span class="p">(</span><span class="nx">weightInGrams</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">supportStable</span><span class="err">:</span> <span class="kr">boolean</span><span class="p">,</span> <span class="nx">stable</span><span class="err">:</span> <span class="kr">boolean</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
 </code></pre>
 </div>
+
+<h2 id="section-3">Ошибки</h2>
+
+<p>При вызове методов класса могут возникать ошибки класса <a href="./doc_react_errorshandling.html#DeviceError"><code class="highlighter-rouge">DeviceError</code></a>.</p>
 
 
     <div class="tags">

@@ -567,6 +567,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
+                    <li><a href="react_reference_seviceapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
                     <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
                     
                     
@@ -940,8 +946,6 @@ $('#toc').on('click', 'a', function() {
 
 <p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) изменения чека продажи.</p>
 
-<p><strong>Параметры</strong></p>
-
 <p><strong>Возвращает</strong></p>
 
 <ul>
@@ -957,8 +961,6 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Описание</strong></p>
 
 <p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) изменения чека возврата.</p>
-
-<p><strong>Параметры</strong></p>
 
 <p><strong>Возвращает</strong></p>
 
@@ -976,8 +978,6 @@ $('#toc').on('click', 'a', function() {
 
 <p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) оплаты по чеку продажи.</p>
 
-<p><strong>Параметры</strong></p>
-
 <p><strong>Возвращает</strong></p>
 
 <ul>
@@ -993,8 +993,6 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Описание</strong></p>
 
 <p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) оплаты по чеку возврата.</p>
-
-<p><strong>Параметры</strong></p>
 
 <p><strong>Возвращает</strong></p>
 
@@ -1012,8 +1010,6 @@ $('#toc').on('click', 'a', function() {
 
 <p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) оплаты по чеку продажи.</p>
 
-<p><strong>Параметры</strong></p>
-
 <p><strong>Возвращает</strong></p>
 
 <ul>
@@ -1027,8 +1023,6 @@ $('#toc').on('click', 'a', function() {
 </div>
 
 <p><strong>Описание</strong></p>
-
-<p><strong>Параметры</strong></p>
 
 <p><strong>Возвращает</strong></p>
 
@@ -1045,8 +1039,6 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Описание</strong></p>
 
 <p>Получает намерение (<code class="highlighter-rouge">Intent</code>).</p>
-
-<p><strong>Параметры</strong></p>
 
 <p><strong>Возвращает</strong></p>
 
@@ -1171,8 +1163,6 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p><strong>Параметры</strong></p>
-
 <p><strong>Возвращает</strong></p>
 
 <ul>
@@ -1192,9 +1182,9 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">type</code> – тип навигационного события. Для получения данных о навигации указывайте тип <a href="./react_reference_navigationapi.html#navigationeventtype"><code class="highlighter-rouge">NavigationEventType</code></a>.</li>
-  <li><code class="highlighter-rouge">listener</code> – тип слушателя навигационного события. Для получения данных о навигации указывайте тип <code class="highlighter-rouge">NavigationEventListener</code>.</li>
-  <li><code class="highlighter-rouge">isGlobal</code> – указывает глобальную доступность метода. По умолчанию <code class="highlighter-rouge">true</code>.</li>
+  <li><code class="highlighter-rouge">type</code> – событие типа <a href="./react_reference_navigationapi.html#navigationeventtype"><code class="highlighter-rouge">NavigationEventType</code></a>.</li>
+  <li><code class="highlighter-rouge">listener</code> – слушатель типа <code class="highlighter-rouge">NavigationEventListener</code>.</li>
+  <li><code class="highlighter-rouge">isGlobal</code> – указывает <a href="./doc_react_interactiontypes.html#eventsubscription">глобальную доступность метода</a></li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -1212,8 +1202,8 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">type</code> – тип события. Для отмены получения данных о навигации указывайте тип <a href="./react_reference_navigationapi.html#navigationeventtype"><code class="highlighter-rouge">NavigationEventType</code></a>.</li>
-  <li><code class="highlighter-rouge">listener</code> – тип слушателя. Для отмены получения данных о навигации указывайте тип <code class="highlighter-rouge">NavigationEventListener</code>. Не передавайте параметр если хотите удалить все слушатели.</li>
+  <li><code class="highlighter-rouge">type</code> – событие типа <a href="./react_reference_navigationapi.html#navigationeventtype"><code class="highlighter-rouge">NavigationEventType</code></a>.</li>
+  <li><code class="highlighter-rouge">listener</code> – слушатель типа <code class="highlighter-rouge">NavigationEventListener</code>. Не передавайте параметр если хотите удалить все слушатели.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -1225,26 +1215,6 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="section-2">Параметры</h2>
 
-<h2 id="NavigationError">Класс NavigationError</h2>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">NavigationError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">NavigationErrorMessage</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<h3 id="navigationerrormessage">Тип NavigationErrorMessage</h3>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">NavigationErrorMessage</span> <span class="p">{</span>
-    <span class="nx">CURRENT_ACTIVITY_IS_NULL</span> <span class="o">=</span> <span class="s2">"CURRENT_ACTIVITY_IS_NULL"</span><span class="p">,</span>
-    <span class="nx">MISSED_NECESSARY_INTENT_DATA</span> <span class="o">=</span> <span class="s2">"MISSED_NECESSARY_INTENT_DATA"</span><span class="p">,</span>
-    <span class="nx">TARGET_CLASS_NOT_FOUND</span> <span class="o">=</span> <span class="s2">"TARGET_CLASS_NOT_FOUND"</span><span class="p">,</span>
-    <span class="nx">TARGET_PACKAGE_NOT_FOUND</span> <span class="o">=</span> <span class="s2">"TARGET_PACKAGE_NOT_FOUND"</span><span class="p">,</span>
-    <span class="nx">TARGET_CLASS_NOT_EXPORTED</span> <span class="o">=</span> <span class="s2">"TARGET_CLASS_NOT_EXPORTED"</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
 <h3 id="navigationeventtype">Тип NavigationEventType</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">NavigationEventType</span> <span class="p">{</span>
@@ -1253,7 +1223,11 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<p>tobundle - TODO</p>
+<h2 id="section-3">Ошибки</h2>
+
+<p>При вызове методов класса могут возникать ошибки класса <a href="./doc_react_errorshandling.html#navigationerror"><code class="highlighter-rouge">NavigationError</code></a>.</p>
+
+<!-- tobundle - TODO -->
 
 
     <div class="tags">

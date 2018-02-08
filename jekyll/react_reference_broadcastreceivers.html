@@ -567,6 +567,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
+                    <li><a href="react_reference_seviceapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
                     <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
                     
                     
@@ -921,6 +927,8 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="section">Описание</h2>
 
+<p>Класс позволяет подписываться на широковещательные сообщения, которые рассылает смарт-терминал.</p>
+
 <h2 id="section-1">Методы</h2>
 
 <h3 id="addeventlistener">addEventListener</h3>
@@ -936,9 +944,9 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">type</code> – тип события. Для получения широковещательных сообщений указывайте тип <a href="./react_reference_broadcastreceivers.html#BroadcastReceiverEventType"><code class="highlighter-rouge">BroadcastReceiverEventType</code></a>.</li>
-  <li><code class="highlighter-rouge">listener</code> – тип слушателя. Для получения широковещательных сообщений указывайте тип <code class="highlighter-rouge">BroadcastReceiveListener</code>.</li>
-  <li><code class="highlighter-rouge">isGlobal</code> – указывает глобальную доступность метода. По умолчанию <code class="highlighter-rouge">true</code>.</li>
+  <li><code class="highlighter-rouge">type</code> – событие типа <a href="./react_reference_broadcastreceivers.html#BroadcastReceiverEventType"><code class="highlighter-rouge">BroadcastReceiverEventType</code></a>.</li>
+  <li><code class="highlighter-rouge">listener</code> – слушатель типа <code class="highlighter-rouge">BroadcastReceiveListener</code>.</li>
+  <li><code class="highlighter-rouge">isGlobal</code> – указывает <a href="./doc_react_interactiontypes.html#eventsubscription">глобальную доступность метода</a>.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -956,8 +964,8 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">type</code> – тип события. Для отмены получения широковещательных сообщений указывайте тип <a href="./react_reference_broadcastreceivers.html#BroadcastReceiverEventType"><code class="highlighter-rouge">BroadcastReceiverEventType</code></a>.</li>
-  <li><code class="highlighter-rouge">listener</code> – тип слушателя. Для отмены получения широковещательных сообщений указывайте тип <code class="highlighter-rouge">BroadcastReceiveListener</code>. Не передавайте параметр если хотите удалить все слушатели.</li>
+  <li><code class="highlighter-rouge">type</code> – событие типа <a href="./react_reference_broadcastreceivers.html#BroadcastReceiverEventType"><code class="highlighter-rouge">BroadcastReceiverEventType</code></a>.</li>
+  <li><code class="highlighter-rouge">listener</code> – слушатель типа <code class="highlighter-rouge">BroadcastReceiveListener</code>. Не передавайте параметр если хотите удалить все слушатели.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>

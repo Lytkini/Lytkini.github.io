@@ -567,6 +567,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
+                    <li><a href="react_reference_seviceapi.html">Интеграционные службы</a></li>
+                    
+                    
+                    
+                    
+                    
                     <li><a href="react_reference_integrationapi.html">Интеграционные службы</a></li>
                     
                     
@@ -927,13 +933,67 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<!-- Методы, которые возвращают обещание (`promise`):
+<h2 id="section">Ошибки</h2>
 
-* [Методы для работы с весами](./react_reference_devicescales.html);
-* [Методы для работы с принтером](./react_reference_devicesprinter.html);
-* [IntegrationCallback и IntegrationServices](./react_reference_integrationapi.html);
-* [Navigation API](./react_reference_navigationapi.html);
-* [Receipt API](./react_reference_receiptapi.html). -->
+<h3 id="integrationerror">IntegrationError</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">IntegrationError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Возникает везде, где может быть вызвана интеграционная служба: при отправке электронного чека, при открытии чека, при вызове методов IntegrationCallback, при применении интеграционного результата интеграционной операции.</p>
+
+<h2 id="navigationerror">NavigationError</h2>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">NavigationError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">NavigationErrorMessage</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Возникает если при навигации, если вы указали неверные данные.</p>
+
+<h3 id="navigationerrormessage">Тип NavigationErrorMessage</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">NavigationErrorMessage</span> <span class="p">{</span>
+    <span class="nx">CURRENT_ACTIVITY_IS_NULL</span> <span class="o">=</span> <span class="s2">"CURRENT_ACTIVITY_IS_NULL"</span><span class="p">,</span>
+    <span class="nx">MISSED_NECESSARY_INTENT_DATA</span> <span class="o">=</span> <span class="s2">"MISSED_NECESSARY_INTENT_DATA"</span><span class="p">,</span>
+    <span class="nx">TARGET_CLASS_NOT_FOUND</span> <span class="o">=</span> <span class="s2">"TARGET_CLASS_NOT_FOUND"</span><span class="p">,</span>
+    <span class="nx">TARGET_PACKAGE_NOT_FOUND</span> <span class="o">=</span> <span class="s2">"TARGET_PACKAGE_NOT_FOUND"</span><span class="p">,</span>
+    <span class="nx">TARGET_CLASS_NOT_EXPORTED</span> <span class="o">=</span> <span class="s2">"TARGET_CLASS_NOT_EXPORTED"</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="noactivityerror">NoActivityError</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">NoActivityError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Возникает при обращении к операции закрытого приложения.</p>
+
+<h3 id="DeviceError">DeviceError</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">DeviceError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Возникает при обращении к не подключённому устройству.</p>
 
 
     <div class="tags">
