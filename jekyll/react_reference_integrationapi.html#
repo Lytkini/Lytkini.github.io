@@ -10,8 +10,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="terminalreact,  ">
-<title>Обработка ошибок | Документация Эвотор</title>
+<meta name="keywords" content=" react">
+<title>Интеграционные службы | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -139,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Обработка ошибок">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Интеграционные службы">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -624,7 +624,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li class="active"><a href="doc_react_errorshandling.html">Обработка ошибок</a></li>
+            <li><a href="doc_react_errorshandling.html">Обработка ошибок</a></li>
             
             
             
@@ -883,7 +883,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Обработка ошибок</h1>
+   <h1 class="post-title-main">Интеграционные службы</h1>
 </div>
 
 
@@ -921,90 +921,175 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/react_SDK/doc_react_errorshandling.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/react_reference/react_reference_integrationapi#.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <p>Вы можете отслеживать ошибки в методах, которые возвращают обещание (<code class="highlighter-rouge">Promise</code>).</p>
+  <h2 id="section">Описание</h2>
 
-<p>Пример кода для отслеживания ошибок:</p>
+<p>С помощью интеграционных служб вы можете подписываться на события при формировании чека и вносить свои изменения.</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">NavigationAPI</span><span class="p">.</span><span class="nx">startActivity</span><span class="p">(</span><span class="nx">intent</span><span class="p">).</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">)});</span>
-</code></pre>
-</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Информацию о регистрации интеграционных служб смотрите в разделе <a href="./react_reference_seviceapi.html">Инициализация служб</a>.</div>
 
-<h2 id="section">Ошибки</h2>
+<h2 id="section-1">Применение результата</h2>
 
-<h3 id="integrationerror">IntegrationError</h3>
+<h3 id="onresult">onResult</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">IntegrationError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">onResult</span><span class="p">(</span><span class="nx">result</span><span class="err">:</span> <span class="nx">IntegrationEventResult</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span>
 </code></pre>
 </div>
 
 <p><strong>Описание</strong></p>
 
-<p>Может возникнуть при работе с интеграционной службой, интеграционной операцией, а также при при открытии чека и отправке электронного чека.</p>
+<p><strong>Параметры</strong></p>
 
-<h3 id="navigationerror">NavigationError</h3>
+<ul>
+  <li><code class="highlighter-rouge">result</code></li>
+</ul>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">NavigationError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">NavigationErrorMessage</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code></li>
+</ul>
+
+<p><strong>Возможные ошибки</strong></p>
+
+<ul>
+  <li><a href="./doc_react_errorshandling.html#integrationerror"><code class="highlighter-rouge">IntegrationError</code></a></li>
+</ul>
+
+<h3 id="startactivity">startActivity</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">startActivity</span><span class="p">(</span><span class="nx">intent</span><span class="err">:</span> <span class="nx">Intent</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span>
 </code></pre>
 </div>
 
 <p><strong>Описание</strong></p>
 
-<p>Возникает если при навигации, если вы указали неверные данные.</p>
+<p>Запускает операцию при получении намерения.</p>
 
-<h4 id="navigationerrormessage">Тип NavigationErrorMessage</h4>
+<p><strong>Параметры</strong></p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">NavigationErrorMessage</span> <span class="p">{</span>
-    <span class="nx">TARGET_CLASS_NOT_FOUND</span> <span class="o">=</span> <span class="s2">"TARGET_CLASS_NOT_FOUND"</span><span class="p">,</span>
-    <span class="nx">TARGET_PACKAGE_NOT_FOUND</span> <span class="o">=</span> <span class="s2">"TARGET_PACKAGE_NOT_FOUND"</span><span class="p">,</span>
-    <span class="nx">TARGET_CLASS_NOT_EXPORTED</span> <span class="o">=</span> <span class="s2">"TARGET_CLASS_NOT_EXPORTED"</span>
-<span class="p">}</span>
-</code></pre>
-</div>
+<ul>
+  <li><code class="highlighter-rouge">Intent</code></li>
+</ul>
 
-<h3 id="noactivityerror">NoActivityError</h3>
+<p><strong>Возвращает</strong></p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">NoActivityError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
-</code></pre>
-</div>
+<ul>
+  <li><code class="highlighter-rouge">Promise</code></li>
+</ul>
 
-<p><strong>Описание</strong></p>
+<p><strong>Возможные ошибки</strong></p>
 
-<p>Возникает при обращении к операции закрытого приложения.</p>
+<ul>
+  <li><a href="./doc_react_errorshandling.html#integrationerror"><code class="highlighter-rouge">IntegrationError</code></a></li>
+</ul>
 
-<h3 id="DeviceError">DeviceError</h3>
+<h3 id="skip">skip</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">DeviceError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
-<span class="p">}</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">skip</span><span class="p">()</span><span class="err">:</span> <span class="nx">Promise</span>
 </code></pre>
 </div>
 
 <p><strong>Описание</strong></p>
 
-<p>Возникает при обращении к неподключённому устройству.</p>
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code></li>
+</ul>
+
+<p><strong>Возможные ошибки</strong></p>
+
+<ul>
+  <li><a href="./doc_react_errorshandling.html#integrationerror"><code class="highlighter-rouge">IntegrationError</code></a></li>
+</ul>
+
+<h2 id="section-2">Параметры</h2>
+
+<h3 id="beforepositionseditedeventresult">Класс BeforePositionsEditedEventResult</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">BeforePositionsEditedEventResult</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">changes</span><span class="err">:</span> <span class="nx">PositionChange</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./react_reference_integrationapi.html#PositionChange"><code class="highlighter-rouge">PositionChange</code></a></li>
+</ul>
+
+<h3 id="receiptdiscounteventresult">Класс ReceiptDiscountEventResult</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ReceiptDiscountEventResult</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">discount</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">changes</span><span class="err">:</span> <span class="nx">PositionChange</span><span class="p">[])</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./react_reference_receiptapi.html#setextra"><code class="highlighter-rouge">SetExtra</code></a></li>
+  <li><a href="./react_reference_integrationapi.html#PositionChange"><code class="highlighter-rouge">PositionChange</code></a></li>
+</ul>
+
+<h3 id="paymentselectedeventresult">Класс PaymentSelectedEventResult</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PaymentSelectedEventResult</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">paymentParts</span><span class="err">:</span> <span class="nx">PaymentPurpose</span><span class="p">[])</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./react_reference_receiptapi.html#setextra"><code class="highlighter-rouge">SetExtra</code></a></li>
+  <li><a href="./react_reference_receiptapi.html#PaymentPurpose"><code class="highlighter-rouge">PaymentPurpose</code></a></li>
+</ul>
+
+<h3 id="printgrouprequiredeventresult">Класс PrintGroupRequiredEventResult</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintGroupRequiredEventResult</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">setPrintGroups</span><span class="err">:</span> <span class="nx">SetPrintGroup</span><span class="p">[])</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./react_reference_receiptapi.html#setextra"><code class="highlighter-rouge">SetExtra</code></a></li>
+  <li><a href="./react_reference_receiptapi.html#SetPrintGroup"><code class="highlighter-rouge">SetPrintGroup</code></a></li>
+</ul>
+
+<h3 id="printextrarequiredeventresult">Класс PrintExtraRequiredEventResult</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraRequiredEventResult</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="err">:</span> <span class="nx">SetPrintExtra</span><span class="p">[])</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./react_reference_receiptapi.html#SetPrintExtra"><code class="highlighter-rouge">SetPrintExtra</code></a></li>
+</ul>
+
+<h3 id="PositionChange">Тип PositionChange</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">PositionChange</span> <span class="o">=</span> <span class="nx">PositionAdd</span> <span class="o">|</span> <span class="nx">PositionEdit</span> <span class="o">|</span> <span class="nx">PositionRemove</span>
+</code></pre>
+</div>
 
 
     <div class="tags">
-        
-        <b>Тэги: </b>
-        
-        
-        
-        <a href="tag_terminal.html" class="btn btn-default navbar-btn cursorNorm" role="button">terminal</a>
-        
-        
-        
-        
         
     </div>
 

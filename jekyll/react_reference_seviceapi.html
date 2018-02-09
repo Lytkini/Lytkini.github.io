@@ -927,7 +927,7 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="section">Описание</h2>
 
-<p>С помощью методов класса вы можете создавать собственные службы, а также регистрировать <a href="./react_reference_integrationapi.html">слушатели интеграционных служб</a>.</p>
+<p>С помощью методов класса вы можете создавать собственные службы, а также регистрировать <a href="./react_reference_integrationapi.html">интеграционные служб</a>.</p>
 
 <h2 id="section-1">Методы</h2>
 
@@ -981,11 +981,25 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Используйте событие <a href="./react_reference_seviceapi.html#IntegrationServiceEventType"><code class="highlighter-rouge">IntegrationServiceEventType</code></a> для подписки на событие <a href="./react_reference_integrationapi.html">интеграционной службы</a>.</div>
+<!-- <div markdown="span" class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Используйте событие [`IntegrationServiceEventType`](./react_reference_seviceapi.html#IntegrationServiceEventType) для подписки на событие [интеграционной службы](./react_reference_integrationapi.html).</div>
+ -->
 
 <h3 id="customserviceeventtype">Тип CustomServiceEventType</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">CustomServiceEventType</span> <span class="o">=</span> <span class="nx">string</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<h3 id="IntegrationServiceEventType">Перечисление IntegrationServiceEventType</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">IntegrationServiceEventType</span> <span class="p">{</span>
+    <span class="nx">BEFORE_POSITIONS_EDITED</span> <span class="o">=</span> <span class="s2">"BEFORE_POSITIONS_EDITED"</span><span class="p">,</span>
+    <span class="nx">RECEIPT_DISCOUNT</span> <span class="o">=</span> <span class="s2">"RECEIPT_DISCOUNT"</span><span class="p">,</span>
+    <span class="nx">PAYMENT_SELECTED</span> <span class="o">=</span> <span class="s2">"PAYMENT_SELECTED"</span><span class="p">,</span>
+    <span class="nx">PAYMENT_SYSTEM</span> <span class="o">=</span> <span class="s2">"PAYMENT_SYSTEM"</span><span class="p">,</span>
+    <span class="nx">PRINT_GROUP_REQUIRED</span> <span class="o">=</span> <span class="s2">"PRINT_GROUP_REQUIRED"</span><span class="p">,</span>
+    <span class="nx">PRINT_EXTRA_REQUIRED</span> <span class="o">=</span> <span class="s2">"PRINT_EXTRA_REQUIRED"</span>
+<span class="p">}</span>
 </code></pre>
 </div>
 
@@ -1001,16 +1015,75 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="IntegrationServiceEventType">Перечисление IntegrationServiceEventType</h3>
+<h3 id="integrationserviceeventlistener">Тип IntegrationServiceEventListener</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">IntegrationServiceEventType</span> <span class="p">{</span>
-    <span class="nx">BEFORE_POSITIONS_EDITED</span> <span class="o">=</span> <span class="s2">"BEFORE_POSITIONS_EDITED"</span><span class="p">,</span>
-    <span class="nx">RECEIPT_DISCOUNT</span> <span class="o">=</span> <span class="s2">"RECEIPT_DISCOUNT"</span><span class="p">,</span>
-    <span class="nx">PAYMENT_SELECTED</span> <span class="o">=</span> <span class="s2">"PAYMENT_SELECTED"</span><span class="p">,</span>
-    <span class="nx">PAYMENT_SYSTEM</span> <span class="o">=</span> <span class="s2">"PAYMENT_SYSTEM"</span><span class="p">,</span>
-    <span class="nx">PRINT_GROUP_REQUIRED</span> <span class="o">=</span> <span class="s2">"PRINT_GROUP_REQUIRED"</span><span class="p">,</span>
-    <span class="nx">PRINT_EXTRA_REQUIRED</span> <span class="o">=</span> <span class="s2">"PRINT_EXTRA_REQUIRED"</span>
-<span class="p">}</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">IntegrationServiceEventListener</span> <span class="o">=</span>
+    <span class="nx">BeforePositionsEditedEventListener</span> <span class="o">|</span>
+    <span class="nx">ReceiptDiscountEventListener</span> <span class="o">|</span>
+    <span class="nx">PaymentSelectedEventListener</span> <span class="o">|</span>
+    <span class="nx">PaymentSystemEventListener</span> <span class="o">|</span>
+    <span class="nx">PrintGroupRequiredEventListener</span> <span class="o">|</span>
+    <span class="nx">PrintExtraRequiredEventListener</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<h3 id="beforepositionseditedeventlistener">Тип BeforePositionsEditedEventListener</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">BeforePositionsEditedEventListener</span> <span class="o">=</span> <span class="p">(</span><span class="nx">positionsChanges</span><span class="err">:</span> <span class="nx">PositionChange</span><span class="p">[],</span> <span class="nx">callback</span><span class="err">:</span> <span class="nx">IntegrationCallback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./react_reference_integrationapi.html#PositionChange"><code class="highlighter-rouge">PositionChange</code></a></li>
+</ul>
+
+<h3 id="receiptdiscounteventlistener">Тип ReceiptDiscountEventListener</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">ReceiptDiscountEventListener</span> <span class="o">=</span> <span class="p">(</span><span class="nx">discount</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">receiptUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">callback</span><span class="err">:</span> <span class="nx">IntegrationCallback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span>
+</code></pre>
+</div>
+
+<h3 id="paymentselectedeventlistener">Тип PaymentSelectedEventListener</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">PaymentSelectedEventListener</span> <span class="o">=</span> <span class="p">(</span><span class="nx">paymentSystem</span><span class="err">:</span> <span class="nx">PaymentSystem</span><span class="p">,</span> <span class="nx">callback</span><span class="err">:</span> <span class="nx">IntegrationCallback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./react_reference_receiptapi.html#PaymentSystem"><code class="highlighter-rouge">PaymentSystem</code></a></li>
+</ul>
+
+<h3 id="paymentsystemeventlistener">Тип PaymentSystemEventListener</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">PaymentSystemEventListener</span> <span class="o">=</span> <span class="p">(</span><span class="nx">operationType</span><span class="err">:</span> <span class="nx">PaymentSystemOperationType</span><span class="p">,</span> <span class="nx">event</span><span class="err">:</span> <span class="nx">PaymentSystemEvent</span><span class="p">,</span> <span class="nx">callback</span><span class="err">:</span> <span class="nx">IntegrationCallback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./react_reference_receiptapi.html#PaymentSystemOperationType"><code class="highlighter-rouge">PaymentSystemOperationType</code></a></li>
+</ul>
+
+<h3 id="printgrouprequiredeventlistener">Тип PrintGroupRequiredEventListener</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">PrintGroupRequiredEventListener</span> <span class="o">=</span> <span class="p">(</span><span class="nx">paymentSystem</span><span class="err">:</span> <span class="nx">PaymentSystem</span><span class="p">,</span> <span class="nx">callback</span><span class="err">:</span> <span class="nx">IntegrationCallback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./react_reference_receiptapi.html#PaymentSystem"><code class="highlighter-rouge">PaymentSystem</code></a></li>
+</ul>
+
+<h3 id="printextrarequiredeventlistener">Тип PrintExtraRequiredEventListener</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">PrintExtraRequiredEventListener</span> <span class="o">=</span> <span class="p">(</span><span class="nx">callback</span><span class="err">:</span> <span class="nx">IntegrationCallback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span>
 </code></pre>
 </div>
 
