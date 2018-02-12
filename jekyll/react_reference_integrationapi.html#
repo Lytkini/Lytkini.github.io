@@ -931,7 +931,9 @@ $('#toc').on('click', 'a', function() {
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Информацию о регистрации интеграционных служб смотрите в разделе <a href="./react_reference_seviceapi.html">Инициализация служб</a>.</div>
 
-<h2 id="section-1">Применение результата</h2>
+<p>Изменения вносятся с помощью методов класса IntegrationCallback, экземпляр которого передаётся в каждый слушатель интеграционной службы.</p>
+
+<h2 id="integrationcallback">Методы класса IntegrationCallback</h2>
 
 <h3 id="onresult">onResult</h3>
 
@@ -1007,7 +1009,7 @@ $('#toc').on('click', 'a', function() {
   <li><a href="./doc_react_errorshandling.html#integrationerror"><code class="highlighter-rouge">IntegrationError</code></a></li>
 </ul>
 
-<h2 id="section-2">Параметры</h2>
+<h2 id="section-1">Параметры</h2>
 
 <h3 id="beforepositionseditedeventresult">Класс BeforePositionsEditedEventResult</h3>
 

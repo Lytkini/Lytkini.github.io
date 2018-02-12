@@ -939,7 +939,7 @@
 
 
 {
-"title": "InventoryAPI",
+"title": "Класс InventoryAPI",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_inventoryapi.html",
@@ -950,7 +950,7 @@
 
 
 {
-"title": "NavigationAPI",
+"title": "Класс NavigationAPI",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_navigationapi.html",
@@ -961,7 +961,7 @@
 
 
 {
-"title": "ReceiptAPI",
+"title": "Класс ReceiptAPI",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_receiptapi.html",
@@ -983,7 +983,7 @@
 
 
 {
-"title": "UserAPI",
+"title": "Класс UserAPI",
 "tags": "",
 "keywords": "react",
 "url": "react_reference_userapi.html",
