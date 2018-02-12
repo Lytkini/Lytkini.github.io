@@ -937,11 +937,13 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="onresult">onResult</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">onResult</span><span class="p">(</span><span class="nx">result</span><span class="err">:</span> <span class="nx">IntegrationEventResult</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">onResult</span><span class="p">(</span><span class="nx">result</span><span class="err">:</span> <span class="nx">IntegrationServiceEventResult</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span>
 </code></pre>
 </div>
 
 <p><strong>Описание</strong></p>
+
+<p>Применяет результат события интеграционной службы.</p>
 
 <p><strong>Параметры</strong></p>
 
@@ -1010,6 +1012,17 @@ $('#toc').on('click', 'a', function() {
 </ul>
 
 <h2 id="section-1">Параметры</h2>
+
+<h3 id="integrationserviceeventresult">Тип IntegrationServiceEventResult</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">IntegrationServiceEventResult</span> <span class="o">=</span>
+    <span class="nx">BeforePositionsEditedEventResult</span> <span class="o">|</span>
+    <span class="nx">ReceiptDiscountEventResult</span> <span class="o">|</span>
+    <span class="nx">PaymentSelectedEventResult</span> <span class="o">|</span>
+    <span class="nx">PrintGroupRequiredEventResult</span> <span class="o">|</span>
+    <span class="nx">PrintExtraRequiredEventResult</span><span class="p">;</span>
+</code></pre>
+</div>
 
 <h3 id="beforepositionseditedeventresult">Класс BeforePositionsEditedEventResult</h3>
 
