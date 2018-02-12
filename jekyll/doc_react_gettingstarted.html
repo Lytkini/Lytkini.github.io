@@ -980,22 +980,25 @@ $('#toc').on('click', 'a', function() {
 
 <!-- Мы подготовили библиотеку evotor-integration-library, чтобы ваше React Native приложение могло взаимодействовать с Java API смарт-терминала. -->
 
-<p><em>Перед установкой библиотеки обновите зависимости в файле <code class="highlighter-rouge">YourAppName\android\build.gradle</code>:</em></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>compileSdkVersion 25
-buildToolsVersion "25.0.3"
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>minSdkVersion 22
-</code></pre>
-</div>
-<div class="highlighter-rouge"><pre class="highlight"><code>compile "com.android.support:appcompat-v7:25.3.1"
-</code></pre>
-</div>
 <ol>
   <li>
-    <p>Чтобы установить библиотеку, перейдите в корневую папку проекта и выполните следующую команду:</p>
+    <p>В файле <code class="highlighter-rouge">YourAppName\android\build.gradle</code> измените следующие параметры:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>compileSdkVersion 25
+buildToolsVersion "25.0.3"
+</code></pre>
+    </div>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>minSdkVersion 22
+</code></pre>
+    </div>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>compile "com.android.support:appcompat-v7:25.3.1"
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Установите библиотеку, выполнив следующую команду в корневой папке проекта:</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>npm install evotor-integration-library --save
 </code></pre>
@@ -1013,10 +1016,21 @@ buildToolsVersion "25.0.3"
     </div>
 
     <ul>
-      <li>В файле <code class="highlighter-rouge">YourAppName\android\build.gradle</code>, в разделе <code class="highlighter-rouge">allprojects</code> добавьте репозиторий укажите:</li>
+      <li>В файле <code class="highlighter-rouge">YourAppName\android\build.gradle</code>, в разделе <code class="highlighter-rouge">allprojects</code> добавьте репозиторий:</li>
     </ul>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>maven { url 'https://jitpack.io' }
+    <div class="highlighter-rouge"><pre class="highlight"><code>allprojects {
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url "$rootDir/../node_modules/react-native/android"
+        }
+        maven { url 'https://jitpack.io' }
+        google()
+    }
+}
 </code></pre>
     </div>
     <p>#### Решение возможных проблем</p>
