@@ -524,7 +524,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li><a href="doc_react_interactiontypes.html">Типы взаиможействия со смарт-терминалом</a></li>
+            <li><a href="doc_react_interactiontypes.html">Типы взаимодействия со смарт-терминалом</a></li>
             
             
             
@@ -1055,15 +1055,18 @@ buildToolsVersion "25.0.3"
 <p><em>Чтобы установить debug-версию приложения на смарт-терминал:</em></p>
 
 <ol>
-  <li>В Android Studio откройте манифест приложения, размещённый по адресу <code class="highlighter-rouge">YourAppName\android\app\src\AndroidManifest.xml</code>.</li>
   <li>
-    <p>В поле <code class="highlighter-rouge">app_uuid</code> элемента <code class="highlighter-rouge">&lt;meta-data&gt;</code> вместо текущего идентификатора укажите идентификатор приложения, который вы получили в <a href="./doc_java_app_tutorial.html#devSiteSettingUp">процессе подготовки приложения на сайте разработчиков</a></p>
+    <p>В Android Studio откройте манифест приложения, размещённый по адресу <code class="highlighter-rouge">YourAppName\android\app\src\AndroidManifest.xml</code>.</p>
+  </li>
+  <li>
+    <p>В раздел <code class="highlighter-rouge">&lt;application&gt;</code> добавьте следующий раздел:</p>
 
     <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;meta-data</span>
-         <span class="na">android:name=</span><span class="s">"app_uuid"</span>
-         <span class="na">android:value=</span><span class="s">"66998575-ee62-4e87-b191-89f351fdc572"</span> <span class="nt">/&gt;</span>
+    <span class="na">android:name=</span><span class="s">"app_uuid"</span>
+    <span class="na">android:value=</span><span class="s">"&lt;Идентификатор приложения&gt;"</span> <span class="nt">/&gt;</span>
 </code></pre>
     </div>
+    <p>Где требуется указать идентификатор приложения, который вы получили в <a href="./doc_java_app_tutorial.html#devSiteSettingUp">процессе подготовки приложения на сайте разработчиков</a></p>
   </li>
   <li>
     <p>Подключитесь к смарт-терминалу в <a href="./doc_app_developer_mode.html">режиме разработчика</a>.</p>
