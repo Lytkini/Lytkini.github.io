@@ -1078,10 +1078,42 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<h3 id="broadcastevent">Класс BroadcastEvent</h3>
+<h3 id="productevent">Класс ProductEvent</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">BroadcastEvent</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">action</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">total</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ProductEvent</span> <span class="kr">extends</span> <span class="nx">BroadcastEvent</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">action</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">productUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="receiptevent">Класс ReceiptEvent</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ReceiptEvent</span> <span class="kr">extends</span> <span class="nx">BroadcastEvent</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">action</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">receiptUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="positionevent">Класс PositionEvent</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PositionEvent</span> <span class="kr">extends</span> <span class="nx">BroadcastEvent</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">action</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">receiptUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">position</span><span class="err">:</span> <span class="nx">Position</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="cashdrawerevent">Класс CashDrawerEvent</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">CashDrawerEvent</span> <span class="kr">extends</span> <span class="nx">BroadcastEvent</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">action</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">cashDrawerId</span><span class="err">:</span> <span class="nx">number</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="cashoperationevent">Класс CashOperationEvent</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">CashOperationEvent</span> <span class="kr">extends</span> <span class="nx">BroadcastEvent</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">action</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">total</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">documentUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
 </code></pre>
 </div>
