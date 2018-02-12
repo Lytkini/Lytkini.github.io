@@ -927,7 +927,7 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="section">Описание</h2>
 
-<p>С помощью методов класса вы можете создавать собственные службы, а также регистрировать <a href="./react_reference_integrationapi.html">интеграционные служб</a>.</p>
+<p>С помощью методов класса вы можете создавать собственные службы, а также регистрировать <a href="./react_reference_integrationapi.html">интеграционные службы</a>.</p>
 
 <h2 id="section-1">Методы</h2>
 
@@ -963,7 +963,7 @@ $('#toc').on('click', 'a', function() {
 
 <ul>
   <li><code class="highlighter-rouge">type</code> – событие типа <a href="./react_reference_integrationapi.html#ServiceEventType"><code class="highlighter-rouge">ServiceEventType</code></a>.</li>
-  <li><code class="highlighter-rouge">listener</code> – слушатель типа <a href="./react_reference_integrationapi.html#ServiceEventListener"><code class="highlighter-rouge">ServiceEventListener</code></a>. Не передавайте параметр если хотите удалить все слушатели.</li>
+  <li><code class="highlighter-rouge">listener</code> – слушатель типа <a href="./react_reference_integrationapi.html#ServiceEventListener"><code class="highlighter-rouge">ServiceEventListener</code></a>. Не передавайте параметр, если хотите удалить все слушатели.</li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -980,9 +980,6 @@ $('#toc').on('click', 'a', function() {
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">ServiceEventType</span> <span class="o">=</span> <span class="nx">CustomServiceEventType</span> <span class="o">|</span> <span class="nx">IntegrationServiceEventType</span><span class="p">;</span>
 </code></pre>
 </div>
-
-<!-- <div markdown="span" class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Используйте событие [`IntegrationServiceEventType`](./react_reference_seviceapi.html#IntegrationServiceEventType) для подписки на событие [интеграционной службы](./react_reference_integrationapi.html).</div>
- -->
 
 <h3 id="customserviceeventtype">Тип CustomServiceEventType</h3>
 

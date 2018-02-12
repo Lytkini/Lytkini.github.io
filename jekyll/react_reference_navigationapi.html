@@ -927,7 +927,9 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="section">Описание</h2>
 
-<p>Класс предоставляет доступ к нативной навигации андроида и позволяет запускать службы и операции. Внутри своего приложения вы можете запускать любые экспортированные операции других приложений.</p>
+<p>Класс предоставляет собой обёртку нативной навигации андроида.</p>
+
+<p>С помощью методов класса приложения запускают службы и операции. Внутри своего приложения вы можете запускать любые экспортированные операции других приложений.</p>
 
 <h2 id="section-1">Методы</h2>
 
@@ -939,7 +941,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) изменения чека продажи.</p>
+<p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) для формы наполнения чека продажи.</p>
 
 <p><strong>Возвращает</strong></p>
 
@@ -955,7 +957,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) изменения чека возврата.</p>
+<p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) для формы наполнения чека возврата.</p>
 
 <p><strong>Возвращает</strong></p>
 
@@ -971,7 +973,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) оплаты по чеку продажи.</p>
+<p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) для формы оплаты чека продажи.</p>
 
 <p><strong>Возвращает</strong></p>
 
@@ -987,7 +989,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) оплаты по чеку возврата.</p>
+<p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) для формы оплаты чека возврата.</p>
 
 <p><strong>Возвращает</strong></p>
 
@@ -1003,7 +1005,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) оплаты по чеку продажи.</p>
+<p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) для формы настроек кассового чека.</p>
 
 <p><strong>Возвращает</strong></p>
 
@@ -1019,6 +1021,8 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
+<p>Создаёт намерение (<code class="highlighter-rouge">Intent</code>) для формы кассового отчёта.</p>
+
 <p><strong>Возвращает</strong></p>
 
 <ul>
@@ -1033,12 +1037,18 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Получает намерение (<code class="highlighter-rouge">Intent</code>).</p>
+<p>Получает намерение (<code class="highlighter-rouge">Intent</code>) для текущей операции.</p>
 
 <p><strong>Возвращает</strong></p>
 
 <ul>
   <li><code class="highlighter-rouge">Promise</code> – возвращает объект с намерением.</li>
+</ul>
+
+<p><strong>Возможные ошибки</strong></p>
+
+<ul>
+  <li><a href="./doc_react_errorshandling.html#navigationerror"><code class="highlighter-rouge">NavigationError</code></a>.</li>
 </ul>
 
 <h3 id="startactivity">startActivity</h3>
@@ -1054,7 +1064,7 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Intent</code></li>
+  <li><code class="highlighter-rouge">intent</code></li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
@@ -1063,13 +1073,21 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">Promise</code></li>
 </ul>
 
-<h3 id="startactivityforresult">startActivityForResult</h3>
+<p><strong>Возможные ошибки</strong></p>
+
+<ul>
+  <li><a href="./doc_react_errorshandling.html#navigationerror"><code class="highlighter-rouge">NavigationError</code></a>.</li>
+</ul>
+
+<h3 id="startActivityForResult">startActivityForResult</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">startActivityForResult</span><span class="p">(</span><span class="nx">intent</span><span class="err">:</span> <span class="nx">Intent</span><span class="p">,</span> <span class="nx">requestCode</span><span class="err">:</span> <span class="nx">number</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span>
 </code></pre>
 </div>
 
 <p><strong>Описание</strong></p>
+
+<p>Запускает операцию для получения результата.</p>
 
 <p><strong>Параметры</strong></p>
 
@@ -1082,6 +1100,12 @@ $('#toc').on('click', 'a', function() {
 
 <ul>
   <li><code class="highlighter-rouge">Promise</code></li>
+</ul>
+
+<p><strong>Возможные ошибки</strong></p>
+
+<ul>
+  <li><a href="./doc_react_errorshandling.html#navigationerror"><code class="highlighter-rouge">NavigationError</code></a>.</li>
 </ul>
 
 <h3 id="startservice">startService</h3>
@@ -1106,6 +1130,12 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">Promise</code></li>
 </ul>
 
+<p><strong>Возможные ошибки</strong></p>
+
+<ul>
+  <li><a href="./doc_react_errorshandling.html#navigationerror"><code class="highlighter-rouge">NavigationError</code></a>.</li>
+</ul>
+
 <h3 id="setresult">setResult</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">setResult</span><span class="p">(</span><span class="nx">resultCode</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">data</span><span class="p">?:</span> <span class="nx">Intent</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span>
@@ -1114,18 +1144,25 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Устанавливает результат, если ваша активность была открыта методом <a href="./">startActivityForResult</a>.</p>
+<p>Устанавливает результат текущей операции, если она была запущена методом <a href="./react_reference_navigationapi.html#startActivityForResult">startActivityForResult</a>.</p>
 
 <p><strong>Параметры</strong></p>
 
 <ul>
   <li><code class="highlighter-rouge">resultCode</code></li>
+  <li><code class="highlighter-rouge">data</code></li>
 </ul>
 
 <p><strong>Возвращает</strong></p>
 
 <ul>
   <li><code class="highlighter-rouge">Promise</code></li>
+</ul>
+
+<p><strong>Возможные ошибки</strong></p>
+
+<ul>
+  <li><a href="./doc_react_errorshandling.html#navigationerror"><code class="highlighter-rouge">NavigationError</code></a>.</li>
 </ul>
 
 <h3 id="setintegrationresult">setIntegrationResult</h3>
@@ -1136,7 +1173,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Устанавливает результат <a href="./">интеграционного события</a>.</p>
+<p>Устанавливает интеграционный результат текущей операции, если она унаследована от интеграционной операции.</p>
 
 <p><strong>Параметры</strong></p>
 
@@ -1150,6 +1187,12 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">Promise</code></li>
 </ul>
 
+<p><strong>Возможные ошибки</strong></p>
+
+<ul>
+  <li><a href="./doc_react_errorshandling.html#navigationerror"><code class="highlighter-rouge">NavigationError</code></a>.</li>
+</ul>
+
 <h3 id="finish">finish</h3>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">finish</span><span class="p">()</span><span class="err">:</span> <span class="nx">Promise</span>
@@ -1158,10 +1201,18 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
+<p>Завершает текущую операцию.</p>
+
 <p><strong>Возвращает</strong></p>
 
 <ul>
   <li><code class="highlighter-rouge">Promise</code></li>
+</ul>
+
+<p><strong>Возможные ошибки</strong></p>
+
+<ul>
+  <li><a href="./doc_react_errorshandling.html#navigationerror"><code class="highlighter-rouge">NavigationError</code></a>.</li>
 </ul>
 
 <h3 id="addeventlistener">addEventListener</h3>
@@ -1181,8 +1232,6 @@ $('#toc').on('click', 'a', function() {
   <li><code class="highlighter-rouge">listener</code> – слушатель типа <code class="highlighter-rouge">NavigationEventListener</code>.</li>
   <li><code class="highlighter-rouge">isGlobal</code> – указывает <a href="./doc_react_interactiontypes.html#eventsubscription">глобальную доступность метода</a></li>
 </ul>
-
-<p><strong>Возвращает</strong></p>
 
 <h3 id="removeeventlistener">removeEventListener</h3>
 
@@ -1218,11 +1267,6 @@ $('#toc').on('click', 'a', function() {
 <span class="p">}</span>
 </code></pre>
 </div>
-
-<h2 id="section-3">Ошибки</h2>
-
-<p>При вызове методов класса могут возникать ошибки класса <a href="./doc_react_errorshandling.html#navigationerror"><code class="highlighter-rouge">NavigationError</code></a>.</p>
-
 <!-- tobundle - TODO -->
 
 

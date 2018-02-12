@@ -957,14 +957,14 @@ $('#toc').on('click', 'a', function() {
     </div>
   </li>
   <li>
-    <p>Перейдите в папку проекта:</p>
+    <p>Перейдите в корневую папку проекта:</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>cd YourAppName
 </code></pre>
     </div>
   </li>
   <li>
-    <p>Чтобы ваше React Native приложение могло обращаться к Java API выполните следующую команду, :</p>
+    <p>Чтобы была подключить своему приложению код написанный на Java выполните следующую команду, :</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>npm run eject
 </code></pre>
@@ -978,28 +978,50 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="evotor-integration-library">Установка библиотеки evotor-integration-library</h3>
 
-<p>Мы подготовили библиотеку evotor-integration-library, чтобы ваше React Native приложение могло взаимодействовать с Java API смарт-терминала.</p>
+<!-- Мы подготовили библиотеку evotor-integration-library, чтобы ваше React Native приложение могло взаимодействовать с Java API смарт-терминала. -->
 
-<p>Вам потребуется установить и связать библиотеку со своим приложением. Для этого, находясь в папке приложения, выполните следующие действия:</p>
+<p><em>Перед установкой библиотеки обновите зависимости в файле <code class="highlighter-rouge">YourAppName\android\build.gradle</code>:</em></p>
 
+<div class="highlighter-rouge"><pre class="highlight"><code>compileSdkVersion 25
+buildToolsVersion "25.0.3"
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>minSdkVersion 22
+</code></pre>
+</div>
+<div class="highlighter-rouge"><pre class="highlight"><code>compile "com.android.support:appcompat-v7:25.3.1"
+</code></pre>
+</div>
 <ol>
   <li>
-    <p>Установите библиотеку:</p>
+    <p>Чтобы установить библиотеку, перейдите в корневую папку проекта и выполните следующую команду:</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>npm install evotor-integration-library --save
 </code></pre>
     </div>
   </li>
   <li>
-    <p>Свяжите библиотеку со своим приложением:</p>
+    <p>Свяжите библиотеку с вашим приложением:</p>
+
+    <ul>
+      <li>В корневой папке проекта выполните команду:</li>
+    </ul>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>react-native link evotor-integration-library
 </code></pre>
     </div>
+
+    <ul>
+      <li>В файле <code class="highlighter-rouge">YourAppName\android\build.gradle</code>, в разделе <code class="highlighter-rouge">allprojects</code> добавьте репозиторий укажите:</li>
+    </ul>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>maven { url 'https://jitpack.io' }
+</code></pre>
+    </div>
+    <p>#### Решение возможных проблем</p>
   </li>
 </ol>
-
-<h4 id="section-1">Решение возможных проблем</h4>
 
 <p>При привязывании библиотеки может возникнуть ошибка:</p>
 
@@ -1050,7 +1072,7 @@ $('#toc').on('click', 'a', function() {
     <p>Последовательно выполните команды:</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>cd YourAppName
-react-native run-Android
+react-native run-android
 </code></pre>
     </div>
 

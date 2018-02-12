@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="keywords" content="terminalreact,  ">
-<title>Типы взаиможействия со смарт-терминалом | Документация Эвотор</title>
+<title>Типы взаимодействия со смарт-терминалом | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -139,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Типы взаиможействия со смарт-терминалом">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Типы взаимодействия со смарт-терминалом">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -883,7 +883,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Типы взаиможействия со смарт-терминалом</h1>
+   <h1 class="post-title-main">Типы взаимодействия со смарт-терминалом</h1>
 </div>
 
 
@@ -927,16 +927,7 @@ $('#toc').on('click', 'a', function() {
 
   <h2 id="getter">Получение данных</h2>
 
-<p>Приложения получают данные от смарт-терминала с помощью методов <code class="highlighter-rouge">get*</code>.
-Методы <code class="highlighter-rouge">get*</code> представлены в классах:</p>
-
-<ul>
-  <li><a href="./react_reference_userapi.html"><code class="highlighter-rouge">UserAPI</code></a>;</li>
-  <li><a href="./react_reference_inventoryapi.html"><code class="highlighter-rouge">InventoryAPI</code></a>;</li>
-  <li><a href="./react_reference_receiptapi.html"><code class="highlighter-rouge">ReceiptAPI</code></a>;</li>
-  <li><a href="./react_reference_devicesprinter.html"><code class="highlighter-rouge">Printer</code></a>;</li>
-  <li><a href="./react_reference_devicescales.html"><code class="highlighter-rouge">Scales</code></a>.</li>
-</ul>
+<p>Приложения получают данные от смарт-терминала с помощью методов <code class="highlighter-rouge">get*</code>.</p>
 
 <p>Данные получаются асинхронно, поэтому все методы <code class="highlighter-rouge">get*</code> возвращают обещание (<code class="highlighter-rouge">Promise</code>).</p>
 
@@ -951,11 +942,21 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
+<p>Методы этого типа представлены в классах:</p>
+
+<ul>
+  <li><a href="./react_reference_userapi.html"><code class="highlighter-rouge">UserAPI</code></a>;</li>
+  <li><a href="./react_reference_inventoryapi.html"><code class="highlighter-rouge">InventoryAPI</code></a>;</li>
+  <li><a href="./react_reference_receiptapi.html"><code class="highlighter-rouge">ReceiptAPI</code></a>;</li>
+  <li><a href="./react_reference_devicesprinter.html"><code class="highlighter-rouge">Printer</code></a>;</li>
+  <li><a href="./react_reference_devicescales.html"><code class="highlighter-rouge">Scales</code></a>.</li>
+</ul>
+
 <h2 id="commands">Команды</h2>
 
 <p>Команды – методы, которые инициируют действия на смарт-терминале.</p>
 
-<p>Команды представлены в классах:</p>
+<p>Методы этого типа представлены в классах:</p>
 
 <ul>
   <li><a href="./react_reference_receiptapi.html"><code class="highlighter-rouge">ReceiptAPI</code></a>;</li>
@@ -964,7 +965,14 @@ $('#toc').on('click', 'a', function() {
 
 <h2 id="callbacks">Коллбэки</h2>
 
-<p>Методы обратного вызова с помощью которых вы можете изменять данные чека, во время работы с ним, например, применять скидку к созданным чекам. Все методы этого типа представлены в классе <a href="react_reference_integrationapi.html">IntegrationCallback</a>.</p>
+<p>Коллбэки – методы обратного вызова, с помощью которых вы можете изменять данные чека, в процессе его формирования, например, применять к нему скидку.</p>
+
+<p>Методы этого типа представлены в классах:</p>
+
+<ul>
+  <li><a href="./react_reference_integrationapi.html">IntegrationCallback</a>;</li>
+  <li><a href="./react_reference_navigationapi.html">NavigationAPI</a>.</li>
+</ul>
 
 <h2 id="eventsubscription">Подписка на события</h2>
 
@@ -974,11 +982,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<p>где:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">isGlobal</code> – указывает глобальную доступность метода: если <code class="highlighter-rouge">true</code>, приложение получает события независимо от того запущено оно или нет. По умолчанию – <code class="highlighter-rouge">true</code>.</li>
-</ul>
+<p>где <code class="highlighter-rouge">isGlobal</code> указывает глобальную доступность слушателя: если <code class="highlighter-rouge">true</code>, приложение получает события независимо от того, запущено оно или нет; если <code class="highlighter-rouge">false</code> слушатель выполняется только при открытом приложении. По умолчанию – <code class="highlighter-rouge">true</code>.</p>
 
 <p>Чтобы удалить слушатель, используйте метод:</p>
 
@@ -986,13 +990,11 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<p>где:</p>
-
 <p>Метод возвращает <code class="highlighter-rouge">true</code>, если слушатель удалён успешно, и <code class="highlighter-rouge">false</code>, если удалить слушатель не удалось.</p>
 
-<p>Чтобы удалить все слушатели события не передавайте параметр <code class="highlighter-rouge">listener</code>.</p>
+<p>Чтобы удалить все слушатели события и отменить под не передавайте параметр <code class="highlighter-rouge">listener</code>.</p>
 
-<p>Методы представлены в классах:</p>
+<p>Методы этого типа представлены в классах:</p>
 
 <ul>
   <li><a href="./react_reference_integrationapi.html"><code class="highlighter-rouge">IntegrationServices</code></a></li>
