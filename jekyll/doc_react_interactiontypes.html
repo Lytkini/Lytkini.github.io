@@ -982,7 +982,7 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<p>где <code class="highlighter-rouge">isGlobal</code> указывает глобальную доступность слушателя: если <code class="highlighter-rouge">true</code>, приложение получает события независимо от того, запущено оно или нет; если <code class="highlighter-rouge">false</code> слушатель выполняется только при открытом приложении. По умолчанию – <code class="highlighter-rouge">true</code>.</p>
+<p>где <code class="highlighter-rouge">isGlobal</code> указывает глобальную доступность слушателя: если <code class="highlighter-rouge">true</code> – приложение получает события независимо от того, запущено оно или нет; если <code class="highlighter-rouge">false</code> – слушатель выполняется только при открытом приложении. По умолчанию – <code class="highlighter-rouge">true</code>.</p>
 
 <p>Чтобы удалить слушатель, используйте метод:</p>
 
@@ -990,9 +990,9 @@ $('#toc').on('click', 'a', function() {
 </code></pre>
 </div>
 
-<p>Метод возвращает <code class="highlighter-rouge">true</code>, если слушатель удалён успешно, и <code class="highlighter-rouge">false</code>, если удалить слушатель не удалось.</p>
+<p>Метод возвращает <code class="highlighter-rouge">true</code>, если слушатель удалён успешно, или <code class="highlighter-rouge">false</code>, если удалить слушатель не удалось.</p>
 
-<p>Чтобы удалить все слушатели события и отменить под не передавайте параметр <code class="highlighter-rouge">listener</code>.</p>
+<p>Чтобы удалить все слушатели события и отменить подписку, не передавайте параметр <code class="highlighter-rouge">listener</code>.</p>
 
 <p>Пример добавления слушателя:</p>
 
