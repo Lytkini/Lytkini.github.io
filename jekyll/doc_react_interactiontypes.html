@@ -994,6 +994,15 @@ $('#toc').on('click', 'a', function() {
 
 <p>Чтобы удалить все слушатели события и отменить под не передавайте параметр <code class="highlighter-rouge">listener</code>.</p>
 
+<p>Пример добавления слушателя:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">listener</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"Sell receipt opened "</span> <span class="o">+</span> <span class="nx">event</span><span class="p">.</span><span class="nx">receiptUuid</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="nx">BroadcastReceiver</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="nx">ReceiptEventType</span><span class="p">.</span><span class="nx">SELL_RECEIPT_OPENED</span><span class="p">,</span> <span class="nx">listener</span><span class="p">);</span>
+</code></pre>
+</div>
+
 <p>Методы этого типа представлены в классах:</p>
 
 <ul>
