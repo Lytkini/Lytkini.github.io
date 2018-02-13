@@ -874,7 +874,7 @@
 
 {
 "title": "BroadcastReceiver",
-"tags": "",
+"tags": "terminalreact",
 "keywords": "react",
 "url": "react_reference_broadcastreceivers.html",
 "summary": ""
@@ -885,7 +885,7 @@
 
 {
 "title": "Класс Scales",
-"tags": "",
+"tags": "terminalreact",
 "keywords": "react",
 "url": "react_reference_devicescales.html",
 "summary": ""
@@ -896,7 +896,7 @@
 
 {
 "title": "Класс Scaner",
-"tags": "",
+"tags": "terminalreact",
 "keywords": "react",
 "url": "react_reference_devicescanner.html",
 "summary": ""
@@ -907,7 +907,7 @@
 
 {
 "title": "Класс DeviceServiceConnector",
-"tags": "",
+"tags": "terminalreact",
 "keywords": "react",
 "url": "react_reference_devicesconnection.html",
 "summary": ""
@@ -918,7 +918,7 @@
 
 {
 "title": "Класс Printer",
-"tags": "",
+"tags": "terminalreact",
 "keywords": "react",
 "url": "react_reference_devicesprinter.html",
 "summary": ""
@@ -929,7 +929,7 @@
 
 {
 "title": "Интеграционные службы",
-"tags": "",
+"tags": "terminalreact",
 "keywords": "react",
 "url": "react_reference_integrationapi.html",
 "summary": ""
@@ -940,7 +940,7 @@
 
 {
 "title": "Класс InventoryAPI",
-"tags": "",
+"tags": "terminalreact",
 "keywords": "react",
 "url": "react_reference_inventoryapi.html",
 "summary": ""
@@ -951,7 +951,7 @@
 
 {
 "title": "Класс NavigationAPI",
-"tags": "",
+"tags": "terminalreact",
 "keywords": "react",
 "url": "react_reference_navigationapi.html",
 "summary": ""
@@ -962,7 +962,7 @@
 
 {
 "title": "Класс ReceiptAPI",
-"tags": "",
+"tags": "terminalreact",
 "keywords": "react",
 "url": "react_reference_receiptapi.html",
 "summary": ""
@@ -973,7 +973,7 @@
 
 {
 "title": "Класс ServiceAPI",
-"tags": "",
+"tags": "terminalreact",
 "keywords": "react",
 "url": "react_reference_seviceapi.html",
 "summary": ""
@@ -984,12 +984,14 @@
 
 {
 "title": "Класс UserAPI",
-"tags": "",
+"tags": "terminalreact",
 "keywords": "react",
 "url": "react_reference_userapi.html",
 "summary": ""
 }
 ,
+
+
 
 
 

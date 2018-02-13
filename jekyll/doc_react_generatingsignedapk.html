@@ -958,7 +958,50 @@ $('#toc').on('click', 'a', function() {
 <p><em>Чтобы создать apk-файл приложения:</em></p>
 
 <ol>
-  <li>В Android Studio откройте манифест приложения, размещённый по адресу <code class="highlighter-rouge">YourAppName\android\app\src\AndroidManifest.xml</code>.</li>
+  <li>
+    <p>В файле <code class="highlighter-rouge">YourAppName\android\app\build.gradle</code> измените следующие параметры:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>compileSdkVersion 25
+buildToolsVersion "25.0.3"
+</code></pre>
+    </div>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>minSdkVersion 22
+</code></pre>
+    </div>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>compile "com.android.support:appcompat-v7:25.3.1"
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>В файле <code class="highlighter-rouge">YourAppName\android\build.gradle</code>, в разделе <code class="highlighter-rouge">allprojects</code> добавьте репозиторий <code class="highlighter-rouge">maven { url 'https://jitpack.io' }</code>:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>allprojects {
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven {
+            // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
+            url "$rootDir/../node_modules/react-native/android"
+        }
+        maven { url 'https://jitpack.io' }
+        google()
+    }
+}
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>В Android Studio откройте манифест приложения, размещённый по адресу <code class="highlighter-rouge">YourAppName\android\app\src\main\AndroidManifest.xml</code>.</p>
+  </li>
+  <li>
+    <p>В разделе <code class="highlighter-rouge">&lt;uses-sdk&gt;</code> измените параметр:</p>
+
+    <div class="language-xml highlighter-rouge"><pre class="highlight"><code>android:minSdkVersion="22"
+</code></pre>
+    </div>
+  </li>
   <li>
     <p>В раздел <code class="highlighter-rouge">&lt;application&gt;</code> добавьте следующий раздел:</p>
 
@@ -994,6 +1037,8 @@ $('#toc').on('click', 'a', function() {
         <a href="tag_terminal.html" class="btn btn-default navbar-btn cursorNorm" role="button">terminal</a>
         
         
+        
+        <a href="tag_react.html" class="btn btn-default navbar-btn cursorNorm" role="button">react</a>
         
         
         
