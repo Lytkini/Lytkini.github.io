@@ -1180,8 +1180,7 @@ $('#toc').on('click', 'a', function() {
             <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="s">"UUID of new product: "</span> <span class="o">+</span> <span class="n">getProductUuid</span><span class="o">(</span><span class="n">data</span><span class="o">)</span>
                     <span class="o">,</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
 
-            <span class="c1">//NavigationApi.createIntentForEditProduct() создает намерение (Intent) на открытие окна для</span>
-            <span class="c1">//редактирования товара.</span>
+            <span class="c1">//NavigationApi.createIntentForEditProduct() создает намерение (Intent) на редактирование товара.</span>
             <span class="c1">//.setUuid(getProductUuid(data)) задаёт идентификатор редактируемого товара.</span>
             <span class="n">startActivityForResult</span><span class="o">(</span><span class="n">NavigationApi</span><span class="o">.</span><span class="na">createIntentForEditProduct</span><span class="o">(</span>
                     <span class="k">new</span> <span class="n">NavigationApi</span><span class="o">.</span><span class="na">EditProductIntentBuilder</span><span class="o">()</span>
