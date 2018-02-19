@@ -576,6 +576,17 @@
 
 
 {
+"title": "Информация о смене",
+"tags": "terminaljava",
+"keywords": "",
+"url": "doc_java_session.html",
+"summary": ""
+}
+,
+
+
+
+{
 "title": "Обработка событий смарт-терминала",
 "tags": "terminaljavaReceipts",
 "keywords": "позиция, чек, события",
