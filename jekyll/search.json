@@ -470,7 +470,7 @@
 "tags": "terminaljava",
 "keywords": "интерфейс, окно, методы, навигация",
 "url": "doc_java_navigation.html",
-"summary": "Раздел содержит инструкцию по переходу к элементам управления смарт-терминалом."
+"summary": "Раздел содержит описание методов класса NavigationApi, а так же пример вызова окон смарт-терминала."
 }
 ,
 
@@ -976,6 +976,17 @@
 "tags": "terminalreact",
 "keywords": "react",
 "url": "react_reference_seviceapi.html",
+"summary": ""
+}
+,
+
+
+
+{
+"title": "Класс SessionAPI",
+"tags": "terminalreact",
+"keywords": "react",
+"url": "react_reference_sessionapi.html",
 "summary": ""
 }
 ,

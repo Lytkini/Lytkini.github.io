@@ -10,8 +10,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="terminalreact,  ">
-<title>Установка приложения на смарт-терминал | Документация Эвотор</title>
+<meta name="keywords" content="terminalreact,  react">
+<title>Класс SessionAPI | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -139,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Установка приложения на смарт-терминал">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Класс SessionAPI">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -558,7 +558,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     
                     
                     
-                    <li><a href="react_reference_sessionapi.html">Смены</a></li>
+                    <li class="active"><a href="react_reference_sessionapi.html">Смены</a></li>
                     
                     
                     
@@ -889,7 +889,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Установка приложения на смарт-терминал</h1>
+   <h1 class="post-title-main">Класс SessionAPI</h1>
 </div>
 
 
@@ -927,48 +927,31 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/react_SDK/doc_react_app_installation.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/react_reference/react_reference_sessionapi.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <p><em>Чтобы установить приложение на смарт-терминал:</em></p>
+  <h2 id="section">Описание</h2>
 
-<ol>
-  <li>
-    <p>Включите на смарт-терминале <a href="./doc_app_developer_mode.html">режим разработчика</a>.</p>
+<p>С помощью методов класса приложения работают с данными кассовой смены.</p>
 
-    <p>При включении режима разработчика выберите опцию <strong>Ввести ID пакета вручную</strong> и укажите packageName приложения, которое вы собираетесь устанавливать на смарт-терминал, например, <code class="highlighter-rouge">com.ProjectName</code>.</p>
-  </li>
-  <li>
-    <p>Подключитесь к смарт-терминалу с помощью команды</p>
+<h2 id="section-1">Методы</h2>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>adb connect &lt;IP-адрес смарт-терминала&gt;:2111
+<h3 id="printzreport">printZReport</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">printZReport</span><span class="p">()</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span>
 </code></pre>
-    </div>
-  </li>
-  <li>Запустите командную строку от имени Администратора.</li>
-  <li>Перейдите в папку C:\Program Files\Java\jdk1.8.0_121\bin&gt;</li>
-  <li>
-    <p>Выполните команды:</p>
+</div>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>В папке <ProjectName>\аndroid выполните команды:</ProjectName></p>
+<p><strong>Описание</strong></p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>gradlew assembleRelease
-</code></pre>
-    </div>
+<p>Печатает Z-отчёт.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>adb install -r &lt;ProjectName&gt;\android\app\build\outputs\apk\release\app-release.apk
-</code></pre>
-    </div>
-  </li>
-</ol>
+<p><strong>Возвращает</strong></p>
 
-<p>Ваше приложение будет установлено на смарт-терминал. Проверить это вы можете тут ещё&gt;память&gt;приложения (или как-то так).</p>
+<ul>
+  <li><code class="highlighter-rouge">Promise</code>, результат которого – <code class="highlighter-rouge">void</code></li>
+</ul>
 
 
     <div class="tags">
