@@ -395,6 +395,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li><a href="doc_java_session.html">Работа с кассовыми сменами</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
@@ -1163,9 +1170,9 @@ $('#toc').on('click', 'a', function() {
     <span class="nd">@Override</span>
 
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">// вызов суперкласса onCreate, создающего операцию.</span>
+        <span class="c1">//Вызов суперкласса onCreate, создающего операцию.</span>
         <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="c1">// NavigationApi.createIntentForNewProduct() создает намерение (Intent) на создание товара с указанным штрихкодом.</span>
+        <span class="c1">//NavigationApi.createIntentForNewProduct() создает намерение (Intent) на создание товара с указанным штрихкодом.</span>
         <span class="n">startActivityForResult</span><span class="o">(</span><span class="n">NavigationApi</span><span class="o">.</span><span class="na">createIntentForNewProduct</span><span class="o">(</span>
                 <span class="k">new</span> <span class="n">NavigationApi</span><span class="o">.</span><span class="na">NewProductIntentBuilder</span><span class="o">().</span><span class="na">setBarcode</span><span class="o">(</span><span class="s">"111"</span><span class="o">)),</span> <span class="n">REQUEST_CODE_FOR_NEW_PRODUCT</span><span class="o">);</span>
     <span class="o">}</span>

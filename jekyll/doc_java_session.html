@@ -395,6 +395,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
+            <li class="active"><a href="doc_java_session.html">Работа с кассовыми сменами</a></li>
+            
+            
+            
+            
+            
+            
             <li><a href="doc_java_payment_systems.html">Способы оплаты</a></li>
             
             
@@ -956,7 +963,7 @@ $('#toc').on('click', 'a', function() {
 <p><strong>Возвращает</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">Long</code></li>
+  <li><code class="highlighter-rouge">Long</code> – номер кассовой смены.</li>
 </ul>
 
 <h3 id="issessionopened">isSessionOpened</h3>
@@ -967,7 +974,7 @@ $('#toc').on('click', 'a', function() {
 
 <p><strong>Описание</strong></p>
 
-<p>Возвращает информацию о том открыта кассовая смена или нет.</p>
+<p>Возвращает информацию о состоянии кассовой смены.</p>
 
 <p><strong>Параметры</strong></p>
 
@@ -983,6 +990,63 @@ $('#toc').on('click', 'a', function() {
 </ul>
 
 <h2 id="section-2">Пример</h2>
+
+<p>Пример использования методов <code class="highlighter-rouge">SystemStateApi.kt</code>.</p>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Соответствующие кнопки требуется зарегистрировать в манифесте приложения.</div>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">example</span><span class="o">.</span><span class="na">dfabrichnyi</span><span class="o">.</span><span class="na">integration_lib_test</span>
+
+<span class="kn">import</span> <span class="nn">android.os.Bundle</span>
+<span class="kn">import</span> <span class="nn">android.support.v7.app.AppCompatActivity</span>
+<span class="kn">import</span> <span class="nn">android.widget.Button</span>
+<span class="kn">import</span> <span class="nn">ru.evotor.framework.system.SystemStateApi</span>
+
+<span class="kd">class</span> <span class="nc">IntegrationLibraryApiTestActivity</span> <span class="o">:</span> <span class="n">AppCompatActivity</span><span class="o">()</span> <span class="o">{</span>
+
+    <span class="n">override</span> <span class="n">fun</span> <span class="nf">onCreate</span><span class="o">(</span><span class="nl">savedInstanceState:</span> <span class="n">Bundle</span><span class="o">?)</span> <span class="o">{</span>
+        <span class="c1">//Вызов суперкласса onCreate, создающего операцию.</span>
+        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">)</span>
+        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_integration_library_api_test</span><span class="o">)</span>
+        <span class="c1">//Кнопка, нажатиже на которую возвращает номер последней кассовой смены.</span>
+        <span class="n">findViewById</span><span class="o">&lt;</span><span class="n">Button</span><span class="o">&gt;(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">get_last_session_number</span><span class="o">).</span><span class="na">setOnClickListener</span> <span class="o">{</span>
+            <span class="n">getLastSessionNumber</span><span class="o">()</span>
+        <span class="o">}</span>
+
+        <span class="c1">//Кнопка, нажатиже на которую возвращает информацию состоянии кассовой смены.</span>
+        <span class="n">findViewById</span><span class="o">&lt;</span><span class="n">Button</span><span class="o">&gt;(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">get_is_session_opened</span><span class="o">).</span><span class="na">setOnClickListener</span> <span class="o">{</span>
+            <span class="n">getIsSessionOpened</span><span class="o">()</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">//Функция, реализующая метод получения номера последней кассовой смены</span>
+    <span class="c1">//SystemStateApi.getLastSessionNumber()</span>
+    <span class="kd">private</span> <span class="n">fun</span> <span class="nf">getLastSessionNumber</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">val</span> <span class="n">lastSessionNumber</span> <span class="o">=</span> <span class="n">SystemStateApi</span><span class="o">.</span><span class="na">getLastSessionNumber</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">lastSessionNumber</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">//Выводит на экран номер последней кассовой смены.</span>
+            <span class="n">println</span><span class="o">(</span><span class="s">"lastSessionNumber = $lastSessionNumber"</span><span class="o">)</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="c1">//Выводит на экран сообщение, если номер кассовой смены получить не удалось.</span>
+            <span class="n">println</span><span class="o">(</span><span class="s">"Не удалось получить номер последней кассовой смены."</span><span class="o">)</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="c1">//Функция, реализующая метод получения информации о состоянии кассовой смены</span>
+    <span class="c1">//SystemStateApi.isSessionOpened()</span>
+    <span class="kd">private</span> <span class="n">fun</span> <span class="nf">getIsSessionOpened</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">val</span> <span class="n">isSessionOpened</span> <span class="o">=</span> <span class="n">SystemStateApi</span><span class="o">.</span><span class="na">isSessionOpened</span><span class="o">(</span><span class="k">this</span><span class="o">)</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">isSessionOpened</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">//Выводит на экран состояние текущей кассовой смены.</span>
+            <span class="n">println</span><span class="o">(</span><span class="s">"isSessionOpened = $isSessionOpened"</span><span class="o">)</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="c1">//Выводит на экран сообщение, если состояние кассовой смены получить не удалось.</span>
+            <span class="n">println</span><span class="o">(</span><span class="s">"Не удалось определить состояние текущей кассовой смены."</span><span class="o">)</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
 
 
     <div class="tags">
