@@ -1017,73 +1017,7 @@ $('#toc').on('click', 'a', function() {
 
 <h3 id="beforepositionseditedevent">Описание события <code class="highlighter-rouge">BeforePositionsEditedEvent</code></h3>
 
-<p>О намерении изменения чека сообщает событие <a href="https://github.com/evotor/integration-library/blob/master/app/src/main/java/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEvent.java"><code class="highlighter-rouge">beforePositionsEditedEvent</code></a>:</p>
-
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BeforePositionsEditedEvent</span> <span class="kd">implements</span> <span class="n">IBundlable</span> <span class="o">{</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">TAG</span> <span class="o">=</span> <span class="s">"PositionsEditedEvent"</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NAME_SELL_RECEIPT</span> <span class="o">=</span> <span class="s">"evo.v2.receipt.sell.beforePositionsEdited"</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NAME_PAYBACK_RECEIPT</span> <span class="o">=</span> <span class="s">"evo.v2.receipt.payback.beforePositionsEdited"</span><span class="o">;</span>
-
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">KEY_RECEIPT_UUID</span> <span class="o">=</span> <span class="s">"receiptUuid"</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">KEY_CHANGES</span> <span class="o">=</span> <span class="s">"changes"</span><span class="o">;</span>
-
-    <span class="nd">@NonNull</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">receiptUuid</span><span class="o">;</span>
-    <span class="nd">@NonNull</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">IPositionChange</span><span class="o">&gt;</span> <span class="n">changes</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="nf">BeforePositionsEditedEvent</span><span class="o">(</span>
-            <span class="nd">@NonNull</span> <span class="n">String</span> <span class="n">receiptUuid</span><span class="o">,</span>
-            <span class="nd">@NonNull</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">IPositionChange</span><span class="o">&gt;</span> <span class="n">changes</span>
-    <span class="o">)</span> <span class="o">{</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">receiptUuid</span> <span class="o">=</span> <span class="n">receiptUuid</span><span class="o">;</span>
-        <span class="k">this</span><span class="o">.</span><span class="na">changes</span> <span class="o">=</span> <span class="n">changes</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Nullable</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">BeforePositionsEditedEvent</span> <span class="nf">create</span><span class="o">(</span><span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">bundle</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">if</span> <span class="o">(</span><span class="n">bundle</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="o">}</span>
-
-        <span class="n">String</span> <span class="n">receiptUuid</span> <span class="o">=</span> <span class="n">bundle</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="n">KEY_RECEIPT_UUID</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
-
-        <span class="k">return</span> <span class="k">new</span> <span class="nf">BeforePositionsEditedEvent</span><span class="o">(</span>
-                <span class="n">receiptUuid</span><span class="o">,</span>
-                <span class="n">Utils</span><span class="o">.</span><span class="na">filterByClass</span><span class="o">(</span>
-                        <span class="n">ChangesMapper</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">bundle</span><span class="o">.</span><span class="na">getParcelableArray</span><span class="o">(</span><span class="n">KEY_CHANGES</span><span class="o">)),</span>
-                        <span class="n">IPositionChange</span><span class="o">.</span><span class="na">class</span>
-                <span class="o">)</span>
-        <span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="nd">@NonNull</span>
-    <span class="kd">public</span> <span class="n">Bundle</span> <span class="nf">toBundle</span><span class="o">()</span> <span class="o">{</span>
-        <span class="n">Bundle</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
-        <span class="n">result</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="n">KEY_RECEIPT_UUID</span><span class="o">,</span> <span class="n">receiptUuid</span><span class="o">);</span>
-        <span class="n">Parcelable</span><span class="o">[]</span> <span class="n">changesParcelable</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Parcelable</span><span class="o">[</span><span class="n">changes</span><span class="o">.</span><span class="na">size</span><span class="o">()];</span>
-        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">changesParcelable</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
-            <span class="n">IChange</span> <span class="n">change</span> <span class="o">=</span> <span class="n">changes</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-            <span class="n">changesParcelable</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">ChangesMapper</span><span class="o">.</span><span class="na">INSTANCE</span><span class="o">.</span><span class="na">toBundle</span><span class="o">(</span><span class="n">change</span><span class="o">);</span>
-        <span class="o">}</span>
-        <span class="n">result</span><span class="o">.</span><span class="na">putParcelableArray</span><span class="o">(</span><span class="n">KEY_CHANGES</span><span class="o">,</span> <span class="n">changesParcelable</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@NonNull</span>
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getReceiptUuid</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">receiptUuid</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@NonNull</span>
-    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">IPositionChange</span><span class="o">&gt;</span> <span class="nf">getChanges</span><span class="o">()</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="n">changes</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre>
-</div>
+<p>О намерении изменения чека сообщает событие <a href="https://github.com/evotor/integration-library/blob/develop/src/main/java/ru/evotor/framework/core/action/event/receipt/before_positions_edited/BeforePositionsEditedEvent.java"><code class="highlighter-rouge">beforePositionsEditedEvent</code></a>:</p>
 
 <h2 id="Position">Описание позиции</h2>
 

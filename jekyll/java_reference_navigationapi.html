@@ -10,8 +10,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
-<meta name="keywords" content="terminaljava,  обмен, сообщения, HTTP, сторонний, сервис, проксирование">
-<title>Обмен сообщениями Java-приложения и стороннего сервиса | Документация Эвотор</title>
+<meta name="keywords" content="terminaljava,  java">
+<title>Класс NavigationAPI | Документация Эвотор</title>
 <link rel="stylesheet" href="css/syntax.css">
 
 
@@ -139,7 +139,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 searchInput: document.getElementById('search-input'),
                                 resultsContainer: document.getElementById('results-container'),
                                 dataSource: 'search.json',
-                                searchResultTemplate: '<li><a href="{url}" title="Обмен сообщениями Java-приложения и стороннего сервиса">{title}</a></li>',
+                                searchResultTemplate: '<li><a href="{url}" title="Класс NavigationAPI">{title}</a></li>',
                     noResultsText: 'Ничего не найдено',
                             limit: 10,
                             fuzzy: true,
@@ -374,7 +374,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             
             
-            <li class="active"><a href="doc_java_third_party_service_communication.html">Обмен сообщениями Java-приложения и стороннего сервиса</a></li>
+            <li><a href="doc_java_third_party_service_communication.html">Обмен сообщениями Java-приложения и стороннего сервиса</a></li>
             
             
             
@@ -896,7 +896,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Content Column -->
           <div class="col-md-9">
                 <div class="post-header">
-   <h1 class="post-title-main">Обмен сообщениями Java-приложения и стороннего сервиса</h1>
+   <h1 class="post-title-main">Класс NavigationAPI</h1>
 </div>
 
 
@@ -934,134 +934,37 @@ $('#toc').on('click', 'a', function() {
 
     
 
-    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/java_SDK/doc_java_third_party_service_communication.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    <a target="_blank" href="https://github.com/evotor/documentation/tree/master/pages/evotordoc/java_reference/java_reference_navigationapi.md" class="btn btn-default githubEditButton" role="button"><i class="fa fa-github fa-lg"></i> Редактировать</a>
 
     
 
-  <p>Все запросы приложений к стороннему сервису проходят через Облако Эвотор:</p>
+  <h2 id="section">Описание</h2>
 
-<p class="center-image"><img src="images\cloud_proxy.png" alt="" /></p>
+<p>Описание.</p>
 
-<p>Для отправки запросов приложения могут использовать только 80 и 443 порт.</p>
+<h2 id="section-1">Методы</h2>
 
-<p>Смарт-терминал не поддерживает протокол WebSocket.</p>
+<h3 id="section-2">Название метода</h3>
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Важно:</b> Установленные на смарт-терминале приложения могут обращаться только к сторонним сервисам. При этом, сторонние сервисы не должны быть в одной локальной сети со смарт-терминалом. Обращаться к REST API Облака Эвотор нельзя.</div>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="err">Метод</span>
+</code></pre>
+</div>
 
-<h2 id="section">Подготовка к отправке запросов</h2>
+<p><strong>Описание</strong></p>
 
-<p>Для отправки запросов требуется:</p>
+<p>Описание метода.</p>
 
-<ul>
-  <li>На портале dev.evotor.ru, <a href="doc_java_third_party_service_communication.html#urls">указать список разрешённых URL</a>, к которым может обращаться приложение.</li>
-  <li>Поддержать возможность обращения к сторонним сервисам в приложении.</li>
-  <li>
-    <p><a href="./doc_app_installation.html#MarkeplaceAppInstallation">Установить приложение в Магазине приложений</a>.</p>
-
-    <p>В данном случае установка подразумевает активацию приложения в <a href="https://lk.evotor.ru">Личном кабинете</a> и необходима, чтобы применились URL, которые вы указали на сайте разработчиков.</p>
-  </li>
-</ul>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Если вы разрабатываете JS-приложение, смотрите раздел <a href="./doc_js_third_party_service_communication.html">“Обмен сообщениями JS-приложения и стороннего сервиса”</a>.</div>
-
-<h2 id="urls">Настройка списка разрешённых URL</h2>
-
-<p><em>Чтобы настроить список разрешённых URL:</em></p>
-
-<ol>
-  <li>На портале <a href="https://dev.evotor.ru">dev.evotor.ru</a> выберите приложение, для которого требуется указать список разрешённых URL.</li>
-  <li>На вкладке <strong>Интеграция</strong>, установите флажок <strong>Проксирование запросов из приложения с терминала на ваш сервер (ver. 2)</strong> и укажите список URL, к которым может обращаться приложение.</li>
-</ol>
-
-<p>Примеры:</p>
+<p><strong>Параметры</strong></p>
 
 <ul>
-  <li><code class="highlighter-rouge">http://example\.com/document.*\.jsp\?wildcard=\*&amp;param=value.*</code>;</li>
-  <li><code class="highlighter-rouge">https://another\.host\.com/document.*\.jsp</code>;</li>
-  <li><code class="highlighter-rouge">https://another\.host\.com/.*</code>.</li>
+  <li>Параметры метода.</li>
 </ul>
 
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Чтобы задавать маски веб-сайтов используйте <a href="http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum">регулярные выражения</a>.</div>
-
-<p>После создания списка и <a href="./doc_app_installation.html#MarkeplaceAppInstallation">установки приложения в Магазине приложений</a>, обмен сообщениями происходит по описанному ниже процессу.</p>
-
-<h2 id="http----">Шаг 1. Приложение отправляет HTTP-сообщение в сторонний сервис</h2>
-
-<p>Приложение создаёт HTTP-сообщение и отправляет его в сторонний сервис. Вы можете воспользоваться любым удобным способом отправки сообщения.</p>
-
-<p>Например, для отправки HTTP-сообщения из Java-приложения вы можете, использовать <a href="http://square.github.io/okhttp/">библиотеку OkHttp</a> или способ, описанный на сайте <a href="https://developer.android.com/training/basics/network-ops/connecting.html">developer.android.com</a>.</p>
-
-<p>Независимо от версии проксирования, SDK смарт-терминала и Облако Эвотор поддерживают следующие HTTP-методы:</p>
+<p><strong>Возвращает</strong></p>
 
 <ul>
-  <li>GET;</li>
-  <li>POST;</li>
-  <li>PUT;</li>
-  <li>DELETE.</li>
+  <li>Метод возвращает</li>
 </ul>
-
-<p>Эвотор гарантирует поддержку следующих MIME-типов:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">application/x-www-form-urlencoded</code></li>
-  <li><code class="highlighter-rouge">application/json</code></li>
-  <li><code class="highlighter-rouge">application/xml</code></li>
-  <li><code class="highlighter-rouge">text/*</code></li>
-  <li><code class="highlighter-rouge">image/*</code></li>
-  <li><code class="highlighter-rouge">multipart/form-data</code></li>
-</ul>
-
-<p>Поддержка других MIME-типов не гарантируется.</p>
-
-<h2 id="section-1">Шаг 2. Смарт-терминал передаёт сообщение в облако</h2>
-
-<p>Терминал перехватывает сообщение и передаёт его в облако Эвотор.</p>
-
-<p>Заголовки, которые терминал добавляет к запросу вашего приложения:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">X-Device-ID</code></li>
-  <li><code class="highlighter-rouge">X-Device-IMEI</code></li>
-  <li><code class="highlighter-rouge">X-User-ID</code></li>
-  <li><code class="highlighter-rouge">X-Signed-Url</code></li>
-  <li><code class="highlighter-rouge">X-Shop-UUID</code></li>
-  <li><code class="highlighter-rouge">X-Device-Salt</code></li>
-  <li><code class="highlighter-rouge">X-Device-Algorithm</code></li>
-  <li><code class="highlighter-rouge">X-Device-Date</code></li>
-  <li><code class="highlighter-rouge">X-Secret-Device-ID</code></li>
-  <li><code class="highlighter-rouge">X-OAuth-Client-ID</code></li>
-  <li><code class="highlighter-rouge">X-Device-UUID</code></li>
-  <li><code class="highlighter-rouge">X-Evotor-*</code></li>
-  <li><code class="highlighter-rouge">Expect</code></li>
-  <li><code class="highlighter-rouge">Host</code></li>
-  <li><code class="highlighter-rouge">Transfer-Encoding</code></li>
-</ul>
-
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Убедитесь, что ваше приложение не использует перечисленные заголовки. В противном случае, смарт-терминал перезапишет их содержимое.</div>
-
-<h2 id="section-2">Шаг 3. Облако передаёт сообщение адресату</h2>
-
-<p>Облако удаляет служебные заголовки, добавляет свои заголовки и передаёт сообщение адресату.</p>
-
-<p>Заголовки, которые добавляет облако:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">X-Evotor-Store-Uuid</code> – содержит идентификатор магазина в формате uuid4, к которому привязан терминал.</li>
-  <li><code class="highlighter-rouge">X-Evotor-Device-UUID</code> – содержит идентификатор устройства в формате uuid4, полученный по запросу к <code class="highlighter-rouge">/api/v1/inventories/devices</code>.</li>
-  <li><code class="highlighter-rouge">X-Evotor-User-Id</code> – содержит идентификатор пользователя в Облаке Эвотор.</li>
-  <li><code class="highlighter-rouge">Authorization</code> – содержит <a href="./doc_evotor_api_authorization.html#usersToken">токен пользователя приложения стороннего сервиса</a>. Токен необходим для bearer-авторизации.</li>
-</ul>
-
-<p>Сторонний сервер получает сообщение от облака Эвотор и определяет отправителя с помощью заголовка <code class="highlighter-rouge">Authorization</code>.</p>
-
-<h2 id="section-3">Шаг 4. Ответ стороннего сервиса</h2>
-
-<p>Ответ стороннего сервиса передаётся приложению в обратном порядке.</p>
-
-<p>Требования к содержимому ответа отсутствуют.</p>
-
-<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> За проксирование отвечает параметр <strong>Проксирование запросов из приложения с терминала на ваш сервер</strong> на вкладке <strong>Интеграция</strong> вашего приложения, на сайте <a href="https://dev.evotor.ru/">dev.evotor.ru</a>.</div>
-
 
 
     <div class="tags">

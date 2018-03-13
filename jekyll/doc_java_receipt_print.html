@@ -960,7 +960,7 @@ $('#toc').on('click', 'a', function() {
 
 <ol>
   <li>
-    <p>В <a href="./doc_java_app_manifest.html">манифесте приложения</a>, наделите приложение необходимыми правами:</p>
+    <p>В <a href="./doc_java_app_manifest.html">манифесте приложения</a>, укажите права приложения:</p>
 
     <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"ru.evotor.permission.receipt.printExtra.SET"</span> <span class="nt">/&gt;</span>
 </code></pre>
@@ -970,18 +970,21 @@ $('#toc').on('click', 'a', function() {
   <li>
     <p>Объявите службу в манифесте приложения и укажите <code class="highlighter-rouge">intent-filter</code>:</p>
 
-    <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evo.v2.receipt.sell.printExtra.REQUIRED"</span> <span class="nt">/&gt;</span>
+    <div class="language-xml highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"&lt;Событие&gt;"</span> <span class="nt">/&gt;</span>
 </code></pre>
     </div>
 
-    <p>Где:</p>
-
-    <p>Событие <code class="highlighter-rouge">evo.v2.receipt.sell.printExtra.REQUIRED</code> – сообщает о возможности печати внутри кассового чека продажи. Для печати внутри кассового чека возврата подпишитесь на событие <code class="highlighter-rouge">evo.v2.receipt.payback.printExtra.REQUIRED</code>.</p>
+    <p>где необходимо указать событие, при которое определяет тип чека, в котором будут напечатаны данные. Возможны следующие события:
+* <code class="highlighter-rouge">evo.v2.receipt.sell.printExtra.REQUIRED</code> – печать внутри кассового чека продажи товара.
+* <code class="highlighter-rouge">evo.v2.receipt.buy.printExtra.REQUIRED</code>  – печать внутри кассового чека покупки товара.
+* <code class="highlighter-rouge">evo.v2.receipt.payback.printExtra.REQUIRED</code> – печать внутри кассового чека возврата проданного товара.
+* <code class="highlighter-rouge">evo.v2.receipt.buyback.printExtra.REQUIRED</code> – печать внутри кассового чека возврата купленного товара.</p>
   </li>
   <li>
     <p>В службе, подпишите процессор <code class="highlighter-rouge">PrintExtraRequiredEventProcessor</code> на событие:</p>
 
     <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">processorMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span>
+                <span class="c1">//NAME_SELL_RECEIPT – имя события, которое указывает тип чека, где будут напечатаны данные.</span>
                 <span class="n">PrintExtraRequiredEvent</span><span class="o">.</span><span class="na">NAME_SELL_RECEIPT</span><span class="o">,</span>
                 <span class="k">new</span> <span class="nf">PrintExtraRequiredEventProcessor</span><span class="o">()</span> <span class="o">{</span>
                 <span class="o">}</span>

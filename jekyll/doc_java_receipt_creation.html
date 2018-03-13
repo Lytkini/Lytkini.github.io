@@ -942,11 +942,11 @@ $('#toc').on('click', 'a', function() {
 
     
 
-  <p><em>Чтобы открыть чек в смарт-терминале:</em></p>
+  <p><em>Чтобы открыть чек продажи в смарт-терминале:</em></p>
 
 <ol>
   <li>
-    <p>Составьте список позиций, который требуется добавить в чек, наполните список</p>
+    <p>Составьте список позиций, который требуется добавить в чек, и наполните его:</p>
 
     <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">openReceipt</span><span class="o">()</span> <span class="o">{</span>
         <span class="n">List</span><span class="o">&lt;</span><span class="n">PositionAdd</span><span class="o">&gt;</span> <span class="n">positionAddList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
@@ -973,7 +973,8 @@ $('#toc').on('click', 'a', function() {
                                 <span class="k">try</span> <span class="o">{</span>
                                     <span class="n">IntegrationManagerFuture</span><span class="o">.</span><span class="na">Result</span> <span class="n">result</span> <span class="o">=</span> <span class="n">integrationManagerFuture</span><span class="o">.</span><span class="na">getResult</span><span class="o">();</span>
                                     <span class="k">if</span> <span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getType</span><span class="o">()</span> <span class="o">==</span> <span class="n">IntegrationManagerFuture</span><span class="o">.</span><span class="na">Result</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">OK</span><span class="o">)</span> <span class="o">{</span>
-                                        <span class="n">startActivity</span><span class="o">(</span><span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="s">"evotor.intent.action.payment.SELL"</span><span class="o">));</span>
+                                        <span class="c1">//Чтобы открыть другие документы используйте методы NavigationApi.</span>
+                                        <span class="n">startActivity</span><span class="o">(</span><span class="n">NavigationApi</span><span class="o">.</span><span class="na">createIntentForSellReceiptPayment</span><span class="o">());</span>
                                     <span class="o">}</span>
                                 <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
                                     <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
@@ -986,6 +987,15 @@ $('#toc').on('click', 'a', function() {
     </div>
 
     <p>Где вместо null вы можете передать <code class="highlighter-rouge">new SetExtra(extra)</code>, команду для <a href="./doc_java_receipt_extras.html">создания дополнительных полей в чеке</a>.</p>
+
+    <p>Чтобы открыть чек другого типа используйте соответствующую команду. Возможные команды:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">OpenSellReceiptCommand</code> – команда открытия чека продажи.</li>
+      <li><code class="highlighter-rouge">OpenPaybackReceiptCommand</code> – команда открытия чека возврата проданного товара.</li>
+      <li><code class="highlighter-rouge">OpenBuyReceiptCommand</code> – команда открытия чека покупки.</li>
+      <li><code class="highlighter-rouge">OpenBuybackReceiptCommand</code> – команда открытия чека возврата купленного товара.</li>
+    </ul>
 
     <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Замените <code class="highlighter-rouge">SELL</code> на <code class="highlighter-rouge">PAYBACK</code>, если хотите открыть чек возврата.</div>
 
