@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> | Документация Эвотор</title>
+    <base target="_self">
+    <meta name="description" content="            <div... " />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="icon"  type="image/x-icon" href="favicon.ico">
+
+
+
+    <!--stylesheets / link tags loaded here-->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/monokai.css" />
+    <link rel="stylesheet" href="assets/css/lighttheme-evoblue.css" />
+    <link rel="stylesheet" href="assets/css/customstyles.css" />
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/navgoco.jquery.min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target="nav#toc" data-offset="20">
+<div class="page-container">
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container topnavlinks">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle topnav</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
+                    <span class="sr-only">Toggle sidebar</span>
+                    <span class="sidebarToggle fa fa-columns fa-2x"></span>
+                </button>
+                    <a class="navbar-brand" href="index.html">
+                    <img class="navbar-logo" src="images/logo_white.png"/>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                    <!-- entries without drop-downs appear here -->
+                    
+                    
+                    
+                    
+                    <li><a href="https://api.evotor.ru/" class="noCrossRef">REST API Облака</a></li>
+                    
+                    
+                    
+                    <li><a href="java_introduction.html">Java SDK</a></li>
+                    
+                    
+                    
+                    <li><a href="rn_gettingstarted.html">React Native</a></li>
+                    
+                    
+                    
+                    <!-- entries with drop-downs appear here -->
+
+                    
+</ul>
+<ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                        <!--start search-->
+                        <div id="search-demo-container">
+                 <form action="search.html" method="get">
+                <input type="text" id="search-input" placeholder="Поиск по сайту ..." name="query">
+                </form>
+                </div>
+                        <!--end search-->
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <!-- /.container -->
+    </nav>
+    <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- sidebar -->
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                <!--<ul class="nav">-->
+                    <!--<li class="active"><a href="#">Home</a></li>-->
+                    <!--<li><a href="#">Link 1</a></li>-->
+                    <!--<li><a href="#">Link 2</a></li>-->
+                    <!--<li><a href="#">Link 3</a></li>-->
+                <!--</ul>-->
+                
+
+<div class="mydocsidebar">
+<div class="sidebar-inner">
+<div class="productTitle">Theme instructions</div>
+<!-- search bar -->
+
+<div class="sidebarSearchBar">
+<form action="search-themeinstructions.html" method="get">
+  <div class="input-group search">
+    <input type="text" id="search-box" name="query" class="form-control" placeholder="Поиск по разделу ...">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit" value="search">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+
+<!-- end search bar -->
+<ul id="docnavsidebar" class="docnav">
+    
+
+    
+    <li class="level1"><a href="#">Overview</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="index.html">Get started</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_introduction.html">Introduction</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_supported_features.html">Supported features</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_about.html">About the theme author</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_support.html">Support</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Release Notes</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_release_notes_60.html">6.0 Release notes</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_release_notes_50.html">5.0 Release notes</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Installation</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_about_ruby_gems_etc.html">About Ruby, Gems, Bundler, etc.</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_install_jekyll_on_mac.html">Install Jekyll on Mac</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_install_jekyll_on_windows.html">Install Jekyll on Windows</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Authoring</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_pages.html">Pages</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_posts.html">Posts</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_lists.html">Lists</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_conditional_logic.html">Conditional logic</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_content_reuse.html">Content reuse</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_collections.html">Collections</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_webstorm_text_editor.html">WebStorm editor tips</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_atom_text_editor.html">Atom editor tips</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Navigation</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_sidebar_navigation.html">Sidebar navigation</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_yaml_tutorial.html">YAML tutorial in the context of Jekyll</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_tags.html">Tags</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_series.html">Series</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Formatting</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_adding_tooltips.html">Tooltips</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_alerts.html">Alerts</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_icons.html">Icons</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_images.html">Images</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_code_samples.html">Code samples</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_labels.html">Labels</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_hyperlinks.html">Links</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_navtabs.html">Navtabs</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_tables.html">Tables</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_syntax_highlighting.html">Syntax highlighting</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_workflow_maps.html">Workflow maps</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Handling reviews</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_commenting_on_files.html">Commenting on files</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Publishing</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_build_arguments.html">Build arguments</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_themes.html">Themes</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_generating_pdfs.html">Generating PDFs</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_help_api.html">Help APIs and UI tooltips</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_search_configuration.html">Search configuration</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_iterm_profiles.html">iTerm profiles</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_push_build_to_server.html">Pushing builds to server</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_no_password_prompts_scp.html">Getting around the password prompts in SCP</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_publishing_github_pages.html">Publishing on Github Pages</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Special layouts</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_kb_layout.html">Knowledge-base layout</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_glossary.html">Glossary layout</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_faq_layout.html">FAQ layout</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_scroll.html">Scroll layout</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_shuffle.html">Shuffle layout</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Troubleshooting</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_troubleshooting.html">Troubleshooting</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Tag archives</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="mydoc_tag_archives_overview.html">Tag archives overview</a></li>
+            
+            
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Tag archive pages</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="tag-collaboration.html">Collaboration pages</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="tag-content-types.html">Content types</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="tag-formatting.html">Formatting</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="tag-getting-started.html">Getting started</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="tag-navigation.html">Navigation pages</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="tag-publishing.html">Publishing pages</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="tag-single-sourcing.html">Single-sourcing pages</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="tag-troubleshooting.html">Troubleshooting pages</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            
+        </ul>
+
+        
+
+    </li>
+</ul>
+
+<hr class="resourceSeparator"></hr>
+<div class="relatedResources">Other Resources</div>
+<ul id="entrypages">
+        
+        <li><a class="noCrossRef" href="http://jekyllrb.com">Jekyll</a></li>
+        
+        <li><a class="noCrossRef" href="http://idratherbewriting.com">I'd Rather Be Writing</a></li>
+        
+        <li><a class="noCrossRef" href="http://github.com">Github</a></li>
+        
+    </li>
+</ul>
+</div>
+</div>
+<script>$("li.open").parents('li').toggleClass("open");</script>
+
+            </div>
+
+            <!-- main area -->
+            <div class="col-xs-12 col-sm-7">
+                
+                <h1> Результаты поиска</h1>
+                  
+                 <div class="toc-main-column">
+                 
+
+               </div>
+                <div style="display:none">
+<form action="search-themeinstructions.html" method="get">
+  <div class="input-group search">
+    <input type="text" id="search-box" name="query" class="form-control" placeholder="">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit" value="search">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+
+<div id="search-results"></div>
+
+<script>
+  window.store = {
+      
+          
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+
+      "building-a-jekyll-theme-html": {
+        "title": "Create a Jekyll Documentation Theme from an Existing HTML Template",
+        "tags": "[]",
+        "content": "Introduction  theming a jekyll site is a lot easier than creating a WP site  start with an existing html framework, add a few jekyll tags, and you’re offChoose an HTML templatebootply is good. lots of responsive themes. just find some html that you think will work well.[http://www.codeply.com/go/rV7KhUjwCN]save this file as default.html in your project folder folder. make sure it loads and works well.Add configuration fileadd config.yml file with some boilerplate codeno need for bundle init right now. not using any gems, and want to keep it this way to maximize compatibiltyCreate a default layoutcreate layout folderput default.html into this folderput frontmatter tags in default.htmladd variables for site.title, site.description, page.titlein config file:highlighter: rougemarkdown: kramdownkramdown: input: GFM auto_ids: true hard_wrap: false syntax_highlighter: rougedefaults:  -    scope:      path: “”      type: “posts”    values:      layout: “post”      comments: true      search: true      sidebar: home  -    scope:      path: “”      type: “pages”    values:      layout: “page”      sidebar: homeCreate an index pageCreate index.md filetitle: Homepagepermalink: index.html—put frontmatter tags in there. this is a signpost that jekyll will start process the filetitlepermalink to think about how you want pages rendered. this is a doc site, so i want all links flattened in the root so that my site can be viewed offlineDefine where that content appears in your default layoutadd content tags into default where it makes sense for the content to appearcustomize the h1 tags with the titletitle: Homepagepermalink: index.html—This is some content.Now build the site with jekyll serve.make sure you have Ruby and RubyGems installed.Then use this:gem install jekyll bundlernot going to use bundler nowjekyll serve. you should see your content populated.Create another page and make sure that also gets populated.Customize the navigationlook in your html for the list items that are defined. we’ll store this information in a yaml format and loop through it. there are varying levels of sophistication for the sidebar. see my yaml tutorial.you can also just loop through all pages. put a tag or something in your pages and then use a for loop to iterate through them.add _data file. store some stuff there.set up syntax highlighting  syntax.css",
+        "url": "building-a-jekyll-theme.html",
+        "product": "Theme instructions"
+      }
+      ,
+      
+      
+    
+            
+          
+
+      "building-robust-navigation-html": {
+        "title": "Building Robust Sidebar Navigation",
+        "tags": "[]",
+        "content": "  Add navgoco jquery into a folder called assets/js.  add sidebar.css into assets/css.  add sidebar.html into _includes  in your layout, add a reference to jquery, then the navgocosidebar. also add a reference to the css  in defaults in your config, add a default for a sidebar property. also add for index.html  insert the include in your theme where you want navigation to appear, in the sidebar  add some default pages to test",
+        "url": "building-robust-navigation.html",
+        "product": "Theme instructions"
+      }
+      ,
+      
+      
+    
+            
+          
+
+      "building-navigation-html": {
+        "title": "Building navigation",
+        "tags": "[&quot;formatting&quot;]",
+        "content": "hey, I think you need to integrate information from this same page: http://jekyllrb.com/docs/datafiles/#the-data-folderthis is a good issues page: https://github.com/jekyll/jekyll-help/issues/266IntroductionInstead of hard-coding navigation links to pages, you can use Liquid logic to retrieve a list of pages. There are two primary ways of retrieving pages:  Retrieving pages listed in a YAML data source. The YAML is either stored in a separate data file (in the _data folder) or in the page’s front matter (and accessed through site variables). Note that the pages don’t need to be YAML only (.yaml or .yml). You could also use any files ending in .json or .csv. However, the markup-less structure in YAML makes it more readable, since the spacing drives the syntax.  Retrieving pages by looping through the page front matter. You can use for loops to look through the site.pages or site.collections spaces to retrieve pages or documents that have particular properties in their front matter. For loops create longer build times, but sometimes this approach can be more efficient.Note that the techniques described here for using Liquid and YAML will be brief, since you can view the full documentation for using these formats on other sites. The focus here is on building page-based navigation for a Jekyll site.The examples that folow start with a basic navigation scenario and add more sophisticated elements to demonstrate different ways of returning the pages.In almost every scenario, you’ll see 3 elements:  YAML  Liquid  ResultScenario 1: Basic ListYou want to return a basic list of pages.YAMLYou have a data file named samplelist.yml in _data.podcast_list_title: Favorite Podcastspodcasts:- title: This Week in Tech  url: https://twit.tv/shows/this-week-in-tech- title: Radio Lab  url: http://www.radiolab.org/- title: Night Vale  url: http://www.welcometonightvale.com/Liquid&lt;h2&gt;Favorite Podcasts&lt;/h2&gt;&lt;ul&gt;{% for item in site.data.samplelist.podcasts %}&lt;li&gt;&lt;a href=\"{{item.url}}\" alt=\"{{item.title}}\"&gt;{{item.title}}&lt;/a&gt;&lt;/li&gt;{% endfor %}&lt;/ul&gt;ResultFavorite PodcastsThis Week in TechRadio LabNight ValeWhen you use a for loop, you choose the variable of what to call the things you’re looping through. The variable you choose (in this case, item) becomes how you access the properties of each thing in the list. Dot notation is used to get each property of each thing (for example, item.url).The YAML content has two main types of formats that are relevant here:  mapping  listpodcast_list_title: My Favorite Podcasts is a mapping. You access the file with site.data.samplelist.podcasts: is a list. The list begins each item with a hyphen. Unlike with mappings, you can’t access list properties directly like you can with a mapping. If you want to access a specific item in the list, you must identify get the position in the list you want, following typical array notation. For example, site.data.samplelist.podcasts[0] would access the first item in the list.With lists, you usually don’t access positions using the [0] syntax. Instead, you use for loops to cycle through the list of items and do something with each item. With navigation menus, you’re usually insert each list item into li tags based on the navigation structure you’re building in your HTML theme.Each - indicates another item in the list. Here we list just two properties: title and url. You can list as many properties as you want for each item. The order of properties at each position in the list doesn’t matter.Sorting the listSuppose you wanted to sort the list by the title. To do this, convert the reference to the list to a variable, and then apply Liquid’s sort filter to the variable:Liquid{% assign podcasts = site.data.samplelist.podcasts | sort: 'title'  %}{% for item in podcasts %}{{item.title}}{% endfor %}ResultNight ValeRadio LabThis Week in TechThe sort property in the Liquid filter applies to the title. title is an actual property in the list. If title weren’t a property, this sorting method wouldn’t work.            See Liquid array filter for more filter options. Note that you can’t simply use  {% for item in site.data.samplelist.podcasts      sort: ‘title’ %} . You have to convert site.dat.samplelist.podcasts to a variable first using either assign or capture tags.      Scenario 2: Two-level navigation listNow let’s say you want a more robust list that incorporates heading titles and subitems. To do this, add an additional level to each list item to store this information:YAMLtoc:  - title: Group 1    subfolderitems:      - page: Thing 1        url: /thing1.html      - page: Thing 2        url: /thing2.html      - page: Thing 3        url: /thing3.html  - title: Group 2    subfolderitems:      - page: Piece 1        url: /piece1.html      - page: Piece 2        url: /piece2.html      - page: Piece 3        url: /piece3.html  - title: Group 3    subfolderitems:      - page: Widget 1        url: /widget1.html      - page: Widget 2        url: /widget2.html      - page: Widget 3        url: /widget3.htmlLiquid{% for item in site.data.samplelist.toc %}{{item.title}}{% for entry in item.subfolderitems %}{{entry.page}}{% endfor %}{% endfor %}ResultGroup 1Thing 1Thing 2Thing 3Group 2Piece 1Piece 2Piece 3Group 3Widget 1Widget 2Widget 3In this example, Group 1 is the first list item. Within that list item, its subpages are included as a property that itself contains a list. The Liquid code first looks through the first level with for item in site.data.samplelist.toc, and then looks through the second-level property with for entry in item.subfolderitems. Just as item is arbitrary, so is entry.Access the list from a page variableSuppose your sidebar will differ based on different documentation sets. You might have 3 different products on your site, and so you want 3 different sidebars — each being unique for that product.You can store the name of the sidebar list in your page front matter and then pass that value into the list dynamically.Page front matter---title: My pagesidebar: toc---Liquid{% for item in site.data.samplelist[page.sidebar] %}&lt;h3&gt;{{item.title}}&lt;/h3&gt;&lt;ul&gt;{% for entry in item.subfolderitems %}&lt;li&gt;&lt;a href=\"{{entry.url}}\"&gt;{{entry.page}}&lt;/a&gt;&lt;/li&gt;{% endfor %}&lt;/ul&gt;{% endfor %}ResultIn order to pass values from the page front matter into an assign variable, when the assigned variable isn’t a string but rather a data reference, you must use brackets (instead of curly braces) to refer to the front matter’s value. For more information, see Expressions and Variables in Liquid’s documentation. Brackets are used in places where dot notation can’t be used (see more details with this Stack Overflow answer.)Scenario: Apply active class selectivelyIn addition to inserting items from the YAML data file into your list, you also usually want to highlight the current link if the user is viewing that page. You do this by inserting an active class for items that match the current page URL.CSScssa.active {  color: black;  font-weight: bold;  cursor: default;}LiquidResultScenario three: Conditional list{% for sec in site.data.samplelist.mypages %}{% if sec.audience == \"writers\" %}{{sec.url}}{% endif %}{% endfor %}Scenario: Separate sidebars per page  identify sidebar in page frontmatter, and pass that down to set which list gets usedScenario: Robust Multi-level menu using Navgoco  accordion, cookie, 3 level, expand/collapseloop through jsonhttp://stackoverflow.com/questions/41017809/jekyll-data-people-json-arrays-reforming-and-sortingFor loop through pagessee https://jekyllrb.com/docs/variables/. you can do for page in site.html_pages to make the looping faster.  no access to categories variable for pagesuse the uniq tag if you’re getting a list of all pages that have a tag. https://help.shopify.com/themes/liquid/filters/array-filters#uniqyou cannot do this:{% for p in site.categories.mycat %}* {{p.title}}{% endfor %}see http://stackoverflow.com/questions/11887929/how-do-i-loop-through-tags-in-a-jekyll-post?rq=1basic example:The code below dynamically generates a sidebar nav of pages with\t        layout: page in the front-matter. See readme for usage.\t            {% assign pages_list = site.pages %}\t\t          {% for node in pages_list %}\t\t\t          {% if node.title != null %}\t\t\t\t            {% if node.layout == \"page\" %}\t\t\t\t\t                &lt;a class=\"sidebar-nav-item{% if page.url == node.url %} active{% endif %}\" href=\"{{ site.baseurl }}{{ node.url  | remove_first: '/' }}\"&gt;{{ node.title }}&lt;/a&gt;\t\t\t\t\t\t\t          {% endif %}\t\t\t\t\t\t\t\t          {% endif %}\t\t\t\t\t\t\t\t\t  {% endfor %}For the pages we want in the navigation, we’ll add a navigation_weight to the front matter. The value of navigation_weight is a number which dictates the position it’s shown. For index.html we’ll add a navigation_weight of 1.layout: defaulttitle: Homenavigation_weight: 1—      {% assign navigation_pages = site.html_pages | sort: 'navigation_weight' %}    {% for p in navigation_pages %}      {% if p.navigation_weight %}                  &lt;a href=\"{{ p.url }}\" {% if p.url == page.url %}class=\"active\"{% endif %}&gt;            {{ p.title }}          &lt;/a&gt;              {% endif %}    {% endfor %}  …For loops with content stored in different collectionsfor doc in site.collections[collection_name] ??site.documents accesses a list of all the documents in every collection  load time for for loop through large number of pages is issuethose pages. also maybe provide collections as an example for doing that.",
+        "url": "building-navigation.html",
+        "product": "Theme instructions"
+      }
+      ,
+      
+      
+    
+            
+          
+
+      "tags-html": {
+        "title": "Tags",
+        "tags": "[]",
+        "content": "Whereas the sidebar provides navigation within the same product, tags provide navigation across all the products on your site. Each tag has a corresponding page (unlike the sidebar, which gets built into each page). Additionally, tags are supported within the translation strategy. There’s a collection for tags, with different tag collections by language.For example, here’s the tag collection for Japanese content:collections:  tags_ja:    output: trueThe tag docs are contained in _tag, _tag_ja, and _tag_de.The defaults in the config file specifies the tag_group property:defaults:    scope:      path: \"\"      type: docs_ja    values:      tag_group: taglist_jaThis tag_group property then gets passed to tags.html, which is included in the default layout:{% for tag in page.tags %}{% assign doctags = site.data[page.tag_group] %}The tag_group value then specifies either taglist.yml, taglist_ja.yml, or taglist_de.yml from the _data folder.The tags.html code looks at the tags specified for the page, loops through the taglist data file for a match, and if it finds a match, includes the tag on the page. The tag is linked to a tag doc that gathers all other docs that also contain that same tag.These tag pages are contained in _tags, _tags_ja, and _tags_de. Their logic is re-purposed from the same include stored in taglogic.html. The taglogic file looks through the collection to find all docs that contain the tag, and then lists them in a table.",
+        "url": "tags.html",
+        "product": ""
+      }
+      ,
+      
+      
+    
+            
+          
+
+      "translation-html": {
+        "title": "How translation works",
+        "tags": "[]",
+        "content": "Some assumptions:  Permalinks (URLs) for the pages remain the same (and aren’t translated).  Links in page content remain the same across languages.The “page” or “post” content types aren’t used. Documentation content is stored in collections. Each language has its own collection:  _docs: English  _docs_ja: Japanese  _docs_de: GermanThere are also 3 config files:  _config.yml: English  _config_ja.yml: Japanese  _config_de.yml: GermanEach config file declares the collection for that language. Here’s the English _config.yml file:collections:  docs:    output: trueAnd the Japanese _config_ja.yml file:collections:  docs_ja:    output: trueAnd the German _config_de.yml file:collections:  docs_de:    output: trueDepending on the configuration file you use, the site will include only that collection. This way Japanese builds won’t contain English or German docs, nor will German builds contain Japanese or English docs.This also ensures that a permalink in an English doc won’t conflict with the same permalink in a German or Japanese doc.The sidebar and topnav should also switch to the right language as well. These sidebar receives it configuration from the page front matter.---title: Sample 1permalink: sample1.htmlsidebar: generic---The sidebar value then gets passed into sidebar.html include, which is included in the default layout:{% assign sidebar = site.data[page.sidebar] %}&lt;div class=\"productTitle\"&gt;{{sidebar.sidebarTitle}}&lt;/div&gt;&lt;ul id=\"docnavsidebar\" class=\"docnav\"&gt;    {% for folder in sidebar.folders %}    ...The value for topnav is likewise passed into the default layout:{% assign topnav = site.data[page.topnav] %}{% for entry in topnav.navbar_singleitems %}However, rather than specifying the topnav value in each page’s frontmatter, as is done with sidebar, this value is set as a default in the config file for that language. This is because the topnav is the same for all docs in that collection, but each collection can have multiple sidebars.Here’s the config defaults for English:    defaults:      -        scope:          path: \"\"          type: docs        values:          layout: default          topnav: topnavAnd for Japanese:defaults:  -    scope:      path: \"\"      type: docs_ja    values:      layout: default      topnav: topnav_jaAnd for German:defaults:  -    scope:      path: \"\"      type: docs_de    values:      layout: default      topnav: topnav_deUI strings also change based on the config file. Here are the UI strings for English:uistring:    title: Jekyll Documentation theme # Displays as site title on top nav bar and on site metadata    description: Documentation theme for Jekyll websites  # Displays as site description meta    search_placeholder: Search ...    minitoc_title: Table of Contents    github_edit_button_text: Edit me    tag_terms:      product: Product      page: Page      excerpt: Excerpt      tag_page_intro: The following pages are tagged withThe config files for Japanese and German look the same but with different translations.Tags are also translated. Since tags are more complex, they’re explained in Tags.",
+        "url": "translation.html",
+        "product": ""
+      }
+      
+      
+      
+    
+          
+          
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+  };
+</script>
+
+<script src="assets/js/lunr.min.js"></script>
+<script src="assets/js/search.js"></script>
+
+                <div class="toc-main-column">
+                
+
+              </div>
+                
+
+
+            </div><!-- /.col-xs-12 main -->
+
+            <div class="col-xs-12 col-sm-2 right-lane">
+              <div class="inner">
+
+
+</div>
+
+              
+
+        </div><!--/.row-->
+    </div><!--/.container-->
+</div><!--/.page-container-->
+
+
+
+<!--scripts loaded here-->
+<script src="assets/js/jquery.magnific-popup.js"></script>
+<script>
+$('.no_icon').magnificPopup({
+type: 'image',
+closeBtnInside: false,
+closeOnContentClick: false,
+
+callbacks: {
+  open: function() {
+    var self = this;
+    self.wrap.on('click.pinhandler', 'img', function() {
+      self.wrap.toggleClass('mfp-force-scrollbars');
+    });
+  },
+  beforeClose: function() {
+        this.wrap.off('click.pinhandler');
+    this.wrap.removeClass('mfp-force-scrollbars');
+  }
+},
+
+image: {
+  verticalFit: false
+}
+
+});
+</script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/toc.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script>
+    $( document ).ready(function() {
+        $("#docnavsidebar").navgoco({
+            caretHtml: '',
+            accordion: false,
+            openClass: 'open', // open
+            save: false, // leave false or nav highlighting doesn't work right
+            cookie: {
+                name: 'navgoco',
+                expires: false,
+                path: '/'
+            },
+            slide: {
+                duration: 300,
+                easing: 'swing'
+            }
+        });
+
+    });
+
+</script>
+<script src="assets/js/customscripts.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('[data-toggle=offcanvas]').click(function() {
+            $('.row-offcanvas').toggleClass('active');
+        });
+    });
+</script>
+
+</body>
+
+</html>

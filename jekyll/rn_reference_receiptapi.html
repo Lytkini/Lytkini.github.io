@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Класс ReceiptAPI | Документация Эвотор</title>
+    <base target="_self">
+    <meta name="description" content="Описание С помощью методов класса приложения получают данные чеков и передают их для обработки в смарт-терминал. Методы getPositionsByBarcode static getPositionsByBarcode(barcode<span... " />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="icon"  type="image/x-icon" href="favicon.ico">
+
+
+
+    <!--stylesheets / link tags loaded here-->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/monokai.css" />
+    <link rel="stylesheet" href="assets/css/lighttheme-evoblue.css" />
+    <link rel="stylesheet" href="assets/css/customstyles.css" />
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/navgoco.jquery.min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target="nav#toc" data-offset="20">
+<div class="page-container">
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container topnavlinks">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle topnav</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
+                    <span class="sr-only">Toggle sidebar</span>
+                    <span class="sidebarToggle fa fa-columns fa-2x"></span>
+                </button>
+                    <a class="navbar-brand" href="index.html">
+                    <img class="navbar-logo" src="images/logo_white.png"/>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                    <!-- entries without drop-downs appear here -->
+                    
+                    
+                    
+                    
+                    <li><a href="https://api.evotor.ru/" class="noCrossRef">REST API Облака</a></li>
+                    
+                    
+                    
+                    <li><a href="java_introduction.html">Java SDK</a></li>
+                    
+                    
+                    
+                    <li><a href="rn_gettingstarted.html">React Native</a></li>
+                    
+                    
+                    
+                    <!-- entries with drop-downs appear here -->
+
+                    
+</ul>
+<ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                        <!--start search-->
+                        <div id="search-demo-container">
+                 <form action="search.html" method="get">
+                <input type="text" id="search-input" placeholder="Поиск по сайту ..." name="query">
+                </form>
+                </div>
+                        <!--end search-->
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <!-- /.container -->
+    </nav>
+    <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- sidebar -->
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                <!--<ul class="nav">-->
+                    <!--<li class="active"><a href="#">Home</a></li>-->
+                    <!--<li><a href="#">Link 1</a></li>-->
+                    <!--<li><a href="#">Link 2</a></li>-->
+                    <!--<li><a href="#">Link 3</a></li>-->
+                <!--</ul>-->
+                
+
+<div class="mydocsidebar">
+<div class="sidebar-inner">
+<div class="productTitle">React Native</div>
+<!-- search bar -->
+
+<div class="sidebarSearchBar">
+<form action="search-evoreact.html" method="get">
+  <div class="input-group search">
+    <input type="text" id="search-box" name="query" class="form-control" placeholder="Поиск по разделу ...">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit" value="search">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+
+<!-- end search bar -->
+<ul id="docnavsidebar" class="docnav">
+    
+
+    
+    <li class="level1"><a href="#">Руководства</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="rn_gettingstarted.html">Начало работы</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="rn_errorshandling.html">Обработка ошибок</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="rn_generatingsignedapk.html">Создание и установка подписанного APK</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Справочник</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="rn_interactiontypes.html">Типы взаимодействия</a></li>
+            
+            
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">API</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="rn_reference_userapi.html">Пользователи</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items open"><a href="rn_reference_receiptapi.html">Чеки</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="rn_reference_inventoryapi.html">Товароучёт</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="rn_reference_navigationapi.html">Навигация</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="rn_reference_sessionapi.html">Смены</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Службы</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="rn_reference_seviceapi.html">Инициализация служб</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="rn_reference_integrationapi.html">Интеграционные службы</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="rn_reference_broadcastreceivers.html">Широковещательный приёмник</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Устройства</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="rn_reference_devicesconnection.html">Подключение устройств</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="rn_reference_devicesprinter.html">Принтер</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="rn_reference_devicescanner.html">Сканер</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="rn_reference_devicescales.html">Весы</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1items"><a class="noCrossRef" href="rn_examples.html">Примеры реализации</a>
+    
+        <ul style="display:none">
+            
+        </ul>
+
+        
+
+    </li>
+</ul>
+
+<hr class="resourceSeparator"></hr>
+<div class="relatedResources"></div>
+<ul id="entrypages">
+        
+    </li>
+</ul>
+</div>
+</div>
+<script>$("li.open").parents('li').toggleClass("open");</script>
+
+            </div>
+
+            <!-- main area -->
+            <div class="col-xs-12 col-sm-7">
+                
+                <h1>Класс ReceiptAPI</h1>
+                 
+                 <div class="toc-main-column">
+                 
+<style>
+div#toc2 >ul::before {
+    content: "Содержание";
+    margin-left: -20px;
+}
+</style>
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc2').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc2').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 80);
+  return false
+})
+
+});
+</script>
+
+<nav id="toc2"></nav>
+
+
+               </div>
+                <h2 id="section">Описание</h2>
+
+<p>С помощью методов класса приложения получают данные чеков и передают их для обработки в смарт-терминал.</p>
+
+<h2 id="section-1">Методы</h2>
+
+<h3 id="getpositionsbybarcode">getPositionsByBarcode</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getPositionsByBarcode</span><span class="p">(</span><span class="nx">barcode</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">Position</span><span class="p">[]</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Получает массив позиций чека по значению штрихкода.</p>
+
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">barcode</code>– штрихкод товара.</li>
+</ul>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code>, результат которого – массив <a href="./rn_reference_receiptapi.html#position">позиций</a>.</li>
+</ul>
+
+<h3 id="opensellreceipt">openSellReceipt</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">openSellReceipt</span><span class="p">(</span><span class="nx">positions</span><span class="p">?:</span> <span class="nx">Position</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">extra</span><span class="p">?:</span> <span class="nx">SetExtra</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">OpenReceiptCommandResult</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Формирует чек продажи из полученных данных. Вы можете передать чек на оплату с помощью <a href="./rn_reference_navigationapi.html#createIntentForSellReceiptPayment">метода NavigationAPI</a></p>
+
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">positions</code> – массив <a href="./rn_reference_receiptapi.html#position">позиций</a>.</li>
+  <li><code class="highlighter-rouge">extra</code> – указывает наличие <a href="./rn_reference_receiptapi.html#setextra">дополнительных полей</a> в чеке.</li>
+</ul>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code></li>
+</ul>
+
+<h3 id="openpaybackreceipt">openPaybackReceipt</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">openPaybackReceipt</span><span class="p">(</span><span class="nx">positions</span><span class="p">?:</span> <span class="nx">Position</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">extra</span><span class="p">?:</span> <span class="nx">SetExtra</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">OpenReceiptCommandResult</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Формирует чек возврата из полученных данных. Вы можете передать чек на оплату с помощью <a href="./rn_reference_navigationapi.html#createIntentForPaybackReceiptPayment">метода NavigationAPI</a></p>
+
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">positions</code> – массив <a href="./rn_reference_receiptapi.html#position">позиций</a>.</li>
+  <li><code class="highlighter-rouge">extra</code> – указывает наличие <a href="./rn_reference_receiptapi.html#setextra">дополнительных полей</a> в чеке.</li>
+</ul>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code></li>
+</ul>
+
+<h3 id="sendelectronreceipt">sendElectronReceipt</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">sendElectronReceipt</span><span class="p">(</span><span class="nx">printReceipts</span><span class="err">:</span> <span class="nx">PrintReceipt</span><span class="p">[],</span>
+                           <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nx">phone</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nx">email</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nx">discount</span><span class="p">?:</span> <span class="nx">number</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">SendElectronReceiptCommandResult</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Формирует чек из полученных данных и отправляет его на электронную почту и/или телефон.</p>
+
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">printReceipts</code> – массив <a href="./rn_reference_receiptapi.html#printreceipt">печатных форм чека</a>.</li>
+  <li><code class="highlighter-rouge">extra</code> – <a href="./rn_reference_receiptapi.html#setextra">дополнительные поля</a> в чеке.</li>
+  <li><code class="highlighter-rouge">phone</code> – телефонный номер покупателя.</li>
+  <li><code class="highlighter-rouge">email</code> – адрес электронной почты покупателя.</li>
+  <li><code class="highlighter-rouge">discount</code> – скидка на чек.</li>
+</ul>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code>, результат которого – строка.</li>
+</ul>
+
+<h3 id="getreceiptbytype">getReceiptByType</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getReceiptByType</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">ReceiptType</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">Receipt</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Получает чек по типу: чек продажи (<code class="highlighter-rouge">SELL</code>) или чек возврата (<code class="highlighter-rouge">PAYBACK</code>).</p>
+
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">type</code> – <a href="./rn_reference_receiptapi.html#receipttype">тип чека</a>.</li>
+</ul>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code>, результат которого – <a href="./rn_reference_receiptapi.html#receipt">чек</a> или <code class="highlighter-rouge">null</code>.</li>
+</ul>
+
+<h3 id="getreceiptbyuuid">getReceiptByUuid</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getReceiptByUuid</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">Receipt</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Получает чек по идентификатору (<code class="highlighter-rouge">uuid</code>).</p>
+
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">uuid</code> – идентификатор чека.</li>
+</ul>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code>, результат которого – <a href="./rn_reference_receiptapi.html#receipt">чек</a> или <code class="highlighter-rouge">null</code>.</li>
+</ul>
+
+<h3 id="getreceiptheaders">getReceiptHeaders</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getReceiptHeaders</span><span class="p">(</span><span class="nx">type</span><span class="p">?:</span> <span class="nx">ReceiptType</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">ReceiptHeader</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Получает заголовки чека.</p>
+
+<p><strong>Параметры</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">type</code> – тип чека: чек продажи (<code class="highlighter-rouge">SELL</code>) или чек возврата (<code class="highlighter-rouge">PAYBACK</code>).</li>
+</ul>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li><code class="highlighter-rouge">Promise</code>, результат которого –  массив <a href="./rn_reference_receiptapi.html#receiptheader">заголовков чека</a>.</li>
+</ul>
+
+<h2 id="section-2">Параметры</h2>
+
+<h3 id="positionadd">Класс PositionAdd</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PositionAdd</span> <span class="kr">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">position</span><span class="err">:</span> <span class="nx">Position</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./rn_reference_receiptapi.html#position"><code class="highlighter-rouge">Position</code></a></li>
+</ul>
+
+<h3 id="positionedit">Класс PositionEdit</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PositionEdit</span> <span class="kr">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">position</span><span class="err">:</span> <span class="nx">Position</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./rn_reference_receiptapi.html#position"><code class="highlighter-rouge">Position</code></a></li>
+</ul>
+
+<h3 id="positionremove">Класс PositionRemove</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PositionRemove</span> <span class="kr">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">positionUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="setextra">Класс SetExtra</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">SetExtra</span> <span class="kr">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="err">:</span> <span class="nb">Object</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="SetPrintGroup">Класс SetPrintGroup</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">SetPrintGroup</span> <span class="kr">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">printGroup</span><span class="err">:</span> <span class="nx">PrintGroup</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">paymentPurposeIds</span><span class="err">:</span> <span class="nx">string</span><span class="p">[],</span>
+                <span class="nx">positionUuids</span><span class="err">:</span> <span class="nx">string</span><span class="p">[])</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./rn_reference_receiptapi.html#PrintGroup"><code class="highlighter-rouge">PrintGroup</code></a></li>
+</ul>
+
+<h3 id="SetPrintExtra">Класс SetPrintExtra</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">SetPrintExtra</span> <span class="kr">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">printExtraPlace</span><span class="err">:</span> <span class="nx">PrintExtraPlace</span><span class="p">,</span>
+                <span class="nx">printables</span><span class="err">:</span> <span class="nx">Printable</span><span class="p">[])</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./rn_reference_devicesprinter.html#printable"><code class="highlighter-rouge">Printable</code></a></li>
+</ul>
+
+<h3 id="printextraplace">Тип PrintExtraPlace</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">PrintExtraPlace</span> <span class="o">=</span>
+    <span class="nx">PrintExtraPlacePrintGroupTop</span> <span class="o">|</span>
+    <span class="nx">PrintExtraPlacePrintGroupHeader</span> <span class="o">|</span>
+    <span class="nx">PrintExtraPlacePrintGroupSummary</span> <span class="o">|</span>
+    <span class="nx">PrintExtraPlacePositionFooter</span> <span class="o">|</span>
+    <span class="nx">PrintExtraPlacePositionAllSubpositionsFooter</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<h3 id="printextraplaceprintgrouptop">Класс PrintExtraPlacePrintGroupTop</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraPlacePrintGroupTop</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">printGroupId</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="printextraplaceprintgroupheader">Класс PrintExtraPlacePrintGroupHeader</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraPlacePrintGroupHeader</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">printGroupId</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="printextraplaceprintgroupsummary">Класс PrintExtraPlacePrintGroupSummary</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraPlacePrintGroupSummary</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">printGroupId</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="printextraplacepositionfooter">Класс PrintExtraPlacePositionFooter</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraPlacePositionFooter</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">positionUuid</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="printextraplacepositionallsubpositionsfooter">Класс PrintExtraPlacePositionAllSubpositionsFooter</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraPlacePositionAllSubpositionsFooter</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">positionUuid</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="ExtraKey">Класс ExtraKey</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ExtraKey</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">identity</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">appId</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">description</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="position">Класс Position</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Position</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">productUuid</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">productCode</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">productType</span><span class="err">:</span> <span class="nx">ProductType</span><span class="p">,</span>
+                <span class="nx">name</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">measureName</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">measurePrecision</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
+                <span class="nx">taxNumber</span><span class="err">:</span> <span class="nx">TaxNumber</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">price</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
+                <span class="nx">priceWithDiscountPosition</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
+                <span class="nx">quantity</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
+                <span class="nx">barcode</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">mark</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">alcoholByVolume</span><span class="err">:</span> <span class="nx">number</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">alcoholProductKindCode</span><span class="err">:</span> <span class="nx">number</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">tareVolume</span><span class="err">:</span> <span class="nx">number</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">extraKeys</span><span class="err">:</span> <span class="nx">ExtraKey</span><span class="p">[],</span>
+                <span class="nx">subPositions</span><span class="err">:</span> <span class="nx">Position</span><span class="p">[])</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./rn_reference_inventoryapi.html#ProductType"><code class="highlighter-rouge">ProductType</code></a></li>
+  <li><a href="./rn_reference_receiptapi.html#TaxNumber"><code class="highlighter-rouge">TaxNumber</code></a></li>
+  <li><a href="./rn_reference_receiptapi.html#ExtraKey"><code class="highlighter-rouge">ExtraKey</code></a></li>
+</ul>
+
+<h3 id="receiptheader">Класс ReceiptHeader</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ReceiptHeader</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">number</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">type</span><span class="err">:</span> <span class="nx">ReceiptType</span><span class="p">,</span>
+                <span class="nx">date</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">clientEmail</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">clientPhone</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">extra</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./rn_reference_receiptapi.html#receipttype"><code class="highlighter-rouge">ReceiptType</code></a></li>
+</ul>
+
+<h3 id="PrintGroup">Класс PrintGroup</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintGroup</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">identifier</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">type</span><span class="err">:</span> <span class="nx">PrintGroupType</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">orgName</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">orgInn</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">orgAddress</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">taxationSystem</span><span class="err">:</span> <span class="nx">TaxationSystem</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">shouldPrintReceipt</span><span class="err">:</span> <span class="kr">boolean</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./rn_reference_receiptapi.html#PrintGroupType"><code class="highlighter-rouge">PrintGroupType</code></a></li>
+  <li><a href="./rn_reference_receiptapi.html#TaxationSystem"><code class="highlighter-rouge">TaxationSystem</code></a></li>
+</ul>
+
+<h3 id="payment">Класс Payment</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Payment</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">value</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
+                <span class="nx">system</span><span class="err">:</span> <span class="nx">PaymentSystem</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">purposeIdentifier</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">accountId</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">accountUserDescription</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./rn_reference_receiptapi.html#PaymentSystem"><code class="highlighter-rouge">PaymentSystem</code></a></li>
+</ul>
+
+<h3 id="printreceipt">Класс PrintReceipt</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintReceipt</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">printGroup</span><span class="err">:</span> <span class="nx">PrintGroup</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">positions</span><span class="err">:</span> <span class="nx">Position</span><span class="p">[],</span>
+                <span class="nx">payments</span><span class="err">:</span> <span class="nx">Map</span><span class="o">&lt;</span><span class="nx">Payment</span><span class="p">,</span> <span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                <span class="nx">changes</span><span class="err">:</span> <span class="nx">Map</span><span class="o">&lt;</span><span class="nx">Payment</span><span class="p">,</span> <span class="nx">number</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./rn_reference_receiptapi.html#PrintGroup"><code class="highlighter-rouge">PrintGroup</code></a></li>
+  <li><a href="./rn_reference_receiptapi.html#position"><code class="highlighter-rouge">Position</code></a></li>
+</ul>
+
+<h3 id="receipt">Класс Receipt</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Receipt</span> <span class="p">{</span>
+
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">header</span><span class="err">:</span> <span class="nx">ReceiptHeader</span><span class="p">,</span>
+                <span class="nx">printDocuments</span><span class="err">:</span> <span class="nx">PrintReceipt</span><span class="p">[])</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./rn_reference_receiptapi.html#receiptheader"><code class="highlighter-rouge">ReceiptHeader</code></a></li>
+  <li><a href="./rn_reference_receiptapi.html#printreceipt"><code class="highlighter-rouge">PrintReceipt</code></a></li>
+</ul>
+
+<h4 id="section-3">Методы</h4>
+
+<h5 id="getpositions">getPositions</h5>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">getPositions</span><span class="p">()</span><span class="err">:</span> <span class="nx">Position</span><span class="p">[]</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Получает позиции добавленные в чек.</p>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li>Массив <a href="./rn_reference_receiptapi.html#position">позиций</a>.</li>
+</ul>
+
+<h5 id="getpayments">getPayments</h5>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">getPayments</span><span class="p">()</span><span class="err">:</span> <span class="nx">Payment</span><span class="p">[]</span>
+</code></pre>
+</div>
+
+<p><strong>Описание</strong></p>
+
+<p>Получает платежи, с помощью которых оплачен чек.</p>
+
+<p><strong>Возвращает</strong></p>
+
+<ul>
+  <li>Массив <a href="./rn_reference_receiptapi.html#payment">платежей</a></li>
+</ul>
+
+<h3 id="PaymentPurpose">Класс PaymentPurpose</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PaymentPurpose</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">identifier</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">paymentSystemId</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">total</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
+                <span class="nx">accountId</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">userMessage</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="PaymentSystem">Класс PaymentSystem</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PaymentSystem</span> <span class="p">{</span>
+    <span class="nx">constructor</span><span class="p">(</span><span class="nx">paymentType</span><span class="err">:</span> <span class="nx">PaymentType</span><span class="p">,</span> <span class="nx">userDescription</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">paymentSystemId</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>См. также</strong></p>
+
+<ul>
+  <li><a href="./rn_reference_receiptapi.html#PaymentType"><code class="highlighter-rouge">PaymentType</code></a></li>
+</ul>
+
+<h3 id="receipttype">Перечисление ReceiptType</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">ReceiptType</span> <span class="p">{</span>
+    <span class="nx">SELL</span> <span class="o">=</span> <span class="s2">"SELL"</span><span class="p">,</span>
+    <span class="nx">PAYBACK</span> <span class="o">=</span> <span class="s2">"PAYBACK"</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="TaxNumber">Перечисление TaxNumber</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">TaxNumber</span> <span class="p">{</span>
+    <span class="nx">VAT_18</span> <span class="o">=</span> <span class="s2">"VAT_18"</span><span class="p">,</span>
+    <span class="nx">VAT_10</span> <span class="o">=</span> <span class="s2">"VAT_10"</span><span class="p">,</span>
+    <span class="nx">NO_VAT</span> <span class="o">=</span> <span class="s2">"NO_VAT"</span><span class="p">,</span>
+    <span class="nx">VAT_18_118</span> <span class="o">=</span> <span class="s2">"VAT_18_118"</span><span class="p">,</span>
+    <span class="nx">VAT_10_110</span> <span class="o">=</span> <span class="s2">"VAT_10_110"</span><span class="p">,</span>
+    <span class="nx">VAT_0</span> <span class="o">=</span> <span class="s2">"VAT_0"</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="TaxationSystem">Перечисление TaxationSystem</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">TaxationSystem</span> <span class="p">{</span>
+    <span class="nx">COMMON</span> <span class="o">=</span> <span class="s2">"COMMON"</span><span class="p">,</span>
+    <span class="nx">SIMPLIFIED_INCOME</span> <span class="o">=</span> <span class="s2">"SIMPLIFIED_INCOME"</span><span class="p">,</span>
+    <span class="nx">SIMPLIFIELD_INCOME_OUTCOME</span> <span class="o">=</span> <span class="s2">"SIMPLIFIELD_INCOME_OUTCOME"</span><span class="p">,</span>
+    <span class="nx">SINGLE_IMPUTED_INCOME</span> <span class="o">=</span> <span class="s2">"SINGLE_IMPUTED_INCOME"</span><span class="p">,</span>
+    <span class="nx">SINGLE_AGRICULTURE</span> <span class="o">=</span> <span class="s2">"SINGLE_AGRICULTURE"</span><span class="p">,</span>
+    <span class="nx">PATENT</span> <span class="o">=</span> <span class="s2">"PATENT"</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="PrintGroupType">Перечисление PrintGroupType</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">PrintGroupType</span> <span class="p">{</span>
+    <span class="nx">CASH_RECEIPT</span> <span class="o">=</span> <span class="s2">"CASH_RECEIPT"</span><span class="p">,</span>
+    <span class="nx">INVOICE</span> <span class="o">=</span> <span class="s2">"INVOICE"</span><span class="p">,</span>
+    <span class="nx">string_UTII</span> <span class="o">=</span> <span class="s2">"string_UTII"</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="PaymentType">Перечисление PaymentType</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">PaymentType</span> <span class="p">{</span>
+    <span class="nx">UNKNOWN</span> <span class="o">=</span> <span class="s2">"UNKNOWN"</span><span class="p">,</span>
+    <span class="nx">CASH</span> <span class="o">=</span> <span class="s2">"CASH"</span><span class="p">,</span>
+    <span class="nx">ELECTRON</span> <span class="o">=</span> <span class="s2">"ELECTRON"</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="PaymentSystemOperationType">Перечисление PaymentSystemOperationType</h3>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">PaymentSystemOperationType</span> <span class="p">{</span>
+    <span class="nx">SELL</span> <span class="o">=</span> <span class="s2">"SELL"</span><span class="p">,</span>
+    <span class="nx">SELL_CANCEL</span> <span class="o">=</span> <span class="s2">"SELL_CANCEL"</span><span class="p">,</span>
+    <span class="nx">PAYBACK</span> <span class="o">=</span> <span class="s2">"PAYBACK"</span><span class="p">,</span>
+    <span class="nx">PAYBACK_CANCEL</span> <span class="o">=</span> <span class="s2">"PAYBACK_CANCEL"</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+                <div class="toc-main-column">
+                
+
+<div class="tags">
+<div class="tags_title">Tags</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+              </div>
+                 
+
+    <span class="githubButton">
+        <a target="_blank" href="https://github.com/tomjohnson1492/documentation-theme-jekyll-next-version/blob/gh-pages/_docs/evoreact/rn_reference_receiptapi.md" class="editButton noCrossRef"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    </span>
+
+
+
+
+
+            </div><!-- /.col-xs-12 main -->
+
+            <div class="col-xs-12 col-sm-2 right-lane">
+              <div class="inner">
+
+
+<style>
+nav#toc >ul::before, nav#toc2 >ul::before {
+    content: "Содержание";
+}
+</style>
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 80);
+  return false
+})
+
+});
+$(window).scroll(function(){
+  $('nav#toc')[0].scrollTop=$(window).scrollTop();
+});
+</script>
+
+<nav id="toc"></nav>
+
+
+</div>
+
+              
+
+<div class="tags">
+<div class="tags_title">Tags</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+        </div><!--/.row-->
+    </div><!--/.container-->
+</div><!--/.page-container-->
+
+
+
+<!--scripts loaded here-->
+<script src="assets/js/jquery.magnific-popup.js"></script>
+<script>
+$('.no_icon').magnificPopup({
+type: 'image',
+closeBtnInside: false,
+closeOnContentClick: false,
+
+callbacks: {
+  open: function() {
+    var self = this;
+    self.wrap.on('click.pinhandler', 'img', function() {
+      self.wrap.toggleClass('mfp-force-scrollbars');
+    });
+  },
+  beforeClose: function() {
+        this.wrap.off('click.pinhandler');
+    this.wrap.removeClass('mfp-force-scrollbars');
+  }
+},
+
+image: {
+  verticalFit: false
+}
+
+});
+</script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/toc.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script>
+    $( document ).ready(function() {
+        $("#docnavsidebar").navgoco({
+            caretHtml: '',
+            accordion: false,
+            openClass: 'open', // open
+            save: false, // leave false or nav highlighting doesn't work right
+            cookie: {
+                name: 'navgoco',
+                expires: false,
+                path: '/'
+            },
+            slide: {
+                duration: 300,
+                easing: 'swing'
+            }
+        });
+
+    });
+
+</script>
+<script src="assets/js/customscripts.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('[data-toggle=offcanvas]').click(function() {
+            $('.row-offcanvas').toggleClass('active');
+        });
+    });
+</script>
+
+</body>
+
+</html>

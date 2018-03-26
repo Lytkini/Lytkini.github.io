@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>alltypes - integration-library | Документация Эвотор</title>
+    <base target="_self">
+    <meta name="description" content="All Types    ru.evotor.devices.commons.exception.error_extension.AbstractErrorExtension     ru.evotor.devices.commons.result.AbstractInnerParcelable     ru.evotor.devices.commons.result.AbstractResult     ru.evotor.devices.commons.services.AbstractService     ru.evotor.framework.core.action.processor.ActionProcessor   ... " />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="icon"  type="image/x-icon" href="favicon.ico">
+
+
+
+    <!--stylesheets / link tags loaded here-->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/monokai.css" />
+    <link rel="stylesheet" href="assets/css/lighttheme-evoblue.css" />
+    <link rel="stylesheet" href="assets/css/customstyles.css" />
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/navgoco.jquery.min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target="nav#toc" data-offset="20">
+<div class="page-container">
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container topnavlinks">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle topnav</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
+                    <span class="sr-only">Toggle sidebar</span>
+                    <span class="sidebarToggle fa fa-columns fa-2x"></span>
+                </button>
+                    <a class="navbar-brand" href="index.html">
+                    <img class="navbar-logo" src="images/logo_white.png"/>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                    <!-- entries without drop-downs appear here -->
+                    
+                    
+                    
+                    
+                    <li><a href="https://api.evotor.ru/" class="noCrossRef">REST API Облака</a></li>
+                    
+                    
+                    
+                    <li><a href="java_introduction.html">Java SDK</a></li>
+                    
+                    
+                    
+                    <li><a href="rn_gettingstarted.html">React Native</a></li>
+                    
+                    
+                    
+                    <!-- entries with drop-downs appear here -->
+
+                    
+</ul>
+<ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                        <!--start search-->
+                        <div id="search-demo-container">
+                 <form action="search.html" method="get">
+                <input type="text" id="search-input" placeholder="Поиск по сайту ..." name="query">
+                </form>
+                </div>
+                        <!--end search-->
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <!-- /.container -->
+    </nav>
+    <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- sidebar -->
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                <!--<ul class="nav">-->
+                    <!--<li class="active"><a href="#">Home</a></li>-->
+                    <!--<li><a href="#">Link 1</a></li>-->
+                    <!--<li><a href="#">Link 2</a></li>-->
+                    <!--<li><a href="#">Link 3</a></li>-->
+                <!--</ul>-->
+                
+
+<div class="mydocsidebar">
+<div class="sidebar-inner">
+<div class="productTitle"></div>
+<!-- search bar -->
+
+<div class="sidebarSearchBar">
+<form action="search-.html" method="get">
+  <div class="input-group search">
+    <input type="text" id="search-box" name="query" class="form-control" placeholder="Поиск по разделу ...">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit" value="search">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+
+<!-- end search bar -->
+<ul id="docnavsidebar" class="docnav">
+    
+
+    </li>
+</ul>
+
+<hr class="resourceSeparator"></hr>
+<div class="relatedResources"></div>
+<ul id="entrypages">
+        
+    </li>
+</ul>
+</div>
+</div>
+<script>$("li.open").parents('li').toggleClass("open");</script>
+
+            </div>
+
+            <!-- main area -->
+            <div class="col-xs-12 col-sm-7">
+                
+                <h1>alltypes - integration-library</h1>
+                 
+                 <div class="toc-main-column">
+                 
+<style>
+div#toc2 >ul::before {
+    content: "Содержание";
+    margin-left: -20px;
+}
+</style>
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc2').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc2').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 80);
+  return false
+})
+
+});
+</script>
+
+<nav id="toc2"></nav>
+
+
+               </div>
+                <h3 id="all-types">All Types</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.exception.error_extension/-abstract-error-extension/index.html">ru.evotor.devices.commons.exception.error_extension.AbstractErrorExtension</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.result/-abstract-inner-parcelable/index.html">ru.evotor.devices.commons.result.AbstractInnerParcelable</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.result/-abstract-result/index.html">ru.evotor.devices.commons.result.AbstractResult</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.services/-abstract-service/index.html">ru.evotor.devices.commons.services.AbstractService</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.processor/-action-processor/index.html">ru.evotor.framework.core.action.processor.ActionProcessor</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.integrations/-barcode-broadcast-receiver/index.html">ru.evotor.integrations.BarcodeBroadcastReceiver</a></td>
+      <td>Created by nixan on 28.04.17.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.inventory/-barcode-table/index.html">ru.evotor.framework.inventory.BarcodeTable</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.before_positions_edited/-before-positions-edited-event/index.html">ru.evotor.framework.core.action.event.receipt.before_positions_edited.BeforePositionsEditedEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.before_positions_edited/-before-positions-edited-event-processor/index.html">ru.evotor.framework.core.action.event.receipt.before_positions_edited.BeforePositionsEditedEventProcessor</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.before_positions_edited/-before-positions-edited-event-result/index.html">ru.evotor.framework.core.action.event.receipt.before_positions_edited.BeforePositionsEditedEventResult</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.datamapper/android.os.-bundle/index.html">android.os.Bundle</a> (extensions in package ru.evotor.framework.core.action.datamapper)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.datamapper/-bundle-utils/index.html">ru.evotor.framework.core.action.datamapper.BundleUtils</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.cash_drawer/-cash-drawer-event/index.html">ru.evotor.framework.core.action.event.cash_drawer.CashDrawerEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.cash_drawer/-cash-drawer-open-event/index.html">ru.evotor.framework.core.action.event.cash_drawer.CashDrawerOpenEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.cash_operations/-cash-in-event/index.html">ru.evotor.framework.core.action.event.cash_operations.CashInEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.cash_operations/-cash-operation-event/index.html">ru.evotor.framework.core.action.event.cash_operations.CashOperationEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.cash_operations/-cash-out-event/index.html">ru.evotor.framework.core.action.event.cash_operations.CashOutEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.datamapper/-changes-mapper/index.html">ru.evotor.framework.core.action.datamapper.ChangesMapper</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons/-connection-wrapper/index.html">ru.evotor.devices.commons.ConnectionWrapper</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons/-constants/index.html">ru.evotor.devices.commons.Constants</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework/android.database.-cursor/index.html">android.database.Cursor</a> (extensions in package ru.evotor.framework)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.exception/-device-not-found-exception/index.html">ru.evotor.devices.commons.exception.DeviceNotFoundException</a></td>
+      <td>Не найдено указанное устройство</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons/-device-service-connector/index.html">ru.evotor.devices.commons.DeviceServiceConnector</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.exception/-device-service-exception/index.html">ru.evotor.devices.commons.exception.DeviceServiceException</a></td>
+      <td>Родительский класс всех возможных исключений, которые могут быть выброшены при работе с DeviceServiceConnector</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.exception/-device-service-operation-on-main-thread-exception/index.html">ru.evotor.devices.commons.exception.DeviceServiceOperationOnMainThreadException</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.exception/-device-service-runtime-exception/index.html">ru.evotor.devices.commons.exception.DeviceServiceRuntimeException</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.inventory.field/-dictionary-field/index.html">ru.evotor.framework.inventory.field.DictionaryField</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.exception/-driver-exception/index.html">ru.evotor.devices.commons.exception.DriverException</a></td>
+      <td>Ошибка при выполнении метода в драйвере устройства</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.exception.error_extension/-driver-exception-error-extension/index.html">ru.evotor.devices.commons.exception.error_extension.DriverExceptionErrorExtension</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core/-error/index.html">ru.evotor.framework.core.Error</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.result/-error-description/index.html">ru.evotor.devices.commons.result.ErrorDescription</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt/-extra-key/index.html">ru.evotor.framework.receipt.ExtraKey</a></td>
+      <td>Created by a.kuznetsov on 02/05/2017.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.datamapper/-extra-key-mapper/index.html">ru.evotor.framework.core.action.datamapper.ExtraKeyMapper</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.inventory.field/-field/index.html">ru.evotor.framework.inventory.field.Field</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.inventory.field/-field-table/index.html">ru.evotor.framework.inventory.field.FieldTable</a></td>
+      <td>Created by a.kuznetsov on 26/03/2017.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.users/-grant/index.html">ru.evotor.framework.users.Grant</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.users/-grants-table/index.html">ru.evotor.framework.users.GrantsTable</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor/-i-bundlable/index.html">ru.evotor.IBundlable</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core/-i-can-start-activity/index.html">ru.evotor.framework.core.ICanStartActivity</a></td>
+      <td>Created by a.kuznetsov on 26/04/2017.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.changes/-i-change/index.html">ru.evotor.framework.core.action.event.receipt.changes.IChange</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.changes.position/-i-position-change/index.html">ru.evotor.framework.core.action.event.receipt.changes.position.IPositionChange</a></td>
+      <td>Created by a.kuznetsov on 23/05/2017.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.printer.printable/-i-printable.html">ru.evotor.devices.commons.printer.printable.IPrintable</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.services/-i-printer-service-wrapper/index.html">ru.evotor.devices.commons.services.IPrinterServiceWrapper</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.services/-i-scales-service-wrapper/index.html">ru.evotor.devices.commons.services.IScalesServiceWrapper</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core/-integration-activity/index.html">ru.evotor.framework.core.IntegrationActivity</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core/-integration-app-compat-activity/index.html">ru.evotor.framework.core.IntegrationAppCompatActivity</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core/-integration-exception/index.html">ru.evotor.framework.core.IntegrationException</a></td>
+      <td>Created by a.kuznetsov on 11/04/2017.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core/-integration-manager/index.html">ru.evotor.framework.core.IntegrationManager</a></td>
+      <td>Created by a.kuznetsov on 18/04/2017.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core/-integration-manager-callback/index.html">ru.evotor.framework.core.IntegrationManagerCallback</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core/-integration-manager-future/index.html">ru.evotor.framework.core.IntegrationManagerFuture</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core/-integration-manager-impl/index.html">ru.evotor.framework.core.IntegrationManagerImpl</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core/-integration-response/index.html">ru.evotor.framework.core.IntegrationResponse</a></td>
+      <td>Object used to communicate responses back to the IntegrationManager</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core/-integration-service/index.html">ru.evotor.framework.core.IntegrationService</a></td>
+      <td>Created by a.kuznetsov on 19/04/2017.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.inventory/-inventory-api/index.html">ru.evotor.framework.inventory.InventoryApi</a></td>
+      <td>Created by nixan on 06.03.17.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework/kotlin.collections.-iterable/index.html">kotlin.collections.Iterable</a> (extensions in package ru.evotor.framework)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.calculator/-money-calculator/index.html">ru.evotor.framework.calculator.MoneyCalculator</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.navigation/-navigation-api/index.html">ru.evotor.framework.navigation.NavigationApi</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.exception/-no-permanent-info-exception/index.html">ru.evotor.devices.commons.exception.NoPermanentInfoException</a></td>
+      <td>Нельзя получить PermanentInfo для данного типа устройств</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.command.open_receipt_command/-open-buy-receipt-command/index.html">ru.evotor.framework.core.action.command.open_receipt_command.OpenBuyReceiptCommand</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.command.open_receipt_command/-open-buyback-receipt-command/index.html">ru.evotor.framework.core.action.command.open_receipt_command.OpenBuybackReceiptCommand</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.command.open_receipt_command/-open-payback-receipt-command/index.html">ru.evotor.framework.core.action.command.open_receipt_command.OpenPaybackReceiptCommand</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.command.open_receipt_command/-open-receipt-command-result/index.html">ru.evotor.framework.core.action.command.open_receipt_command.OpenReceiptCommandResult</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.command.open_receipt_command/-open-sell-receipt-command/index.html">ru.evotor.framework.core.action.command.open_receipt_command.OpenSellReceiptCommand</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt/-payment/index.html">ru.evotor.framework.receipt.Payment</a></td>
+      <td>Оплата</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.payment/-payment-account/index.html">ru.evotor.framework.payment.PaymentAccount</a></td>
+      <td>Аккаунт в рамках платёжной системы</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.payment/-payment-event/index.html">ru.evotor.framework.core.action.event.receipt.payment.PaymentEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.datamapper/-payment-mapper/index.html">ru.evotor.framework.core.action.datamapper.PaymentMapper</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.payment/-payment-purpose/index.html">ru.evotor.framework.payment.PaymentPurpose</a></td>
+      <td>Оплата, списком которых может быть оплачен чек. Содержит сумму и цель оплаты (платёжную систему и аккаунт).</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.datamapper/-payment-purpose-mapper/index.html">ru.evotor.framework.core.action.datamapper.PaymentPurposeMapper</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.payment/-payment-selected-event/index.html">ru.evotor.framework.core.action.event.receipt.payment.PaymentSelectedEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.payment/-payment-selected-event-processor/index.html">ru.evotor.framework.core.action.event.receipt.payment.PaymentSelectedEventProcessor</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.payment/-payment-selected-event-result/index.html">ru.evotor.framework.core.action.event.receipt.payment.PaymentSelectedEventResult</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.payment/-payment-system/index.html">ru.evotor.framework.payment.PaymentSystem</a></td>
+      <td>Платёжная система</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.payment/-payment-system-api/index.html">ru.evotor.framework.payment.PaymentSystemApi</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.payment.system.event/-payment-system-event/index.html">ru.evotor.framework.core.action.event.receipt.payment.system.event.PaymentSystemEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.datamapper/-payment-system-mapper/index.html">ru.evotor.framework.core.action.datamapper.PaymentSystemMapper</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.payment.system.event/-payment-system-payback-cancel-event/index.html">ru.evotor.framework.core.action.event.receipt.payment.system.event.PaymentSystemPaybackCancelEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.payment.system.event/-payment-system-payback-event/index.html">ru.evotor.framework.core.action.event.receipt.payment.system.event.PaymentSystemPaybackEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.payment.system.result/-payment-system-payment-error-result/index.html">ru.evotor.framework.core.action.event.receipt.payment.system.result.PaymentSystemPaymentErrorResult</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.payment.system.result/-payment-system-payment-ok-result/index.html">ru.evotor.framework.core.action.event.receipt.payment.system.result.PaymentSystemPaymentOkResult</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.payment.system.result/-payment-system-payment-result/index.html">ru.evotor.framework.core.action.event.receipt.payment.system.result.PaymentSystemPaymentResult</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.payment.system/-payment-system-processor/index.html">ru.evotor.framework.core.action.event.receipt.payment.system.PaymentSystemProcessor</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.payment.system.event/-payment-system-sell-cancel-event/index.html">ru.evotor.framework.core.action.event.receipt.payment.system.event.PaymentSystemSellCancelEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.payment.system.event/-payment-system-sell-event/index.html">ru.evotor.framework.core.action.event.receipt.payment.system.event.PaymentSystemSellEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.payment/-payment-system-table/index.html">ru.evotor.framework.payment.PaymentSystemTable</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt/-payment-table/index.html">ru.evotor.framework.receipt.PaymentTable</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.payment/-payment-type/index.html">ru.evotor.framework.payment.PaymentType</a></td>
+      <td>Тип оплаты (значение указывается в чеке как тип оплаты)</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.calculator/-percent-calculator/index.html">ru.evotor.framework.calculator.PercentCalculator</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt/-position/index.html">ru.evotor.framework.receipt.Position</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.changes.position/-position-add/index.html">ru.evotor.framework.core.action.event.receipt.changes.position.PositionAdd</a></td>
+      <td>Created by a.kuznetsov on 23/05/2017.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.position_edited/-position-added-event/index.html">ru.evotor.framework.core.action.event.receipt.position_edited.PositionAddedEvent</a></td>
+      <td>Created by a.kuznetsov on 18/05/2017.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.changes.position/-position-edit/index.html">ru.evotor.framework.core.action.event.receipt.changes.position.PositionEdit</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.position_edited/-position-edited-event/index.html">ru.evotor.framework.core.action.event.receipt.position_edited.PositionEditedEvent</a></td>
+      <td>Created by a.kuznetsov on 18/05/2017.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.position_edited/-position-event/index.html">ru.evotor.framework.core.action.event.receipt.position_edited.PositionEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.datamapper/-position-mapper/index.html">ru.evotor.framework.core.action.datamapper.PositionMapper</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.changes.position/-position-remove/index.html">ru.evotor.framework.core.action.event.receipt.changes.position.PositionRemove</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.position_edited/-position-removed-event/index.html">ru.evotor.framework.core.action.event.receipt.position_edited.PositionRemovedEvent</a></td>
+      <td>Created by a.kuznetsov on 18/05/2017.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt/-position-table/index.html">ru.evotor.framework.receipt.PositionTable</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.merges/-positions-merge/index.html">ru.evotor.framework.core.action.event.receipt.merges.PositionsMerge</a></td>
+      <td>Класс представляет собой результат склеивания 2-х и более позиций в чеке для оповещения интеграций before - список позиций, которые будут склеены after - результат склейки</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.merges/-positions-merge-event/index.html">ru.evotor.framework.core.action.event.receipt.merges.PositionsMergeEvent</a></td>
+      <td>Created by ivan on 26.06.17.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.merges/-positions-merge-event-processor/index.html">ru.evotor.framework.core.action.event.receipt.merges.PositionsMergeEventProcessor</a></td>
+      <td>Created by ivan on 26.06.17.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.merges/-positions-merge-event-result/index.html">ru.evotor.framework.core.action.event.receipt.merges.PositionsMergeEventResult</a></td>
+      <td>Created by ivan on 26.06.17.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt.print_extras/-print-extra-place/index.html">ru.evotor.framework.receipt.print_extras.PrintExtraPlace</a></td>
+      <td>Класс-родитель для указания на место в чеке, куда будет добавлена дополнительная печатная информация</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.datamapper/-print-extra-place-mapper/index.html">ru.evotor.framework.core.action.datamapper.PrintExtraPlaceMapper</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt.print_extras/-print-extra-place-position-all-subpositions-footer/index.html">ru.evotor.framework.receipt.print_extras.PrintExtraPlacePositionAllSubpositionsFooter</a></td>
+      <td>Печатная информация будет добавлена после позиции в чеке и после всех её модификаторов (подпозиций)</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt.print_extras/-print-extra-place-position-footer/index.html">ru.evotor.framework.receipt.print_extras.PrintExtraPlacePositionFooter</a></td>
+      <td>Печатная информация будет добавлена сразу после позиции в чеке, до списка её модификаторов (подпозиций)</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt.print_extras/-print-extra-place-print-group-header/index.html">ru.evotor.framework.receipt.print_extras.PrintExtraPlacePrintGroupHeader</a></td>
+      <td>Печатная информация будет добавлена в верхней части чека: после текста “Кассовый чек”, до имени пользователя</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt.print_extras/-print-extra-place-print-group-summary/index.html">ru.evotor.framework.receipt.print_extras.PrintExtraPlacePrintGroupSummary</a></td>
+      <td>Печатная информация будет добавлена в нижней части чека, после итога и списка отплат, до поля “всего оплачено”</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt.print_extras/-print-extra-place-print-group-top/index.html">ru.evotor.framework.receipt.print_extras.PrintExtraPlacePrintGroupTop</a></td>
+      <td>Печатная информация будет добавлена сверху от чека: после клише, до текста “Кассовый чек”</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt.print_extras/-print-extra-place-type/index.html">ru.evotor.framework.receipt.print_extras.PrintExtraPlaceType</a></td>
+      <td>Тип места в чеке, куда будет добавлена дополнительная печатная информация</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.print_extra/-print-extra-required-event/index.html">ru.evotor.framework.core.action.event.receipt.print_extra.PrintExtraRequiredEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.print_extra/-print-extra-required-event-processor/index.html">ru.evotor.framework.core.action.event.receipt.print_extra.PrintExtraRequiredEventProcessor</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.print_extra/-print-extra-required-event-result/index.html">ru.evotor.framework.core.action.event.receipt.print_extra.PrintExtraRequiredEventResult</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt/-print-group/index.html">ru.evotor.framework.receipt.PrintGroup</a></td>
+      <td>Описание характеристик печатной группы - отдельного печатного документа в рамках одного чека</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.integrations/-print-group-api-object/index.html">ru.evotor.integrations.PrintGroupApiObject</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.print_group/-print-group-event/index.html">ru.evotor.framework.core.action.event.receipt.print_group.PrintGroupEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.datamapper/-print-group-mapper/index.html">ru.evotor.framework.core.action.datamapper.PrintGroupMapper</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.print_group/-print-group-required-event/index.html">ru.evotor.framework.core.action.event.receipt.print_group.PrintGroupRequiredEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.print_group/-print-group-required-event-processor/index.html">ru.evotor.framework.core.action.event.receipt.print_group.PrintGroupRequiredEventProcessor</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.print_group/-print-group-required-event-result/index.html">ru.evotor.framework.core.action.event.receipt.print_group.PrintGroupRequiredEventResult</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt/-print-group-sub-table/index.html">ru.evotor.framework.receipt.PrintGroupSubTable</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.command.print_receipt_command/-print-payback-receipt-command/index.html">ru.evotor.framework.core.action.command.print_receipt_command.PrintPaybackReceiptCommand</a></td>
+      <td>Команда печати чека возврата</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.command.print_receipt_command/-print-receipt-command/index.html">ru.evotor.framework.core.action.command.print_receipt_command.PrintReceiptCommand</a></td>
+      <td>Команда печати чека продажи</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.command.print_receipt_command/-print-receipt-command-result/index.html">ru.evotor.framework.core.action.command.print_receipt_command.PrintReceiptCommandResult</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.datamapper/-print-receipt-mapper/index.html">ru.evotor.framework.core.action.datamapper.PrintReceiptMapper</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.command.print_receipt_command/-print-sell-receipt-command/index.html">ru.evotor.framework.core.action.command.print_receipt_command.PrintSellReceiptCommand</a></td>
+      <td>Команда печати чека продажи</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.command.print_z_report_command/-print-z-report-command/index.html">ru.evotor.framework.core.action.command.print_z_report_command.PrintZReportCommand</a></td>
+      <td>Команда снятия Z отчета</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.command.print_z_report_command/-print-z-report-command-result/index.html">ru.evotor.framework.core.action.command.print_z_report_command.PrintZReportCommandResult</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.printer.printable/-printable-barcode/index.html">ru.evotor.devices.commons.printer.printable.PrintableBarcode</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.printer.printable/-printable-image/index.html">ru.evotor.devices.commons.printer.printable.PrintableImage</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.printer.printable/-printable-text/index.html">ru.evotor.devices.commons.printer.printable.PrintableText</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.datamapper/-printables-mapper/index.html">ru.evotor.framework.core.action.datamapper.PrintablesMapper</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.printer/-printer-document/index.html">ru.evotor.devices.commons.printer.PrinterDocument</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.services/-printer-service/index.html">ru.evotor.devices.commons.services.PrinterService</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.inventory/-product-card-opened-event/index.html">ru.evotor.framework.core.action.event.inventory.ProductCardOpenedEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.inventory/-product-event/index.html">ru.evotor.framework.core.action.event.inventory.ProductEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.inventory/-product-extra/index.html">ru.evotor.framework.inventory.ProductExtra</a></td>
+      <td>Created by a.kuznetsov on 26/03/2017.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.inventory/-product-extra-table/index.html">ru.evotor.framework.inventory.ProductExtraTable</a></td>
+      <td>Created by a.kuznetsov on 26/03/2017.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.inventory/-product-item/index.html">ru.evotor.framework.inventory.ProductItem</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.inventory/-product-mapper/index.html">ru.evotor.framework.inventory.ProductMapper</a></td>
+      <td>Created by a.lunkov on 13.03.2018.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.inventory/-product-query/index.html">ru.evotor.framework.inventory.ProductQuery</a></td>
+      <td>Created by a.lunkov on 07.03.2018.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.inventory/-product-table/index.html">ru.evotor.framework.inventory.ProductTable</a></td>
+      <td>Created by a.kuznetsov on 26/03/2017.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.inventory/-product-type/index.html">ru.evotor.framework.inventory.ProductType</a></td>
+      <td>Created by a.kuznetsov on 30/04/2017.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.calculator/-quantity-calculator/index.html">ru.evotor.framework.calculator.QuantityCalculator</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt/-receipt/index.html">ru.evotor.framework.receipt.Receipt</a></td>
+      <td>Чек</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.integrations/-receipt/index.html">ru.evotor.integrations.Receipt</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt/-receipt-api/index.html">ru.evotor.framework.receipt.ReceiptApi</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.integrations/-receipt-api-object/index.html">ru.evotor.integrations.ReceiptApiObject</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.receipt_edited/-receipt-cleared-event/index.html">ru.evotor.framework.core.action.event.receipt.receipt_edited.ReceiptClearedEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.receipt_edited/-receipt-closed-event/index.html">ru.evotor.framework.core.action.event.receipt.receipt_edited.ReceiptClosedEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.discount/-receipt-discount-event/index.html">ru.evotor.framework.core.action.event.receipt.discount.ReceiptDiscountEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.discount/-receipt-discount-event-processor/index.html">ru.evotor.framework.core.action.event.receipt.discount.ReceiptDiscountEventProcessor</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.discount/-receipt-discount-event-result/index.html">ru.evotor.framework.core.action.event.receipt.discount.ReceiptDiscountEventResult</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt/-receipt-discount-table/index.html">ru.evotor.framework.receipt.ReceiptDiscountTable</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.receipt_edited/-receipt-event/index.html">ru.evotor.framework.core.action.event.receipt.receipt_edited.ReceiptEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.datamapper/-receipt-header-mapper/index.html">ru.evotor.framework.core.action.datamapper.ReceiptHeaderMapper</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt/-receipt-header-table/index.html">ru.evotor.framework.receipt.ReceiptHeaderTable</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.integrations/-receipt-item-api-object/index.html">ru.evotor.integrations.ReceiptItemApiObject</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.datamapper/-receipt-mapper/index.html">ru.evotor.framework.core.action.datamapper.ReceiptMapper</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.receipt_edited/-receipt-opened-event/index.html">ru.evotor.framework.core.action.event.receipt.receipt_edited.ReceiptOpenedEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.integrations/-receipt-payment-api-object/index.html">ru.evotor.integrations.ReceiptPaymentApiObject</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.receipt_edited/-receipt-payment-parts-edited-event/index.html">ru.evotor.framework.core.action.event.receipt.receipt_edited.ReceiptPaymentPartsEditedEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.receipt_edited/-receipt-print-group-edited-event/index.html">ru.evotor.framework.core.action.event.receipt.receipt_edited.ReceiptPrintGroupEditedEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.result/-result-boolean/index.html">ru.evotor.devices.commons.result.ResultBoolean</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.result/-result-double/index.html">ru.evotor.devices.commons.result.ResultDouble</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.result/-result-int/index.html">ru.evotor.devices.commons.result.ResultInt</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.result/-result-int-array/index.html">ru.evotor.devices.commons.result.ResultIntArray</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.result/-result-long/index.html">ru.evotor.devices.commons.result.ResultLong</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.result/-result-string/index.html">ru.evotor.devices.commons.result.ResultString</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.result/-result-void/index.html">ru.evotor.devices.commons.result.ResultVoid</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.result/-result-weight/index.html">ru.evotor.devices.commons.result.ResultWeight</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.users/-roles-table/index.html">ru.evotor.framework.users.RolesTable</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.services/-scales-service/index.html">ru.evotor.devices.commons.services.ScalesService</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.exception/-service-not-connected-exception/index.html">ru.evotor.devices.commons.exception.ServiceNotConnectedException</a></td>
+      <td>Нет подключения к DeviceService</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.session/-session-closed-event/index.html">ru.evotor.framework.core.action.event.session.SessionClosedEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.session/-session-event/index.html">ru.evotor.framework.core.action.event.session.SessionEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.changes.position/-set-extra/index.html">ru.evotor.framework.core.action.event.receipt.changes.position.SetExtra</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.changes.receipt.print_extra/-set-print-extra/index.html">ru.evotor.framework.core.action.event.receipt.changes.receipt.print_extra.SetPrintExtra</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.changes.position/-set-print-group/index.html">ru.evotor.framework.core.action.event.receipt.changes.position.SetPrintGroup</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.system/-system-state-api/index.html">ru.evotor.framework.system.SystemStateApi</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.system/-system-state-table/index.html">ru.evotor.framework.system.SystemStateTable</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt/-tax/index.html">ru.evotor.framework.receipt.Tax</a></td>
+      <td>Created by a.kuznetsov on 02/05/2017.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.datamapper/-tax-mapper/index.html">ru.evotor.framework.core.action.datamapper.TaxMapper</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt/-tax-number/index.html">ru.evotor.framework.receipt.TaxNumber</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.datamapper/-tax-number-mapper/index.html">ru.evotor.framework.core.action.datamapper.TaxNumberMapper</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.receipt/-taxation-system/index.html">ru.evotor.framework.receipt.TaxationSystem</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.inventory.field/-text-field/index.html">ru.evotor.framework.inventory.field.TextField</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.receipt.changes/-unknown-change/index.html">ru.evotor.framework.core.action.event.receipt.changes.UnknownChange</a></td>
+      <td>Created by a.kuznetsov on 23/05/2017.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.exception/-unknown-exception/index.html">ru.evotor.devices.commons.exception.UnknownException</a></td>
+      <td>Неизвестная ошибка</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.exception/-usb-hub-problem-exception/index.html">ru.evotor.devices.commons.exception.UsbHubProblemException</a></td>
+      <td>Не найдено указанное устройство, и в системе отсутвуют USB-устройства. Возможно, это проблема USB-хаба, которая может быть решена программной перезагрузкой. Текущий статус этой перезагрузки можно посмотреть в поле UsbHubStateErrorExtension.UsbHubState</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.exception.error_extension/-usb-hub-state-error-extension/index.html">ru.evotor.devices.commons.exception.error_extension.UsbHubStateErrorExtension</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.users/-user/index.html">ru.evotor.framework.users.User</a></td>
+      <td>Пользователь</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.users/-user-api/index.html">ru.evotor.framework.users.UserApi</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.users/-user-changed-event/index.html">ru.evotor.framework.core.action.event.users.UserChangedEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.core.action.event.users/-user-event/index.html">ru.evotor.framework.core.action.event.users.UserEvent</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.users/-users-content-provider-contract/index.html">ru.evotor.framework.users.UsersContentProviderContract</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework.users/-users-table/index.html">ru.evotor.framework.users.UsersTable</a></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.framework/-utils/index.html">ru.evotor.framework.Utils</a></td>
+      <td>Created by a.kuznetsov on 30/04/2017.</td>
+    </tr>
+    <tr>
+      <td><a href="../ru.evotor.devices.commons.scales/-weight/index.html">ru.evotor.devices.commons.scales.Weight</a></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+
+                <div class="toc-main-column">
+                
+
+              </div>
+                 
+
+    <span class="githubButton">
+        <a target="_blank" href="https://github.com/tomjohnson1492/documentation-theme-jekyll-next-version/blob/gh-pages/_docs/alltypes/index.md" class="editButton noCrossRef"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    </span>
+
+
+
+
+
+            </div><!-- /.col-xs-12 main -->
+
+            <div class="col-xs-12 col-sm-2 right-lane">
+              <div class="inner">
+
+
+<style>
+nav#toc >ul::before, nav#toc2 >ul::before {
+    content: "Содержание";
+}
+</style>
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 80);
+  return false
+})
+
+});
+$(window).scroll(function(){
+  $('nav#toc')[0].scrollTop=$(window).scrollTop();
+});
+</script>
+
+<nav id="toc"></nav>
+
+
+</div>
+
+              
+
+        </div><!--/.row-->
+    </div><!--/.container-->
+</div><!--/.page-container-->
+
+
+
+<!--scripts loaded here-->
+<script src="assets/js/jquery.magnific-popup.js"></script>
+<script>
+$('.no_icon').magnificPopup({
+type: 'image',
+closeBtnInside: false,
+closeOnContentClick: false,
+
+callbacks: {
+  open: function() {
+    var self = this;
+    self.wrap.on('click.pinhandler', 'img', function() {
+      self.wrap.toggleClass('mfp-force-scrollbars');
+    });
+  },
+  beforeClose: function() {
+        this.wrap.off('click.pinhandler');
+    this.wrap.removeClass('mfp-force-scrollbars');
+  }
+},
+
+image: {
+  verticalFit: false
+}
+
+});
+</script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/toc.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script>
+    $( document ).ready(function() {
+        $("#docnavsidebar").navgoco({
+            caretHtml: '',
+            accordion: false,
+            openClass: 'open', // open
+            save: false, // leave false or nav highlighting doesn't work right
+            cookie: {
+                name: 'navgoco',
+                expires: false,
+                path: '/'
+            },
+            slide: {
+                duration: 300,
+                easing: 'swing'
+            }
+        });
+
+    });
+
+</script>
+<script src="assets/js/customscripts.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('[data-toggle=offcanvas]').click(function() {
+            $('.row-offcanvas').toggleClass('active');
+        });
+    });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sublevel3 | Документация Эвотор</title>
+    <base target="_self">
+    <meta name="description" content="Section 1 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when... " />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="icon"  type="image/x-icon" href="favicon.ico">
+
+
+
+    <!--stylesheets / link tags loaded here-->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/monokai.css" />
+    <link rel="stylesheet" href="assets/css/lighttheme-evoblue.css" />
+    <link rel="stylesheet" href="assets/css/customstyles.css" />
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/navgoco.jquery.min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target="nav#toc" data-offset="20">
+<div class="page-container">
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container topnavlinks">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle topnav</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
+                    <span class="sr-only">Toggle sidebar</span>
+                    <span class="sidebarToggle fa fa-columns fa-2x"></span>
+                </button>
+                    <a class="navbar-brand" href="index.html">
+                    <img class="navbar-logo" src="images/logo_white.png"/>
+                </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-left">
+                    <!-- entries without drop-downs appear here -->
+                    
+                    
+                    
+                    
+                    <li><a href="https://api.evotor.ru/" class="noCrossRef">REST API Облака</a></li>
+                    
+                    
+                    
+                    <li><a href="java_introduction.html">Java SDK</a></li>
+                    
+                    
+                    
+                    <li><a href="rn_gettingstarted.html">React Native</a></li>
+                    
+                    
+                    
+                    <!-- entries with drop-downs appear here -->
+
+                    
+</ul>
+<ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                        <!--start search-->
+                        <div id="search-demo-container">
+                 <form action="search.html" method="get">
+                <input type="text" id="search-input" placeholder="Поиск по сайту ..." name="query">
+                </form>
+                </div>
+                        <!--end search-->
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <!-- /.container -->
+    </nav>
+    <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- sidebar -->
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                <!--<ul class="nav">-->
+                    <!--<li class="active"><a href="#">Home</a></li>-->
+                    <!--<li><a href="#">Link 1</a></li>-->
+                    <!--<li><a href="#">Link 2</a></li>-->
+                    <!--<li><a href="#">Link 3</a></li>-->
+                <!--</ul>-->
+                
+
+<div class="mydocsidebar">
+<div class="sidebar-inner">
+<div class="productTitle">Документация платформы Эвотор</div>
+<!-- search bar -->
+
+<div class="sidebarSearchBar">
+<form action="search-evomain.html" method="get">
+  <div class="input-group search">
+    <input type="text" id="search-box" name="query" class="form-control" placeholder="Поиск по разделу ...">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit" value="search">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+
+<!-- end search bar -->
+<ul id="docnavsidebar" class="docnav">
+    
+
+    
+    <li class="level1"><a href="#">Начало</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="index.html">Описание бизнеса</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="sample1.html">Описание инфраструктуры</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Разработка</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="index.html">Введение</a></li>
+            
+            
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Работа с облаком</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="sublevel1.html">Авторизация</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="sublevel2.html">Ошибки</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items open"><a href="sublevel3.html">Sublevel 3</a></li>
+                    
+                    
+
+                    
+                    <li class="level3"><a class="subfoldersTitle" href="#">Third level deep</a>
+                        <ul style="display:none;">
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="subsublevel1.html">Sub-sublevel 1</a></li>
+                            
+                            
+
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="subsublevel2.html">Sub-sublevel 2</a></li>
+                            
+                            
+
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="subsublevel3.html">Sub-sublevel 3</a></li>
+                            
+                            
+
+                            
+                        </ul>
+                    </li>
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="java_introduction.html">Java SDK</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="rn_introduction.html">React Native</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Распространение</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="index.html">Биллинг</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="sample1.html">Хуиллинг</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">FAQ</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="index.html">Часто задаваемые вопросы</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    </li>
+</ul>
+
+<hr class="resourceSeparator"></hr>
+<div class="relatedResources">Other Resources</div>
+<ul id="entrypages">
+        
+        <li><a class="noCrossRef" href="http://jekyllrb.com">Jekyll</a></li>
+        
+        <li><a class="noCrossRef" href="http://github.com">Github</a></li>
+        
+    </li>
+</ul>
+</div>
+</div>
+<script>$("li.open").parents('li').toggleClass("open");</script>
+
+            </div>
+
+            <!-- main area -->
+            <div class="col-xs-12 col-sm-7">
+                
+                <h1>Sublevel3</h1>
+                 
+                 <div class="toc-main-column">
+                 
+<style>
+div#toc2 >ul::before {
+    content: "Содержание";
+    margin-left: -20px;
+}
+</style>
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc2').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc2').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 80);
+  return false
+})
+
+});
+</script>
+
+<nav id="toc2"></nav>
+
+
+               </div>
+                <h2 id="section-1">Section 1</h2>
+<p>Lorem Ipsum is simply <a href="http://google.com">dummy text</a> of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<h2 id="section-2">Section 2</h2>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<h2 id="lorem-ipsum-is-that-it-has">Lorem Ipsum is that it has</h2>
+
+<p>Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+
+<p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<h2 id="various-versions-have-evolved-over-the-years">Various versions have evolved over the years</h2>
+
+<p>, sometimes by accident, sometimes on purpose (injected humour and the like).The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<h2 id="lorem-ipsum-is-simply-5">Lorem Ipsum is simply 5</h2>
+<p>Lorem Ipsum is simply <a href="http://google.com">dummy text</a> of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<h2 id="it-is-a-long-established--6">It is a long established  6</h2>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<h2 id="the-point-of-using-lorem-ipsum-is-that-7">The point of using Lorem Ipsum is that 7</h2>
+
+<p>Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+
+<p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<h2 id="various-versions-have-evolved-over-the-years-1">Various versions have evolved over the years</h2>
+
+<p>Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<h2 id="typesetting-remaining-essentially">typesetting, remaining essentially</h2>
+<p>Lorem Ipsum is simply <a href="http://google.com">dummy text</a> of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<h2 id="established-fact-that-a-reader-will-be-distracted">established fact that a reader will be distracted</h2>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<h2 id="various-versions-have-evolved-over-the-years-2">Various versions have evolved over the years</h2>
+
+<p>Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+
+<p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<h2 id="will-uncover-many-web-sites-still">will uncover many web sites still</h2>
+
+<p>Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<h2 id="normal-distribution-of-letters-as-opposed-to-using-content-here">normal distribution of letters, as opposed to using ‘Content here</h2>
+
+<p>Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<h2 id="section-13">Section 13</h2>
+<p>Lorem Ipsum is simply <a href="http://google.com">dummy text</a> of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<h2 id="section-14">Section 14</h2>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<h2 id="section-15">Section 15</h2>
+
+<p>Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+
+<p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+<h2 id="section-16">Section 16</h2>
+
+<p>Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy.</p>
+
+                <div class="toc-main-column">
+                
+
+<div class="tags">
+<div class="tags_title">Tags</div>
+
+
+
+
+
+<span class="tag-button">
+<a href="tag-getting-started.html"><span class="label label-default">Getting started</span></a>
+</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="tag-button">
+<a href="tag-troubleshooting.html"><span class="label label-default">Troubleshooting</span></a>
+</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="tag-button">
+<a href="tag-formatting.html"><span class="label label-default">Formatting</span></a>
+</span>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+              </div>
+                 
+
+    <span class="githubButton">
+        <a target="_blank" href="https://github.com/tomjohnson1492/documentation-theme-jekyll-next-version/blob/gh-pages/_docs/evomain/sublevel3.md" class="editButton noCrossRef"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    </span>
+
+
+
+
+
+            </div><!-- /.col-xs-12 main -->
+
+            <div class="col-xs-12 col-sm-2 right-lane">
+              <div class="inner">
+
+
+<style>
+nav#toc >ul::before, nav#toc2 >ul::before {
+    content: "Содержание";
+}
+</style>
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 80);
+  return false
+})
+
+});
+$(window).scroll(function(){
+  $('nav#toc')[0].scrollTop=$(window).scrollTop();
+});
+</script>
+
+<nav id="toc"></nav>
+
+
+</div>
+
+              
+
+<div class="tags">
+<div class="tags_title">Tags</div>
+
+
+
+
+
+<span class="tag-button">
+<a href="tag-getting-started.html"><span class="label label-default">Getting started</span></a>
+</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="tag-button">
+<a href="tag-troubleshooting.html"><span class="label label-default">Troubleshooting</span></a>
+</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="tag-button">
+<a href="tag-formatting.html"><span class="label label-default">Formatting</span></a>
+</span>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+        </div><!--/.row-->
+    </div><!--/.container-->
+</div><!--/.page-container-->
+
+
+
+<!--scripts loaded here-->
+<script src="assets/js/jquery.magnific-popup.js"></script>
+<script>
+$('.no_icon').magnificPopup({
+type: 'image',
+closeBtnInside: false,
+closeOnContentClick: false,
+
+callbacks: {
+  open: function() {
+    var self = this;
+    self.wrap.on('click.pinhandler', 'img', function() {
+      self.wrap.toggleClass('mfp-force-scrollbars');
+    });
+  },
+  beforeClose: function() {
+        this.wrap.off('click.pinhandler');
+    this.wrap.removeClass('mfp-force-scrollbars');
+  }
+},
+
+image: {
+  verticalFit: false
+}
+
+});
+</script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/toc.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script>
+    $( document ).ready(function() {
+        $("#docnavsidebar").navgoco({
+            caretHtml: '',
+            accordion: false,
+            openClass: 'open', // open
+            save: false, // leave false or nav highlighting doesn't work right
+            cookie: {
+                name: 'navgoco',
+                expires: false,
+                path: '/'
+            },
+            slide: {
+                duration: 300,
+                easing: 'swing'
+            }
+        });
+
+    });
+
+</script>
+<script src="assets/js/customscripts.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('[data-toggle=offcanvas]').click(function() {
+            $('.row-offcanvas').toggleClass('active');
+        });
+    });
+</script>
+
+</body>
+
+</html>
