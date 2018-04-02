@@ -378,19 +378,25 @@ $('#toc2').on('click', 'a', function() {
 
 <p>Передача данных в ЕГАИС осуществляется с помощью Универсального Транспортного Модуля (<em>УТМ</em>). УТМ – программное решение, которое обеспечивает достоверность данных и организует обмен данными между пользовательскими программами, например, системами товарного учёта, и ЕГАИС.</p>
 
-<figure class="center-image"><a class="no_icon" target="_blank" href="images/client_utm_egais.png"><img class="docimage center-image" src="images/client_utm_egais.png" alt="" /></a><figcaption>Схема передачи данных от пользователя в ЕГАИС</figcaption></figure>
+<figure class="center-image"><a class="no_icon" target="_blank" href="images/egais_simple.png"><img class="docimage center-image" src="images/egais_simple.png" alt="" /></a><figcaption>Схема передачи данных от пользователя в ЕГАИС</figcaption></figure>
 
 <p>Для обеспечения достоверности данных УТМ использует Квалифицированную Электронную Подпись (<em>КЭП</em>). КЭП хранится на USB-накопителе, который подключается к устройству с установленным УТМ.</p>
 
-<p>УТМ установлен на всех смарт-терминалах Эвотор. Таким образом, для обмена данными с ЕГАИС вам достаточно подключить USB-накопитель с КЭП к смарт-терминалу и активировать УТМ на терминале с помощью приложения, <a href="./ссылка на приложение">доступного в Магазине приложений Эвотор</a>.</p>
+<p>Все смарт-терминалы Эвотор поддерживают УТМ. Таким образом, для обмена данными с ЕГАИС вам достаточно подключить USB-накопитель с КЭП к смарт-терминалу и установить на него <a href="https://market.evotor.ru/#/store/apps/6bb98e3a-b917-4ccf-83e8-a74c1ac84063">соответствующее приложение</a>.</p>
 
-<p>Для работы с обмена данными с ЕГАИС, мы реализовали поддержку <code class="highlighter-rouge">EgaisAPI</code>.</p>
+<p>Для работы и обмена данными с ЕГАИС, мы реализовали поддержку <code class="highlighter-rouge">egais-api</code>.</p>
 
-<p>С помощью <code class="highlighter-rouge">EgaisAPI</code> приложения могут:</p>
+<p>С помощью <code class="highlighter-rouge">egais-api</code> приложения могут:</p>
 
 <ul>
-  <li><a href="./">Список кейсов, которые можно реализовать при помощи EgaisAPI. Каждый элемент списка это ссылка на соответствующее руководство.</a></li>
+  <li><a href="./doc_egais_waybill.html">работать с товарно-транспортными накладными;</a></li>
+  <li><a href="./doc_egais_charge_on_shop.html">работать с актами приёмки в магазин;</a></li>
+  <li><a href="./doc_egais_write_off.html">работать с актами списания товара;</a></li>
+  <li><a href="./doc_egais_dictionary_product.html">читать данные товара;</a></li>
+  <li><a href="./doc_egais_dictionary_org.html">читать данные организации.</a></li>
 </ul>
+
+<h2 id="section">Взаимодействие Платформы Эвотор и ЕГАИС</h2>
 
                 <div class="toc-main-column">
                 

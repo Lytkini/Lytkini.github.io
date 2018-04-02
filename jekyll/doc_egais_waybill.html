@@ -4,9 +4,9 @@
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
   </script>
     <meta charset="utf-8">
-    <title>Руководство 1 | Документация Эвотор</title>
+    <title>Работа с товарно-транспортными накладными | Документация Эвотор</title>
     <base target="_self">
-    <meta name="description" content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took... " />
+    <meta name="description" content="В разделе приводится инструкция по добавлению кнопки. По нажатию кнопки, на экране приложения отображается список товарно-транспортных накладных. По нажатию на ТТН в списке, открывается окно с деталями выбранной ТТН. Для... " />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" value="notranslate">
     <link rel="icon"  type="image/x-icon" href="favicon.ico">
@@ -144,7 +144,7 @@
 
             
             
-            <li class="level1items open"><a href="/java_guide1.html">Руководство 1</a></li>
+            <li class="level1items"><a href="/java_guide1.html">Руководство 1</a></li>
             
             
 
@@ -156,7 +156,7 @@
 
                     
                     
-                    <li class="level2items"><a href="doc_egais_waybill.html">Работа с ТТН</a></li>
+                    <li class="level2items open"><a href="doc_egais_waybill.html">Работа с ТТН</a></li>
                     
                     
 
@@ -269,7 +269,7 @@
             <!-- main area -->
             <div class="col-xs-12 col-sm-7">
                 
-                <h1>Руководство 1</h1>
+                <h1>Работа с товарно-транспортными накладными</h1>
                  
                  <div class="toc-main-column">
                  
@@ -301,75 +301,116 @@ $('#toc2').on('click', 'a', function() {
 
 
                </div>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>В разделе приводится инструкция по добавлению кнопки. По нажатию кнопки, на экране приложения отображается список товарно-транспортных накладных. По нажатию на ТТН в списке, открывается окно с деталями выбранной ТТН.</p>
 
-<p>Why do we use it?
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+<p>Для работы с ТТН используйте методы класса <code class="highlighter-rouge">ru.evotor.egais.api</code>→<code class="highlighter-rouge">WayBillApi</code>.</p>
+
+<p><em>Чтобы получать информацию о ТТН:</em></p>
+
+<ol>
+  <li>
+    <p>В Android Studio создайте новый проект.</p>
+
+    <p>При создании проекта выберите <strong>Basic Activity</strong>.</p>
+
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Подробную информацию о том, как создать новый проект Android Studio смотрите на сайте <a href="https://developer.android.com/training/basics/firstapp/creating-project.html">developer.android.com</a></div>
+  </li>
+  <li>
+    <p>Откройте файл <code class="highlighter-rouge">&lt;Название проекта&gt;</code>→<code class="highlighter-rouge">build.gradle</code> и укажите следующее:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>buildscript {
+ ext.kotlin_version = '1.2.31'
+ repositories {
+     google()
+     jcenter()
+ }
+ dependencies {
+     classpath 'com.android.tools.build:gradle:3.0.1'
+     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+     // NOTE: Do not place your application dependencies here; they belong
+     // in the individual module build.gradle files
+     }
+ }
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>Откройте файл <code class="highlighter-rouge">&lt;Название проекта&gt;</code>→<code class="highlighter-rouge">app</code>→<code class="highlighter-rouge">build.gradle</code> и укажите следующее:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+</code></pre>
+    </div>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>dependencies {
+ implementation fileTree(dir: 'libs', include: ['*.jar'])
+ implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+ implementation 'com.android.support:appcompat-v7:26.1.0'
+ implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+ implementation 'com.android.support:support-v4:26.1.0'
+ implementation 'com.android.support:recyclerview-v7:26.1.0'
+ implementation 'com.android.support:design:26.1.0'
+
+ implementation 'com.android.support:design:26.1.0'
+ implementation 'com.github.evotor:egais-api:ebe58e1a79'
+
+ testImplementation 'junit:junit:4.12'
+ androidTestImplementation 'com.android.support.test:runner:1.0.1'
+ androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+}
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>В файле <code class="highlighter-rouge">AndroidManifest.xml</code>, в секции <code class="highlighter-rouge">&lt;Application&gt;</code> создайте элемент <code class="highlighter-rouge">&lt;meta-data&gt;</code> в котором требуется указать <a href="https://developer.evotor.ru/docs/doc_java_app_manifest.html">идентификатор приложения</a>.</p>
+  </li>
+  <li>
+    <p>В основном пакете создайте новый пакет <code class="highlighter-rouge">waybill</code>.</p>
+
+    <p><strong>New</strong>→<strong>Package</strong></p>
+  </li>
+  <li>
+    <p>В пакете <code class="highlighter-rouge">waybill</code> создайте операцию <strong>Master/Detail Flow</strong>.</p>
+
+    <p><strong>New</strong>→<strong>Activity</strong>→<strong>Master/Detail Flow</strong></p>
+  </li>
+  <li>
+    <p>Удалите пакет <code class="highlighter-rouge">Dummy</code>.</p>
+  </li>
+  <li>
+    <p>Измените файлы <code class="highlighter-rouge">MainActivity.java</code> и файлы пакета <code class="highlighter-rouge">waybill</code> в соответствии с <a href="./doc_egais_waybill.html#example">примером</a>.</p>
+  </li>
+</ol>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Перед установкой приложения на терминал, убедитесь, что PackageName приложения совпадает с указанным на сайте разработчиков.</div>
+
+<h2 id="section">Справка</h2>
+
+<p>Справочник по методам <a href="./egais-api/ru/evotor/egais/api/WayBillApi.html">класса <code class="highlighter-rouge">WayBillApi</code></a>.</p>
+
+<h2 id="example">Пример</h2>
+
+<p>Пример приложения, которое реализует методы класса <code class="highlighter-rouge">WayBillApi</code> вы найдёте в нашем <a href="https://github.com/Lytkini/EgaisAPIWaybillExample">репозитории</a>.</p>
 
                 <div class="toc-main-column">
                 
-
-<div class="tags">
-<div class="tags_title">Теги</div>
-
-
-
-
-
-<span class="tag-button">
-<a href="tag-getting-started.html"><span class="label label-default">Getting started</span></a>
-</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="tag-button">
-<a href="tag-formatting.html"><span class="label label-default">Formatting</span></a>
-</span>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
 
               </div>
                  
 
     <span class="githubButton">
-        <a target="_blank" href="https://github.com/votor/documentation/tree/master/_docs/evojava/java_guide1.md" class="editButton noCrossRef"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+        <a target="_blank" href="https://github.com/votor/documentation/tree/master/_docs/evojava/doc_egais_waybill.md" class="editButton noCrossRef"><i class="fa fa-github fa-lg"></i> Редактировать</a>
     </span>
 
 
@@ -414,62 +455,6 @@ $(window).scroll(function(){
 </div>
 
               
-
-<div class="tags">
-<div class="tags_title">Теги</div>
-
-
-
-
-
-<span class="tag-button">
-<a href="tag-getting-started.html"><span class="label label-default">Getting started</span></a>
-</span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<span class="tag-button">
-<a href="tag-formatting.html"><span class="label label-default">Formatting</span></a>
-</span>
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
 
         </div><!--/.row-->
     </div><!--/.container-->
