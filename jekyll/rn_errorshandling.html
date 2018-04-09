@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <title>Обработка ошибок | Документация Эвотор</title>
     <base target="_self">
-    <meta name="description" content="Вы можете отслеживать ошибки в методах, которые возвращают обещание (Promise). Пример кода для отслеживания ошибок: NavigationAPI.startActivity(intent).catch((e)<span... " />
+    <meta name="description" content="Вы можете отслеживать ошибки в методах, которые возвращают обещание (Promise). Пример кода для отслеживания ошибок: NavigationAPI.startActivity(intent).catch((e<span... " />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" value="notranslate">
     <link rel="icon"  type="image/x-icon" href="favicon.ico">
@@ -392,19 +392,17 @@ $('#toc2').on('click', 'a', function() {
 
 <p>Пример кода для отслеживания ошибок:</p>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">NavigationAPI</span><span class="p">.</span><span class="nx">startActivity</span><span class="p">(</span><span class="nx">intent</span><span class="p">).</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">)});</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">NavigationAPI</span><span class="p">.</span><span class="nx">startActivity</span><span class="p">(</span><span class="nx">intent</span><span class="p">).</span><span class="k">catch</span><span class="p">((</span><span class="nx">e</span><span class="p">)</span><span class="o">=&gt;</span><span class="p">{</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">message</span><span class="p">)});</span>
+</code></pre></div></div>
 
-<h2 id="section">Ошибки</h2>
+<h2 id="Ошибки">Ошибки</h2>
 
 <h3 id="integrationerror">IntegrationError</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">IntegrationError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">IntegrationError</span> <span class="kd">extends</span> <span class="nb">Error</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -412,33 +410,30 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="navigationerror">NavigationError</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">NavigationError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">NavigationErrorMessage</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">NavigationError</span> <span class="kd">extends</span> <span class="nb">Error</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="nx">NavigationErrorMessage</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
 <p>Возникает если при навигации, если вы указали неверные данные.</p>
 
-<h4 id="navigationerrormessage">Тип NavigationErrorMessage</h4>
+<h4 id="Тип-navigationerrormessage">Тип NavigationErrorMessage</h4>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">NavigationErrorMessage</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kr">enum</span> <span class="nx">NavigationErrorMessage</span> <span class="p">{</span>
     <span class="nx">TARGET_CLASS_NOT_FOUND</span> <span class="o">=</span> <span class="s2">"TARGET_CLASS_NOT_FOUND"</span><span class="p">,</span>
     <span class="nx">TARGET_PACKAGE_NOT_FOUND</span> <span class="o">=</span> <span class="s2">"TARGET_PACKAGE_NOT_FOUND"</span><span class="p">,</span>
     <span class="nx">TARGET_CLASS_NOT_EXPORTED</span> <span class="o">=</span> <span class="s2">"TARGET_CLASS_NOT_EXPORTED"</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="noactivityerror">NoActivityError</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">NoActivityError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">NoActivityError</span> <span class="kd">extends</span> <span class="nb">Error</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -446,11 +441,10 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="DeviceError">DeviceError</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">DeviceError</span> <span class="kr">extends</span> <span class="nb">Error</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">message</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">DeviceError</span> <span class="kd">extends</span> <span class="nb">Error</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">message</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 

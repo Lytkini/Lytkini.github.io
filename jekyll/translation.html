@@ -895,27 +895,24 @@ $('#toc2').on('click', 'a', function() {
 
 <p>Each config file declares the collection for that language. Here’s the English _config.yml file:</p>
 
-<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">collections</span><span class="pi">:</span>
-  <span class="s">docs</span><span class="pi">:</span>
-    <span class="s">output</span><span class="pi">:</span> <span class="s">true</span>
-</code></pre>
-</div>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">docs</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
 
 <p>And the Japanese _config_ja.yml file:</p>
 
-<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">collections</span><span class="pi">:</span>
-  <span class="s">docs_ja</span><span class="pi">:</span>
-    <span class="s">output</span><span class="pi">:</span> <span class="s">true</span>
-</code></pre>
-</div>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">docs_ja</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
 
 <p>And the German _config_de.yml file:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>collections:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>collections:
   docs_de:
     output: true
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Depending on the configuration file you use, the site will include only that collection. This way Japanese builds won’t contain English or German docs, nor will German builds contain Japanese or English docs.</p>
 
@@ -923,90 +920,83 @@ $('#toc2').on('click', 'a', function() {
 
 <p>The sidebar and topnav should also switch to the right language as well. These sidebar receives it configuration from the page front matter.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>---
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 title: Sample 1
 permalink: sample1.html
 sidebar: generic
 ---
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">sidebar</code> value then gets passed into sidebar.html include, which is included in the default layout:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">sidebar</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">site.data[page.sidebar]</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% assign sidebar = site.data[page.sidebar] %}
 
-</span><span class="err">&lt;div</span><span class="w"> </span><span class="err">class=</span><span class="s2">"productTitle"</span><span class="err">&gt;</span><span class="p">{</span><span class="err">{sidebar.sidebarTitle</span><span class="p">}</span><span class="err">}&lt;/div&gt;</span><span class="w">
-</span><span class="err">&lt;ul</span><span class="w"> </span><span class="err">id=</span><span class="s2">"docnavsidebar"</span><span class="w"> </span><span class="err">class=</span><span class="s2">"docnav"</span><span class="err">&gt;</span><span class="w">
-    </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">folder</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">sidebar.folders</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-    </span><span class="err">...</span><span class="w">
-</span></code></pre>
-</div>
+&lt;div class="productTitle"&gt;{{sidebar.sidebarTitle}}&lt;/div&gt;
+&lt;ul id="docnavsidebar" class="docnav"&gt;
+    {% for folder in sidebar.folders %}
+    ...
+</code></pre></div></div>
 
 <p>The value for <code class="highlighter-rouge">topnav</code> is likewise passed into the <code class="highlighter-rouge">default</code> layout:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">topnav</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">site.data[page.topnav]</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">entry</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">topnav.navbar_singleitems</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% assign topnav = site.data[page.topnav] %}
+{% for entry in topnav.navbar_singleitems %}
+</code></pre></div></div>
 
 <p>However, rather than specifying the <code class="highlighter-rouge">topnav</code> value in each page’s frontmatter, as is done with <code class="highlighter-rouge">sidebar</code>, this value is set as a <code class="highlighter-rouge">default</code> in the config file for that language. This is because the topnav is the same for all docs in that collection, but each collection can have multiple sidebars.</p>
 
 <p>Here’s the config <code class="highlighter-rouge">defaults</code> for English:</p>
 
-<div class="language-yaml highlighter-rouge"><pre class="highlight"><code>    <span class="s">defaults</span><span class="pi">:</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="na">defaults</span><span class="pi">:</span>
       <span class="pi">-</span>
-        <span class="s">scope</span><span class="pi">:</span>
-          <span class="s">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
-          <span class="s">type</span><span class="pi">:</span> <span class="s">docs</span>
-        <span class="s">values</span><span class="pi">:</span>
-          <span class="s">layout</span><span class="pi">:</span> <span class="s">default</span>
-          <span class="s">topnav</span><span class="pi">:</span> <span class="s">topnav</span>
-</code></pre>
-</div>
+        <span class="na">scope</span><span class="pi">:</span>
+          <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+          <span class="na">type</span><span class="pi">:</span> <span class="s">docs</span>
+        <span class="na">values</span><span class="pi">:</span>
+          <span class="na">layout</span><span class="pi">:</span> <span class="s">default</span>
+          <span class="na">topnav</span><span class="pi">:</span> <span class="s">topnav</span>
+</code></pre></div></div>
 
 <p>And for Japanese:</p>
 
-<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">defaults</span><span class="pi">:</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">defaults</span><span class="pi">:</span>
 
   <span class="pi">-</span>
-    <span class="s">scope</span><span class="pi">:</span>
-      <span class="s">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
-      <span class="s">type</span><span class="pi">:</span> <span class="s">docs_ja</span>
-    <span class="s">values</span><span class="pi">:</span>
-      <span class="s">layout</span><span class="pi">:</span> <span class="s">default</span>
-      <span class="s">topnav</span><span class="pi">:</span> <span class="s">topnav_ja</span>
-</code></pre>
-</div>
+    <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">docs_ja</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s">default</span>
+      <span class="na">topnav</span><span class="pi">:</span> <span class="s">topnav_ja</span>
+</code></pre></div></div>
 
 <p>And for German:</p>
 
-<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">defaults</span><span class="pi">:</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">defaults</span><span class="pi">:</span>
 
   <span class="pi">-</span>
-    <span class="s">scope</span><span class="pi">:</span>
-      <span class="s">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
-      <span class="s">type</span><span class="pi">:</span> <span class="s">docs_de</span>
-    <span class="s">values</span><span class="pi">:</span>
-      <span class="s">layout</span><span class="pi">:</span> <span class="s">default</span>
-      <span class="s">topnav</span><span class="pi">:</span> <span class="s">topnav_de</span>
-</code></pre>
-</div>
+    <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+      <span class="na">type</span><span class="pi">:</span> <span class="s">docs_de</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">layout</span><span class="pi">:</span> <span class="s">default</span>
+      <span class="na">topnav</span><span class="pi">:</span> <span class="s">topnav_de</span>
+</code></pre></div></div>
 
 <p>UI strings also change based on the config file. Here are the UI strings for English:</p>
 
-<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">uistring</span><span class="pi">:</span>
-    <span class="s">title</span><span class="pi">:</span> <span class="s">Jekyll Documentation theme</span> <span class="c1"># Displays as site title on top nav bar and on site metadata</span>
-    <span class="s">description</span><span class="pi">:</span> <span class="s">Documentation theme for Jekyll websites</span>  <span class="c1"># Displays as site description meta</span>
-    <span class="s">search_placeholder</span><span class="pi">:</span> <span class="s">Search ...</span>
-    <span class="s">minitoc_title</span><span class="pi">:</span> <span class="s">Table of Contents</span>
-    <span class="s">github_edit_button_text</span><span class="pi">:</span> <span class="s">Edit me</span>
-    <span class="s">tag_terms</span><span class="pi">:</span>
-      <span class="s">product</span><span class="pi">:</span> <span class="s">Product</span>
-      <span class="s">page</span><span class="pi">:</span> <span class="s">Page</span>
-      <span class="s">excerpt</span><span class="pi">:</span> <span class="s">Excerpt</span>
-      <span class="s">tag_page_intro</span><span class="pi">:</span> <span class="s">The following pages are tagged with</span>
-</code></pre>
-</div>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">uistring</span><span class="pi">:</span>
+    <span class="na">title</span><span class="pi">:</span> <span class="s">Jekyll Documentation theme</span> <span class="c1"># Displays as site title on top nav bar and on site metadata</span>
+    <span class="na">description</span><span class="pi">:</span> <span class="s">Documentation theme for Jekyll websites</span>  <span class="c1"># Displays as site description meta</span>
+    <span class="na">search_placeholder</span><span class="pi">:</span> <span class="s">Search ...</span>
+    <span class="na">minitoc_title</span><span class="pi">:</span> <span class="s">Table of Contents</span>
+    <span class="na">github_edit_button_text</span><span class="pi">:</span> <span class="s">Edit me</span>
+    <span class="na">tag_terms</span><span class="pi">:</span>
+      <span class="na">product</span><span class="pi">:</span> <span class="s">Product</span>
+      <span class="na">page</span><span class="pi">:</span> <span class="s">Page</span>
+      <span class="na">excerpt</span><span class="pi">:</span> <span class="s">Excerpt</span>
+      <span class="na">tag_page_intro</span><span class="pi">:</span> <span class="s">The following pages are tagged with</span>
+</code></pre></div></div>
 
 <p>The config files for Japanese and German look the same but with different translations.</p>
 

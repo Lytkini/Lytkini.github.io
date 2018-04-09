@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <title>Класс DeviceServiceConnector | Документация Эвотор</title>
     <base target="_self">
-    <meta name="description" content="Описание Класс подключает устройства (принтер чеков и весы) к смарт-терминалу. Методы startInitConnections static startInitConnections(): void   Описание Инициализирует... " />
+    <meta name="description" content="Описание Класс подключает устройства (принтер чеков и весы) к смарт-терминалу. Методы startInitConnections static startInitConnections(): void  Описание Инициализирует подключение... " />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" value="notranslate">
     <link rel="icon"  type="image/x-icon" href="favicon.ico">
@@ -388,17 +388,16 @@ $('#toc2').on('click', 'a', function() {
 
 
                </div>
-                <h2 id="section">Описание</h2>
+                <h2 id="Описание">Описание</h2>
 
 <p>Класс подключает устройства (принтер чеков и весы) к смарт-терминалу.</p>
 
-<h2 id="section-1">Методы</h2>
+<h2 id="Методы">Методы</h2>
 
 <h3 id="startinitconnections">startInitConnections</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">startInitConnections</span><span class="p">()</span><span class="err">:</span> <span class="k">void</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">startInitConnections</span><span class="p">():</span> <span class="k">void</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -406,9 +405,8 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="addeventlistener">addEventListener</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">DeviceConnectionEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="err">:</span> <span class="nx">DeviceConnectionEventListener</span><span class="p">,</span> <span class="nx">isGlobal</span><span class="err">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="p">:</span> <span class="nx">DeviceConnectionEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="p">:</span> <span class="nx">DeviceConnectionEventListener</span><span class="p">,</span> <span class="nx">isGlobal</span><span class="p">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">):</span> <span class="k">void</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -424,9 +422,8 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="removeeventlistener">removeEventListener</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">removeEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">DeviceConnectionEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="p">?:</span> <span class="nx">DeviceConnectionEventListener</span><span class="p">)</span><span class="err">:</span> <span class="kr">boolean</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">removeEventListener</span><span class="p">(</span><span class="nx">type</span><span class="p">:</span> <span class="nx">DeviceConnectionEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="p">?:</span> <span class="nx">DeviceConnectionEventListener</span><span class="p">):</span> <span class="kr">boolean</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -446,22 +443,20 @@ $('#toc2').on('click', 'a', function() {
   <li><code class="highlighter-rouge">false</code> – если слушатель не удалён.</li>
 </ul>
 
-<h2 id="section-2">Параметры</h2>
+<h2 id="Параметры">Параметры</h2>
 
 <h3 id="DeviceConnectionEventType">Перечисление DeviceConnectionEventType</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">DeviceConnectionEventType</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kr">enum</span> <span class="nx">DeviceConnectionEventType</span> <span class="p">{</span>
     <span class="nx">PRINTER_CONNECTION_CHANGED</span> <span class="o">=</span> <span class="s2">"PRINTER_CONNECTION_CHANGED"</span><span class="p">,</span>
     <span class="nx">SCALES_CONNECTION_CHANGED</span> <span class="o">=</span> <span class="s2">"SCALES_CONNECTION_CHANGED"</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="DeviceConnectionEventListener">Тип DeviceConnectionEventListener</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">DeviceConnectionEventListener</span> <span class="o">=</span> <span class="p">(</span><span class="nx">connected</span><span class="err">:</span> <span class="kr">boolean</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="nx">type</span> <span class="nx">DeviceConnectionEventListener</span> <span class="o">=</span> <span class="p">(</span><span class="nx">connected</span><span class="p">:</span> <span class="kr">boolean</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
+</code></pre></div></div>
 
                 <div class="toc-main-column">
                 

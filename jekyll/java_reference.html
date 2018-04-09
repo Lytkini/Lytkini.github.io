@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <title>Справочник | Документация Эвотор</title>
     <base target="_self">
-    <meta name="description" content="This is the English Sample 1 page.blah blah public class EnhancedFor { public static void main(String[]... " />
+    <meta name="description" content="This is the English Sample 1 page.blah blah public class EnhancedFor { public static void main(String<span... " />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" value="notranslate">
     <link rel="icon"  type="image/x-icon" href="favicon.ico">
@@ -156,7 +156,7 @@
 
                     
                     
-                    <li class="level2items"><a href="doc_egais_waybill.html">Работа с ТТН</a></li>
+                    <li class="level2items"><a href="doc_egais_project_creation.html">Подготовка проекта для работы с egais-api</a></li>
                     
                     
 
@@ -166,37 +166,7 @@
 
                     
                     
-                    <li class="level2items"><a href="doc_egais_write_off.html">Работа с актами списания товара</a></li>
-                    
-                    
-
-                    
-
-                    
-
-                    
-                    
-                    <li class="level2items"><a href="doc_egais_charge_on_shop.html">Работа с актами приёмки в магазин</a></li>
-                    
-                    
-
-                    
-
-                    
-
-                    
-                    
-                    <li class="level2items"><a href="doc_egais_dictionary_org.html">Чтение данных организации</a></li>
-                    
-                    
-
-                    
-
-                    
-
-                    
-                    
-                    <li class="level2items"><a href="doc_egais_dictionary_product.html">Чтение данных товара</a></li>
+                    <li class="level2items"><a href="doc_egais_data_reading_access.html">Чтение данных ЕГАИС</a></li>
                     
                     
 
@@ -303,7 +273,7 @@ $('#toc2').on('click', 'a', function() {
                </div>
                 <p>This is the English Sample 1 page.blah blah</p>
 
-<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">EnhancedFor</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">EnhancedFor</span>
 <span class="o">{</span>
 	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span>
 	<span class="o">{</span>	<span class="kt">int</span><span class="o">[]</span> <span class="n">list</span> <span class="o">={</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="mi">3</span><span class="o">,</span> <span class="mi">4</span><span class="o">,</span> <span class="mi">5</span><span class="o">,</span> <span class="mi">6</span><span class="o">,</span> <span class="mi">7</span><span class="o">,</span> <span class="mi">8</span><span class="o">,</span> <span class="mi">9</span><span class="o">,</span> <span class="mi">10</span><span class="o">};</span>
@@ -372,12 +342,11 @@ $('#toc2').on('click', 'a', function() {
 
 
 <span class="o">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>here is some js:</p>
 
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html&gt;</span>
   <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;title&gt;</span>Simple Map<span class="nt">&lt;/title&gt;</span>
@@ -402,7 +371,7 @@ $('#toc2').on('click', 'a', function() {
     <span class="nt">&lt;script&gt;</span>
       <span class="kd">var</span> <span class="nx">map</span><span class="p">;</span>
       <span class="kd">function</span> <span class="nx">initMap</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">Map</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'map'</span><span class="p">),</span> <span class="p">{</span>
+        <span class="nx">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nb">Map</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'map'</span><span class="p">),</span> <span class="p">{</span>
           <span class="na">center</span><span class="p">:</span> <span class="p">{</span><span class="na">lat</span><span class="p">:</span> <span class="o">-</span><span class="mf">34.397</span><span class="p">,</span> <span class="na">lng</span><span class="p">:</span> <span class="mf">150.644</span><span class="p">},</span>
           <span class="na">zoom</span><span class="p">:</span> <span class="mi">8</span>
         <span class="p">});</span>
@@ -412,8 +381,7 @@ $('#toc2').on('click', 'a', function() {
     <span class="na">async</span> <span class="na">defer</span><span class="nt">&gt;&lt;/script&gt;</span>
   <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>this is the english version…</p>
 

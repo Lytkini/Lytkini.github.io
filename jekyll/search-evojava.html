@@ -156,7 +156,7 @@
 
                     
                     
-                    <li class="level2items"><a href="doc_egais_waybill.html">Работа с ТТН</a></li>
+                    <li class="level2items"><a href="doc_egais_project_creation.html">Подготовка проекта для работы с egais-api</a></li>
                     
                     
 
@@ -166,37 +166,7 @@
 
                     
                     
-                    <li class="level2items"><a href="doc_egais_write_off.html">Работа с актами списания товара</a></li>
-                    
-                    
-
-                    
-
-                    
-
-                    
-                    
-                    <li class="level2items"><a href="doc_egais_charge_on_shop.html">Работа с актами приёмки в магазин</a></li>
-                    
-                    
-
-                    
-
-                    
-
-                    
-                    
-                    <li class="level2items"><a href="doc_egais_dictionary_org.html">Чтение данных организации</a></li>
-                    
-                    
-
-                    
-
-                    
-
-                    
-                    
-                    <li class="level2items"><a href="doc_egais_dictionary_product.html">Чтение данных товара</a></li>
+                    <li class="level2items"><a href="doc_egais_data_reading_access.html">Чтение данных ЕГАИС</a></li>
                     
                     
 
@@ -300,8 +270,22 @@
       "doc-egais-charge-on-shop-html": {
         "title": "Работа с актами приёмки в магазин",
         "tags": "[]",
-        "content": "В разделе приводится инструкция по добавлению кнопки. По нажатию кнопки, на экране приложения отображается список актов приёмки в магазин.Для работы с актами приёмки в магазин используйте методы класса ru.evotor.egais.api→ActChargeOnShopApi.Чтобы получать информацию об актах приёмки в магазин:",
+        "content": "В разделе приводится инструкция по добавлению кнопки. По нажатию кнопки, на экране приложения отображается список актов приёмки в магазин.Для работы с актами приёмки в магазин используйте методы класса ru.evotor.egais.api→ActChargeOnShopApi.Чтобы получать информацию об актах приёмки в магазин:  Создайте проект в Android Studio и подготовьте его для рабоы с egais-api.",
         "url": "doc_egais_charge_on_shop.html",
+        "product": ""
+      }
+      ,
+      
+      
+    
+            
+          
+
+      "doc-egais-data-reading-access-html": {
+        "title": "Чтение данных из ЕГАИС",
+        "tags": "[]",
+        "content": "С помощью egais-api ваше приложение может получать данные из ЕГАИС.ЕГАИС предоставляет доступ к следующим данным:  Информация о товаре;  Информация о магазине;  Остатки товара на складе;  Остатки товара в магазине;  Акты приёмки товара в магазин;  Акты списания товара из магазина;  Товарно-транспортные накладные;  waybill act (?)юПоля, по которым можно выполнять фильтрацию, описаны в справочнике.Построение запросаПример запроса для поиска информации об организации:ОператорыОператоры сравненияДля построения запросов доступны следующие операторы сравнения:  fun equal(value: V): Executor&lt;Q, S, R&gt; –  fun notEqual(value: V): Executor&lt;Q, S, R&gt; –  fun greater(value: V, including: Boolean = false): Executor&lt;Q, S, R&gt; –  fun lower(value: V, including: Boolean = false): Executor&lt;Q, S, R&gt; –  fun like(text: String, useEscape: Boolean = false): Executor&lt;Q, S, R&gt; –  fun between(leftValue: V, rightValue: V): Executor&lt;Q, S, R&gt; –  fun notBetween(leftValue: V, rightValue: V): Executor&lt;Q, S, R&gt; –  fun inside(values: List&lt;V&gt;): Executor&lt;Q, S, R&gt; –  fun inside(values: Array&lt;V&gt;): Executor&lt;Q, S, R&gt; –  fun notInside(values: List&lt;V&gt;): Executor&lt;Q, S, R&gt; –  fun notInside(values: Array&lt;V&gt;): Executor&lt;Q, S, R&gt; –Логические операторыДля построения запросов доступны следующие логические операторы:  and(intersection: Executor&lt;Q, S, R&gt;): Executor&lt;Q, S, R&gt; –  or(union: Executor&lt;Q, S, R&gt;): Executor&lt;Q, S, R&gt; –  and(): Q –  or(): Q –ПримерПример приложения, которое использует egais-api",
+        "url": "doc_egais_data_reading_access.html",
         "product": ""
       }
       ,
@@ -314,7 +298,7 @@
       "doc-egais-dictionary-org-html": {
         "title": "Чтение данных организации",
         "tags": "[]",
-        "content": "В разделе приводится инструкция по добавлению кнопки. По нажатию кнопки, на экране приложения отображается список информации об организации.Для работы с данными организации используйте методы класса ru.evotor.egais.api→DictionaryApi.Чтобы получить данные организации:ПримерПример приложения, которое реализует методы класса DictionaryApi вы найдёте в нашем репозитории.",
+        "content": "В разделе приводится инструкция по добавлению кнопки. По нажатию кнопки, на экране приложения отображается список информации об организации.Для работы с данными организации используйте методы класса ru.evotor.egais.api→DictionaryApi.Чтобы получить данные организации:  Создайте проект в Android Studio и подготовьте его для рабоы с egais-api.ПримерПример приложения, которое реализует методы класса DictionaryApi вы найдёте в нашем репозитории.",
         "url": "doc_egais_dictionary_org.html",
         "product": ""
       }
@@ -328,8 +312,22 @@
       "doc-egais-dictionary-product-html": {
         "title": "Чтение данных товара",
         "tags": "[]",
-        "content": "В разделе приводится инструкция по добавлению кнопки. По нажатию кнопки, на экране приложения отображается список информации о товарах.Для работы с данными товаров используйте методы класса ru.evotor.egais.api→DictionaryApi.Чтобы получить данные товаров:ПримерПример приложения, которое реализует методы класса DictionaryApi вы найдёте в нашем репозитории.",
+        "content": "В разделе приводится инструкция по добавлению кнопки. По нажатию кнопки, на экране приложения отображается список информации о товарах.Для работы с данными товаров используйте методы класса ru.evotor.egais.api→DictionaryApi.Чтобы получить данные товаров:  Создайте проект в Android Studio и подготовьте его для рабоы с egais-api.ПримерПример приложения, которое реализует методы класса DictionaryApi вы найдёте в нашем репозитории.",
         "url": "doc_egais_dictionary_product.html",
+        "product": ""
+      }
+      ,
+      
+      
+    
+            
+          
+
+      "doc-egais-project-creation-html": {
+        "title": "Подготовка проекта для работы с egais-api",
+        "tags": "[]",
+        "content": "Чтобы подготовить проект для работы с egais-api:      Создайте проект в Android Studio.    Минимальная версия SDK проекта должна быть 22. При создании проекта выберите No Activitty.     Tip: Подробную информацию о том, как создать новый проект в Android Studio смотрите на сайте developer.android.com        В файле build.gradle проекта:    allprojects { repositories {     google()     jcenter()     maven { url 'https://jitpack.io' }    }}            В файле build.gradle приложения (папка app), в зависимости подключите библиотеку egais-api:    implementation 'com.github.evotor:egais-api:ebe58e1a79'            В файле AndroidManifest.xml, в секции application укажите элемент meta-data, содержащий идентификатор приложения:    &lt;meta-data         android:name=\"app_uuid\"         android:value=\"&lt;Идентификатор приложения&gt;\" /&gt;         Note: Идентификатор приложения вы можете скопировать на странице приложения на сайте разработчиков.        Убедитесь, что PackageName приложения совпадает с указанным на сайте разработчиков, это необходимо для установки приложения на смарт-терминал.  ",
+        "url": "doc_egais_project_creation.html",
         "product": ""
       }
       ,
@@ -342,22 +340,8 @@
       "doc-egais-waybill-html": {
         "title": "Работа с товарно-транспортными накладными",
         "tags": "[]",
-        "content": "В разделе приводится инструкция по добавлению кнопки. По нажатию кнопки, на экране приложения отображается список товарно-транспортных накладных. По нажатию на ТТН в списке, открывается окно с деталями выбранной ТТН.Для работы с ТТН используйте методы класса ru.evotor.egais.api→WayBillApi.Чтобы получать информацию о ТТН:      В Android Studio создайте новый проект.    При создании проекта выберите Basic Activity.     Tip: Подробную информацию о том, как создать новый проект Android Studio смотрите на сайте developer.android.com        Откройте файл &lt;Название проекта&gt;→build.gradle и укажите следующее:    buildscript { ext.kotlin_version = '1.2.31' repositories {     google()     jcenter() } dependencies {     classpath 'com.android.tools.build:gradle:3.0.1'     classpath \"org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version\"     // NOTE: Do not place your application dependencies here; they belong     // in the individual module build.gradle files     } }allprojects {    repositories {        google()        jcenter()        maven { url 'https://jitpack.io' }    }}            Откройте файл &lt;Название проекта&gt;→app→build.gradle и укажите следующее:    apply plugin: 'kotlin-android'apply plugin: 'kotlin-android-extensions'        dependencies { implementation fileTree(dir: 'libs', include: ['*.jar']) implementation \"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version\" implementation 'com.android.support:appcompat-v7:26.1.0' implementation 'com.android.support.constraint:constraint-layout:1.0.2' implementation 'com.android.support:support-v4:26.1.0' implementation 'com.android.support:recyclerview-v7:26.1.0' implementation 'com.android.support:design:26.1.0' implementation 'com.android.support:design:26.1.0' implementation 'com.github.evotor:egais-api:ebe58e1a79' testImplementation 'junit:junit:4.12' androidTestImplementation 'com.android.support.test:runner:1.0.1' androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'}            В файле AndroidManifest.xml, в секции &lt;Application&gt; создайте элемент &lt;meta-data&gt; в котором требуется указать идентификатор приложения.        В основном пакете создайте новый пакет waybill.    New→Package        В пакете waybill создайте операцию Master/Detail Flow.    New→Activity→Master/Detail Flow        Удалите пакет Dummy.        Измените файлы MainActivity.java и файлы пакета waybill в соответствии с примером.   Note: Перед установкой приложения на терминал, убедитесь, что PackageName приложения совпадает с указанным на сайте разработчиков.СправкаСправочник по методам класса WayBillApi.ПримерПример приложения, которое реализует методы класса WayBillApi вы найдёте в нашем репозитории.",
+        "content": "В разделе приводится инструкция по добавлению кнопки. По нажатию кнопки, на экране приложения отображается список товарно-транспортных накладных. По нажатию на ТТН в списке, открывается окно с деталями выбранной ТТН.Для работы с ТТН используйте методы класса ru.evotor.egais.api→WayBillApi.Чтобы получать информацию о ТТН:      Создайте проект в Android Studio и подготовьте его для рабоы с egais-api.        В файле AndroidManifest.xml, в секции &lt;Application&gt; создайте элемент &lt;meta-data&gt; в котором требуется указать идентификатор приложения.        В основном пакете создайте новый пакет waybill.    New→Package        В пакете waybill создайте операцию Master/Detail Flow.    New→Activity→Master/Detail Flow        Удалите пакет Dummy.        Измените файлы MainActivity.java и файлы пакета waybill в соответствии с примером.   Note: Перед установкой приложения на терминал, убедитесь, что PackageName приложения совпадает с указанным на сайте разработчиков.СправкаСправочник по методам класса WayBillApi.ПримерПример приложения, которое реализует методы класса WayBillApi вы найдёте в нашем репозитории.",
         "url": "doc_egais_waybill.html",
-        "product": ""
-      }
-      ,
-      
-      
-    
-            
-          
-
-      "doc-egais-write-off-html": {
-        "title": "Работа с актами списания товара",
-        "tags": "[]",
-        "content": "В разделе приводится инструкция по добавлению кнопки. По нажатию кнопки, на экране приложения отображается список актов списания товара из магазина.Для работы с актами списания товара из магазина используйте методы класса ru.evotor.egais.api→ActWriteOffShopApi в пакетеЧтобы получать информацию об актах списания товара из магазина:",
-        "url": "doc_egais_write_off.html",
         "product": ""
       }
       ,
@@ -606,6 +590,9 @@
 </script>
 
 <script src="assets/js/lunr.min.js"></script>
+<script src="assets/js/lunr.stemmer.support.js"></script>
+<script src="assets/js/lunr.ru.js"></script>
+<script src="assets/js/lunr.multi.js"></script>
 <script src="assets/js/search.js"></script>
 
                 <div class="toc-main-column">

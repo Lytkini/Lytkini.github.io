@@ -911,30 +911,28 @@ this is a good issues page: https://github.com/jekyll/jekyll-help/issues/266</p>
 <p><strong>YAML</strong>
 You have a data file named samplelist.yml in _data.</p>
 
-<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">podcast_list_title</span><span class="pi">:</span> <span class="s">Favorite Podcasts</span>
-<span class="s">podcasts</span><span class="pi">:</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">podcast_list_title</span><span class="pi">:</span> <span class="s">Favorite Podcasts</span>
+<span class="na">podcasts</span><span class="pi">:</span>
 
-<span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">This Week in Tech</span>
-  <span class="s">url</span><span class="pi">:</span> <span class="s">https://twit.tv/shows/this-week-in-tech</span>
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">This Week in Tech</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="s">https://twit.tv/shows/this-week-in-tech</span>
 
-<span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Radio Lab</span>
-  <span class="s">url</span><span class="pi">:</span> <span class="s">http://www.radiolab.org/</span>
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Radio Lab</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="s">http://www.radiolab.org/</span>
 
-<span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Night Vale</span>
-  <span class="s">url</span><span class="pi">:</span> <span class="s">http://www.welcometonightvale.com/</span>
-</code></pre>
-</div>
+<span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Night Vale</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="s">http://www.welcometonightvale.com/</span>
+</code></pre></div></div>
 
 <p><strong>Liquid</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;h2&gt;Favorite Podcasts&lt;/h2&gt;
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;h2&gt;Favorite Podcasts&lt;/h2&gt;
 &lt;ul&gt;
 {% for item in site.data.samplelist.podcasts %}
 &lt;li&gt;&lt;a href="{{item.url}}" alt="{{item.title}}"&gt;{{item.title}}&lt;/a&gt;&lt;/li&gt;
 {% endfor %}
 &lt;/ul&gt;
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Result</strong></p>
 <div class="result">
@@ -973,12 +971,11 @@ You have a data file named samplelist.yml in _data.</p>
 
 <p><strong>Liquid</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">podcasts</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">site.data.samplelist.podcasts</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">sort:</span><span class="w"> </span><span class="err">'title'</span><span class="w">  </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">item</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">podcasts</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span><span class="p">{</span><span class="err">{item.title</span><span class="p">}</span><span class="err">}</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% assign podcasts = site.data.samplelist.podcasts | sort: 'title'  %}
+{% for item in podcasts %}
+{{item.title}}
+{% endfor %}
+</code></pre></div></div>
 
 <p><strong>Result</strong></p>
 <div class="result">
@@ -1011,33 +1008,32 @@ This Week in Tech
 
 <p><strong>YAML</strong></p>
 
-<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">toc</span><span class="pi">:</span>
-  <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Group 1</span>
-    <span class="s">subfolderitems</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">page</span><span class="pi">:</span> <span class="s">Thing 1</span>
-        <span class="s">url</span><span class="pi">:</span> <span class="s">/thing1.html</span>
-      <span class="pi">-</span> <span class="s">page</span><span class="pi">:</span> <span class="s">Thing 2</span>
-        <span class="s">url</span><span class="pi">:</span> <span class="s">/thing2.html</span>
-      <span class="pi">-</span> <span class="s">page</span><span class="pi">:</span> <span class="s">Thing 3</span>
-        <span class="s">url</span><span class="pi">:</span> <span class="s">/thing3.html</span>
-  <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Group 2</span>
-    <span class="s">subfolderitems</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">page</span><span class="pi">:</span> <span class="s">Piece 1</span>
-        <span class="s">url</span><span class="pi">:</span> <span class="s">/piece1.html</span>
-      <span class="pi">-</span> <span class="s">page</span><span class="pi">:</span> <span class="s">Piece 2</span>
-        <span class="s">url</span><span class="pi">:</span> <span class="s">/piece2.html</span>
-      <span class="pi">-</span> <span class="s">page</span><span class="pi">:</span> <span class="s">Piece 3</span>
-        <span class="s">url</span><span class="pi">:</span> <span class="s">/piece3.html</span>
-  <span class="pi">-</span> <span class="s">title</span><span class="pi">:</span> <span class="s">Group 3</span>
-    <span class="s">subfolderitems</span><span class="pi">:</span>
-      <span class="pi">-</span> <span class="s">page</span><span class="pi">:</span> <span class="s">Widget 1</span>
-        <span class="s">url</span><span class="pi">:</span> <span class="s">/widget1.html</span>
-      <span class="pi">-</span> <span class="s">page</span><span class="pi">:</span> <span class="s">Widget 2</span>
-        <span class="s">url</span><span class="pi">:</span> <span class="s">/widget2.html</span>
-      <span class="pi">-</span> <span class="s">page</span><span class="pi">:</span> <span class="s">Widget 3</span>
-        <span class="s">url</span><span class="pi">:</span> <span class="s">/widget3.html</span>
-</code></pre>
-</div>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">toc</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Group 1</span>
+    <span class="na">subfolderitems</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Thing 1</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/thing1.html</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Thing 2</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/thing2.html</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Thing 3</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/thing3.html</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Group 2</span>
+    <span class="na">subfolderitems</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Piece 1</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/piece1.html</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Piece 2</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/piece2.html</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Piece 3</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/piece3.html</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s">Group 3</span>
+    <span class="na">subfolderitems</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Widget 1</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/widget1.html</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Widget 2</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/widget2.html</span>
+      <span class="pi">-</span> <span class="na">page</span><span class="pi">:</span> <span class="s">Widget 3</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/widget3.html</span>
+</code></pre></div></div>
 
 <p><strong>Liquid</strong></p>
 
@@ -1100,25 +1096,23 @@ This Week in Tech
 
 <p><strong>Page front matter</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>---
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
 title: My page
 sidebar: toc
 ---
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>Liquid</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">item</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">site.data.samplelist[page.sidebar]</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span><span class="err">&lt;h</span><span class="mi">3</span><span class="err">&gt;</span><span class="p">{</span><span class="err">{item.title</span><span class="p">}</span><span class="err">}&lt;/h</span><span class="mi">3</span><span class="err">&gt;</span><span class="w">
-</span><span class="err">&lt;ul&gt;</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">entry</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">item.subfolderitems</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span><span class="err">&lt;li&gt;&lt;a</span><span class="w"> </span><span class="err">href=</span><span class="s2">"{{entry.url}}"</span><span class="err">&gt;</span><span class="p">{</span><span class="err">{entry.page</span><span class="p">}</span><span class="err">}&lt;/a&gt;&lt;/li&gt;</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span><span class="err">&lt;/ul&gt;</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% for item in site.data.samplelist[page.sidebar] %}
+&lt;h3&gt;{{item.title}}&lt;/h3&gt;
+&lt;ul&gt;
+{% for entry in item.subfolderitems %}
+&lt;li&gt;&lt;a href="{{entry.url}}"&gt;{{entry.page}}&lt;/a&gt;&lt;/li&gt;
+{% endfor %}
+&lt;/ul&gt;
+{% endfor %}
+</code></pre></div></div>
 <p><strong>Result</strong></p>
 
 <div class="result">
@@ -1131,19 +1125,17 @@ sidebar: toc
 
 <p>In addition to inserting items from the YAML data file into your list, you also usually want to highlight the current link if the user is viewing that page. You do this by inserting an <code class="highlighter-rouge">active</code> class for items that match the current page URL.</p>
 
-<p><strong>CSS</strong>
-<code class="highlighter-rouge">css
-a.active {
-  color: black;
-  font-weight: bold;
-  cursor: default;
-}
-</code>
-<strong>Liquid</strong></p>
+<p><strong>CSS</strong></p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">a</span><span class="nc">.active</span> <span class="p">{</span>
+  <span class="nl">color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+  <span class="nl">font-weight</span><span class="p">:</span> <span class="nb">bold</span><span class="p">;</span>
+  <span class="nl">cursor</span><span class="p">:</span> <span class="nb">default</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p><strong>Liquid</strong></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>
-</code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
 <p><strong>Result</strong></p>
 
 <div class="result">
@@ -1188,9 +1180,11 @@ use the uniq tag if you’re getting a list of all pages that have a tag. https:
 
 <p>you cannot do this:</p>
 
-<p>{% for p in site.categories.mycat %}
-* <a href="{{ p.url | prepend: site.baseurl }}">{{p.title}}</a>
-{% endfor %}</p>
+<p>{% for p in site.categories.mycat %}</p>
+<ul>
+  <li><a href="{{ p.url | prepend: site.baseurl }}">{{p.title}}</a>
+{% endfor %}</li>
+</ul>
 
 <p>see http://stackoverflow.com/questions/11887929/how-do-i-loop-through-tags-in-a-jekyll-post?rq=1</p>
 
@@ -1199,16 +1193,15 @@ use the uniq tag if you’re getting a list of all pages that have a tag. https:
 <p>The code below dynamically generates a sidebar nav of pages with
 	        <code class="highlighter-rouge">layout: page</code> in the front-matter. See readme for usage.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">	            </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">pages_list</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">site.pages</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-		          </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">node</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">pages_list</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-			          </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">node.title</span><span class="w"> </span><span class="err">!=</span><span class="w"> </span><span class="err">null</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-				            </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">if</span><span class="w"> </span><span class="err">node.layout</span><span class="w"> </span><span class="err">==</span><span class="w"> </span><span class="nt">"page"</span><span class="w"> </span><span class="err">%}</span><span class="w">
-					                </span><span class="err">&lt;a</span><span class="w"> </span><span class="err">class=</span><span class="s2">"sidebar-nav-item{% if page.url == node.url %} active{% endif %}"</span><span class="w"> </span><span class="err">href=</span><span class="s2">"{{ site.baseurl }}{{ node.url  | remove_first: '/' }}"</span><span class="err">&gt;</span><span class="p">{</span><span class="err">{</span><span class="w"> </span><span class="err">node.title</span><span class="w"> </span><span class="p">}</span><span class="err">}&lt;/a&gt;</span><span class="w">
-							          </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-								          </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endif</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-									  </span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">endfor</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	            {% assign pages_list = site.pages %}
+		          {% for node in pages_list %}
+			          {% if node.title != null %}
+				            {% if node.layout == "page" %}
+					                &lt;a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ site.baseurl }}{{ node.url  | remove_first: '/' }}"&gt;{{ node.title }}&lt;/a&gt;
+							          {% endif %}
+								          {% endif %}
+									  {% endfor %}
+</code></pre></div></div>
 
 <p>For the pages we want in the navigation, we’ll add a navigation_weight to the front matter. The value of navigation_weight is a number which dictates the position it’s shown. For index.html we’ll add a navigation_weight of 1.</p>
 

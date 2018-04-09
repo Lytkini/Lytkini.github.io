@@ -156,7 +156,7 @@
 
                     
                     
-                    <li class="level2items open"><a href="doc_egais_waybill.html">Работа с ТТН</a></li>
+                    <li class="level2items"><a href="doc_egais_project_creation.html">Подготовка проекта для работы с egais-api</a></li>
                     
                     
 
@@ -166,37 +166,7 @@
 
                     
                     
-                    <li class="level2items"><a href="doc_egais_write_off.html">Работа с актами списания товара</a></li>
-                    
-                    
-
-                    
-
-                    
-
-                    
-                    
-                    <li class="level2items"><a href="doc_egais_charge_on_shop.html">Работа с актами приёмки в магазин</a></li>
-                    
-                    
-
-                    
-
-                    
-
-                    
-                    
-                    <li class="level2items"><a href="doc_egais_dictionary_org.html">Чтение данных организации</a></li>
-                    
-                    
-
-                    
-
-                    
-
-                    
-                    
-                    <li class="level2items"><a href="doc_egais_dictionary_product.html">Чтение данных товара</a></li>
+                    <li class="level2items"><a href="doc_egais_data_reading_access.html">Чтение данных ЕГАИС</a></li>
                     
                     
 
@@ -309,68 +279,7 @@ $('#toc2').on('click', 'a', function() {
 
 <ol>
   <li>
-    <p>В Android Studio создайте новый проект.</p>
-
-    <p>При создании проекта выберите <strong>Basic Activity</strong>.</p>
-
-    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Tip:</b> Подробную информацию о том, как создать новый проект Android Studio смотрите на сайте <a href="https://developer.android.com/training/basics/firstapp/creating-project.html">developer.android.com</a></div>
-  </li>
-  <li>
-    <p>Откройте файл <code class="highlighter-rouge">&lt;Название проекта&gt;</code>→<code class="highlighter-rouge">build.gradle</code> и укажите следующее:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>buildscript {
- ext.kotlin_version = '1.2.31'
- repositories {
-     google()
-     jcenter()
- }
- dependencies {
-     classpath 'com.android.tools.build:gradle:3.0.1'
-     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-
-     // NOTE: Do not place your application dependencies here; they belong
-     // in the individual module build.gradle files
-     }
- }
-
-allprojects {
-    repositories {
-        google()
-        jcenter()
-        maven { url 'https://jitpack.io' }
-    }
-}
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>Откройте файл <code class="highlighter-rouge">&lt;Название проекта&gt;</code>→<code class="highlighter-rouge">app</code>→<code class="highlighter-rouge">build.gradle</code> и укажите следующее:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>apply plugin: 'kotlin-android'
-
-apply plugin: 'kotlin-android-extensions'
-</code></pre>
-    </div>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>dependencies {
- implementation fileTree(dir: 'libs', include: ['*.jar'])
- implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
- implementation 'com.android.support:appcompat-v7:26.1.0'
- implementation 'com.android.support.constraint:constraint-layout:1.0.2'
- implementation 'com.android.support:support-v4:26.1.0'
- implementation 'com.android.support:recyclerview-v7:26.1.0'
- implementation 'com.android.support:design:26.1.0'
-
- implementation 'com.android.support:design:26.1.0'
- implementation 'com.github.evotor:egais-api:ebe58e1a79'
-
- testImplementation 'junit:junit:4.12'
- androidTestImplementation 'com.android.support.test:runner:1.0.1'
- androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-
-}
-</code></pre>
-    </div>
+    <p><a href="./doc_egais_project_creation.html">Создайте проект в Android Studio и подготовьте его для рабоы с egais-api</a>.</p>
   </li>
   <li>
     <p>В файле <code class="highlighter-rouge">AndroidManifest.xml</code>, в секции <code class="highlighter-rouge">&lt;Application&gt;</code> создайте элемент <code class="highlighter-rouge">&lt;meta-data&gt;</code> в котором требуется указать <a href="https://developer.evotor.ru/docs/doc_java_app_manifest.html">идентификатор приложения</a>.</p>
@@ -395,7 +304,7 @@ apply plugin: 'kotlin-android-extensions'
 
 <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Перед установкой приложения на терминал, убедитесь, что PackageName приложения совпадает с указанным на сайте разработчиков.</div>
 
-<h2 id="section">Справка</h2>
+<h2 id="Справка">Справка</h2>
 
 <p>Справочник по методам <a href="./egais-api/ru/evotor/egais/api/WayBillApi.html">класса <code class="highlighter-rouge">WayBillApi</code></a>.</p>
 

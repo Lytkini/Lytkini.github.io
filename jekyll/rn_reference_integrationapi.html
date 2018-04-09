@@ -388,7 +388,7 @@ $('#toc2').on('click', 'a', function() {
 
 
                </div>
-                <h2 id="section">Описание</h2>
+                <h2 id="Описание">Описание</h2>
 
 <p>С помощью интеграционных служб вы можете подписываться на события при формировании чека и вносить свои изменения.</p>
 
@@ -396,13 +396,12 @@ $('#toc2').on('click', 'a', function() {
 
 <p>Изменения вносятся с помощью методов класса <code class="highlighter-rouge">IntegrationCallback</code>, экземпляр которого передаётся в каждый слушатель интеграционной службы.</p>
 
-<h2 id="integrationcallback">Методы класса IntegrationCallback</h2>
+<h2 id="Методы-класса-integrationcallback">Методы класса IntegrationCallback</h2>
 
 <h3 id="onresult">onResult</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">onResult</span><span class="p">(</span><span class="nx">result</span><span class="err">:</span> <span class="nx">IntegrationServiceEventResult</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">onResult</span><span class="p">(</span><span class="nx">result</span><span class="p">:</span> <span class="nx">IntegrationServiceEventResult</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -428,9 +427,8 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="startactivity">startActivity</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">startActivity</span><span class="p">(</span><span class="nx">intent</span><span class="err">:</span> <span class="nx">Intent</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">startActivity</span><span class="p">(</span><span class="nx">intent</span><span class="p">:</span> <span class="nx">Intent</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -456,9 +454,8 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="skip">skip</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">skip</span><span class="p">()</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">skip</span><span class="p">():</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -476,26 +473,24 @@ $('#toc2').on('click', 'a', function() {
   <li><a href="./rn_errorshandling.html#integrationerror"><code class="highlighter-rouge">IntegrationError</code></a></li>
 </ul>
 
-<h2 id="section-1">Параметры</h2>
+<h2 id="Параметры">Параметры</h2>
 
 <h3 id="IntegrationServiceEventResult">Тип IntegrationServiceEventResult</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">IntegrationServiceEventResult</span> <span class="o">=</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="nx">type</span> <span class="nx">IntegrationServiceEventResult</span> <span class="o">=</span>
     <span class="nx">BeforePositionsEditedEventResult</span> <span class="o">|</span>
     <span class="nx">ReceiptDiscountEventResult</span> <span class="o">|</span>
     <span class="nx">PaymentSelectedEventResult</span> <span class="o">|</span>
     <span class="nx">PrintGroupRequiredEventResult</span> <span class="o">|</span>
     <span class="nx">PrintExtraRequiredEventResult</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h3 id="beforepositionseditedeventresult">Класс BeforePositionsEditedEventResult</h3>
+<h3 id="Класс-beforepositionseditedeventresult">Класс BeforePositionsEditedEventResult</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">BeforePositionsEditedEventResult</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">changes</span><span class="err">:</span> <span class="nx">PositionChange</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">BeforePositionsEditedEventResult</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">changes</span><span class="p">:</span> <span class="nx">PositionChange</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">extra</span><span class="p">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>См. также</strong></p>
 
@@ -503,13 +498,12 @@ $('#toc2').on('click', 'a', function() {
   <li><a href="./rn_reference_integrationapi.html#PositionChange"><code class="highlighter-rouge">PositionChange</code></a></li>
 </ul>
 
-<h3 id="receiptdiscounteventresult">Класс ReceiptDiscountEventResult</h3>
+<h3 id="Класс-receiptdiscounteventresult">Класс ReceiptDiscountEventResult</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ReceiptDiscountEventResult</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">discount</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">changes</span><span class="err">:</span> <span class="nx">PositionChange</span><span class="p">[])</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">ReceiptDiscountEventResult</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">discount</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span> <span class="nx">extra</span><span class="p">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">changes</span><span class="p">:</span> <span class="nx">PositionChange</span><span class="p">[])</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>См. также</strong></p>
 
@@ -518,13 +512,12 @@ $('#toc2').on('click', 'a', function() {
   <li><a href="./rn_reference_integrationapi.html#PositionChange"><code class="highlighter-rouge">PositionChange</code></a></li>
 </ul>
 
-<h3 id="paymentselectedeventresult">Класс PaymentSelectedEventResult</h3>
+<h3 id="Класс-paymentselectedeventresult">Класс PaymentSelectedEventResult</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PaymentSelectedEventResult</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">paymentParts</span><span class="err">:</span> <span class="nx">PaymentPurpose</span><span class="p">[])</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">PaymentSelectedEventResult</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="p">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">paymentParts</span><span class="p">:</span> <span class="nx">PaymentPurpose</span><span class="p">[])</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>См. также</strong></p>
 
@@ -533,13 +526,12 @@ $('#toc2').on('click', 'a', function() {
   <li><a href="./rn_reference_receiptapi.html#PaymentPurpose"><code class="highlighter-rouge">PaymentPurpose</code></a></li>
 </ul>
 
-<h3 id="printgrouprequiredeventresult">Класс PrintGroupRequiredEventResult</h3>
+<h3 id="Класс-printgrouprequiredeventresult">Класс PrintGroupRequiredEventResult</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintGroupRequiredEventResult</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">setPrintGroups</span><span class="err">:</span> <span class="nx">SetPrintGroup</span><span class="p">[])</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">PrintGroupRequiredEventResult</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="p">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">setPrintGroups</span><span class="p">:</span> <span class="nx">SetPrintGroup</span><span class="p">[])</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>См. также</strong></p>
 
@@ -548,13 +540,12 @@ $('#toc2').on('click', 'a', function() {
   <li><a href="./rn_reference_receiptapi.html#SetPrintGroup"><code class="highlighter-rouge">SetPrintGroup</code></a></li>
 </ul>
 
-<h3 id="printextrarequiredeventresult">Класс PrintExtraRequiredEventResult</h3>
+<h3 id="Класс-printextrarequiredeventresult">Класс PrintExtraRequiredEventResult</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraRequiredEventResult</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="err">:</span> <span class="nx">SetPrintExtra</span><span class="p">[])</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">PrintExtraRequiredEventResult</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="p">:</span> <span class="nx">SetPrintExtra</span><span class="p">[])</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>См. также</strong></p>
 
@@ -564,9 +555,8 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="PositionChange">Тип PositionChange</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">PositionChange</span> <span class="o">=</span> <span class="nx">PositionAdd</span> <span class="o">|</span> <span class="nx">PositionEdit</span> <span class="o">|</span> <span class="nx">PositionRemove</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="nx">type</span> <span class="nx">PositionChange</span> <span class="o">=</span> <span class="nx">PositionAdd</span> <span class="o">|</span> <span class="nx">PositionEdit</span> <span class="o">|</span> <span class="nx">PositionRemove</span>
+</code></pre></div></div>
 
                 <div class="toc-main-column">
                 

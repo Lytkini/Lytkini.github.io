@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <title>Класс ReceiptAPI | Документация Эвотор</title>
     <base target="_self">
-    <meta name="description" content="Описание С помощью методов класса приложения получают данные чеков и передают их для обработки в смарт-терминал. Методы getPositionsByBarcode static getPositionsByBarcode(barcode<span... " />
+    <meta name="description" content="Описание С помощью методов класса приложения получают данные чеков и передают их для обработки в смарт-терминал. Методы getPositionsByBarcode static getPositionsByBarcode(<span... " />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" value="notranslate">
     <link rel="icon"  type="image/x-icon" href="favicon.ico">
@@ -388,17 +388,16 @@ $('#toc2').on('click', 'a', function() {
 
 
                </div>
-                <h2 id="section">Описание</h2>
+                <h2 id="Описание">Описание</h2>
 
 <p>С помощью методов класса приложения получают данные чеков и передают их для обработки в смарт-терминал.</p>
 
-<h2 id="section-1">Методы</h2>
+<h2 id="Методы">Методы</h2>
 
 <h3 id="getpositionsbybarcode">getPositionsByBarcode</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getPositionsByBarcode</span><span class="p">(</span><span class="nx">barcode</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">Position</span><span class="p">[]</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getPositionsByBarcode</span><span class="p">(</span><span class="nx">barcode</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Position</span><span class="p">[]</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -418,9 +417,8 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="opensellreceipt">openSellReceipt</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">openSellReceipt</span><span class="p">(</span><span class="nx">positions</span><span class="p">?:</span> <span class="nx">Position</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">extra</span><span class="p">?:</span> <span class="nx">SetExtra</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">OpenReceiptCommandResult</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">openSellReceipt</span><span class="p">(</span><span class="nx">positions</span><span class="p">?:</span> <span class="nx">Position</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">extra</span><span class="p">?:</span> <span class="nx">SetExtra</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">OpenReceiptCommandResult</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -441,9 +439,8 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="openpaybackreceipt">openPaybackReceipt</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">openPaybackReceipt</span><span class="p">(</span><span class="nx">positions</span><span class="p">?:</span> <span class="nx">Position</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">extra</span><span class="p">?:</span> <span class="nx">SetExtra</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">OpenReceiptCommandResult</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">openPaybackReceipt</span><span class="p">(</span><span class="nx">positions</span><span class="p">?:</span> <span class="nx">Position</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">extra</span><span class="p">?:</span> <span class="nx">SetExtra</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">OpenReceiptCommandResult</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -464,13 +461,12 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="sendelectronreceipt">sendElectronReceipt</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">sendElectronReceipt</span><span class="p">(</span><span class="nx">printReceipts</span><span class="err">:</span> <span class="nx">PrintReceipt</span><span class="p">[],</span>
-                           <span class="nx">extra</span><span class="err">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                           <span class="nx">phone</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                           <span class="nx">email</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                           <span class="nx">discount</span><span class="p">?:</span> <span class="nx">number</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">SendElectronReceiptCommandResult</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">sendElectronReceipt</span><span class="p">(</span><span class="nx">printReceipts</span><span class="p">:</span> <span class="nx">PrintReceipt</span><span class="p">[],</span>
+                           <span class="nx">extra</span><span class="p">:</span> <span class="nx">SetExtra</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nx">phone</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nx">email</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                           <span class="nx">discount</span><span class="p">?:</span> <span class="nx">number</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">SendElectronReceiptCommandResult</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -494,9 +490,8 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="getreceiptbytype">getReceiptByType</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getReceiptByType</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">ReceiptType</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">Receipt</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getReceiptByType</span><span class="p">(</span><span class="nx">type</span><span class="p">:</span> <span class="nx">ReceiptType</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Receipt</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -516,9 +511,8 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="getreceiptbyuuid">getReceiptByUuid</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getReceiptByUuid</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">Receipt</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getReceiptByUuid</span><span class="p">(</span><span class="nx">uuid</span><span class="p">:</span> <span class="nx">string</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Receipt</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -538,9 +532,8 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="getreceiptheaders">getReceiptHeaders</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getReceiptHeaders</span><span class="p">(</span><span class="nx">type</span><span class="p">?:</span> <span class="nx">ReceiptType</span><span class="p">)</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">ReceiptHeader</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getReceiptHeaders</span><span class="p">(</span><span class="nx">type</span><span class="p">?:</span> <span class="nx">ReceiptType</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">ReceiptHeader</span><span class="p">[]</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -558,15 +551,14 @@ $('#toc2').on('click', 'a', function() {
   <li><code class="highlighter-rouge">Promise</code>, результат которого –  массив <a href="./rn_reference_receiptapi.html#receiptheader">заголовков чека</a>.</li>
 </ul>
 
-<h2 id="section-2">Параметры</h2>
+<h2 id="Параметры">Параметры</h2>
 
-<h3 id="positionadd">Класс PositionAdd</h3>
+<h3 id="Класс-positionadd">Класс PositionAdd</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PositionAdd</span> <span class="kr">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">position</span><span class="err">:</span> <span class="nx">Position</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">PositionAdd</span> <span class="kd">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">position</span><span class="p">:</span> <span class="nx">Position</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>См. также</strong></p>
 
@@ -574,13 +566,12 @@ $('#toc2').on('click', 'a', function() {
   <li><a href="./rn_reference_receiptapi.html#position"><code class="highlighter-rouge">Position</code></a></li>
 </ul>
 
-<h3 id="positionedit">Класс PositionEdit</h3>
+<h3 id="Класс-positionedit">Класс PositionEdit</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PositionEdit</span> <span class="kr">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">position</span><span class="err">:</span> <span class="nx">Position</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">PositionEdit</span> <span class="kd">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">position</span><span class="p">:</span> <span class="nx">Position</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>См. также</strong></p>
 
@@ -588,31 +579,28 @@ $('#toc2').on('click', 'a', function() {
   <li><a href="./rn_reference_receiptapi.html#position"><code class="highlighter-rouge">Position</code></a></li>
 </ul>
 
-<h3 id="positionremove">Класс PositionRemove</h3>
+<h3 id="Класс-positionremove">Класс PositionRemove</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PositionRemove</span> <span class="kr">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">positionUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">PositionRemove</span> <span class="kd">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">positionUuid</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="setextra">Класс SetExtra</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">SetExtra</span> <span class="kr">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="err">:</span> <span class="nb">Object</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">SetExtra</span> <span class="kd">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">extra</span><span class="p">:</span> <span class="nb">Object</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="SetPrintGroup">Класс SetPrintGroup</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">SetPrintGroup</span> <span class="kr">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">printGroup</span><span class="err">:</span> <span class="nx">PrintGroup</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">paymentPurposeIds</span><span class="err">:</span> <span class="nx">string</span><span class="p">[],</span>
-                <span class="nx">positionUuids</span><span class="err">:</span> <span class="nx">string</span><span class="p">[])</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">SetPrintGroup</span> <span class="kd">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">printGroup</span><span class="p">:</span> <span class="nx">PrintGroup</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">paymentPurposeIds</span><span class="p">:</span> <span class="nx">string</span><span class="p">[],</span>
+                <span class="nx">positionUuids</span><span class="p">:</span> <span class="nx">string</span><span class="p">[])</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>См. также</strong></p>
 
@@ -622,12 +610,11 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="SetPrintExtra">Класс SetPrintExtra</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">SetPrintExtra</span> <span class="kr">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">printExtraPlace</span><span class="err">:</span> <span class="nx">PrintExtraPlace</span><span class="p">,</span>
-                <span class="nx">printables</span><span class="err">:</span> <span class="nx">Printable</span><span class="p">[])</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">SetPrintExtra</span> <span class="kd">extends</span> <span class="nx">AbstractBundlable</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">printExtraPlace</span><span class="p">:</span> <span class="nx">PrintExtraPlace</span><span class="p">,</span>
+                <span class="nx">printables</span><span class="p">:</span> <span class="nx">Printable</span><span class="p">[])</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>См. также</strong></p>
 
@@ -635,89 +622,81 @@ $('#toc2').on('click', 'a', function() {
   <li><a href="./rn_reference_devicesprinter.html#printable"><code class="highlighter-rouge">Printable</code></a></li>
 </ul>
 
-<h3 id="printextraplace">Тип PrintExtraPlace</h3>
+<h3 id="Тип-printextraplace">Тип PrintExtraPlace</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">PrintExtraPlace</span> <span class="o">=</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="nx">type</span> <span class="nx">PrintExtraPlace</span> <span class="o">=</span>
     <span class="nx">PrintExtraPlacePrintGroupTop</span> <span class="o">|</span>
     <span class="nx">PrintExtraPlacePrintGroupHeader</span> <span class="o">|</span>
     <span class="nx">PrintExtraPlacePrintGroupSummary</span> <span class="o">|</span>
     <span class="nx">PrintExtraPlacePositionFooter</span> <span class="o">|</span>
     <span class="nx">PrintExtraPlacePositionAllSubpositionsFooter</span><span class="p">;</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h3 id="printextraplaceprintgrouptop">Класс PrintExtraPlacePrintGroupTop</h3>
+<h3 id="Класс-printextraplaceprintgrouptop">Класс PrintExtraPlacePrintGroupTop</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraPlacePrintGroupTop</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">printGroupId</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">PrintExtraPlacePrintGroupTop</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">printGroupId</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h3 id="printextraplaceprintgroupheader">Класс PrintExtraPlacePrintGroupHeader</h3>
+<h3 id="Класс-printextraplaceprintgroupheader">Класс PrintExtraPlacePrintGroupHeader</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraPlacePrintGroupHeader</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">printGroupId</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">PrintExtraPlacePrintGroupHeader</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">printGroupId</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h3 id="printextraplaceprintgroupsummary">Класс PrintExtraPlacePrintGroupSummary</h3>
+<h3 id="Класс-printextraplaceprintgroupsummary">Класс PrintExtraPlacePrintGroupSummary</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraPlacePrintGroupSummary</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">printGroupId</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">PrintExtraPlacePrintGroupSummary</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">printGroupId</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h3 id="printextraplacepositionfooter">Класс PrintExtraPlacePositionFooter</h3>
+<h3 id="Класс-printextraplacepositionfooter">Класс PrintExtraPlacePositionFooter</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraPlacePositionFooter</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">positionUuid</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">PrintExtraPlacePositionFooter</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">positionUuid</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h3 id="printextraplacepositionallsubpositionsfooter">Класс PrintExtraPlacePositionAllSubpositionsFooter</h3>
+<h3 id="Класс-printextraplacepositionallsubpositionsfooter">Класс PrintExtraPlacePositionAllSubpositionsFooter</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintExtraPlacePositionAllSubpositionsFooter</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">positionUuid</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">PrintExtraPlacePositionAllSubpositionsFooter</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">positionUuid</span><span class="p">?:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="ExtraKey">Класс ExtraKey</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ExtraKey</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">identity</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">appId</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">description</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">ExtraKey</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">identity</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">appId</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span> <span class="nx">description</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="position">Класс Position</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Position</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">productUuid</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">productCode</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">productType</span><span class="err">:</span> <span class="nx">ProductType</span><span class="p">,</span>
-                <span class="nx">name</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
-                <span class="nx">measureName</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
-                <span class="nx">measurePrecision</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
-                <span class="nx">taxNumber</span><span class="err">:</span> <span class="nx">TaxNumber</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">price</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
-                <span class="nx">priceWithDiscountPosition</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
-                <span class="nx">quantity</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
-                <span class="nx">barcode</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">mark</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">alcoholByVolume</span><span class="err">:</span> <span class="nx">number</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">alcoholProductKindCode</span><span class="err">:</span> <span class="nx">number</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">tareVolume</span><span class="err">:</span> <span class="nx">number</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">extraKeys</span><span class="err">:</span> <span class="nx">ExtraKey</span><span class="p">[],</span>
-                <span class="nx">subPositions</span><span class="err">:</span> <span class="nx">Position</span><span class="p">[])</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">Position</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">productUuid</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">productCode</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">productType</span><span class="p">:</span> <span class="nx">ProductType</span><span class="p">,</span>
+                <span class="nx">name</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">measureName</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">measurePrecision</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span>
+                <span class="nx">taxNumber</span><span class="p">:</span> <span class="nx">TaxNumber</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">price</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span>
+                <span class="nx">priceWithDiscountPosition</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span>
+                <span class="nx">quantity</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span>
+                <span class="nx">barcode</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">mark</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">alcoholByVolume</span><span class="p">:</span> <span class="nx">number</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">alcoholProductKindCode</span><span class="p">:</span> <span class="nx">number</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">tareVolume</span><span class="p">:</span> <span class="nx">number</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">extraKeys</span><span class="p">:</span> <span class="nx">ExtraKey</span><span class="p">[],</span>
+                <span class="nx">subPositions</span><span class="p">:</span> <span class="nx">Position</span><span class="p">[])</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>См. также</strong></p>
 
@@ -729,17 +708,16 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="receiptheader">Класс ReceiptHeader</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">ReceiptHeader</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
-                <span class="nx">number</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">type</span><span class="err">:</span> <span class="nx">ReceiptType</span><span class="p">,</span>
-                <span class="nx">date</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">clientEmail</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">clientPhone</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">extra</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">ReceiptHeader</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">number</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">type</span><span class="p">:</span> <span class="nx">ReceiptType</span><span class="p">,</span>
+                <span class="nx">date</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">clientEmail</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">clientPhone</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">extra</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>См. также</strong></p>
 
@@ -749,17 +727,16 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="PrintGroup">Класс PrintGroup</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintGroup</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">identifier</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">type</span><span class="err">:</span> <span class="nx">PrintGroupType</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">orgName</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">orgInn</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">orgAddress</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">taxationSystem</span><span class="err">:</span> <span class="nx">TaxationSystem</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">shouldPrintReceipt</span><span class="err">:</span> <span class="kr">boolean</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">PrintGroup</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">identifier</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">type</span><span class="p">:</span> <span class="nx">PrintGroupType</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">orgName</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">orgInn</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">orgAddress</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">taxationSystem</span><span class="p">:</span> <span class="nx">TaxationSystem</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">shouldPrintReceipt</span><span class="p">:</span> <span class="kr">boolean</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>См. также</strong></p>
 
@@ -770,16 +747,15 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="payment">Класс Payment</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Payment</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
-                <span class="nx">value</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
-                <span class="nx">system</span><span class="err">:</span> <span class="nx">PaymentSystem</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">purposeIdentifier</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">accountId</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">accountUserDescription</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">Payment</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">value</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span>
+                <span class="nx">system</span><span class="p">:</span> <span class="nx">PaymentSystem</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">purposeIdentifier</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">accountId</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">accountUserDescription</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>См. также</strong></p>
 
@@ -789,14 +765,13 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="printreceipt">Класс PrintReceipt</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintReceipt</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">printGroup</span><span class="err">:</span> <span class="nx">PrintGroup</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">positions</span><span class="err">:</span> <span class="nx">Position</span><span class="p">[],</span>
-                <span class="nx">payments</span><span class="err">:</span> <span class="nx">Map</span><span class="o">&lt;</span><span class="nx">Payment</span><span class="p">,</span> <span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
-                <span class="nx">changes</span><span class="err">:</span> <span class="nx">Map</span><span class="o">&lt;</span><span class="nx">Payment</span><span class="p">,</span> <span class="nx">number</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">PrintReceipt</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">printGroup</span><span class="p">:</span> <span class="nx">PrintGroup</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">positions</span><span class="p">:</span> <span class="nx">Position</span><span class="p">[],</span>
+                <span class="nx">payments</span><span class="p">:</span> <span class="nb">Map</span><span class="o">&lt;</span><span class="nx">Payment</span><span class="p">,</span> <span class="nx">number</span><span class="o">&gt;</span><span class="p">,</span>
+                <span class="nx">changes</span><span class="p">:</span> <span class="nb">Map</span><span class="o">&lt;</span><span class="nx">Payment</span><span class="p">,</span> <span class="nx">number</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>См. также</strong></p>
 
@@ -807,13 +782,12 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="receipt">Класс Receipt</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Receipt</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">Receipt</span> <span class="p">{</span>
 
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">header</span><span class="err">:</span> <span class="nx">ReceiptHeader</span><span class="p">,</span>
-                <span class="nx">printDocuments</span><span class="err">:</span> <span class="nx">PrintReceipt</span><span class="p">[])</span> <span class="p">{}</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">header</span><span class="p">:</span> <span class="nx">ReceiptHeader</span><span class="p">,</span>
+                <span class="nx">printDocuments</span><span class="p">:</span> <span class="nx">PrintReceipt</span><span class="p">[])</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>См. также</strong></p>
 
@@ -822,13 +796,12 @@ $('#toc2').on('click', 'a', function() {
   <li><a href="./rn_reference_receiptapi.html#printreceipt"><code class="highlighter-rouge">PrintReceipt</code></a></li>
 </ul>
 
-<h4 id="section-3">Методы</h4>
+<h4 id="Методы-1">Методы</h4>
 
 <h5 id="getpositions">getPositions</h5>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">getPositions</span><span class="p">()</span><span class="err">:</span> <span class="nx">Position</span><span class="p">[]</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">getPositions</span><span class="p">():</span> <span class="nx">Position</span><span class="p">[]</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -841,9 +814,8 @@ $('#toc2').on('click', 'a', function() {
 </ul>
 
 <h5 id="getpayments">getPayments</h5>
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">getPayments</span><span class="p">()</span><span class="err">:</span> <span class="nx">Payment</span><span class="p">[]</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">getPayments</span><span class="p">():</span> <span class="nx">Payment</span><span class="p">[]</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -857,23 +829,21 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="PaymentPurpose">Класс PaymentPurpose</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PaymentPurpose</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">identifier</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">paymentSystemId</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">total</span><span class="err">:</span> <span class="nx">number</span><span class="p">,</span>
-                <span class="nx">accountId</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">userMessage</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">PaymentPurpose</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">identifier</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">paymentSystemId</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">total</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span>
+                <span class="nx">accountId</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">userMessage</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="PaymentSystem">Класс PaymentSystem</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PaymentSystem</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">paymentType</span><span class="err">:</span> <span class="nx">PaymentType</span><span class="p">,</span> <span class="nx">userDescription</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">paymentSystemId</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">PaymentSystem</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">paymentType</span><span class="p">:</span> <span class="nx">PaymentType</span><span class="p">,</span> <span class="nx">userDescription</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">paymentSystemId</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><strong>См. также</strong></p>
 
@@ -883,16 +853,15 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="receipttype">Перечисление ReceiptType</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">ReceiptType</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kr">enum</span> <span class="nx">ReceiptType</span> <span class="p">{</span>
     <span class="nx">SELL</span> <span class="o">=</span> <span class="s2">"SELL"</span><span class="p">,</span>
     <span class="nx">PAYBACK</span> <span class="o">=</span> <span class="s2">"PAYBACK"</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="TaxNumber">Перечисление TaxNumber</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">TaxNumber</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kr">enum</span> <span class="nx">TaxNumber</span> <span class="p">{</span>
     <span class="nx">VAT_18</span> <span class="o">=</span> <span class="s2">"VAT_18"</span><span class="p">,</span>
     <span class="nx">VAT_10</span> <span class="o">=</span> <span class="s2">"VAT_10"</span><span class="p">,</span>
     <span class="nx">NO_VAT</span> <span class="o">=</span> <span class="s2">"NO_VAT"</span><span class="p">,</span>
@@ -900,12 +869,11 @@ $('#toc2').on('click', 'a', function() {
     <span class="nx">VAT_10_110</span> <span class="o">=</span> <span class="s2">"VAT_10_110"</span><span class="p">,</span>
     <span class="nx">VAT_0</span> <span class="o">=</span> <span class="s2">"VAT_0"</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="TaxationSystem">Перечисление TaxationSystem</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">TaxationSystem</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kr">enum</span> <span class="nx">TaxationSystem</span> <span class="p">{</span>
     <span class="nx">COMMON</span> <span class="o">=</span> <span class="s2">"COMMON"</span><span class="p">,</span>
     <span class="nx">SIMPLIFIED_INCOME</span> <span class="o">=</span> <span class="s2">"SIMPLIFIED_INCOME"</span><span class="p">,</span>
     <span class="nx">SIMPLIFIELD_INCOME_OUTCOME</span> <span class="o">=</span> <span class="s2">"SIMPLIFIELD_INCOME_OUTCOME"</span><span class="p">,</span>
@@ -913,39 +881,35 @@ $('#toc2').on('click', 'a', function() {
     <span class="nx">SINGLE_AGRICULTURE</span> <span class="o">=</span> <span class="s2">"SINGLE_AGRICULTURE"</span><span class="p">,</span>
     <span class="nx">PATENT</span> <span class="o">=</span> <span class="s2">"PATENT"</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="PrintGroupType">Перечисление PrintGroupType</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">PrintGroupType</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kr">enum</span> <span class="nx">PrintGroupType</span> <span class="p">{</span>
     <span class="nx">CASH_RECEIPT</span> <span class="o">=</span> <span class="s2">"CASH_RECEIPT"</span><span class="p">,</span>
     <span class="nx">INVOICE</span> <span class="o">=</span> <span class="s2">"INVOICE"</span><span class="p">,</span>
     <span class="nx">string_UTII</span> <span class="o">=</span> <span class="s2">"string_UTII"</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="PaymentType">Перечисление PaymentType</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">PaymentType</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kr">enum</span> <span class="nx">PaymentType</span> <span class="p">{</span>
     <span class="nx">UNKNOWN</span> <span class="o">=</span> <span class="s2">"UNKNOWN"</span><span class="p">,</span>
     <span class="nx">CASH</span> <span class="o">=</span> <span class="s2">"CASH"</span><span class="p">,</span>
     <span class="nx">ELECTRON</span> <span class="o">=</span> <span class="s2">"ELECTRON"</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="PaymentSystemOperationType">Перечисление PaymentSystemOperationType</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">PaymentSystemOperationType</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kr">enum</span> <span class="nx">PaymentSystemOperationType</span> <span class="p">{</span>
     <span class="nx">SELL</span> <span class="o">=</span> <span class="s2">"SELL"</span><span class="p">,</span>
     <span class="nx">SELL_CANCEL</span> <span class="o">=</span> <span class="s2">"SELL_CANCEL"</span><span class="p">,</span>
     <span class="nx">PAYBACK</span> <span class="o">=</span> <span class="s2">"PAYBACK"</span><span class="p">,</span>
     <span class="nx">PAYBACK_CANCEL</span> <span class="o">=</span> <span class="s2">"PAYBACK_CANCEL"</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
                 <div class="toc-main-column">
                 

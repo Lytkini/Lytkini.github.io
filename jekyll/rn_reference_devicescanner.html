@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <title>Класс Scaner | Документация Эвотор</title>
     <base target="_self">
-    <meta name="description" content="Описание Класс позволяет работать со сканером, подключённым к смарт-терминалу. Методы addEventListener static addEventListener(type: ScannerEventType, listener:... " />
+    <meta name="description" content="Описание Класс позволяет работать со сканером, подключённым к смарт-терминалу. Методы addEventListener static addEventListener(type: ScannerEventType, listener<span... " />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" value="notranslate">
     <link rel="icon"  type="image/x-icon" href="favicon.ico">
@@ -388,17 +388,16 @@ $('#toc2').on('click', 'a', function() {
 
 
                </div>
-                <h2 id="section">Описание</h2>
+                <h2 id="Описание">Описание</h2>
 
 <p>Класс позволяет работать со сканером, подключённым к смарт-терминалу.</p>
 
-<h2 id="section-1">Методы</h2>
+<h2 id="Методы">Методы</h2>
 
 <h3 id="addeventlistener">addEventListener</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">ScannerEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="err">:</span> <span class="nx">ScannerEventListener</span><span class="p">,</span> <span class="nx">isGlobal</span><span class="err">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">)</span><span class="err">:</span> <span class="k">void</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">addEventListener</span><span class="p">(</span><span class="nx">type</span><span class="p">:</span> <span class="nx">ScannerEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="p">:</span> <span class="nx">ScannerEventListener</span><span class="p">,</span> <span class="nx">isGlobal</span><span class="p">:</span> <span class="kr">boolean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">):</span> <span class="k">void</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -414,9 +413,8 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="removeeventlistener">removeEventListener</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">removeEventListener</span><span class="p">(</span><span class="nx">type</span><span class="err">:</span> <span class="nx">ScannerEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="p">?:</span> <span class="nx">ScannerEventListener</span><span class="p">)</span><span class="err">:</span> <span class="kr">boolean</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">removeEventListener</span><span class="p">(</span><span class="nx">type</span><span class="p">:</span> <span class="nx">ScannerEventType</span><span class="p">,</span> <span class="nx">listener</span><span class="p">?:</span> <span class="nx">ScannerEventListener</span><span class="p">):</span> <span class="kr">boolean</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -436,27 +434,24 @@ $('#toc2').on('click', 'a', function() {
   <li><code class="highlighter-rouge">false</code> – если слушатель не удалён.</li>
 </ul>
 
-<h2 id="section-2">Параметры</h2>
+<h2 id="Параметры">Параметры</h2>
 
 <h3 id="ScannerEventType">Перечисление ScannerEventType</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">ScannerEventType</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kr">enum</span> <span class="nx">ScannerEventType</span> <span class="p">{</span>
     <span class="nx">BARCODE_RECEIVED</span> <span class="o">=</span> <span class="s2">"BARCODE_RECEIVED"</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="scannereventlistener">Тип ScannerEventListener</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">ScannerEventListener</span> <span class="o">=</span> <span class="nx">BarcodeReceiveListener</span><span class="p">;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="nx">type</span> <span class="nx">ScannerEventListener</span> <span class="o">=</span> <span class="nx">BarcodeReceiveListener</span><span class="p">;</span>
+</code></pre></div></div>
 
-<h3 id="barcodereceivelistener">Тип BarcodeReceiveListener</h3>
+<h3 id="Тип-barcodereceivelistener">Тип BarcodeReceiveListener</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">BarcodeReceiveListener</span> <span class="o">=</span> <span class="p">(</span><span class="nx">barcode</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="nx">type</span> <span class="nx">BarcodeReceiveListener</span> <span class="o">=</span> <span class="p">(</span><span class="nx">barcode</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="k">void</span><span class="p">;</span>
+</code></pre></div></div>
 
                 <div class="toc-main-column">
                 

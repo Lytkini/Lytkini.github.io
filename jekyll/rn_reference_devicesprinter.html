@@ -388,17 +388,16 @@ $('#toc2').on('click', 'a', function() {
 
 
                </div>
-                <h2 id="section">Описание</h2>
+                <h2 id="Описание">Описание</h2>
 
 <p>Класс позволяет работать с принтером смарт-терминала.</p>
 
-<h2 id="section-1">Методы</h2>
+<h2 id="Методы">Методы</h2>
 
 <h3 id="print">print</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">print</span><span class="p">(</span><span class="nx">printables</span><span class="err">:</span> <span class="nx">Printable</span><span class="p">[])</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">print</span><span class="p">(</span><span class="nx">printables</span><span class="p">:</span> <span class="nx">Printable</span><span class="p">[]):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -424,9 +423,8 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="getallowablesymbolslinelength">getAllowableSymbolsLineLength</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllowableSymbolsLineLength</span><span class="p">()</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllowableSymbolsLineLength</span><span class="p">():</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -446,9 +444,8 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="getallowablepixellinelength">getAllowablePixelLineLength</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllowablePixelLineLength</span><span class="p">()</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllowablePixelLineLength</span><span class="p">():</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">number</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -466,48 +463,43 @@ $('#toc2').on('click', 'a', function() {
   <li><a href="./rn_errorshandling.html#DeviceError"><code class="highlighter-rouge">DeviceError</code></a></li>
 </ul>
 
-<h2 id="section-2">Параметры</h2>
+<h2 id="Параметры">Параметры</h2>
 
 <h3 id="printable">Тип Printable</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="nx">type</span> <span class="nx">Printable</span> <span class="o">=</span> <span class="nx">PrintableText</span> <span class="o">|</span> <span class="nx">PrintableBarcode</span> <span class="o">|</span> <span class="nx">PrintableImage</span><span class="p">;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="nx">type</span> <span class="nx">Printable</span> <span class="o">=</span> <span class="nx">PrintableText</span> <span class="o">|</span> <span class="nx">PrintableBarcode</span> <span class="o">|</span> <span class="nx">PrintableImage</span><span class="p">;</span>
+</code></pre></div></div>
 
 <h3 id="PrintableText">Класс PrintableText</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintableText</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">text</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">PrintableText</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">text</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="PrintableImage">Класс PrintableImage</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintableImage</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">path</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">PrintableImage</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">path</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="PrintableBarcode">Класс PrintableBarcode</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">PrintableBarcode</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">barcodeValue</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">barcodeType</span><span class="err">:</span> <span class="nx">BarcodeType</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">PrintableBarcode</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">barcodeValue</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">barcodeType</span><span class="p">:</span> <span class="nx">BarcodeType</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<h3 id="barcodetype">Перечисление BarcodeType</h3>
+<h3 id="Перечисление-barcodetype">Перечисление BarcodeType</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">enum</span> <span class="nx">BarcodeType</span> <span class="p">{</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kr">enum</span> <span class="nx">BarcodeType</span> <span class="p">{</span>
     <span class="nx">EAN8</span><span class="p">,</span>
     <span class="nx">UPCA</span><span class="p">,</span>
     <span class="nx">EAN13</span><span class="p">,</span>
     <span class="nx">CODE39</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
                 <div class="toc-main-column">
                 

@@ -399,29 +399,25 @@ $('#toc2').on('click', 'a', function() {
   <li>
     <p>Подключитесь к смарт-терминалу с помощью команды</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>adb connect &lt;IP-адрес смарт-терминала&gt;:2111
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adb connect &lt;IP-адрес смарт-терминала&gt;:2111
+</code></pre></div>    </div>
   </li>
   <li>Запустите командную строку от имени Администратора.</li>
   <li>Перейдите в папку C:\Program Files\Java\jdk1.8.0_121\bin&gt;</li>
   <li>
     <p>Выполните команды:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
+</code></pre></div>    </div>
   </li>
   <li>
     <p>В папке <ProjectName>\аndroid выполните команды:</ProjectName></p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>gradlew assembleRelease
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gradlew assembleRelease
+</code></pre></div>    </div>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>adb install -r &lt;ProjectName&gt;\android\app\build\outputs\apk\release\app-release.apk
-</code></pre>
-    </div>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adb install -r &lt;ProjectName&gt;\android\app\build\outputs\apk\release\app-release.apk
+</code></pre></div>    </div>
   </li>
 </ol>
 

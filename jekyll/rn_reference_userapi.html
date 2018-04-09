@@ -388,17 +388,16 @@ $('#toc2').on('click', 'a', function() {
 
 
                </div>
-                <h2 id="section">Описание</h2>
+                <h2 id="Описание">Описание</h2>
 
 <p>С помощью методов класса приложения получают данные пользователей смарт-терминала.</p>
 
-<h2 id="section-1">Методы</h2>
+<h2 id="Методы">Методы</h2>
 
 <h3 id="getallusers">getAllUsers</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllUsers</span><span class="p">()</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">User</span><span class="p">[]</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllUsers</span><span class="p">():</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">User</span><span class="p">[]</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -412,9 +411,8 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="getauthenticateduser">getAuthenticatedUser</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAuthenticatedUser</span><span class="p">()</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">User</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAuthenticatedUser</span><span class="p">():</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">User</span> <span class="o">|</span> <span class="kc">null</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -428,9 +426,8 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="getallgrants">getAllGrants</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllGrants</span><span class="p">()</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">Grant</span><span class="p">[]</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getAllGrants</span><span class="p">():</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Grant</span><span class="p">[]</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -444,9 +441,8 @@ $('#toc2').on('click', 'a', function() {
 
 <h3 id="getgrantsofauthenticateduser">getGrantsOfAuthenticatedUser</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getGrantsOfAuthenticatedUser</span><span class="p">()</span><span class="err">:</span> <span class="nx">Promise</span><span class="o">&lt;</span><span class="nx">Grant</span><span class="p">[]</span><span class="o">&gt;</span>
-</code></pre>
-</div>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">static</span> <span class="nx">getGrantsOfAuthenticatedUser</span><span class="p">():</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">Grant</span><span class="p">[]</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
 <p><strong>Описание</strong></p>
 
@@ -460,29 +456,27 @@ $('#toc2').on('click', 'a', function() {
   <li><code class="highlighter-rouge">Promise</code>, результат которого – массив <a href="./rn_reference_userapi.html#grant">прав</a>.</li>
 </ul>
 
-<h2 id="section-2">Параметры</h2>
+<h2 id="Параметры">Параметры</h2>
 
 <h3 id="user">Класс User</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">User</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
-                <span class="nx">secondName</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">firstName</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">phone</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">pin</span><span class="err">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
-                <span class="nx">roleUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span>
-                <span class="nx">roleTitle</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">User</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">uuid</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">secondName</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">firstName</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">phone</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">pin</span><span class="p">:</span> <span class="nx">string</span> <span class="o">|</span> <span class="kc">null</span><span class="p">,</span>
+                <span class="nx">roleUuid</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span>
+                <span class="nx">roleTitle</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="grant">Класс Grant</h3>
 
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kr">export</span> <span class="kr">class</span> <span class="nx">Grant</span> <span class="p">{</span>
-    <span class="nx">constructor</span><span class="p">(</span><span class="nx">title</span><span class="err">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">roleUuid</span><span class="err">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">class</span> <span class="nx">Grant</span> <span class="p">{</span>
+    <span class="kd">constructor</span><span class="p">(</span><span class="nx">title</span><span class="p">:</span> <span class="nx">string</span><span class="p">,</span> <span class="nx">roleUuid</span><span class="p">:</span> <span class="nx">string</span><span class="p">)</span> <span class="p">{}</span>
 <span class="p">}</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
                 <div class="toc-main-column">
                 

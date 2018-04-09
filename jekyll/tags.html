@@ -874,31 +874,28 @@ $('#toc2').on('click', 'a', function() {
 
 <p>For example, here’s the tag collection for Japanese content:</p>
 
-<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">collections</span><span class="pi">:</span>
-  <span class="s">tags_ja</span><span class="pi">:</span>
-    <span class="s">output</span><span class="pi">:</span> <span class="s">true</span>
-</code></pre>
-</div>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">collections</span><span class="pi">:</span>
+  <span class="na">tags_ja</span><span class="pi">:</span>
+    <span class="na">output</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
 
 <p>The tag docs are contained in _tag, _tag_ja, and _tag_de.</p>
 
 <p>The <code class="highlighter-rouge">defaults</code> in the config file specifies the <code class="highlighter-rouge">tag_group</code> property:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>defaults:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>defaults:
     scope:
       path: ""
       type: docs_ja
     values:
       tag_group: taglist_ja
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This <code class="highlighter-rouge">tag_group</code> property then gets passed to tags.html, which is included in the <code class="highlighter-rouge">default</code> layout:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">tag</span><span class="w"> </span><span class="err">in</span><span class="w"> </span><span class="err">page.tags</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span><span class="p">{</span><span class="err">%</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">doctags</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">site.data[page.tag_group]</span><span class="w"> </span><span class="err">%</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% for tag in page.tags %}
+{% assign doctags = site.data[page.tag_group] %}
+</code></pre></div></div>
 
 <p>The <code class="highlighter-rouge">tag_group</code> value then specifies either taglist.yml, taglist_ja.yml, or taglist_de.yml from the _data folder.</p>
 
