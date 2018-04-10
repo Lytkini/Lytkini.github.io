@@ -150,6 +150,16 @@
 
             
 
+            
+
+            
+            
+            <li class="level1items"><a href="/java_query_api.html">Получение данных из базы данных смарт-терминала</a></li>
+            
+            
+
+            
+
             <li class="level2"><a class="subfoldersTitle" href="#">ЕГАИС</a>
                 <ul style="display:none;">
                     
@@ -282,9 +292,9 @@
           
 
       "doc-egais-data-reading-access-html": {
-        "title": "Чтение данных из ЕГАИС",
+        "title": "Получение данных из ЕГАИС",
         "tags": "[]",
-        "content": "С помощью egais-api ваше приложение может получать данные из ЕГАИС.ЕГАИС предоставляет доступ к следующим данным:  Информация о товаре;  Информация о магазине;  Остатки товара на складе;  Остатки товара в магазине;  Акты приёмки товара в магазин;  Акты списания товара из магазина;  Товарно-транспортные накладные;  waybill act (?)юПоля, по которым можно выполнять фильтрацию, описаны в справочнике.Построение запросаПример запроса для поиска информации об организации:ОператорыОператоры сравненияДля построения запросов доступны следующие операторы сравнения:  fun equal(value: V): Executor&lt;Q, S, R&gt; –  fun notEqual(value: V): Executor&lt;Q, S, R&gt; –  fun greater(value: V, including: Boolean = false): Executor&lt;Q, S, R&gt; –  fun lower(value: V, including: Boolean = false): Executor&lt;Q, S, R&gt; –  fun like(text: String, useEscape: Boolean = false): Executor&lt;Q, S, R&gt; –  fun between(leftValue: V, rightValue: V): Executor&lt;Q, S, R&gt; –  fun notBetween(leftValue: V, rightValue: V): Executor&lt;Q, S, R&gt; –  fun inside(values: List&lt;V&gt;): Executor&lt;Q, S, R&gt; –  fun inside(values: Array&lt;V&gt;): Executor&lt;Q, S, R&gt; –  fun notInside(values: List&lt;V&gt;): Executor&lt;Q, S, R&gt; –  fun notInside(values: Array&lt;V&gt;): Executor&lt;Q, S, R&gt; –Логические операторыДля построения запросов доступны следующие логические операторы:  and(intersection: Executor&lt;Q, S, R&gt;): Executor&lt;Q, S, R&gt; –  or(union: Executor&lt;Q, S, R&gt;): Executor&lt;Q, S, R&gt; –  and(): Q –  or(): Q –ПримерПример приложения, которое использует egais-api",
+        "content": "С помощью egais-api ваше приложение может получать данные из ЕГАИС.Получение необходимых данных осуществляется с помощью запросов к базе данных смарт-терминала.В таблице ниже представленны классы запросов к egais-api, а также соответствующие им классы данных, поля которых вы можете использовать для фильтрации выдачи запросов.            Класс запроса      Модель данных      Описание                  ActChargeOnShopPositionQuery.kt      ActChargeOnShopPosition      Позиция в акте постановки на баланс              ActChargeOnShopQuery.kt      ActChargeOnShop      Акт постановки на баланс              ActWriteOffPositionQuery.kt      ActWriteOffPosition      Позиция в акте списания со склада              ActWriteOffQuery.kt      ActWriteOff      Акт списания со склада              ActWriteOffShopPositionQuery.kt      ActWriteOffShopPosition      Позиция в акте списания из магазина              ActWriteOffShopQuery.kt      ActWriteOffShop      Акт списания из магазина              OrgInfoQuery.kt      OrgInfo      Информация о магазине              ProductInfoQuery.kt      ProductInfo      Информация о товаре              ShopCommodityQuery.kt      ShopCommodity      Остатки товара в магазине              StockCommodityQuery.kt      StockCommodity      Остатки товара на складе              WayBillActPositionQuery.kt      WayBillActPosition      Позиция акта расхождения с товарно-транспортной накладной              WayBillActQuery.kt      WayBillAct      Акт расхождения с товарно-транспортной накладной              WayBillPositionQuery.kt      WayBillPosition      Позиция в товарно-транспортной накладной (ТТН)              WayBillQuery.kt      WayBill      Товарно-транспортные накладные      ПримерПример приложения, которое получает данные ЕГАИС с помощью запросов к базе данных смарт-терминала.",
         "url": "doc_egais_data_reading_access.html",
         "product": ""
       }
@@ -385,6 +395,20 @@
         "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Why do we use it?It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content here’, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
         "url": "java_introduction.html",
         "product": "Java SDK"
+      }
+      ,
+      
+      
+    
+            
+          
+
+      "java-query-api-html": {
+        "title": "Получение данных из базы данных смарт-терминала",
+        "tags": "[]",
+        "content": "С помощью запросов к базе данных смарт-терминала приложения могут получать необходимую информацию, например, данные товаров (класс ProductQuery.kt).Построение запросаПример запроса для получения данных товара:const products = await new ProductQuery()        .alcoholByVolume.between(40, 70)        .intersection(new ProductQuery()            .price.greater(100, true)            .or().tareVolume.greater(10)            .union(new ProductQuery()                .price.lower(5)                .and().name.like(\"Водка\")            )        ).sortOrder(new ProductSortOrder()            .price.asc()            .alcoholByVolume.desc()            .tareVolume.asc()        ).limit(1000)        .execute();ОператорыОператоры сравненияДля построения запросов доступны следующие операторы сравнения:  fun equal(value: V) – аналогичен оператору “равно” =.  fun notEqual(value: V) – аналогичен оператору “равно” !=.  fun greater(value: V, including: Boolean = false) – аналогичен оператору “больше” &gt;.  fun lower(value: V, including: Boolean = false) – аналогичен оператору “меньше” &lt;.  fun like(text: String, useEscape: Boolean = false) – определяет совпадает ли символьная строка с заданным шаблоном.  fun between(leftValue: V, rightValue: V) – задаёт диапазон для проверки.  fun notBetween(leftValue: V, rightValue: V) – задаёт диапазон, за пределами которого находится удовлетворяющий условию результат.  fun inside(values: List&lt;V&gt;) – определяет находится ли значение в заданном списке.  fun inside(values: Array&lt;V&gt;) – определяет находится ли значение в заданном массиве.  fun notInside(values: List&lt;V&gt;) – определяет находится ли значение за пределами заданного списка.  fun notInside(values: Array&lt;V&gt;) – определяет находится ли значение за пределами заданного массива.Логические операторыДля построения запросов доступны следующие логические операторы:  and(intersection: Executor&lt;Q, S, R&gt;) – логическое “И” (пересечение).  or(union: Executor&lt;Q, S, R&gt;) – логическое “ИЛИ” (объединение).  and(): Q – логическое “И”.  or(): Q – логическое “ИЛИ”.ПримерПример приложения, которое получает данные товара.",
+        "url": "java_query_api.html",
+        "product": ""
       }
       ,
       
