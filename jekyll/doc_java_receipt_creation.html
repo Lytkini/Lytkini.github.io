@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
+  </script>
+    <meta charset="utf-8">
+    <title>Открытие чека в приложении | Документация Эвотор</title>
+    <base target="_self">
+    <meta name="description" content="Чтобы открыть чек продажи в смарт-терминале:   Составьте список позиций, который требуется добавить в чек, и наполните его: public void openReceipt()... " />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="icon"  type="image/x-icon" href="favicon.ico">
+
+
+
+    <!--stylesheets / link tags loaded here-->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/monokai.css" />
+    <link rel="stylesheet" href="assets/css/lighttheme-evoblue.css" />
+    <link rel="stylesheet" href="assets/css/customstyles.css" />
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/navgoco.jquery.min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target="nav#toc" data-offset="20">
+<div class="page-container">
+
+
+    <!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle topnav</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
+                <span class="sr-only">Toggle sidebar</span>
+                <span class="sidebarToggle fa fa-columns fa-2x"></span>
+            </button>
+                <a class="navbar-brand" href="index.html">
+                <img class="navbar-logo" src="images/logo_white.png"/>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                
+                <li><a href="https://api.evotor.ru/" class="noCrossRef">REST API Облака</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">SDK cмарт-терминала<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="java_introduction.html">Java SDK</a></li>
+                        
+                        
+                        
+                        <li><a href="rn_reference.html">React Native SDK</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+
+</ul>
+
+
+<ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                        <!--start search-->
+                        <div id="search-demo-container">
+                 <form action="search.html" method="get">
+                <input type="text" id="search-input" placeholder="Поиск по сайту ..." name="query">
+                </form>
+                </div>
+                        <!--end search-->
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <!-- /.container -->
+    </nav>
+    <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- sidebar -->
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                <!--<ul class="nav">-->
+                    <!--<li class="active"><a href="#">Home</a></li>-->
+                    <!--<li><a href="#">Link 1</a></li>-->
+                    <!--<li><a href="#">Link 2</a></li>-->
+                    <!--<li><a href="#">Link 3</a></li>-->
+                <!--</ul>-->
+                
+
+<div class="mydocsidebar">
+<div class="sidebar-inner">
+<div class="productTitle">Java SDK</div>
+<!-- search bar -->
+
+<div class="sidebarSearchBar">
+<form action="search-evojava.html" method="get">
+  <div class="input-group search">
+    <input type="text" id="search-box" name="query" class="form-control" placeholder="Поиск по разделу ...">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit" value="search">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+
+<!-- end search bar -->
+<ul id="docnavsidebar" class="docnav">
+    
+
+    
+    <li class="level1items"><a class="noCrossRef" href="java_introduction.html">Введение</a>
+    
+        <ul style="display:none">
+            
+        </ul>
+
+        
+
+    
+    <li class="level1items"><a class="noCrossRef" href="doc_java_app_manifest.html">Манифест Java-приложения</a>
+    
+        <ul style="display:none">
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Руководства</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_integration_library_connection.html">Подключение библиотеки integration library</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_app_icon.html">Вызов приложения из интерфейса смарт-терминала</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_navigation.html">Вызов окон смарт-терминала</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_third_party_service_communication.html">Обмен сообщениями приложения и стороннего сервиса</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_st_events.html">Обработка событий смарт-терминала</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_app_users.html">Работа с пользователями смарт-терминала</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/java_query_api.html">Получение данных из базы данных смарт-терминала</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_inventory.html">Товароучёт</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_receipt_api.html">Поиск товара по штрихкоду</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_online_store_receipt.html">Передача электронных чеков</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_payment_systems.html">Использование различных способов оплаты</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_session.html">Получение информации о кассовых сменах</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_z_report.html">Печать Z-отчёта</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_logging.html">Доступ к логам</a></li>
+            
+            
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Чеки</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items open"><a href="doc_java_receipt_creation.html">Открытие чека в приложении</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_receipt_division.html">Разделение чека</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href=" doc_java_discounts.html">Начисление скидок</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href=" doc_java_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_receipt_extras.html">Создание дополнительных полей в чеке</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_get_receipt.html">Получить данные сформированного чека</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_receipt_print.html">Печать внутри кассового чека</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Оборудование</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_scales.html">Работа с весами</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_barcode_scanner.html">Работа со сканером штрихкодов</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_bill_printer.html">Работа с принтером чеков</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Справочники</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="integration-library/index.html">Integration-library</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="egais-api/index.html">egais-api</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1items"><a class="noCrossRef" href="java_examples.html">Примеры реализации</a>
+    
+        <ul style="display:none">
+            
+        </ul>
+
+        
+
+    </li>
+</ul>
+
+<hr class="resourceSeparator"></hr>
+<div class="relatedResources"></div>
+<ul id="entrypages">
+        
+    </li>
+</ul>
+</div>
+</div>
+<script>$("li.open").parents('li').toggleClass("open");</script>
+
+            </div>
+
+            <!-- main area -->
+            <div class="col-xs-12 col-sm-7">
+                
+                <h1>Открытие чека в приложении</h1>
+                 
+                 <div class="toc-main-column">
+                 
+<style>
+div#toc2 >ul::before {
+    content: "Содержание";
+    margin-left: -20px;
+}
+</style>
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc2').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc2').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 80);
+  return false
+})
+
+});
+</script>
+
+<nav id="toc2"></nav>
+
+
+               </div>
+                <p><em>Чтобы открыть чек продажи в смарт-терминале:</em></p>
+
+<ol>
+  <li>
+    <p>Составьте список позиций, который требуется добавить в чек, и наполните его:</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">openReceipt</span><span class="o">()</span> <span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">PositionAdd</span><span class="o">&gt;</span> <span class="n">positionAddList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+
+        <span class="n">JSONObject</span> <span class="n">extra</span> <span class="o">=</span> <span class="k">new</span> <span class="n">JSONObject</span><span class="o">();</span>
+      <span class="o">}</span>
+</code></pre></div>    </div>
+
+    <p>Где:</p>
+
+    <p><code class="highlighter-rouge">List&lt;PositionAdd&gt; positionAddList = new ArrayList&lt;&gt;()</code>– список позиций. Как добавить позицию в чек смотрите в разделе <a href="doc_java_receipt_interactions.html#PositionAltering">Добавление, изменение и удаление позиций</a>.</p>
+
+    <p><code class="highlighter-rouge">JSONObject extra = new JSONObject();</code>– добавляет дополнительные данные к чеку. Данные доступны только вашему приложению. Не создавайте этот объект, если приложение не добавляет дополнительные поля к чеку.</p>
+  </li>
+  <li>
+    <p>Создайте команду открытия чека и вызовите метод <code class="highlighter-rouge">.process</code></p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">new</span> <span class="n">OpenSellReceiptCommand</span><span class="o">(</span><span class="n">positionAddList</span><span class="o">,</span> <span class="kc">null</span><span class="o">).</span><span class="na">process</span><span class="o">(</span>
+                        <span class="n">activity</span><span class="o">,</span>
+                        <span class="k">new</span> <span class="nf">IntegrationManagerCallback</span><span class="o">()</span> <span class="o">{</span>
+                            <span class="nd">@Override</span>
+                            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="n">IntegrationManagerFuture</span> <span class="n">integrationManagerFuture</span><span class="o">)</span> <span class="o">{</span>
+                                <span class="k">try</span> <span class="o">{</span>
+                                    <span class="n">IntegrationManagerFuture</span><span class="o">.</span><span class="na">Result</span> <span class="n">result</span> <span class="o">=</span> <span class="n">integrationManagerFuture</span><span class="o">.</span><span class="na">getResult</span><span class="o">();</span>
+                                    <span class="k">if</span> <span class="o">(</span><span class="n">result</span><span class="o">.</span><span class="na">getType</span><span class="o">()</span> <span class="o">==</span> <span class="n">IntegrationManagerFuture</span><span class="o">.</span><span class="na">Result</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">OK</span><span class="o">)</span> <span class="o">{</span>
+                                        <span class="c1">//Чтобы открыть другие документы используйте методы NavigationApi.</span>
+                                        <span class="n">startActivity</span><span class="o">(</span><span class="n">NavigationApi</span><span class="o">.</span><span class="na">createIntentForSellReceiptPayment</span><span class="o">());</span>
+                                    <span class="o">}</span>
+                                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+                                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IntegrationException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+                                <span class="o">}</span>
+                            <span class="o">}</span>
+                        <span class="o">});</span>
+</code></pre></div>    </div>
+
+    <p>Где вместо null вы можете передать <code class="highlighter-rouge">new SetExtra(extra)</code>, команду для <a href="./doc_java_receipt_extras.html">создания дополнительных полей в чеке</a>.</p>
+
+    <p>Чтобы открыть чек другого типа используйте соответствующую команду. Возможные команды:</p>
+
+    <ul>
+      <li><code class="highlighter-rouge">OpenSellReceiptCommand</code> – команда открытия чека продажи.</li>
+      <li><code class="highlighter-rouge">OpenPaybackReceiptCommand</code> – команда открытия чека возврата проданного товара.</li>
+      <li><code class="highlighter-rouge">OpenBuyReceiptCommand</code> – команда открытия чека покупки.</li>
+      <li><code class="highlighter-rouge">OpenBuybackReceiptCommand</code> – команда открытия чека возврата купленного товара.</li>
+    </ul>
+
+    <div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Замените <code class="highlighter-rouge">SELL</code> на <code class="highlighter-rouge">PAYBACK</code>, если хотите открыть чек возврата.</div>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> При создании нового чека, происходит автоматическая очистка существующего открытого чека.</div>
+  </li>
+</ol>
+
+<h2 id="Пример">Пример</h2>
+
+<p>Пример открытия чека продажи или возврата в <a href="https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/MainActivity.java">демонстрационном приложении</a>.</p>
+
+                <div class="toc-main-column">
+                
+
+              </div>
+                 
+
+<p>
+    <span class="btn githubButton">
+        <a target="_blank" href="https://github.com/votor/documentation/tree/master/_docs/evojava/doc_java_receipt_creation.md" class="editButton noCrossRef"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    </span>
+</p>
+
+
+
+
+            </div><!-- /.col-xs-12 main -->
+
+            <div class="col-xs-12 col-sm-2 right-lane">
+              <div class="inner">
+
+
+<style>
+nav#toc >ul::before, nav#toc2 >ul::before {
+    content: "Содержание";
+}
+</style>
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 80);
+  return false
+})
+
+});
+$(window).scroll(function(){
+  $('nav#toc')[0].scrollTop=$(window).scrollTop();
+});
+</script>
+
+<nav id="toc"></nav>
+
+
+</div>
+
+              
+
+        </div><!--/.row-->
+    </div><!--/.container-->
+</div><!--/.page-container-->
+
+
+
+<!--scripts loaded here-->
+<script src="assets/js/jquery.magnific-popup.js"></script>
+<script>
+$('.no_icon').magnificPopup({
+type: 'image',
+closeBtnInside: false,
+closeOnContentClick: false,
+
+callbacks: {
+  open: function() {
+    var self = this;
+    self.wrap.on('click.pinhandler', 'img', function() {
+      self.wrap.toggleClass('mfp-force-scrollbars');
+    });
+  },
+  beforeClose: function() {
+        this.wrap.off('click.pinhandler');
+    this.wrap.removeClass('mfp-force-scrollbars');
+  }
+},
+
+image: {
+  verticalFit: false
+}
+
+});
+</script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/toc.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script>
+    $( document ).ready(function() {
+        $("#docnavsidebar").navgoco({
+            caretHtml: '',
+            accordion: false,
+            openClass: 'open', // open
+            save: false, // leave false or nav highlighting doesn't work right
+            cookie: {
+                name: 'navgoco',
+                expires: false,
+                path: '/'
+            },
+            slide: {
+                duration: 300,
+                easing: 'swing'
+            }
+        });
+
+    });
+
+</script>
+<script src="assets/js/customscripts.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('[data-toggle=offcanvas]').click(function() {
+            $('.row-offcanvas').toggleClass('active');
+        });
+    });
+</script>
+<script src="assets/js/tabs.js"></script>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+ga('create', 'UA-84163503-7', 'auto');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+</script>
+
+
+
+
+</html>

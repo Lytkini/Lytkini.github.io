@@ -4,7 +4,7 @@
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
   </script>
     <meta charset="utf-8">
-    <title>Получение данных из базы данных смарт-терминала | Документация Эвотор</title>
+    <title>Обращение к базе данных смарт-терминала | Документация Эвотор</title>
     <base target="_self">
     <meta name="description" content="С помощью запросов к базе данных смарт-терминала приложения могут получать необходимую информацию, например, данные товаров (класс ProductQuery.kt). Построение запроса Пример запроса для получения данных товара: <div... " />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,16 +61,25 @@
                 
                 
                 
-                <li><a href="java_introduction.html">Java SDK</a></li>
-                
-                
-                
-                <li><a href="rn_gettingstarted.html">React Native</a></li>
-                
-                
-                
                 <!-- entries with drop-downs appear here -->
 
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">SDK cмарт-терминала<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="java_introduction.html">Java SDK</a></li>
+                        
+                        
+                        
+                        <li><a href="rn_reference.html">React Native SDK</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
                 
 
 </ul>
@@ -137,6 +146,15 @@
         
 
     
+    <li class="level1items"><a class="noCrossRef" href="doc_java_app_manifest.html">Манифест Java-приложения</a>
+    
+        <ul style="display:none">
+            
+        </ul>
+
+        
+
+    
     <li class="level1"><a href="#">Руководства</a>
     
         <ul style="display:none">
@@ -144,7 +162,57 @@
 
             
             
-            <li class="level1items"><a href="/java_guide1.html">Руководство 1</a></li>
+            <li class="level1items"><a href="/doc_java_integration_library_connection.html">Подключение библиотеки integration library</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_app_icon.html">Вызов приложения из интерфейса смарт-терминала</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_navigation.html">Вызов окон смарт-терминала</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_third_party_service_communication.html">Обмен сообщениями приложения и стороннего сервиса</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_st_events.html">Обработка событий смарт-терминала</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_app_users.html">Работа с пользователями смарт-терминала</a></li>
             
             
 
@@ -160,13 +228,83 @@
 
             
 
-            <li class="level2"><a class="subfoldersTitle" href="#">ЕГАИС</a>
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_inventory.html">Товароучёт</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_receipt_api.html">Поиск товара по штрихкоду</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_online_store_receipt.html">Передача электронных чеков</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_payment_systems.html">Использование различных способов оплаты</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_session.html">Получение информации о кассовых сменах</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_z_report.html">Печать Z-отчёта</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_logging.html">Доступ к логам</a></li>
+            
+            
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Чеки</a>
                 <ul style="display:none;">
                     
 
                     
                     
-                    <li class="level2items"><a href="doc_egais_project_creation.html">Подготовка проекта для работы с egais-api</a></li>
+                    <li class="level2items"><a href="doc_java_receipt_creation.html">Открытие чека в приложении</a></li>
                     
                     
 
@@ -176,7 +314,95 @@
 
                     
                     
-                    <li class="level2items"><a href="doc_egais_data_reading_access.html">Чтение данных ЕГАИС</a></li>
+                    <li class="level2items"><a href="doc_java_receipt_division.html">Разделение чека</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href=" doc_java_discounts.html">Начисление скидок</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href=" doc_java_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_receipt_extras.html">Создание дополнительных полей в чеке</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_get_receipt.html">Получить данные сформированного чека</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_receipt_print.html">Печать внутри кассового чека</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Оборудование</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_scales.html">Работа с весами</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_barcode_scanner.html">Работа со сканером штрихкодов</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_bill_printer.html">Работа с принтером чеков</a></li>
                     
                     
 
@@ -249,7 +475,7 @@
             <!-- main area -->
             <div class="col-xs-12 col-sm-7">
                 
-                <h1>Получение данных из базы данных смарт-терминала</h1>
+                <h1>Обращение к базе данных смарт-терминала</h1>
                  
                  <div class="toc-main-column">
                  
@@ -287,21 +513,21 @@ $('#toc2').on('click', 'a', function() {
 
 <p>Пример запроса для получения данных товара:</p>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="n">products</span> <span class="o">=</span> <span class="n">await</span> <span class="k">new</span> <span class="nf">ProductQuery</span><span class="o">()</span>
-        <span class="o">.</span><span class="na">alcoholByVolume</span><span class="o">.</span><span class="na">between</span><span class="o">(</span><span class="mi">40</span><span class="o">,</span> <span class="mi">70</span><span class="o">)</span>
-        <span class="o">.</span><span class="na">intersection</span><span class="o">(</span><span class="k">new</span> <span class="n">ProductQuery</span><span class="o">()</span>
-            <span class="o">.</span><span class="na">price</span><span class="o">.</span><span class="na">greater</span><span class="o">(</span><span class="mi">100</span><span class="o">,</span> <span class="kc">true</span><span class="o">)</span>
-            <span class="o">.</span><span class="na">or</span><span class="o">().</span><span class="na">tareVolume</span><span class="o">.</span><span class="na">greater</span><span class="o">(</span><span class="mi">10</span><span class="o">)</span>
-            <span class="o">.</span><span class="na">union</span><span class="o">(</span><span class="k">new</span> <span class="n">ProductQuery</span><span class="o">()</span>
-                <span class="o">.</span><span class="na">price</span><span class="o">.</span><span class="na">lower</span><span class="o">(</span><span class="mi">5</span><span class="o">)</span>
-                <span class="o">.</span><span class="na">and</span><span class="o">().</span><span class="na">name</span><span class="o">.</span><span class="na">like</span><span class="o">(</span><span class="s">"Водка"</span><span class="o">)</span>
-            <span class="o">)</span>
-        <span class="o">).</span><span class="na">sortOrder</span><span class="o">(</span><span class="k">new</span> <span class="n">ProductSortOrder</span><span class="o">()</span>
-            <span class="o">.</span><span class="na">price</span><span class="o">.</span><span class="na">asc</span><span class="o">()</span>
-            <span class="o">.</span><span class="na">alcoholByVolume</span><span class="o">.</span><span class="na">desc</span><span class="o">()</span>
-            <span class="o">.</span><span class="na">tareVolume</span><span class="o">.</span><span class="na">asc</span><span class="o">()</span>
-        <span class="o">).</span><span class="na">limit</span><span class="o">(</span><span class="mi">1000</span><span class="o">)</span>
-        <span class="o">.</span><span class="na">execute</span><span class="o">();</span>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">products</span> <span class="o">=</span> <span class="kr">await</span> <span class="k">new</span> <span class="nx">ProductQuery</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">alcoholByVolume</span><span class="p">.</span><span class="nx">between</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="mi">70</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">intersection</span><span class="p">(</span><span class="k">new</span> <span class="nx">ProductQuery</span><span class="p">()</span>
+            <span class="p">.</span><span class="nx">price</span><span class="p">.</span><span class="nx">greater</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">or</span><span class="p">().</span><span class="nx">tareVolume</span><span class="p">.</span><span class="nx">greater</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">union</span><span class="p">(</span><span class="k">new</span> <span class="nx">ProductQuery</span><span class="p">()</span>
+                <span class="p">.</span><span class="nx">price</span><span class="p">.</span><span class="nx">lower</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">and</span><span class="p">().</span><span class="nx">name</span><span class="p">.</span><span class="nx">like</span><span class="p">(</span><span class="s2">"Водка"</span><span class="p">)</span>
+            <span class="p">)</span>
+        <span class="p">).</span><span class="nx">sortOrder</span><span class="p">(</span><span class="k">new</span> <span class="nx">ProductSortOrder</span><span class="p">()</span>
+            <span class="p">.</span><span class="nx">price</span><span class="p">.</span><span class="nx">asc</span><span class="p">()</span>
+            <span class="p">.</span><span class="nx">alcoholByVolume</span><span class="p">.</span><span class="nx">desc</span><span class="p">()</span>
+            <span class="p">.</span><span class="nx">tareVolume</span><span class="p">.</span><span class="nx">asc</span><span class="p">()</span>
+        <span class="p">).</span><span class="nx">limit</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">execute</span><span class="p">();</span>
 </code></pre></div></div>
 
 <h2 id="Операторы">Операторы</h2>
@@ -345,10 +571,11 @@ $('#toc2').on('click', 'a', function() {
               </div>
                  
 
-    <span class="githubButton">
+<p>
+    <span class="btn githubButton">
         <a target="_blank" href="https://github.com/votor/documentation/tree/master/_docs/evojava/java_query_api.md" class="editButton noCrossRef"><i class="fa fa-github fa-lg"></i> Редактировать</a>
     </span>
-
+</p>
 
 
 
@@ -458,6 +685,7 @@ image: {
         });
     });
 </script>
+<script src="assets/js/tabs.js"></script>
 
 </body>
 

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
+  </script>
+    <meta charset="utf-8">
+    <title>Разделение чека | Документация Эвотор</title>
+    <base target="_self">
+    <meta name="description" content="Требования Чтобы служба получала необходимые сообщения, в манифесте приложения требуется задать intent-filter для соответствующей службы: &lt;intent-filter&gt; &lt;action android:name="evo.v2.receipt.sell.payment.SELECTED" /&gt;... " />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="icon"  type="image/x-icon" href="favicon.ico">
+
+
+
+    <!--stylesheets / link tags loaded here-->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/monokai.css" />
+    <link rel="stylesheet" href="assets/css/lighttheme-evoblue.css" />
+    <link rel="stylesheet" href="assets/css/customstyles.css" />
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/navgoco.jquery.min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target="nav#toc" data-offset="20">
+<div class="page-container">
+
+
+    <!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle topnav</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
+                <span class="sr-only">Toggle sidebar</span>
+                <span class="sidebarToggle fa fa-columns fa-2x"></span>
+            </button>
+                <a class="navbar-brand" href="index.html">
+                <img class="navbar-logo" src="images/logo_white.png"/>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                
+                <li><a href="https://api.evotor.ru/" class="noCrossRef">REST API Облака</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">SDK cмарт-терминала<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="java_introduction.html">Java SDK</a></li>
+                        
+                        
+                        
+                        <li><a href="rn_reference.html">React Native SDK</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+
+</ul>
+
+
+<ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                        <!--start search-->
+                        <div id="search-demo-container">
+                 <form action="search.html" method="get">
+                <input type="text" id="search-input" placeholder="Поиск по сайту ..." name="query">
+                </form>
+                </div>
+                        <!--end search-->
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <!-- /.container -->
+    </nav>
+    <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- sidebar -->
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                <!--<ul class="nav">-->
+                    <!--<li class="active"><a href="#">Home</a></li>-->
+                    <!--<li><a href="#">Link 1</a></li>-->
+                    <!--<li><a href="#">Link 2</a></li>-->
+                    <!--<li><a href="#">Link 3</a></li>-->
+                <!--</ul>-->
+                
+
+<div class="mydocsidebar">
+<div class="sidebar-inner">
+<div class="productTitle">Java SDK</div>
+<!-- search bar -->
+
+<div class="sidebarSearchBar">
+<form action="search-evojava.html" method="get">
+  <div class="input-group search">
+    <input type="text" id="search-box" name="query" class="form-control" placeholder="Поиск по разделу ...">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit" value="search">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+
+<!-- end search bar -->
+<ul id="docnavsidebar" class="docnav">
+    
+
+    
+    <li class="level1items"><a class="noCrossRef" href="java_introduction.html">Введение</a>
+    
+        <ul style="display:none">
+            
+        </ul>
+
+        
+
+    
+    <li class="level1items"><a class="noCrossRef" href="doc_java_app_manifest.html">Манифест Java-приложения</a>
+    
+        <ul style="display:none">
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Руководства</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_integration_library_connection.html">Подключение библиотеки integration library</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_app_icon.html">Вызов приложения из интерфейса смарт-терминала</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_navigation.html">Вызов окон смарт-терминала</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_third_party_service_communication.html">Обмен сообщениями приложения и стороннего сервиса</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_st_events.html">Обработка событий смарт-терминала</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_app_users.html">Работа с пользователями смарт-терминала</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/java_query_api.html">Получение данных из базы данных смарт-терминала</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_inventory.html">Товароучёт</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_receipt_api.html">Поиск товара по штрихкоду</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_online_store_receipt.html">Передача электронных чеков</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_payment_systems.html">Использование различных способов оплаты</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_session.html">Получение информации о кассовых сменах</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_z_report.html">Печать Z-отчёта</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_java_logging.html">Доступ к логам</a></li>
+            
+            
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Чеки</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_receipt_creation.html">Открытие чека в приложении</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items open"><a href="doc_java_receipt_division.html">Разделение чека</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href=" doc_java_discounts.html">Начисление скидок</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href=" doc_java_receipt_interactions.html">Работа с позициями чека</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_receipt_extras.html">Создание дополнительных полей в чеке</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_get_receipt.html">Получить данные сформированного чека</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_receipt_print.html">Печать внутри кассового чека</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Оборудование</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_scales.html">Работа с весами</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_barcode_scanner.html">Работа со сканером штрихкодов</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_bill_printer.html">Работа с принтером чеков</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Справочники</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="integration-library/index.html">Integration-library</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="egais-api/index.html">egais-api</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1items"><a class="noCrossRef" href="java_examples.html">Примеры реализации</a>
+    
+        <ul style="display:none">
+            
+        </ul>
+
+        
+
+    </li>
+</ul>
+
+<hr class="resourceSeparator"></hr>
+<div class="relatedResources"></div>
+<ul id="entrypages">
+        
+    </li>
+</ul>
+</div>
+</div>
+<script>$("li.open").parents('li').toggleClass("open");</script>
+
+            </div>
+
+            <!-- main area -->
+            <div class="col-xs-12 col-sm-7">
+                
+                <h1>Разделение чека</h1>
+                 
+                 <div class="toc-main-column">
+                 
+<style>
+div#toc2 >ul::before {
+    content: "Содержание";
+    margin-left: -20px;
+}
+</style>
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc2').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc2').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 80);
+  return false
+})
+
+});
+</script>
+
+<nav id="toc2"></nav>
+
+
+               </div>
+                <h2 id="Требования">Требования</h2>
+
+<p>Чтобы служба получала необходимые сообщения, в манифесте приложения требуется задать <code class="highlighter-rouge">intent-filter</code> для соответствующей службы:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;intent-filter&gt;</span>
+  <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evo.v2.receipt.sell.payment.SELECTED"</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"evo.v2.receipt.sell.printGroup.REQUIRED"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/intent-filter&gt;</span>
+</code></pre></div></div>
+
+<p>Где:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">evo.v2.receipt.sell.payment.SELECTED</code> – сообщает о разделении платежей.</li>
+  <li><code class="highlighter-rouge">evo.v2.receipt.sell.printGroup.REQUIRED</code> – сообщает о разделении чека на несколько печатных групп.</li>
+</ul>
+
+<h2 id="Разделение-чека">Разделение чека</h2>
+
+<p>Схема разделения чека выглядит следующим образом:</p>
+
+<p class="center-image"><img src="./images/ReceiptDivision.png" alt="" /></p>
+
+<p>Процесс разделения чека:</p>
+
+<ol>
+  <li>Пользователь выбирает тип оплаты <strong>Банковская карта</strong>.</li>
+  <li>
+    <p>Смарт-терминал передаёт событие <code class="highlighter-rouge">PaymentSelectedEvent</code> и ожидает ответа от приложений.</p>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Событие возникает только если пользователь выбрал безналичный расчёт.</div>
+  </li>
+  <li>
+    <p><a href="./doc_java_receipt_division.html#severalPayments">Приложение может разделить чек на несколько платежей</a> в счёт одного или нескольких юридических лиц.</p>
+
+    <p>Приложение возвращает данные о соответствии счетов и платежей в объекте <code class="highlighter-rouge">PaymentSelectedEventResult</code> и указывает разделение платежей в объекте <code class="highlighter-rouge">PaymentPurpose</code>.</p>
+
+    <p>Каждый из платежей, указанных в <code class="highlighter-rouge">PaymentPurpose</code> содержит:</p>
+
+    <ul>
+      <li>собственный идентификатор объекта <code class="highlighter-rouge">PaymentPurpose</code>, который можно использовать для сопоставления платежа и печатной группы;</li>
+      <li>сумму платежа;</li>
+      <li>идентификаторы платёжной системы и счёта в ней;</li>
+      <li>текст, который отображается пользователю при проведении данного платежа.</li>
+    </ul>
+
+    <p>В данный момент поддерживается разделение только в рамках той системы оплаты, которую выбрал пользователь. Разделение на различные системы оплаты (комбинированная оплата) не поддерживается.</p>
+
+    <p>Чтобы получить список счетов, доступных на данном смарт-терминале, <a href="./doc_java_receipt_division.html#PaymentSystemApiMethods">воспользуйтесь методом</a> <code class="highlighter-rouge">getPaymentSystems</code>, класса <code class="highlighter-rouge">PaymentSystemApi</code>.</p>
+
+    <p>Используйте команду <code class="highlighter-rouge">SetExtra</code>, чтобы добавить к чеку <a href="./doc_java_receipt_extras.html">дополнительные поля</a>.</p>
+  </li>
+  <li>
+    <p>На основе данных, полученных от приложения, смарт-терминал совершает платежи и начинает печать чека. Перед печатью чека EvoPOS передаёт событие <code class="highlighter-rouge">PrintGroupRequiredEvent</code> и ожидает ответа от приложений.</p>
+  </li>
+  <li>
+    <p><a href="./doc_java_receipt_division.html#severalPintGroups">Приложение может напечатать несколько разных печатных документов</a> и разделить платежи между ними.</p>
+
+    <p>Приложение передаёт данные о печатных документах, закреплённых за ними позициях и соответствующих платежах в объекте <code class="highlighter-rouge">PrintGroupRequiredEventResult</code>, которому соответствует список объектов <code class="highlighter-rouge">SetPrintGroup</code>.</p>
+
+    <p>Для каждого объекта <code class="highlighter-rouge">SetPrintGroup</code> приложение указывает:</p>
+
+    <ul>
+      <li>печатную группу (<code class="highlighter-rouge">PrintGroup</code>);</li>
+      <li>список идентификаторов платежей (<code class="highlighter-rouge">paymentPurposeIds</code>);</li>
+      <li>список иденификаторов позиций в формате uuid4 (<code class="highlighter-rouge">positionUuids</code>)</li>
+    </ul>
+
+    <p>В печатной группе приложение указывает:</p>
+
+    <ul>
+      <li>идентификатор печатной группы;</li>
+      <li>
+        <p>тип чека:</p>
+
+        <ul>
+          <li>фискальный – <code class="highlighter-rouge">CASH_RECEIPT</code></li>
+          <li>квитанция (нефискальный чек) – <code class="highlighter-rouge">INVOICE</code></li>
+          <li>
+            <p>ЕНВД (нефискальный чек) – <code class="highlighter-rouge">STRING_UTII</code></p>
+
+            <p>Квитанция и ЕНВД чек задаются в виде строк, в отличие от фискального чека, который набирается с помощью команд ККМ. ЕНВД чек отличается от квитанции тем, что квитанция не содержит информации о способе оплаты и на распечатанном чеке явно указывается, что это квитанция.</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>систему налогообложения;</p>
+
+        <p>Систему налогообложения можно указывать как для фискальных, так и для нефискальных чеков. Смарт-терминал печатает чеки с указанной системой налогообложения, если она попадает в список разрешённых систем. В противном случае смарт-терминал выбирает систему налогообложения, заданную по умолчанию.</p>
+      </li>
+      <li>реквизиты организации (название, ИНН, адрес).</li>
+      <li>Поле <code class="highlighter-rouge">true</code> или <code class="highlighter-rouge">false</code>, которое задаёт необходимость печати чека.</li>
+    </ul>
+
+    <p>Используйте команду <code class="highlighter-rouge">SetExtra</code>, чтобы добавить к чеку <a href="./doc_java_receipt_extras.html">дополнительные поля</a>.</p>
+  </li>
+  <li>EvoPOS печатает чек в соответствии с полученными печатными группами.</li>
+</ol>
+
+<h2 id="PaymentSystemApiMethods">Методы PaymentSystem API</h2>
+
+<p>Используйте класс <code class="highlighter-rouge">PaymentSystemApi</code>.</p>
+
+<p>Получить список платёжных систем, а также их учётных записей, доступных на смарт-терминале:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fun</span> <span class="nf">getPaymentSystems</span><span class="o">(</span><span class="nl">context:</span> <span class="n">Context</span><span class="o">):</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">Pair</span><span class="o">&lt;</span><span class="n">PaymentSystem</span><span class="o">,</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">PaymentAccount</span><span class="o">&gt;&gt;&gt;</span>
+</code></pre></div></div>
+
+<p>Метод возвращает список доступных на терминале платёжных систем (<code class="highlighter-rouge">PaymentSystem</code>) и соответствующих им счетов (<code class="highlighter-rouge">PaymentAccount</code>). Счета можно получить у приложений, которые реализуют различные способы оплаты.</p>
+
+<p>Объекты <code class="highlighter-rouge">PaymentSystem</code> содержат:</p>
+
+<ul>
+  <li>тип платёжной системы (наличные, электронные платежи, другие);</li>
+  <li>название, которое можно отобразить пользователю;</li>
+  <li>постоянный идентификатор платёжной системы в терминале.</li>
+</ul>
+
+<p>Объекты <code class="highlighter-rouge">PaymentAccount</code> содержат:</p>
+
+<ul>
+  <li>идентификатор счёта в рамках платёжной системы;</li>
+  <li>название счёта, которое можно отобразить пользователю.</li>
+</ul>
+
+<h2 id="Примеры">Примеры</h2>
+
+<h3 id="severalPayments">Разделение платежей в чеке</h3>
+
+<p>Пример разделения чека на несколько платежей в <a href="https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/SplitService.java">демонстрационном приложении</a>.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        <span class="n">processorMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span>
+                <span class="n">PaymentSelectedEvent</span><span class="o">.</span><span class="na">NAME_SELL_RECEIPT</span><span class="o">,</span>
+                <span class="k">new</span> <span class="nf">PaymentSelectedEventProcessor</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="nd">@Override</span>
+                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">String</span> <span class="n">s</span><span class="o">,</span> <span class="nd">@NonNull</span> <span class="n">PaymentSelectedEvent</span>
+                            <span class="n">paymentSelectedEvent</span><span class="o">,</span> <span class="nd">@NonNull</span> <span class="n">Callback</span> <span class="n">callback</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">List</span><span class="o">&lt;</span><span class="n">PaymentPurpose</span><span class="o">&gt;</span> <span class="n">paymentParts</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">PaymentPurpose</span><span class="o">&gt;();</span>
+                        <span class="n">String</span> <span class="n">psId</span> <span class="o">=</span> <span class="n">paymentSelectedEvent</span><span class="o">.</span><span class="na">getPaymentSystem</span><span class="o">().</span><span class="na">getPaymentSystemId</span><span class="o">();</span>
+                        <span class="n">paymentParts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">PaymentPurpose</span><span class="o">(</span><span class="s">"-1-"</span><span class="o">,</span> <span class="n">psId</span><span class="o">,</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">3</span><span class="o">),</span> <span class="s">"0"</span><span class="o">,</span> <span class="s">"платёж клиента 1"</span><span class="o">));</span>
+                        <span class="n">paymentParts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">PaymentPurpose</span><span class="o">(</span><span class="s">"-2-"</span><span class="o">,</span> <span class="n">psId</span><span class="o">,</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">5</span><span class="o">),</span> <span class="s">"0"</span><span class="o">,</span> <span class="s">"платёж клиента 2"</span><span class="o">));</span>
+                        <span class="n">paymentParts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">PaymentPurpose</span><span class="o">(</span><span class="s">"-3-"</span><span class="o">,</span> <span class="n">psId</span><span class="o">,</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">2</span><span class="o">),</span> <span class="s">"0"</span><span class="o">,</span> <span class="s">"платёж клиента 3"</span><span class="o">));</span>
+                        <span class="n">paymentParts</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">PaymentPurpose</span><span class="o">(</span><span class="s">"-4-"</span><span class="o">,</span> <span class="n">psId</span><span class="o">,</span> <span class="k">new</span> <span class="n">BigDecimal</span><span class="o">(</span><span class="mi">10</span><span class="o">),</span> <span class="s">"0"</span><span class="o">,</span> <span class="s">"платёж клиента 4"</span><span class="o">));</span>
+
+                        <span class="k">try</span> <span class="o">{</span>
+                            <span class="n">callback</span><span class="o">.</span><span class="na">onResult</span><span class="o">(</span>
+                                    <span class="k">new</span> <span class="nf">PaymentSelectedEventResult</span><span class="o">(</span>
+                                            <span class="kc">null</span><span class="o">,</span>
+                                            <span class="n">paymentParts</span>
+                                    <span class="o">).</span><span class="na">toBundle</span><span class="o">()</span>
+                            <span class="o">);</span>
+                        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">RemoteException</span> <span class="n">exc</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="n">exc</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+                        <span class="o">}</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+        <span class="o">);</span>
+</code></pre></div></div>
+
+<h3 id="severalPrintGroups">Разделение чека на несколько печатных групп</h3>
+
+<p>Пример разделения чека на несколько печатных групп в <a href="https://github.com/evotor/evotor-api-example/blob/master/app/src/main/java/ru/qualitylab/evotor/evotortest6/SplitGroupService.java">демонстрационном приложении</a>.</p>
+
+<p>Пример печати квитанции (<code class="highlighter-rouge">INVOICE</code>)</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">processorMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span>
+                <span class="n">PrintGroupRequiredEvent</span><span class="o">.</span><span class="na">NAME_SELL_RECEIPT</span><span class="o">,</span>
+                <span class="k">new</span> <span class="nf">PrintGroupRequiredEventProcessor</span><span class="o">()</span> <span class="o">{</span>
+                    <span class="nd">@Override</span>
+                    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">String</span> <span class="n">s</span><span class="o">,</span> <span class="nd">@NonNull</span> <span class="n">PrintGroupRequiredEvent</span> <span class="n">printGroupRequiredEvent</span><span class="o">,</span> <span class="nd">@NonNull</span> <span class="n">Callback</span> <span class="n">callback</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="n">List</span><span class="o">&lt;</span><span class="n">SetPrintGroup</span><span class="o">&gt;</span> <span class="n">setPrintGroups</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">SetPrintGroup</span><span class="o">&gt;();</span>
+                        <span class="n">PrintGroup</span> <span class="n">printGroup</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PrintGroup</span><span class="o">(</span>
+                                <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">().</span><span class="na">toString</span><span class="o">(),</span>
+                                <span class="n">PrintGroup</span><span class="o">.</span><span class="na">Type</span><span class="o">.</span><span class="na">INVOICE</span><span class="o">,</span>
+                                <span class="s">"ООО \"Пример\""</span><span class="o">,</span>
+                                <span class="s">"012345678901"</span><span class="o">,</span>
+                                <span class="s">"г. Москва"</span><span class="o">,</span>
+                                <span class="n">TaxationSystem</span><span class="o">.</span><span class="na">PATENT</span><span class="o">,</span>
+                                <span class="kc">true</span>
+                        <span class="o">);</span>
+                        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">paymentPurposeIds</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+                        <span class="n">paymentPurposeIds</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"-1-"</span><span class="o">);</span>
+                        <span class="n">paymentPurposeIds</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">"-3-"</span><span class="o">);</span>
+                        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">positionUuids</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;();</span>
+                        <span class="k">if</span> <span class="o">(</span><span class="n">lastPosition</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="n">positionUuids</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">lastPosition</span><span class="o">.</span><span class="na">getUuid</span><span class="o">());</span>
+                        <span class="o">}</span>
+                        <span class="n">setPrintGroups</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">SetPrintGroup</span><span class="o">(</span>
+                                <span class="n">printGroup</span><span class="o">,</span>
+                                <span class="n">paymentPurposeIds</span><span class="o">,</span>
+                                <span class="n">positionUuids</span>
+                        <span class="o">));</span>
+                        <span class="k">try</span> <span class="o">{</span>
+                            <span class="n">callback</span><span class="o">.</span><span class="na">onResult</span><span class="o">(</span>
+                                    <span class="k">new</span> <span class="nf">PrintGroupRequiredEventResult</span><span class="o">(</span>
+                                            <span class="kc">null</span><span class="o">,</span>
+                                            <span class="n">setPrintGroups</span>
+                                    <span class="o">)</span>
+                            <span class="o">);</span>
+                        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">RemoteException</span> <span class="n">exc</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="n">exc</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+                        <span class="o">}</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+        <span class="o">);</span>
+</code></pre></div></div>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Поле <code class="highlighter-rouge">true</code> печатной группы <code class="highlighter-rouge">printGroup</code> указывает, что чек будет напечатан. </div>
+
+
+                <div class="toc-main-column">
+                
+
+              </div>
+                 
+
+<p>
+    <span class="btn githubButton">
+        <a target="_blank" href="https://github.com/votor/documentation/tree/master/_docs/evojava/doc_java_receipt_division.md" class="editButton noCrossRef"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    </span>
+</p>
+
+
+
+
+            </div><!-- /.col-xs-12 main -->
+
+            <div class="col-xs-12 col-sm-2 right-lane">
+              <div class="inner">
+
+
+<style>
+nav#toc >ul::before, nav#toc2 >ul::before {
+    content: "Содержание";
+}
+</style>
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 80);
+  return false
+})
+
+});
+$(window).scroll(function(){
+  $('nav#toc')[0].scrollTop=$(window).scrollTop();
+});
+</script>
+
+<nav id="toc"></nav>
+
+
+</div>
+
+              
+
+        </div><!--/.row-->
+    </div><!--/.container-->
+</div><!--/.page-container-->
+
+
+
+<!--scripts loaded here-->
+<script src="assets/js/jquery.magnific-popup.js"></script>
+<script>
+$('.no_icon').magnificPopup({
+type: 'image',
+closeBtnInside: false,
+closeOnContentClick: false,
+
+callbacks: {
+  open: function() {
+    var self = this;
+    self.wrap.on('click.pinhandler', 'img', function() {
+      self.wrap.toggleClass('mfp-force-scrollbars');
+    });
+  },
+  beforeClose: function() {
+        this.wrap.off('click.pinhandler');
+    this.wrap.removeClass('mfp-force-scrollbars');
+  }
+},
+
+image: {
+  verticalFit: false
+}
+
+});
+</script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/toc.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script>
+    $( document ).ready(function() {
+        $("#docnavsidebar").navgoco({
+            caretHtml: '',
+            accordion: false,
+            openClass: 'open', // open
+            save: false, // leave false or nav highlighting doesn't work right
+            cookie: {
+                name: 'navgoco',
+                expires: false,
+                path: '/'
+            },
+            slide: {
+                duration: 300,
+                easing: 'swing'
+            }
+        });
+
+    });
+
+</script>
+<script src="assets/js/customscripts.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('[data-toggle=offcanvas]').click(function() {
+            $('.row-offcanvas').toggleClass('active');
+        });
+    });
+</script>
+<script src="assets/js/tabs.js"></script>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+ga('create', 'UA-84163503-7', 'auto');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+</script>
+
+
+
+
+</html>

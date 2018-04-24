@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
+  </script>
+    <meta charset="utf-8">
+    <title>Включение режима разработчика | Документация Эвотор</title>
+    <base target="_self">
+    <meta name="description" content="Режим разработчика позволяет:  устанавливать приложение на смарт-терминал с помощью ADB, без необходимости загружать его в магазин приложений; просматривать логи приложения с помощью утилиты LogCat подключать отладчик приложения.  Чтобы... " />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="icon"  type="image/x-icon" href="favicon.ico">
+
+
+
+    <!--stylesheets / link tags loaded here-->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/monokai.css" />
+    <link rel="stylesheet" href="assets/css/lighttheme-evoblue.css" />
+    <link rel="stylesheet" href="assets/css/customstyles.css" />
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/navgoco.jquery.min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target="nav#toc" data-offset="20">
+<div class="page-container">
+
+
+    <!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle topnav</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
+                <span class="sr-only">Toggle sidebar</span>
+                <span class="sidebarToggle fa fa-columns fa-2x"></span>
+            </button>
+                <a class="navbar-brand" href="index.html">
+                <img class="navbar-logo" src="images/logo_white.png"/>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                
+                <li><a href="https://api.evotor.ru/" class="noCrossRef">REST API Облака</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">SDK cмарт-терминала<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="java_introduction.html">Java SDK</a></li>
+                        
+                        
+                        
+                        <li><a href="rn_reference.html">React Native SDK</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+
+</ul>
+
+
+<ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                        <!--start search-->
+                        <div id="search-demo-container">
+                 <form action="search.html" method="get">
+                <input type="text" id="search-input" placeholder="Поиск по сайту ..." name="query">
+                </form>
+                </div>
+                        <!--end search-->
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <!-- /.container -->
+    </nav>
+    <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- sidebar -->
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                <!--<ul class="nav">-->
+                    <!--<li class="active"><a href="#">Home</a></li>-->
+                    <!--<li><a href="#">Link 1</a></li>-->
+                    <!--<li><a href="#">Link 2</a></li>-->
+                    <!--<li><a href="#">Link 3</a></li>-->
+                <!--</ul>-->
+                
+
+<div class="mydocsidebar">
+<div class="sidebar-inner">
+<div class="productTitle">Документация платформы Эвотор</div>
+<!-- search bar -->
+
+<div class="sidebarSearchBar">
+<form action="search-evomain.html" method="get">
+  <div class="input-group search">
+    <input type="text" id="search-box" name="query" class="form-control" placeholder="Поиск по разделу ...">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit" value="search">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+
+<!-- end search bar -->
+<ul id="docnavsidebar" class="docnav">
+    
+
+    
+    <li class="level1"><a href="#">Начало</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="/index.html">Введение</a></li>
+            
+            
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Описание бизнеса</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_egais.html">Продажа алкоголя</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Описание инфраструктуры</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="sample1.html">Взаимодействие Облака Эвотор и смарт-терминала</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="sample1.html">Взаимодействие Облака Эвотор и сторонних систем</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Разработка</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_dev_introduction.html">Введение</a></li>
+            
+            
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Облако Эвотор</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="sublevel1.html">Авторизация</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="sublevel2.html">Ошибки</a></li>
+                    
+                    
+
+                    
+                    <li class="level3"><a class="subfoldersTitle" href="#">Third level deep</a>
+                        <ul style="display:none;">
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="subsublevel1.html">Sub-sublevel 1</a></li>
+                            
+                            
+
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="subsublevel2.html">Sub-sublevel 2</a></li>
+                            
+                            
+
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="subsublevel3.html">Sub-sublevel 3</a></li>
+                            
+                            
+
+                            
+                        </ul>
+                    </li>
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Портал разработчика Эвотор</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_dev_site_introduction.html">Введение</a></li>
+                    
+                    
+
+                    
+                    <li class="level3"><a class="subfoldersTitle" href="#">Тестирование приложения</a>
+                        <ul style="display:none;">
+                            
+
+                            
+                            
+                            <li class="level3items open"><a href="doc_app_developer_mode.html">Включение режима разработчика</a></li>
+                            
+                            
+
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="doc_app_installation.html">Установка приложения</a></li>
+                            
+                            
+
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="doc_app_testing.html">Перевод приложения в тестирование</a></li>
+                            
+                            
+
+                            
+                        </ul>
+                    </li>
+
+                    
+                    <li class="level3"><a class="subfoldersTitle" href="#">Публикация приложения</a>
+                        <ul style="display:none;">
+                            
+                        </ul>
+                    </li>
+
+                    
+                    <li class="level3"><a class="subfoldersTitle" href="#">Статистика</a>
+                        <ul style="display:none;">
+                            
+                        </ul>
+                    </li>
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Смарт-терминал</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="java_introduction.html">Java SDK</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="rn_introduction.html">React Native</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Распространение</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="/sample1.html">Биллинг</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">FAQ</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="/sample2.html">Часто задаваемые вопросы</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    </li>
+</ul>
+
+<hr class="resourceSeparator"></hr>
+<div class="relatedResources">Другие источники</div>
+<ul id="entrypages">
+        
+        <li><a class="noCrossRef" href="http://wiki.evotor.ru/">Wiki</a></li>
+        
+        <li><a class="noCrossRef" href="http://github.com/evotor">Github</a></li>
+        
+    </li>
+</ul>
+</div>
+</div>
+<script>$("li.open").parents('li').toggleClass("open");</script>
+
+            </div>
+
+            <!-- main area -->
+            <div class="col-xs-12 col-sm-7">
+                
+                <h1>Включение режима разработчика</h1>
+                 
+                 <div class="toc-main-column">
+                 
+<style>
+div#toc2 >ul::before {
+    content: "Содержание";
+    margin-left: -20px;
+}
+</style>
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc2').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc2').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 80);
+  return false
+})
+
+});
+</script>
+
+<nav id="toc2"></nav>
+
+
+               </div>
+                <p>Режим разработчика позволяет:</p>
+
+<ul>
+  <li>устанавливать приложение на смарт-терминал с помощью ADB, без необходимости загружать его в магазин приложений;</li>
+  <li>просматривать логи приложения с помощью утилиты <strong>LogCat</strong></li>
+  <li>подключать отладчик приложения.</li>
+</ul>
+
+<p><em>Чтобы включить режим разработчика:</em></p>
+
+<ol>
+  <li>На <a href="https://dev.evotor.ru">dev.evotor.ru</a> выберите необходимое приложение.</li>
+  <li>
+    <p>На вкладке <strong>Версии</strong>, выберите необходимую версию приложения и перейдите на вкладку <strong>APK</strong>.</p>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Одновременно у вас в разработке не может быть более двух версий приложения.</div>
+  </li>
+  <li>
+    <p>На вкладке <strong>APK</strong>:</p>
+
+    <ul>
+      <li>
+        <p>Если вы хотите, чтобы тестировщики могли установить приложение из Магазина приложений, выберите <strong>Загрузить APK</strong>.</p>
+
+        <p>После того как вы загрузите APK, поля <strong>Код версии</strong> и <strong>Package name</strong> автоматически заполнятся значениями, указанными в APK приложения.</p>
+      </li>
+      <li>
+        <p>Если вы хотите вручную устанавливать приложение на смарт-терминал с помощью ADB, выберите <strong>Ввести ID пакета вручную</strong>.</p>
+
+        <p>Вам потребуется вручную указать имя пакета вашего приложения, в поле <strong>ID пакета</strong>. Код версии в этом случае указывать не требуется.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>На вкладке <strong>Версии</strong>, выберите необходимую версию и нажмите на кнопку <strong>Выложить на тест</strong>.</p>
+
+    <p>Вам может потребоваться заполнить данные профиля и указать платёжные данные. Для тестов вы можете указать любые данные.</p>
+  </li>
+  <li>На вкладке <strong>Тестирование</strong> укажите номер телефона учётной записи, для которой требуется включить режим разработчика.</li>
+  <li>Выберите тип пользователя <strong>Разработчик приложения на терминале Эвотор</strong> и нажмите на кнопку <strong>Добавить</strong>.</li>
+</ol>
+
+<p>Режим разработчика включается на всех терминалах, зарегистрированных на указанный номер телефона.</p>
+
+<p>Режим разработчика действует только для приложения с заданным packageName.</p>
+
+<p class="center-image"><img src="images/developer_mode_enabling.png" alt="Режим разработчика на сайте разработчиков" title="Режим разработчика на сайте разработчиков" /></p>
+
+<div class="alert alert-success" role="alert"><i class="fa fa-check-square-o"></i> <b>Совет:</b> Если режим разработчика не включился сразу после добавления разработчика, попробуйте выключить и включить wi-fi.</div>
+
+<p>В панели уведомлений смарт-терминалов, зарегистрированных на указанный номер, появится сообщение:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Режим разработчика активен
+ADB: &lt;IP-адрес&gt;:&lt;порт&gt;
+</code></pre></div></div>
+
+<p class="center-image"><img src="images/developer_mode.png" alt="Режим разработчика на терминале" title="Режим разработчика на терминале" /></p>
+
+<p>Для подключения к смарт-терминалу в Android Studio, используйте команду:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adb connect &lt;IP-адрес&gt;:&lt;порт&gt;
+</code></pre></div></div>
+
+                <div class="toc-main-column">
+                
+
+              </div>
+                 
+
+<p>
+    <span class="btn githubButton">
+        <a target="_blank" href="https://github.com/votor/documentation/tree/master/_docs/evomain/doc_app_developer_mode.md" class="editButton noCrossRef"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    </span>
+</p>
+
+
+
+
+            </div><!-- /.col-xs-12 main -->
+
+            <div class="col-xs-12 col-sm-2 right-lane">
+              <div class="inner">
+
+
+<style>
+nav#toc >ul::before, nav#toc2 >ul::before {
+    content: "Содержание";
+}
+</style>
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 80);
+  return false
+})
+
+});
+$(window).scroll(function(){
+  $('nav#toc')[0].scrollTop=$(window).scrollTop();
+});
+</script>
+
+<nav id="toc"></nav>
+
+
+</div>
+
+              
+
+        </div><!--/.row-->
+    </div><!--/.container-->
+</div><!--/.page-container-->
+
+
+
+<!--scripts loaded here-->
+<script src="assets/js/jquery.magnific-popup.js"></script>
+<script>
+$('.no_icon').magnificPopup({
+type: 'image',
+closeBtnInside: false,
+closeOnContentClick: false,
+
+callbacks: {
+  open: function() {
+    var self = this;
+    self.wrap.on('click.pinhandler', 'img', function() {
+      self.wrap.toggleClass('mfp-force-scrollbars');
+    });
+  },
+  beforeClose: function() {
+        this.wrap.off('click.pinhandler');
+    this.wrap.removeClass('mfp-force-scrollbars');
+  }
+},
+
+image: {
+  verticalFit: false
+}
+
+});
+</script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/toc.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script>
+    $( document ).ready(function() {
+        $("#docnavsidebar").navgoco({
+            caretHtml: '',
+            accordion: false,
+            openClass: 'open', // open
+            save: false, // leave false or nav highlighting doesn't work right
+            cookie: {
+                name: 'navgoco',
+                expires: false,
+                path: '/'
+            },
+            slide: {
+                duration: 300,
+                easing: 'swing'
+            }
+        });
+
+    });
+
+</script>
+<script src="assets/js/customscripts.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('[data-toggle=offcanvas]').click(function() {
+            $('.row-offcanvas').toggleClass('active');
+        });
+    });
+</script>
+<script src="assets/js/tabs.js"></script>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+ga('create', 'UA-84163503-7', 'auto');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+</script>
+
+
+
+
+</html>

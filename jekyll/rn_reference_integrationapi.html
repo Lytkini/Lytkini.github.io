@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <title>Интеграционные службы | Документация Эвотор</title>
     <base target="_self">
-    <meta name="description" content="Описание С помощью интеграционных служб вы можете подписываться на события при формировании чека и вносить свои изменения.  Note: Информацию о регистрации интеграционных служб... " />
+    <meta name="description" content="Описание С помощью интеграционных служб вы можете подписываться на события при формировании чека и вносить свои изменения.  Примечание: Информацию о регистрации интеграционных служб... " />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google" value="notranslate">
     <link rel="icon"  type="image/x-icon" href="favicon.ico">
@@ -61,16 +61,25 @@
                 
                 
                 
-                <li><a href="java_introduction.html">Java SDK</a></li>
-                
-                
-                
-                <li><a href="rn_gettingstarted.html">React Native</a></li>
-                
-                
-                
                 <!-- entries with drop-downs appear here -->
 
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">SDK cмарт-терминала<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="java_introduction.html">Java SDK</a></li>
+                        
+                        
+                        
+                        <li><a href="rn_reference.html">React Native SDK</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
                 
 
 </ul>
@@ -392,7 +401,7 @@ $('#toc2').on('click', 'a', function() {
 
 <p>С помощью интеграционных служб вы можете подписываться на события при формировании чека и вносить свои изменения.</p>
 
-<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Note:</b> Информацию о регистрации интеграционных служб смотрите в разделе <a href="./rn_reference_seviceapi.html">Инициализация служб</a>.</div>
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Информацию о регистрации интеграционных служб смотрите в разделе <a href="./rn_reference_seviceapi.html">Инициализация служб</a>.</div>
 
 <p>Изменения вносятся с помощью методов класса <code class="highlighter-rouge">IntegrationCallback</code>, экземпляр которого передаётся в каждый слушатель интеграционной службы.</p>
 
@@ -612,10 +621,11 @@ $('#toc2').on('click', 'a', function() {
               </div>
                  
 
-    <span class="githubButton">
+<p>
+    <span class="btn githubButton">
         <a target="_blank" href="https://github.com/votor/documentation/tree/master/_docs/evoreact/rn_reference_integrationapi.md" class="editButton noCrossRef"><i class="fa fa-github fa-lg"></i> Редактировать</a>
     </span>
-
+</p>
 
 
 
@@ -773,6 +783,7 @@ image: {
         });
     });
 </script>
+<script src="assets/js/tabs.js"></script>
 
 </body>
 
