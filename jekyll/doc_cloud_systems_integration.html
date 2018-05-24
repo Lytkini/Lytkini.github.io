@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
+  </script>
+    <meta charset="utf-8">
+    <title>Интеграция с облачными сервисами | Документация Эвотор</title>
+    <base target="_self">
+    <meta name="description" content="Облачная товароучётная система это сторонний сервис, который позволяет пользователям взаимодействовать с сущностями предприятия: магазинами, сотрудниками и товарами. Для пользователей Эвотора интеграция выглядит как приложение, которое можно купить в Магазине приложений.... " />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="icon"  type="image/x-icon" href="favicon.ico">
+
+
+
+    <!--stylesheets / link tags loaded here-->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/darkly.css" />
+    <link rel="stylesheet" href="assets/css/lighttheme-evoblue.css" />
+    <link rel="stylesheet" href="assets/css/customstyles.css" />
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/navgoco.jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target="nav#toc" data-offset="20">
+<div class="page-container">
+
+
+    <!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle topnav</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
+                <span class="sr-only">Toggle sidebar</span>
+                <span class="sidebarToggle fa fa-columns fa-2x"></span>
+            </button>
+                <a class="navbar-brand" href="index.html">
+                <img class="navbar-logo" src="images/logo_white.png"/>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                
+                <li><a href="https://api.evotor.ru/" class="noCrossRef">REST API Облака</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">SDK cмарт-терминала<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="java_introduction.html">Java SDK</a></li>
+                        
+                        
+                        
+                        <li><a href="rn_gettingstarted.html">React Native SDK</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+
+</ul>
+
+
+<ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                        <!--start search-->
+                        <div id="search-demo-container">
+                 <form action="search.html" method="get">
+                <input type="text" id="search-input" placeholder="Поиск по сайту ..." name="query">
+                </form>
+                </div>
+                        <!--end search-->
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <!-- /.container -->
+    </nav>
+    <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- sidebar -->
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                <!--<ul class="nav">-->
+                    <!--<li class="active"><a href="#">Home</a></li>-->
+                    <!--<li><a href="#">Link 1</a></li>-->
+                    <!--<li><a href="#">Link 2</a></li>-->
+                    <!--<li><a href="#">Link 3</a></li>-->
+                <!--</ul>-->
+                
+
+<div class="mydocsidebar">
+<div class="sidebar-inner">
+<div class="productTitle">Документация платформы Эвотор</div>
+<!-- search bar -->
+
+<div class="sidebarSearchBar">
+<form action="search-evomain.html" method="get">
+  <div class="input-group search">
+    <input type="text" id="search-box" name="query" class="form-control" placeholder="Поиск по разделу ...">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit" value="search">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+
+<!-- end search bar -->
+<ul id="docnavsidebar" class="docnav">
+    
+
+    
+    <li class="level1"><a href="#">Начало</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="/index.html">Введение</a></li>
+            
+            
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Описание бизнеса</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_egais.html">Продажа алкоголя</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Разработка</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_dev_introduction.html">Введение</a></li>
+            
+            
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Облако Эвотор</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_evotor_api_introduction.html">Введение</a></li>
+                    
+                    
+
+                    
+                    <li class="level3"><a class="subfoldersTitle" href="#">Авторизация</a>
+                        <ul style="display:none;">
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="doc_authorization.html">Авторизация запросов к Облаку Эвотор</a></li>
+                            
+                            
+
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="doc_evotor_api_authorization.html">Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис</a></li>
+                            
+                            
+
+                            
+                        </ul>
+                    </li>
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_example_calls.html">Примеры запросов к Облаку Эвотор</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_errors_returned.html">Ошибки, которые может возвращать сторонний сервис</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_smart_terminal_documents.html">Документы смарт-терминала</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Приложение на портале разработчика Эвотор</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_dev_site_introduction.html">Введение</a></li>
+                    
+                    
+
+                    
+                    <li class="level3"><a class="subfoldersTitle" href="#">Тестирование приложения</a>
+                        <ul style="display:none;">
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="doc_app_developer_mode.html">Включение режима разработчика</a></li>
+                            
+                            
+
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="doc_app_installation.html">Установка приложения</a></li>
+                            
+                            
+
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="doc_app_testing.html">Перевод приложения в тестирование</a></li>
+                            
+                            
+
+                            
+                        </ul>
+                    </li>
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_app_review.html">Черновики, модерация и публикация приложения</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Смарт-терминал</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="java_introduction.html">Java SDK</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="rn_introduction.html">React Native</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Примеры реализации</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_app_tutorial.html">Сборка и установка демонстрационного приложения</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_iframe_within_application_page.html">IFrame на странице приложения</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items open"><a href="doc_cloud_systems_integration.html">Интеграция с облачными сервисами</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Распространение и биллинг</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_about_billing.html">О биллинге</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_app_tariffication.html">О тарификации приложений</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_tariffs.html">Тарифы</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_payoff.html">Выплаты</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_subscriptions.html">Подписки</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">FAQ</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_faq.html">Часто задаваемые вопросы</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    </li>
+</ul>
+
+<hr class="resourceSeparator"></hr>
+<div class="relatedResources"></div>
+<ul id="entrypages">
+        
+    </li>
+</ul>
+</div>
+</div>
+<script>$("li.open").parents('li').toggleClass("open");</script>
+
+            </div>
+
+            <!-- main area -->
+            <div class="col-xs-12 col-sm-7">
+                
+                <h1>Интеграция с облачными сервисами</h1>
+                 
+                 <div class="toc-main-column">
+                 
+<style>
+div#toc2 >ul::before {
+    content: "Содержание";
+    margin-left: -20px;
+}
+</style>
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc2').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc2').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 80);
+  return false
+})
+
+});
+</script>
+
+<nav id="toc2"></nav>
+
+
+               </div>
+                <p>Облачная товароучётная система это сторонний сервис, который позволяет  пользователям взаимодействовать с сущностями предприятия: магазинами, сотрудниками и товарами.</p>
+
+<p>Для пользователей Эвотора интеграция выглядит как приложение, которое можно купить в Магазине приложений. Купленные приложения отображаются в Личном кабинете, в разделе <strong>Мои приложения</strong>.</p>
+
+<p>Перед интеграцией, убедитесь, что облачная  товароучётная система поддерживает адреса, указанные в таблице ниже.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">URL</th>
+      <th style="text-align: left">Назначение</th>
+      <th style="text-align: left">Авторизация</th>
+      <th style="text-align: left">Дополнительно</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">https://example.com/api/v1/user/create</td>
+      <td style="text-align: left">Эвотор отправляет по адресу регистрационные данные для создания новой учётной записи в облачной товароучётной системе.</td>
+      <td style="text-align: left">Товароучётная система авторизует запрос облака с помощью имени пользователя и пароля (basic-авторизация) или токена (bearer-авторизация).</td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">https://example.com/api/v1/user/verify</td>
+      <td style="text-align: left">Эвотор отправляет по адресу данные для авторизации пользователя в облачной товароучётной системе с помощью ранее созданной учётной записи.</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">https://example.com/api/v1/user/token</td>
+      <td style="text-align: left">Эвотор отправляет по адресу токен приложения, с помощью которого будет авторизовывать запросы от товароучётной системы.</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+    <tr>
+      <td style="text-align: left">https://example.com/api/v1/subscription/event</td>
+      <td style="text-align: left">Эвотор отправляет по адресу события сообщающие об изменении подписки на приложение.</td>
+      <td style="text-align: left"> </td>
+      <td style="text-align: left"> </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Информацию о сущностях пользователя Эвотор (магазинах, товарах, сотрудниках и смарт-терминалах), товароучётная система получает с помощью запросов к облаку Эвотор.</div>
+
+<h2 id="Покупка-и-активация-приложения">Покупка и активация приложения</h2>
+
+<p class="center-image"><img src="images/cloud_application_handling.png" alt="Схема покупки и активации приложения" title="Схема покупки и активации приложения" /></p>
+
+<h3 id="Этап-1">Этап 1</h3>
+
+<p>В магазине приложений, пользователь выбирает приложение и тариф, и авторизуется в стороннем сервисе одним из двух способов:</p>
+
+<ul>
+    <li>
+        <p>Если у пользователя нет учётной записи, Эвотор отправляет в сторонний сервис запрос <a href="https://goo.gl/lRg1ss"><strong>[POST] Регистрация учётной записи</strong></a>. Тело запроса содержит регистрационные данные, с помощью которых сторонний сервис создаёт учётную запись. Для авторизации своих запросов, Эвотор передаёт заголовок <code>Authorization</code>.</p>
+
+        <p>В ответе сервис передаёт облаку токен пользователя (токен, который Эвотор отправляет в <a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya">вебхуках-уведомлениях</a> и запросах от смарт-терминала).</p>
+    </li>
+
+    <li>
+        <p>Если у пользователя есть учётная запись, Эвотор отправляет в сторонний сервис запрос <a href="https://goo.gl/3lkKrL"><strong>[POST] Авторизация пользователя</strong></a>. Тело запроса содержит данные учётной записи пользоваетя в стороннем сервисе.  Для авторизации своих запросов, Эвотор передаёт заголовок <code>Authorization</code>.</p>
+
+        <p>Тело ответа должно содержать параметр <code>haslBilling</code>. В зависимости от значения параметра Эвотор определяет, кто выполняет биллинг пользователя:</p>
+
+        <ul>
+            <li>
+                <p>true – биллинг пользователя выполняет сторонний сервис;</p>
+            </li>
+
+            <li>
+                <p>false – биллинг пользователя выполняет Эвотор.</p>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<blockquote>
+    <p>Содержимое заголовка Authorization вы задаёте на <a href="https://dev.evotor.ru/">портале разработчиков</a>, при создании приложения. В зависимости от типа авторизации (basic или bearer), который поддерживает сторонний сервис, заголовок может содержать имя пользователя и пароль для доступа к стороннему сервису, закодированные в base64, или токен стороннего сервиса.</p>
+</blockquote>
+
+<h3 id="Этап-2">Этап 2</h3>
+
+<p>Эвотор передаёт в сторонний сервис событие <a href="https://api.evotor.ru/docs/#tag/Vebhuki-uvedomleniya%2Fpaths%2F~1partner.ru~1api~1v1~1subscription~1event%2Fpost"><strong>SSubscriptionCreated</strong></a>. Событие содержит поля, которые указывают на начало пробного периода использования приложения. В дальнейшем, при изменении подписки, Облако передаёт в сторонний сервис другие события биллинга.</p>
+
+<h2 id="Удаление-и-деактивация-приложения">Удаление и деактивация приложения</h2>
+
+<p>Эвотор останавливает интеграцию и удаляет приложение если:</p>
+
+<ul>
+  <li>пользователь самостоятельно удалил приложение в разделе <strong>Мои приложения</strong> в Личном кабинете пользователя Эвотор;</li>
+  <li>у пользователя недостаточно средств для продления подписки.
+В этом случае, за пять дней до отключения приложения, Эвотор начинает рассылать пользователю смс с предупреждением о скором отключении приложения.</li>
+</ul>
+
+<p>В обоих случаях, после удаления приложения, Эвотор передаёт в сторонний сервис запрос <a href="https://goo.gl/V71Guj"><strong>[POST] Активация / деактивация тарифа</strong></a> с состоянием <code class="highlighter-rouge">INACTIVE</code>.</p>
+
+<h3 id="Повторная-установка-приложения">Повторная установка приложения</h3>
+
+<p>При повторной установке приложения, Эвотор проверяет истёк пробный период использования приложения или нет. Так же, в зависимости от значения параметра <code class="highlighter-rouge">hasBilling</code>, возможно изменение стороны ответственной за биллинг пользователя.</p>
+
+<h3 id="Подробная-схема-покупки-и-установки-приложения">Подробная схема покупки и установки приложения</h3>
+
+<figure class="center-image"><a class="no_icon" target="_blank" href="images/market_app_install_schema.png"><img class="docimage center-image" src="images/market_app_install_schema.png" alt="" /></a><figcaption>Схема покупки и установки приложения</figcaption></figure>
+
+
+                <div class="toc-main-column">
+                
+
+              </div>
+                 
+
+<p>
+    <span class="btn githubButton">
+        <a target="_blank" href="https://github.com/evotor/documentation-v2/tree/develop/_docs/evomain/doc_cloud_systems_integration.md" class="editButton noCrossRef"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    </span>
+</p>
+
+
+
+
+            </div><!-- /.col-xs-12 main -->
+
+            <div class="col-xs-12 col-sm-2 right-lane">
+              <div class="inner">
+
+
+<style>
+nav#toc >ul::before, nav#toc2 >ul::before {
+    content: "Содержание";
+}
+</style>
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 80);
+  return false
+})
+
+});
+$(window).scroll(function(){
+  $('nav#toc')[0].scrollTop=$(window).scrollTop();
+});
+</script>
+
+<nav id="toc"></nav>
+
+
+</div>
+
+              
+
+        </div><!--/.row-->
+    </div><!--/.container-->
+</div><!--/.page-container-->
+
+
+
+<!--scripts loaded here-->
+<script src="assets/js/jquery.magnific-popup.js"></script>
+<script>
+$('.no_icon').magnificPopup({
+type: 'image',
+closeBtnInside: false,
+closeOnContentClick: false,
+
+callbacks: {
+  open: function() {
+    var self = this;
+    self.wrap.on('click.pinhandler', 'img', function() {
+      self.wrap.toggleClass('mfp-force-scrollbars');
+    });
+  },
+  beforeClose: function() {
+        this.wrap.off('click.pinhandler');
+    this.wrap.removeClass('mfp-force-scrollbars');
+  }
+},
+
+image: {
+  verticalFit: false
+}
+
+});
+</script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/toc.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script>
+    $( document ).ready(function() {
+        $("#docnavsidebar").navgoco({
+            caretHtml: '',
+            accordion: false,
+            openClass: 'open', // open
+            save: false, // leave false or nav highlighting doesn't work right
+            cookie: {
+                name: 'navgoco',
+                expires: false,
+                path: '/'
+            },
+            slide: {
+                duration: 300,
+                easing: 'swing'
+            }
+        });
+
+    });
+
+</script>
+<script src="assets/js/customscripts.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('[data-toggle=offcanvas]').click(function() {
+            $('.row-offcanvas').toggleClass('active');
+        });
+    });
+</script>
+<script src="assets/js/tabs.js"></script>
+<!-- Add copy to clipboard button -->
+<script>
+var allCodeBlocksElements = $( "pre.highlight" );
+
+allCodeBlocksElements.each(function(i) {
+  // add different id for each code block
+
+  // target
+  var currentId = "codeblock" + (i + 1);
+  $(this).attr('id', currentId);
+
+  //trigger
+  var clipButton = '<button class="btn" data-clipboard-target="#' + currentId + '"><img src="https://clipboardjs.com/assets/images/clippy.svg" width="13" alt="Copy to clipboard"></button>';
+  $(this).after(clipButton);
+  });
+
+new Clipboard('.btn');
+</script>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+ga('create', 'UA-84163503-7', 'auto');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+</script>
+
+
+
+
+</html>

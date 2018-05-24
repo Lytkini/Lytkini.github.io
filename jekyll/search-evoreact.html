@@ -17,13 +17,14 @@
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/sidebar.css" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/monokai.css" />
+    <link rel="stylesheet" href="assets/css/darkly.css" />
     <link rel="stylesheet" href="assets/css/lighttheme-evoblue.css" />
     <link rel="stylesheet" href="assets/css/customstyles.css" />
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/navgoco.jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
 
 </head>
 <body data-spy="scroll" data-target="nav#toc" data-offset="20">
@@ -74,7 +75,7 @@
                         
                         
                         
-                        <li><a href="rn_reference.html">React Native SDK</a></li>
+                        <li><a href="rn_gettingstarted.html">React Native SDK</a></li>
                         
                         
                     </ul>
@@ -144,7 +145,7 @@
 
             
             
-            <li class="level1items"><a href="rn_gettingstarted.html">Начало работы</a></li>
+            <li class="level1items"><a href="/rn_gettingstarted.html">Начало работы</a></li>
             
             
 
@@ -154,7 +155,7 @@
 
             
             
-            <li class="level1items"><a href="rn_errorshandling.html">Обработка ошибок</a></li>
+            <li class="level1items"><a href="/rn_errorshandling.html">Обработка ошибок</a></li>
             
             
 
@@ -164,7 +165,17 @@
 
             
             
-            <li class="level1items"><a href="rn_generatingsignedapk.html">Создание и установка подписанного APK</a></li>
+            <li class="level1items"><a href="/rn_generatingsignedapk.html">Создание и установка подписанного APK</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/rn_third_party_service_communication.html">Обмен сообщениями со сторонним сервисом</a></li>
             
             
 
@@ -183,7 +194,7 @@
 
             
             
-            <li class="level1items"><a href="rn_interactiontypes.html">Типы взаимодействия</a></li>
+            <li class="level1items"><a href="/rn_interactiontypes.html">Типы взаимодействия</a></li>
             
             
 
@@ -338,15 +349,6 @@
 
         
 
-    
-    <li class="level1items"><a class="noCrossRef" href="rn_examples.html">Примеры реализации</a>
-    
-        <ul style="display:none">
-            
-        </ul>
-
-        
-
     </li>
 </ul>
 
@@ -390,6 +392,58 @@
   window.store = {
       
           
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
+            
+          
+      
+    
             
           
       
@@ -882,22 +936,16 @@
     
             
           
+
+      "rn-third-party-service-communication-html": {
+        "title": "Обмен сообщениями со сторонним сервисом",
+        "tags": "[]",
+        "content": "Все запросы приложений к стороннему сервису проходят через Облако Эвотор:Для отправки запросов приложения могут использовать только 80 и 443 порт.Смарт-терминал не поддерживает протокол WebSocket. Важно: Установленные на смарт-терминале приложения могут обращаться только к сторонним сервисам. При этом, сторонние сервисы не должны быть в одной локальной сети со смарт-терминалом. Обращаться к REST API Облака Эвотор нельзя.Подготовка к отправке запросовДля отправки запросов требуется:  На портале dev.evotor.ru, указать список разрешённых URL, к которым может обращаться приложение.  Поддержать возможность обращения к сторонним сервисам в приложении.      Установить приложение в Магазине приложений.    В данном случае установка подразумевает активацию приложения в Личном кабинете и необходима, чтобы применились URL, которые вы указали на сайте разработчиков.   Примечание: Если вы разрабатываете Java-приложение, смотрите раздел “Обмен сообщениями Java-приложения и стороннего сервиса”.Настройка списка разрешённых URLЧтобы настроить список разрешённых URL:  На портале dev.evotor.ru выберите приложение, для которого требуется указать список разрешённых URL.  На вкладке Интеграция, установите флажок Проксирование запросов из приложения с терминала на ваш сервер (ver. 2) и укажите список URL, к которым может обращаться приложение.Примеры:  http://example\\.com/document.*\\.jsp\\?wildcard=\\*&amp;param=value.*;  https://another\\.host\\.com/document.*\\.jsp;  https://another\\.host\\.com/.*. Совет: Чтобы задавать маски веб-сайтов используйте регулярные выражения.После создания списка и установки приложения в Магазине приложений, обмен сообщениями происходит по описанному ниже процессу.Шаг 1. Приложение отправляет HTTP-сообщениеПриложение создаёт HTTP-сообщение и отправляет его в сторонний сервис. Вы можете воспользоваться любым удобным способом отправки сообщения.Независимо от версии проксирования SDK смарт-терминала и Облако Эвотор поддерживают следующие HTTP-методы:  GET;  POST;  PUT;  DELETE.Эвотор гарантирует поддержку следующих MIME-типов:  application/x-www-form-urlencoded  application/json  application/xml  text/*  image/*  multipart/form-dataПоддержка других MIME-типов не гарантируется.Шаг 2. Смарт-терминал передаёт сообщение в облакоТерминал перехватывает сообщение и передаёт его в облако Эвотор.Заголовки, которые терминал добавляет к запросу вашего приложения:  X-Device-ID  X-Device-IMEI  X-User-ID  X-Signed-Url  X-Shop-UUID  X-Device-Salt  X-Device-Algorithm  X-Device-Date  X-Secret-Device-ID  X-OAuth-Client-ID  X-Device-UUID  X-Evotor-*  Expect  Host  Transfer-Encoding Примечание: Убедитесь, что ваше приложение не использует перечисленные заголовки. В противном случае, смарт-терминал перезапишет их содержимое.Шаг 3. Облако передаёт сообщение адресатуОблако удаляет служебные заголовки, добавляет свои заголовки и передаёт сообщение адресату.Заголовки, которые добавляет облако:  X-Evotor-Store-Uuid – содержит идентификатор магазина в формате uuid4, к которому привязан терминал.  X-Evotor-Device-UUID – содержит идентификатор устройства в формате uuid4, полученный по запросу к /api/v1/inventories/devices.  X-Evotor-User-Id – содержит идентификатор пользователя в Облаке Эвотор.  Authorization – содержит токен пользователя приложения стороннего сервиса. Токен необходим для bearer-авторизации.Сторонний сервер получает сообщение от облака Эвотор и определяет отправителя с помощью заголовка Authorization.Шаг 4. Ответ стороннего сервисаОтвет стороннего сервиса передаётся приложению в обратном порядке.Если вы используете проксирование ver.2 требования к содержимому ответа отсутствуют.Если вы используете проксирование ver.1 ответы стороннего сервиса должны содержать объекты:  status – содержит HTTP-код состояния.  body – содержит тело запроса. Совет: За проксирование отвечает параметр Проксирование запросов из приложения с терминала на ваш сервер на вкладке Интеграция вашего приложения, на сайте dev.evotor.ru.",
+        "url": "rn_third_party_service_communication.html",
+        "product": ""
+      }
+      ,
       
-    
-            
-          
-      
-    
-            
-          
-      
-    
-            
-          
-      
-    
-            
-          
       
     
             
@@ -1015,6 +1063,24 @@ image: {
     });
 </script>
 <script src="assets/js/tabs.js"></script>
+<!-- Add copy to clipboard button -->
+<script>
+var allCodeBlocksElements = $( "pre.highlight" );
+
+allCodeBlocksElements.each(function(i) {
+  // add different id for each code block
+
+  // target
+  var currentId = "codeblock" + (i + 1);
+  $(this).attr('id', currentId);
+
+  //trigger
+  var clipButton = '<button class="btn" data-clipboard-target="#' + currentId + '"><img src="https://clipboardjs.com/assets/images/clippy.svg" width="13" alt="Copy to clipboard"></button>';
+  $(this).after(clipButton);
+  });
+
+new Clipboard('.btn');
+</script>
 
 </body>
 

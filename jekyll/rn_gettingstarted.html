@@ -17,13 +17,14 @@
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/sidebar.css" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/monokai.css" />
+    <link rel="stylesheet" href="assets/css/darkly.css" />
     <link rel="stylesheet" href="assets/css/lighttheme-evoblue.css" />
     <link rel="stylesheet" href="assets/css/customstyles.css" />
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/navgoco.jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
 
 </head>
 <body data-spy="scroll" data-target="nav#toc" data-offset="20">
@@ -74,7 +75,7 @@
                         
                         
                         
-                        <li><a href="rn_reference.html">React Native SDK</a></li>
+                        <li class="dropdownActive"><a href="rn_gettingstarted.html">React Native SDK</a></li>
                         
                         
                     </ul>
@@ -154,7 +155,7 @@
 
             
             
-            <li class="level1items"><a href="rn_errorshandling.html">Обработка ошибок</a></li>
+            <li class="level1items"><a href="/rn_errorshandling.html">Обработка ошибок</a></li>
             
             
 
@@ -164,7 +165,17 @@
 
             
             
-            <li class="level1items"><a href="rn_generatingsignedapk.html">Создание и установка подписанного APK</a></li>
+            <li class="level1items"><a href="/rn_generatingsignedapk.html">Создание и установка подписанного APK</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/rn_third_party_service_communication.html">Обмен сообщениями со сторонним сервисом</a></li>
             
             
 
@@ -183,7 +194,7 @@
 
             
             
-            <li class="level1items"><a href="rn_interactiontypes.html">Типы взаимодействия</a></li>
+            <li class="level1items"><a href="/rn_interactiontypes.html">Типы взаимодействия</a></li>
             
             
 
@@ -333,15 +344,6 @@
 
             
 
-            
-        </ul>
-
-        
-
-    
-    <li class="level1items"><a class="noCrossRef" href="rn_examples.html">Примеры реализации</a>
-    
-        <ul style="display:none">
             
         </ul>
 
@@ -590,42 +592,6 @@ buildToolsVersion "25.0.3"
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
 
 
@@ -634,7 +600,7 @@ buildToolsVersion "25.0.3"
 
 <p>
     <span class="btn githubButton">
-        <a target="_blank" href="https://github.com/votor/documentation/tree/master/_docs/evoreact/rn_gettingstarted.md" class="editButton noCrossRef"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+        <a target="_blank" href="https://github.com/evotor/documentation-v2/tree/develop/_docs/evoreact/rn_gettingstarted.md" class="editButton noCrossRef"><i class="fa fa-github fa-lg"></i> Редактировать</a>
     </span>
 </p>
 
@@ -682,42 +648,6 @@ $(window).scroll(function(){
 
 <div class="tags">
 <div class="tags_title">Теги</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -795,6 +725,24 @@ image: {
     });
 </script>
 <script src="assets/js/tabs.js"></script>
+<!-- Add copy to clipboard button -->
+<script>
+var allCodeBlocksElements = $( "pre.highlight" );
+
+allCodeBlocksElements.each(function(i) {
+  // add different id for each code block
+
+  // target
+  var currentId = "codeblock" + (i + 1);
+  $(this).attr('id', currentId);
+
+  //trigger
+  var clipButton = '<button class="btn" data-clipboard-target="#' + currentId + '"><img src="https://clipboardjs.com/assets/images/clippy.svg" width="13" alt="Copy to clipboard"></button>';
+  $(this).after(clipButton);
+  });
+
+new Clipboard('.btn');
+</script>
 
 </body>
 

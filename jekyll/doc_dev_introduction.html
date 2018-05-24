@@ -18,13 +18,14 @@
     <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/sidebar.css" />
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/monokai.css" />
+    <link rel="stylesheet" href="assets/css/darkly.css" />
     <link rel="stylesheet" href="assets/css/lighttheme-evoblue.css" />
     <link rel="stylesheet" href="assets/css/customstyles.css" />
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
 
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/navgoco.jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
 
 </head>
 <body data-spy="scroll" data-target="nav#toc" data-offset="20">
@@ -75,7 +76,7 @@
                         
                         
                         
-                        <li><a href="rn_reference.html">React Native SDK</a></li>
+                        <li><a href="rn_gettingstarted.html">React Native SDK</a></li>
                         
                         
                     </ul>
@@ -145,7 +146,7 @@
 
             
             
-            <li class="level1items"><a href="index.html">Введение</a></li>
+            <li class="level1items"><a href="/index.html">Введение</a></li>
             
             
 
@@ -158,34 +159,6 @@
                     
                     
                     <li class="level2items"><a href="doc_egais.html">Продажа алкоголя</a></li>
-                    
-                    
-
-                    
-
-                    
-                </ul>
-            </li>
-
-            
-
-            <li class="level2"><a class="subfoldersTitle" href="#">Описание инфраструктуры</a>
-                <ul style="display:none;">
-                    
-
-                    
-                    
-                    <li class="level2items"><a href="sample1.html">Взаимодействие Облака Эвотор и смарт-терминала</a></li>
-                    
-                    
-
-                    
-
-                    
-
-                    
-                    
-                    <li class="level2items"><a href="sample1.html">Взаимодействие Облака Эвотор и сторонних систем</a></li>
                     
                     
 
@@ -222,28 +195,18 @@
 
                     
                     
-                    <li class="level2items"><a href="sublevel1.html">Авторизация</a></li>
+                    <li class="level2items"><a href="doc_evotor_api_introduction.html">Введение</a></li>
                     
                     
 
                     
-
-                    
-
-                    
-                    
-                    <li class="level2items"><a href="sublevel2.html">Ошибки</a></li>
-                    
-                    
-
-                    
-                    <li class="level3"><a class="subfoldersTitle" href="#">Third level deep</a>
+                    <li class="level3"><a class="subfoldersTitle" href="#">Авторизация</a>
                         <ul style="display:none;">
                             
 
                             
                             
-                            <li class="level3items"><a href="subsublevel1.html">Sub-sublevel 1</a></li>
+                            <li class="level3items"><a href="doc_authorization.html">Авторизация запросов к Облаку Эвотор</a></li>
                             
                             
 
@@ -251,15 +214,7 @@
 
                             
                             
-                            <li class="level3items"><a href="subsublevel2.html">Sub-sublevel 2</a></li>
-                            
-                            
-
-                            
-
-                            
-                            
-                            <li class="level3items"><a href="subsublevel3.html">Sub-sublevel 3</a></li>
+                            <li class="level3items"><a href="doc_evotor_api_authorization.html">Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис</a></li>
                             
                             
 
@@ -270,12 +225,42 @@
                     
 
                     
+
+                    
+                    
+                    <li class="level2items"><a href="doc_example_calls.html">Примеры запросов к Облаку Эвотор</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_errors_returned.html">Ошибки, которые может возвращать сторонний сервис</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_smart_terminal_documents.html">Документы смарт-терминала</a></li>
+                    
+                    
+
+                    
+
+                    
                 </ul>
             </li>
 
             
 
-            <li class="level2"><a class="subfoldersTitle" href="#">Портал разработчика Эвотор</a>
+            <li class="level2"><a class="subfoldersTitle" href="#">Приложение на портале разработчика Эвотор</a>
                 <ul style="display:none;">
                     
 
@@ -317,18 +302,14 @@
                     </li>
 
                     
-                    <li class="level3"><a class="subfoldersTitle" href="#">Публикация приложения</a>
-                        <ul style="display:none;">
-                            
-                        </ul>
-                    </li>
 
                     
-                    <li class="level3"><a class="subfoldersTitle" href="#">Статистика</a>
-                        <ul style="display:none;">
-                            
-                        </ul>
-                    </li>
+
+                    
+                    
+                    <li class="level2items"><a href="doc_app_review.html">Черновики, модерация и публикация приложения</a></li>
+                    
+                    
 
                     
 
@@ -366,20 +347,108 @@
 
             
 
+            <li class="level2"><a class="subfoldersTitle" href="#">Примеры реализации</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_app_tutorial.html">Сборка и установка демонстрационного приложения</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_iframe_within_application_page.html">IFrame на странице приложения</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_cloud_systems_integration.html">Интеграция с облачными сервисами</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
             
         </ul>
 
         
 
     
-    <li class="level1"><a href="#">Распространение</a>
+    <li class="level1"><a href="#">Распространение и биллинг</a>
     
         <ul style="display:none">
             
 
             
             
-            <li class="level1items"><a href="sample1.html">Биллинг</a></li>
+            <li class="level1items"><a href="/doc_about_billing.html">О биллинге</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_app_tariffication.html">О тарификации приложений</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_tariffs.html">Тарифы</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_payoff.html">Выплаты</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_subscriptions.html">Подписки</a></li>
             
             
 
@@ -398,7 +467,17 @@
 
             
             
-            <li class="level1items"><a href="sample2.html">Часто задаваемые вопросы</a></li>
+            <li class="level1items"><a href="/doc_faq.html">Часто задаваемые вопросы</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
             
             
 
@@ -413,12 +492,8 @@
 </ul>
 
 <hr class="resourceSeparator"></hr>
-<div class="relatedResources">Другие источники</div>
+<div class="relatedResources"></div>
 <ul id="entrypages">
-        
-        <li><a class="noCrossRef" href="http://wiki.evotor.ru/">Wiki</a></li>
-        
-        <li><a class="noCrossRef" href="http://github.com/evotor">Github</a></li>
         
     </li>
 </ul>
@@ -473,7 +548,7 @@ $('#toc2').on('click', 'a', function() {
 
 <p>
     <span class="btn githubButton">
-        <a target="_blank" href="https://github.com/votor/documentation/tree/master/_docs/evomain/doc_dev_introduction.md" class="editButton noCrossRef"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+        <a target="_blank" href="https://github.com/evotor/documentation-v2/tree/develop/_docs/evomain/doc_dev_introduction.md" class="editButton noCrossRef"><i class="fa fa-github fa-lg"></i> Редактировать</a>
     </span>
 </p>
 
@@ -586,6 +661,24 @@ image: {
     });
 </script>
 <script src="assets/js/tabs.js"></script>
+<!-- Add copy to clipboard button -->
+<script>
+var allCodeBlocksElements = $( "pre.highlight" );
+
+allCodeBlocksElements.each(function(i) {
+  // add different id for each code block
+
+  // target
+  var currentId = "codeblock" + (i + 1);
+  $(this).attr('id', currentId);
+
+  //trigger
+  var clipButton = '<button class="btn" data-clipboard-target="#' + currentId + '"><img src="https://clipboardjs.com/assets/images/clippy.svg" width="13" alt="Copy to clipboard"></button>';
+  $(this).after(clipButton);
+  });
+
+new Clipboard('.btn');
+</script>
 
 </body>
 

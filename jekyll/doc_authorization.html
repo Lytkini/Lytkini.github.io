@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
+  </script>
+    <meta charset="utf-8">
+    <title>Авторизация запросов к Облаку Эвотор | Документация Эвотор</title>
+    <base target="_self">
+    <meta name="description" content="Все запросы к Облаку Эвотор осуществляются в рамках приложения. После установки приложения в Личном кабинете, Облако присваивает ему токен Облака Эвотор, уникальный для пары приложение-пользователь. Передавайте этот токен в... " />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="icon"  type="image/x-icon" href="favicon.ico">
+
+
+
+    <!--stylesheets / link tags loaded here-->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/darkly.css" />
+    <link rel="stylesheet" href="assets/css/lighttheme-evoblue.css" />
+    <link rel="stylesheet" href="assets/css/customstyles.css" />
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/navgoco.jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target="nav#toc" data-offset="20">
+<div class="page-container">
+
+
+    <!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle topnav</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
+                <span class="sr-only">Toggle sidebar</span>
+                <span class="sidebarToggle fa fa-columns fa-2x"></span>
+            </button>
+                <a class="navbar-brand" href="index.html">
+                <img class="navbar-logo" src="images/logo_white.png"/>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                
+                <li><a href="https://api.evotor.ru/" class="noCrossRef">REST API Облака</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">SDK cмарт-терминала<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="java_introduction.html">Java SDK</a></li>
+                        
+                        
+                        
+                        <li><a href="rn_gettingstarted.html">React Native SDK</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+
+</ul>
+
+
+<ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                        <!--start search-->
+                        <div id="search-demo-container">
+                 <form action="search.html" method="get">
+                <input type="text" id="search-input" placeholder="Поиск по сайту ..." name="query">
+                </form>
+                </div>
+                        <!--end search-->
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <!-- /.container -->
+    </nav>
+    <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- sidebar -->
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                <!--<ul class="nav">-->
+                    <!--<li class="active"><a href="#">Home</a></li>-->
+                    <!--<li><a href="#">Link 1</a></li>-->
+                    <!--<li><a href="#">Link 2</a></li>-->
+                    <!--<li><a href="#">Link 3</a></li>-->
+                <!--</ul>-->
+                
+
+<div class="mydocsidebar">
+<div class="sidebar-inner">
+<div class="productTitle">Документация платформы Эвотор</div>
+<!-- search bar -->
+
+<div class="sidebarSearchBar">
+<form action="search-evomain.html" method="get">
+  <div class="input-group search">
+    <input type="text" id="search-box" name="query" class="form-control" placeholder="Поиск по разделу ...">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit" value="search">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+
+<!-- end search bar -->
+<ul id="docnavsidebar" class="docnav">
+    
+
+    
+    <li class="level1"><a href="#">Начало</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="/index.html">Введение</a></li>
+            
+            
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Описание бизнеса</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_egais.html">Продажа алкоголя</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Разработка</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_dev_introduction.html">Введение</a></li>
+            
+            
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Облако Эвотор</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_evotor_api_introduction.html">Введение</a></li>
+                    
+                    
+
+                    
+                    <li class="level3"><a class="subfoldersTitle" href="#">Авторизация</a>
+                        <ul style="display:none;">
+                            
+
+                            
+                            
+                            <li class="level3items open"><a href="doc_authorization.html">Авторизация запросов к Облаку Эвотор</a></li>
+                            
+                            
+
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="doc_evotor_api_authorization.html">Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис</a></li>
+                            
+                            
+
+                            
+                        </ul>
+                    </li>
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_example_calls.html">Примеры запросов к Облаку Эвотор</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_errors_returned.html">Ошибки, которые может возвращать сторонний сервис</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_smart_terminal_documents.html">Документы смарт-терминала</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Приложение на портале разработчика Эвотор</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_dev_site_introduction.html">Введение</a></li>
+                    
+                    
+
+                    
+                    <li class="level3"><a class="subfoldersTitle" href="#">Тестирование приложения</a>
+                        <ul style="display:none;">
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="doc_app_developer_mode.html">Включение режима разработчика</a></li>
+                            
+                            
+
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="doc_app_installation.html">Установка приложения</a></li>
+                            
+                            
+
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="doc_app_testing.html">Перевод приложения в тестирование</a></li>
+                            
+                            
+
+                            
+                        </ul>
+                    </li>
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_app_review.html">Черновики, модерация и публикация приложения</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Смарт-терминал</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="java_introduction.html">Java SDK</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="rn_introduction.html">React Native</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Примеры реализации</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_app_tutorial.html">Сборка и установка демонстрационного приложения</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_iframe_within_application_page.html">IFrame на странице приложения</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_cloud_systems_integration.html">Интеграция с облачными сервисами</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Распространение и биллинг</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_about_billing.html">О биллинге</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_app_tariffication.html">О тарификации приложений</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_tariffs.html">Тарифы</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_payoff.html">Выплаты</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_subscriptions.html">Подписки</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">FAQ</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_faq.html">Часто задаваемые вопросы</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    </li>
+</ul>
+
+<hr class="resourceSeparator"></hr>
+<div class="relatedResources"></div>
+<ul id="entrypages">
+        
+    </li>
+</ul>
+</div>
+</div>
+<script>$("li.open").parents('li').toggleClass("open");</script>
+
+            </div>
+
+            <!-- main area -->
+            <div class="col-xs-12 col-sm-7">
+                
+                <h1>Авторизация запросов к Облаку Эвотор</h1>
+                 
+                 <div class="toc-main-column">
+                 
+<style>
+div#toc2 >ul::before {
+    content: "Содержание";
+    margin-left: -20px;
+}
+</style>
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc2').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc2').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 80);
+  return false
+})
+
+});
+</script>
+
+<nav id="toc2"></nav>
+
+
+               </div>
+                <p>Все запросы к Облаку Эвотор осуществляются в рамках приложения. После установки приложения в <a href="https://market.evotor.ru/#/store/auth/login">Личном кабинете</a>, Облако присваивает ему <em>токен Облака Эвотор</em>, уникальный для пары приложение-пользователь.</p>
+
+<p>Передавайте этот токен в заголовке <code class="highlighter-rouge">X-Authorization</code>, чтобы авторизовать <a href="./doc_example_calls.html#evotorApi">свои запросы к Облаку</a>.</p>
+
+<h2 id="Как-получить-токен-Облака-Эвотор">Как получить токен Облака Эвотор</h2>
+
+<p>Вы можете получить токен Облака Эвотор:</p>
+
+<ul>
+  <li><a href="./doc_authorization.html#byhand">вручную</a>;</li>
+  <li>
+    <p><a href="./doc_authorization.html#automated">автоматически</a>.</p>
+
+    <p>Для автоматического получения токена Облака Эвотор вам потребуется поддержать собственный сервис. В документации такой сервис называется <em>сторонним</em>.</p>
+  </li>
+</ul>
+
+<h3 id="byhand">Получение токена вручную</h3>
+
+<p><em>Чтобы получить токен Облака Эвотор вручную:</em></p>
+
+<ol>
+  <li>
+    <p>Войдите в <a href="https://dev.evotor.ru/#/store/apps">Личный кабинет</a> на сайте разработчиков и выберите <a href="./doc_evotor_api_introduction.html">созданное приложение</a>.</p>
+  </li>
+  <li>
+    <p>Выберите необходимый черновик и перейдите на вкладку <strong>Интеграция</strong>.</p>
+  </li>
+  <li>
+    <p>В разделе <strong>Настройки приложения</strong>, включите опцию <strong>Создать вкладку “Настройки” на странице приложения</strong>.</p>
+
+    <p>Опция добавляет вкладку <strong>Настройки</strong> для приложения установленного в <a href="https://market.evotor.ru/#/store/auth/login">Личном кабинете пользователя Эвотор</a>.</p>
+  </li>
+  <li>
+    <p>Нажмите кнопку <strong>Текстовое поле</strong>, в поле <strong>Значение поля</strong> укажите <code class="highlighter-rouge">${token}</code>.</p>
+  </li>
+  <li>
+    <p>Сохраните изменения, вернитесь к списку черновиков приложения и переведите необходимый черновик в тестирование.</p>
+  </li>
+  <li>
+    <p>Войдите в <a href="https://market.evotor.ru/#/store/auth/login">Личный кабинет</a> в Магазине приложений.</p>
+  </li>
+  <li>
+    <p>На вкладке <strong>Мои приложения</strong>, выберите приложение, в котором были сделаны изменения.</p>
+  </li>
+  <li>
+    <p>Перейдите на вкладку <strong>Настройки</strong>.</p>
+
+    <p>На вкладке отображается поле, которое содержит токен Облака Эвотор, необходимый для авторизации запросов к Облаку. Передавайте токен в заголовке <code class="highlighter-rouge">X-Authorization</code>.</p>
+
+    <p class="center-image"><img src="./images/app_token.png" alt="" /></p>
+  </li>
+</ol>
+
+<h3 id="automated">Автоматическое получение токена</h3>
+
+<p>Автоматически вы можете получить токен Облака Эвотор одним из двух способов:</p>
+
+<ul>
+  <li>
+    <p>На адрес <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1token%2Fpost"><code class="highlighter-rouge">partner.ru/api/v1/user/token</code></a>;</p>
+  </li>
+  <li>
+    <p>В GET-параметре <code class="highlighter-rouge">token</code> веб-адреса iframe-приложения.</p>
+  </li>
+</ul>
+
+<p><em>Чтобы получить токен Облака Эвотор на адрес <code class="highlighter-rouge">partner.ru/api/v1/user/token</code>:</em></p>
+
+<ol>
+  <li>
+    <p>Поддержите в своём сервисе адрес <code class="highlighter-rouge">partner.ru/api/v1/user/token</code>.</p>
+
+    <p>На указанный адрес Облако передаёт токен Облака Эвотор после его установки в <a href="https://market.evotor.ru/#/store/auth/login">Личном кабинете</a> пользователя. Запросы облака необходимо авторизовать с помощью <a href="https://developer.evotor.ru/docs/doc_evotor_api_authorization.html#serverToken"><em>токена приложения стороннего сервиса</em></a>.</p>
+
+    <div class="alert alert-info" role="alert"><i class="fa fa-info-circle"></i> <b>Примечание:</b> Токен приложения стороннего сервиса – токен, с помощью которого ваш сервис авторизует запросы от Облака Эвотор</div>
+  </li>
+  <li>
+    <p>Войдите в <a href="https://dev.evotor.ru/#/store/apps">Личный кабинет</a> на сайте разработчиков и выберите <a href="./doc_evotor_api_introduction.html">созданное приложение</a>.</p>
+  </li>
+  <li>
+    <p>Выберите необходимый черновик и перейдите на вкладку <strong>Интеграция</strong>.</p>
+  </li>
+  <li>
+    <p>Включите опцию <strong>Токен приложения для доступа к REST API Эвотор</strong>.</p>
+  </li>
+  <li>
+    <p>В поле <strong>URL</strong>, укажите адрес вида <code class="highlighter-rouge">partner.ru/api/v1/user/token</code>, на который Облако будет передавать токен Облака Эвотор.</p>
+  </li>
+  <li>
+    <p>Выберите тип авторизации, с помощью которого ваш сервис будет авторизовать <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1token%2Fpost">передачу токена Облака Эвотор</a>.</p>
+
+    <ul>
+      <li>
+        <p>Если вы выбрали <strong>С помощью токена</strong>. В поле <strong>Токен</strong>, укажите токен приложения стороннего сервиса в формате <code class="highlighter-rouge">uuid4</code>.</p>
+
+        <p>Облако передаёт токен в заголовке <code class="highlighter-rouge">Authorization</code>.</p>
+      </li>
+      <li>
+        <p>Если вы выбрали <strong>Запрос логина и пароля ( Basic Auth )</strong>. В полях <strong>Логин</strong> и <strong>Пароль</strong> укажите данные для доступа к стороннему сервису.</p>
+
+        <p>Облако кодирует логин и пароль с помощью base64 и передаёт закодированные данные в заголовке <code class="highlighter-rouge">Authorization</code>.</p>
+      </li>
+    </ul>
+
+    <p>Подробное описание запроса на передачу токена Облака Эвотор вы найдёте в <a href="https://api.evotor.ru/docs/#tag/Vebhuki-zaprosy%2Fpaths%2F~1partner.ru~1api~1v1~1user~1token%2Fpost">Справочнике API</a>. Полученный токен передавайте в заголовке <code class="highlighter-rouge">X-Authorization</code>, в своих запросах к Облаку.</p>
+  </li>
+  <li>
+    <p>Сохраните изменения, вернитесь к списку черновиков приложения и переведите необходимый черновик в тестирование.</p>
+  </li>
+</ol>
+
+<p>После того, как пользователь Магазина приложений установит ваше приложение, Облако будет передавать в ваш сервис токен Облака Эвотор.</p>
+
+<p><em>Чтобы получить токен Облака Эвотор в GET-параметре <code class="highlighter-rouge">token</code> веб-адреса iframe-приложения:</em></p>
+
+<ol>
+  <li>
+    <p>Войдите в <a href="https://dev.evotor.ru/#/store/apps">Личный кабинет</a> на сайте разработчиков и выберите <a href="./doc_evotor_api_introduction.html">созданное приложение</a>.</p>
+  </li>
+  <li>
+    <p>Выберите необходимый черновик и перейдите на вкладку <strong>Интеграция</strong>.</p>
+  </li>
+  <li>
+    <p>В разделе <strong>Настройки приложения</strong>, включите опцию <strong>Создать вкладку “Настройки” на странице приложения</strong>.</p>
+  </li>
+  <li>
+    <p>Нажмите на <strong>iframe</strong> и укажите необходимые поля.</p>
+  </li>
+  <li>
+    <p>Сохраните изменения, вернитесь к списку черновиков приложения и переведите необходимый черновик в тестирование.</p>
+  </li>
+</ol>
+
+<p>Iframe будет добавлен на вкладку <strong>Настройки</strong>, на странице установленного приложения. Облако передаёт токен Облака Эвотор в GET-параметре <code class="highlighter-rouge">token</code> веб-адреса iframe:</p>
+
+<pre><code class="language-curl">https://partner.org/#/?uid=&lt;example&gt;&amp;token=string
+</code></pre>
+
+<figure class="center-image"><a class="no_icon" target="_blank" href="images/iframe_token.png"><img class="docimage center-image" src="images/iframe_token.png" alt="" /></a><figcaption>Токен из iframe</figcaption></figure>
+
+
+                <div class="toc-main-column">
+                
+
+              </div>
+                 
+
+<p>
+    <span class="btn githubButton">
+        <a target="_blank" href="https://github.com/evotor/documentation-v2/tree/develop/_docs/evomain/doc_authorization.md" class="editButton noCrossRef"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    </span>
+</p>
+
+
+
+
+            </div><!-- /.col-xs-12 main -->
+
+            <div class="col-xs-12 col-sm-2 right-lane">
+              <div class="inner">
+
+
+<style>
+nav#toc >ul::before, nav#toc2 >ul::before {
+    content: "Содержание";
+}
+</style>
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 80);
+  return false
+})
+
+});
+$(window).scroll(function(){
+  $('nav#toc')[0].scrollTop=$(window).scrollTop();
+});
+</script>
+
+<nav id="toc"></nav>
+
+
+</div>
+
+              
+
+        </div><!--/.row-->
+    </div><!--/.container-->
+</div><!--/.page-container-->
+
+
+
+<!--scripts loaded here-->
+<script src="assets/js/jquery.magnific-popup.js"></script>
+<script>
+$('.no_icon').magnificPopup({
+type: 'image',
+closeBtnInside: false,
+closeOnContentClick: false,
+
+callbacks: {
+  open: function() {
+    var self = this;
+    self.wrap.on('click.pinhandler', 'img', function() {
+      self.wrap.toggleClass('mfp-force-scrollbars');
+    });
+  },
+  beforeClose: function() {
+        this.wrap.off('click.pinhandler');
+    this.wrap.removeClass('mfp-force-scrollbars');
+  }
+},
+
+image: {
+  verticalFit: false
+}
+
+});
+</script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/toc.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script>
+    $( document ).ready(function() {
+        $("#docnavsidebar").navgoco({
+            caretHtml: '',
+            accordion: false,
+            openClass: 'open', // open
+            save: false, // leave false or nav highlighting doesn't work right
+            cookie: {
+                name: 'navgoco',
+                expires: false,
+                path: '/'
+            },
+            slide: {
+                duration: 300,
+                easing: 'swing'
+            }
+        });
+
+    });
+
+</script>
+<script src="assets/js/customscripts.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('[data-toggle=offcanvas]').click(function() {
+            $('.row-offcanvas').toggleClass('active');
+        });
+    });
+</script>
+<script src="assets/js/tabs.js"></script>
+<!-- Add copy to clipboard button -->
+<script>
+var allCodeBlocksElements = $( "pre.highlight" );
+
+allCodeBlocksElements.each(function(i) {
+  // add different id for each code block
+
+  // target
+  var currentId = "codeblock" + (i + 1);
+  $(this).attr('id', currentId);
+
+  //trigger
+  var clipButton = '<button class="btn" data-clipboard-target="#' + currentId + '"><img src="https://clipboardjs.com/assets/images/clippy.svg" width="13" alt="Copy to clipboard"></button>';
+  $(this).after(clipButton);
+  });
+
+new Clipboard('.btn');
+</script>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+ga('create', 'UA-84163503-7', 'auto');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+</script>
+
+
+
+
+</html>

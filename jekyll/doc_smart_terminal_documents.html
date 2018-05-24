@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W4CBFKS');
+  </script>
+    <meta charset="utf-8">
+    <title>Документы смарт-терминала | Документация Эвотор</title>
+    <base target="_self">
+    <meta name="description" content="При организации товарно-денежных операций, смарт-терминал создаёт и обменивается документами. Документ – JSON-файл с информацией о транзакциях (действиях), выполненных на смарт-терминале, например, открытие или закрытие смены, продажа товара. Как и другая... " />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" value="notranslate">
+    <link rel="icon"  type="image/x-icon" href="favicon.ico">
+
+
+
+    <!--stylesheets / link tags loaded here-->
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/darkly.css" />
+    <link rel="stylesheet" href="assets/css/lighttheme-evoblue.css" />
+    <link rel="stylesheet" href="assets/css/customstyles.css" />
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/navgoco.jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+
+</head>
+<body data-spy="scroll" data-target="nav#toc" data-offset="20">
+<div class="page-container">
+
+
+    <!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle topnav</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <button type="button" class="navbar-toggle toggle-sidebar-button"  data-toggle="offcanvas" data-target=".sidebar-nav">
+                <span class="sr-only">Toggle sidebar</span>
+                <span class="sidebarToggle fa fa-columns fa-2x"></span>
+            </button>
+                <a class="navbar-brand" href="index.html">
+                <img class="navbar-logo" src="images/logo_white.png"/>
+            </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                
+                <li><a href="https://api.evotor.ru/" class="noCrossRef">REST API Облака</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">SDK cмарт-терминала<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        
+                        
+                        <li><a href="java_introduction.html">Java SDK</a></li>
+                        
+                        
+                        
+                        <li><a href="rn_gettingstarted.html">React Native SDK</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+
+</ul>
+
+
+<ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                        <!--start search-->
+                        <div id="search-demo-container">
+                 <form action="search.html" method="get">
+                <input type="text" id="search-input" placeholder="Поиск по сайту ..." name="query">
+                </form>
+                </div>
+                        <!--end search-->
+                    </li>
+                </ul>
+            </div>
+            </div>
+            <!-- /.container -->
+    </nav>
+    <div class="container">
+        <div class="row row-offcanvas row-offcanvas-left">
+
+            <!-- sidebar -->
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+                <!--<ul class="nav">-->
+                    <!--<li class="active"><a href="#">Home</a></li>-->
+                    <!--<li><a href="#">Link 1</a></li>-->
+                    <!--<li><a href="#">Link 2</a></li>-->
+                    <!--<li><a href="#">Link 3</a></li>-->
+                <!--</ul>-->
+                
+
+<div class="mydocsidebar">
+<div class="sidebar-inner">
+<div class="productTitle">Документация платформы Эвотор</div>
+<!-- search bar -->
+
+<div class="sidebarSearchBar">
+<form action="search-evomain.html" method="get">
+  <div class="input-group search">
+    <input type="text" id="search-box" name="query" class="form-control" placeholder="Поиск по разделу ...">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit" value="search">
+        <i class="glyphicon glyphicon-search"></i>
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+
+<!-- end search bar -->
+<ul id="docnavsidebar" class="docnav">
+    
+
+    
+    <li class="level1"><a href="#">Начало</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="/index.html">Введение</a></li>
+            
+            
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Описание бизнеса</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_egais.html">Продажа алкоголя</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Разработка</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_dev_introduction.html">Введение</a></li>
+            
+            
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Облако Эвотор</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_evotor_api_introduction.html">Введение</a></li>
+                    
+                    
+
+                    
+                    <li class="level3"><a class="subfoldersTitle" href="#">Авторизация</a>
+                        <ul style="display:none;">
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="doc_authorization.html">Авторизация запросов к Облаку Эвотор</a></li>
+                            
+                            
+
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="doc_evotor_api_authorization.html">Авторизация вебхуков, которые Облако Эвотор передаёт в сторонний сервис</a></li>
+                            
+                            
+
+                            
+                        </ul>
+                    </li>
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_example_calls.html">Примеры запросов к Облаку Эвотор</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_errors_returned.html">Ошибки, которые может возвращать сторонний сервис</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items open"><a href="doc_smart_terminal_documents.html">Документы смарт-терминала</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Приложение на портале разработчика Эвотор</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_dev_site_introduction.html">Введение</a></li>
+                    
+                    
+
+                    
+                    <li class="level3"><a class="subfoldersTitle" href="#">Тестирование приложения</a>
+                        <ul style="display:none;">
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="doc_app_developer_mode.html">Включение режима разработчика</a></li>
+                            
+                            
+
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="doc_app_installation.html">Установка приложения</a></li>
+                            
+                            
+
+                            
+
+                            
+                            
+                            <li class="level3items"><a href="doc_app_testing.html">Перевод приложения в тестирование</a></li>
+                            
+                            
+
+                            
+                        </ul>
+                    </li>
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_app_review.html">Черновики, модерация и публикация приложения</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Смарт-терминал</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="java_introduction.html">Java SDK</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="rn_introduction.html">React Native</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            <li class="level2"><a class="subfoldersTitle" href="#">Примеры реализации</a>
+                <ul style="display:none;">
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_java_app_tutorial.html">Сборка и установка демонстрационного приложения</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_iframe_within_application_page.html">IFrame на странице приложения</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_cloud_systems_integration.html">Интеграция с облачными сервисами</a></li>
+                    
+                    
+
+                    
+
+                    
+
+                    
+                    
+                    <li class="level2items"><a href="doc_1C_integration.html">Интеграция с 1С</a></li>
+                    
+                    
+
+                    
+
+                    
+                </ul>
+            </li>
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">Распространение и биллинг</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_about_billing.html">О биллинге</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_app_tariffication.html">О тарификации приложений</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_tariffs.html">Тарифы</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_payoff.html">Выплаты</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_subscriptions.html">Подписки</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    
+    <li class="level1"><a href="#">FAQ</a>
+    
+        <ul style="display:none">
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_faq.html">Часто задаваемые вопросы</a></li>
+            
+            
+
+            
+
+            
+
+            
+            
+            <li class="level1items"><a href="/doc_installation_troubleshooting.html">Устранение проблем с установкой приложения</a></li>
+            
+            
+
+            
+
+            
+        </ul>
+
+        
+
+    </li>
+</ul>
+
+<hr class="resourceSeparator"></hr>
+<div class="relatedResources"></div>
+<ul id="entrypages">
+        
+    </li>
+</ul>
+</div>
+</div>
+<script>$("li.open").parents('li').toggleClass("open");</script>
+
+            </div>
+
+            <!-- main area -->
+            <div class="col-xs-12 col-sm-7">
+                
+                <h1>Документы смарт-терминала</h1>
+                 
+                 <div class="toc-main-column">
+                 
+<style>
+div#toc2 >ul::before {
+    content: "Содержание";
+    margin-left: -20px;
+}
+</style>
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc2').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc2').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 80);
+  return false
+})
+
+});
+</script>
+
+<nav id="toc2"></nav>
+
+
+               </div>
+                <p>При организации товарно-денежных операций, смарт-терминал создаёт и обменивается <em>документами</em>.</p>
+
+<p>Документ – JSON-файл с информацией о транзакциях (действиях), выполненных на смарт-терминале, например, открытие или закрытие смены, продажа товара. Как и другая информация пользователей платформы, документы хранятся в облаке Эвотор. Порядок транзакций важен при чтении документа.</p>
+
+<table dir="ltr" border="1" cellspacing="0" cellpadding="10"><colgroup><col width="261" /> <col width="217" /></colgroup>
+
+<tbody>
+
+<tr>
+
+<td style="text-align: center;" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0422\u0438\u043f&quot;}"><b>Тип</b></td>
+
+<td style="text-align: center;" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435&quot;}"><b>Название</b></td>
+
+</tr>
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;ACCEPT&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/01-ACCEPT.json">ACCEPT</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u041f\u0440\u0438\u0451\u043c\u043a\u0430&quot;}">Приёмка</td>
+
+</tr>
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;SELL&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/02-SELL.json">SELL</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u041f\u0440\u043e\u0434\u0430\u0436\u0430&quot;}">Продажа</td>
+
+</tr>
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;BUY&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/14-BUY.json">BUY</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u041f\u0440\u043e\u0434\u0430\u0436\u0430&quot;}">Выкуп товара у клиента, с увеличением остатка. Например, при приёме цветного металла.</td>
+
+</tr>
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;PAYBACK&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/03-PAYBACK.json">PAYBACK</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0412\u043e\u0437\u0432\u0440\u0430\u0442 \u0434\u0435\u043d\u0435\u0433&quot;}">Возврат денег</td>
+
+</tr>
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;PAYBACK&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/15-BUYBACK.json">BUYBACK</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0412\u043e\u0437\u0432\u0440\u0430\u0442 \u0434\u0435\u043d\u0435\u0433&quot;}">Выкуп товара клиентом, с уменьшением остатка. Например, выкуп залога в ломбарде.</td>
+
+</tr>
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CASH_INCOME&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/04-CASH_INCOME.json">CASH_INCOME</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0412\u043d\u0435\u0441\u0435\u043d\u0438\u0435 \u043d\u0430\u043b\u0438\u0447\u043d\u044b\u0445&quot;}">Внесение наличных</td>
+
+</tr>
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CASH_OUTCOME&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/05-CASH_OUTCOME.json">CASH_OUTCOME</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0418\u0437\u044a\u044f\u0442\u0438\u0435 \u043d\u0430\u043b\u0438\u0447\u043d\u044b\u0445&quot;}">Изъятие наличных</td>
+
+</tr>
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;CLOSE_SESSION&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/06-CLOSE_SESSION.json">CLOSE_SESSION</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0417\u0430\u043a\u0440\u044b\u0442\u0438\u0435 \u0441\u043c\u0435\u043d\u044b \u0441\u043c\u0430\u0440\u0442-\u0442\u0435\u0440\u043c\u0438\u043d\u0430\u043b\u0430&quot;}">Закрытие смены смарт-терминала</td>
+
+</tr>
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;OPEN_SESSION&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/07-OPEN_SESSION.json">OPEN_SESSION</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u041e\u0442\u043a\u0440\u044b\u0442\u0438\u0435 \u0441\u043c\u0435\u043d\u044b \u0441\u043c\u0430\u0440\u0442-\u0442\u0435\u0440\u043c\u0438\u043d\u0430\u043b\u0430&quot;}">Открытие смены смарт-терминала</td>
+
+</tr>
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;INVENTORY&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/08-INVENTORY.json">INVENTORY</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0418\u043d\u0432\u0435\u043d\u0442\u0430\u0440\u0438\u0437\u0430\u0446\u0438\u044f&quot;}">Инвентаризация</td>
+
+</tr>
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;WRITE_OFF&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/09-WRITE_OFF.json">WRITE_OFF</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0421\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u0442\u043e\u0432\u0430\u0440\u0430&quot;}">Списание товара</td>
+
+</tr>
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;RETURN&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/10-RETURN.json">RETURN</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0412\u043e\u0437\u0432\u0440\u0430\u0442 \u0442\u043e\u0432\u0430\u0440\u0430 \u043f\u043e\u0441\u0442\u0430\u0432\u0449\u0438\u043a\u0443&quot;}">Возврат товара поставщику</td>
+
+</tr>
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;REVALUATION&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/11-REVALUATION.json">REVALUATION</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u041f\u0435\u0440\u0435\u043e\u0446\u0435\u043d\u043a\u0430&quot;}">Переоценка</td>
+
+</tr>
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;FPRINT (Transaction:FPRINT_X_REPORT)&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/12-FPRINT_X_REPORT.json">FPRINT (Transaction:FPRINT_X_REPORT)</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u041f\u0435\u0447\u0430\u0442\u044c X-\u043e\u0442\u0447\u0451\u0442\u0430&quot;}">Печать X-отчёта</td>
+
+</tr>
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;FPRINT (Transaction:FPRINT_Z_REPORT)&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/13-FPRINT-Z-REPORT.json">FPRINT (Transaction:FPRINT_Z_REPORT)</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u041f\u0435\u0447\u0430\u0442\u044c Z-\u043e\u0442\u0447\u0451\u0442\u0430&quot;}">Печать Z-отчёта</td>
+
+</tr>
+
+<!-- <tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;FPRINT (Transaction:CLOSE_SESSION)&quot;}">FPRINT (Transaction:CLOSE_SESSION)</td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0417\u0430\u043a\u0440\u044b\u0442\u0438\u0435 \u0441\u043c\u0435\u043d\u044b \u041a\u041a\u041c&quot;}">Закрытие смены ККМ</td>
+
+</tr> -->
+
+<tr>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;OPEN_TARE&quot;}"><a href="https://github.com/evotor/documentation-api/blob/master/pos-docs/16-OPEN_TARE.json">OPEN_TARE</a></td>
+
+<td data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u0417\u0430\u043a\u0440\u044b\u0442\u0438\u0435 \u0441\u043c\u0435\u043d\u044b \u041a\u041a\u041c&quot;}">Вскрытие тары алкогольной продукции</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<p>Со структурой всех типов документов смарт-терминала вы можете ознакомиться <a href="https://github.com/evotor/documentation-api/tree/master/pos-docs">в нашем репозитории на гитхабе</a>.</p>
+
+                <div class="toc-main-column">
+                
+
+              </div>
+                 
+
+<p>
+    <span class="btn githubButton">
+        <a target="_blank" href="https://github.com/evotor/documentation-v2/tree/develop/_docs/evomain/doc_smart_terminal_documents.md" class="editButton noCrossRef"><i class="fa fa-github fa-lg"></i> Редактировать</a>
+    </span>
+</p>
+
+
+
+
+            </div><!-- /.col-xs-12 main -->
+
+            <div class="col-xs-12 col-sm-2 right-lane">
+              <div class="inner">
+
+
+<style>
+nav#toc >ul::before, nav#toc2 >ul::before {
+    content: "Содержание";
+}
+</style>
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 2, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 80);
+  return false
+})
+
+});
+$(window).scroll(function(){
+  $('nav#toc')[0].scrollTop=$(window).scrollTop();
+});
+</script>
+
+<nav id="toc"></nav>
+
+
+</div>
+
+              
+
+        </div><!--/.row-->
+    </div><!--/.container-->
+</div><!--/.page-container-->
+
+
+
+<!--scripts loaded here-->
+<script src="assets/js/jquery.magnific-popup.js"></script>
+<script>
+$('.no_icon').magnificPopup({
+type: 'image',
+closeBtnInside: false,
+closeOnContentClick: false,
+
+callbacks: {
+  open: function() {
+    var self = this;
+    self.wrap.on('click.pinhandler', 'img', function() {
+      self.wrap.toggleClass('mfp-force-scrollbars');
+    });
+  },
+  beforeClose: function() {
+        this.wrap.off('click.pinhandler');
+    this.wrap.removeClass('mfp-force-scrollbars');
+  }
+},
+
+image: {
+  verticalFit: false
+}
+
+});
+</script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/toc.js"></script>
+<script src="assets/js/anchor.min.js"></script>
+<script>
+    $( document ).ready(function() {
+        $("#docnavsidebar").navgoco({
+            caretHtml: '',
+            accordion: false,
+            openClass: 'open', // open
+            save: false, // leave false or nav highlighting doesn't work right
+            cookie: {
+                name: 'navgoco',
+                expires: false,
+                path: '/'
+            },
+            slide: {
+                duration: 300,
+                easing: 'swing'
+            }
+        });
+
+    });
+
+</script>
+<script src="assets/js/customscripts.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('[data-toggle=offcanvas]').click(function() {
+            $('.row-offcanvas').toggleClass('active');
+        });
+    });
+</script>
+<script src="assets/js/tabs.js"></script>
+<!-- Add copy to clipboard button -->
+<script>
+var allCodeBlocksElements = $( "pre.highlight" );
+
+allCodeBlocksElements.each(function(i) {
+  // add different id for each code block
+
+  // target
+  var currentId = "codeblock" + (i + 1);
+  $(this).attr('id', currentId);
+
+  //trigger
+  var clipButton = '<button class="btn" data-clipboard-target="#' + currentId + '"><img src="https://clipboardjs.com/assets/images/clippy.svg" width="13" alt="Copy to clipboard"></button>';
+  $(this).after(clipButton);
+  });
+
+new Clipboard('.btn');
+</script>
+
+</body>
+
+<!-- the google_analytics_id gets auto inserted from the config file -->
+
+
+
+<script>
+(function(i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;
+  i[r] = i[r] || function() {
+    (i[r].q = i[r].q || []).push(arguments)
+  }, i[r].l = 1 * new Date();
+  a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+  a.async = 1;
+  a.src = g;
+  m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+ga('create', 'UA-84163503-7', 'auto');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+</script>
+
+
+
+
+</html>
