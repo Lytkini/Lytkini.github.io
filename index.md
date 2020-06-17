@@ -57,9 +57,12 @@ Technologies:
 
 ### Java
 
-The section contains some projects that I've done on [the University of Helsinki’s free massive open online course (MOOC) on programming](https://java-programming.mooc.fi/).
+At the beginning of this year, I enrolled in the [University of Helsinki's free massive open online course (MOOC) on programming](https://java-programming.mooc.fi/). Unfortunately, the course translation is on hiatus since the end of April, so I'm unable to get certification yet.
 
-The course is not fully translated, so I'm not able to get certification yet.
+Nonetheless, I've completed all available exercises up to part 12.
+
+![](./assets/img/java_part_1.png)
+![](./assets/img/java_part_2.png)
 
 ### JavaScript, HTML and CSS
 
