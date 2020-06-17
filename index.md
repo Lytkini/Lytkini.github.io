@@ -16,7 +16,7 @@ The course is not fully translated, so I'm not able to get certification yet.
 
 ### JavaScript, HTML and CSS
 
-The section shows some of projects I've done in [the Odin Project web development course](https://www.theodinproject.com).
+The section shows some projects that I've done in [the Odin Project web development course](https://www.theodinproject.com).
 
 * [Rock Paper Scissors](https://lytkini.com/JS-rock-paper-scissors-TheOdinProject/)
 * [Etch-A-Sketch](https://lytkini.com/etch-a-sketch-TheOdinProject/)
